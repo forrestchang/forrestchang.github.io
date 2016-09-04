@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="Tisoga"><meta name="description" content="两年前，曾经写过一篇有关时间管理的文章，那个时候还在上高二，对于时间管理仅仅是有一点肤浅的了解，自然写出来的文字也是比较幼稚的。经过两年的实践，积累了很多时间管理的经验，想要拿出来分享一下。预计会写一个系列，包括使用的工具和日常的Workflow。日常使用的工具有这些：纸"><meta name="keywords" content="时间管理,Toggl,时间日志"><title>更有效率的程序员（一）：时间记录 · Hack Notes</title><link rel="icon" href="/favicon.ico"><link rel="canonical" href="http://forrestchang.github.io/2016/04/10/productivity-programmer-01/"><link rel="stylesheet" href="/fonts/iconfont/iconfont.css"><link rel="stylesheet" href="/css/style.css"><script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-56515498-2', 'auto');
+ga('send', 'pageview');</script></head><body><div id="main"><header><a href="/." class="logo">Hack Notes</a><ul class="nav"><li class="nav-link"><a href="/" target="_self">Home</a></li><li class="nav-link"><a href="/archives/" target="_self">Archives</a></li><li class="nav-link"><a href="/categories/" target="_self">Categories</a></li><li class="nav-link"><a href="/tags/" target="_self">Tags</a></li><li class="nav-link"><a href="/about/" target="_self">About</a></li></ul></header><section id="container"><article class="post"><h1 class="post-title">更有效率的程序员（一）：时间记录</h1><span class="post-time">Apr 10, 2016</span><div id="sidebar" class="post-sidebar"><h3 class="heading">Contents</h3><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#简单的系统"><span class="toc-text">简单的系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Toggl"><span class="toc-text">Toggl</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#基本使用"><span class="toc-text">基本使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#更好的分类"><span class="toc-text">更好的分类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#强大的统计功能"><span class="toc-text">强大的统计功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Dashboard"><span class="toc-text">Dashboard</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Workflow"><span class="toc-text">Workflow</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#FAQ"><span class="toc-text">FAQ</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#什么事情都需要记录吗？"><span class="toc-text">什么事情都需要记录吗？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#忘了记录怎么办？"><span class="toc-text">忘了记录怎么办？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#手边没有电脑怎么办？"><span class="toc-text">手边没有电脑怎么办？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#后记"><span class="toc-text">后记</span></a></li></ol></div><div class="post-content"><p>两年前，曾经写过一篇有关时间管理的<a href="http://forrestchang.github.io/2014/02/12/time-management/">文章</a>，那个时候还在上高二，对于时间管理仅仅是有一点肤浅的了解，自然写出来的文字也是比较幼稚的。经过两年的实践，积累了很多时间管理的经验，想要拿出来分享一下。预计会写一个系列，包括使用的工具和日常的 Workflow。</p>
+<p>日常使用的工具有这些：</p>
+<ul>
+<li>纸质笔记本（Moleskine）</li>
+<li>OmniFocus</li>
+<li>Evernote</li>
+<li>Toggl</li>
+</ul>
+<p>这篇文章从题目也可以看出来，主要讲一些关于时间记录的内容，对应的工具是 Toggl。关于 Toggl，我已经在知乎的<a href="https://www.zhihu.com/question/36546814/answer/69161024" target="_blank" rel="external">一个回答</a>里面推荐过了，这里会更加详细地介绍一下使用流程，在谈论术之前，先来说说道的问题，为什么要做时间记录。</p>
+<p>其实我们对时间是很不敏感的，相信你一定有过这样的体验：早晨醒来，干劲满满，准备打开电脑把昨天没有写完的代码解决，这时想到邮件还没看，先查一下邮件吧，反正花不了多少时间，在查看邮件的时候又发现知乎上有人给你发私信了，在到知乎上看一下私信，顺便回复一下，既然上了知乎，那么去首页看看订阅的内容里面有没有什么有意思的东西吧，看到一个有意思的回答，是推荐你买买买的，于是乎又打开淘宝看了看商品的具体情况，顺便加到购物车里，这是候发现已经中午了，算了，先去吃饭吧，代码等等吃完饭再写，吃过午饭后又觉得有一点困意，那就睡一会儿吧，一觉醒来，发现已经四点多了，不行了，赶紧写代码，等等，这个 bug 好像找不到问题所在啊，算了，去 Stack Overflow 上找找吧，在 Stack Overflow 上找到了答案，链接到一篇具体的解释文章，点进去看了看，发现太长了，还是先加到 Pocket 中，以后再看吧，这个人的博客似乎写得不错，浏览一下 Archive 页面看看还有没有其他的好文章，从头到尾浏览了一遍，心中不禁惊叹，写得真好！然后想到今天 Reddit 好像还没看，说不定又有什么好东西，于是又上 /r/programming 刷了一会儿，看到了几篇牛逼的文章，时间也不早了，该吃晚饭了，吃完晚饭自然又不想写代码，休息一会儿，逛一下 Bilibili 吧，看了几个视频之后突然想到今天的代码还没有写，于是又接着关掉网页去写代码，搞到深夜，终于把代码写完了，朋友圈发一条状态「奋战到深夜，终于把代码改完了！」。</p>
+<p>多么充实的一天，你这样想到，今天似乎做了很多事情。但是实际上呢？有效的时间几乎只有两三个小时。所以你需要把做什么事用了多长时间记录下来，然后就会发现这「充实」的一天过得是多么可怕了。</p>
+<p>根据这些时间的时间记录的经验来看，至少有以下三点好处：</p>
+<ol>
+<li>提高对时间的感知能力，发现和避免时间黑洞。记录下时间的时候，你会刻意地关注目前手上正在做的事，如果是一些浪费时间的事，会使你减少花在上面的时间。</li>
+<li>更好地制定计划。有段时间给自己制定的计划老是不能够完成，目标定得太高，再怎么跳也抓不到，通过记录一些事情所花费的时间，就可以更好地做计划，比如说看完一本书需要用多少时间。</li>
+<li>激励自己。积累了一段时间的数据之后，就可以看到在某一方面投入了多少时间了，根据 10000 小时定律，可以知道自己与专家级别的能力还相差多少。</li>
+</ol>
+<p>当然，凡事有利就必有弊。</p>
+<ol>
+<li>时间记录本身也会花费时间（可以通过工具来弥补）。</li>
+<li>最开始的时候总是会忘记记录。</li>
+<li>事无巨细地记录时间，增加压力（这一点会在下面详细说明）。</li>
+</ol>
+<p>简单地讲了一下「道」层面的问题，想要继续深入的可以看一下<a href="https://book.douban.com/subject/1115353/" target="_blank" rel="external">《奇特的一生》</a>这本书。下面说一说「术」的层面。</p>
+<h3 id="简单的系统"><a href="#简单的系统" class="headerlink" title="简单的系统"></a>简单的系统</h3><p>其实最开始的时候一支笔、一本本子、一块手表就够了，这一阶段主要是养成时间记录的习惯，当然使用 Evernote 或者 OneNote 之类的软件也是可以的。可以按照以下的模板来记录：</p>
+<blockquote>
+<p>2016/04/10<br>7:00 - 8:30 阅读 xxx xx 页（1h30min）<br>9:00 - 9:45 完成 xxx 项目 xx 功能的开发（45min）<br>…</p>
+<p>总结：<br>编程时间：xx h xx min<br>阅读时间：xx h xx min<br>有效时间合计：xx h xx min<br>娱乐时间：xx h xx min<br>…</p>
+</blockquote>
+<p>具体的分类可以根据自己的需求来进行。如果对时间记录没有接触过的同学可以选择这个方法试着用一段时间，看有没有什么改变。</p>
+<h3 id="Toggl"><a href="#Toggl" class="headerlink" title="Toggl"></a>Toggl</h3><p>前面说了这么多，中与引来了今天的主角：<a href="https://www.toggl.com/" target="_blank" rel="external">Toggl</a>。什么是 Toggl，简单得来说，是一款时间记录的工具，试用过市面上几乎所有时间记录的工具，发现 Toggl 是最符合《奇特的一生》中的工作流的。</p>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>Toggl 几乎包含了全部平台，其中最强大的属于 Web 版，各种高级的报表功能需要在 Web 版上面才能试使用。</p>
+<ul>
+<li><a href="https://www.toggl.com/best-free-time-tracking-app-for-iphone" target="_blank" rel="external">iPhone App</a></li>
+<li><a href="https://www.toggl.com/best-free-time-tracking-app-for-android" target="_blank" rel="external">Android App</a></li>
+<li><a href="https://support.toggl.com/toggl-desktop-for-windows" target="_blank" rel="external">Windows Desktop App</a></li>
+<li><a href="https://support.toggl.com/toggl-desktop-for-mac-osx" target="_blank" rel="external">Mac Desktop App</a></li>
+<li><a href="https://support.toggl.com/toggl-desktop-for-linux" target="_blank" rel="external">Linux Desktop App</a></li>
+</ul>
+<p>并且它还提供了 <a href="https://github.com/toggl/toggl_api_docs/blob/master/toggl_api.md" target="_blank" rel="external">API</a>，可以自由定制。</p>
+<h4 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h4><p>下面主要介绍 Web 版的内容。注册完登陆进计时页面就是如下图所示：</p>
+<p><img src="/media/14602871668402.jpg" alt=""></p>
+<ol>
+<li>你当前正在记录的内容（如果不确定，可以先不填，这个是比其他软件优秀的原因之一，有时候只是想先记录下时间，之后再进行区分）；</li>
+<li>当前记录内容所属分类，可以添加 Tag，后面的美元符号可以添加这个任务的花费，基本没有用到过这个功能；</li>
+<li>记录的时间，可以手动添加时间；</li>
+<li>Timeline，每天做了什么事情用了多少时间就记录在这里（周六周日没有怎么使用，所以比较空）；</li>
+<li>一周记录时间汇总。</li>
+</ol>
+<p>知道了以上的内容之后就可以开始记录了，比如说就把学习 Toggl 的使用当成第一个记录的内容。</p>
+<h4 id="更好的分类"><a href="#更好的分类" class="headerlink" title="更好的分类"></a>更好的分类</h4><p>详细的分类可以更好地输出报表。我使用的是三级的分类：大类-具体领域分类-task。Toggl 默认只可以使用两个层级的分类，Project - Task，但是可以把 Client 这个用作最大的分类，这样就可以进行三个层级的分类，下面是我的分类内容；</p>
+<ul>
+<li>基本工作（Client）<ul>
+<li>计算机（Project）</li>
+<li>英语</li>
+<li>健身</li>
+<li>写作</li>
+<li>阅读</li>
+<li>工作（几乎用不到，因为还在学校里）</li>
+</ul>
+</li>
+<li>固定日程<ul>
+<li>上课</li>
+<li>睡觉</li>
+<li>杂事</li>
+</ul>
+</li>
+<li>娱乐<ul>
+<li>上网</li>
+<li>游戏</li>
+<li>视频/电影</li>
+</ul>
+</li>
+</ul>
+<p>分级不宜过多，否则会增加选择的压力，可以在使用的过程中不断改进。</p>
+<p>最大的类别（Clients）可以在 Workspace Settings 中添加：</p>
+<p><img src="/media/14602879238718.jpg" alt=""></p>
+<p>Project 的类别在 Projects 选项中添加，可以给每个 Project 不同的颜色以示区分。</p>
+<p>Tag 很少使用，可以为一些相同类型的事情设定相关的 Tag 来作为补充。</p>
+<h4 id="强大的统计功能"><a href="#强大的统计功能" class="headerlink" title="强大的统计功能"></a>强大的统计功能</h4><p>使用纸笔做时间记录的麻烦之处就是统计的时候需要花费很多精力去计算，用 APP 就可以免除这些过程，直接根据记录的内容生成非常漂亮的报表，下面的是我这一周的统计内容，从柱状图可以看出这周的效率是逐渐递减的-_-|||</p>
+<p><img src="/media/14602882623445.jpg" alt=""></p>
+<p>Reports 支持三种模式：Summary, Detailed, Weekly。上面的是 Summary 的 Reports，Detailed 会把你做的所有事情列出来，Weekly 会以周视图的方式来显示：</p>
+<p><img src="/media/14602884725256.jpg" alt=""></p>
+<p>Reports 支持强大的过滤功能，可以根据需要选择 Reports 的时间长度、Project 内容、Tag 内容等等。比如说我想查看这周用在 iOS Dev 上的时间是多少，只需要选择 iOS Dev 这个 Tag 就可以了：</p>
+<p><img src="/media/14602886317764.jpg" alt=""></p>
+<h4 id="Dashboard"><a href="#Dashboard" class="headerlink" title="Dashboard"></a>Dashboard</h4><p>Toggl 还提供了仪表盘视图，在这里你可以看到最常 Track 的项目以及一些其他内容。</p>
+<p><img src="/media/14602889789430.jpg" alt=""></p>
+<p>如果在本地 APP 里面打开了 Timeline Track，还可以在 Timeline For Today 这一栏里面查看使用了什么软件，用了多长时间。</p>
+<h4 id="Workflow"><a href="#Workflow" class="headerlink" title="Workflow"></a>Workflow</h4><p>每天从 Todo 里面拿出一件事情，打开计时器，开始做，本着「做一件事情就把它做好的原则」去完成。积累了一段时间的数据之后，就可以更好地计划自己了，比如说本周阅读多少专业书籍，写多少代码。具体的 Workflow 需要结合 OmniFocus 和笔记本来完成，所以会在下一篇文章中来说明。</p>
+<h4 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h4><h5 id="什么事情都需要记录吗？"><a href="#什么事情都需要记录吗？" class="headerlink" title="什么事情都需要记录吗？"></a>什么事情都需要记录吗？</h5><p>只需要记录重要的事情。日常生活中的吃喝拉撒记录了没有任何用处，有一段时间我一直在记录自己的睡眠时间，不过后来固定了之后就不记录了。</p>
+<h5 id="忘了记录怎么办？"><a href="#忘了记录怎么办？" class="headerlink" title="忘了记录怎么办？"></a>忘了记录怎么办？</h5><p>这个只能慢慢地养成记录的习惯，如果记得大概的时间的话，可以手动录入时间。</p>
+<h5 id="手边没有电脑怎么办？"><a href="#手边没有电脑怎么办？" class="headerlink" title="手边没有电脑怎么办？"></a>手边没有电脑怎么办？</h5><p>一般我都是用手机进行记录，如果连手机也不在手边的话，可以先拿张纸记着，之后再手动录入上去。</p>
+<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>其实，等你做了一段时间的时间日志会发现，会发现效率并没有提高多少，有时候不得不承认这个悲伤的事实，根据自己的时间日志，最高效的一天记录了 7 个小时的学习时间，相比较那些动不动就每天学习 8 小时的人来说，还是差太多了，不过好歹也算是做出了一点点努力。</p>
+<p>写这篇文章的契机是看到了 pluskid 写的<a href="http://freemind.pluskid.org/misc/knowledge-accumulate/" target="_blank" rel="external">《关于知识整理、积累与记忆》</a>，想到自己也有挺多经验可以分享的，于是便以试试的心态动笔开始写。</p>
+<p>仓促成文，错误在所难免，还望指正。</p>
+</div></article><div class="tags"><a href="/tags/时间管理/">时间管理</a><a href="/tags/Toggl/">Toggl</a><a href="/tags/时间日志/">时间日志</a></div><div class="paginator"><a href="/2016/04/15/swift-arc-notes/" class="prev"><i class="iconfont icon-left"></i><span> Prev</span></a><a href="/2016/03/20/2016-week-12/" class="next"><span>Next</span><i class="iconfont icon-right"></i></a></div><section id="comments"><div id="disqus_thread"></div></section><script type="text/javascript">var disqus_config = function () {
+    this.page.url = 'http://forrestchang.github.io/2016/04/10/productivity-programmer-01/';
+    this.page.identifier = '2016/04/10/productivity-programmer-01/';
+    this.page.title = '更有效率的程序员（一）：时间记录';
+};
+(function() {
+var d = document, s = d.createElement('script');
+
+s.src = '//tisogasnotes.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();</script></section><footer><div class="copyright"><p class="power">Powered by <a href="https://hexo.io/">Hexo</a> and Theme by <a href="https://github.com/ahonn/hexo-theme-even"> Even</a></p><p class="since">&copy;2016<span class="heart"><i class="iconfont icon-heart"></i></span><span class="author">Tisoga</span></p></div><label id="back2top"><i class="iconfont icon-up"></i></label></footer></div><script src="/js/zepto.min.js"></script><script src="/js/theme.js"></script></body></html>

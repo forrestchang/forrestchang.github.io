@@ -1,0 +1,511 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="Tisoga"><meta name="description" content="Hack your mind!"><title>Hack Notes</title><link rel="icon" href="/favicon.ico"><link rel="canonical" href="http://forrestchang.github.io/"><link rel="stylesheet" href="/fonts/iconfont/iconfont.css"><link rel="stylesheet" href="/css/style.css"><script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-56515498-2', 'auto');
+ga('send', 'pageview');</script></head><body><div id="main"><header><a href="/." class="logo">Hack Notes</a><ul class="nav"><li class="nav-link"><a href="/" class="active">Home</a></li><li class="nav-link"><a href="/archives/" target="_self">Archives</a></li><li class="nav-link"><a href="/categories/" target="_self">Categories</a></li><li class="nav-link"><a href="/tags/" target="_self">Tags</a></li><li class="nav-link"><a href="/about/" target="_self">About</a></li></ul></header><section id="container"><ul class="home"><li class="post-item"><article class="post"><h2 class="post-title"><a href="/2016/08/01/github-combo-plan/" class="post-link">GitHub 连击计划</a></h2><span class="post-time">Aug 1, 2016</span><div class="post-content"><p>GitHub 改版之后貌似就不显示 Longest streak 的时间了，不过用了<a href="https://chrome.google.com/webstore/detail/isometric-contributions/mjoedlfflcchnleknnceiplgaeoegien" target="_blank" rel="external">Isometric Contributions</a>这个 Chrome 插件还是可以看到的：</p>
+<p><img src="/media/14700204753572.jpg" alt=""></p>
+<p>中间空白了一大段是因为生病住院。</p>
+<p>虽说追求 GitHub 的连击没有什么意义，但是至少可以一定程度上反映是做了一些微小的工作的，另外必须给自己一些规则，要不然每天 update readme 也算 commit 就没什么意义了。</p>
+<ol>
+<li>只有代码相关的 commit 才算做连击的内容；</li>
+<li>不能够使用脚本修改之前的 commit；</li>
+</ol>
+<p>然后看一下能够连击多少天吧。</p>
+<p>另外，<a href="https://github.com/forrestchang/weekly-project" target="_blank" rel="external">weekly-project</a>这个 repo 貌似好久没有更新的，以前还打算每周完成一个 project 的，果然暑假待在家里全忘关了，现在也要把这个提上日程了。</p>
+<p>少玩点守望先锋，多写点代码：）</p>
+</div></article></li><li class="post-item"><article class="post"><h2 class="post-title"><a href="/2016/07/17/the-python-tutorial/" class="post-link">The Python Tutorial 阅读笔记</a></h2><span class="post-time">Jul 17, 2016</span><div class="post-content"><p><em>The Python Tutorial</em> 是很好的学习资源，之前已经粗略的读过一遍，有不少细节性的东西都被略过了，这次详细地阅读一遍，顺便记录一些笔记，以供之后参考使用</p>
+<h2 id="Data-Structures"><a href="#Data-Structures" class="headerlink" title="Data Structures"></a>Data Structures</h2><h3 id="More-on-Lists"><a href="#More-on-Lists" class="headerlink" title="More on Lists"></a>More on Lists</h3><ul>
+<li><code>list.append(x)</code>: Equivalent to <code>a[len(a):] = [x]</code></li>
+<li><code>list.extend(L)</code>: Extend the list by appending all the items in the given list. Equivalent to <code>a[len(a):] = L</code></li>
+<li><code>list.insert(i, x)</code>: The first argument is the index of the element before which to insert. <code>a.insert(len(a), x)</code> == <code>a.append(x)</code>.</li>
+<li><code>list.remove(x)</code>: Remove the first item form the list whose value is x.</li>
+<li><code>list.pop([i])</code>: Remove the item at the given position in the list, and return it. If no index is specified, <code>a.pop()</code> removes and returns the last item in the list.（参数中的方括号表明参数是可选的）</li>
+<li><code>list.clear()</code>: Remove all item from the list. Equivalent to <code>del a[:]</code></li>
+<li><code>list.index(x)</code>: Return the index in the list of the first item whose value is x.</li>
+<li><code>list.count(x)</code>: Return the number of times x appears in the list.</li>
+<li><code>list.sort(key=None, reverse=False)</code>: Sort the items of the list in place.</li>
+<li><code>list.reverse()</code>: Reverse the elements of the list in place.</li>
+<li><code>list.copy()</code>: Return a shallow copy of the list. Equivalent to <code>a[:]</code>.</li>
+</ul>
+<h4 id="Using-Lists-as-Stacks"><a href="#Using-Lists-as-Stacks" class="headerlink" title="Using Lists as Stacks"></a>Using Lists as Stacks</h4><p>Use <code>append</code> and <code>pop</code>.</p>
+<h4 id="Using-Lists-as-Queues"><a href="#Using-Lists-as-Queues" class="headerlink" title="Using Lists as Queues"></a>Using Lists as Queues</h4><p>Lists are not efficient for this purpose. While appends and pops from the end of list are fast, doing inserts or pops from beginning of a list is slow.</p>
+<p>Better to use <code>collections.deque</code>.</p>
+<h4 id="List-Comprehensions"><a href="#List-Comprehensions" class="headerlink" title="List Comprehensions"></a>List Comprehensions</h4><ul>
+<li><code>x = [item for item in series]</code></li>
+<li><code>x = [do_something(item) for item in series if expression]</code></li>
+</ul>
+<h4 id="Nested-List-Comprehensions"><a href="#Nested-List-Comprehensions" class="headerlink" title="Nested List Comprehensions"></a>Nested List Comprehensions</h4><p>The initial expression in a list comprehension can be any arbitrary expression, including another list comprehension.</p>
+<p>Example: <code>[[row[i] for row in matrix] for i in range(4)]</code>.</p>
+<h4 id="The-del-statement"><a href="#The-del-statement" class="headerlink" title="The del statement"></a>The <code>del</code> statement</h4><p>Remove an item from a list given its index. (Do not return a value) It can also remove slices from a list.</p>
+<p><code>del</code> can also be used to delete entire variables: <code>del a</code>.</p>
+<h3 id="Tuples-and-Sequences"><a href="#Tuples-and-Sequences" class="headerlink" title="Tuples and Sequences"></a>Tuples and Sequences</h3><p>Tuples are <code>immutable</code>, and usually contain a heterogeneous sequence of elements that are accessed via unpacking or indexing. List are <code>mutable</code>, and their element are usually homogeneous and are accessed by iterating over the list.</p>
+<ul>
+<li>Empty tuples are constructed by and empty pair of parentheses: <code>empty = ()</code></li>
+<li>A tuple with one item is constructed by following a value with a comma:     <code>sigleton = &#39;hello&#39;,</code></li>
+</ul>
+<p>The statement <code>t = 1, 2, &#39;hello&#39;</code> is an example of <code>tuple packing</code>: the values are packed together in a tuple. The reverse operation is also possible: <code>x, y, z = t</code>.</p>
+<h3 id="Sets"><a href="#Sets" class="headerlink" title="Sets"></a>Sets</h3><p><code>{}</code> or <code>set()</code> function can be used to create sets. Note: to create an empty set you have to use <code>set()</code>, not <code>{}</code>; the latter creates an empty dictionary.</p>
+<p>Example: </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a = set(<span class="string">'abracadabra'</span>)</div><div class="line">b = set(<span class="string">'alacazam'</span>)</div></pre></td></tr></table></figure>
+<ul>
+<li><code>a - b</code>: letters in a but not in b</li>
+<li><code>a | b</code>: letters in either a or b</li>
+<li><code>a &amp; b</code>: letters in both a and b</li>
+<li><code>a ^ b</code>: letters in a or b but not both</li>
+</ul>
+<p>Similaryly to list comprehensions, set comprehensions are also supported.</p>
+<h3 id="Dictionaries"><a href="#Dictionaries" class="headerlink" title="Dictionaries"></a>Dictionaries</h3><p>Dictionaries are indexed by keys, which can be any immutable type; strings and numbers can slways be keys. Tuples can be used as keys if they contain only one kind of item. You can’t use use lists as keys, since lists can be modified in place using index assignments, slice assignments, or method like append() and extend().</p>
+<p>It is best to think of a dictionary as an unordered set of <code>key: value</code> pairs.</p>
+<ul>
+<li><code>del</code> can delete a <code>key: value</code></li>
+<li><code>list(d.keys())</code> on a dictionary returns a list of all the keys used in the dictionary, in arbitrary order (if you want it sorted, use <code>sortted(d.keys())</code> instead).</li>
+<li>To check whether a single key is in the dictionary, use the <code>in</code> keyword. (<code>in</code> or <code>not in</code>)</li>
+<li>Dict comprehensions can be used to create dictionaries from arbitrary key and value expressions: <code>{x: x**2 for x in range(10)}</code></li>
+<li>When the keys are simple strings, it is sometimes easier to specify pairs using keyword arguments: <code>dic(sape=1, guido=2, jack=3)</code> =&gt; <code>{&#39;sape&#39;: 1, &#39;jack&#39;: 3, &#39;guido&#39;: 2}</code></li>
+</ul>
+<h3 id="Looping-Techniques"><a href="#Looping-Techniques" class="headerlink" title="Looping Techniques"></a>Looping Techniques</h3><p>When looping through dictionaries, the key and corresponding value can be retrieved at the same time using the items() method.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">knights = &#123;<span class="string">'gallahad'</span>: <span class="string">'the pure'</span>, <span class="string">'robin'</span>: <span class="string">'the brave'</span>&#125;</div><div class="line"><span class="keyword">for</span> k, v <span class="keyword">in</span> knights.items():</div><div class="line">	print(k, v)</div></pre></td></tr></table></figure>
+<p>When looping through a sequence, the position index and correspoding value can be retrieved at the same time using the <code>enumerate()</code> function.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i, v <span class="keyword">in</span> enumerate([<span class="string">'tic'</span>, <span class="string">'tac'</span>, <span class="string">'toe'</span>]):</div><div class="line">	print(i, v)</div></pre></td></tr></table></figure>
+<p>To loop over two or more sequences at the same time, the entries can be paired with the <code>zip()</code> function.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</div><div class="line">names = [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>]</div><div class="line"><span class="keyword">for</span> number, name <span class="keyword">in</span> zip(numbers, names):</div><div class="line">	print(<span class="string">'Number: &#123;0&#125;, Name: &#123;1&#125;'</span>.format(number, name))</div></pre></td></tr></table></figure>
+<p>To loop over a sequence in sorted order, use the <code>sorted()</code> function which return a new sorted list while leaving the source unaltered. <code>for item in soted(list)</code></p>
+<p>It is sometimes tempting to change a list while you are looping over it; however, it is often simple and safer to create a new list instead.</p>
+<h3 id="More-on-Conditions"><a href="#More-on-Conditions" class="headerlink" title="More on Conditions"></a>More on Conditions</h3><ul>
+<li><code>in</code> and <code>not in</code>: check whether a value occurs (or not) in a sequence.</li>
+<li><code>is</code> and <code>is not</code>: compare whether two objects are really the same object; this only matters for mutable objcts like lists.</li>
+<li>Comparisons can be chained. <code>a &lt; b == c</code></li>
+<li><code>and</code> and <code>or</code> are <code>short-circuit</code> operators</li>
+</ul>
+<h3 id="Comparing-Sequences-and-Other-Types"><a href="#Comparing-Sequences-and-Other-Types" class="headerlink" title="Comparing Sequences and Other Types"></a>Comparing Sequences and Other Types</h3><p>The comparison uses lexicographical ordering.</p>
+<h2 id="Modules"><a href="#Modules" class="headerlink" title="Modules"></a>Modules</h2><p>A module is a file containing Python definitions and statements. The file name is the module name with the suffix <code>.py</code> appended. Within a module, the module’s name (as a string) is available as the value of the global variable <code>__name__</code>.</p>
+<h3 id="More-on-Modules"><a href="#More-on-Modules" class="headerlink" title="More on Modules"></a>More on Modules</h3><p>Note that in general the practice of importing <code>*</code> from a module is frowned upon, since it often causes poorly readable code. (It ok to use in interactive sessions.)</p>
+<p>It’s one module you want to test interactively, use <code>importlib.reload()</code>.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> importlib</div><div class="line">importlib.reload(modulename)</div></pre></td></tr></table></figure>
+<h4 id="Executing-modules-as-scripts"><a href="#Executing-modules-as-scripts" class="headerlink" title="Executing modules as scripts"></a>Executing modules as scripts</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">	code</div></pre></td></tr></table></figure>
+<p>This is often used either to provide a convenient user interface to a module, or for testing purposes (running the module as a script executes a test suite).</p>
+<h4 id="The-Module-Search-Path"><a href="#The-Module-Search-Path" class="headerlink" title="The Module Search Path"></a>The Module Search Path</h4><p>When a module named <em>spam</em> is imported, the interpreter first searches for a built-in module with that name. If not found, it then searches for a file named <code>spam.py</code> in a list of directories given by the variable <code>sys.path</code>, it is initialized from these locations:</p>
+<ul>
+<li>The directory containing the input script (or the current directory when no file is specified).</li>
+<li><code>PYTHONPATH</code> (a list of directory names, with the same syntax as the shell variable <em>PATH</em>).</li>
+<li>The installation-dependent default.</li>
+</ul>
+<p>After initialization, Python programs can modify <code>sys.path</code>. The directory containing the script being run is placed at the beginning of the search path, ahead of the standard library path. This means that scripts in that directory will be loaded instead of modules of the same name in the library directory.</p>
+<h4 id="“Compiled”-Python-files"><a href="#“Compiled”-Python-files" class="headerlink" title="“Compiled” Python files"></a>“Compiled” Python files</h4><p>Python caches the compiled version of each module in the <code>__pycache__</code> directory. It generally contains the Python version number. This naming convention allows compiled modules from dirrerent release and different version of Python to coexist. (Example: <code>__pycache__/fib.python-27.pyc</code>)</p>
+<p>Python check the modification date of the source against the compiled version to see if it’s out of date and needs to be recompiled.</p>
+<h3 id="Standard-Modules"><a href="#Standard-Modules" class="headerlink" title="Standard Modules"></a>Standard Modules</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> sys</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sys.ps1</div><div class="line"><span class="string">'&gt;&gt;&gt; '</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sys.ps2</div><div class="line"><span class="string">'... '</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sys.ps1 = <span class="string">'C&gt; '</span></div><div class="line">C&gt; print(<span class="string">'Yuck!'</span>)</div><div class="line">Yuck!</div></pre></td></tr></table></figure>
+<p>The variable <code>sys.path</code> is a list of strings that determines the interpreter’s search path for modules. You can modify it using standard list operations.</p>
+<h3 id="The-dir-Function"><a href="#The-dir-Function" class="headerlink" title="The dir() Function"></a>The <code>dir()</code> Function</h3><p>The built-in function <code>dir()</code> is used to find out which names a module defines.</p>
+<p>Without arguments, <code>dir()</code> lists the names you have defined currently.</p>
+<p>It list all types of names: variable, modules, functions, etc.</p>
+<h2 id="Input-and-Output"><a href="#Input-and-Output" class="headerlink" title="Input and Output"></a>Input and Output</h2><h3 id="Methods-of-File-Objects"><a href="#Methods-of-File-Objects" class="headerlink" title="Methods of File Objects"></a>Methods of File Objects</h3><p>It is good practice to use the <code>with</code> keyword when dealing with file objects. This has the advantage that the file is properly closed after its suite finishes, even if an exceptiohn is raissed on the way. It is also much shorter thatn writing equivalent <code>try-finally</code> blocks:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">with</span> open(<span class="string">'workfile'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> f:</div><div class="line">	read_data = f.read()</div></pre></td></tr></table></figure>
+</div></article></li><li class="post-item"><article class="post"><h2 class="post-title"><a href="/2016/07/17/virtualenv-notes/" class="post-link">virtualenv 相关笔记</a></h2><span class="post-time">Jul 17, 2016</span><div class="post-content"><p>记录一些有关 virtualenv 的使用笔记。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>直接使用 pip 来进行安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo pip install virtualenv</div></pre></td></tr></table></figure>
+<h2 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h2><p>主要用来创建隔离的 Python 开发环境，比如说一个项目需要用到 2.7 的库，另一个项目需要用到 3.0 的库，我们就可以使用  virtualenv 来分别给这两个项目创建虚拟的 Python 环境，这样可以有效的避免冲突。</p>
+<p>virtualenv 会创建一个拥有独立安装目录的 Python 环境，该隔离环境不会与其他 virtualenv 环境共享模块（可以选择是否访问全局安装目录）。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h3><p>最基本的使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ virtualenv ENV</div></pre></td></tr></table></figure>
+<p>其中 <code>ENV</code> 是用来存放虚拟环境的目录。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$tree -L 1 ENV</div><div class="line">ENV</div><div class="line">├── bin</div><div class="line">├── include</div><div class="line">├── lib</div><div class="line">└── pip-selfcheck.json</div></pre></td></tr></table></figure>
+<p>其中 <code>lib</code> 和 <code>include</code> 目录是用来存放新的虚拟 Python 环境的依赖库，Package 被安装到 <code>lib/pythonX.X/site-packages/</code> 中，<code>bin</code> 目录中是新的 Python 解释器。<code>pip</code> 和 <code>setuptools</code> 默认被安装的。</p>
+<h3 id="active-script"><a href="#active-script" class="headerlink" title="active script"></a>active script</h3><p>进入虚拟环境：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ source ENV/bin/active</div></pre></td></tr></table></figure>
+<p>（如果 <code>source</code> 命令不存在可以使用 <code>.</code> 命令。）</p>
+<p>退出虚拟环境：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ deactivate</div></pre></td></tr></table></figure>
+<h3 id="Removing-an-Environment"><a href="#Removing-an-Environment" class="headerlink" title="Removing an Environment"></a>Removing an Environment</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">(ENV)$ deactivate</div><div class="line">$ rm -r /path/to/ENV</div></pre></td></tr></table></figure>
+<h3 id="system-site-packages-选项"><a href="#system-site-packages-选项" class="headerlink" title="--system-site-packages 选项"></a><code>--system-site-packages</code> 选项</h3><p>使用 <code>virtualenv --system-site-packages ENV</code> 将会继承全局 packages。并不是很常用的功能。</p>
+<h3 id="指定-Python-版本"><a href="#指定-Python-版本" class="headerlink" title="指定 Python 版本"></a>指定 Python 版本</h3><p>使用 <code>-p PYTHON_EXE</code> 选项在创建虚拟环境的时候制定 Python 版本。</p>
+<p>Python 2.7:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ virtualenv -p /usr/bin/python2.7 ENV2.7</div></pre></td></tr></table></figure>
+<p>Python 3.5:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ virtualenv -p /usr/local/bin/python3.5 ENV3.5</div></pre></td></tr></table></figure>
+<h3 id="生成可打包环境"><a href="#生成可打包环境" class="headerlink" title="生成可打包环境"></a>生成可打包环境</h3><p>某些情况下，我们可能需要在别的地方使用这个已经配置好的虚拟环境，可以使用 <code>virtualenv --relocatable</code> 将 ENV 修改为可迁移的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(ENV)$ virutalenv --relocatable ./</div></pre></td></tr></table></figure>
+</div></article></li><li class="post-item"><article class="post"><h2 class="post-title"><a href="/2016/04/15/swift-arc-notes/" class="post-link">Swift 中的内存管理</a></h2><span class="post-time">Apr 15, 2016</span><div class="post-content"><p>这篇文章是在阅读《The Swift Programming Language》Automatic Reference Counting（ARC，自动引用计数）一章时做的一些笔记，同时参考了其他的一些资料。</p>
+<p>在早期的 iOS 开发中，内存管理是由开发者手动来完成的。因为传统的垃圾回收机制对于移动平台来说十分低效，苹果采用的是引用计数（RC，Reference Counting）的方式来管理内存，开发者需要通过手工的方式增加或减少一个实例的引用计数。在 iOS 5 之后，引入了 ARC 自动引用计数，使得开发者不需要手动地调用 <code>retain</code> 和 <code>release</code> 来管理引用计数，但是实际上这些方法还是会被调用，只不过是交给了编译器来完成，编译器会在合适的地方帮我们加入这些方法。</p>
+<p><strong>什么是自动引用计数？</strong></p>
+<p>每当你创建一个类的实例的时候，ARC 便会自动分配一块内存空间来存放这个实例的信息，当这个实例不再被使用的时候，ARC 便释放实例所占用的内存。一般每个被管理的实例都会与一个引用计数器相连，这个计数器保存着当前实例被引用的次数，一旦创建一个新的引用指向这个实例，引用计数器便加 1，每当指向该实例的引用失效，引用计数器便减 1，当某个实例的引用计数器变成 0 的时候，这个实例就会被立即销毁。</p>
+<p>在 Swift 中，对引用描述的关键字有三个：<code>strong</code>，<code>weak</code> 和 <code>unowned</code>，所有的引用没有特殊说明都是 <code>strong</code> 强引用类型。在 ARC 中，只有指向一个实例的所有 <code>strong</code> 强引用都断开了，这个实例才会被销毁。</p>
+<p>举一个简单的例子：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</div><div class="line">    <span class="keyword">let</span> name: <span class="type">String</span></div><div class="line">    <span class="keyword">init</span>(name: <span class="type">String</span>) &#123;</div><div class="line">        <span class="keyword">self</span>.name = name</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">deinit</span> &#123;</div><div class="line">        <span class="built_in">print</span>(<span class="string">"A deinit"</span>)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> a1: <span class="type">A</span>?</div><div class="line"><span class="keyword">var</span> a2: <span class="type">A</span>?</div><div class="line"></div><div class="line">a1 = <span class="type">A</span>(name: <span class="string">"A"</span>)</div><div class="line">a2 = a1</div><div class="line"></div><div class="line">a1 = <span class="literal">nil</span></div></pre></td></tr></table></figure>
+<p>上面这个例子中，虽然 <code>a1</code> 这个 <code>strong</code> 强引用断开了，但是还有 <code>a2</code> 这个强引用指向这个实例，所以不会在命令行中输出 <code>A deinit</code>，当我们把 <code>a2</code> 也设置为 <code>nil</code> 时，与这个实例关联的所有强引用均断开了，这个实例便会被销毁，在命令行中打印 <code>A deinit</code>。</p>
+<p><strong>循环强引用（Strong Reference Cycles）</strong></p>
+<p>但是，在某些情况下，一个类实例的强引用数永远不能变为 0，例如两个类实例互相持有对方的强引用，因而每个类实例都让对方一直存在，这就是所谓的强引用循环（Strong Reference Cycles）。</p>
+<p>这里引用 TSPL 中的例子：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</div><div class="line">    <span class="keyword">let</span> name: <span class="type">String</span></div><div class="line">    <span class="keyword">init</span>(name: <span class="type">String</span>) &#123; <span class="keyword">self</span>.name = name &#125;</div><div class="line">    <span class="keyword">var</span> apartment: <span class="type">Apartment</span>?</div><div class="line">    <span class="keyword">deinit</span> &#123; <span class="built_in">print</span>(<span class="string">"<span class="subst">\(name)</span> is being deinitialized"</span>) &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Apartment</span> </span>&#123;</div><div class="line">    <span class="keyword">let</span> unit: <span class="type">String</span></div><div class="line">    <span class="keyword">init</span>(unit: <span class="type">String</span>) &#123; <span class="keyword">self</span>.unit = unit &#125;</div><div class="line">    <span class="keyword">var</span> tenant: <span class="type">Person</span>?</div><div class="line">    <span class="keyword">deinit</span> &#123; <span class="built_in">print</span>(<span class="string">"Apartment <span class="subst">\(unit)</span> is being deinitialized"</span>) &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>每一个 <code>Person</code> 实例有一个可选的初始化为 <code>nil</code> 的 <code>Apartment</code> 类型，因为一个人并不总是拥有公寓。同样，每一个 <code>Apartment</code> 实例都有一个可选的初始化为 <code>nil</code> 的 <code>Person</code> 类型，因为一个公寓并不总是属于一个人。</p>
+<p>接下来的代码片段定义了两个可选类型的变量 <code>john</code> 和 <code>unit4A</code>，并分别设定为下面的 <code>Person</code> 和 <code>Apartment</code> 的实例，这两个变量都备受设定为 <code>nil</code>：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> john: <span class="type">Person</span>?</div><div class="line"><span class="keyword">var</span> unit4A: <span class="type">Apartment</span>?</div></pre></td></tr></table></figure>
+<p>现在可以创建特定的 <code>Person</code> 和 <code>Apartment</code> 实例，并将它们赋值给 <code>john</code> 和 <code>unit4A</code> 变量：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">john = <span class="type">Person</span>(name: <span class="string">"John Appleseed"</span>)</div><div class="line">unit4A = <span class="type">Apartment</span>(unit: <span class="string">"4A"</span>)</div></pre></td></tr></table></figure>
+<p>下面一段代码将这两个实例关联起来：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">john!.apartment = unit4A</div><div class="line">unit4A!.tenant = john</div></pre></td></tr></table></figure>
+<p>将两个实例关联在一起后，强引用的关系如图所示：</p>
+<p><img src="/media/14607053938205.jpg" alt=""></p>
+<p>这两个实例关联之后，会产生一个循环强引用，当断开 <code>john</code> 和 <code>unit4A</code> 所持有的强引用时，引用计数器并不会归零，所以这两块空间也得不到释放，这就导致了内存泄漏。</p>
+<p>可以将其中一个类中的变量设定为 <code>weak</code> 弱引用来打破这种强引用循环：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Apartment</span> </span>&#123;</div><div class="line">    <span class="keyword">let</span> unit: <span class="type">String</span></div><div class="line">    <span class="keyword">init</span>(unit: <span class="type">String</span>) &#123; <span class="keyword">self</span>.unit = unit &#125;</div><div class="line">    <span class="keyword">weak</span> <span class="keyword">var</span> tenant: <span class="type">Person</span>?</div><div class="line">    <span class="keyword">deinit</span> &#123; <span class="built_in">print</span>(<span class="string">"Apartment <span class="subst">\(unit)</span> is being deinitialized"</span>) &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="/media/14607057294969.jpg" alt=""></p>
+<p>当断开 <code>john</code> 和 <code>unit4A</code> 所持有的强引用时，<code>Person instance</code> 的引用计数器变成 0，实例被销毁，从而 <code>Apartment instance</code> 的引用计数器也变为 0，实例被销毁。</p>
+<p><strong>什么时候使用 <code>weak</code>？</strong></p>
+<p>当两个实例是 optional 关联在一起时，确保其中的一个使用 <code>weak</code> 弱引用，就像上面所说的那个例子一样。</p>
+<p><strong><code>unowned</code> 无主引用</strong></p>
+<p>在某些情况下，声明的变量总是有值得时候，我们需要使用 <code>unowned</code> 无主引用。</p>
+<p>同样借用一下 TSPL 中的例子：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Customer</span> </span>&#123;</div><div class="line">    <span class="keyword">let</span> name: <span class="type">String</span></div><div class="line">    <span class="keyword">var</span> card: <span class="type">CreditCard</span>?</div><div class="line">    <span class="keyword">init</span>(name: <span class="type">String</span>) &#123;</div><div class="line">        <span class="keyword">self</span>.name = name</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">deinit</span> &#123; <span class="built_in">print</span>(<span class="string">"<span class="subst">\(name)</span> is being deinitialized"</span>) &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CreditCard</span> </span>&#123;</div><div class="line">    <span class="keyword">let</span> number: <span class="type">UInt64</span></div><div class="line">    <span class="keyword">unowned</span> <span class="keyword">let</span> customer: <span class="type">Customer</span></div><div class="line">    <span class="keyword">init</span>(number: <span class="type">UInt64</span>, customer: <span class="type">Customer</span>) &#123;</div><div class="line">        <span class="keyword">self</span>.number = number</div><div class="line">        <span class="keyword">self</span>.customer = customer</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">deinit</span> &#123; <span class="built_in">print</span>(<span class="string">"Card #<span class="subst">\(number)</span> is being deinitialized"</span>) &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这里定义了两个类，<code>Customer</code> 和 <code>CreditCard</code>，模拟了银行客户和客户的信用卡，在这个例子中，每一个类都是将另一个类的实例作为自身的属性，所以会产生循环强引用。</p>
+<p>和之前那个例子不同的是，<code>CreditCard</code> 类中有一个非可选类型的 <code>customer</code> 属性，因为，一个客户可能有或者没有一张信用卡，但是一张信用卡总是关联着一个用户。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> john: <span class="type">Customer</span>?</div><div class="line">john = <span class="type">Customer</span>(name: <span class="string">"John Appleseed"</span>)</div><div class="line">john!.card = <span class="type">CreditCard</span>(number: <span class="number">1234_5678_9012_3456</span>, customer: john!)</div></pre></td></tr></table></figure>
+<p>关联两个实例后，它们的引用关系如图所示：</p>
+<p><img src="/media/14607068387297.jpg" alt=""></p>
+<p>当断开 <code>john</code> 变量持有的强引用时，再也没有指向 <code>Customer</code> 的强引用了，所以该实例被销毁了，其后，再也没有指向 <code>CreditCard</code> 的强引用了，该实例也被销毁了。</p>
+<p><strong>什么时候使用 <code>unowned</code> 无主引用？</strong></p>
+<p>两个实例 A 和 B，如果实例 A 必须在实例 B 存在的前提下才能存在，那么实例 A 必须用 <code>unowned</code> 无主引用指向实例 B。也就是说，有强制依赖性的那个实例必须对另一个实例持有无主引用。</p>
+<p>例如上面那个例子所说，银行客户可能没有信用卡，但是每张信用卡总是绑定着一个银行客户，所以信用卡这个类就需要用 <code>unowned</code> 无主引用。</p>
+<p><strong>无主引用以及隐市解析可选属性</strong></p>
+<p>还有一种情况，两个属性都必须有值，并且初始化完成之后永远不会为 <code>nil</code>。在这种情况下，需要一个类使用 <code>unowned</code> 无主引用，另一个类使用<a href="http://wiki.jikexueyuan.com/project/swift/chapter2/01_The_Basics.html#implicityly_unwrapped_optionals" target="_blank" rel="external">隐式解析可选属性</a>。</p>
+<p><strong>闭包引起的循环强引用</strong></p>
+<p>在 Swift 中，闭包和函数都属于引用类型。并且闭包还有一个特性：可以在其定义的上下文中捕获常量或者变量。所以，在一个类中，闭包被赋值给了一个属性，而这个闭包又使用了这个类的实例的时候，就会引起循环强引用。</p>
+<p>Swift 提供了一种方法来解决这个问题：闭包捕获列表（closure capture list）。在定义闭包的同时定义捕获列表作为闭包的一部分，捕获列表定义了闭包体内捕获一个或者多个引用类型的规则。跟解决两个类实例之间的循环强引用一样，声明每个捕获的引用为弱引用或者无主引用。</p>
+<p>捕获列表中的每一项都由一对元素组成，一个元素是 <code>weak</code> 或者 <code>unowned</code> 关键字，另一个元素是类实例的引用（例如最常见得是 <code>self</code>），这些在方括号内用逗号隔开。</p>
+<p>具体的使用方法请参考<a href="http://wiki.jikexueyuan.com/project/swift/chapter2/16_Automatic_Reference_Counting.html#resolving_strong_reference_cycles_for_closures" target="_blank" rel="external">官方文档</a>。</p>
+<p><strong>何时使用 <code>weak</code>，何时使用 <code>unowned</code></strong></p>
+<p>在闭包和捕获的实例总是相互引用并且总是同时销毁的时候，将闭包内的捕获定义为 <code>unowned</code> 无主引用。</p>
+<p>在被捕获的实例可能变成 <code>nil</code> 的情况下，使用 <code>weak</code> 弱引用。如果被捕获的引用绝对不会变成 <code>nil</code>，应该使用 <code>unowned</code> 无主引用，而不是 <code>weak</code> 弱引用。</p>
+<p><strong>Garbage Collection（GC，垃圾回收）</strong></p>
+<p>其实 ARC 应该也算 GC 的一种，不过我们一谈到 GC，大多都会想到 Java 中的垃圾回收机制，相比较 GC，ARC 简单得许多。以后有机会可以讨论一下 Java 中的内存管理。</p>
+<p>另外，需要注意的一点是，这里所讲的都是针对于<code>引用类型</code>，<code>结构体</code>和<code>枚举</code>在 Swift 中属于值类型，不在 ARC 的考虑范围之内。</p>
+</div></article></li><li class="post-item"><article class="post"><h2 class="post-title"><a href="/2016/04/10/productivity-programmer-01/" class="post-link">更有效率的程序员（一）：时间记录</a></h2><span class="post-time">Apr 10, 2016</span><div class="post-content"><p>两年前，曾经写过一篇有关时间管理的<a href="http://forrestchang.github.io/2014/02/12/time-management/">文章</a>，那个时候还在上高二，对于时间管理仅仅是有一点肤浅的了解，自然写出来的文字也是比较幼稚的。经过两年的实践，积累了很多时间管理的经验，想要拿出来分享一下。预计会写一个系列，包括使用的工具和日常的 Workflow。</p>
+<p>日常使用的工具有这些：</p>
+<ul>
+<li>纸质笔记本（Moleskine）</li>
+<li>OmniFocus</li>
+<li>Evernote</li>
+<li>Toggl</li>
+</ul>
+<p>这篇文章从题目也可以看出来，主要讲一些关于时间记录的内容，对应的工具是 Toggl。关于 Toggl，我已经在知乎的<a href="https://www.zhihu.com/question/36546814/answer/69161024" target="_blank" rel="external">一个回答</a>里面推荐过了，这里会更加详细地介绍一下使用流程，在谈论术之前，先来说说道的问题，为什么要做时间记录。</p>
+<p>其实我们对时间是很不敏感的，相信你一定有过这样的体验：早晨醒来，干劲满满，准备打开电脑把昨天没有写完的代码解决，这时想到邮件还没看，先查一下邮件吧，反正花不了多少时间，在查看邮件的时候又发现知乎上有人给你发私信了，在到知乎上看一下私信，顺便回复一下，既然上了知乎，那么去首页看看订阅的内容里面有没有什么有意思的东西吧，看到一个有意思的回答，是推荐你买买买的，于是乎又打开淘宝看了看商品的具体情况，顺便加到购物车里，这是候发现已经中午了，算了，先去吃饭吧，代码等等吃完饭再写，吃过午饭后又觉得有一点困意，那就睡一会儿吧，一觉醒来，发现已经四点多了，不行了，赶紧写代码，等等，这个 bug 好像找不到问题所在啊，算了，去 Stack Overflow 上找找吧，在 Stack Overflow 上找到了答案，链接到一篇具体的解释文章，点进去看了看，发现太长了，还是先加到 Pocket 中，以后再看吧，这个人的博客似乎写得不错，浏览一下 Archive 页面看看还有没有其他的好文章，从头到尾浏览了一遍，心中不禁惊叹，写得真好！然后想到今天 Reddit 好像还没看，说不定又有什么好东西，于是又上 /r/programming 刷了一会儿，看到了几篇牛逼的文章，时间也不早了，该吃晚饭了，吃完晚饭自然又不想写代码，休息一会儿，逛一下 Bilibili 吧，看了几个视频之后突然想到今天的代码还没有写，于是又接着关掉网页去写代码，搞到深夜，终于把代码写完了，朋友圈发一条状态「奋战到深夜，终于把代码改完了！」。</p>
+<p>多么充实的一天，你这样想到，今天似乎做了很多事情。但是实际上呢？有效的时间几乎只有两三个小时。所以你需要把做什么事用了多长时间记录下来，然后就会发现这「充实」的一天过得是多么可怕了。</p>
+<p>根据这些时间的时间记录的经验来看，至少有以下三点好处：</p>
+<ol>
+<li>提高对时间的感知能力，发现和避免时间黑洞。记录下时间的时候，你会刻意地关注目前手上正在做的事，如果是一些浪费时间的事，会使你减少花在上面的时间。</li>
+<li>更好地制定计划。有段时间给自己制定的计划老是不能够完成，目标定得太高，再怎么跳也抓不到，通过记录一些事情所花费的时间，就可以更好地做计划，比如说看完一本书需要用多少时间。</li>
+<li>激励自己。积累了一段时间的数据之后，就可以看到在某一方面投入了多少时间了，根据 10000 小时定律，可以知道自己与专家级别的能力还相差多少。</li>
+</ol>
+<p>当然，凡事有利就必有弊。</p>
+<ol>
+<li>时间记录本身也会花费时间（可以通过工具来弥补）。</li>
+<li>最开始的时候总是会忘记记录。</li>
+<li>事无巨细地记录时间，增加压力（这一点会在下面详细说明）。</li>
+</ol>
+<p>简单地讲了一下「道」层面的问题，想要继续深入的可以看一下<a href="https://book.douban.com/subject/1115353/" target="_blank" rel="external">《奇特的一生》</a>这本书。下面说一说「术」的层面。</p>
+<h3 id="简单的系统"><a href="#简单的系统" class="headerlink" title="简单的系统"></a>简单的系统</h3><p>其实最开始的时候一支笔、一本本子、一块手表就够了，这一阶段主要是养成时间记录的习惯，当然使用 Evernote 或者 OneNote 之类的软件也是可以的。可以按照以下的模板来记录：</p>
+<blockquote>
+<p>2016/04/10<br>7:00 - 8:30 阅读 xxx xx 页（1h30min）<br>9:00 - 9:45 完成 xxx 项目 xx 功能的开发（45min）<br>…</p>
+<p>总结：<br>编程时间：xx h xx min<br>阅读时间：xx h xx min<br>有效时间合计：xx h xx min<br>娱乐时间：xx h xx min<br>…</p>
+</blockquote>
+<p>具体的分类可以根据自己的需求来进行。如果对时间记录没有接触过的同学可以选择这个方法试着用一段时间，看有没有什么改变。</p>
+<h3 id="Toggl"><a href="#Toggl" class="headerlink" title="Toggl"></a>Toggl</h3><p>前面说了这么多，中与引来了今天的主角：<a href="https://www.toggl.com/" target="_blank" rel="external">Toggl</a>。什么是 Toggl，简单得来说，是一款时间记录的工具，试用过市面上几乎所有时间记录的工具，发现 Toggl 是最符合《奇特的一生》中的工作流的。</p>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>Toggl 几乎包含了全部平台，其中最强大的属于 Web 版，各种高级的报表功能需要在 Web 版上面才能试使用。</p>
+<ul>
+<li><a href="https://www.toggl.com/best-free-time-tracking-app-for-iphone" target="_blank" rel="external">iPhone App</a></li>
+<li><a href="https://www.toggl.com/best-free-time-tracking-app-for-android" target="_blank" rel="external">Android App</a></li>
+<li><a href="https://support.toggl.com/toggl-desktop-for-windows" target="_blank" rel="external">Windows Desktop App</a></li>
+<li><a href="https://support.toggl.com/toggl-desktop-for-mac-osx" target="_blank" rel="external">Mac Desktop App</a></li>
+<li><a href="https://support.toggl.com/toggl-desktop-for-linux" target="_blank" rel="external">Linux Desktop App</a></li>
+</ul>
+<p>并且它还提供了 <a href="https://github.com/toggl/toggl_api_docs/blob/master/toggl_api.md" target="_blank" rel="external">API</a>，可以自由定制。</p>
+<h4 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h4><p>下面主要介绍 Web 版的内容。注册完登陆进计时页面就是如下图所示：</p>
+<p><img src="/media/14602871668402.jpg" alt=""></p>
+<ol>
+<li>你当前正在记录的内容（如果不确定，可以先不填，这个是比其他软件优秀的原因之一，有时候只是想先记录下时间，之后再进行区分）；</li>
+<li>当前记录内容所属分类，可以添加 Tag，后面的美元符号可以添加这个任务的花费，基本没有用到过这个功能；</li>
+<li>记录的时间，可以手动添加时间；</li>
+<li>Timeline，每天做了什么事情用了多少时间就记录在这里（周六周日没有怎么使用，所以比较空）；</li>
+<li>一周记录时间汇总。</li>
+</ol>
+<p>知道了以上的内容之后就可以开始记录了，比如说就把学习 Toggl 的使用当成第一个记录的内容。</p>
+<h4 id="更好的分类"><a href="#更好的分类" class="headerlink" title="更好的分类"></a>更好的分类</h4><p>详细的分类可以更好地输出报表。我使用的是三级的分类：大类-具体领域分类-task。Toggl 默认只可以使用两个层级的分类，Project - Task，但是可以把 Client 这个用作最大的分类，这样就可以进行三个层级的分类，下面是我的分类内容；</p>
+<ul>
+<li>基本工作（Client）<ul>
+<li>计算机（Project）</li>
+<li>英语</li>
+<li>健身</li>
+<li>写作</li>
+<li>阅读</li>
+<li>工作（几乎用不到，因为还在学校里）</li>
+</ul>
+</li>
+<li>固定日程<ul>
+<li>上课</li>
+<li>睡觉</li>
+<li>杂事</li>
+</ul>
+</li>
+<li>娱乐<ul>
+<li>上网</li>
+<li>游戏</li>
+<li>视频/电影</li>
+</ul>
+</li>
+</ul>
+<p>分级不宜过多，否则会增加选择的压力，可以在使用的过程中不断改进。</p>
+<p>最大的类别（Clients）可以在 Workspace Settings 中添加：</p>
+<p><img src="/media/14602879238718.jpg" alt=""></p>
+<p>Project 的类别在 Projects 选项中添加，可以给每个 Project 不同的颜色以示区分。</p>
+<p>Tag 很少使用，可以为一些相同类型的事情设定相关的 Tag 来作为补充。</p>
+<h4 id="强大的统计功能"><a href="#强大的统计功能" class="headerlink" title="强大的统计功能"></a>强大的统计功能</h4><p>使用纸笔做时间记录的麻烦之处就是统计的时候需要花费很多精力去计算，用 APP 就可以免除这些过程，直接根据记录的内容生成非常漂亮的报表，下面的是我这一周的统计内容，从柱状图可以看出这周的效率是逐渐递减的-_-|||</p>
+<p><img src="/media/14602882623445.jpg" alt=""></p>
+<p>Reports 支持三种模式：Summary, Detailed, Weekly。上面的是 Summary 的 Reports，Detailed 会把你做的所有事情列出来，Weekly 会以周视图的方式来显示：</p>
+<p><img src="/media/14602884725256.jpg" alt=""></p>
+<p>Reports 支持强大的过滤功能，可以根据需要选择 Reports 的时间长度、Project 内容、Tag 内容等等。比如说我想查看这周用在 iOS Dev 上的时间是多少，只需要选择 iOS Dev 这个 Tag 就可以了：</p>
+<p><img src="/media/14602886317764.jpg" alt=""></p>
+<h4 id="Dashboard"><a href="#Dashboard" class="headerlink" title="Dashboard"></a>Dashboard</h4><p>Toggl 还提供了仪表盘视图，在这里你可以看到最常 Track 的项目以及一些其他内容。</p>
+<p><img src="/media/14602889789430.jpg" alt=""></p>
+<p>如果在本地 APP 里面打开了 Timeline Track，还可以在 Timeline For Today 这一栏里面查看使用了什么软件，用了多长时间。</p>
+<h4 id="Workflow"><a href="#Workflow" class="headerlink" title="Workflow"></a>Workflow</h4><p>每天从 Todo 里面拿出一件事情，打开计时器，开始做，本着「做一件事情就把它做好的原则」去完成。积累了一段时间的数据之后，就可以更好地计划自己了，比如说本周阅读多少专业书籍，写多少代码。具体的 Workflow 需要结合 OmniFocus 和笔记本来完成，所以会在下一篇文章中来说明。</p>
+<h4 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h4><h5 id="什么事情都需要记录吗？"><a href="#什么事情都需要记录吗？" class="headerlink" title="什么事情都需要记录吗？"></a>什么事情都需要记录吗？</h5><p>只需要记录重要的事情。日常生活中的吃喝拉撒记录了没有任何用处，有一段时间我一直在记录自己的睡眠时间，不过后来固定了之后就不记录了。</p>
+<h5 id="忘了记录怎么办？"><a href="#忘了记录怎么办？" class="headerlink" title="忘了记录怎么办？"></a>忘了记录怎么办？</h5><p>这个只能慢慢地养成记录的习惯，如果记得大概的时间的话，可以手动录入时间。</p>
+<h5 id="手边没有电脑怎么办？"><a href="#手边没有电脑怎么办？" class="headerlink" title="手边没有电脑怎么办？"></a>手边没有电脑怎么办？</h5><p>一般我都是用手机进行记录，如果连手机也不在手边的话，可以先拿张纸记着，之后再手动录入上去。</p>
+<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>其实，等你做了一段时间的时间日志会发现，会发现效率并没有提高多少，有时候不得不承认这个悲伤的事实，根据自己的时间日志，最高效的一天记录了 7 个小时的学习时间，相比较那些动不动就每天学习 8 小时的人来说，还是差太多了，不过好歹也算是做出了一点点努力。</p>
+<p>写这篇文章的契机是看到了 pluskid 写的<a href="http://freemind.pluskid.org/misc/knowledge-accumulate/" target="_blank" rel="external">《关于知识整理、积累与记忆》</a>，想到自己也有挺多经验可以分享的，于是便以试试的心态动笔开始写。</p>
+<p>仓促成文，错误在所难免，还望指正。</p>
+</div></article></li><li class="post-item"><article class="post"><h2 class="post-title"><a href="/2016/03/20/2016-week-12/" class="post-link">Weekly Roundup: Start Running</a></h2><span class="post-time">Mar 20, 2016</span><div class="post-content"><p>这周是2016年的第12周，上一周没有写 Roundup。</p>
+<p>这周的主题是<code>跑步</code>，大连的天气开始变暖，终于可以去操场跑步了，不过由于学校在海边，风还是很大的。今天跑完了一个线上马拉松（10km 健康赛），明天大连国际马拉松开始开放报名，打算参加半程马拉松，不知道能不能报上名，毕竟今年有一个目标就是参加一次马拉松（全马或者半马）。比赛日期是5.22，需要利用剩余的两个月的时间积累一下跑量（一周跑5次，每次10km）。</p>
+<p>编程方面，本来打算利用 Flask 写一个网站的，结果拖到今天 Document 也只看了一点点，很显然只能移到下一周来完成了，除了这个就改了改之前写的一些代码。从上周开始看 CSAPP 这本书，看的时候顺带做习题（所有的题目），所以进度很慢，大概每天几页的样子，CMU 的几个 lab 还没有开始做，等看完一部分就去完成这部分的 lab。</p>
+<p>阅读方面，没有读任何书，大部分的时间还是用在了浅阅读上，比如看知乎和 Quora 上的各种问答，阅读别人写的博客之类的。下周的目标是读完《你的灯亮着吗》这本书。</p>
+<p>这周没怎么背单词，现在想是否真的要去考托福了，因为自己的 GPA 有点低，即使有 TOEFL 成绩也申请不上好的学校。不过即使是不考 TOEFL，英语还是要学的。</p>
+<p>再一次地更换了博客的 Generator，这次还换成了 Hexo，用 Atom 来写作，之前还在<a href="http://forrestchang.github.io/2016/02/13/self-learning-guide/">一篇文章</a>中黑过 Atom，没想到这么快就叛逃了，23333 。不过还是得吐槽一下，我装了不少 Package，打开的时候真的是好卡，还掉帧，优化做得确实太渣了，要不是你 UI 漂亮，插件丰富，肯定不用你！转移的过程中没有转移评论内容，因为看了一下 Disqus 中的评论，太乱了（因为之前切换过好几次），转移起来有点麻烦，索性直接不要了，反正评论也不是很多。另外 RSS 地址可能有点变化，如果使用 RSS 阅读器的同学可能需要更新一下 RSS 地址（搞得好像真的有人看似的）。</p>
+<p>马上23：00了，赶紧去睡觉了。</p>
+</div></article></li><li class="post-item"><article class="post"><h2 class="post-title"><a href="/2016/02/24/apple-music-classical-reading/" class="post-link">Apple Music，古典音乐，阅读</a></h2><span class="post-time">Feb 24, 2016</span><div class="post-content"><h3 id="Apple-Music"><a href="#Apple-Music" class="headerlink" title="Apple Music"></a>Apple Music</h3><p>自从Apple Music（以下简称「AM」）发布以来，就一直在使用，从最开始的免费试用到现在每个月10￥的订阅。自从Windows时代就使用iTunes听音乐了（当时有一部iPod），在没有AM的时候，都是从论坛下好别人买的专辑来听。一方面在国内想要在iTunes Store上购买专辑过于麻烦（两个账号需要来回切换），另一方面作为一个学生党iTunes Store上两首歌就相当于一顿饭的价钱对于我来说也有点小贵了，所以AM刚推出的时候，还是比较开心的，没想到入华后价格竟然只要10￥每月，就只相当于两首歌的钱！</p>
+<p>这几个月使用下来，发现还是存在不少的问题。</p>
+<ol>
+<li>操作逻辑复杂。例如听到一首好听的歌，标注了心之后，它是不会出现在你的播放列表中的，因为标注心只是为了优化推荐的算法。所以每次听到一首好听的曲子，都要进行两个步骤：先添加到库中，再标注心。这样才会在你的Smart Playlist中显示出来。这个估计是iTunes的遗留问题，因为iTunes是以Library的方式来管理的，所以需要先添加进Library中，才能进行进一步的操作，不过AM作为一个流媒体音乐服务，这样做显然是多此一举了。</li>
+<li>每个设备间同步存在问题。我一般都是在Mac上听音乐，不过偶尔也会使用iPhone来听，但是很多加心得歌曲到了iPhone上面就变成没有加心的了。所以现在我也懒得使用iPhone来听歌了，或者就随便打开一个推荐的播放列表来听。</li>
+<li>网络问题。这个应该是最要吐槽的一点了，听歌时断时续是最不能忍的事情了。不知道是Apple在国内没有设置服务器还是什么其他原因，有时候即使开着代理缓冲的速度也很慢。有些专辑就只能先下载下来，然后再听。</li>
+</ol>
+<p>这是我使用过程中遇到的三个比较影响体验的问题，当然还有其他小的，比如说什么中文歌的名字全是英文（使用英文系统的原因，日文歌的名字全是罗马音等等之类的，只不过这些暂时还能够忍受，不是太影响听音乐的体验（个人很少听中文和日文的歌曲）。</p>
+<p>作为一个数据控，如果听歌的数据不能够记录下来，那么就好像和没听一样（强迫症的症状），虽然iTunes也可以记录歌曲的播放次数，上一次播放时间之类的数据，不过还是过于简单了。之前一直使用的是Last.fm，使用AM了之后发现Last.fm的客户端没办法抓取到数据了，后来找到了「Bowtie」这个小工具，连Radio中播放的内容都能够抓取到，太强大了。分析一首歌听了多少遍的意义并不是很大，但是累计了这么多的数据之后还是可以发现了一些有趣的东西的，比如说我听的最多的歌手是竟然是「ColdPlay」。</p>
+<p>如果作为一个音乐服务来说，AM还存在着很多问题，不过毕竟还是一个新生的流媒体服务，希望下一次大的更新之后能够提高一些用户体验。</p>
+<p>PS. 也使用过一段时间的Xiami和网易云音乐，因为种种原因放弃了。</p>
+<h3 id="古典音乐"><a href="#古典音乐" class="headerlink" title="古典音乐"></a>古典音乐</h3><p>关于古典音乐，其实我只有很少的了解，也只听过很少的入门曲目，最开始听古典是因为「The 50 Most Essential Pieces of Classical Music」这张专辑，这张专辑里面基本上都是一些非常经典的曲目，例如当初看《V字仇杀队》中的「1812 Festival Overture」，以及每个人都熟悉的「Canon in D Major」，如果从来没听过古典，推荐去听一下这个专辑，一定会发现很多熟悉的音乐。</p>
+<p>上学期选修了一门《西方古典音乐鉴赏》，然而并没有很认真地听课，不过还是了解了一些知识。然后看了木遥在博客上的一系列<a href="http://blog.farmostwood.net/305.html" target="_blank" rel="external">介绍古典音乐的文章</a>，算是对古典音乐有了一个初步的认识。</p>
+<p>如果说是欣赏古典音乐，还是达不到那个层次的，因为现在古典音乐的作用就是在阅读或者写代码的时候提供一个相对较安静的环境，说白了，还是出于一种功利的目的在听（为了更好地完成其他工作）。</p>
+<p>今天听AM的Classical Radio听到很很多以前听过，但是忘了名字的曲子（不得不说，古典音乐的曲子名字太难记了），统统加心添加进Library中。现在听音乐的基本流程就是，先范听，听到喜欢的在去把Artist的所有作品依次听下去，这样会找到不少喜欢的内容。</p>
+<h3 id="阅读"><a href="#阅读" class="headerlink" title="阅读"></a>阅读</h3><p>前几天Kindle上突然推送了有关Kindle Unlimited的内容，类似于AM，按月订阅，然后可以阅读所有的订阅内容。刚开始还是蛮高兴的，不过看了一下在计划中的书目，基本上没有想看的，果然想看的书还是需要付费啊。不过有7天的试用时间，不用白不用，昨天读了一本漫画书《时间管理：如何充分利用你的24小时》，很有趣的一本小册子。这个漫画好像是一个系列，准备最近把感兴趣的都看一遍。</p>
+<p>最近看书的时间有点少了，而更多的时间都在看RSS订阅的内容，Pocket上存档的文章，以及知乎、Quora、Reddit、Hacker News上的一些文字。毫无疑问，书籍的信噪比肯定是大于后者之流的，如果要搞一个排名的话，信噪比的大小应该是这样的：书籍 &gt; Pocket上存档的文章 &gt; Hacker News = Reddit &gt; RSS订阅内容 &gt; Quora &gt;= 知乎（至少Quora可以练习一下英语，笑）。当然，如果你是整天阅读微信朋友圈以及QQ空间，那么信噪比可能会 &lt; 1。</p>
+<hr>
+<p>以上是深夜的无聊吐槽内容，本来这段时间应该是去写代码或者阅读其他内容的，只不过因为结构化拖延的原因才来写Blog……</p>
+</div></article></li><li class="post-item"><article class="post"><h2 class="post-title"><a href="/2016/02/13/self-learning-guide/" class="post-link">初学者的编程自学指南</a></h2><span class="post-time">Feb 13, 2016</span><div class="post-content"><p>之前有不少学弟学妹问我如何学习编程，根据DRY法则（Don’t Repeat Yourself），还是把自己学习过程中的一些经验整理成一篇博客吧。由于本人目前也处在学习的阶段，文章中列出来的内容也并未全部学习过，所以文章的客观性可能存在一些问题，还望读者自行判断。</p>
+<p>这份指南会不定期更新，有好的建议也可以留言或者给我发邮件。</p>
+<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><p>需要的所有工具就是一台可以连接上网络的电脑以及你本人。</p>
+<h2 id="科学上网"><a href="#科学上网" class="headerlink" title="科学上网"></a>科学上网</h2><p>很可惜，即使是现在，大部分学习计算机的学生还是不会科学上网。在当前的网络环境下，不会科学上网，意味着你不能用Google查资料，不能再Reddit看最新的资讯，需要忍受龟速的GitHub，云云。然而，科学上网本身却是一件成本非常低的事情，不想折腾的话，一年花个几百块钱买个现成的服务；有折腾精神的人，可以买个服务器自己假设架设上网工具。这一步很重要，不能跳过，否则后面指南中的许多内容对你来说只能是404了。</p>
+<p>关于科学上网的具体内容，就不再多说了，给你一个关键词：<strong>Lantern</strong>。</p>
+<h2 id="学会使用Google搜索"><a href="#学会使用Google搜索" class="headerlink" title="学会使用Google搜索"></a>学会使用Google搜索</h2><p>学会了科学上网，你就能够使用Google了，为什么不是Baidu？相信你用了Google之后就自然明白了。</p>
+<p>当了一个学期的助教之后发现，很多的同学其实是没有使用搜索引擎的意识的，遇到问题要么自己死磕，或者就直接求助于他人。这两种都不是很好的办法，正确的做法是<strong>在自己思考后没有结果，然后使用搜索引擎查找问题</strong>，现阶段，你遇到的所有问题（几乎）都能在Google上找到现成的答案，如果没找到，肯定是你搜索的方式不正确。</p>
+<p>使用Google的基本搜索功能就能够解决大部分问题了，当然，如果想要学习更加高级的技巧，这里有一份指南：<a href="https://www.zhihu.com/question/20161362" target="_blank" rel="external">如何用好Google等搜索引擎？</a>。</p>
+<h2 id="英语"><a href="#英语" class="headerlink" title="英语"></a>英语</h2><p>你不得不承认，目前为止，编程世界的主流语言还是英文，所以英语能力的好坏决定了你编程能力的上界。中文资料和英文资料相比，实在是太匮乏了，就质量而言，也相对较低。比如我后面提到的很多的课程，都是英文的内容。</p>
+<p>值得庆幸的是，阅读编程资料所需要的英文水平并不需要很高，就个人经验来说，基本上四级水平就足够了，可能还会存在一些生词，但是基本上并不妨碍理解。</p>
+<p>英文的学习应该一直贯穿于编程的学习之中，作为一门工具语言，只需要花少量时间就可以带来比较大的收益（2/8法则）。</p>
+<p>本人的英文水平也不算好，但是基本上能够阅读技术书籍和文档，能够听懂公开课，所以还是有一些简单的经验可以分享一下。</p>
+<h3 id="把系统换成英文的"><a href="#把系统换成英文的" class="headerlink" title="把系统换成英文的"></a>把系统换成英文的</h3><p>有些同学可能看到英文就头疼，这很正常，因为在中文的环境下面生活的太久了。为此，可以试着将平常用的系统换成英文的，虽说不能学到几个单词（Copy/Paste 之类的词），但是可以让你不那么排斥英文，顺便还可以提升一下B格（误）。</p>
+<h3 id="安装电子词典"><a href="#安装电子词典" class="headerlink" title="安装电子词典"></a>安装电子词典</h3><p>OS X下推荐欧路词典，在APP Store中购买完整版的，因为需要添加外部的词典。</p>
+<p>这里推荐一部比较好的词典：《Collins 英汉双解词典》，它是这个样子的：</p>
+<p><img src="/image/self-learning-guide/eudic.jpg" alt=""></p>
+<p>主要看它的英文解释，一个词看得次数多了也就记住了。</p>
+<h3 id="每天阅读英文的资料"><a href="#每天阅读英文的资料" class="headerlink" title="每天阅读英文的资料"></a>每天阅读英文的资料</h3><p>一些个人经常阅读的网站：</p>
+<ul>
+<li><a href="http://quora.com/" target="_blank" rel="external">Quora</a>：一个类似于知乎的问答类网站，可以挑自己感兴趣的内容来阅读。</li>
+<li><a href="https://news.ycombinator.com/" target="_blank" rel="external">Hacker News</a>：IT资讯，IT界发生的最新的事件都会在上面。</li>
+<li><a href="http://www.reddit.com/r/programming/" target="_blank" rel="external">PROGRAMMING</a>：Reddit的Programming板块，和Hacker News类似，不过更加专注于技术内容方面。</li>
+</ul>
+<p><strong>不要花太多时间在上面，每天浏览一下就行。</strong></p>
+<h2 id="英文学习的总结"><a href="#英文学习的总结" class="headerlink" title="英文学习的总结"></a>英文学习的总结</h2><p>英语不是能够速成的东西，也不是三言两语能够讲完的东西，这里只是提供一个简单的指导，具体的学习计划还请自行搜索更加专业的学习指南。</p>
+<h1 id="编程基础"><a href="#编程基础" class="headerlink" title="编程基础"></a>编程基础</h1><p>完成了这一部分内容的学习后你应该具备：</p>
+<ul>
+<li>了解什么是Computer Science</li>
+<li>基本的计算机数学能力</li>
+<li>基本的程序开发能力</li>
+<li>基本的算法与数据结构的知识</li>
+</ul>
+<h2 id="计算机科学导论"><a href="#计算机科学导论" class="headerlink" title="计算机科学导论"></a>计算机科学导论</h2><ul>
+<li><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-00sc-introduction-to-computer-science-and-programming-spring-2011/" target="_blank" rel="external">Introduction to Computer Science and Programming</a>：面向<strong>无编程基础或者只有一点基础的人群</strong>，使用<strong>Python</strong>作为教学语言。</li>
+<li><a href="http://www.extension.harvard.edu/open-learning-initiative/intensive-introduction-computer-science" target="_blank" rel="external">Intensive Introduction to Computer Science Open Learning Course</a>：CS50，哈佛很火的一门课，在网易公开课上可以找到翻译的视频内容。涵盖的主题有算法（设计、应用、分析）；软件开发（抽象、封装、数据结构、Debug、测试）；计算机体系结构等等。基本上是一门大杂烩的导论课。使用的语言是<strong>C</strong>、<strong>PHP</strong>、<strong>JavaScript</strong>。</li>
+<li><a href="https://www.youtube.com/view_play_list?p=FE6E58F856038C69" target="_blank" rel="external">Programming Abstractions</a>：介绍了更加高级的编程主题（递归、算法分析、数据抽象等等），使用C++作为教学语言。</li>
+</ul>
+<h2 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h2><ul>
+<li><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-fall-2010/" target="_blank" rel="external">Mathematics for Computer Science</a>：介绍了学习计算机所需要的一些数学知识，内容包括集合、关系、证明方法、数论、图论等等。</li>
+<li><a href="https://www.youtube.com/watch?v=h_9WjWENWV8&amp;feature=share&amp;list=PLTdIp1DywMlUpLHEg3ADhE6rrxhW_T5Rx" target="_blank" rel="external">Discrete Mathematics</a>：离散数学。</li>
+</ul>
+<h2 id="编程语言"><a href="#编程语言" class="headerlink" title="编程语言"></a>编程语言</h2><ul>
+<li><a href="https://www.coursera.org/course/programming1" target="_blank" rel="external">Learn to Program: The Fundamentals</a>：面向<strong>无编程基础或者只有一点基础的人群</strong>，使用<strong>Python</strong>作为教学语言。</li>
+<li><a href="https://www.coursera.org/course/programming2" target="_blank" rel="external">Learn to Program: Crafting Quality Code</a>：如何编写高效与正确的代码。需要有<a href="https://www.coursera.org/course/programming1" target="_blank" rel="external">Learn to Program: The Fundamentals</a>的基础。</li>
+<li><a href="http://cs61a.org/" target="_blank" rel="external">The Structure and Interpretation of Computer Programs</a>：经典的SICP的Python版。</li>
+</ul>
+<h2 id="计算理论"><a href="#计算理论" class="headerlink" title="计算理论"></a>计算理论</h2><ul>
+<li><a href="https://www.youtube.com/playlist?list=PL601FC994BDD963E4" target="_blank" rel="external">Introduction to the Theory of Computation</a></li>
+<li><a href="https://www.coursera.org/course/principlescomputing1" target="_blank" rel="external">Principles of Computing (Part 1)</a>：介绍了CS中基本的数学和编程理论，需要有<strong>Python</strong>基础。</li>
+</ul>
+<h2 id="算法与数据结构"><a href="#算法与数据结构" class="headerlink" title="算法与数据结构"></a>算法与数据结构</h2><ul>
+<li><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/" target="_blank" rel="external">Introduction to Algorithms</a>：MIT的算法导论课，用《算法导论》作为教材，网上可以找到视频资源，网易公开课上有老版的翻译。</li>
+</ul>
+<h1 id="核心课程"><a href="#核心课程" class="headerlink" title="核心课程"></a>核心课程</h1><p>学完了「编程基础」部分的内容后，应该已经可以开发一些简单的程序了，「核心课程」的内容将深入学习计算机科学理论的几个重要的内容。</p>
+<h2 id="数学-1"><a href="#数学-1" class="headerlink" title="数学"></a>数学</h2><ul>
+<li><a href="https://www.coursera.org/course/matrix" target="_blank" rel="external">Coding the Matrix: Linear Algebra through Computer Science Applications</a>：线性代数以及在计算机中的应用。</li>
+<li><a href="http://inst.eecs.berkeley.edu/~cs70/sp16/" target="_blank" rel="external">Discrete Mathematics and Probability Theory</a>：离散数学与概率论。</li>
+</ul>
+<h2 id="计算理论-1"><a href="#计算理论-1" class="headerlink" title="计算理论"></a>计算理论</h2><ul>
+<li><a href="https://www.youtube.com/playlist?list=PLslgisHe5tBM8UTCt1f66oMkpmjCblzkt" target="_blank" rel="external">Theory of Computation - Fall 2011</a>：介绍了机器模型、上下文无关文法、图灵机等，使用的教材是Michael Sipser的*<a href="http://www.amazon.com/Introduction-Theory-Computation-Michael-Sipser/dp/113318779X" target="_blank" rel="external">Introduction to the Theory of Computation</a>。</li>
+</ul>
+<h2 id="算法与数据结构-1"><a href="#算法与数据结构-1" class="headerlink" title="算法与数据结构"></a>算法与数据结构</h2><ul>
+<li><a href="http://www-inst.eecs.berkeley.edu/~cs61b/fa15/" target="_blank" rel="external">Data Structures and Advanced Programming</a></li>
+<li><a href="http://www.cs.berkeley.edu/~jrs/170/" target="_blank" rel="external">Efficient Algorithms and Intractable Problems</a></li>
+</ul>
+<h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><ul>
+<li><a href="https://cs162.eecs.berkeley.edu/" target="_blank" rel="external">Operating Systems and Systems Programming</a>：UCB经典的操作系统课程，介绍了操作系统的基本概念、系统编程、网络、分布式系统、内存分配、多线程等等。</li>
+<li><a href="https://www.edx.org/course/introduction-linux-linuxfoundationx-lfs101x-2#!" target="_blank" rel="external">Introduction to Linux</a>：介绍了Linux以及一些简单的命令行使用。</li>
+</ul>
+<h2 id="程序语言理论"><a href="#程序语言理论" class="headerlink" title="程序语言理论"></a>程序语言理论</h2><ul>
+<li><a href="https://www.youtube.com/playlist?list=PL9D558D49CA734A02" target="_blank" rel="external">Programming Paradigms</a>：编程范式。</li>
+<li><a href="https://www.coursera.org/course/compilers" target="_blank" rel="external">Compilers</a>：Stanford的编译原理课。</li>
+<li><a href="http://freevideolectures.com/Course/2249/Principles-of-Programming-Languages/1" target="_blank" rel="external">Principles of Programming Languages</a></li>
+</ul>
+<h2 id="计算机体系结构"><a href="#计算机体系结构" class="headerlink" title="计算机体系结构"></a>计算机体系结构</h2><ul>
+<li><a href="https://www.youtube.com/playlist?list=PL5PHm2jkkXmgVhh8CHAu9N76TShJqfYDt" target="_blank" rel="external">Computer Architecture</a>：CMU</li>
+<li><a href="https://www.coursera.org/course/comparch" target="_blank" rel="external">Computer Architecture</a></li>
+</ul>
+<h2 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h2><ul>
+<li><a href="http://www.cs.berkeley.edu/~istoica/classes/cs268/10/" target="_blank" rel="external">Computer Networks</a></li>
+<li><a href="https://www.youtube.com/channel/UCb1OiccPJ0wbMZMOleCvhWQ" target="_blank" rel="external">Fundamentals of Computer Networking</a></li>
+</ul>
+<h1 id="编程工具"><a href="#编程工具" class="headerlink" title="编程工具"></a>编程工具</h1><h2 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h2><ul>
+<li>Python: <a href="https://www.jetbrains.com/pycharm/" target="_blank" rel="external">PyCharm</a></li>
+<li>Java:<a href="https://www.jetbrains.com/idea/" target="_blank" rel="external">IntelliJ IDEA</a></li>
+<li>C/C++: <a href="https://www.visualstudio.com/en-us/visual-studio-homepage-vs.aspx" target="_blank" rel="external">Visual Studio</a></li>
+</ul>
+<h2 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h2><ul>
+<li>Emacs/Vim</li>
+<li>Sublime Text 3</li>
+<li>VS Code</li>
+<li>Atom</li>
+</ul>
+<p>并不一定要用Emacs或者Vim，ST其实已经很强大了，足够做日常简单的编辑工作。（这里黑一下Atom，启动速度太感人了，所以放在最后一个。）</p>
+<h2 id="Git-amp-GitHub"><a href="#Git-amp-GitHub" class="headerlink" title="Git &amp; GitHub"></a>Git &amp; GitHub</h2><p>使用版本控制来管理自己平时写的代码。</p>
+<p>推荐阅读：</p>
+<ul>
+<li><a href="https://github.com/geeeeeeeeek/git-recipes/wiki" target="_blank" rel="external">git-recipes</a></li>
+<li><a href="http://git-scm.com/book/zh/v2?f=tt&amp;hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io" target="_blank" rel="external">Pro Git 2nd Edition</a></li>
+<li><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">Git教程 - 廖雪峰</a></li>
+</ul>
+<h1 id="如何克服拖延"><a href="#如何克服拖延" class="headerlink" title="如何克服拖延"></a>如何克服拖延</h1><p>资料是有了，但是拖延症不去学怎么办？</p>
+<ul>
+<li><a href="http://www.pomodorotechnique.com/" target="_blank" rel="external">番茄工作法</a></li>
+</ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href="https://github.com/prakhar1989/awesome-courses" target="_blank" rel="external">https://github.com/prakhar1989/awesome-courses</a></li>
+<li><a href="http://blog.agupieware.com/2014/05/online-learning-bachelors-level.html" target="_blank" rel="external">http://blog.agupieware.com/2014/05/online-learning-bachelors-level.html</a></li>
+<li><a href="https://docs.google.com/spreadsheets/d/1_kdHrT8izbROJNaxGflpcZm2ivsjRGF8j1hMzl3b8O0/htmlview" target="_blank" rel="external">https://docs.google.com/spreadsheets/d/1_kdHrT8izbROJNaxGflpcZm2ivsjRGF8j1hMzl3b8O0/htmlview</a></li>
+<li><a href="https://www.reddit.com/r/programming/wiki/faq" target="_blank" rel="external">https://www.reddit.com/r/programming/wiki/faq</a></li>
+</ul>
+</div></article></li><li class="post-item"><article class="post"><h2 class="post-title"><a href="/2015/12/31/2015-summary/" class="post-link">写在2015年末</a></h2><span class="post-time">Dec 31, 2015</span><div class="post-content"><p>断网了，晚上没有活动，又不想去做一些正事（看书、写代码），游戏也玩腻了，硬盘中也没有什么新的电影，于是便来来写一写2015年罢。</p>
+<p>本来是不打算写所谓的总结文的，一方面没有这个习惯，另一方面过去一年确实过得比较平淡，甚至来说有点失败，不写是有点逃避的意味，不过自欺欺人总不是办法，还是写下来反思一下，也好让新的一年过得比15年好一些。</p>
+<p>想从大脑中搜索一下15年发生了什么大事，发现好像并没有，唯一一件比较大的事就是谈了一次恋爱，虽然最后分手了，不过还是从中学到了很多东西，有些事情做得并没有自己想象的那么好。</p>
+<p>学习方面似乎已经和学校的课程割裂开来了，基本学校的课程没有怎么花时间，所以GPA是低的可以了。编程水平也没有怎么提高，这学期开始看《算法导论》，不过后来事情比较多了之后就暂停了下来。英文水平也不知道具体处在哪个位置，平常也经常阅读英文的资料，看全英文的公开课问题也不是很大，不过单词量应该不是很大，因为阅读的过程中明显感觉到很多单词不认识；口语也不是很好，基本没有动嘴说过；至于写作水平，估计连高中的水平也没有了（高中的时候好歹也经常写作文）。</p>
+<p>过去一年花了太多时间在一些可做可不做的事情上。有一段时间一直在摆弄Emacs，装各种插件，写配置文件，想要什么事情都用Emacs来完成，到头来，效率没有怎么提高，时间却浪费了不少。现在写代码基本不用Emacs了，跟IDE相比，编辑器毕竟只是编辑器，PyCharm写Python甩Emacs好几条街了。还花了很多时间在各种软件的试玩上面，比如各种时间管理工具，各种做笔记的软件，也是发现了一些好的软件，不过按照二八原理来说，收获与付出并不成正比。</p>
+<p>阅读方面，买了Kindle后发现读不读书和用什么工具并没有什么关系，不读书买了Kindle也不会读。大概在Kindle上读的书只有20本左右，远远没有读回本。</p>
+<p>综上，15年确实没有什么值得惊喜的地方，平平淡淡。还是写一写新年的计划吧，即使知道写下来也不一定能够实现，但至少写下来了，有个参考。</p>
+<h2 id="2016目标清单"><a href="#2016目标清单" class="headerlink" title="2016目标清单"></a>2016目标清单</h2><h3 id="编程"><a href="#编程" class="headerlink" title="编程"></a>编程</h3><ul>
+<li>读完《算法导论》，做完上面大部分题目</li>
+<li>读完《计算机程序的构造和解释》</li>
+<li>读完《深入理解计算机系统》</li>
+<li>写一个解释器</li>
+<li>上架一个App</li>
+<li>在Coursera上多刷几门课</li>
+</ul>
+<h3 id="英语"><a href="#英语" class="headerlink" title="英语"></a>英语</h3><ul>
+<li>托福考试100+</li>
+</ul>
+<p>16年争取把英文作为主力语言，阅读、写作都选择用英文来进行。</p>
+<h3 id="健身-amp-跑步"><a href="#健身-amp-跑步" class="headerlink" title="健身&amp;跑步"></a>健身&amp;跑步</h3><ul>
+<li>养成健身的习惯，每周4次，每次1个小时左右</li>
+<li>跑满500KM</li>
+<li>参加一次马拉松</li>
+</ul>
+<p>15年断断续续跑了200公里，没能够坚持每天都跑。</p>
+<h3 id="阅读"><a href="#阅读" class="headerlink" title="阅读"></a>阅读</h3><ul>
+<li>读50本书（非小说），平均下来每个月4本，也就是一周一本</li>
+</ul>
+<p>把刷知乎的时间用来阅读，多利用零碎时间。书的类型先挑自己感兴趣的方面阅读吧，并不一定要把一本书从头到尾读完，有的书通读一遍就行，实在读不下去就放弃。</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>这篇总结的文字写了差不多一个小时，还有4个小时就到新的一年了，在这里提前祝大家新年快乐了。</p>
+</div></article></li><li class="post-item"><article class="post"><h2 class="post-title"><a href="/2015/11/11/squirrel-recommended/" class="post-link">极客的输入法：Squirrel（鼠须管）</a></h2><span class="post-time">Nov 11, 2015</span><div class="post-content"><p>输入法是一个每天都会使用的东西，所以它是否顺手一定程度上决定了每天的文字输入效率。在OS X平台下，一直没有用到一个很顺手的输入法。系统自带的输入法虽然经过几次的版本更新已经有了很大的改进，但是离能用还有很大的距离。所以之前一直凑合着使用百度输入法，不过最近一直遇到一些奇怪的问题，官方又长时间没有进行更新，恰逢之前听说过<code>Squirrel</code>这个输入法，于是就本着试用的心态用了一下，发现异常顺手，并且还有丰富的定制性，于是写一篇文章来介绍一下，也作为自己配置过程中的笔记。</p>
+<p>附上一段Gif效果展示：<br><img src="/image/squirrel-recommended/luoshenfu.gif" alt="luoshenfu"></p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>输入法的官方名称是<code>Rime</code>，中文名是<code>中州韵输入法</code>，但是在各自的平台下面又有不一样的别名。</p>
+<ul>
+<li><p>Linux<br>  中州韵 ｜ ibus-rime</p>
+</li>
+<li><p>Windows<br>  小狼毫 ｜ Weasel</p>
+</li>
+<li><p>OS X<br>  鼠须管 ｜ Squirrel</p>
+</li>
+</ul>
+<p>使用了一段时间发现它有以下几个优点其他输入法是比不上的：</p>
+<ol>
+<li>速度很快，几乎没有延迟的时间</li>
+<li>极强的定制性，如果没有想要的功能还可以直接修改源码</li>
+<li>跨平台</li>
+<li>对于繁体中文支持非常好</li>
+</ol>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>直接从官网下载安装包安装即可。</p>
+<p>Rime官网：<a href="http://rime.im/" target="_blank" rel="external"></a></p>
+<p>使用<code>Ctrl-~</code>进行输入法的选择，这里选择<code>朙月拼音・簡化字</code>即可：<br><img src="/image/squirrel-recommended/rime02.png" alt="rime02"></p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>默认的的配置其实已经可以使用了，但是为了更加符合自己的使用习惯，我们需要做一些自定义的配置。</p>
+<p>所有的配置文件都保存在<code>~/Library/Rime/</code>这个目录下面。</p>
+<p>不建议直接修改原先的配置文件，因为这样更新之后会导致修改的内容丢失，正确的做法是建立<code>custom</code>副本，这样自定义的配置内容会覆盖掉原来的。</p>
+<p>＊注：所有的修改完成了之后都需要重启输入法，快捷键<code>Option+Ctrl+~</code>。</p>
+<h3 id="配置外观"><a href="#配置外观" class="headerlink" title="配置外观"></a>配置外观</h3><p>初始的外观不是很符合自己的审美，可以进行更换主题、更改字体和字号大小等操作来配置成自己喜欢的样子。</p>
+<p>新建配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">touch squirrel.custom.yaml</div></pre></td></tr></table></figure>
+<p>然后将以下代码写入配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">patch:</div><div class="line">  style/color_scheme: dark_temple #主题</div><div class="line">  style/font_point: 18 #字号大小</div><div class="line">  style/horizontal: true #水平显示待选字</div></pre></td></tr></table></figure>
+<h4 id="主题列表"><a href="#主题列表" class="headerlink" title="主题列表"></a>主题列表</h4><p>自带的主题代码:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">#   注：预设的配色方案及代码（指定为 style/color_scheme ）</div><div class="line">#   碧水 - aqua</div><div class="line">#   青天 - azure</div><div class="line">#   明月 - luna</div><div class="line">#   墨池 - ink</div><div class="line">#   孤寺 - lost_temple</div><div class="line">#   暗堂 - dark_temple</div><div class="line">#   星际我争霸 - starcraft</div><div class="line">#   谷歌 - google</div><div class="line">#   晒经石 - solarized_rock</div><div class="line">#   简约白 - clean_white</div></pre></td></tr></table></figure>
+<p>想要更换什么主题只要把代码替换掉就可以了。</p>
+<h4 id="其他一些配置代码及其说明"><a href="#其他一些配置代码及其说明" class="headerlink" title="其他一些配置代码及其说明"></a>其他一些配置代码及其说明</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">style/page_size: 8			             # 设定候选词数目</div><div class="line">style/inline_preedit: false              # 关闭内嵌编码，这样就可以显示首行的拼音</div><div class="line">style/corner_radius: 10                  # 窗口圆角半径</div><div class="line">style/border_height: 0                   # 窗口边界高度，大于圆角半径才有效果</div><div class="line">style/border_width: 0                    # 窗口边界宽度，大于圆角半径才有效果</div><div class="line">style/line_spacing: 1                    # 候选词的行间距</div><div class="line">style/spacing: 5                         # 在非内嵌编码模式下，预编辑和候选词之间的距</div><div class="line">style/font_face: &quot;Hiragino Sans GB W3&quot;   # 字体名称</div></pre></td></tr></table></figure>
+<p>更多的一些配置代码可以在<code>squirrel.yaml</code>中找到。</p>
+<h3 id="定制标点符号"><a href="#定制标点符号" class="headerlink" title="定制标点符号"></a>定制标点符号</h3><p>鼠须管有一个特别的功能就是输入一个标点的时候可以有很多的候选标点让你选择，比如说中括号：</p>
+<p><img src="/image/squirrel-recommended/rime03.png" alt="rime03"></p>
+<p>但是有的时候默认就想选择第一个，多出了一个选择的步骤无疑上会增加击键的次数，所以我们可以通过修改配置来解决这个问题，同时也可以自定义想要输入的符号。</p>
+<p>这里我们使用的是<code>朙月拼音・簡化字</code>，所以需要建立相应的配置文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">touch luna_pinyin_simp.custom.yaml</div></pre></td></tr></table></figure>
+<p>然后写入以下配置（可根据自己的需要修改，这里的代码的意思是在全角和半角的状态下输入<code>&lt;</code>均以<code>《</code>输出）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">patch:</div><div class="line">  punctuator/full_shape:</div><div class="line">    &quot;&lt;&quot;: &quot;《&quot;</div><div class="line">  punctuator/half_shape:</div><div class="line">    &quot;&lt;&quot;: &quot;《&quot;</div><div class="line">  punctuator/full_shape:</div><div class="line">    &quot;&gt;&quot;: &quot;》&quot;</div><div class="line">  punctuator/half_shape:</div><div class="line">    &quot;&gt;&quot;: &quot;》&quot;</div></pre></td></tr></table></figure>
+<h3 id="安静模式"><a href="#安静模式" class="headerlink" title="安静模式"></a>安静模式</h3><p>之前一直使用百度输入法的原因就是因为它有一个安静模式，可以在特定的程序内关闭输入法，比如说<code>Emacs</code>中大部分时间都是不需要输入中文的，所以当切换到这个程序的时候就自动将输入法切换到英文模式。</p>
+<p>需要找到应用软件的<code>Bundle Identifier</code>，保存在<code>Info.plist</code>这个文件当中。</p>
+<p>修改<code>squirrel.custom.yaml</code>（没有自己创建）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">patch:</div><div class="line">  style/color_scheme: dark_temple</div><div class="line">  style/font_point: 18</div><div class="line">  style/horizontal: true</div><div class="line"></div><div class="line">  app_options/com.apple.Xcode:</div><div class="line">    ascii_mode: true</div><div class="line">  app_options/com.runningwithcrayons.Alfred-2:</div><div class="line">    ascii_mode: true</div></pre></td></tr></table></figure>
+<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p>鼠须管默认支持<code>Emacs</code>的快捷键，所以基本上在<code>Emacs</code>中使用到的一些操作方式都可以在这里使用到。</p>
+<ul>
+<li>↑：Control+p</li>
+<li>↓：Control+n</li>
+<li>←：Control+b</li>
+<li>→：Control+f</li>
+<li>上頁：Alt+v</li>
+<li>下頁：Control+v</li>
+<li>句首：Control+a</li>
+<li>句末：Control+e</li>
+<li>回退：Control+h</li>
+<li>刪除：Control+d</li>
+<li>清空：Control+g</li>
+<li>刪詞：Control+k</li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>完成以上的配置之后基本上就能够用得很顺手了，更多高级的配置方法可以参考官方的文档：<a href="http://rime.im/docs/" target="_blank" rel="external">幫助與反饋</a></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a href="http://rime.im/docs/" target="_blank" rel="external">官方文档</a></li>
+<li><a href="http://www.dreamxu.com/install-config-squirrel/" target="_blank" rel="external">安装及配置 Mac 上的 Rime 输入法——鼠鬚管 (Squirrel)</a></li>
+</ul>
+</div></article></li></ul><div class="paginator"><a href="/page/2/" class="next"><span>Next</span><i class="iconfont icon-right"></i></a></div></section><footer><div class="social"><a href="mailto:forrestchang7@gmail.com" class="iconfont icon-email"> </a><a href="/atom.xml" class="iconfont icon-rss"> </a></div><div class="copyright"><p class="power">Powered by <a href="https://hexo.io/">Hexo</a> and Theme by <a href="https://github.com/ahonn/hexo-theme-even"> Even</a></p><p class="since">&copy;2016<span class="heart"><i class="iconfont icon-heart"></i></span><span class="author">Tisoga</span></p></div><label id="back2top"><i class="iconfont icon-up"></i></label></footer></div><script src="/js/zepto.min.js"></script><script src="/js/theme.js"></script></body></html>
