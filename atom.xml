@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://forrestchang.github.io/"/>
-  <updated>2016-09-07T06:41:36.000Z</updated>
+  <updated>2016-09-07T08:20:32.000Z</updated>
   <id>http://forrestchang.github.io/</id>
   
   <author>
@@ -20,11 +20,10 @@
     <link href="http://forrestchang.github.io/2016/08/01/github-combo-plan/"/>
     <id>http://forrestchang.github.io/2016/08/01/github-combo-plan/</id>
     <published>2016-08-01T02:56:29.000Z</published>
-    <updated>2016-09-07T06:41:36.000Z</updated>
+    <updated>2016-09-07T08:20:32.000Z</updated>
     
     <content type="html"><![CDATA[<p>GitHub 改版之后貌似就不显示 Longest streak 的时间了，不过用了<a href="https://chrome.google.com/webstore/detail/isometric-contributions/mjoedlfflcchnleknnceiplgaeoegien" target="_blank" rel="external">Isometric Contributions</a>这个 Chrome 插件还是可以看到的：</p>
 <p><img src="/media/14700204753572.jpg" alt=""></p>
-<a id="more"></a>
 <p>中间空白了一大段是因为生病住院。</p>
 <p>虽说追求 GitHub 的连击没有什么意义，但是至少可以一定程度上反映是做了一些微小的工作的，另外必须给自己一些规则，要不然每天 update readme 也算 commit 就没什么意义了。</p>
 <ol>
@@ -38,8 +37,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;GitHub 改版之后貌似就不显示 Longest streak 的时间了，不过用了&lt;a href=&quot;https://chrome.google.com/webstore/detail/isometric-contributions/mjoedlfflcchnleknnceiplgaeoegien&quot;&gt;Isometric Contributions&lt;/a&gt;这个 Chrome 插件还是可以看到的：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/media/14700204753572.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;GitHub 改版之后貌似就不显示 Longest streak 的时间了，不过用了&lt;a href=&quot;https://chrome.google.com/webstore/detail/isometric-contributions/mjoedlfflcchnleknnce
     
     </summary>
     
@@ -55,10 +53,9 @@
     <link href="http://forrestchang.github.io/2016/07/17/the-python-tutorial/"/>
     <id>http://forrestchang.github.io/2016/07/17/the-python-tutorial/</id>
     <published>2016-07-17T12:34:25.000Z</published>
-    <updated>2016-09-07T06:42:14.000Z</updated>
+    <updated>2016-09-07T08:20:31.000Z</updated>
     
     <content type="html"><![CDATA[<p><em>The Python Tutorial</em> 是很好的学习资源，之前已经粗略的读过一遍，有不少细节性的东西都被略过了，这次详细地阅读一遍，顺便记录一些笔记，以供之后参考使用</p>
-<a id="more"></a>
 <h2 id="Data-Structures"><a href="#Data-Structures" class="headerlink" title="Data Structures"></a>Data Structures</h2><h3 id="More-on-Lists"><a href="#More-on-Lists" class="headerlink" title="More on Lists"></a>More on Lists</h3><ul>
 <li><code>list.append(x)</code>: Equivalent to <code>a[len(a):] = [x]</code></li>
 <li><code>list.extend(L)</code>: Extend the list by appending all the items in the given list. Equivalent to <code>a[len(a):] = L</code></li>
@@ -150,6 +147,7 @@
     <summary type="html">
     
       &lt;p&gt;&lt;em&gt;The Python Tutorial&lt;/em&gt; 是很好的学习资源，之前已经粗略的读过一遍，有不少细节性的东西都被略过了，这次详细地阅读一遍，顺便记录一些笔记，以供之后参考使用&lt;/p&gt;
+&lt;h2 id=&quot;Data-Structures&quot;&gt;&lt;a href=&quot;#Data-
     
     </summary>
     
@@ -165,10 +163,9 @@
     <link href="http://forrestchang.github.io/2016/07/17/virtualenv-notes/"/>
     <id>http://forrestchang.github.io/2016/07/17/virtualenv-notes/</id>
     <published>2016-07-16T22:49:53.000Z</published>
-    <updated>2016-09-07T06:42:20.000Z</updated>
+    <updated>2016-09-07T08:20:30.000Z</updated>
     
     <content type="html"><![CDATA[<p>记录一些有关 virtualenv 的使用笔记。</p>
-<a id="more"></a>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>直接使用 pip 来进行安装：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo pip install virtualenv</div></pre></td></tr></table></figure>
 <h2 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h2><p>主要用来创建隔离的 Python 开发环境，比如说一个项目需要用到 2.7 的库，另一个项目需要用到 3.0 的库，我们就可以使用  virtualenv 来分别给这两个项目创建虚拟的 Python 环境，这样可以有效的避免冲突。</p>
@@ -197,6 +194,8 @@
     <summary type="html">
     
       &lt;p&gt;记录一些有关 virtualenv 的使用笔记。&lt;/p&gt;
+&lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;p&gt;直接使用 pip 来进行安装：&lt;/p&gt;
+&lt;figure class=&quot;hig
     
     </summary>
     
@@ -214,10 +213,9 @@
     <link href="http://forrestchang.github.io/2016/04/15/swift-arc-notes/"/>
     <id>http://forrestchang.github.io/2016/04/15/swift-arc-notes/</id>
     <published>2016-04-15T06:22:54.000Z</published>
-    <updated>2016-09-07T06:42:26.000Z</updated>
+    <updated>2016-09-07T08:20:28.000Z</updated>
     
     <content type="html"><![CDATA[<p>这篇文章是在阅读《The Swift Programming Language》Automatic Reference Counting（ARC，自动引用计数）一章时做的一些笔记，同时参考了其他的一些资料。</p>
-<a id="more"></a>
 <p>在早期的 iOS 开发中，内存管理是由开发者手动来完成的。因为传统的垃圾回收机制对于移动平台来说十分低效，苹果采用的是引用计数（RC，Reference Counting）的方式来管理内存，开发者需要通过手工的方式增加或减少一个实例的引用计数。在 iOS 5 之后，引入了 ARC 自动引用计数，使得开发者不需要手动地调用 <code>retain</code> 和 <code>release</code> 来管理引用计数，但是实际上这些方法还是会被调用，只不过是交给了编译器来完成，编译器会在合适的地方帮我们加入这些方法。</p>
 <p><strong>什么是自动引用计数？</strong></p>
 <p>每当你创建一个类的实例的时候，ARC 便会自动分配一块内存空间来存放这个实例的信息，当这个实例不再被使用的时候，ARC 便释放实例所占用的内存。一般每个被管理的实例都会与一个引用计数器相连，这个计数器保存着当前实例被引用的次数，一旦创建一个新的引用指向这个实例，引用计数器便加 1，每当指向该实例的引用失效，引用计数器便减 1，当某个实例的引用计数器变成 0 的时候，这个实例就会被立即销毁。</p>
@@ -276,6 +274,7 @@
     <summary type="html">
     
       &lt;p&gt;这篇文章是在阅读《The Swift Programming Language》Automatic Reference Counting（ARC，自动引用计数）一章时做的一些笔记，同时参考了其他的一些资料。&lt;/p&gt;
+&lt;p&gt;在早期的 iOS 开发中，内存管理是由开发者手动来完
     
     </summary>
     
@@ -293,10 +292,9 @@
     <link href="http://forrestchang.github.io/2016/04/10/productivity-programmer-01/"/>
     <id>http://forrestchang.github.io/2016/04/10/productivity-programmer-01/</id>
     <published>2016-04-10T12:12:57.000Z</published>
-    <updated>2016-09-07T06:42:31.000Z</updated>
+    <updated>2016-09-07T08:20:27.000Z</updated>
     
     <content type="html"><![CDATA[<p>两年前，曾经写过一篇有关时间管理的<a href="http://forrestchang.github.io/2014/02/12/time-management/">文章</a>，那个时候还在上高二，对于时间管理仅仅是有一点肤浅的了解，自然写出来的文字也是比较幼稚的。经过两年的实践，积累了很多时间管理的经验，想要拿出来分享一下。预计会写一个系列，包括使用的工具和日常的 Workflow。</p>
-<a id="more"></a>
 <p>日常使用的工具有这些：</p>
 <ul>
 <li>纸质笔记本（Moleskine）</li>
@@ -395,7 +393,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;两年前，曾经写过一篇有关时间管理的&lt;a href=&quot;http://forrestchang.github.io/2014/02/12/time-management/&quot;&gt;文章&lt;/a&gt;，那个时候还在上高二，对于时间管理仅仅是有一点肤浅的了解，自然写出来的文字也是比较幼稚的。经过两年的实践，积累了很多时间管理的经验，想要拿出来分享一下。预计会写一个系列，包括使用的工具和日常的 Workflow。&lt;/p&gt;
+      &lt;p&gt;两年前，曾经写过一篇有关时间管理的&lt;a href=&quot;http://forrestchang.github.io/2014/02/12/time-management/&quot;&gt;文章&lt;/a&gt;，那个时候还在上高二，对于时间管理仅仅是有一点肤浅的了解，自然写出来的文字也是比较幼稚的。经
     
     </summary>
     
@@ -415,10 +413,9 @@
     <link href="http://forrestchang.github.io/2016/03/20/2016-week-12/"/>
     <id>http://forrestchang.github.io/2016/03/20/2016-week-12/</id>
     <published>2016-03-20T14:54:04.000Z</published>
-    <updated>2016-09-07T06:42:49.000Z</updated>
+    <updated>2016-09-07T08:20:25.000Z</updated>
     
     <content type="html"><![CDATA[<p>这周是2016年的第12周，上一周没有写 Roundup。</p>
-<a id="more"></a>
 <p>这周的主题是<code>跑步</code>，大连的天气开始变暖，终于可以去操场跑步了，不过由于学校在海边，风还是很大的。今天跑完了一个线上马拉松（10km 健康赛），明天大连国际马拉松开始开放报名，打算参加半程马拉松，不知道能不能报上名，毕竟今年有一个目标就是参加一次马拉松（全马或者半马）。比赛日期是5.22，需要利用剩余的两个月的时间积累一下跑量（一周跑5次，每次10km）。</p>
 <p>编程方面，本来打算利用 Flask 写一个网站的，结果拖到今天 Document 也只看了一点点，很显然只能移到下一周来完成了，除了这个就改了改之前写的一些代码。从上周开始看 CSAPP 这本书，看的时候顺带做习题（所有的题目），所以进度很慢，大概每天几页的样子，CMU 的几个 lab 还没有开始做，等看完一部分就去完成这部分的 lab。</p>
 <p>阅读方面，没有读任何书，大部分的时间还是用在了浅阅读上，比如看知乎和 Quora 上的各种问答，阅读别人写的博客之类的。下周的目标是读完《你的灯亮着吗》这本书。</p>
@@ -430,6 +427,7 @@
     <summary type="html">
     
       &lt;p&gt;这周是2016年的第12周，上一周没有写 Roundup。&lt;/p&gt;
+&lt;p&gt;这周的主题是&lt;code&gt;跑步&lt;/code&gt;，大连的天气开始变暖，终于可以去操场跑步了，不过由于学校在海边，风还是很大的。今天跑完了一个线上马拉松（10km 健康赛），明天大连国际马拉松开始开放报名，打
     
     </summary>
     
@@ -445,10 +443,9 @@
     <link href="http://forrestchang.github.io/2016/02/24/apple-music-classical-reading/"/>
     <id>http://forrestchang.github.io/2016/02/24/apple-music-classical-reading/</id>
     <published>2016-02-24T07:32:19.000Z</published>
-    <updated>2016-09-07T06:42:56.000Z</updated>
+    <updated>2016-09-07T08:20:25.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Apple-Music"><a href="#Apple-Music" class="headerlink" title="Apple Music"></a>Apple Music</h3><p>自从Apple Music（以下简称「AM」）发布以来，就一直在使用，从最开始的免费试用到现在每个月10￥的订阅。自从Windows时代就使用iTunes听音乐了（当时有一部iPod），在没有AM的时候，都是从论坛下好别人买的专辑来听。一方面在国内想要在iTunes Store上购买专辑过于麻烦（两个账号需要来回切换），另一方面作为一个学生党iTunes Store上两首歌就相当于一顿饭的价钱对于我来说也有点小贵了，所以AM刚推出的时候，还是比较开心的，没想到入华后价格竟然只要10￥每月，就只相当于两首歌的钱！</p>
-<a id="more"></a>
 <p>这几个月使用下来，发现还是存在不少的问题。</p>
 <ol>
 <li>操作逻辑复杂。例如听到一首好听的歌，标注了心之后，它是不会出现在你的播放列表中的，因为标注心只是为了优化推荐的算法。所以每次听到一首好听的曲子，都要进行两个步骤：先添加到库中，再标注心。这样才会在你的Smart Playlist中显示出来。这个估计是iTunes的遗留问题，因为iTunes是以Library的方式来管理的，所以需要先添加进Library中，才能进行进一步的操作，不过AM作为一个流媒体音乐服务，这样做显然是多此一举了。</li>
@@ -471,7 +468,7 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;Apple-Music&quot;&gt;&lt;a href=&quot;#Apple-Music&quot; class=&quot;headerlink&quot; title=&quot;Apple Music&quot;&gt;&lt;/a&gt;Apple Music&lt;/h3&gt;&lt;p&gt;自从Apple Music（以下简称「AM」）发布以来，就一直在使用，从最开始的免费试用到现在每个月10￥的订阅。自从Windows时代就使用iTunes听音乐了（当时有一部iPod），在没有AM的时候，都是从论坛下好别人买的专辑来听。一方面在国内想要在iTunes Store上购买专辑过于麻烦（两个账号需要来回切换），另一方面作为一个学生党iTunes Store上两首歌就相当于一顿饭的价钱对于我来说也有点小贵了，所以AM刚推出的时候，还是比较开心的，没想到入华后价格竟然只要10￥每月，就只相当于两首歌的钱！&lt;/p&gt;
+      &lt;h3 id=&quot;Apple-Music&quot;&gt;&lt;a href=&quot;#Apple-Music&quot; class=&quot;headerlink&quot; title=&quot;Apple Music&quot;&gt;&lt;/a&gt;Apple Music&lt;/h3&gt;&lt;p&gt;自从Apple Music（以下简称「AM」）发布以来，就一直在使用
     
     </summary>
     
@@ -491,10 +488,9 @@
     <link href="http://forrestchang.github.io/2016/02/13/self-learning-guide/"/>
     <id>http://forrestchang.github.io/2016/02/13/self-learning-guide/</id>
     <published>2016-02-13T07:26:24.000Z</published>
-    <updated>2016-09-07T06:43:01.000Z</updated>
+    <updated>2016-09-07T08:20:24.000Z</updated>
     
     <content type="html"><![CDATA[<p>之前有不少学弟学妹问我如何学习编程，根据DRY法则（Don’t Repeat Yourself），还是把自己学习过程中的一些经验整理成一篇博客吧。由于本人目前也处在学习的阶段，文章中列出来的内容也并未全部学习过，所以文章的客观性可能存在一些问题，还望读者自行判断。</p>
-<a id="more"></a>
 <p>这份指南会不定期更新，有好的建议也可以留言或者给我发邮件。</p>
 <h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><p>需要的所有工具就是一台可以连接上网络的电脑以及你本人。</p>
 <h2 id="科学上网"><a href="#科学上网" class="headerlink" title="科学上网"></a>科学上网</h2><p>很可惜，即使是现在，大部分学习计算机的学生还是不会科学上网。在当前的网络环境下，不会科学上网，意味着你不能用Google查资料，不能再Reddit看最新的资讯，需要忍受龟速的GitHub，云云。然而，科学上网本身却是一件成本非常低的事情，不想折腾的话，一年花个几百块钱买个现成的服务；有折腾精神的人，可以买个服务器自己假设架设上网工具。这一步很重要，不能跳过，否则后面指南中的许多内容对你来说只能是404了。</p>
@@ -610,6 +606,7 @@
     <summary type="html">
     
       &lt;p&gt;之前有不少学弟学妹问我如何学习编程，根据DRY法则（Don’t Repeat Yourself），还是把自己学习过程中的一些经验整理成一篇博客吧。由于本人目前也处在学习的阶段，文章中列出来的内容也并未全部学习过，所以文章的客观性可能存在一些问题，还望读者自行判断。&lt;/p&gt;
+
     
     </summary>
     
@@ -629,10 +626,9 @@
     <link href="http://forrestchang.github.io/2015/12/31/2015-summary/"/>
     <id>http://forrestchang.github.io/2015/12/31/2015-summary/</id>
     <published>2015-12-31T07:24:34.000Z</published>
-    <updated>2016-09-07T06:43:06.000Z</updated>
+    <updated>2016-09-07T08:20:23.000Z</updated>
     
     <content type="html"><![CDATA[<p>断网了，晚上没有活动，又不想去做一些正事（看书、写代码），游戏也玩腻了，硬盘中也没有什么新的电影，于是便来来写一写2015年罢。</p>
-<a id="more"></a>
 <p>本来是不打算写所谓的总结文的，一方面没有这个习惯，另一方面过去一年确实过得比较平淡，甚至来说有点失败，不写是有点逃避的意味，不过自欺欺人总不是办法，还是写下来反思一下，也好让新的一年过得比15年好一些。</p>
 <p>想从大脑中搜索一下15年发生了什么大事，发现好像并没有，唯一一件比较大的事就是谈了一次恋爱，虽然最后分手了，不过还是从中学到了很多东西，有些事情做得并没有自己想象的那么好。</p>
 <p>学习方面似乎已经和学校的课程割裂开来了，基本学校的课程没有怎么花时间，所以GPA是低的可以了。编程水平也没有怎么提高，这学期开始看《算法导论》，不过后来事情比较多了之后就暂停了下来。英文水平也不知道具体处在哪个位置，平常也经常阅读英文的资料，看全英文的公开课问题也不是很大，不过单词量应该不是很大，因为阅读的过程中明显感觉到很多单词不认识；口语也不是很好，基本没有动嘴说过；至于写作水平，估计连高中的水平也没有了（高中的时候好歹也经常写作文）。</p>
@@ -667,6 +663,7 @@
     <summary type="html">
     
       &lt;p&gt;断网了，晚上没有活动，又不想去做一些正事（看书、写代码），游戏也玩腻了，硬盘中也没有什么新的电影，于是便来来写一写2015年罢。&lt;/p&gt;
+&lt;p&gt;本来是不打算写所谓的总结文的，一方面没有这个习惯，另一方面过去一年确实过得比较平淡，甚至来说有点失败，不写是有点逃避的意味，不过自
     
     </summary>
     
@@ -682,10 +679,9 @@
     <link href="http://forrestchang.github.io/2015/11/11/squirrel-recommended/"/>
     <id>http://forrestchang.github.io/2015/11/11/squirrel-recommended/</id>
     <published>2015-11-11T07:14:09.000Z</published>
-    <updated>2016-09-07T06:43:12.000Z</updated>
+    <updated>2016-09-07T08:20:22.000Z</updated>
     
     <content type="html"><![CDATA[<p>输入法是一个每天都会使用的东西，所以它是否顺手一定程度上决定了每天的文字输入效率。在OS X平台下，一直没有用到一个很顺手的输入法。系统自带的输入法虽然经过几次的版本更新已经有了很大的改进，但是离能用还有很大的距离。所以之前一直凑合着使用百度输入法，不过最近一直遇到一些奇怪的问题，官方又长时间没有进行更新，恰逢之前听说过<code>Squirrel</code>这个输入法，于是就本着试用的心态用了一下，发现异常顺手，并且还有丰富的定制性，于是写一篇文章来介绍一下，也作为自己配置过程中的笔记。</p>
-<a id="more"></a>
 <p>附上一段Gif效果展示：<br><img src="/image/squirrel-recommended/luoshenfu.gif" alt="luoshenfu"></p>
 <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>输入法的官方名称是<code>Rime</code>，中文名是<code>中州韵输入法</code>，但是在各自的平台下面又有不一样的别名。</p>
 <ul>
@@ -755,7 +751,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;输入法是一个每天都会使用的东西，所以它是否顺手一定程度上决定了每天的文字输入效率。在OS X平台下，一直没有用到一个很顺手的输入法。系统自带的输入法虽然经过几次的版本更新已经有了很大的改进，但是离能用还有很大的距离。所以之前一直凑合着使用百度输入法，不过最近一直遇到一些奇怪的问题，官方又长时间没有进行更新，恰逢之前听说过&lt;code&gt;Squirrel&lt;/code&gt;这个输入法，于是就本着试用的心态用了一下，发现异常顺手，并且还有丰富的定制性，于是写一篇文章来介绍一下，也作为自己配置过程中的笔记。&lt;/p&gt;
+      &lt;p&gt;输入法是一个每天都会使用的东西，所以它是否顺手一定程度上决定了每天的文字输入效率。在OS X平台下，一直没有用到一个很顺手的输入法。系统自带的输入法虽然经过几次的版本更新已经有了很大的改进，但是离能用还有很大的距离。所以之前一直凑合着使用百度输入法，不过最近一直遇到一些奇怪
     
     </summary>
     
@@ -773,11 +769,10 @@
     <link href="http://forrestchang.github.io/2015/10/10/use-emacs-build-blog/"/>
     <id>http://forrestchang.github.io/2015/10/10/use-emacs-build-blog/</id>
     <published>2015-10-10T12:02:09.000Z</published>
-    <updated>2016-09-07T06:43:20.000Z</updated>
+    <updated>2016-09-07T08:20:21.000Z</updated>
     
     <content type="html"><![CDATA[<p>这篇文章是教程性质的，尽量写得详细一点。</p>
 <p>这个博客就是使用Emacs org-mode + GitHub Pages搭建的，博客的主题是org-mode官网的主题，非常的简洁；评论采用的disqus，访问统计使用的是Google和Baidu的统计代码。</p>
-<a id="more"></a>
 <p>另外，本文中进行操作的环境是在OSX下完成的，Windows用户请自行参考脑补:)</p>
 <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>之前也折腾过好多的博客，Jekyll、Hexo、Farbox等，这些静态博客生成器都有一个共同点，都是采用的Markdown语法来进行书写的，而自己平时记笔记都是使用的Emacs org-mode，这样就导致了记笔记和写博客两个过程分裂开来了。</p>
 <p>昨晚偶然看到<a href="http://dirlt.com/" target="_blank" rel="external">dirtysalt’s homepage</a>，被深深的震撼了，博主写了很多的干货，专注与博客的内容而不是博客的外观。而自己也是一个极简主义者，觉得这样的博客样式还是挺好看的（很有Web1.0时代的复古风啊）。恰巧博主也是使用的Emacs来写博客，于是便花了一个上午的时间搜集相关的资料并把博客搭建起来了。</p>
@@ -859,10 +854,9 @@
     <link href="http://forrestchang.github.io/2014/02/12/time-management/"/>
     <id>http://forrestchang.github.io/2014/02/12/time-management/</id>
     <published>2014-02-12T10:19:03.000Z</published>
-    <updated>2016-09-07T06:42:38.000Z</updated>
+    <updated>2016-09-07T08:20:26.000Z</updated>
     
     <content type="html"><![CDATA[<p>初次看到时间管理这个概念大概是高二的时候，在此之前，我一直在使用所谓的To-do List来管理自己每天的学习任务（那个时候还不知道）。知道了时间管理这个概念后，惊讶于原来自己早就在对时间进行管理了，只不过最简单的管理方式（后来实践表明，仅仅一个任务清单就足够了）。</p>
-<a id="more"></a>
 <p>在知道了时间管理这个概念之后，我开始大量的阅读关于时间管理的文章，期间又接触到了GTD（Getting Things Done）这个个人管理系统，还专门读了一遍David的那本书。然后就是不断地下载软件、使用、删除、下载……从PC端到iOS到纸笔GTD都试过。突然发现，自己陷入到一个怪圈，主要工作不是变成了完成任务，而变成了寻找“更高效”的软件系统。相信人都会陷入到这个怪圈中，然后时间一步一步地被吞噬掉。然后你开始发现，最开始计划好要做的事情依旧没做好，甚至要找的高效软件也没有找到，因为你总是认为还会有更高效更方便的软件。</p>
 <p>时间管理的初衷不是最大化的利用时间吗？而现在却浪费了更多的时间。这又是为什么呢？</p>
 <p><strong>懒惰</strong>。是的，时间管理只不过是一个借口，一个用来迷惑自己“我是为了更高效的利用时间”的借口。说白了就是自己的懒惰，你就是不想完成任务，然后把“时间管理”当成幌子，找工具、看文章，试想一下，这些事情与你要完成的任务相比，哪一个更加困难？我想应该是你的任务更加困难吧，毕竟看文章只要看就行了。</p>
