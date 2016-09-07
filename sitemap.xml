@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://forrestchang.github.io/2016/08/01/github-combo-plan/</loc>
+    
+    <lastmod>2016-09-07T06:40:36.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://forrestchang.github.io/2016/07/17/the-python-tutorial/</loc>
     
     <lastmod>2016-08-29T14:39:34.000Z</lastmod>
@@ -75,13 +82,6 @@
     <loc>http://forrestchang.github.io/2016/07/17/virtualenv-notes/</loc>
     
     <lastmod>2016-08-29T14:37:24.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://forrestchang.github.io/2016/08/01/github-combo-plan/</loc>
-    
-    <lastmod>2016-08-29T14:36:54.000Z</lastmod>
     
   </url>
   

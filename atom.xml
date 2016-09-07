@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://forrestchang.github.io/"/>
-  <updated>2016-08-29T14:36:54.000Z</updated>
+  <updated>2016-09-07T06:40:36.000Z</updated>
   <id>http://forrestchang.github.io/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="http://forrestchang.github.io/2016/08/01/github-combo-plan/"/>
     <id>http://forrestchang.github.io/2016/08/01/github-combo-plan/</id>
     <published>2016-08-01T02:56:29.000Z</published>
-    <updated>2016-08-29T14:36:54.000Z</updated>
+    <updated>2016-09-07T06:40:36.000Z</updated>
     
     <content type="html"><![CDATA[<p>GitHub 改版之后貌似就不显示 Longest streak 的时间了，不过用了<a href="https://chrome.google.com/webstore/detail/isometric-contributions/mjoedlfflcchnleknnceiplgaeoegien" target="_blank" rel="external">Isometric Contributions</a>这个 Chrome 插件还是可以看到的：</p>
+<a id="more"></a>
 <p><img src="/media/14700204753572.jpg" alt=""></p>
 <p>中间空白了一大段是因为生病住院。</p>
 <p>虽说追求 GitHub 的连击没有什么意义，但是至少可以一定程度上反映是做了一些微小的工作的，另外必须给自己一些规则，要不然每天 update readme 也算 commit 就没什么意义了。</p>
@@ -37,7 +38,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;GitHub 改版之后貌似就不显示 Longest streak 的时间了，不过用了&lt;a href=&quot;https://chrome.google.com/webstore/detail/isometric-contributions/mjoedlfflcchnleknnce
+      &lt;p&gt;GitHub 改版之后貌似就不显示 Longest streak 的时间了，不过用了&lt;a href=&quot;https://chrome.google.com/webstore/detail/isometric-contributions/mjoedlfflcchnleknnceiplgaeoegien&quot;&gt;Isometric Contributions&lt;/a&gt;这个 Chrome 插件还是可以看到的：&lt;/p&gt;
     
     </summary>
     
