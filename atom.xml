@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://forrestchang.github.io/"/>
-  <updated>2016-09-25T03:19:53.000Z</updated>
+  <updated>2016-10-02T15:04:29.000Z</updated>
   <id>http://forrestchang.github.io/</id>
   
   <author>
@@ -14,6 +14,53 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2016 Week 40 Roundup</title>
+    <link href="http://forrestchang.github.io/2016/10/02/2016-week-40/"/>
+    <id>http://forrestchang.github.io/2016/10/02/2016-week-40/</id>
+    <published>2016-10-02T14:17:10.000Z</published>
+    <updated>2016-10-02T15:04:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>这周恰逢国庆假期，休息了两天（感觉今天貌似也在休息），明天学校断电断网（大农村条件艰苦），所以应该要出去一天，暂时的行程还没有安排。</p>
+<h2 id="编程"><a href="#编程" class="headerlink" title="编程"></a>编程</h2><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>首先收到了 <a href="http://fdu.hackx.org/#/" target="_blank" rel="external">HACKxFDU</a> 的通过邮件，所以 14 号会去上海打一波酱油，以目前的水平如果不抱大腿感觉完全没有拿奖的可能性。主要的目的应该不是去参赛，可能会去找找下学期实习的目标，顺便认识一些大牛(≧▽≦)/</p>
+<p>上周说要看完《Flask Web Development》，但是实际上并没有看完，大概看了一半的样子，期间还看了一些 Flask 的源码，打算边看书边看源码，然后之后再重新造一遍轮子。</p>
+<h3 id="计划"><a href="#计划" class="headerlink" title="计划"></a>计划</h3><p>之前就一直觉得自己的 Python 水平好像一直止步不前（传说中的半吊子水平），要做什么东西都是先 Google 一下用什么库，有些标准库中的内容也很不熟悉。昨天被学长问道最近在学什么，我说在看 Flask，然后就被鄙视了，然后通过对话才意识到 Library Reference 还没有完整的刷过，Python 的基础还是比较薄弱的。现在是个人就会 Python，不过刷过 Library Reference 的人应该还是不多的。</p>
+<p>所以接下去的计划应该是：</p>
+<ol>
+<li>继续看 Flask（被鄙视也要看啊，开了头不能半途而废……），把源码看懂然后自己山寨一个，尝试着写一些基于 Flask 的 Project；</li>
+<li>刷 Python Library Reference，用 ipython notebook 来做笔记，先刷一遍，不会的东西先跳过；</li>
+<li>刷一下算法，这个是为了下学期的面试准备的，CLRS 没有看完，但是感觉想要看完会花掉不少的时间，看不看到时候再说，先把 LeetCode 刷一遍，然后《编程之美》、《编程珠玑》、《剑指 offer》这几本书刷一遍。</li>
+</ol>
+<p>这学期估计做完上面的事情时间就用得差不多了，下学期开始的时候就要为参加 GSoC 做一些准备了。</p>
+<p>下周要做的事情：</p>
+<ol>
+<li>继续刷《Flask Web Development》，争取看完</li>
+<li>看完 Python Library Reference 2、3、4节</li>
+</ol>
+<h2 id="日语"><a href="#日语" class="headerlink" title="日语"></a>日语</h2><h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><p>这周貌似完全没有学习日语！所以上周列的计划也没有完成，尴尬！时间分配上面还是有一点问题了，每天有计划今天计算机的东西要看哪些，但是日语的东西貌似一点也没有计划，想到了就看一点，所以没有想到的时候就完全不看了-_-|||</p>
+<h3 id="计划-1"><a href="#计划-1" class="headerlink" title="计划"></a>计划</h3><p>现在有点后悔抱名 N3 的考试了，以来 N3 没什么卵用，而来貌似自己好像并没有太多时间学习日语，还不如好好学习一下然后直接考 N2 或者 N1，但是如果不去考试的话就浪费了 350 大洋！</p>
+<p>五十音基本上是会了，所以还是直接看《大家的日语》这本书，一天学习一课的样子，学习到第 5 课。</p>
+<h2 id="游戏"><a href="#游戏" class="headerlink" title="游戏"></a>游戏</h2><p>最近发售的大作有点多啊，首先是 PC 上的《文明6》，然后 11 月份还有《精灵宝可梦 太阳·月亮》，其实主要是想玩日月……</p>
+<h3 id="Pokemon-ORAS"><a href="#Pokemon-ORAS" class="headerlink" title="Pokemon ORAS"></a>Pokemon ORAS</h3><p>这周好像 OR 也没有玩多久，主要就是战斗宅邸推塔，今天超级单打打到 45 层失误跪了，目前的队伍还不是很稳，还要重新组一个队伍。另一方面打了几把排位，语言的关系对有些技能不是很熟悉，所以吃了好几次亏，而且没玩过 xy 导致 gen6 的精灵基本不认识。</p>
+<p>入了对战坑之后发现这游戏根本不是小孩子玩的，虽说是「子供向」的游戏，但是对战方面实在是太硬核了，要了解的东西太多，玩了 70h+ 几乎才了解一些皮毛。不过日月出来了之后应该会好些，不会总是看到技能就要查图鉴是干嘛的了。</p>
+<p>顺便 Po 一张训练家卡片，欢迎来对战 or 交<del>易</del>换（不要介意用 gen5 的形象，方缘地区男主的帽子实在是太2了）</p>
+<p><img src="/media/trainercard-Tisoga.png" alt="trainercard-Tisoga"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这周恰逢国庆假期，休息了两天（感觉今天貌似也在休息），明天学校断电断网（大农村条件艰苦），所以应该要出去一天，暂时的行程还没有安排。&lt;/p&gt;
+&lt;h2 id=&quot;编程&quot;&gt;&lt;a href=&quot;#编程&quot; class=&quot;headerlink&quot; title=&quot;编程&quot;&gt;&lt;/a&gt;编程&lt;/h2
+    
+    </summary>
+    
+      <category term="生活笔记" scheme="http://forrestchang.github.io/categories/%E7%94%9F%E6%B4%BB%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Roundup" scheme="http://forrestchang.github.io/tags/Roundup/"/>
+    
+  </entry>
   
   <entry>
     <title>2016 Week 39 Roundup</title>
