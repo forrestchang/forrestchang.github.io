@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://forrestchang.github.io/"/>
-  <updated>2016-10-02T15:04:29.000Z</updated>
+  <updated>2016-10-10T00:47:15.000Z</updated>
   <id>http://forrestchang.github.io/</id>
   
   <author>
@@ -16,11 +16,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>2016 Week 41 Roundup</title>
+    <link href="http://forrestchang.github.io/2016/10/10/2016-week-41/"/>
+    <id>http://forrestchang.github.io/2016/10/10/2016-week-41/</id>
+    <published>2016-10-10T00:27:42.000Z</published>
+    <updated>2016-10-10T00:47:15.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>这周过得很郁闷。</p>
+<p>写了一大段全删了，大概就是认识了一个还比较喜欢的姑娘，但是她的种种行为让我觉得她很没礼貌，结束了最后一段尴尬的对话之后，把她拉黑了。</p>
+<p>我不知道为什么要在这里写这个，也不知道为什么要发这篇博客，大概是不想让每周的 Roundup 断掉吧。</p>
+<p>就这样。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这周过得很郁闷。&lt;/p&gt;
+&lt;p&gt;写了一大段全删了，大概就是认识了一个还比较喜欢的姑娘，但是她的种种行为让我觉得她很没礼貌，结束了最后一段尴尬的对话之后，把她拉黑了。&lt;/p&gt;
+&lt;p&gt;我不知道为什么要在这里写这个，也不知道为什么要发这篇博客，大概是不想让每周的 Roundup 
+    
+    </summary>
+    
+      <category term="生活笔记" scheme="http://forrestchang.github.io/categories/%E7%94%9F%E6%B4%BB%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Roundup" scheme="http://forrestchang.github.io/tags/Roundup/"/>
+    
+  </entry>
+  
+  <entry>
     <title>2016 Week 40 Roundup</title>
     <link href="http://forrestchang.github.io/2016/10/02/2016-week-40/"/>
     <id>http://forrestchang.github.io/2016/10/02/2016-week-40/</id>
     <published>2016-10-02T14:17:10.000Z</published>
-    <updated>2016-10-02T15:04:29.000Z</updated>
+    <updated>2016-10-02T15:16:22.000Z</updated>
     
     <content type="html"><![CDATA[<p>这周恰逢国庆假期，休息了两天（感觉今天貌似也在休息），明天学校断电断网（大农村条件艰苦），所以应该要出去一天，暂时的行程还没有安排。</p>
 <h2 id="编程"><a href="#编程" class="headerlink" title="编程"></a>编程</h2><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>首先收到了 <a href="http://fdu.hackx.org/#/" target="_blank" rel="external">HACKxFDU</a> 的通过邮件，所以 14 号会去上海打一波酱油，以目前的水平如果不抱大腿感觉完全没有拿奖的可能性。主要的目的应该不是去参赛，可能会去找找下学期实习的目标，顺便认识一些大牛(≧▽≦)/</p>
