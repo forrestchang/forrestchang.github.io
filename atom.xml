@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://forrestchang.github.io/"/>
-  <updated>2016-10-21T02:43:40.000Z</updated>
+  <updated>2016-10-02T15:16:22.000Z</updated>
   <id>http://forrestchang.github.io/</id>
   
   <author>
@@ -14,86 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>OmniFocus 设定笔记</title>
-    <link href="http://forrestchang.github.io/2016/10/21/omnifocus-set-up/"/>
-    <id>http://forrestchang.github.io/2016/10/21/omnifocus-set-up/</id>
-    <published>2016-10-21T02:13:32.000Z</published>
-    <updated>2016-10-21T02:43:40.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近感觉生活越来越乱，好多事情想做有不知道如何开始。OmniFocus 因为好久没有整理，所以都懒得打开了，总之，从上海回来的这几天内，什么都没有做。所以想着把 OmniFocus 重新整理一下，好好规划一下接下来的事情。这篇笔记也是边设定边写的，主要是做一个备忘。</p>
-<h2 id="基本设定"><a href="#基本设定" class="headerlink" title="基本设定"></a>基本设定</h2><h3 id="Projects"><a href="#Projects" class="headerlink" title="Projects"></a>Projects</h3><p>为了降低层级复杂度，采用两个层级来进行分类。使用「领域（文件夹）-项目」的方式来进行分类。</p>
-<ul>
-<li>Miscellaneous（项目，杂乱的单个 Task 全部放到这个项目中）</li>
-<li>Misc Projects（文件夹，没有特定主题的项目放到这个文件夹下）</li>
-<li>Programming（文件夹，与编程相关的内容）<ul>
-<li>Single Actions（单个 Task，下同）</li>
-</ul>
-</li>
-<li>School（文件夹，与学校相关的项目）</li>
-<li>Health（文件夹，与健康相关的项目）</li>
-<li>Finance（文件夹，与财政相关的项目）</li>
-<li>Reading（文件夹，与阅读有关的项目）</li>
-<li>Blog（文件夹，与博客相关的项目）</li>
-<li>Learn Japanese（文件夹，与日语学习相关的项目）</li>
-</ul>
-<p>每一个文件夹中都有一个 Single Actions 项目，用来存放单个的 Task 内容。</p>
-<p>项目的命名需要满足以下要求：能够准确描述出任务完成的条件（如果不能，需要在任务中指定说明）。例如「学习 Python」不能算一个好的命名，因为「学习」这个词太抽象，而「读完 Python 3 Standard Library」就算是一个比较好的命名。</p>
-<p>在每个文件夹下应该有一个「目标」项目，用来写近期需要完成的目标。</p>
-<h3 id="Context"><a href="#Context" class="headerlink" title="Context"></a>Context</h3><p>这部分设定还是需要根据要求来完成，所以目前只是进行了简单的设定。</p>
-<ul>
-<li>Priority<ul>
-<li>A</li>
-<li>B</li>
-<li>C</li>
-</ul>
-</li>
-<li>Waiting</li>
-</ul>
-<p>根据任务的优先度来给任务加上优先级 Context。</p>
-<h3 id="Perspective"><a href="#Perspective" class="headerlink" title="Perspective"></a>Perspective</h3><p>这边也只设定了一个 Perspective：Today。内容是把 Due 和 Flag 的内容列举出来，详细设定如下：</p>
-<p><img src="/media/14770176943311.jpg" alt=""></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最近感觉生活越来越乱，好多事情想做有不知道如何开始。OmniFocus 因为好久没有整理，所以都懒得打开了，总之，从上海回来的这几天内，什么都没有做。所以想着把 OmniFocus 重新整理一下，好好规划一下接下来的事情。这篇笔记也是边设定边写的，主要是做一个备忘。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="效率笔记" scheme="http://forrestchang.github.io/categories/%E6%95%88%E7%8E%87%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="OmniFocus" scheme="http://forrestchang.github.io/tags/OmniFocus/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2016 Week 41 Roundup</title>
-    <link href="http://forrestchang.github.io/2016/10/10/2016-week-41/"/>
-    <id>http://forrestchang.github.io/2016/10/10/2016-week-41/</id>
-    <published>2016-10-10T00:27:42.000Z</published>
-    <updated>2016-10-21T02:43:46.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>这周过得很郁闷。</p>
-<p>就这样。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这周过得很郁闷。&lt;/p&gt;
-&lt;p&gt;就这样。&lt;/p&gt;
-
-    
-    </summary>
-    
-      <category term="生活笔记" scheme="http://forrestchang.github.io/categories/%E7%94%9F%E6%B4%BB%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Roundup" scheme="http://forrestchang.github.io/tags/Roundup/"/>
-    
-  </entry>
   
   <entry>
     <title>2016 Week 40 Roundup</title>
@@ -179,39 +99,6 @@
     
     
       <category term="Roundup" scheme="http://forrestchang.github.io/tags/Roundup/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GitHub 连击计划</title>
-    <link href="http://forrestchang.github.io/2016/08/01/github-combo-plan/"/>
-    <id>http://forrestchang.github.io/2016/08/01/github-combo-plan/</id>
-    <published>2016-08-01T02:56:29.000Z</published>
-    <updated>2016-09-07T08:20:32.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>GitHub 改版之后貌似就不显示 Longest streak 的时间了，不过用了<a href="https://chrome.google.com/webstore/detail/isometric-contributions/mjoedlfflcchnleknnceiplgaeoegien" target="_blank" rel="external">Isometric Contributions</a>这个 Chrome 插件还是可以看到的：</p>
-<p><img src="/media/14700204753572.jpg" alt=""></p>
-<p>中间空白了一大段是因为生病住院。</p>
-<p>虽说追求 GitHub 的连击没有什么意义，但是至少可以一定程度上反映是做了一些微小的工作的，另外必须给自己一些规则，要不然每天 update readme 也算 commit 就没什么意义了。</p>
-<ol>
-<li>只有代码相关的 commit 才算做连击的内容；</li>
-<li>不能够使用脚本修改之前的 commit；</li>
-</ol>
-<p>然后看一下能够连击多少天吧。</p>
-<p>另外，<a href="https://github.com/forrestchang/weekly-project" target="_blank" rel="external">weekly-project</a>这个 repo 貌似好久没有更新的，以前还打算每周完成一个 project 的，果然暑假待在家里全忘关了，现在也要把这个提上日程了。</p>
-<p>少玩点守望先锋，多写点代码：）</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;GitHub 改版之后貌似就不显示 Longest streak 的时间了，不过用了&lt;a href=&quot;https://chrome.google.com/webstore/detail/isometric-contributions/mjoedlfflcchnleknnce
-    
-    </summary>
-    
-      <category term="生活笔记" scheme="http://forrestchang.github.io/categories/%E7%94%9F%E6%B4%BB%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="GitHub" scheme="http://forrestchang.github.io/tags/GitHub/"/>
     
   </entry>
   
