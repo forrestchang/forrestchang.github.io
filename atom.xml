@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://forrestchang.github.io/"/>
-  <updated>2016-10-29T11:54:33.000Z</updated>
+  <updated>2016-10-29T16:13:18.000Z</updated>
   <id>http://forrestchang.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://forrestchang.github.io/2016/10/28/build-python-science-computing-environment/"/>
     <id>http://forrestchang.github.io/2016/10/28/build-python-science-computing-environment/</id>
     <published>2016-10-28T13:59:29.000Z</published>
-    <updated>2016-10-29T11:54:33.000Z</updated>
+    <updated>2016-10-29T16:13:18.000Z</updated>
     
     <content type="html"><![CDATA[<p>最近在看《Python for Data Analysis》（利用 Python 进行数据分析）这本书，贴一点笔记，这一篇是关于环境搭建的。另外吐槽一下，书中还是有不少错误的，语法错误就发现了好多处，大概读完了之后会整理出一份勘误表出来，可能是因为写书的时候是 14 年，两年过去了，pandas 库也有了一些变化。</p>
 <h2 id="安装虚拟环境"><a href="#安装虚拟环境" class="headerlink" title="安装虚拟环境"></a>安装虚拟环境</h2><p>不想把系统的 python 库搞得乱乱的（其实已经很乱了），所以还是建一个独立虚拟环境专门来做科学计算吧。具体的方法我在<a href="http://forrestchang.github.io/2016/07/17/virtualenv-notes/">virtualenv 相关笔记</a>这篇博客中已经详细写了，建议将启动虚拟环境的命令添加到终端的配置文件中去（使用<code>alias</code>），这样就避免每次一打开就输入一长串命令了。</p>
@@ -60,7 +60,7 @@
     
     </summary>
     
-      <category term="技术笔记" scheme="http://forrestchang.github.io/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
+      <category term="Data Mining" scheme="http://forrestchang.github.io/categories/Data-Mining/"/>
     
     
       <category term="Python" scheme="http://forrestchang.github.io/tags/Python/"/>
@@ -74,7 +74,7 @@
     <link href="http://forrestchang.github.io/2016/10/26/2016-week-42-43-roundup/"/>
     <id>http://forrestchang.github.io/2016/10/26/2016-week-42-43-roundup/</id>
     <published>2016-10-26T12:29:41.000Z</published>
-    <updated>2016-10-29T11:25:51.000Z</updated>
+    <updated>2016-10-29T16:11:30.000Z</updated>
     
     <content type="html"><![CDATA[<p>连续两周没写周总结了，41周的周总结因为涉及到一些私事所以还是删掉了（当然感兴趣的还是可以在我的 repo 里面找到之前的 commit）。</p>
 <p>过去两周还是发生了很多事情的，一件一件来说吧。</p>
@@ -109,7 +109,7 @@
     
     </summary>
     
-      <category term="生活笔记" scheme="http://forrestchang.github.io/categories/%E7%94%9F%E6%B4%BB%E7%AC%94%E8%AE%B0/"/>
+      <category term="Life" scheme="http://forrestchang.github.io/categories/Life/"/>
     
     
       <category term="Roundup" scheme="http://forrestchang.github.io/tags/Roundup/"/>
@@ -121,7 +121,7 @@
     <link href="http://forrestchang.github.io/2016/10/02/2016-week-40/"/>
     <id>http://forrestchang.github.io/2016/10/02/2016-week-40/</id>
     <published>2016-10-02T14:17:10.000Z</published>
-    <updated>2016-10-02T15:16:22.000Z</updated>
+    <updated>2016-10-29T16:11:29.000Z</updated>
     
     <content type="html"><![CDATA[<p>这周恰逢国庆假期，休息了两天（感觉今天貌似也在休息），明天学校断电断网（大农村条件艰苦），所以应该要出去一天，暂时的行程还没有安排。</p>
 <h2 id="编程"><a href="#编程" class="headerlink" title="编程"></a>编程</h2><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>首先收到了 <a href="http://fdu.hackx.org/#/" target="_blank" rel="external">HACKxFDU</a> 的通过邮件，所以 14 号会去上海打一波酱油，以目前的水平如果不抱大腿感觉完全没有拿奖的可能性。主要的目的应该不是去参赛，可能会去找找下学期实习的目标，顺便认识一些大牛(≧▽≦)/</p>
@@ -156,7 +156,7 @@
     
     </summary>
     
-      <category term="生活笔记" scheme="http://forrestchang.github.io/categories/%E7%94%9F%E6%B4%BB%E7%AC%94%E8%AE%B0/"/>
+      <category term="Life" scheme="http://forrestchang.github.io/categories/Life/"/>
     
     
       <category term="Roundup" scheme="http://forrestchang.github.io/tags/Roundup/"/>
@@ -168,7 +168,7 @@
     <link href="http://forrestchang.github.io/2016/09/25/2016-week-39/"/>
     <id>http://forrestchang.github.io/2016/09/25/2016-week-39/</id>
     <published>2016-09-25T02:47:14.000Z</published>
-    <updated>2016-09-25T03:19:53.000Z</updated>
+    <updated>2016-10-29T16:11:35.000Z</updated>
     
     <content type="html"><![CDATA[<p>好久没有写周总结了，所以这几周都过得比较颓废(≧▽≦)/</p>
 <h2 id="编程"><a href="#编程" class="headerlink" title="编程"></a>编程</h2><p>总的来说，好像这一周并没有做出什么东西来。本来是在看《Web Scraping with Python》这本书的，可以看到后面发现错误挺多的，都有一些最基本的语法错误，所以索性就直接不看了。然后知乎专栏的爬虫也一直没有开始写。</p>
@@ -196,7 +196,7 @@
     
     </summary>
     
-      <category term="生活笔记" scheme="http://forrestchang.github.io/categories/%E7%94%9F%E6%B4%BB%E7%AC%94%E8%AE%B0/"/>
+      <category term="Life" scheme="http://forrestchang.github.io/categories/Life/"/>
     
     
       <category term="Roundup" scheme="http://forrestchang.github.io/tags/Roundup/"/>
@@ -208,7 +208,7 @@
     <link href="http://forrestchang.github.io/2016/07/17/the-python-tutorial/"/>
     <id>http://forrestchang.github.io/2016/07/17/the-python-tutorial/</id>
     <published>2016-07-17T12:34:25.000Z</published>
-    <updated>2016-09-07T08:20:31.000Z</updated>
+    <updated>2016-10-29T16:11:59.000Z</updated>
     
     <content type="html"><![CDATA[<p><em>The Python Tutorial</em> 是很好的学习资源，之前已经粗略的读过一遍，有不少细节性的东西都被略过了，这次详细地阅读一遍，顺便记录一些笔记，以供之后参考使用</p>
 <h2 id="Data-Structures"><a href="#Data-Structures" class="headerlink" title="Data Structures"></a>Data Structures</h2><h3 id="More-on-Lists"><a href="#More-on-Lists" class="headerlink" title="More on Lists"></a>More on Lists</h3><ul>
@@ -306,7 +306,7 @@
     
     </summary>
     
-      <category term="技术笔记" scheme="http://forrestchang.github.io/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
+      <category term="Tech" scheme="http://forrestchang.github.io/categories/Tech/"/>
     
     
       <category term="Python" scheme="http://forrestchang.github.io/tags/Python/"/>
@@ -318,7 +318,7 @@
     <link href="http://forrestchang.github.io/2016/07/17/virtualenv-notes/"/>
     <id>http://forrestchang.github.io/2016/07/17/virtualenv-notes/</id>
     <published>2016-07-16T22:49:53.000Z</published>
-    <updated>2016-09-07T08:20:30.000Z</updated>
+    <updated>2016-10-29T16:11:54.000Z</updated>
     
     <content type="html"><![CDATA[<p>记录一些有关 virtualenv 的使用笔记。</p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>直接使用 pip 来进行安装：</p>
@@ -354,7 +354,7 @@
     
     </summary>
     
-      <category term="技术笔记" scheme="http://forrestchang.github.io/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
+      <category term="Tech" scheme="http://forrestchang.github.io/categories/Tech/"/>
     
     
       <category term="Python" scheme="http://forrestchang.github.io/tags/Python/"/>
@@ -368,7 +368,7 @@
     <link href="http://forrestchang.github.io/2016/04/15/swift-arc-notes/"/>
     <id>http://forrestchang.github.io/2016/04/15/swift-arc-notes/</id>
     <published>2016-04-15T06:22:54.000Z</published>
-    <updated>2016-09-07T08:20:28.000Z</updated>
+    <updated>2016-10-29T16:12:07.000Z</updated>
     
     <content type="html"><![CDATA[<p>这篇文章是在阅读《The Swift Programming Language》Automatic Reference Counting（ARC，自动引用计数）一章时做的一些笔记，同时参考了其他的一些资料。</p>
 <p>在早期的 iOS 开发中，内存管理是由开发者手动来完成的。因为传统的垃圾回收机制对于移动平台来说十分低效，苹果采用的是引用计数（RC，Reference Counting）的方式来管理内存，开发者需要通过手工的方式增加或减少一个实例的引用计数。在 iOS 5 之后，引入了 ARC 自动引用计数，使得开发者不需要手动地调用 <code>retain</code> 和 <code>release</code> 来管理引用计数，但是实际上这些方法还是会被调用，只不过是交给了编译器来完成，编译器会在合适的地方帮我们加入这些方法。</p>
@@ -433,7 +433,7 @@
     
     </summary>
     
-      <category term="技术笔记" scheme="http://forrestchang.github.io/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
+      <category term="Tech" scheme="http://forrestchang.github.io/categories/Tech/"/>
     
     
       <category term="Swift" scheme="http://forrestchang.github.io/tags/Swift/"/>
@@ -447,7 +447,7 @@
     <link href="http://forrestchang.github.io/2016/04/10/productivity-programmer-01/"/>
     <id>http://forrestchang.github.io/2016/04/10/productivity-programmer-01/</id>
     <published>2016-04-10T12:12:57.000Z</published>
-    <updated>2016-09-07T08:20:27.000Z</updated>
+    <updated>2016-10-29T16:12:19.000Z</updated>
     
     <content type="html"><![CDATA[<p>两年前，曾经写过一篇有关时间管理的<a href="http://forrestchang.github.io/2014/02/12/time-management/">文章</a>，那个时候还在上高二，对于时间管理仅仅是有一点肤浅的了解，自然写出来的文字也是比较幼稚的。经过两年的实践，积累了很多时间管理的经验，想要拿出来分享一下。预计会写一个系列，包括使用的工具和日常的 Workflow。</p>
 <p>日常使用的工具有这些：</p>
@@ -552,7 +552,7 @@
     
     </summary>
     
-      <category term="效率笔记" scheme="http://forrestchang.github.io/categories/%E6%95%88%E7%8E%87%E7%AC%94%E8%AE%B0/"/>
+      <category term="Productivity" scheme="http://forrestchang.github.io/categories/Productivity/"/>
     
     
       <category term="时间管理" scheme="http://forrestchang.github.io/tags/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/"/>
@@ -568,7 +568,7 @@
     <link href="http://forrestchang.github.io/2016/03/20/2016-week-12/"/>
     <id>http://forrestchang.github.io/2016/03/20/2016-week-12/</id>
     <published>2016-03-20T14:54:04.000Z</published>
-    <updated>2016-09-07T08:20:25.000Z</updated>
+    <updated>2016-10-29T16:12:33.000Z</updated>
     
     <content type="html"><![CDATA[<p>这周是2016年的第12周，上一周没有写 Roundup。</p>
 <p>这周的主题是<code>跑步</code>，大连的天气开始变暖，终于可以去操场跑步了，不过由于学校在海边，风还是很大的。今天跑完了一个线上马拉松（10km 健康赛），明天大连国际马拉松开始开放报名，打算参加半程马拉松，不知道能不能报上名，毕竟今年有一个目标就是参加一次马拉松（全马或者半马）。比赛日期是5.22，需要利用剩余的两个月的时间积累一下跑量（一周跑5次，每次10km）。</p>
@@ -586,7 +586,7 @@
     
     </summary>
     
-      <category term="生活笔记" scheme="http://forrestchang.github.io/categories/%E7%94%9F%E6%B4%BB%E7%AC%94%E8%AE%B0/"/>
+      <category term="Life" scheme="http://forrestchang.github.io/categories/Life/"/>
     
     
       <category term="Weekly Roundup" scheme="http://forrestchang.github.io/tags/Weekly-Roundup/"/>
@@ -598,7 +598,7 @@
     <link href="http://forrestchang.github.io/2016/02/24/apple-music-classical-reading/"/>
     <id>http://forrestchang.github.io/2016/02/24/apple-music-classical-reading/</id>
     <published>2016-02-24T07:32:19.000Z</published>
-    <updated>2016-09-07T08:20:25.000Z</updated>
+    <updated>2016-10-29T16:12:39.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Apple-Music"><a href="#Apple-Music" class="headerlink" title="Apple Music"></a>Apple Music</h3><p>自从Apple Music（以下简称「AM」）发布以来，就一直在使用，从最开始的免费试用到现在每个月10￥的订阅。自从Windows时代就使用iTunes听音乐了（当时有一部iPod），在没有AM的时候，都是从论坛下好别人买的专辑来听。一方面在国内想要在iTunes Store上购买专辑过于麻烦（两个账号需要来回切换），另一方面作为一个学生党iTunes Store上两首歌就相当于一顿饭的价钱对于我来说也有点小贵了，所以AM刚推出的时候，还是比较开心的，没想到入华后价格竟然只要10￥每月，就只相当于两首歌的钱！</p>
 <p>这几个月使用下来，发现还是存在不少的问题。</p>
@@ -627,7 +627,7 @@
     
     </summary>
     
-      <category term="生活笔记" scheme="http://forrestchang.github.io/categories/%E7%94%9F%E6%B4%BB%E7%AC%94%E8%AE%B0/"/>
+      <category term="Life" scheme="http://forrestchang.github.io/categories/Life/"/>
     
     
       <category term="音乐" scheme="http://forrestchang.github.io/tags/%E9%9F%B3%E4%B9%90/"/>
@@ -643,7 +643,7 @@
     <link href="http://forrestchang.github.io/2016/02/13/self-learning-guide/"/>
     <id>http://forrestchang.github.io/2016/02/13/self-learning-guide/</id>
     <published>2016-02-13T07:26:24.000Z</published>
-    <updated>2016-09-13T15:05:08.000Z</updated>
+    <updated>2016-10-29T16:12:45.000Z</updated>
     
     <content type="html"><![CDATA[<p>之前有不少学弟学妹问我如何学习编程，根据DRY法则（Don’t Repeat Yourself），还是把自己学习过程中的一些经验整理成一篇博客吧。由于本人目前也处在学习的阶段，文章中列出来的内容也并未全部学习过，所以文章的客观性可能存在一些问题，还望读者自行判断。</p>
 <p>这份指南会不定期更新，有好的建议也可以留言或者给我发邮件。</p>
@@ -765,7 +765,7 @@
     
     </summary>
     
-      <category term="技术笔记" scheme="http://forrestchang.github.io/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
+      <category term="Tech" scheme="http://forrestchang.github.io/categories/Tech/"/>
     
     
       <category term="编程" scheme="http://forrestchang.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
@@ -781,7 +781,7 @@
     <link href="http://forrestchang.github.io/2015/12/31/2015-summary/"/>
     <id>http://forrestchang.github.io/2015/12/31/2015-summary/</id>
     <published>2015-12-31T07:24:34.000Z</published>
-    <updated>2016-09-07T08:20:23.000Z</updated>
+    <updated>2016-10-29T16:12:52.000Z</updated>
     
     <content type="html"><![CDATA[<p>断网了，晚上没有活动，又不想去做一些正事（看书、写代码），游戏也玩腻了，硬盘中也没有什么新的电影，于是便来来写一写2015年罢。</p>
 <p>本来是不打算写所谓的总结文的，一方面没有这个习惯，另一方面过去一年确实过得比较平淡，甚至来说有点失败，不写是有点逃避的意味，不过自欺欺人总不是办法，还是写下来反思一下，也好让新的一年过得比15年好一些。</p>
@@ -822,7 +822,7 @@
     
     </summary>
     
-      <category term="生活笔记" scheme="http://forrestchang.github.io/categories/%E7%94%9F%E6%B4%BB%E7%AC%94%E8%AE%B0/"/>
+      <category term="Life" scheme="http://forrestchang.github.io/categories/Life/"/>
     
     
       <category term="总结" scheme="http://forrestchang.github.io/tags/%E6%80%BB%E7%BB%93/"/>
@@ -834,7 +834,7 @@
     <link href="http://forrestchang.github.io/2015/11/11/squirrel-recommended/"/>
     <id>http://forrestchang.github.io/2015/11/11/squirrel-recommended/</id>
     <published>2015-11-11T07:14:09.000Z</published>
-    <updated>2016-09-07T08:20:22.000Z</updated>
+    <updated>2016-10-29T16:12:57.000Z</updated>
     
     <content type="html"><![CDATA[<p>输入法是一个每天都会使用的东西，所以它是否顺手一定程度上决定了每天的文字输入效率。在OS X平台下，一直没有用到一个很顺手的输入法。系统自带的输入法虽然经过几次的版本更新已经有了很大的改进，但是离能用还有很大的距离。所以之前一直凑合着使用百度输入法，不过最近一直遇到一些奇怪的问题，官方又长时间没有进行更新，恰逢之前听说过<code>Squirrel</code>这个输入法，于是就本着试用的心态用了一下，发现异常顺手，并且还有丰富的定制性，于是写一篇文章来介绍一下，也作为自己配置过程中的笔记。</p>
 <p>附上一段Gif效果展示：<br><img src="/image/squirrel-recommended/luoshenfu.gif" alt="luoshenfu"></p>
@@ -910,7 +910,7 @@
     
     </summary>
     
-      <category term="技术笔记" scheme="http://forrestchang.github.io/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
+      <category term="Tech" scheme="http://forrestchang.github.io/categories/Tech/"/>
     
     
       <category term="Squirrel" scheme="http://forrestchang.github.io/tags/Squirrel/"/>
@@ -924,7 +924,7 @@
     <link href="http://forrestchang.github.io/2015/10/10/use-emacs-build-blog/"/>
     <id>http://forrestchang.github.io/2015/10/10/use-emacs-build-blog/</id>
     <published>2015-10-10T12:02:09.000Z</published>
-    <updated>2016-09-07T08:20:21.000Z</updated>
+    <updated>2016-10-29T16:13:31.000Z</updated>
     
     <content type="html"><![CDATA[<p>这篇文章是教程性质的，尽量写得详细一点。</p>
 <p>这个博客就是使用Emacs org-mode + GitHub Pages搭建的，博客的主题是org-mode官网的主题，非常的简洁；评论采用的disqus，访问统计使用的是Google和Baidu的统计代码。</p>
@@ -995,7 +995,7 @@
     
     </summary>
     
-      <category term="技术笔记" scheme="http://forrestchang.github.io/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/"/>
+      <category term="Tech" scheme="http://forrestchang.github.io/categories/Tech/"/>
     
     
       <category term="Emacs" scheme="http://forrestchang.github.io/tags/Emacs/"/>
@@ -1009,7 +1009,7 @@
     <link href="http://forrestchang.github.io/2014/02/12/time-management/"/>
     <id>http://forrestchang.github.io/2014/02/12/time-management/</id>
     <published>2014-02-12T10:19:03.000Z</published>
-    <updated>2016-09-07T08:20:26.000Z</updated>
+    <updated>2016-10-29T16:12:27.000Z</updated>
     
     <content type="html"><![CDATA[<p>初次看到时间管理这个概念大概是高二的时候，在此之前，我一直在使用所谓的To-do List来管理自己每天的学习任务（那个时候还不知道）。知道了时间管理这个概念后，惊讶于原来自己早就在对时间进行管理了，只不过最简单的管理方式（后来实践表明，仅仅一个任务清单就足够了）。</p>
 <p>在知道了时间管理这个概念之后，我开始大量的阅读关于时间管理的文章，期间又接触到了GTD（Getting Things Done）这个个人管理系统，还专门读了一遍David的那本书。然后就是不断地下载软件、使用、删除、下载……从PC端到iOS到纸笔GTD都试过。突然发现，自己陷入到一个怪圈，主要工作不是变成了完成任务，而变成了寻找“更高效”的软件系统。相信人都会陷入到这个怪圈中，然后时间一步一步地被吞噬掉。然后你开始发现，最开始计划好要做的事情依旧没做好，甚至要找的高效软件也没有找到，因为你总是认为还会有更高效更方便的软件。</p>
@@ -1032,7 +1032,7 @@
     
     </summary>
     
-      <category term="效率笔记" scheme="http://forrestchang.github.io/categories/%E6%95%88%E7%8E%87%E7%AC%94%E8%AE%B0/"/>
+      <category term="Productivity" scheme="http://forrestchang.github.io/categories/Productivity/"/>
     
     
       <category term="时间管理" scheme="http://forrestchang.github.io/tags/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/"/>
