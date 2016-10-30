@@ -204,19 +204,19 @@
   </entry>
   
   <entry>
-    <title>The Python Tutorial 阅读笔记</title>
+    <title>The Python Tutorial Reading Notes</title>
     <link href="http://forrestchang.github.io/2016/07/17/the-python-tutorial/"/>
     <id>http://forrestchang.github.io/2016/07/17/the-python-tutorial/</id>
     <published>2016-07-17T12:34:25.000Z</published>
-    <updated>2016-10-29T16:11:59.000Z</updated>
+    <updated>2016-10-30T01:40:43.000Z</updated>
     
-    <content type="html"><![CDATA[<p><em>The Python Tutorial</em> 是很好的学习资源，之前已经粗略的读过一遍，有不少细节性的东西都被略过了，这次详细地阅读一遍，顺便记录一些笔记，以供之后参考使用</p>
+    <content type="html"><![CDATA[<p><em>The Python Tutorial</em> is a good stuff to learn Python. I have already read it sketchily before, but didn’t foucs on some detail things. This time I read it again and write some notes for reference next time.</p>
 <h2 id="Data-Structures"><a href="#Data-Structures" class="headerlink" title="Data Structures"></a>Data Structures</h2><h3 id="More-on-Lists"><a href="#More-on-Lists" class="headerlink" title="More on Lists"></a>More on Lists</h3><ul>
 <li><code>list.append(x)</code>: Equivalent to <code>a[len(a):] = [x]</code></li>
 <li><code>list.extend(L)</code>: Extend the list by appending all the items in the given list. Equivalent to <code>a[len(a):] = L</code></li>
 <li><code>list.insert(i, x)</code>: The first argument is the index of the element before which to insert. <code>a.insert(len(a), x)</code> == <code>a.append(x)</code>.</li>
 <li><code>list.remove(x)</code>: Remove the first item form the list whose value is x.</li>
-<li><code>list.pop([i])</code>: Remove the item at the given position in the list, and return it. If no index is specified, <code>a.pop()</code> removes and returns the last item in the list.（参数中的方括号表明参数是可选的）</li>
+<li><code>list.pop([i])</code>: Remove the item at the given position in the list, and return it. If no index is specified, <code>a.pop()</code> removes and returns the last item in the list.（parameters with square brackets are optional）</li>
 <li><code>list.clear()</code>: Remove all item from the list. Equivalent to <code>del a[:]</code></li>
 <li><code>list.index(x)</code>: Return the index in the list of the first item whose value is x.</li>
 <li><code>list.count(x)</code>: Return the number of times x appears in the list.</li>
@@ -301,8 +301,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;em&gt;The Python Tutorial&lt;/em&gt; 是很好的学习资源，之前已经粗略的读过一遍，有不少细节性的东西都被略过了，这次详细地阅读一遍，顺便记录一些笔记，以供之后参考使用&lt;/p&gt;
-&lt;h2 id=&quot;Data-Structures&quot;&gt;&lt;a href=&quot;#Data-
+      &lt;p&gt;&lt;em&gt;The Python Tutorial&lt;/em&gt; is a good stuff to learn Python. I have already read it sketchily before, but didn’t foucs on some detail th
     
     </summary>
     
