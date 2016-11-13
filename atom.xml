@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://forrestchang.github.io/"/>
-  <updated>2016-11-13T07:03:21.000Z</updated>
+  <updated>2016-11-13T07:10:52.000Z</updated>
   <id>http://forrestchang.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://forrestchang.github.io/2016/11/12/notes-on-recommendations/"/>
     <id>http://forrestchang.github.io/2016/11/12/notes-on-recommendations/</id>
     <published>2016-11-12T03:44:05.000Z</published>
-    <updated>2016-11-13T07:03:21.000Z</updated>
+    <updated>2016-11-13T07:10:52.000Z</updated>
     
     <content type="html"><![CDATA[<p>开始学习机器学习/数据挖掘相关的内容，打算每学习一部分知识就写一篇博客总结一下，当做学习过程中的笔记，也为以后看的时候提供存档。</p>
 <p>这一篇笔记是关于推荐系统的，主要讲了两种推荐算法（基于用户和基于物品的协同过滤），大部分内容均来自《集体智慧编程》这本书，所以看过书的就可以不用看这篇文章了。</p>
@@ -264,7 +264,7 @@
     
     </summary>
     
-      <category term="Machine Learning" scheme="http://forrestchang.github.io/categories/Machine-Learning/"/>
+      <category term="ML&amp;DM" scheme="http://forrestchang.github.io/categories/ML-DM/"/>
     
     
       <category term="Python" scheme="http://forrestchang.github.io/tags/Python/"/>
@@ -335,7 +335,7 @@
     <link href="http://forrestchang.github.io/2016/10/28/build-python-science-computing-environment/"/>
     <id>http://forrestchang.github.io/2016/10/28/build-python-science-computing-environment/</id>
     <published>2016-10-28T13:59:29.000Z</published>
-    <updated>2016-10-29T16:13:18.000Z</updated>
+    <updated>2016-11-13T07:10:50.000Z</updated>
     
     <content type="html"><![CDATA[<p>最近在看《Python for Data Analysis》（利用 Python 进行数据分析）这本书，贴一点笔记，这一篇是关于环境搭建的。另外吐槽一下，书中还是有不少错误的，语法错误就发现了好多处，大概读完了之后会整理出一份勘误表出来，可能是因为写书的时候是 14 年，两年过去了，pandas 库也有了一些变化。</p>
 <h2 id="安装虚拟环境"><a href="#安装虚拟环境" class="headerlink" title="安装虚拟环境"></a>安装虚拟环境</h2><p>不想把系统的 python 库搞得乱乱的（其实已经很乱了），所以还是建一个独立虚拟环境专门来做科学计算吧。具体的方法我在<a href="http://forrestchang.github.io/2016/07/17/virtualenv-notes/">virtualenv 相关笔记</a>这篇博客中已经详细写了，建议将启动虚拟环境的命令添加到终端的配置文件中去（使用<code>alias</code>），这样就避免每次一打开就输入一长串命令了。</p>
@@ -375,12 +375,12 @@
     
     </summary>
     
-      <category term="Data Mining" scheme="http://forrestchang.github.io/categories/Data-Mining/"/>
+      <category term="ML&amp;DM" scheme="http://forrestchang.github.io/categories/ML-DM/"/>
     
-    
-      <category term="IPython" scheme="http://forrestchang.github.io/tags/IPython/"/>
     
       <category term="Python" scheme="http://forrestchang.github.io/tags/Python/"/>
+    
+      <category term="IPython" scheme="http://forrestchang.github.io/tags/IPython/"/>
     
   </entry>
   
