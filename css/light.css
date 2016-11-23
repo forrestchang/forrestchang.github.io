@@ -166,7 +166,10 @@ pre {
 
 code {
     font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO", Proggy, monospace;
-    /* font-size: 90%; */
+    font-size: 90%;
+    background: #DDDDDD;
+    border-radius: 2px;
+    padding: .05rem .3rem;
 }
 
 
