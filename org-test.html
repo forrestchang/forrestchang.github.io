@@ -6,7 +6,7 @@
 <!-- 2016-11-24 Thu 16:29 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Archives</title>
+<title>Org Test</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="Tisoga" />
 <style type="text/css">
@@ -226,20 +226,157 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "left",
+        displayIndent: "5em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "Neo-Euler"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "Neo-Euler"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "left",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
-<h1 class="title">Archives</h1>
-<ul class="org-ul">
-<li><a href="org-test.html">2016-11-24 Org Test</a></li>
-<li><a href="gsoc.html">2016-11-24 GSoC</a></li>
-<li><a href="about.html">2016-11-23 About</a></li>
-<li><a href="resume.html">2016-11-23 Résumé</a></li>
-<li><a href="liu-bi-xie-fu.html">2016-11-23 柳比歇夫时间记录法</a></li>
-<li><a href="new-blog-again.html">2016-11-23 新的博客</a></li>
-<li><a href="index.html">2016-11-22 Hack Notes</a></li>
-</ul>
+<h1 class="title">Org Test</h1>
+<p>
+描述列表：
+</p>
+
+<dl class="org-dl">
+<dt>Elijah Wood</dt><dd>He plays Frodo</dd>
+<dt>Sean Austin</dt><dd>He plays Sam, Frodo's friend</dd>
+</dl>
+
+<hr  />
+
+<p>
+脚注：
+</p>
+
+<p>
+The Org homepage<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> now looks a lot better than it used to.
+</p>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+The link is: <a href="http://orgmode.org">http://orgmode.org</a>
+</p>
+
+<hr  />
+
+<p class="footpara">
+超链接：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span class="org-org-link"><a href="nil:nil">description</a></span>
+</pre>
 </div>
+
+<p class="footpara">
+-&#x2014;
+</p>
+
+<p class="footpara">
+内部链接：
+</p>
+
+<p class="footpara">
+<code>[[#my-custom-id]</code> 的链接会链接到 CUSTOM<sub>ID</sub> 属性是 my-custom-id 的项。
+</p>
+
+<hr  />
+
+<p class="footpara">
+外部链接：
+</p>
+
+<pre class="example">
+http://www.astro.uva.nl/~dominik            on the web
+file:/home/dominik/images/jupiter.jpg       file, absolute path
+/home/dominik/images/jupiter.jpg            same as above
+file:papers/last.pdf                        file, relative path
+file:projects.org                           another Org file
+docview:papers/last.pdf::NNN                open file in doc-view mode at page NNN
+id:B7423F4D-2E8A-471B-8810-C40F074717E9     Link to heading by ID
+news:comp.emacs                             Usenet link
+mailto:adent@galaxy.net                     Mail link
+vm:folder                                   VM folder link
+vm:folder#id                                VM message link
+wl:folder#id                                WANDERLUST message link
+mhe:folder#id                               MH-E message link
+rmail:folder#id                             RMAIL message link
+gnus:group#id                               Gnus article link
+bbdb:R.*Stallman                            BBDB link (with regexp)
+irc:/irc.com/#emacs/bob                     IRC link
+info:org:External%20links                   Info node link (with encoded space)
+</pre>
+
+<hr  />
+
+<p class="footpara">
+目标链接：
+</p>
+
+<p class="footpara">
+下面是一些包含搜索定位功能链接例子及其说明：
+</p>
+
+<pre class="example">
+file:~/code/main.c::255                     进入到 255 行
+file:~/xx.org::My Target                    找到目标‘&lt;&lt;My Target&gt;&gt;’
+file:~/xx.org/::#my-custom-id               查找自定义 id 的项
+</pre>
+
+<hr  />
+
+<p class="footpara">
+引用：
+</p>
+
+<blockquote>
+<p>
+Everything should be made as simple as possible,
+but not any simpler &#x2013; Albert Einstein
+</p>
+</blockquote>
+
+<hr  />
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="org-keyword">print</span> <span class="org-string">'Hello world'</span>
+</pre>
+</div>
+
+<hr  />
+
+\begin{equation}
+x = \sqrt{b}
+\end{equation}
+
+<p class="footpara">
+If \(a^2=b\) and \( b=2 \), then the solution must either \[ a=+\sqrt{2} \] or \[ a=-\sqrt{2} \].
+</p></div></div>
+
+
+</div>
+</div></div>
 <div id="postamble" class="status">
 <p class="postamble">Last Updated 2016-11-24 Thu 16:29. Created by Tisoga</p>
                             <div id="disqus_thread"></div>
