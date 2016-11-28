@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-11-26 Sat 16:18 -->
+<!-- 2016-11-28 Mon 13:09 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Python Notes</title>
@@ -230,12 +230,73 @@ for the JavaScript code in this tag.
 <body>
 <div id="content">
 <h1 class="title">Python Notes</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org8bcef3c"><code>*args</code> 与 <code>**kwargs</code> 的作用</a></li>
+<li><a href="#org83affb8">装饰器（Decorator）</a></li>
+<li><a href="#org18bee31">垃圾回收机制（Garbage collection）</a></li>
+<li><a href="#org8bea47e">多线程（Multi-threading）</a></li>
+</ul>
+</div>
+</div>
 <p>
 一些杂乱的 Python 笔记。
 </p>
+
+<div id="outline-container-org8bcef3c" class="outline-2">
+<h2 id="org8bcef3c"><code>*args</code> 与 <code>**kwargs</code> 的作用</h2>
+<div class="outline-text-2" id="text-org8bcef3c">
+<p>
+当我们不确定向一个函数中传入多少参数时，或者想要传入列表或者元组形式的参数时，可以使用 <code>*args</code> 。当我们不确定向一个函数中传入多少个关键词数时，或者想要传入字典的值作为关键词参数，我们可以使用 ~*kwargs~。当然，args 与 kwargs 只是一种命名方式。
+</p>
+
+<p>
+其中，在调用参数中含有 <code>*</code> 时， <code>*</code> 把序列或者元组解包（unpack）成位置参数，  <code>**</code> 将字典解包成关键词参数。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org83affb8" class="outline-2">
+<h2 id="org83affb8">装饰器（Decorator）</h2>
+<div class="outline-text-2" id="text-org83affb8">
+<p>
+装饰器本质上是一个 Python 函数，它可以让其他函数在不做任何变动的情况下增加额外的功能，它的返回值也是一个函数对象。
+</p>
+
+<p>
+常用场景：插入日志、性能测试、事务处理、缓存、权限校验等。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org18bee31" class="outline-2">
+<h2 id="org18bee31">垃圾回收机制（Garbage collection）</h2>
+<div class="outline-text-2" id="text-org18bee31">
+<p>
+Python 中的垃圾回收是以引用计数为主，标记-清除和分代收集为辅。
+</p>
+
+<dl class="org-dl">
+<dt>引用计数</dt><dd>Python 在内存中存储每个对象的引用计数，如果计数变成0，该对象就会消失，分配给该对象的内存就会被释放。</dd>
+<dt>标记-清除</dt><dd>一些容器对象，比如 list/dict/tuple/instance 等可能会出现引用循环，对于这些循环，垃圾回收器会定时回收这些循环。</dd>
+<dt>分代收集</dt><dd>Python 把内存根据对象存货的时间划分为三代，对象创建之后，垃圾回收器会分配它们所属的代。每个对象都会被分配一个代，而被分配更年轻的代是被优先处理的，因此越晚创建的对象越容易被回收。</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-org8bea47e" class="outline-2">
+<h2 id="org8bea47e">多线程（Multi-threading）</h2>
+<div class="outline-text-2" id="text-org8bea47e">
+<p>
+Python 并不支持真正意义上的多线程。Python 中有一个叫 Global Interpreter Lock (GIL) 的东西，它能确保你的代码中永远只有一个线程在执行。经过 GIL 的处理会增加执行的开销。这就意味着如果你先要提高代码的执行效率，使用 threading 不是一个明智的选择，当然如果你的代码是 IO 密集型，多线程可以明显提高效率，相反如果你的代码是 CPU 密集型，这种情况下多线程大部分是鸡肋。
+</p>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">Last Updated 2016-11-26 Sat 16:18. Created by Tisoga</p>
+<p class="postamble">Last Updated 2016-11-28 Mon 13:09. Created by Tisoga</p>
                             <div id="disqus_thread"></div>
                             <script type="text/javascript">
                             var disqus_shortname = 'tisogasnotes';
@@ -244,6 +305,15 @@ for the JavaScript code in this tag.
                                          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
                                          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
                                           })();
+                            </script>
+                            <script>
+                            var _hmt = _hmt || [];
+                            (function() {
+                                    var hm = document.createElement("script");
+                                    hm.src = "https://hm.baidu.com/hm.js?001e800887eba2f8f57ec8059aafdad6";
+                                    var s = document.getElementsByTagName("script")[0]; 
+                                    s.parentNode.insertBefore(hm, s);
+                                    })();
                             </script>
 </div>
 </body>
