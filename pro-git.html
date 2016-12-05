@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-12-05 Mon 11:33 -->
+<!-- 2016-12-05 Mon 15:41 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Pro Git Notes</title>
@@ -243,6 +243,19 @@ for the JavaScript code in this tag.
 <li><a href="#org78b65a2">Git 基础</a></li>
 </ul>
 </li>
+<li><a href="#orge099239">Git 基础</a>
+<ul>
+<li><a href="#org8fb8ea2">获取 Git 仓库</a></li>
+<li><a href="#org9c1a4aa">记录每次更新到仓库</a>
+<ul>
+<li><a href="#orgca40bc8">忽略文件</a></li>
+<li><a href="#org16cac66">跳过使用暂存区域</a></li>
+<li><a href="#org1759ba1">移除文件</a></li>
+</ul>
+</li>
+<li><a href="#org60f46f2">查看提交历史</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -402,9 +415,234 @@ Git 有三种状态：已提交（committed）、已修改（modified）和已�
 </div>
 </div>
 </div>
+
+
+<div id="outline-container-orge099239" class="outline-2">
+<h2 id="orge099239">Git 基础</h2>
+<div class="outline-text-2" id="text-orge099239">
+</div><div id="outline-container-org8fb8ea2" class="outline-3">
+<h3 id="org8fb8ea2">获取 Git 仓库</h3>
+<div class="outline-text-3" id="text-org8fb8ea2">
+<div class="org-src-container">
+<pre class="src src-shell">&gt; <span class="ATTRLIST-1">git</span> <span class="ATTRLIST-2">init</span>
+&gt; <span class="org-comment-delimiter"># </span><span class="org-comment">or</span>
+&gt; <span class="ATTRLIST-1">git</span> <span class="ATTRLIST-2">clone</span> <span class="ATTRLIST">https://someplace.com/somerepo</span>
+&gt; <span class="ATTRLIST-1">git</span> <span class="ATTRLIST-2">clone</span> <span class="ATTRLIST">https://someplace.com/somerepo</span> <span class="ATTRLIST-2">myrepo</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9c1a4aa" class="outline-3">
+<h3 id="org9c1a4aa">记录每次更新到仓库</h3>
+<div class="outline-text-3" id="text-org9c1a4aa">
+<p>
+你工作目录下的每一个文件都只有两种状态：已跟踪或未跟踪。已跟踪的文件是指那些被纳入了版本控制的文件；工作目录中除了已跟踪文件外所有其他的文件都属于未跟踪文件。
+</p>
+
+<p>
+编辑过某些文件之后，由于自上次提交后你对它们做了修改，Git 将它们标记为已修改文件。使用 Git 时文件的生命周期如下：
+</p>
+
+
+<div class="figure">
+<p><img src="http://ww2.sinaimg.cn/large/006y8mN6jw1fafrm1gjcoj30kk09bjs2.jpg" alt="006y8mN6jw1fafrm1gjcoj30kk09bjs2.jpg" /> 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgca40bc8" class="outline-4">
+<h4 id="orgca40bc8">忽略文件</h4>
+<div class="outline-text-4" id="text-orgca40bc8">
+<p>
+一般我们总会有些文件无需纳入 Git 的管理，也不希望它们总出现在未跟踪文件列表，可以创建一个 <code>.gitignore</code> 的文件，列出要忽略的文件模式。
+</p>
+
+<pre class="example">
+# no .a files
+
+*.a
+
+# but do track lib.a, even though you're ignoring .a files above
+
+!lib.a
+
+# only ignore the TODO file in the current directory, not subdir/TODO
+
+/TODO
+
+# ignore all files in the build/ directory
+
+build/
+
+# ignore doc/notes.txt, but not doc/server/arch.txt
+
+doc/*.txt
+
+# ignore all .pdf files in the doc/ directory
+
+doc/**/*.pdf
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org16cac66" class="outline-4">
+<h4 id="org16cac66">跳过使用暂存区域</h4>
+<div class="outline-text-4" id="text-org16cac66">
+<p>
+给 <code>git commit</code> 加上 <code>-a</code> 的选项，Git 就会把所有已经跟踪过的文件暂存起来一并提交，从而跳过 <code>git add</code> 的步骤。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1759ba1" class="outline-4">
+<h4 id="org1759ba1">移除文件</h4>
+<div class="outline-text-4" id="text-org1759ba1">
+<p>
+要从 Git 中移除某个文件，就必须要从已跟踪文件清单中移除（确切的说，是从暂存区域移除），然后提交。可以用 <code>git rm</code> 命令完成此项工作，并连带从工作目录中删除指定的文件，这样以后就不会出现在未跟踪文件清单中了。
+</p>
+
+<p>
+如果删除之前修改过并且已经放到暂存区域的话，则必须要用强制删除选项 <code>-f</code> 。
+</p>
+
+<p>
+另外一种情况是，我们想要把文件从 Git 仓库中删除（亦即从暂存区域移除），但任然希望保留在当前工作目录中。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">&gt; <span class="ATTRLIST-2">git</span> <span class="ATTRLIST-3">rm</span> <span class="ATTRLIST-1">--cached</span> <span class="ATTRLIST">file_you_want_to_remove</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org60f46f2" class="outline-3">
+<h3 id="org60f46f2">查看提交历史</h3>
+<div class="outline-text-3" id="text-org60f46f2">
+<p>
+<code>git log</code> 会按提交时间列出所有的更新，最近的更新排在最上面。
+</p>
+
+<dl class="org-dl">
+<dt><code>-p</code></dt><dd>用来显示每次提交更新的内容差异。在后面加上 <code>-n</code> 来仅显示最近 n 次的提交。</dd>
+<dt><code>--stat</code></dt><dd>显示每次提交的简略的统计信息。</dd>
+<dt><code>--pretty</code></dt><dd>这个选项可以制定使用不同于默认格式的方式展示提交历史。 <code>oneline</code> 将每个提交放在一行显示，查看的提交数很大的时候非常有用。 <code>format</code> 可以自己定制输出的格式。</dd>
+</dl>
+
+<div class="org-src-container">
+<pre class="src src-shell">&gt; <span class="ATTRLIST-13">git</span> <span class="ATTRLIST-14">log</span> <span class="ATTRLIST-12">--pretty</span>=<span class="ATTRLIST-11">format:</span><span class="org-string">"%h - %an, %ar : %s"</span>
+<span class="ATTRLIST-10">ca82a6d</span> <span class="ATTRLIST-9">-</span> <span class="ATTRLIST-8">Scott</span> <span class="ATTRLIST-12">Chacon,</span> <span class="org-highlight-numbers-number">6</span> <span class="ATTRLIST-7">years</span> <span class="ATTRLIST-6">ago</span> <span class="ATTRLIST-5">:</span> <span class="ATTRLIST-12">changed</span> <span class="ATTRLIST-4">the</span> <span class="ATTRLIST-12">version</span> <span class="ATTRLIST-12">number</span>
+<span class="org-highlight-numbers-number">085bb3b</span> <span class="ATTRLIST-9">-</span> <span class="ATTRLIST-8">Scott</span> <span class="ATTRLIST-12">Chacon,</span> <span class="org-highlight-numbers-number">6</span> <span class="ATTRLIST-7">years</span> <span class="ATTRLIST-6">ago</span> <span class="ATTRLIST-5">:</span> <span class="ATTRLIST-12">removed</span> <span class="ATTRLIST-3">unnecessary</span> <span class="ATTRLIST-12">test</span>
+<span class="ATTRLIST-2">a11bef0</span> <span class="ATTRLIST-9">-</span> <span class="ATTRLIST-8">Scott</span> <span class="ATTRLIST-12">Chacon,</span> <span class="org-highlight-numbers-number">6</span> <span class="ATTRLIST-7">years</span> <span class="ATTRLIST-6">ago</span> <span class="ATTRLIST-5">:</span> <span class="ATTRLIST-1">first</span> <span class="ATTRLIST">commit</span>
+</pre>
+</div>
+
+<p>
+<code>git log --pretty=format</code> 常用的选项
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">选项</td>
+<td class="org-left">说明</td>
+</tr>
+
+<tr>
+<td class="org-left">%H</td>
+<td class="org-left">提交对象（commit）的完整哈希字串</td>
+</tr>
+
+<tr>
+<td class="org-left">%h</td>
+<td class="org-left">提交对象的简短哈希子串</td>
+</tr>
+
+<tr>
+<td class="org-left">%T</td>
+<td class="org-left">树对象（tree）的完整哈希子串</td>
+</tr>
+
+<tr>
+<td class="org-left">%t</td>
+<td class="org-left">树对象的简短哈希子串</td>
+</tr>
+
+<tr>
+<td class="org-left">%P</td>
+<td class="org-left">父对象（parent）的完整哈希子串</td>
+</tr>
+
+<tr>
+<td class="org-left">%p</td>
+<td class="org-left">父对象的简短哈希子串</td>
+</tr>
+
+<tr>
+<td class="org-left">%an</td>
+<td class="org-left">作者（author）的名字</td>
+</tr>
+
+<tr>
+<td class="org-left">%ae</td>
+<td class="org-left">作者的电子邮件地址</td>
+</tr>
+
+<tr>
+<td class="org-left">%ad</td>
+<td class="org-left">作者的修订日期（可以使用 &#x2013;date= 选项来定制格式）</td>
+</tr>
+
+<tr>
+<td class="org-left">%ar</td>
+<td class="org-left">作者的修订日期，按多久以前的方式显示</td>
+</tr>
+
+<tr>
+<td class="org-left">%cn</td>
+<td class="org-left">提交者（committer）的名字</td>
+</tr>
+
+<tr>
+<td class="org-left">%ce</td>
+<td class="org-left">提交者的电子邮件地址</td>
+</tr>
+
+<tr>
+<td class="org-left">%cd</td>
+<td class="org-left">提交日期</td>
+</tr>
+
+<tr>
+<td class="org-left">%cr</td>
+<td class="org-left">提交日期，按多久以前的方式显示</td>
+</tr>
+
+<tr>
+<td class="org-left">%s</td>
+<td class="org-left">提交说明</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+作者指的是实际作出修改的人，提交者指的是最后将此工作成果提交到仓库的人。
+</p>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">Last Updated 2016-12-05 Mon 11:33. Created by Tisoga</p>
+<p class="postamble">Last Updated 2016-12-05 Mon 15:41. Created by Tisoga</p>
                             <div id="disqus_thread"></div>
                             <script type="text/javascript">
                             var disqus_shortname = 'tisogasnotes';
