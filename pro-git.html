@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-12-05 Mon 10:57 -->
+<!-- 2016-12-05 Mon 11:32 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Pro Git Notes</title>
@@ -239,8 +239,10 @@ for the JavaScript code in this tag.
 <li><a href="#orgb3e2b7f">关于版本控制</a></li>
 <li><a href="#org4c4465e">本地版本控制系统</a></li>
 <li><a href="#orgdb5e85f">集中化的版本控制系统</a></li>
+<li><a href="#orgb222e51">分布式版本控制系统</a></li>
 </ul>
 </li>
+<li><a href="#org78b65a2">Git 基础</a></li>
 </ul>
 </div>
 </div>
@@ -287,14 +289,122 @@ for the JavaScript code in this tag.
 </div>
 
 <p>
-这么做最显而易见的缺点是中央服务器的单点故障。
+这么做最显而易见的缺点是中央服务器的单点故障。只要整个项目历史记录被保存在单一位置，就有丢失所有历史更新数据的风险。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb222e51" class="outline-3">
+<h3 id="orgb222e51">分布式版本控制系统</h3>
+<div class="outline-text-3" id="text-orgb222e51">
+<p>
+Distributed Version Control System, DVCS
+</p>
+
+<p>
+在这类系统中，客户端不只提取最新版本的文件快照，而是把整个代码仓库完整的镜像下来。这样的haunted，任何一处协同工作用的服务器发生故障，事后都可以用任何一个镜像出来的本地仓库恢复。
+</p>
+
+
+<div class="figure">
+<p><img src="http://ww4.sinaimg.cn/large/006y8mN6jw1fafqpvhsjdj30ix0jjdgt.jpg" alt="006y8mN6jw1fafqpvhsjdj30ix0jjdgt.jpg" /> 
 </p>
 </div>
 </div>
 </div>
 </div>
+
+<div id="outline-container-org78b65a2" class="outline-2">
+<h2 id="org78b65a2">Git 基础</h2>
+<div class="outline-text-2" id="text-org78b65a2">
+<ul class="org-ul">
+<li>直接记录快照，而非差异比较</li>
+</ul>
+
+<p>
+Git 和其他版本控制系统的主要差别在于 Git 对待数据的方法。概念上来区分，其他大部分系统以文件变更列表的方式存储信息，这类系统将它们保存的信息看做是一组基本文件和每个文件随时间逐步累积的差异。
+</p>
+
+
+<div class="figure">
+<p><img src="http://ww2.sinaimg.cn/large/006y8mN6jw1fafqtmuaf8j30ku08gwf7.jpg" alt="006y8mN6jw1fafqtmuaf8j30ku08gwf7.jpg" /> 
+</p>
+</div>
+
+<p>
+Git 更像是把数据看做是对小型文件系统的一组快照。每次你提交更新，或在 Git 中保存项目状态时，它主要对当时的全部文件制作一个快照并保存这个快照的索引。
+</p>
+
+<p>
+如果文件没有修改，Git 不再重新存储该文件，而只是保留一个链接指向之前存储的文件。Git 对待数据更像一个 <b>快照流</b> 。
+</p>
+
+
+<div class="figure">
+<p><img src="http://ww2.sinaimg.cn/large/006y8mN6jw1fafqw1t3rij30lr08mdgn.jpg" alt="006y8mN6jw1fafqw1t3rij30lr08mdgn.jpg" /> 
+</p>
+</div>
+
+<ul class="org-ul">
+<li>近乎所有操作都是本地执行</li>
+
+<li>Git 保证完整性</li>
+</ul>
+
+<p>
+Git 中所有数据在存储前都计算校验和，然后以校验和来引用。
+</p>
+
+<p>
+Git 用以计算校验和的机制叫做 SHA-1 散列（hash，哈希）。这是一个由 40 个十六进制字符组成字符串，基于 Git 中文件的内容或目录结构计算出来。
+</p>
+
+<pre class="example">
+24b9da6552252987aa493b52f8696cd6d3b00373
+</pre>
+
+<p>
+实际上，Git 数据库中保存的信息都是以文件内容的哈希值来索引，而不是文件名。
+</p>
+
+<ul class="org-ul">
+<li>Git 一般只添加数据</li>
+</ul>
+
+<p>
+Git 有三种状态：已提交（committed）、已修改（modified）和已暂存（staged）。已提交表示数据已经安全的保存在本地数据库中，已修改表示修改了文件，但是还没保存到数据库中，已暂存表示对一个已经修改的文件的当前版本做了标记，使之包含在下次提交的快照中。
+</p>
+
+<p>
+由此引入 Git 项目的三个工作区域的概念：Git 仓库、工作目录以及暂存区域。
+</p>
+
+
+<div class="figure">
+<p><img src="http://ww1.sinaimg.cn/large/006y8mN6jw1fafr5ozuegj30l10buwfa.jpg" alt="006y8mN6jw1fafr5ozuegj30l10buwfa.jpg" /> 
+</p>
+</div>
+
+<dl class="org-dl">
+<dt>Git 仓库</dt><dd>是 Git 用来保存项目的元数据和对象数据的地方。这是 Git 最重要的部分，从其他计算机克隆仓库时，拷贝的就是这里的数据。</dd>
+<dt>工作目录</dt><dd>是对项目的某个版本独立提取出来的内容。这些从 Git 仓库的压缩数据库中提取出来的文件，放在磁盘上面供你使用或者修改。</dd>
+<dt>暂存区域</dt><dd>是一个文件，保存了下次将要提交的文件列表信息，一般在 Git 仓库目录中。</dd>
+</dl>
+
+<p>
+基本的 Git 工作流程：
+</p>
+
+<ol class="org-ol">
+<li>在工作目录中修改文件</li>
+<li>暂存文件，将文件的快照放入暂存区域</li>
+<li>提交更新，找到暂存区域的文件，将快照永久性存储到 Git 残酷目录</li>
+</ol>
+</div>
+</div>
+</div>
 <div id="postamble" class="status">
-<p class="postamble">Last Updated 2016-12-05 Mon 10:57. Created by Tisoga</p>
+<p class="postamble">Last Updated 2016-12-05 Mon 11:31. Created by Tisoga</p>
                             <div id="disqus_thread"></div>
                             <script type="text/javascript">
                             var disqus_shortname = 'tisogasnotes';
