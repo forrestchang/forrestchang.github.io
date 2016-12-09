@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-12-09 Fri 20:49 -->
+<!-- 2016-12-09 Fri 20:59 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Pro Git Notes</title>
@@ -234,49 +234,49 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgb028b20">起步</a>
+<li><a href="#orgb028b20">1. 起步</a>
 <ul>
-<li><a href="#orgb3e2b7f">关于版本控制</a></li>
-<li><a href="#org4c4465e">本地版本控制系统</a></li>
-<li><a href="#orgdb5e85f">集中化的版本控制系统</a></li>
-<li><a href="#orgb222e51">分布式版本控制系统</a></li>
-<li><a href="#org7b33f8e">Git 基础</a></li>
+<li><a href="#orgb3e2b7f">1.1. 关于版本控制</a></li>
+<li><a href="#org4c4465e">1.2. 本地版本控制系统</a></li>
+<li><a href="#orgdb5e85f">1.3. 集中化的版本控制系统</a></li>
+<li><a href="#orgb222e51">1.4. 分布式版本控制系统</a></li>
+<li><a href="#orged92710">1.5. Git 基础</a></li>
 </ul>
 </li>
-<li><a href="#orged92710">Git 基础</a>
+<li><a href="#org960a7f2">2. Git 基础</a>
 <ul>
-<li><a href="#org8fb8ea2">获取 Git 仓库</a></li>
-<li><a href="#org9c1a4aa">记录每次更新到仓库</a>
+<li><a href="#org8fb8ea2">2.1. 获取 Git 仓库</a></li>
+<li><a href="#org9c1a4aa">2.2. 记录每次更新到仓库</a>
 <ul>
 <li><a href="#orgca40bc8">忽略文件</a></li>
 <li><a href="#org16cac66">跳过使用暂存区域</a></li>
 <li><a href="#org1759ba1">移除文件</a></li>
 </ul>
 </li>
-<li><a href="#org60f46f2">查看提交历史</a></li>
-<li><a href="#org923015b">撤销操作</a>
+<li><a href="#org60f46f2">2.3. 查看提交历史</a></li>
+<li><a href="#org923015b">2.4. 撤销操作</a>
 <ul>
 <li><a href="#orgc08a1e0">取消暂存的文件</a></li>
 <li><a href="#org552f73c">撤销对文件的修改</a></li>
 </ul>
 </li>
-<li><a href="#orgd18d4ef">远程仓库的使用</a>
+<li><a href="#orgd18d4ef">2.5. 远程仓库的使用</a>
 <ul>
-<li><a href="#org207a965">查看远程仓库</a></li>
+<li><a href="#org203dbb0">查看远程仓库</a></li>
 <li><a href="#org15f8382">添加远程仓库</a></li>
 <li><a href="#org2ad1c2b">从远程仓库中抓取与拉取</a></li>
 <li><a href="#org323dd71">推送到远程仓库</a></li>
-<li><a href="#org203dbb0">查看远程仓库</a></li>
+<li><a href="#org3f451cf">查看远程仓库</a></li>
 <li><a href="#org0913b84">远程仓库的移除与重命名</a></li>
 </ul>
 </li>
-<li><a href="#org069ecde">打标签</a>
+<li><a href="#org069ecde">2.6. 打标签</a>
 <ul>
 <li><a href="#org5f4ab64">列出标签</a></li>
 <li><a href="#orgdd2cc84">创建标签</a></li>
 </ul>
 </li>
-<li><a href="#org672999c">Git 别名</a></li>
+<li><a href="#org672999c">2.7. Git 别名</a></li>
 </ul>
 </li>
 </ul>
@@ -287,19 +287,19 @@ for the JavaScript code in this tag.
 </p>
 
 <div id="outline-container-orgb028b20" class="outline-2">
-<h2 id="orgb028b20">起步</h2>
-<div class="outline-text-2" id="text-orgb028b20">
+<h2 id="orgb028b20"><span class="section-number-2">1</span> 起步</h2>
+<div class="outline-text-2" id="text-1">
 </div><div id="outline-container-orgb3e2b7f" class="outline-3">
-<h3 id="orgb3e2b7f">关于版本控制</h3>
-<div class="outline-text-3" id="text-orgb3e2b7f">
+<h3 id="orgb3e2b7f"><span class="section-number-3">1.1</span> 关于版本控制</h3>
+<div class="outline-text-3" id="text-1-1">
 <p>
 什么是版本控制？版本控制是一种记录一个或若干个文件内容变化，以便将来查阅特定版本修订情况的系统。
 </p>
 </div>
 </div>
 <div id="outline-container-org4c4465e" class="outline-3">
-<h3 id="org4c4465e">本地版本控制系统</h3>
-<div class="outline-text-3" id="text-org4c4465e">
+<h3 id="org4c4465e"><span class="section-number-3">1.2</span> 本地版本控制系统</h3>
+<div class="outline-text-3" id="text-1-2">
 
 <div class="figure">
 <p><img src="http://ww2.sinaimg.cn/large/006y8mN6jw1fafq6azi7jj30li0ibwf9.jpg" alt="006y8mN6jw1fafq6azi7jj30li0ibwf9.jpg" /> 
@@ -308,8 +308,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 <div id="outline-container-orgdb5e85f" class="outline-3">
-<h3 id="orgdb5e85f">集中化的版本控制系统</h3>
-<div class="outline-text-3" id="text-orgdb5e85f">
+<h3 id="orgdb5e85f"><span class="section-number-3">1.3</span> 集中化的版本控制系统</h3>
+<div class="outline-text-3" id="text-1-3">
 <p>
 如何让在不同系统上的开发者协同工作？
 </p>
@@ -331,8 +331,8 @@ for the JavaScript code in this tag.
 </div>
 
 <div id="outline-container-orgb222e51" class="outline-3">
-<h3 id="orgb222e51">分布式版本控制系统</h3>
-<div class="outline-text-3" id="text-orgb222e51">
+<h3 id="orgb222e51"><span class="section-number-3">1.4</span> 分布式版本控制系统</h3>
+<div class="outline-text-3" id="text-1-4">
 <p>
 Distributed Version Control System, DVCS
 </p>
@@ -349,9 +349,9 @@ Distributed Version Control System, DVCS
 </div>
 </div>
 
-<div id="outline-container-org7b33f8e" class="outline-3">
-<h3 id="org7b33f8e">Git 基础</h3>
-<div class="outline-text-3" id="text-org7b33f8e">
+<div id="outline-container-orged92710" class="outline-3">
+<h3 id="orged92710"><span class="section-number-3">1.5</span> Git 基础</h3>
+<div class="outline-text-3" id="text-1-5">
 <ul class="org-ul">
 <li>直接记录快照，而非差异比较</li>
 </ul>
@@ -440,12 +440,12 @@ Git 有三种状态：已提交（committed）、已修改（modified）和已�
 </div>
 
 
-<div id="outline-container-orged92710" class="outline-2">
-<h2 id="orged92710">Git 基础</h2>
-<div class="outline-text-2" id="text-orged92710">
+<div id="outline-container-org960a7f2" class="outline-2">
+<h2 id="org960a7f2"><span class="section-number-2">2</span> Git 基础</h2>
+<div class="outline-text-2" id="text-2">
 </div><div id="outline-container-org8fb8ea2" class="outline-3">
-<h3 id="org8fb8ea2">获取 Git 仓库</h3>
-<div class="outline-text-3" id="text-org8fb8ea2">
+<h3 id="org8fb8ea2"><span class="section-number-3">2.1</span> 获取 Git 仓库</h3>
+<div class="outline-text-3" id="text-2-1">
 <div class="org-src-container">
 <pre class="src src-shell">&gt; <span class="ATTRLIST-1">git</span> <span class="ATTRLIST-2">init</span>
 &gt; <span class="org-comment-delimiter"># </span><span class="org-comment">or</span>
@@ -457,8 +457,8 @@ Git 有三种状态：已提交（committed）、已修改（modified）和已�
 </div>
 
 <div id="outline-container-org9c1a4aa" class="outline-3">
-<h3 id="org9c1a4aa">记录每次更新到仓库</h3>
-<div class="outline-text-3" id="text-org9c1a4aa">
+<h3 id="org9c1a4aa"><span class="section-number-3">2.2</span> 记录每次更新到仓库</h3>
+<div class="outline-text-3" id="text-2-2">
 <p>
 你工作目录下的每一个文件都只有两种状态：已跟踪或未跟踪。已跟踪的文件是指那些被纳入了版本控制的文件；工作目录中除了已跟踪文件外所有其他的文件都属于未跟踪文件。
 </p>
@@ -542,8 +542,8 @@ doc/**/*.pdf
 </div>
 
 <div id="outline-container-org60f46f2" class="outline-3">
-<h3 id="org60f46f2">查看提交历史</h3>
-<div class="outline-text-3" id="text-org60f46f2">
+<h3 id="org60f46f2"><span class="section-number-3">2.3</span> 查看提交历史</h3>
+<div class="outline-text-3" id="text-2-3">
 <p>
 <code>git log</code> 会按提交时间列出所有的更新，最近的更新排在最上面。
 </p>
@@ -735,8 +735,8 @@ doc/**/*.pdf
 </div>
 
 <div id="outline-container-org923015b" class="outline-3">
-<h3 id="org923015b">撤销操作</h3>
-<div class="outline-text-3" id="text-org923015b">
+<h3 id="org923015b"><span class="section-number-3">2.4</span> 撤销操作</h3>
+<div class="outline-text-3" id="text-2-4">
 <p>
 有时候我们提交完了才发现漏掉几个文件没有添加，或者提交信息写错了。此时，可以用 <code>--amend</code> 选项的命令提交命令尝试重新提交：
 </p>
@@ -786,11 +786,11 @@ doc/**/*.pdf
 </div>
 
 <div id="outline-container-orgd18d4ef" class="outline-3">
-<h3 id="orgd18d4ef">远程仓库的使用</h3>
-<div class="outline-text-3" id="text-orgd18d4ef">
-</div><div id="outline-container-org207a965" class="outline-4">
-<h4 id="org207a965">查看远程仓库</h4>
-<div class="outline-text-4" id="text-org207a965">
+<h3 id="orgd18d4ef"><span class="section-number-3">2.5</span> 远程仓库的使用</h3>
+<div class="outline-text-3" id="text-2-5">
+</div><div id="outline-container-org203dbb0" class="outline-4">
+<h4 id="org203dbb0">查看远程仓库</h4>
+<div class="outline-text-4" id="text-org203dbb0">
 <p>
 想要查看已经配置的远程仓库服务器，可以运行 <code>git remote</code> 命令，它会列出你指定的每一个远程服务器的简写。如果你已经克隆了自己的仓库，至少应该能看到 origin - 这是 Git 给你克隆的仓库服务器的默认名字。
 </p>
@@ -873,9 +873,9 @@ doc/**/*.pdf
 </div>
 </div>
 
-<div id="outline-container-org203dbb0" class="outline-4">
-<h4 id="org203dbb0">查看远程仓库</h4>
-<div class="outline-text-4" id="text-org203dbb0">
+<div id="outline-container-org3f451cf" class="outline-4">
+<h4 id="org3f451cf">查看远程仓库</h4>
+<div class="outline-text-4" id="text-org3f451cf">
 <p>
 如果想要查看某一个远程仓库的更多信息，可以使用 <code>git remote show [remote-name]</code> 这个命令。
 </p>
@@ -897,8 +897,8 @@ doc/**/*.pdf
 </div>
 
 <div id="outline-container-org069ecde" class="outline-3">
-<h3 id="org069ecde">打标签</h3>
-<div class="outline-text-3" id="text-org069ecde">
+<h3 id="org069ecde"><span class="section-number-3">2.6</span> 打标签</h3>
+<div class="outline-text-3" id="text-2-6">
 <p>
 Git 可以给历史中的某一个提交打上标签。比较有代表性的是人们会使用这个功能来标记发布节点（v1.0 等等）
 </p>
@@ -955,12 +955,12 @@ Git 使用两种主要类型的标签：轻量标签（lightweight）与附注�
 </div>
 
 <div id="outline-container-org672999c" class="outline-3">
-<h3 id="org672999c">Git 别名</h3>
+<h3 id="org672999c"><span class="section-number-3">2.7</span> Git 别名</h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">Last Updated 2016-12-09 Fri 20:48. Created by Tisoga</p>
+<p class="postamble">Last Updated 2016-12-09 Fri 20:59. Created by Tisoga</p>
                             <div id="disqus_thread"></div>
                             <script type="text/javascript">
                             var disqus_shortname = 'tisogasnotes';
