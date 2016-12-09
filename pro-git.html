@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-12-05 Mon 15:41 -->
+<!-- 2016-12-05 Mon 20:26 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Pro Git Notes</title>
@@ -240,10 +240,10 @@ for the JavaScript code in this tag.
 <li><a href="#org4c4465e">本地版本控制系统</a></li>
 <li><a href="#orgdb5e85f">集中化的版本控制系统</a></li>
 <li><a href="#orgb222e51">分布式版本控制系统</a></li>
-<li><a href="#org78b65a2">Git 基础</a></li>
+<li><a href="#orge099239">Git 基础</a></li>
 </ul>
 </li>
-<li><a href="#orge099239">Git 基础</a>
+<li><a href="#org7b33f8e">Git 基础</a>
 <ul>
 <li><a href="#org8fb8ea2">获取 Git 仓库</a></li>
 <li><a href="#org9c1a4aa">记录每次更新到仓库</a>
@@ -254,6 +254,10 @@ for the JavaScript code in this tag.
 </ul>
 </li>
 <li><a href="#org60f46f2">查看提交历史</a></li>
+<li><a href="#org923015b">撤销操作</a></li>
+<li><a href="#orgd18d4ef">远程仓库的使用</a></li>
+<li><a href="#org069ecde">打标签</a></li>
+<li><a href="#org672999c">Git 别名</a></li>
 </ul>
 </li>
 </ul>
@@ -326,9 +330,9 @@ Distributed Version Control System, DVCS
 </div>
 </div>
 
-<div id="outline-container-org78b65a2" class="outline-3">
-<h3 id="org78b65a2">Git 基础</h3>
-<div class="outline-text-3" id="text-org78b65a2">
+<div id="outline-container-orge099239" class="outline-3">
+<h3 id="orge099239">Git 基础</h3>
+<div class="outline-text-3" id="text-orge099239">
 <ul class="org-ul">
 <li>直接记录快照，而非差异比较</li>
 </ul>
@@ -417,9 +421,9 @@ Git 有三种状态：已提交（committed）、已修改（modified）和已�
 </div>
 
 
-<div id="outline-container-orge099239" class="outline-2">
-<h2 id="orge099239">Git 基础</h2>
-<div class="outline-text-2" id="text-orge099239">
+<div id="outline-container-org7b33f8e" class="outline-2">
+<h2 id="org7b33f8e">Git 基础</h2>
+<div class="outline-text-2" id="text-org7b33f8e">
 </div><div id="outline-container-org8fb8ea2" class="outline-3">
 <h3 id="org8fb8ea2">获取 Git 仓库</h3>
 <div class="outline-text-3" id="text-org8fb8ea2">
@@ -532,7 +536,7 @@ doc/**/*.pdf
 </dl>
 
 <div class="org-src-container">
-<pre class="src src-shell">&gt; <span class="ATTRLIST-13">git</span> <span class="ATTRLIST-14">log</span> <span class="ATTRLIST-12">--pretty</span>=<span class="ATTRLIST-11">format:</span><span class="org-string">"%h - %an, %ar : %s"</span>
+<pre class="src src-bash">&gt; <span class="ATTRLIST-13">git</span> <span class="ATTRLIST-14">log</span> <span class="ATTRLIST-12">--pretty</span>=<span class="ATTRLIST-11">format:</span><span class="org-string">"%h - %an, %ar : %s"</span>
 <span class="ATTRLIST-10">ca82a6d</span> <span class="ATTRLIST-9">-</span> <span class="ATTRLIST-8">Scott</span> <span class="ATTRLIST-12">Chacon,</span> <span class="org-highlight-numbers-number">6</span> <span class="ATTRLIST-7">years</span> <span class="ATTRLIST-6">ago</span> <span class="ATTRLIST-5">:</span> <span class="ATTRLIST-12">changed</span> <span class="ATTRLIST-4">the</span> <span class="ATTRLIST-12">version</span> <span class="ATTRLIST-12">number</span>
 <span class="org-highlight-numbers-number">085bb3b</span> <span class="ATTRLIST-9">-</span> <span class="ATTRLIST-8">Scott</span> <span class="ATTRLIST-12">Chacon,</span> <span class="org-highlight-numbers-number">6</span> <span class="ATTRLIST-7">years</span> <span class="ATTRLIST-6">ago</span> <span class="ATTRLIST-5">:</span> <span class="ATTRLIST-12">removed</span> <span class="ATTRLIST-3">unnecessary</span> <span class="ATTRLIST-12">test</span>
 <span class="ATTRLIST-2">a11bef0</span> <span class="ATTRLIST-9">-</span> <span class="ATTRLIST-8">Scott</span> <span class="ATTRLIST-12">Chacon,</span> <span class="org-highlight-numbers-number">6</span> <span class="ATTRLIST-7">years</span> <span class="ATTRLIST-6">ago</span> <span class="ATTRLIST-5">:</span> <span class="ATTRLIST-1">first</span> <span class="ATTRLIST">commit</span>
@@ -639,10 +643,22 @@ doc/**/*.pdf
 </p>
 </div>
 </div>
+<div id="outline-container-org923015b" class="outline-3">
+<h3 id="org923015b">撤销操作</h3>
+</div>
+<div id="outline-container-orgd18d4ef" class="outline-3">
+<h3 id="orgd18d4ef">远程仓库的使用</h3>
+</div>
+<div id="outline-container-org069ecde" class="outline-3">
+<h3 id="org069ecde">打标签</h3>
+</div>
+<div id="outline-container-org672999c" class="outline-3">
+<h3 id="org672999c">Git 别名</h3>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="postamble">Last Updated 2016-12-05 Mon 15:41. Created by Tisoga</p>
+<p class="postamble">Last Updated 2016-12-05 Mon 19:52. Created by Tisoga</p>
                             <div id="disqus_thread"></div>
                             <script type="text/javascript">
                             var disqus_shortname = 'tisogasnotes';
