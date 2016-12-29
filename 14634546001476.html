@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  2016 Week 39 Review - Hack Notes
+  Swift 学习笔记：字符串和字符 - Hack Notes
   
   </title>
   
@@ -109,19 +109,19 @@
       <div class="markdown-body article-wrap">
        <div class="article">
           
-          <h1>2016 Week 39 Review</h1>
+          <h1>Swift 学习笔记：字符串和字符</h1>
      
         <div class="read-more clearfix">
-          <span class="date">2016/9/25</span>
+          <span class="date">2016/5/17</span>
 
           <span>posted in&nbsp;</span> 
           
-              <span class="posted-in"><a href='life.html'>Life</a></span>
+              <span class="posted-in"><a href='technology.html'>Tech</a></span>
            
          
           <span class="comments">
             
-              <a href="http://forrestchang.github.io/14824077552377.html#disqus_thread">comments</a>
+              <a href="http://forrestchang.github.io/14634546001476.html#disqus_thread">comments</a>
             
 
             
@@ -131,57 +131,83 @@
       </div><!-- article -->
 
       <div class="article-content">
-      <p>好久没有写周总结了，所以这几周都过得比较颓废(≧▽≦)/</p>
+      <h2 id="toc_0">字符串是值类型</h2>
 
-<h2 id="toc_0">编程</h2>
+<p>使用字符串会进行值拷贝。</p>
 
-<p>总的来说，好像这一周并没有做出什么东西来。本来是在看《Web Scraping with Python》这本书的，可以看到后面发现错误挺多的，都有一些最基本的语法错误，所以索性就直接不看了。然后知乎专栏的爬虫也一直没有开始写。</p>
+<p>在实际的编译时，Swift 编译器会优化字符串的使用，使实际的复制只发生在绝对必要的情况下，这意味着将字符串作为值类型的同时可以获得极高的性能。</p>
 
-<p>从前几周就开始使用 VS Code 了，比想象中的好用很多，上一次使用还是刚出的时候，很多东西都不完善，现在 1.0 版本有了很大的改进，作为主力编辑器应该是没有什么问题了。Atom 的启动速度还是那么慢，什么时候改进一些什么时候再说吧。Emacs 已经好久没有用了，应该没有什么特殊情况不会去用了吧，写 Lisp 和 Haskell VS Code 或许也能够胜任。</p>
+<h2 id="toc_1">Working with Characters</h2>
 
-<p>最近最烦心的一件事情就是不知道以后要从事什么方向的程序员了。目前自己的技术栈并不是很丰富，杂七杂八的东西研究了很多，赚钱的技能没学多少……所以还是有必要挑一个搬砖的技能好好磨练一下了。目前初步的计划是 Python Web 开发，然后顺带把 C 语言再看看然后去读 Python 的源码，再看一些经典的书（UNIX 系列）。</p>
+<p>可以使用 <code>for-in</code> 循环来遍历字符串中的 <code>characters</code> 属性来获取每一个字符的值。</p>
 
-<h3 id="toc_1">下周的计划</h3>
+<p>字符串可以通过传递一个值类型为 <code>Character</code> 的数组作为自变量来初始化。</p>
 
-<p>把《Flask Web Development: Developing Web Applications with Python》这本书看完，然后把书中的博客例子做出来。</p>
+<h2 id="toc_2">连接字符串和字符</h2>
 
-<p>顺便写代码累了的时候可以刷刷《程序员修炼之道》这本书，以前看过其中的一部分，还是比较有意思的。</p>
+<p>字符串可以通过加法运算符相加在一起创建一个新的字符串。</p>
 
-<h2 id="toc_2">日语</h2>
+<p><code>append()</code> 方法可以将一个字符附加到一个字符串变量的尾部。</p>
 
-<p>12月份就要考试了，然而我还没怎么开始学习。大概在 YouTube 上看了几节五十音的视频，其实五十音之前也都学过，平假名基本上还是熟悉的，就是片假名记不住-_-|||</p>
+<h2 id="toc_3">Unicode</h2>
 
-<h3 id="toc_3">下周的计划</h3>
+<h3 id="toc_4">Unicode Scalars（Unicode 标量）</h3>
 
-<p>熟练掌握五十音，包括平假名和片假名的书写、发音。先把 YouTube 上那一个系列的视频看完吧，然后直接拿单词卡片来背，Anki 中也有单词本可以用来复习。</p>
+<p>Swift 的 <code>String</code> 类型是基于 Unicode 标量建立的。Unicode 标量是对应字符或者修饰符的唯一的 21 位数字。</p>
 
-<h2 id="toc_4">游戏</h2>
+<p>Unicode 码位（code poing）的范围是 <code>U+0000</code> 到 <code>U+1F425</code> 或者 <code>U+E000</code> 到 <code>U+10FFFF</code>。Unicode 标量不包括 Unicode 代理项（surrogate pair）码位，其码位范围是 <code>U+D800</code> 到 <code>U+DFFF</code>。</p>
 
-<p>这周没怎么玩游戏，守望先锋已经一周多没有玩了。</p>
+<p>注意，并不是所有的 21 位 Unicode 标量都表示一个字符，因为有一些标量是留作未来分配的。</p>
 
-<p>平时的时候玩 「Pokemon Omega Ruby」比较多，也就是孵孵蛋，打打对战塔，刚入对战坑，好多东西还不懂，还需要学习一个。</p>
+<h3 id="toc_5">字符串字面量的特殊字符（Special Character in String Literals）</h3>
 
-<p>开始入门狼人杀，这周的几次聚会玩狼人杀很嗨，在某宝上买了一套卡牌，准备研究研究。</p>
+<p><img src="media/14634546001476/14634553799193.jpg" alt=""/></p>
 
-<h2 id="toc_5">阅读</h2>
+<h3 id="toc_6">可扩展的字形群集（Extended Grapheme Clusters）</h3>
 
-<p>看了一点《胡适留学日记》，拖到现在还没有看完，Kindle 好像来学校之后就有点吃灰了。</p>
+<p>每一个 Swift 的 Character 类型代表一个可扩展的字形群。一个可扩展的字形群是一个或多个可生成人类可读的字符 Unicode 标量的有序排列。</p>
 
-<h3 id="toc_6">下周的计划</h3>
+<h3 id="toc_7">计算字符数量</h3>
 
-<p>看完《胡适留学日记》。</p>
+<p>如果想要获得一个字符串中的 <code>Character</code> 值得数量，可以使用字符串的 <code>characters</code> 属性的 <code>count</code> 属性。</p>
 
-<h2 id="toc_7">电影</h2>
+<p>注意在 Swift 中，使用可拓展的字符群集作为 <code>Character</code> 值来连接或改变字符串时，并不一定会更改字符串的字符数量。</p>
 
-<p>这周看了三部韩国的电影，分别是《隧道》、《釜山行》、《恐怖直播》，发现韩国的电影好好看！韩国的电影感觉黑色幽默和讽刺多一些，日本的电影中二气息比较多一些，国产的电影嘛……</p>
+<h2 id="toc_8">访问和修改字符串</h2>
 
-<p>相比较最近比较火的《釜山行》，个人还是感觉《隧道》比较好看一些。亚洲地区的丧尸片估计《釜山行》应该是最佳了，但是和欧美的一些丧尸片比起来，还是有差距的，其中的一些套路也都是别人玩过了的。《隧道》这部电影让我感觉和《活埋》很像，但是一个生还了，一个 gg 了……</p>
+<h3 id="toc_9">字符串索引</h3>
 
-<h2 id="toc_8">杂项</h2>
+<p>使用 <code>startIndex</code> 属性可以获取一个 <code>String</code> 的第一个 <code>Character</code> 的索引。使用 <code>endIndex</code> 属性可以获取最后一个 <code>Character</code> 的后一个位置的索引，所以 <code>endIndex</code> 属性不能作为一个字符串的有效下标。如果 <code>String</code> 是空串，两者是相等的。</p>
 
-<p>这周好像聚会比较多(≧▽≦)，已经吃了好几顿饭+去了一次 KTV，生活过得比较颓废。</p>
+<p><code>String.Index.predecessor()</code> 获得前一个索引，<code>successor()</code> 获得后一个索引。</p>
 
-<p>是时候应该沉迷学习了(╯﹏╰）</p>
+<p><code>Characters</code> 属性的 <code>indices</code> 属性会创建一个包含全部索引的范围（<code>Range</code>），用来在一个字符串中访问单个字符。</p>
+
+<h3 id="toc_10">插入和删除</h3>
+
+<ul>
+<li><code>insert(_:atIndex:)</code>：在一个字符串的制定索引插入一个字符</li>
+<li><code>insertContentsOf(_:at:)</code>：在一个字符串的指定索引插入一个字符串</li>
+<li>`removeAtIndex(_:)：在一个字符串的指定索引删除一个字符</li>
+<li><code>removeRange(_:)</code>：在一个字符串的指定索引删除一个子字符串</li>
+</ul>
+
+<h2 id="toc_11">比较字符串</h2>
+
+<h3 id="toc_12">字符串/字符相等</h3>
+
+<p>使用 <code>==</code> 和 <code>!=</code> 来比较两个字符/字符串是否相等/不等。</p>
+
+<h3 id="toc_13">前缀/后缀相等</h3>
+
+<ul>
+<li><code>hasPrefix(_:)</code></li>
+<li><code>hasSuffix(_:)</code></li>
+</ul>
+
+<h2 id="toc_14">字符串的 Unicode 表示形式（Unicode Representations of Strings）</h2>
+
+<p>当一个 Unicode 字符串被写进文本文件或其他存储时，字符串中的 Unicode 标量会用 Unicode 定义的几种编码格式（encoding forms）编码。每一个字符串中的小块编码都被称为 <code>code units</code>。这些包括 UTF-8,UTF-16,UTF-32 编码格式。</p>
 
 
     
@@ -192,16 +218,16 @@
         <div class="large-6 columns">
         <p class="text-left" style="padding:15px 0px;">
       
-          <a href="14824078620114.html" 
-          title="Previous Post: 2016 Week 40 Review">&laquo; 2016 Week 40 Review</a>
+          <a href="14635617646524.html" 
+          title="Previous Post: Swift学习笔记：控制流">&laquo; Swift学习笔记：控制流</a>
       
         </p>
         </div>
         <div class="large-6 columns">
       <p class="text-right" style="padding:15px 0px;">
       
-          <a  href="14706584948925.html" 
-          title="Next Post: 2016/08/08 阅读笔记">2016/08/08 阅读笔记 &raquo;</a>
+          <a  href="14631242333306.html" 
+          title="Next Post: Swift 学习笔记：属性">Swift 学习笔记：属性 &raquo;</a>
       
       </p>
         </div>

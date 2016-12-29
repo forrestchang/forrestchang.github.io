@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  2016 Week 39 Review - Hack Notes
+  Swift 学习笔记：集合类型 - Hack Notes
   
   </title>
   
@@ -109,19 +109,19 @@
       <div class="markdown-body article-wrap">
        <div class="article">
           
-          <h1>2016 Week 39 Review</h1>
+          <h1>Swift 学习笔记：集合类型</h1>
      
         <div class="read-more clearfix">
-          <span class="date">2016/9/25</span>
+          <span class="date">2016/5/9</span>
 
           <span>posted in&nbsp;</span> 
           
-              <span class="posted-in"><a href='life.html'>Life</a></span>
+              <span class="posted-in"><a href='technology.html'>Tech</a></span>
            
          
           <span class="comments">
             
-              <a href="http://forrestchang.github.io/14824077552377.html#disqus_thread">comments</a>
+              <a href="http://forrestchang.github.io/14627836147810.html#disqus_thread">comments</a>
             
 
             
@@ -131,57 +131,97 @@
       </div><!-- article -->
 
       <div class="article-content">
-      <p>好久没有写周总结了，所以这几周都过得比较颓废(≧▽≦)/</p>
+      <p>Swift 语言提供 Arrays、Sets 和 Dictionaries 三种基本的集合类型来存储数据合集。数组（Array）是有序数据的集；集合（Sets）是无序无重复数据的集；字典（Dictionaries）是无序的键值对的集。</p>
 
-<h2 id="toc_0">编程</h2>
+<p><img src="media/14627836147810/14627837494241.jpg" alt=""/></p>
 
-<p>总的来说，好像这一周并没有做出什么东西来。本来是在看《Web Scraping with Python》这本书的，可以看到后面发现错误挺多的，都有一些最基本的语法错误，所以索性就直接不看了。然后知乎专栏的爬虫也一直没有开始写。</p>
+<h2 id="toc_0">集合的可变性</h2>
 
-<p>从前几周就开始使用 VS Code 了，比想象中的好用很多，上一次使用还是刚出的时候，很多东西都不完善，现在 1.0 版本有了很大的改进，作为主力编辑器应该是没有什么问题了。Atom 的启动速度还是那么慢，什么时候改进一些什么时候再说吧。Emacs 已经好久没有用了，应该没有什么特殊情况不会去用了吧，写 Lisp 和 Haskell VS Code 或许也能够胜任。</p>
+<p>在我们不需要改变集合的时候创建不可变集合是很好的实践（使用 <code>let</code>），如此 Swift 编译器可以优化我们创建的集合。</p>
 
-<p>最近最烦心的一件事情就是不知道以后要从事什么方向的程序员了。目前自己的技术栈并不是很丰富，杂七杂八的东西研究了很多，赚钱的技能没学多少……所以还是有必要挑一个搬砖的技能好好磨练一下了。目前初步的计划是 Python Web 开发，然后顺带把 C 语言再看看然后去读 Python 的源码，再看一些经典的书（UNIX 系列）。</p>
+<h2 id="toc_1">数组</h2>
 
-<h3 id="toc_1">下周的计划</h3>
+<h3 id="toc_2">创建一个带有默认值的数组</h3>
 
-<p>把《Flask Web Development: Developing Web Applications with Python》这本书看完，然后把书中的博客例子做出来。</p>
+<p>Swift 中的 Array 类型提供一个可以创建特定大小并且所有数据都被默认的构造方法。我们可以把准备加入新数组的数据项数量（count）和适当类型的初始值（repeatedValue）传入数组构造函数：</p>
 
-<p>顺便写代码累了的时候可以刷刷《程序员修炼之道》这本书，以前看过其中的一部分，还是比较有意思的。</p>
+<pre><code class="language-swift">var threeDoubles = [Double](count: 3, repeatedValue: 0.0)
+</code></pre>
 
-<h2 id="toc_2">日语</h2>
+<h3 id="toc_3">通过两个数组相加创建一个数组</h3>
 
-<p>12月份就要考试了，然而我还没怎么开始学习。大概在 YouTube 上看了几节五十音的视频，其实五十音之前也都学过，平假名基本上还是熟悉的，就是片假名记不住-_-|||</p>
+<p>我们可以使用加法操作符来组合两种已经存在的相同类型数组。新数组的数据类型会被从两个数组的数据类型中推断出来。</p>
 
-<h3 id="toc_3">下周的计划</h3>
+<h3 id="toc_4">访问和修改数组</h3>
 
-<p>熟练掌握五十音，包括平假名和片假名的书写、发音。先把 YouTube 上那一个系列的视频看完吧，然后直接拿单词卡片来背，Anki 中也有单词本可以用来复习。</p>
+<p><code>isEmpty</code> 检查数组是否为空。</p>
 
-<h2 id="toc_4">游戏</h2>
+<p>使用加法赋值运算符（<code>+=</code>）可以直接在数组后面添加一个或多个拥有相同类型的数据项。</p>
 
-<p>这周没怎么玩游戏，守望先锋已经一周多没有玩了。</p>
+<p>调用数组的 <code>insert(_:atIndex:)</code>方法来在某个具体的索引值之前添加数据项。</p>
 
-<p>平时的时候玩 「Pokemon Omega Ruby」比较多，也就是孵孵蛋，打打对战塔，刚入对战坑，好多东西还不懂，还需要学习一个。</p>
+<h3 id="toc_5">数组的遍历</h3>
 
-<p>开始入门狼人杀，这周的几次聚会玩狼人杀很嗨，在某宝上买了一套卡牌，准备研究研究。</p>
+<p>如果我们同事需要每个数据项的值和索引值，可以使用 <code>enumerate()</code> 方法来进行数组遍历。<code>enumerate()</code> 返回一个由每一个数据项索引值和数据值组成的元组。我们可以把这个元组分解成临时常量或者变量来进行遍历。</p>
 
-<h2 id="toc_5">阅读</h2>
+<h2 id="toc_6">集合（Sets）</h2>
 
-<p>看了一点《胡适留学日记》，拖到现在还没有看完，Kindle 好像来学校之后就有点吃灰了。</p>
+<p>集合用来存储相同类型且没有确定顺序的值。</p>
 
-<h3 id="toc_6">下周的计划</h3>
+<p>Swift 中的 <code>Set</code> 类型被桥接到 <code>Foundation</code> 中的 <code>NSset</code> 类。</p>
 
-<p>看完《胡适留学日记》。</p>
+<h3 id="toc_7">集合类型的哈希值</h3>
 
-<h2 id="toc_7">电影</h2>
+<p>一个类型为了存储在集合中，该类型必须是可哈希化得——也就是说，该类型必须提供一个方法来计算它的哈希值。一个哈希值是 <code>Int</code> 类型的，相等的对象哈希值必须相同，比如<code>a=b</code>，因此必须是<code>a.hashValue = b.hashValue</code>。</p>
 
-<p>这周看了三部韩国的电影，分别是《隧道》、《釜山行》、《恐怖直播》，发现韩国的电影好好看！韩国的电影感觉黑色幽默和讽刺多一些，日本的电影中二气息比较多一些，国产的电影嘛……</p>
+<p>Swift 的所有基本类型默认都是可哈希化的，可以作为集合的值类型或者字典的键类型。没有关联值的枚举成员值默认也是可哈希化的。</p>
 
-<p>相比较最近比较火的《釜山行》，个人还是感觉《隧道》比较好看一些。亚洲地区的丧尸片估计《釜山行》应该是最佳了，但是和欧美的一些丧尸片比起来，还是有差距的，其中的一些套路也都是别人玩过了的。《隧道》这部电影让我感觉和《活埋》很像，但是一个生还了，一个 gg 了……</p>
+<p>你可以使用你自定义的类型作为集合的值类型或者是字典的键的类型，但你需要使你的自定义类型符合 Swift 标准库中的 <code>Hashable</code> 协议。符合 <code>Hashable</code> 协议的类型需要提供一个类型为 <code>Int</code> 的可读属性 <code>hashValue</code>。由类型的 <code>hashValue</code> 属性返回的值不需要再同一程序的不同执行周期或者不同程序之间保持相同。</p>
 
-<h2 id="toc_8">杂项</h2>
+<p>因为 <code>hashValue</code> 协议符合 <code>Equatable</code> 协议，所以符合该协的类型也必须停工一个 <code>==</code> 运算符的实现。这个 <code>Equatable</code> 协议要求任何符合 <code>==</code> 实现的实例间都是一种相等的关系，也就是说，对于 a, b, c 三个值来说，必须满足下面三种情况：</p>
 
-<p>这周好像聚会比较多(≧▽≦)，已经吃了好几顿饭+去了一次 KTV，生活过得比较颓废。</p>
+<ul>
+<li>自反性：a == a</li>
+<li>对称性：a == b, b == a</li>
+<li>传递性：a == b &amp;&amp; b == c, a == c</li>
+</ul>
 
-<p>是时候应该沉迷学习了(╯﹏╰）</p>
+<h3 id="toc_8">遍历一个集合</h3>
+
+<p>Swift 中的 <code>Set</code> 类型没有确定的顺序，为了按照特定顺序来遍历一个 <code>Set</code> 中的值可以使用 <code>sort()</code> 方法，它将根据提供的序列返回一个有序集合。</p>
+
+<pre><code class="language-swift">for genre in favoriteGenres.sort() {...}
+</code></pre>
+
+<h3 id="toc_9">集合操作</h3>
+
+<p><img src="media/14627836147810/14627853736261.jpg" alt=""/></p>
+
+<p><img src="media/14627836147810/14627854301808.jpg" alt=""/></p>
+
+<p><img src="media/14627836147810/14627854415802.jpg" alt=""/></p>
+
+<h2 id="toc_10">字典</h2>
+
+<p>字典中的数据项并没有具体顺序。</p>
+
+<p>Swift 中 Dictionary 类型被桥接到 Foundation 中的 NSDictionary 类。</p>
+
+<h3 id="toc_11">字典遍历</h3>
+
+<ol>
+<li>元组方式</li>
+<li>dic.keys</li>
+<li>dic.values</li>
+</ol>
+
+<p>如果我们只是需要某个字典的键值集合来作为某个接受 Array 实例的 API 的参数，可以直接使用 keys 或 values 属性构造一个新数组。</p>
+
+<pre><code class="language-swift">let airportCodes = [String](airports.keys)
+let airportNames = [String](airports.values)
+</code></pre>
+
+<p>Swift 的字典类型书无序集合类型。为了以特定的顺序便利字典的键或值，可以对字典的 keys 或 values 属性使用 <code>sort()</code> 方法。</p>
 
 
     
@@ -192,16 +232,16 @@
         <div class="large-6 columns">
         <p class="text-left" style="padding:15px 0px;">
       
-          <a href="14824078620114.html" 
-          title="Previous Post: 2016 Week 40 Review">&laquo; 2016 Week 40 Review</a>
+          <a href="14631242333306.html" 
+          title="Previous Post: Swift 学习笔记：属性">&laquo; Swift 学习笔记：属性</a>
       
         </p>
         </div>
         <div class="large-6 columns">
       <p class="text-right" style="padding:15px 0px;">
       
-          <a  href="14706584948925.html" 
-          title="Next Post: 2016/08/08 阅读笔记">2016/08/08 阅读笔记 &raquo;</a>
+          <a  href="14627831551017.html" 
+          title="Next Post: Swift 学习笔记：基本运算符">Swift 学习笔记：基本运算符 &raquo;</a>
       
       </p>
         </div>

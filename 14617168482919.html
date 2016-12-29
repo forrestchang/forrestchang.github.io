@@ -1,0 +1,542 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  Swift 学习笔记：构造过程 - Hack Notes
+  
+  </title>
+  
+  
+  <link href="atom.xml" rel="alternate" title="Hack Notes" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+  <script src="asset/highlightjs/highlight.pack.js"></script>
+  <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script>hljs.initHighlightingOnLoad();</script>
+<script type="text/javascript">
+  function before_search(){
+    var searchVal = 'site:forrestchang.github.io ' + document.getElementById('search_input').value;
+    document.getElementById('search_q').value = searchVal;
+    return true;
+  }
+</script>
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+
+  <section class="top-bar-section">
+  <div class="row">
+      <div style="position: relative;width:100%;"><div style="position: absolute; width:100%;">
+        <ul id="main-menu" class="left">
+        
+        <li id=""><a target="_self" href="index.html">Home</a></li>
+        
+        <li id=""><a target="_self" href="archives.html">Archives</a></li>
+        
+        <li id=""><a target="_self" href="about.html">About</a></li>
+        
+        </ul>
+
+        <ul class="right" id="search-wrap">
+          <li>
+<form target="_blank" onsubmit="return before_search();" action="http://google.com/search" method="get">
+    <input type="hidden" id="search_q" name="q" value="" />
+    <input tabindex="1" type="search" id="search_input"  placeholder="Search"/>
+</form>
+</li>
+          </ul>
+      </div></div>
+  </div>
+  </section>
+
+</nav>
+
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; Hack Notes</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+       
+       <li><a href="index.html">HOME</a></li>
+    <li><a href="archives.html">Archives</a></li>
+    <li><a href="about.html">ABOUT</a></li>
+
+    <li><label>Categories</label></li>
+
+        
+            <li><a href="life.html">Life</a></li>
+        
+            <li><a href="machine-learning.html">ML</a></li>
+        
+            <li><a href="python.html">Python</a></li>
+        
+            <li><a href="productivity.html">Productivity</a></li>
+        
+            <li><a href="technology.html">Tech</a></li>
+         
+
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+
+        <section id="main-content" role="main" class="scroll-container">
+        
+       
+
+ <script type="text/javascript">
+  $(function(){
+    $('#menu_item_index').addClass('is_active');
+  });
+</script>
+<div class="row">
+  <div class="large-8 medium-8 columns">
+      <div class="markdown-body article-wrap">
+       <div class="article">
+          
+          <h1>Swift 学习笔记：构造过程</h1>
+     
+        <div class="read-more clearfix">
+          <span class="date">2016/4/27</span>
+
+          <span>posted in&nbsp;</span> 
+          
+              <span class="posted-in"><a href='technology.html'>Tech</a></span>
+           
+         
+          <span class="comments">
+            
+              <a href="http://forrestchang.github.io/14617168482919.html#disqus_thread">comments</a>
+            
+
+            
+          </span>
+
+        </div>
+      </div><!-- article -->
+
+      <div class="article-content">
+      <h2 id="toc_0">存储属性的初始赋值</h2>
+
+<p>类和结构体在创建实例时，必须为所有存储型属性设置合适的初始值。存储属性的值不能处于一个未知的状态。</p>
+
+<p>当你为存储属性设置默认值或者在构造器中为其赋值时，它们的值是被直接设置的，不会触发任何属性观察者（property observers）。</p>
+
+<h2 id="toc_1">默认属性值</h2>
+
+<p>如果一个属性总是使用相同的初始值，那么为其设置一个默认值比每次都在构造器中赋值要好。两种方法的效果是一样的，只不过使用默认值让属性的初始化和声明结合得更加紧密。</p>
+
+<h2 id="toc_2">参数的内部名称和外部名称</h2>
+
+<p>跟函数和方法参数相同，构造参数也拥有一个在构造器内部使用的参数名字和一个在调用构造器时使用的外部参数名字。</p>
+
+<p>因为构造器并不像函数和方法那样在括号前有一个可辨别的名字。因此在调用构造器时，主要通过构造器中的参数名和类型来确定应该被调用的构造器。如果你在定义构造器时没有提供参数的外部名字，Swift 会为构造器的每个参数自动生成一个跟内部名字相同的外部名。</p>
+
+<h2 id="toc_3">不带外部名的构造器参数</h2>
+
+<p>如果你不希望构造器的某个参数提供外部名字，你可以使用下划线（<code>_</code>）来显式描述它的外部名。</p>
+
+<h2 id="toc_4">可选属性类型</h2>
+
+<p>可选类型的属性将自动化初始为 <code>nil</code>，表示这个属性是有意在初始化时设置为空的。</p>
+
+<h2 id="toc_5">构造过程中常量属性的修改</h2>
+
+<p>你可以在构造过程中的任意时间点给常量属性指定一个值，只要在构造过程结束时是一个确定的值。一旦常量属性被赋值，它将永远不可更改。</p>
+
+<h2 id="toc_6">默认构造器</h2>
+
+<p>如果结构体或类的所有属性都有默认值，同时没有定义的构造器，那么 Swift 将会给这些结构体或类提供一个默认构造器。这个默认构造器将简单创建一个所有属性都设置为默认值得实例。</p>
+
+<h2 id="toc_7">结构体的逐一成员构造器</h2>
+
+<p>如果<strong>结构体</strong>没有提供自定义的构造器，它们将自动获得一个逐一成员构造器，即使结构体的存储属性没有默认值。</p>
+
+<p>注：类类型没有逐一成员构造器。</p>
+
+<h2 id="toc_8">值类型的构造器代理</h2>
+
+<p>构造器可以通过调用其他构造器来完成实例的部分构造过程。这一过程称为构造器代理，它能减少多个构造器间的代码重用。</p>
+
+<p>构造器代理的实现规则和形式在值类型和类类型中有所不同。值类型不支持继承，所以构造器代理的过程相对简单，因为它们只能代理给自己的其他构造器。类则不同，它可以继承自其他类，这意味着类有责任保证其所有继承的存储属性在构造时也能正确的初始化。</p>
+
+<p>对于值类型，可以使用 <code>self.init</code> 在自定义的构造器中引用类型中的其他构造器。并且你只能在构造器内部调用 <code>self.init</code>。</p>
+
+<p>如果你为某个值类型定义了一个自定义的构造器，你将无法访问到默认构造器。</p>
+
+<p>加入你希望默认构造器、逐一成员构造器以及你自己的定义的构造器都能用来创建实例，可以将自定义的构造器写到 extension 中，而不是写在值类型的原始定义中。</p>
+
+<h2 id="toc_9">类的继承和构造过程</h2>
+
+<p>类里面的所有存储属性——包括所有继承自父类的属性——都必须在构造过程中设置初始值。</p>
+
+<h2 id="toc_10">制定构造器和便利构造器</h2>
+
+<p>制定构造器（designated initializers）是类中最主要的构造器。一个制定构造器将初始化类中提供的所有属性，并根据父类链往上调用父类的构造器来实现父类的初始化。</p>
+
+<p>便利构造器（convenience initializers）是类中比较次要的、辅助型的构造器。你可以定义便利构造器来调用同一个类中的指定构造器，并未其参数提供默认值。你也可以定义便利构造器来创建一个特殊用途或特定输入值得实例。</p>
+
+<h2 id="toc_11">制定构造器和便利构造器的语法</h2>
+
+<p>类的制定构造器的写法和值类型的简单构造器一样。</p>
+
+<p>便利构造器也采用相同样式的写法，但需要在 <code>init</code> 关键字之前放置 <code>convenience</code> 关键字。</p>
+
+<h2 id="toc_12">类的构造器代理规则</h2>
+
+<p>为了简化制定构造器和便利构造器之间的调用关系，Swift 采用以下三条规则来限制构造器之间的代理调用：</p>
+
+<ol>
+<li>指定构造器必须调用其直接分类的指定构造器。</li>
+<li>便利构造器必须调用同一类中定义的其他构造器。</li>
+<li>便利构造器必须最终导致一个制定构造器被调用。</li>
+</ol>
+
+<blockquote>
+<p>制定构造器必须总是向上代理<br/>
+便利构造器必须总是横向代理</p>
+</blockquote>
+
+<p><img src="media/14617168482919/14617189856135.jpg" alt=""/></p>
+
+<h2 id="toc_13">两段式构造过程</h2>
+
+<p>Swift 中类的构造过程包含两个阶段。</p>
+
+<ol>
+<li>每个存储属被引用它们类指定的一个初始值；</li>
+<li>当每个存储属性的初始值被确定后，第二阶段开始，它给每个类一次机会，在新实例准备使用之前进一步定制它们的存储属性。</li>
+</ol>
+
+<p>两段式构造过程让构造器更加安全，同时在整个类层级结构中给与了每个类完全的灵活性。两段式构造可以防止属性在初始化之前被访问，也可以防止属性被另外一个构造器意外地赋予不同的值。</p>
+
+<p>Swift 编译器将执行4中有效的安全检查，以确保两段式构造能不错地完成：</p>
+
+<ol>
+<li>制定构造器必须保证它坐在类引入的所有属性都必须先初始化完成，之后才能将其它构造任务向上代理给父类中的构造器。</li>
+<li>制定构造器必须先向上代理调用父类构造器，然后再为继承的属性设置新值。如果没有这么做，制定构造器赋予的新值将被父类中的构造器覆盖。</li>
+<li>便利构造器必须先代理调用同一类中的其他构造器，然后再为任意属性赋新值。如果没有这么做，便利构造器赋予的新值将被同一类中的其他制定构造器所覆盖。</li>
+<li>构造器在第一阶段完成之前，不能调用任何实例方法，不能读取任何实例属性的值，不能引用 <code>self</code> 作为一个值。</li>
+</ol>
+
+<h2 id="toc_14">构造器的继承和重写</h2>
+
+<p>Swift 中的子类默认情况下不会继承父类的构造器，这种机制可以防止一个父类的简单构造器被一个更专业的类继承，并被错误地用来创建子类实例。</p>
+
+<p>当你在编写一个和父类中指定构造器相匹配的子类构造器时，你实际上是在重写父类的这个指定构造器。因此，你必须在定义子类构造器时带上 <code>override</code> 修饰符。</p>
+
+<p>当你重写一个父类的指定构造器时，你总是需要写 <code>override</code> 修饰符，即使你的子类将父类的制定构造器重写为便利构造器。</p>
+
+<p>相反，如果你编写了一个和父类便利构造器想匹配的子类构造器，由于子类不能直接调用父类的便利构造器，因此，严格意义上来讲，你的子类并未对一个父类构造器提供重写。最后的结果就是，你在子类中「重写」一个父类便利构造器时，不需要加 <code>override</code> 前缀。</p>
+
+<p>子类可以在初始化时修改继承来的变量属性，但是不能修改继承来的常量属性。</p>
+
+<h2 id="toc_15">构造器的自动继承</h2>
+
+<p>如上所述，子类在默认情况下不会继承父类的构造器。但是如果满足特定条件，父类构造器是可以被自动继承的。在实践中，这意味着对于许多常见场景你不必重写父类的构造器，并且可以在安全的情况下以最小的代价继承父类的构造器。</p>
+
+<h2 id="toc_16">可失败构造器</h2>
+
+<p>如果一个类、结构体或枚举类型的对象，在构造过程中有可能失败，则为其定义一个可失败构造器。</p>
+
+<p>为了妥善处理这种构造过程中可能会失败的情况，你可以在一个类，结构体或是枚举类型的定义中，添加一个或多个可失败构造器，其语法为在 <code>init</code> 关键字后面添加问好 <code>init?</code>。</p>
+
+<p>可失败构造器的参数名和参数类型，不能与其他非可失败构造器的参数名、及参数类型相同。</p>
+
+<p>可失败构造器会创建一个类型为自身类型的可选类型对象。你通过 <code>return nil</code> 语句来表明可失败构造器在何种情况下应该失败。</p>
+
+<p>注：严格来说，构造器都不支持返回值。因为构造器本身的作用，只是为了确保对象能被正确构造。因此你只是用 <code>return nil</code> 表明可失败构造器失败，而不要用关键字 <code>return</code> 来表明构造器成功。</p>
+
+<h2 id="toc_17">枚举类型的可失败构造器</h2>
+
+<p>你可以通过一个带一个或多个参数的可失败构造器来获取枚举类型中特定的枚举成员。如果提供的参数无法匹配任何枚举成员，则构造失败。</p>
+
+<h2 id="toc_18">带原始值的枚举类型的可失败构造器</h2>
+
+<p>带原始值的枚举类型会自带一个可失败构造器 <code>init?(rawValue:)</code>，该可失败构造器有一个名为 <code>rawValue</code> 的参数，其类型和枚举类型的原始值类型一致，如果该参数的值能和某个枚举成员的原始值匹配，则该构造器会构成相应的枚举成员，否则构造失败。</p>
+
+<h2 id="toc_19">构造失败的传递</h2>
+
+<p>类、结构体、枚举的可失败构造器可以横向代理到乐熊中的其他可失败构造器。类似的，子类的可失败构造器也能向上代理到父类的可失败构造器。</p>
+
+<p>无论是向上代理还是横向代理，如果你代理到的其他可失败构造器触发构造失败，整个构造过程将立即终止，接下来的任何构造代码不会再被执行。</p>
+
+<h2 id="toc_20">重写一个可失败构造器</h2>
+
+<p>如果其他的构造器，你可以在子类中重写父类的可失败构造器。或者你也可以用子类的非可失败构造器重写一个父类的可失败构造器。这使你可以定义一个不会构造失败的子类，即使父类的构造器允许构造失败。</p>
+
+<h2 id="toc_21">必要构造器</h2>
+
+<p>在类的构造器前添加 <code>required</code> 修饰符表明所有该类的子类都必须实现该构造器。</p>
+
+<p>在重写父类中必要的指定构造器时，不需要添加 <code>override</code> 修饰符。</p>
+
+<h2 id="toc_22">通过闭包或函数设置属性的默认值</h2>
+
+<p>如果某个存储属性的默认值需要一些定制或设置，你可以使用闭包或全局函数为其提供定制的默认值。每当某个属性所在类型的新实例被创建时，对应的闭包或函数就会被调用，而它们的返回值会当做默认值赋值给这个属性。</p>
+
+<p>这种类型的闭包或函数通常会创建一个跟属性相同的临时变量，然后修改它的值以满足预期的初始状态，最后返回这个临时变量，作为属性的默认值。</p>
+
+<pre><code class="language-swift">class SomeClass {
+    let someProperty: SomeType = {
+        // 在这个闭包中给 someProperty 创建一个默认值
+        // someValue 必须和 SomeType 类型相同
+        return someValue
+    }()
+}
+</code></pre>
+
+<p>闭包结尾的大括号后面接了一对空的小括号。这用来告诉 Swift 立即执行此闭包，如果忽略了这对括号，相当于闭包本身作为值赋给了属性，而不是将闭包的返回值赋值给属性。</p>
+
+<p>注：如果你使用闭包来初始化属性，请记住在闭包执行时，实例的其他部分还没有初始化。这意味着你不能再闭包里访问其他属性，即使这些属性有默认值，同样，你也不能使用隐式的 <code>self</code> 属性，或者调用任何实例方法。</p>
+
+
+    
+
+      </div>
+
+      <div class="row">
+        <div class="large-6 columns">
+        <p class="text-left" style="padding:15px 0px;">
+      
+          <a href="14623593987548.html" 
+          title="Previous Post: Swift 学习笔记：高级运算符">&laquo; Swift 学习笔记：高级运算符</a>
+      
+        </p>
+        </div>
+        <div class="large-6 columns">
+      <p class="text-right" style="padding:15px 0px;">
+      
+          <a  href="14616582990381.html" 
+          title="Next Post: Swift 学习笔记：访问控制">Swift 学习笔记：访问控制 &raquo;</a>
+      
+      </p>
+        </div>
+      </div>
+      <div class="comments-wrap">
+        <div class="share-comments">
+          
+
+          
+            <div id="disqus_thread"></div>
+          
+
+          
+        </div>
+      </div>
+    </div><!-- article-wrap -->
+  </div><!-- large 8 -->
+
+
+
+
+ <div class="large-4 medium-4 columns">
+  <div class="hide-for-small">
+    <div id="sidebar" class="sidebar">
+          <div id="site-info" class="site-info">
+            
+                <div class="site-a-logo"><img src="asset/img/avatar.jpg" /></div>
+            
+                <h1>Hack Notes</h1>
+                <div class="site-des"></div>
+                <div class="social">
+
+
+
+
+
+
+
+<a target="_blank" class="weibo" href="http://weibo.com/tisoga" title="weibo">Weibo</a>
+<a target="_blank" class="twitter" target="_blank" href="https://twitter.com/Tisoga" title="Twitter">Twitter</a>
+<a target="_blank" class="github" target="_blank" href="https://github.com/forrestchang" title="GitHub">GitHub</a>
+<a target="_blank" class="email" href="mailto:forrestchang7@gmail.com" title="Email">Email</a>
+  <a target="_blank" class="rss" href="atom.xml" title="RSS">RSS</a>
+                
+              	 </div>
+          	</div>
+
+             
+
+              <div id="site-categories" class="side-item ">
+                <div class="side-header">
+                  <h2>Categories</h2>
+                </div>
+                <div class="side-content">
+
+      	<p class="cat-list">
+        
+            <a href="life.html"><strong>Life</strong></a>
+        
+            <a href="machine-learning.html"><strong>ML</strong></a>
+        
+            <a href="python.html"><strong>Python</strong></a>
+        
+            <a href="productivity.html"><strong>Productivity</strong></a>
+        
+            <a href="technology.html"><strong>Tech</strong></a>
+         
+        </p>
+
+
+                </div>
+              </div>
+
+              <div id="site-categories" class="side-item">
+                <div class="side-header">
+                  <h2>Recent Posts</h2>
+                </div>
+                <div class="side-content">
+                <ul class="posts-list">
+	      
+		      
+			      <li class="post">
+			        <a href="14827163208652.html">2016 Week 52 Review</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="14824086421976.html">推荐系统笔记</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="14824103542982.html">2016 Week 51 Review</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="14824081615573.html">2016 Week 46 Review</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="14824080993859.html">2016 Week 45 Review</a>
+			      </li>
+		     
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		   
+		  		</ul>
+                </div>
+              </div>
+        </div><!-- sidebar -->
+      </div><!-- hide for small -->
+</div><!-- large 4 -->
+
+</div><!-- row -->
+
+ <div class="page-bottom clearfix">
+  <div class="row">
+   <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+
+
+<script type="text/javascript">
+    var disqus_shortname = 'tisogasnotes'; 
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<script type="text/javascript">
+var disqus_shortname = 'tisogasnotes'; 
+
+(function () {
+var s = document.createElement('script'); s.async = true;
+s.type = 'text/javascript';
+s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+  
+    
+
+    <script src="asset/js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+      function fixSidebarHeight(){
+        var w1 = $('.markdown-body').height();
+          var w2 = $('#sidebar').height();
+          if (w1 > w2) { $('#sidebar').height(w1); };
+      }
+      $(function(){
+        fixSidebarHeight();
+      })
+      $(window).load(function(){
+          fixSidebarHeight();
+      });
+     
+    </script>
+
+    <script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
+<script>
+                            var _hmt = _hmt || [];
+                            (function() {
+                                    var hm = document.createElement("script");
+                                    hm.src = "https://hm.baidu.com/hm.js?001e800887eba2f8f57ec8059aafdad6";
+                                    var s = document.getElementsByTagName("script")[0];
+                                    s.parentNode.insertBefore(hm, s);
+                                    })();
+                            </script>
+
+  </body>
+</html>

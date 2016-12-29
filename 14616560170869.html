@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  2016 Week 39 Review - Hack Notes
+  Swift 学习笔记：错误处理 - Hack Notes
   
   </title>
   
@@ -109,19 +109,19 @@
       <div class="markdown-body article-wrap">
        <div class="article">
           
-          <h1>2016 Week 39 Review</h1>
+          <h1>Swift 学习笔记：错误处理</h1>
      
         <div class="read-more clearfix">
-          <span class="date">2016/9/25</span>
+          <span class="date">2016/4/26</span>
 
           <span>posted in&nbsp;</span> 
           
-              <span class="posted-in"><a href='life.html'>Life</a></span>
+              <span class="posted-in"><a href='technology.html'>Tech</a></span>
            
          
           <span class="comments">
             
-              <a href="http://forrestchang.github.io/14824077552377.html#disqus_thread">comments</a>
+              <a href="http://forrestchang.github.io/14616560170869.html#disqus_thread">comments</a>
             
 
             
@@ -131,57 +131,47 @@
       </div><!-- article -->
 
       <div class="article-content">
-      <p>好久没有写周总结了，所以这几周都过得比较颓废(≧▽≦)/</p>
+      <h2 id="toc_0">表示并抛出错误</h2>
 
-<h2 id="toc_0">编程</h2>
+<p>Swift 中的枚举类型尤为适合构建一组相关的错误状态，枚举的关联值还可以提供错误状态的额外信息。</p>
 
-<p>总的来说，好像这一周并没有做出什么东西来。本来是在看《Web Scraping with Python》这本书的，可以看到后面发现错误挺多的，都有一些最基本的语法错误，所以索性就直接不看了。然后知乎专栏的爬虫也一直没有开始写。</p>
+<p>抛出一个错误可以让你表明有意外情况发生，导致正常的执行流程无法继续执行。抛出错误使用 <code>throws</code> 关键字。</p>
 
-<p>从前几周就开始使用 VS Code 了，比想象中的好用很多，上一次使用还是刚出的时候，很多东西都不完善，现在 1.0 版本有了很大的改进，作为主力编辑器应该是没有什么问题了。Atom 的启动速度还是那么慢，什么时候改进一些什么时候再说吧。Emacs 已经好久没有用了，应该没有什么特殊情况不会去用了吧，写 Lisp 和 Haskell VS Code 或许也能够胜任。</p>
+<h2 id="toc_1">处理错误</h2>
 
-<p>最近最烦心的一件事情就是不知道以后要从事什么方向的程序员了。目前自己的技术栈并不是很丰富，杂七杂八的东西研究了很多，赚钱的技能没学多少……所以还是有必要挑一个搬砖的技能好好磨练一下了。目前初步的计划是 Python Web 开发，然后顺带把 C 语言再看看然后去读 Python 的源码，再看一些经典的书（UNIX 系列）。</p>
+<p>当某个错误被抛出时，附近的某部分代码必须负责处理这个错误，例如纠正这个问题、尝试另外一种方式、或是向用户报告错误。</p>
 
-<h3 id="toc_1">下周的计划</h3>
+<p>当一个函数抛出一个错误时，你的程序流程会发生改变，所以重要的是你能迅速识别代码中会抛出错误的地方。为了标识出这些地方，在调用一个能抛出错误的函数、方法或者构造器之前，加上 <code>try</code> 关键字，或者 <code>try?</code> 或 <code>try!</code> 这种变体。</p>
 
-<p>把《Flask Web Development: Developing Web Applications with Python》这本书看完，然后把书中的博客例子做出来。</p>
+<p>和其他语言中的异常处理不同的是，Swift 中的错误处理并不涉及解除调用栈，这是一个计算代价高昂的过程。就此而言，<code>throw</code> 语句的性能特性是可以和 <code>return</code> 语句媲美的。</p>
 
-<p>顺便写代码累了的时候可以刷刷《程序员修炼之道》这本书，以前看过其中的一部分，还是比较有意思的。</p>
+<h2 id="toc_2">用 throwing 函数传递错误</h2>
 
-<h2 id="toc_2">日语</h2>
+<p>为了表示一个函数、方法或构造器可以抛出错误，在函数声明的参数列表后面加上 <code>throws</code> 关键字。一个标有 <code>throws</code> 关键字的函数被称作 throwing 函数。</p>
 
-<p>12月份就要考试了，然而我还没怎么开始学习。大概在 YouTube 上看了几节五十音的视频，其实五十音之前也都学过，平假名基本上还是熟悉的，就是片假名记不住-_-|||</p>
+<p>一个 throwing 函数可以在其 nebula 抛出错误，并将错误传递到函数被调用时的作用域。</p>
 
-<h3 id="toc_3">下周的计划</h3>
+<h2 id="toc_3">用 Do-Catch 处理错误</h2>
 
-<p>熟练掌握五十音，包括平假名和片假名的书写、发音。先把 YouTube 上那一个系列的视频看完吧，然后直接拿单词卡片来背，Anki 中也有单词本可以用来复习。</p>
+<p>可以使用一个 <code>do-catch</code> 语句运行一段闭包代码来处理错误。如果在 <code>do</code> 子句中的代码抛出了一个错误，这个错误会与 <code>catch</code> 子句做匹配，从而决定哪条子句能处理它。</p>
 
-<h2 id="toc_4">游戏</h2>
+<h2 id="toc_4">将错误转换成可选值</h2>
 
-<p>这周没怎么玩游戏，守望先锋已经一周多没有玩了。</p>
+<p>可以使用 <code>try?</code> 通过将错误转换成一个可选值来处理错误。如果在评估 <code>try?</code> 表达式时一个错误被抛出，那么表达式的值就是 <code>nil</code>。</p>
 
-<p>平时的时候玩 「Pokemon Omega Ruby」比较多，也就是孵孵蛋，打打对战塔，刚入对战坑，好多东西还不懂，还需要学习一个。</p>
+<h2 id="toc_5">禁用错误传递</h2>
 
-<p>开始入门狼人杀，这周的几次聚会玩狼人杀很嗨，在某宝上买了一套卡牌，准备研究研究。</p>
+<p>有时候你知道某个 throwing 函数实际上在运行的时候是不会抛出错误的，在这种情况下，你可以在表达式前面写 <code>try!</code> 来禁用错误传递，这会把调用包装在一个断言不会有错误抛出的运行时断言中。如果实际上抛出了错误，你会得到一个运行时错误。</p>
 
-<h2 id="toc_5">阅读</h2>
+<h2 id="toc_6">指定清理操作</h2>
 
-<p>看了一点《胡适留学日记》，拖到现在还没有看完，Kindle 好像来学校之后就有点吃灰了。</p>
+<p>可以使用 <code>defer</code> 语句在即将离开当前代码块时执行一系列语句。该语句让你能执行一些必要的清理工作，不管是以何种方式离开当前代码块的——无论是由于抛出错误而离开，还是由于诸如 <code>return</code> 或者 <code>break</code> 的语句。</p>
 
-<h3 id="toc_6">下周的计划</h3>
+<p>例如，你可以用 <code>defer</code> 语句来确保文件描述符得以关闭，以及手动分配的内存得以释放。</p>
 
-<p>看完《胡适留学日记》。</p>
+<p><code>defer</code> 语句将代码的执行延迟到当前的作用域退出之前。该语句由 <code>defer</code> 关键字和要被延迟执行的语句组成。延迟执行的语句不能包含任何控制转移语句，例如 <code>break</code> 或是 <code>return</code> 语句，或是抛出一个错误。</p>
 
-<h2 id="toc_7">电影</h2>
-
-<p>这周看了三部韩国的电影，分别是《隧道》、《釜山行》、《恐怖直播》，发现韩国的电影好好看！韩国的电影感觉黑色幽默和讽刺多一些，日本的电影中二气息比较多一些，国产的电影嘛……</p>
-
-<p>相比较最近比较火的《釜山行》，个人还是感觉《隧道》比较好看一些。亚洲地区的丧尸片估计《釜山行》应该是最佳了，但是和欧美的一些丧尸片比起来，还是有差距的，其中的一些套路也都是别人玩过了的。《隧道》这部电影让我感觉和《活埋》很像，但是一个生还了，一个 gg 了……</p>
-
-<h2 id="toc_8">杂项</h2>
-
-<p>这周好像聚会比较多(≧▽≦)，已经吃了好几顿饭+去了一次 KTV，生活过得比较颓废。</p>
-
-<p>是时候应该沉迷学习了(╯﹏╰）</p>
+<p>延迟执行的操作会按照它们被指定时的顺序的相反顺序执行。</p>
 
 
     
@@ -192,16 +182,16 @@
         <div class="large-6 columns">
         <p class="text-left" style="padding:15px 0px;">
       
-          <a href="14824078620114.html" 
-          title="Previous Post: 2016 Week 40 Review">&laquo; 2016 Week 40 Review</a>
+          <a href="14616582990381.html" 
+          title="Previous Post: Swift 学习笔记：访问控制">&laquo; Swift 学习笔记：访问控制</a>
       
         </p>
         </div>
         <div class="large-6 columns">
       <p class="text-right" style="padding:15px 0px;">
       
-          <a  href="14706584948925.html" 
-          title="Next Post: 2016/08/08 阅读笔记">2016/08/08 阅读笔记 &raquo;</a>
+          <a  href="14615726488001.html" 
+          title="Next Post: Swift 学习笔记：泛型">Swift 学习笔记：泛型 &raquo;</a>
       
       </p>
         </div>

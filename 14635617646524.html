@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  2016 Week 39 Review - Hack Notes
+  Swift学习笔记：控制流 - Hack Notes
   
   </title>
   
@@ -109,19 +109,19 @@
       <div class="markdown-body article-wrap">
        <div class="article">
           
-          <h1>2016 Week 39 Review</h1>
+          <h1>Swift学习笔记：控制流</h1>
      
         <div class="read-more clearfix">
-          <span class="date">2016/9/25</span>
+          <span class="date">2016/5/18</span>
 
           <span>posted in&nbsp;</span> 
           
-              <span class="posted-in"><a href='life.html'>Life</a></span>
+              <span class="posted-in"><a href='technology.html'>Tech</a></span>
            
          
           <span class="comments">
             
-              <a href="http://forrestchang.github.io/14824077552377.html#disqus_thread">comments</a>
+              <a href="http://forrestchang.github.io/14635617646524.html#disqus_thread">comments</a>
             
 
             
@@ -131,57 +131,64 @@
       </div><!-- article -->
 
       <div class="article-content">
-      <p>好久没有写周总结了，所以这几周都过得比较颓废(≧▽≦)/</p>
+      <h2 id="toc_0">Repeat-While</h2>
 
-<h2 id="toc_0">编程</h2>
+<p><code>repeat-while</code> 在 <code>while</code> 判断循环条件之前，先执行一次循环的代码块，和其他语言中的 <code>do-while</code> 是类似的。</p>
 
-<p>总的来说，好像这一周并没有做出什么东西来。本来是在看《Web Scraping with Python》这本书的，可以看到后面发现错误挺多的，都有一些最基本的语法错误，所以索性就直接不看了。然后知乎专栏的爬虫也一直没有开始写。</p>
+<pre><code class="language-swift">repeat {
+    statements
+} while condition
+</code></pre>
 
-<p>从前几周就开始使用 VS Code 了，比想象中的好用很多，上一次使用还是刚出的时候，很多东西都不完善，现在 1.0 版本有了很大的改进，作为主力编辑器应该是没有什么问题了。Atom 的启动速度还是那么慢，什么时候改进一些什么时候再说吧。Emacs 已经好久没有用了，应该没有什么特殊情况不会去用了吧，写 Lisp 和 Haskell VS Code 或许也能够胜任。</p>
+<h2 id="toc_1">Switch</h2>
 
-<p>最近最烦心的一件事情就是不知道以后要从事什么方向的程序员了。目前自己的技术栈并不是很丰富，杂七杂八的东西研究了很多，赚钱的技能没学多少……所以还是有必要挑一个搬砖的技能好好磨练一下了。目前初步的计划是 Python Web 开发，然后顺带把 C 语言再看看然后去读 Python 的源码，再看一些经典的书（UNIX 系列）。</p>
+<p><code>switch</code> 语句会尝试把某个值与若干个模式（pattern）进行匹配。根据第一个匹配成功的模式，<code>switch</code>语句会执行对应的代码。当有可能的情况较多时，通常用 <code>switch</code> 语句替换 <code>if</code> 语句。</p>
 
-<h3 id="toc_1">下周的计划</h3>
+<p><code>switch</code> 语句必须是完备的，每一个可能的值都必须至少有一个 case 分支与之对应。在某些不可能涵盖所有值得情况下，你可以使用默认（<code>default</code>）分支满足该要求，这个默认分支必须在 <code>switch</code> 语句的最后面。</p>
 
-<p>把《Flask Web Development: Developing Web Applications with Python》这本书看完，然后把书中的博客例子做出来。</p>
+<h3 id="toc_2">不存在隐式的贯穿（No Implicit Fallthrouth）</h3>
 
-<p>顺便写代码累了的时候可以刷刷《程序员修炼之道》这本书，以前看过其中的一部分，还是比较有意思的。</p>
+<p>和其他语言的 Switch 不同，在 Swift 中，当匹配的 case 分支中的代码执行完毕后，程序会终止 <code>switch</code> 语句，而不会继续执行下一个 case 分支。所以，不需要再 case 分支中显式地使用 <code>break</code> 语句。</p>
 
-<h2 id="toc_2">日语</h2>
+<p>如果想要贯穿到特定的 case 分支中，请使用 <code>fallthrough</code> 语句。</p>
 
-<p>12月份就要考试了，然而我还没怎么开始学习。大概在 YouTube 上看了几节五十音的视频，其实五十音之前也都学过，平假名基本上还是熟悉的，就是片假名记不住-_-|||</p>
+<h3 id="toc_3">区间匹配</h3>
 
-<h3 id="toc_3">下周的计划</h3>
+<p>case 分支的模式也可以是一个值得区间。</p>
 
-<p>熟练掌握五十音，包括平假名和片假名的书写、发音。先把 YouTube 上那一个系列的视频看完吧，然后直接拿单词卡片来背，Anki 中也有单词本可以用来复习。</p>
+<h3 id="toc_4">元组</h3>
 
-<h2 id="toc_4">游戏</h2>
+<p>可以只用元组在同一个 <code>switch</code> 语句中测试多个值，元组中的元素可以是值，也可以是区间，使用下划线 <code>_</code> 来匹配所有可能的值。</p>
 
-<p>这周没怎么玩游戏，守望先锋已经一周多没有玩了。</p>
+<h3 id="toc_5">值绑定</h3>
 
-<p>平时的时候玩 「Pokemon Omega Ruby」比较多，也就是孵孵蛋，打打对战塔，刚入对战坑，好多东西还不懂，还需要学习一个。</p>
+<p>case 分支的模式允许将匹配的值绑定到一个临时的常量或变量，这些常量或变量在该 case 分支里就可以被引用了。</p>
 
-<p>开始入门狼人杀，这周的几次聚会玩狼人杀很嗨，在某宝上买了一套卡牌，准备研究研究。</p>
+<p>case 分支的模式可以使用 <code>where</code> 语句来判断额外的条件。</p>
 
-<h2 id="toc_5">阅读</h2>
+<h2 id="toc_6">控制转移语句</h2>
 
-<p>看了一点《胡适留学日记》，拖到现在还没有看完，Kindle 好像来学校之后就有点吃灰了。</p>
+<h3 id="toc_7">continue</h3>
 
-<h3 id="toc_6">下周的计划</h3>
+<p><code>continue</code> 语句告诉一个循环体立刻停止本次循环迭代，重现开始下次循环迭代。</p>
 
-<p>看完《胡适留学日记》。</p>
+<h3 id="toc_8">break</h3>
 
-<h2 id="toc_7">电影</h2>
+<p><code>break</code> 语句会立即结束整个控制流的执行。</p>
 
-<p>这周看了三部韩国的电影，分别是《隧道》、《釜山行》、《恐怖直播》，发现韩国的电影好好看！韩国的电影感觉黑色幽默和讽刺多一些，日本的电影中二气息比较多一些，国产的电影嘛……</p>
+<h2 id="toc_9">带标签的语句</h2>
 
-<p>相比较最近比较火的《釜山行》，个人还是感觉《隧道》比较好看一些。亚洲地区的丧尸片估计《釜山行》应该是最佳了，但是和欧美的一些丧尸片比起来，还是有差距的，其中的一些套路也都是别人玩过了的。《隧道》这部电影让我感觉和《活埋》很像，但是一个生还了，一个 gg 了……</p>
+<p>在 Swift 中，你可以在循环体和 <code>switch</code> 代码块中嵌套循环体和 <code>switch</code> 代码块来创造复杂的控制流结构。然而，循环体和 <code>switch</code> 代码块亮着都可以使用 <code>break</code> 语句来提前结束整个方法。因此，显式地指明 <code>break</code> 语句想要终止是哪个循环体或者 <code>switch</code> 代码块，会很有用。</p>
 
-<h2 id="toc_8">杂项</h2>
+<p>为了实现这个目的，可以使用标签来标记一个循环体或者 <code>switch</code> 代码块，当使用 <code>break</code> 或者 <code>continue</code> 时，带上这个标签，可以控制该标签代表对象的中断或者执行。</p>
 
-<p>这周好像聚会比较多(≧▽≦)，已经吃了好几顿饭+去了一次 KTV，生活过得比较颓废。</p>
+<p>语法：</p>
 
-<p>是时候应该沉迷学习了(╯﹏╰）</p>
+<pre><code class="language-swift label"></code></pre>
+
+<h2 id="toc_10">提前退出</h2>
+
+<p>像 <code>if</code> 语句一样， <code>guard</code> 的执行取决于一个表达式的布尔值。我们可以使用 <code>guard</code> 语句来要求条件必须为真时，以执行 <code>guard</code> 语句后的代码。不同于 <code>if</code> 语句，一个 <code>guard</code> 语句总是有一个 <code>else</code> 分句，如果条件不为真则执行 <code>else</code> 分句中的代码。</p>
 
 
     
@@ -192,16 +199,16 @@
         <div class="large-6 columns">
         <p class="text-left" style="padding:15px 0px;">
       
-          <a href="14824078620114.html" 
-          title="Previous Post: 2016 Week 40 Review">&laquo; 2016 Week 40 Review</a>
+          <a href="14636395892916.html" 
+          title="Previous Post: 2016 Week 21 阅读笔记">&laquo; 2016 Week 21 阅读笔记</a>
       
         </p>
         </div>
         <div class="large-6 columns">
       <p class="text-right" style="padding:15px 0px;">
       
-          <a  href="14706584948925.html" 
-          title="Next Post: 2016/08/08 阅读笔记">2016/08/08 阅读笔记 &raquo;</a>
+          <a  href="14634546001476.html" 
+          title="Next Post: Swift 学习笔记：字符串和字符">Swift 学习笔记：字符串和字符 &raquo;</a>
       
       </p>
         </div>

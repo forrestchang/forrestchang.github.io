@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  2016 Week 39 Review - Hack Notes
+  Swift 学习笔记：访问控制 - Hack Notes
   
   </title>
   
@@ -109,19 +109,19 @@
       <div class="markdown-body article-wrap">
        <div class="article">
           
-          <h1>2016 Week 39 Review</h1>
+          <h1>Swift 学习笔记：访问控制</h1>
      
         <div class="read-more clearfix">
-          <span class="date">2016/9/25</span>
+          <span class="date">2016/4/26</span>
 
           <span>posted in&nbsp;</span> 
           
-              <span class="posted-in"><a href='life.html'>Life</a></span>
+              <span class="posted-in"><a href='technology.html'>Tech</a></span>
            
          
           <span class="comments">
             
-              <a href="http://forrestchang.github.io/14824077552377.html#disqus_thread">comments</a>
+              <a href="http://forrestchang.github.io/14616582990381.html#disqus_thread">comments</a>
             
 
             
@@ -131,57 +131,97 @@
       </div><!-- article -->
 
       <div class="article-content">
-      <p>好久没有写周总结了，所以这几周都过得比较颓废(≧▽≦)/</p>
+      <p>访问控制可以限定其他源文件或者模块中的代码对你的代码的访问级别。这个特性可以让我们隐藏代码的一些实现细节，并且可以为其他人可以访问和使用的代码提供接口。</p>
 
-<h2 id="toc_0">编程</h2>
+<h2 id="toc_0">模块和源文件</h2>
 
-<p>总的来说，好像这一周并没有做出什么东西来。本来是在看《Web Scraping with Python》这本书的，可以看到后面发现错误挺多的，都有一些最基本的语法错误，所以索性就直接不看了。然后知乎专栏的爬虫也一直没有开始写。</p>
+<p>Swift 中的访问控制模型基于模块和源文件这两个概念。</p>
 
-<p>从前几周就开始使用 VS Code 了，比想象中的好用很多，上一次使用还是刚出的时候，很多东西都不完善，现在 1.0 版本有了很大的改进，作为主力编辑器应该是没有什么问题了。Atom 的启动速度还是那么慢，什么时候改进一些什么时候再说吧。Emacs 已经好久没有用了，应该没有什么特殊情况不会去用了吧，写 Lisp 和 Haskell VS Code 或许也能够胜任。</p>
+<p>模块指的是独立的代码单元，框架或应用程序会作为一个独立的模块来构建和发布。一个模块可以使用 <code>import</code> 关键字导入另一个模块。</p>
 
-<p>最近最烦心的一件事情就是不知道以后要从事什么方向的程序员了。目前自己的技术栈并不是很丰富，杂七杂八的东西研究了很多，赚钱的技能没学多少……所以还是有必要挑一个搬砖的技能好好磨练一下了。目前初步的计划是 Python Web 开发，然后顺带把 C 语言再看看然后去读 Python 的源码，再看一些经典的书（UNIX 系列）。</p>
+<p>在 Swift 中，Xcode 的每个 target（例如框架或应用程序）都被当做独立的模块处理。如果你是为了实现某个通用的功能，或者是为了封装一些常用方法而将代码打包成独立的框架，这个框架就是 Swift 中的一个模块。</p>
 
-<h3 id="toc_1">下周的计划</h3>
+<p>源文件就是 Swift 中的代码源文件，它通常属于一个模块，即一个应用程序或者框架。尽管我们一般会将不同的类型分别定义在不同的源文件中，但是同一个源文件也可以包含多个类型、函数之类的定义。</p>
 
-<p>把《Flask Web Development: Developing Web Applications with Python》这本书看完，然后把书中的博客例子做出来。</p>
+<h2 id="toc_1">访问级别</h2>
 
-<p>顺便写代码累了的时候可以刷刷《程序员修炼之道》这本书，以前看过其中的一部分，还是比较有意思的。</p>
+<ul>
+<li><code>public</code>：可以访问同一模块源文件中的任何实体，在模块外也可以通过导入该模块来访问源文件里的所有实体。通常情况下，框架中的某个接口可以被任何人使用时，你可以将其设置为 <code>public</code> 级别。</li>
+<li><code>internal</code>：可以访问同一模块源文件中的任何实体，但是不能从模块外访问该模块源文件的实体。通常情况下，某个接口只在应用程序或框架内部使用时，你可以将其设置为 <code>internal</code> 级别。</li>
+<li><code>private</code>：限制实体只能在所在的源文件内部使用。使用 <code>private</code> 级别可以隐藏某些功能的实现细节。</li>
+</ul>
 
-<h2 id="toc_2">日语</h2>
+<p>Swift 中的 <code>private</code> 访问级别不同于其他语言，它的范围限于源文件，而不是声明范围内。这就意味着，一个类型可以访问其所在源文件中的所有 <code>private</code> 实体，但是如果它的扩展定义在其他源文件中，那么它的扩展就不能访问它在这个源文件中定义的 <code>private</code> 实体。</p>
 
-<p>12月份就要考试了，然而我还没怎么开始学习。大概在 YouTube 上看了几节五十音的视频，其实五十音之前也都学过，平假名基本上还是熟悉的，就是片假名记不住-_-|||</p>
+<h2 id="toc_2">访问级别的基本原则</h2>
 
-<h3 id="toc_3">下周的计划</h3>
+<p>Swift 中的访问级别遵循一个基本原则：不可以在某个实体定义访问级别更高的实体。</p>
 
-<p>熟练掌握五十音，包括平假名和片假名的书写、发音。先把 YouTube 上那一个系列的视频看完吧，然后直接拿单词卡片来背，Anki 中也有单词本可以用来复习。</p>
+<h2 id="toc_3">默认访问级别</h2>
 
-<h2 id="toc_4">游戏</h2>
+<p>不显式制定，默认为 <code>internal</code> 级别，有一些例外。</p>
 
-<p>这周没怎么玩游戏，守望先锋已经一周多没有玩了。</p>
+<h2 id="toc_4">单 target 应用程序的访问级别</h2>
 
-<p>平时的时候玩 「Pokemon Omega Ruby」比较多，也就是孵孵蛋，打打对战塔，刚入对战坑，好多东西还不懂，还需要学习一个。</p>
+<p>当你编写一个单 target 应用程序时，应用的所有功能都是为该应用服务，而不需要提供给其他应用或者模块使用，所以我们不需要明确设置访问级别，使用默认的访问级别 <code>internal</code> 即可。但是，你也可以使用 <code>private</code> 级别，用于隐藏一些功能的实现细节。</p>
 
-<p>开始入门狼人杀，这周的几次聚会玩狼人杀很嗨，在某宝上买了一套卡牌，准备研究研究。</p>
+<h2 id="toc_5">框架的访问级别</h2>
 
-<h2 id="toc_5">阅读</h2>
+<p>当你开发框架时，就需要把一些对外的接口定义为 <code>public</code> 级别，以便使用者导入该框架后可以正常使用其功能。这些被你定义为 <code>public</code> 的接口，就是这个框架的 API。</p>
 
-<p>看了一点《胡适留学日记》，拖到现在还没有看完，Kindle 好像来学校之后就有点吃灰了。</p>
+<h2 id="toc_6">单元测试 target 的访问级别</h2>
 
-<h3 id="toc_6">下周的计划</h3>
+<p>当你的应用程序包含单元测试 target 时，为了测试，测试模块需要访问应用程序模块中的代码。默认情况下只有 <code>public</code> 级别的实体才可以被其他模块访问。然而，如果在导入应用程序模块的语句前使用 <code>@testable</code> 特性，然后在允许测试的编译设置（Build Options -&gt; Enable Testability）下编译这个应用程序模块，单元测试 target 就可以访问应用程序模块中所有 <code>internal</code> 级别的实体。</p>
 
-<p>看完《胡适留学日记》。</p>
+<h2 id="toc_7">元组类型</h2>
 
-<h2 id="toc_7">电影</h2>
+<p>元组的访问级别将由元组中访问级别最严格的类型来决定。例如，如果你构建了一个包含两种不同类型的元组，其中一个类型为 <code>private</code> 类型，那么这个元组的访问级别为 <code>private</code>。</p>
 
-<p>这周看了三部韩国的电影，分别是《隧道》、《釜山行》、《恐怖直播》，发现韩国的电影好好看！韩国的电影感觉黑色幽默和讽刺多一些，日本的电影中二气息比较多一些，国产的电影嘛……</p>
+<h2 id="toc_8">函数类型</h2>
 
-<p>相比较最近比较火的《釜山行》，个人还是感觉《隧道》比较好看一些。亚洲地区的丧尸片估计《釜山行》应该是最佳了，但是和欧美的一些丧尸片比起来，还是有差距的，其中的一些套路也都是别人玩过了的。《隧道》这部电影让我感觉和《活埋》很像，但是一个生还了，一个 gg 了……</p>
+<p>函数的访问级别根据访问级别最严格的参数类型或返回值类型的访问级别来决定。</p>
 
-<h2 id="toc_8">杂项</h2>
+<h2 id="toc_9">枚举类型</h2>
 
-<p>这周好像聚会比较多(≧▽≦)，已经吃了好几顿饭+去了一次 KTV，生活过得比较颓废。</p>
+<p>枚举成员的访问级别和该枚举类型相同，你不能为枚举成员单独指定不同的访问级别。</p>
 
-<p>是时候应该沉迷学习了(╯﹏╰）</p>
+<p>枚举定义中的任何原始值或关联值得类型的访问级别至少不能低于枚举类型的访问级别。例如，你不能在一个 <code>internal</code> 访问级别的枚举中定义 <code>private</code> 级别的原始值类型。</p>
+
+<h2 id="toc_10">子类</h2>
+
+<p>子类的访问级别不得高于父类的访问级别。例如，父类的访问级别是 <code>internal</code>，子类的访问级别就不能是 <code>public</code>。</p>
+
+<p>可以通过重写为继承来的类成员提供更高的访问级别。</p>
+
+<h2 id="toc_11">Getter 和 Setter</h2>
+
+<p>常量、变量、属性、下标的 <code>Getters</code> 和 <code>Setters</code> 的访问级别和它们所属类型的访问级别相同。</p>
+
+<p><code>Setter</code> 的访问级别可以低于对应的 <code>Getter</code> 的访问级别，这样就可以控制变量、属性或下标的读写权限。在 <code>var</code> 或 <code>subscript</code> 关键字之前，你可以通过 <code>privat(set)</code> 或 <code>internal(set)</code> 为它们的写入权限制定更低的访问级别。</p>
+
+<h2 id="toc_12">构造器</h2>
+
+<p>自定义构造器的访问级别可以低于或等于其所属类型的访问级别。唯一例外的是必要构造器，它的访问级别必须和所属类型的访问级别相同。</p>
+
+<p>如同函数或方法的参数，构造器参数的访问级别也不能低于构造器本身的访问级别。</p>
+
+<h2 id="toc_13">默认构造器</h2>
+
+<p>默认构造器的访问级别与所属类型的访问级别相同，除非类型的访问级别是 <code>public</code>。如果一个类型被指定为 <code>public</code> 级别，那么默认构造器的访问级别将为 <code>internal</code>。如果你希望一个 <code>public</code> 级别的参数类型也能在其他模块中使用这种无参数的默认构造器，你只能自己提供一个 <code>public</code> 访问级别的无参构造器。</p>
+
+<h2 id="toc_14">结构体默认的成员逐一构造器</h2>
+
+<p>如果结构体中任意存储型的访问级别为 <code>private</code>，那么该结构体默认的成员逐一构造器的访问级别就是 <code>private</code>。否则，这种构造器的访问级别依然是 <code>internal</code>。</p>
+
+<h2 id="toc_15">协议</h2>
+
+<p>协议中的每一个要求都具有和该协议相同的访问级别。你不能将协议中的要求设置为其他访问级别。这样才能确保该协议的所有要求对于任意采纳者都将可用。</p>
+
+<p>如果你定义了一个 <code>public</code> 访问级别的协议，那么该协议的所有实现也会是 <code>public</code> 访问级别。这一点不同于其他类型，例如，当类类型是 <code>public</code> 访问级别时，其成员的访问级别却只是 <code>internal</code>。</p>
+
+<h2 id="toc_16">协议继承</h2>
+
+<p>如果定义了一个继承自其他协议的新协议，那么新协议拥有的访问级别最高也只能和被继承协议的访问级别相同。</p>
 
 
     
@@ -192,16 +232,16 @@
         <div class="large-6 columns">
         <p class="text-left" style="padding:15px 0px;">
       
-          <a href="14824078620114.html" 
-          title="Previous Post: 2016 Week 40 Review">&laquo; 2016 Week 40 Review</a>
+          <a href="14617168482919.html" 
+          title="Previous Post: Swift 学习笔记：构造过程">&laquo; Swift 学习笔记：构造过程</a>
       
         </p>
         </div>
         <div class="large-6 columns">
       <p class="text-right" style="padding:15px 0px;">
       
-          <a  href="14706584948925.html" 
-          title="Next Post: 2016/08/08 阅读笔记">2016/08/08 阅读笔记 &raquo;</a>
+          <a  href="14616560170869.html" 
+          title="Next Post: Swift 学习笔记：错误处理">Swift 学习笔记：错误处理 &raquo;</a>
       
       </p>
         </div>

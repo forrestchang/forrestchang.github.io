@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  2016 Week 39 Review - Hack Notes
+  2016 Week 19 阅读笔记 - Hack Notes
   
   </title>
   
@@ -109,19 +109,19 @@
       <div class="markdown-body article-wrap">
        <div class="article">
           
-          <h1>2016 Week 39 Review</h1>
+          <h1>2016 Week 19 阅读笔记</h1>
      
         <div class="read-more clearfix">
-          <span class="date">2016/9/25</span>
+          <span class="date">2016/5/4</span>
 
           <span>posted in&nbsp;</span> 
           
-              <span class="posted-in"><a href='life.html'>Life</a></span>
+              <span class="posted-in"><a href='technology.html'>Tech</a></span>
            
          
           <span class="comments">
             
-              <a href="http://forrestchang.github.io/14824077552377.html#disqus_thread">comments</a>
+              <a href="http://forrestchang.github.io/14623638528114.html#disqus_thread">comments</a>
             
 
             
@@ -131,57 +131,46 @@
       </div><!-- article -->
 
       <div class="article-content">
-      <p>好久没有写周总结了，所以这几周都过得比较颓废(≧▽≦)/</p>
+      <h2 id="toc_0"><a href="http://swift.gg/2016/05/03/preparing-for-3-0-api-pruning/">准备好迎接 3.0 API 变化</a></h2>
 
-<h2 id="toc_0">编程</h2>
+<p>在即将发布的 Swift 3 将在 Cocoa 和 CocoaTouch 上做出重大改变。</p>
 
-<p>总的来说，好像这一周并没有做出什么东西来。本来是在看《Web Scraping with Python》这本书的，可以看到后面发现错误挺多的，都有一些最基本的语法错误，所以索性就直接不看了。然后知乎专栏的爬虫也一直没有开始写。</p>
+<p>某些 API 的名字变得更加简洁了。</p>
 
-<p>从前几周就开始使用 VS Code 了，比想象中的好用很多，上一次使用还是刚出的时候，很多东西都不完善，现在 1.0 版本有了很大的改进，作为主力编辑器应该是没有什么问题了。Atom 的启动速度还是那么慢，什么时候改进一些什么时候再说吧。Emacs 已经好久没有用了，应该没有什么特殊情况不会去用了吧，写 Lisp 和 Haskell VS Code 或许也能够胜任。</p>
+<h2 id="toc_1"><a href="http://www.posteriorscience.net/?p=206">PROGRAMMING BY POKING: WHY MIT STOPPED TEACHING SICP</a></h2>
 
-<p>最近最烦心的一件事情就是不知道以后要从事什么方向的程序员了。目前自己的技术栈并不是很丰富，杂七杂八的东西研究了很多，赚钱的技能没学多少……所以还是有必要挑一个搬砖的技能好好磨练一下了。目前初步的计划是 Python Web 开发，然后顺带把 C 语言再看看然后去读 Python 的源码，再看一些经典的书（UNIX 系列）。</p>
+<p>关于为什么 MIT 停止了赫赫有名的 6.001，Gerry Sussman 的回答：</p>
 
-<h3 id="toc_1">下周的计划</h3>
+<ol>
+<li>教了太多年，不想教了。</li>
+<li>这门课放到今天已经没有那么重要了。在 80 年代和 90 年代，工程师们通过把简单和易于理解的部分组成复杂的系统，SICP 就是为了提供这种抽象的语言而存在的。</li>
+</ol>
 
-<p>把《Flask Web Development: Developing Web Applications with Python》这本书看完，然后把书中的博客例子做出来。</p>
+<blockquote>
+<p>He said that programming today is “More like science. You grab this piece of library and you poke at it. You write programs that poke it and see what it does. And you say, ‘Can I tweak it to do the thing I want?&#39;”. The “analysis-by-synthesis” view of SICP — where you build a larger system out of smaller, simple parts — became irrelevant. Nowadays, we do programming by poking.</p>
+</blockquote>
 
-<p>顺便写代码累了的时候可以刷刷《程序员修炼之道》这本书，以前看过其中的一部分，还是比较有意思的。</p>
+<p>为什么现在改用 Python 了？</p>
 
-<h2 id="toc_2">日语</h2>
+<blockquote>
+<p>Python has a ton of libraries that make it applicable to many types of projects that instructors might want to assign (like writing software to control a robot.)</p>
+</blockquote>
 
-<p>12月份就要考试了，然而我还没怎么开始学习。大概在 YouTube 上看了几节五十音的视频，其实五十音之前也都学过，平假名基本上还是熟悉的，就是片假名记不住-_-|||</p>
+<p>Python 库多 -_-|||</p>
 
-<h3 id="toc_3">下周的计划</h3>
+<p>另外，Sussman 还说道 SICP 确实比现在使用 Python 教学更加 coherent。</p>
 
-<p>熟练掌握五十音，包括平假名和片假名的书写、发音。先把 YouTube 上那一个系列的视频看完吧，然后直接拿单词卡片来背，Anki 中也有单词本可以用来复习。</p>
+<h2 id="toc_2"><a href="https://github.com/geeeeeeeeek/git-recipes/blob/master/sources/%E6%9E%9C%E5%A3%B3%E4%B8%AD%E7%9A%84Git.md">什么是 Git</a></h2>
 
-<h2 id="toc_4">游戏</h2>
+<p>Git 采用分散式架构，是分散式版本管理 DVCS（Distributed Version Control System）的代表。</p>
 
-<p>这周没怎么玩游戏，守望先锋已经一周多没有玩了。</p>
+<p><strong>性能</strong></p>
 
-<p>平时的时候玩 「Pokemon Omega Ruby」比较多，也就是孵孵蛋，打打对战塔，刚入对战坑，好多东西还不懂，还需要学习一个。</p>
+<p>不同于某些版本管理软件，Git 在决定代码修改历史以及保存形式的时候不会被文件名的变化所愚弄，Git 关注的文件内容本身。在实际的操作中，Git 使用一种混合了差分编码（delta encoding，仅保存代码修改的差分），压缩，直接保存，以及版本元数据（version metadata objects）的管理方式。</p>
 
-<p>开始入门狼人杀，这周的几次聚会玩狼人杀很嗨，在某宝上买了一套卡牌，准备研究研究。</p>
+<p><strong>安全性</strong></p>
 
-<h2 id="toc_5">阅读</h2>
-
-<p>看了一点《胡适留学日记》，拖到现在还没有看完，Kindle 好像来学校之后就有点吃灰了。</p>
-
-<h3 id="toc_6">下周的计划</h3>
-
-<p>看完《胡适留学日记》。</p>
-
-<h2 id="toc_7">电影</h2>
-
-<p>这周看了三部韩国的电影，分别是《隧道》、《釜山行》、《恐怖直播》，发现韩国的电影好好看！韩国的电影感觉黑色幽默和讽刺多一些，日本的电影中二气息比较多一些，国产的电影嘛……</p>
-
-<p>相比较最近比较火的《釜山行》，个人还是感觉《隧道》比较好看一些。亚洲地区的丧尸片估计《釜山行》应该是最佳了，但是和欧美的一些丧尸片比起来，还是有差距的，其中的一些套路也都是别人玩过了的。《隧道》这部电影让我感觉和《活埋》很像，但是一个生还了，一个 gg 了……</p>
-
-<h2 id="toc_8">杂项</h2>
-
-<p>这周好像聚会比较多(≧▽≦)，已经吃了好几顿饭+去了一次 KTV，生活过得比较颓废。</p>
-
-<p>是时候应该沉迷学习了(╯﹏╰）</p>
+<p>Git 将保持所管理代码的整合性作为首要要务。所有的文件内容，文件相互关系，以及文件目录结构，版本，标签以及修改，都经过加密哈希校验算法（SHA1）的保护。这可以防止各种意外的代码修改食物，或者是第三者的恶意修改，使得代码修改历史完全有迹可循。</p>
 
 
     
@@ -192,16 +181,16 @@
         <div class="large-6 columns">
         <p class="text-left" style="padding:15px 0px;">
       
-          <a href="14824078620114.html" 
-          title="Previous Post: 2016 Week 40 Review">&laquo; 2016 Week 40 Review</a>
+          <a href="14627831551017.html" 
+          title="Previous Post: Swift 学习笔记：基本运算符">&laquo; Swift 学习笔记：基本运算符</a>
       
         </p>
         </div>
         <div class="large-6 columns">
       <p class="text-right" style="padding:15px 0px;">
       
-          <a  href="14706584948925.html" 
-          title="Next Post: 2016/08/08 阅读笔记">2016/08/08 阅读笔记 &raquo;</a>
+          <a  href="14623593987548.html" 
+          title="Next Post: Swift 学习笔记：高级运算符">Swift 学习笔记：高级运算符 &raquo;</a>
       
       </p>
         </div>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  2016 Week 39 Review - Hack Notes
+  Swift 学习笔记：属性 - Hack Notes
   
   </title>
   
@@ -109,19 +109,19 @@
       <div class="markdown-body article-wrap">
        <div class="article">
           
-          <h1>2016 Week 39 Review</h1>
+          <h1>Swift 学习笔记：属性</h1>
      
         <div class="read-more clearfix">
-          <span class="date">2016/9/25</span>
+          <span class="date">2016/5/13</span>
 
           <span>posted in&nbsp;</span> 
           
-              <span class="posted-in"><a href='life.html'>Life</a></span>
+              <span class="posted-in"><a href='technology.html'>Tech</a></span>
            
          
           <span class="comments">
             
-              <a href="http://forrestchang.github.io/14824077552377.html#disqus_thread">comments</a>
+              <a href="http://forrestchang.github.io/14631242333306.html#disqus_thread">comments</a>
             
 
             
@@ -131,57 +131,65 @@
       </div><!-- article -->
 
       <div class="article-content">
-      <p>好久没有写周总结了，所以这几周都过得比较颓废(≧▽≦)/</p>
+      <p>属性将值跟特定的类、结构或枚举关联。存储常量或变量作为实例的一部分，而计算属性（不是存储）一个值。</p>
 
-<h2 id="toc_0">编程</h2>
+<ul>
+<li>计算属性：类、结构体、枚举</li>
+<li>存储属性：类、结构体</li>
+</ul>
 
-<p>总的来说，好像这一周并没有做出什么东西来。本来是在看《Web Scraping with Python》这本书的，可以看到后面发现错误挺多的，都有一些最基本的语法错误，所以索性就直接不看了。然后知乎专栏的爬虫也一直没有开始写。</p>
+<h2 id="toc_0">存储属性</h2>
 
-<p>从前几周就开始使用 VS Code 了，比想象中的好用很多，上一次使用还是刚出的时候，很多东西都不完善，现在 1.0 版本有了很大的改进，作为主力编辑器应该是没有什么问题了。Atom 的启动速度还是那么慢，什么时候改进一些什么时候再说吧。Emacs 已经好久没有用了，应该没有什么特殊情况不会去用了吧，写 Lisp 和 Haskell VS Code 或许也能够胜任。</p>
+<h3 id="toc_1">延迟存储属性</h3>
 
-<p>最近最烦心的一件事情就是不知道以后要从事什么方向的程序员了。目前自己的技术栈并不是很丰富，杂七杂八的东西研究了很多，赚钱的技能没学多少……所以还是有必要挑一个搬砖的技能好好磨练一下了。目前初步的计划是 Python Web 开发，然后顺带把 C 语言再看看然后去读 Python 的源码，再看一些经典的书（UNIX 系列）。</p>
+<p>延迟存储属性是指当第一次被调用的时候才会计算其初始值的属性。在属性声明前使用 <code>lazy</code> 来标记一个延迟存储属性。</p>
 
-<h3 id="toc_1">下周的计划</h3>
+<p>必须将延迟存储属性声明称变量，因为属性的初始值可能在实例构造完成之后才会得到。<strong>而常量属性在构造过程完成之前必须要有初始值，因此无法声明称延迟属性。</strong></p>
 
-<p>把《Flask Web Development: Developing Web Applications with Python》这本书看完，然后把书中的博客例子做出来。</p>
+<p>延迟属性很有用，当属性的值依赖于在实例的构造过程结束后才会知道影响值得外部因素时，或者当获得属性的初始值需要复杂或大量计算时，可以只在需要的时候计算它。</p>
 
-<p>顺便写代码累了的时候可以刷刷《程序员修炼之道》这本书，以前看过其中的一部分，还是比较有意思的。</p>
+<h2 id="toc_2">计算属性</h2>
 
-<h2 id="toc_2">日语</h2>
+<p>计算属性不直接存储值，而是提供一个 getter 和一个可选的 setter，来间接获取和设置其他属性或变量的值。</p>
 
-<p>12月份就要考试了，然而我还没怎么开始学习。大概在 YouTube 上看了几节五十音的视频，其实五十音之前也都学过，平假名基本上还是熟悉的，就是片假名记不住-_-|||</p>
+<h3 id="toc_3">便捷 setter 声明</h3>
 
-<h3 id="toc_3">下周的计划</h3>
+<p>如果计算属性的 setter 没有定义表示新值的参数名，则可以使用默认名称 <code>newValue</code>。</p>
 
-<p>熟练掌握五十音，包括平假名和片假名的书写、发音。先把 YouTube 上那一个系列的视频看完吧，然后直接拿单词卡片来背，Anki 中也有单词本可以用来复习。</p>
+<h3 id="toc_4">只读计算属性</h3>
 
-<h2 id="toc_4">游戏</h2>
+<p>只有 getter 没有 setter 的计算属性就是<strong>只读计算属性</strong>。只读计算属性总是返回一个值，可以通过点运算符访问，但不能设置新的值。</p>
 
-<p>这周没怎么玩游戏，守望先锋已经一周多没有玩了。</p>
+<h2 id="toc_5">属性观察器</h2>
 
-<p>平时的时候玩 「Pokemon Omega Ruby」比较多，也就是孵孵蛋，打打对战塔，刚入对战坑，好多东西还不懂，还需要学习一个。</p>
+<p>属性观察器监控和响应属性值的变化，每次属性被设置新的值都会调用属性观察器，即使新值和当前值相同的时候也不例外。</p>
 
-<p>开始入门狼人杀，这周的几次聚会玩狼人杀很嗨，在某宝上买了一套卡牌，准备研究研究。</p>
+<p>可以为除了延迟存储属性之外的其他存储属性添加属性观察器，也可以通过重写属性的方式为继承的属性（包括存储属性和计算属性）添加属性观察器。你不必为非重写的计算属性添加属性观察器，因为可以通过它的 setter 直接监控和响应值得变化。</p>
 
-<h2 id="toc_5">阅读</h2>
+<ul>
+<li><code>willSet</code> 在新的值被设置之前调用</li>
+<li><code>didSet</code> 在新的值被设置之后立即调用</li>
+</ul>
 
-<p>看了一点《胡适留学日记》，拖到现在还没有看完，Kindle 好像来学校之后就有点吃灰了。</p>
+<p><code>willSet</code> 观察器会将新的属性值作为常量参数传入，在 <code>willSet</code> 的实现代码中可以为这个参数指定一个名称，如果不指定则参数仍然可用，这时使用默认名称 <code>newValue</code> 表示。</p>
 
-<h3 id="toc_6">下周的计划</h3>
+<p><code>didSet</code> 观察器会将旧的属性值作为参数传入，可以为该参数名或者使用默认参数名 <code>oldValue</code>。如果在 <code>didSet</code> 方法中再次对该属性赋值，那么新值会覆盖旧的值。</p>
 
-<p>看完《胡适留学日记》。</p>
+<p>父类的属性在子类的构造器中被赋值时，它在父类中的 <code>willSet</code> 和 <code>didSet</code> 观察器会被调用，随后才会调用子类的观察器。在父类初始化方法调用之前，子类给属性赋值时，观察器不会被调用。</p>
 
-<h2 id="toc_7">电影</h2>
+<p>如果将属性通过 in-out 方式传入函数， <code>willSet</code> 和 <code>didSet</code> 也会被调用。这是因为 in-out 参数采用了拷入拷出模式：即在函数内部使用的是参数的 copy，函数结束后，又对参数重新赋值。</p>
 
-<p>这周看了三部韩国的电影，分别是《隧道》、《釜山行》、《恐怖直播》，发现韩国的电影好好看！韩国的电影感觉黑色幽默和讽刺多一些，日本的电影中二气息比较多一些，国产的电影嘛……</p>
+<h2 id="toc_6">全局变量和局部变量</h2>
 
-<p>相比较最近比较火的《釜山行》，个人还是感觉《隧道》比较好看一些。亚洲地区的丧尸片估计《釜山行》应该是最佳了，但是和欧美的一些丧尸片比起来，还是有差距的，其中的一些套路也都是别人玩过了的。《隧道》这部电影让我感觉和《活埋》很像，但是一个生还了，一个 gg 了……</p>
+<p>计算属性和属性观察器所描述的功能也可以用于全局变量和局部变量。全局变量是在函数、方法、闭包或任何类型之外定义的变量。局部变量是在函数、方法或闭包内部定义的变量。</p>
 
-<h2 id="toc_8">杂项</h2>
+<p>全局的常量或变量都是延迟计算的，跟延迟存储属性相似，不同的地方在于，全局的常量或变量不需要标记 <code>lazy</code>   修饰符。</p>
 
-<p>这周好像聚会比较多(≧▽≦)，已经吃了好几顿饭+去了一次 KTV，生活过得比较颓废。</p>
+<p>局部范围的常量或变量从不延迟计算。</p>
 
-<p>是时候应该沉迷学习了(╯﹏╰）</p>
+<h2 id="toc_7">类型属性</h2>
+
+<p>存储型类型属性是延迟初始化的，它们只有在第一次被访问的时候才会被初始化。即使它们被多个线程同时访问，系统也保证只会对其进行一次初始化，并且不需要对其使用 <code>lazy</code> 修饰符。</p>
 
 
     
@@ -192,16 +200,16 @@
         <div class="large-6 columns">
         <p class="text-left" style="padding:15px 0px;">
       
-          <a href="14824078620114.html" 
-          title="Previous Post: 2016 Week 40 Review">&laquo; 2016 Week 40 Review</a>
+          <a href="14634546001476.html" 
+          title="Previous Post: Swift 学习笔记：字符串和字符">&laquo; Swift 学习笔记：字符串和字符</a>
       
         </p>
         </div>
         <div class="large-6 columns">
       <p class="text-right" style="padding:15px 0px;">
       
-          <a  href="14706584948925.html" 
-          title="Next Post: 2016/08/08 阅读笔记">2016/08/08 阅读笔记 &raquo;</a>
+          <a  href="14627836147810.html" 
+          title="Next Post: Swift 学习笔记：集合类型">Swift 学习笔记：集合类型 &raquo;</a>
       
       </p>
         </div>
