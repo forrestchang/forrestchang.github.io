@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  Swift 学习笔记：集合类型 - Hack Notes
+  2017 Week 1 Review - Hack Notes
   
   </title>
   
@@ -109,19 +109,19 @@
       <div class="markdown-body article-wrap">
        <div class="article">
           
-          <h1>Swift 学习笔记：集合类型</h1>
+          <h1>2017 Week 1 Review</h1>
      
         <div class="read-more clearfix">
-          <span class="date">2016/5/9</span>
+          <span class="date">2017/1/1</span>
 
           <span>posted in&nbsp;</span> 
           
-              <span class="posted-in"><a href='technology.html'>Tech</a></span>
+              <span class="posted-in"><a href='life.html'>Life</a></span>
            
          
           <span class="comments">
             
-              <a href="http://forrestchang.github.io/14627836147810.html#disqus_thread">comments</a>
+              <a href="http://forrestchang.github.io/14832795759469.html#disqus_thread">comments</a>
             
 
             
@@ -131,97 +131,34 @@
       </div><!-- article -->
 
       <div class="article-content">
-      <p>Swift 语言提供 Arrays、Sets 和 Dictionaries 三种基本的集合类型来存储数据合集。数组（Array）是有序数据的集；集合（Sets）是无序无重复数据的集；字典（Dictionaries）是无序的键值对的集。</p>
+      <p>今天是元旦，因为在 Calendar 中把今天归到 2017 年的第一周里了，所以就按照上面所写的把这周当做第一周吧。</p>
 
-<p><img src="media/14627836147810/14627837494241.jpg" alt=""/></p>
+<p>这周结束了在中软的课程设计实训，以前总嫌弃小渔村破，现在回来才知道还是小渔村好啊。课程设计实训的内容是用 Java 写一个点餐系统，一个小组只需要做一份就可以了，不过几乎所有人都不知道 Git 是个什么东西，小组合作还是用的 U 盘拷贝代码，所以代码质量可想而知了，本组的其他人都比较厉害，索性我就抱大腿划水了，什么也没有参与，代码也没有写一行。</p>
 
-<h2 id="toc_0">集合的可变性</h2>
+<p>不过虽说没有写课程设计的项目，但还是有写代码的。这周把两个月前参加 HACKxFDU 的项目拿出来用 Python 3 重写了一遍。项目的地址：<a href="https://github.com/forrestchang/Neutron">Neutron</a>，当初我们考虑做 Neutron 的时候是想把它做成一个通用的智能家居语音终端的，类似于 Amazon 的 Echo，只要提供第三方的 API，就能轻松集成到 Neutron 来，但是实际上碍于 Hackathon 的时间限制，只是完成了一个简单的 Demo，完全没有拓展性。本来这个项目参加完 Hackathon 之后就没有管了，不过最近看到 Facebook CEO 扎克伯格写了一个 Jarvis，觉得和之前做的东西很像（当然还是差远了，基本我们做的东西就是用别人的 API），所以又掏出来拿 Python 3.5 重写了一遍。现在在 <a href="https://github.com/forrestchang/neutron/tree/develop">develop</a> 分支基本上把框架搭建好了，最底层是和 API 交互的 layer 层，这一层需要为每个 API 写特定的代码，其上是抽象的 handler 层，提供通用的接口，抽象 layer 层的操作：例如语音控制模块、AI 模块等，这一层上还可能包裹一层特定的 wrapper，例如对特定的 message 做语义分析。通过配置文件来选择使用哪个 layer 以及配置 layer 的内容（key 等内容），开始的时候打算用 json 来做配置文件的，后来看了一下还有 yaml 这种更加简洁的配置文件，所以打算换成 yaml 的。目前这个项目还有很多内容要写的，比如特定的 layer，都需要更具不同的 API 写特定的代码，这一点上我参考的 <a href="https://github.com/syl20bnr/spacemacs">Spacemacs</a> 的方法。</p>
 
-<p>在我们不需要改变集合的时候创建不可变集合是很好的实践（使用 <code>let</code>），如此 Swift 编译器可以优化我们创建的集合。</p>
+<p>这周在中软那边的宿舍里面把08版的《射雕英雄传》看完了，虽然槽点挺多的（特效、台词、演技），但是还是看得很欢乐，林依晨的黄蓉甚是喜欢。记得以前应该是看过朱茵版的黄蓉的，不过时间太久远了，已经记不太清了。小说倒没有读完，还是看剧比较快啊。看完后好长一段时间里面都觉得特别空虚，总感觉少了些什么。这种孤独感几乎在每次看完某部小说和电视剧后都会有（电影倒没有这种感觉，可能时间太短了），总觉得还沉浸在别人的故事里，可惜别人的故事已经结束，不得不回到现实中来。想起席慕蓉的一句话『在别人的故事里，留着自己的泪』 <sup id="fnref1"><a href="#fn1" rel="footnote">1</a></sup> 。</p>
 
-<h2 id="toc_1">数组</h2>
+<hr/>
 
-<h3 id="toc_2">创建一个带有默认值的数组</h3>
-
-<p>Swift 中的 Array 类型提供一个可以创建特定大小并且所有数据都被默认的构造方法。我们可以把准备加入新数组的数据项数量（count）和适当类型的初始值（repeatedValue）传入数组构造函数：</p>
-
-<pre><code class="language-swift">var threeDoubles = [Double](count: 3, repeatedValue: 0.0)
-</code></pre>
-
-<h3 id="toc_3">通过两个数组相加创建一个数组</h3>
-
-<p>我们可以使用加法操作符来组合两种已经存在的相同类型数组。新数组的数据类型会被从两个数组的数据类型中推断出来。</p>
-
-<h3 id="toc_4">访问和修改数组</h3>
-
-<p><code>isEmpty</code> 检查数组是否为空。</p>
-
-<p>使用加法赋值运算符（<code>+=</code>）可以直接在数组后面添加一个或多个拥有相同类型的数据项。</p>
-
-<p>调用数组的 <code>insert(_:atIndex:)</code>方法来在某个具体的索引值之前添加数据项。</p>
-
-<h3 id="toc_5">数组的遍历</h3>
-
-<p>如果我们同事需要每个数据项的值和索引值，可以使用 <code>enumerate()</code> 方法来进行数组遍历。<code>enumerate()</code> 返回一个由每一个数据项索引值和数据值组成的元组。我们可以把这个元组分解成临时常量或者变量来进行遍历。</p>
-
-<h2 id="toc_6">集合（Sets）</h2>
-
-<p>集合用来存储相同类型且没有确定顺序的值。</p>
-
-<p>Swift 中的 <code>Set</code> 类型被桥接到 <code>Foundation</code> 中的 <code>NSset</code> 类。</p>
-
-<h3 id="toc_7">集合类型的哈希值</h3>
-
-<p>一个类型为了存储在集合中，该类型必须是可哈希化得——也就是说，该类型必须提供一个方法来计算它的哈希值。一个哈希值是 <code>Int</code> 类型的，相等的对象哈希值必须相同，比如<code>a=b</code>，因此必须是<code>a.hashValue = b.hashValue</code>。</p>
-
-<p>Swift 的所有基本类型默认都是可哈希化的，可以作为集合的值类型或者字典的键类型。没有关联值的枚举成员值默认也是可哈希化的。</p>
-
-<p>你可以使用你自定义的类型作为集合的值类型或者是字典的键的类型，但你需要使你的自定义类型符合 Swift 标准库中的 <code>Hashable</code> 协议。符合 <code>Hashable</code> 协议的类型需要提供一个类型为 <code>Int</code> 的可读属性 <code>hashValue</code>。由类型的 <code>hashValue</code> 属性返回的值不需要再同一程序的不同执行周期或者不同程序之间保持相同。</p>
-
-<p>因为 <code>hashValue</code> 协议符合 <code>Equatable</code> 协议，所以符合该协的类型也必须停工一个 <code>==</code> 运算符的实现。这个 <code>Equatable</code> 协议要求任何符合 <code>==</code> 实现的实例间都是一种相等的关系，也就是说，对于 a, b, c 三个值来说，必须满足下面三种情况：</p>
-
-<ul>
-<li>自反性：a == a</li>
-<li>对称性：a == b, b == a</li>
-<li>传递性：a == b &amp;&amp; b == c, a == c</li>
-</ul>
-
-<h3 id="toc_8">遍历一个集合</h3>
-
-<p>Swift 中的 <code>Set</code> 类型没有确定的顺序，为了按照特定顺序来遍历一个 <code>Set</code> 中的值可以使用 <code>sort()</code> 方法，它将根据提供的序列返回一个有序集合。</p>
-
-<pre><code class="language-swift">for genre in favoriteGenres.sort() {...}
-</code></pre>
-
-<h3 id="toc_9">集合操作</h3>
-
-<p><img src="media/14627836147810/14627853736261.jpg" alt=""/></p>
-
-<p><img src="media/14627836147810/14627854301808.jpg" alt=""/></p>
-
-<p><img src="media/14627836147810/14627854415802.jpg" alt=""/></p>
-
-<h2 id="toc_10">字典</h2>
-
-<p>字典中的数据项并没有具体顺序。</p>
-
-<p>Swift 中 Dictionary 类型被桥接到 Foundation 中的 NSDictionary 类。</p>
-
-<h3 id="toc_11">字典遍历</h3>
+<p>就借着这篇博客顺便说说 17 年的计划吧。</p>
 
 <ol>
-<li>元组方式</li>
-<li>dic.keys</li>
-<li>dic.values</li>
+<li>学习一门新语言：14年学了 C、Scheme，15年学了 Java、Python，16年学了 Swift，再加上各种用过但是不熟的语言，也有好多个了。现在主力开发语言是 Python，17年打算学习 一下 JavaScript，这门 GitHub 上最火的语言，不会都不好意思说自己是程序员。也不用学到多么深，只求达到入门水平。</li>
+<li>Python 水平达到 professional，用了接近两年的 Python，但是水平也没有长进多少，今年打算深入一下 Python，多写一些项目。</li>
+<li>去周边国家玩一次，其实挺想去尼泊尔的，不知道今年有没有时间。不过即使不出国，也要多出去走走，一个人的旅行。</li>
 </ol>
 
-<p>如果我们只是需要某个字典的键值集合来作为某个接受 Array 实例的 API 的参数，可以直接使用 keys 或 values 属性构造一个新数组。</p>
+<div class="footnotes">
+<hr/>
+<ol>
 
-<pre><code class="language-swift">let airportCodes = [String](airports.keys)
-let airportNames = [String](airports.values)
-</code></pre>
+<li id="fn1">
+<p>席慕蓉的《戏子》，用在这里并不完全准确。&nbsp;<a href="#fnref1" rev="footnote">&#8617;</a></p>
+</li>
 
-<p>Swift 的字典类型书无序集合类型。为了以特定的顺序便利字典的键或值，可以对字典的 keys 或 values 属性使用 <code>sort()</code> 方法。</p>
+</ol>
+</div>
 
 
     
@@ -232,16 +169,13 @@ let airportNames = [String](airports.values)
         <div class="large-6 columns">
         <p class="text-left" style="padding:15px 0px;">
       
-          <a href="14631242333306.html" 
-          title="Previous Post: Swift 学习笔记：属性">&laquo; Swift 学习笔记：属性</a>
-      
         </p>
         </div>
         <div class="large-6 columns">
       <p class="text-right" style="padding:15px 0px;">
       
-          <a  href="14627831551017.html" 
-          title="Next Post: Swift 学习笔记：基本运算符">Swift 学习笔记：基本运算符 &raquo;</a>
+          <a  href="14827163208652.html" 
+          title="Next Post: 2016 Week 52 Review">2016 Week 52 Review &raquo;</a>
       
       </p>
         </div>
