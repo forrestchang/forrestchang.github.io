@@ -1,0 +1,848 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  Hack Notes
+  
+  </title>
+  
+  
+  <link href="atom.xml" rel="alternate" title="Hack Notes" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+  <script src="asset/highlightjs/highlight.pack.js"></script>
+  <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script>hljs.initHighlightingOnLoad();</script>
+<script type="text/javascript">
+  function before_search(){
+    var searchVal = 'site:forrestchang.github.io ' + document.getElementById('search_input').value;
+    document.getElementById('search_q').value = searchVal;
+    return true;
+  }
+</script>
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+
+  <section class="top-bar-section">
+  <div class="row">
+      <div style="position: relative;width:100%;"><div style="position: absolute; width:100%;">
+        <ul id="main-menu" class="left">
+        
+        <li id=""><a target="_self" href="index.html">Home</a></li>
+        
+        <li id=""><a target="_self" href="archives.html">Archives</a></li>
+        
+        <li id=""><a target="_self" href="about.html">About</a></li>
+        
+        <li id=""><a target="_blank" href="portfolio.html">Portfolio</a></li>
+        
+        </ul>
+
+        <ul class="right" id="search-wrap">
+          <li>
+<form target="_blank" onsubmit="return before_search();" action="http://google.com/search" method="get">
+    <input type="hidden" id="search_q" name="q" value="" />
+    <input tabindex="1" type="search" id="search_input"  placeholder="Search"/>
+</form>
+</li>
+          </ul>
+      </div></div>
+  </div>
+  </section>
+
+</nav>
+
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; Hack Notes</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+       
+       <li><a href="index.html">HOME</a></li>
+    <li><a href="archives.html">Archives</a></li>
+    <li><a href="about.html">ABOUT</a></li>
+
+    <li><label>Categories</label></li>
+
+        
+            <li><a href="life.html">Life</a></li>
+        
+            <li><a href="machine-learning.html">ML</a></li>
+        
+            <li><a href="python.html">Python</a></li>
+        
+            <li><a href="productivity.html">Productivity</a></li>
+        
+            <li><a href="technology.html">Tech</a></li>
+         
+
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+
+        <section id="main-content" role="main" class="scroll-container">
+        
+       
+
+ <script type="text/javascript">
+	$(function(){
+		$('#menu_item_index').addClass('is_active');
+	});
+</script>
+<div class="row">
+	<div class="large-8 medium-8 columns">
+		<div class="markdown-body home-categories">
+		
+			<div class="article">
+                <a class="clearlink" href="14824092772636.html">
+                
+                  <h1>极客的输入法：Squirrel（鼠须管）</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<p>输入法是一个每天都会使用的东西，所以它是否顺手一定程度上决定了每天的文字输入效率。在OS X平台下，一直没有用到一个很顺手的输入法。系统自带的输入法虽然经过几次的版本更新已经有了很大的改进，但是离能用还有很大的距离。所以之前一直凑合着使用百度输入法，不过最近一直遇到一些奇怪的问题，官方又长时间没有进行更新，恰逢之前听说过<code>Squirrel</code>这个输入法，于是就本着试用的心态用了一下，发现异常顺手，并且还有丰富的定制性，于是写一篇文章来介绍一下，也作为自己配置过程中的笔记。</p>
+
+<p>附上一段Gif效果展示：</p>
+
+<p><img src="media/14824092772636/luoshenfu.gif" alt="luoshenfu"/></p>
+
+<h2 id="toc_0">介绍</h2>
+
+<p>输入法的官方名称是<code>Rime</code>，中文名是<code>中州韵输入法</code>，但是在各自的平台下面又有不一样的别名。</p>
+
+<ul>
+<li><p>Linux<br/>
+中州韵 ｜ ibus-rime</p></li>
+<li><p>Windows<br/>
+小狼毫 ｜ Weasel</p></li>
+<li><p>OS X<br/>
+鼠须管 ｜ Squirrel</p></li>
+</ul>
+
+<p>使用了一段时间发现它有以下几个优点其他输入法是比不上的：</p>
+
+<ol>
+<li>速度很快，几乎没有延迟的时间</li>
+<li>极强的定制性，如果没有想要的功能还可以直接修改源码</li>
+<li>跨平台</li>
+<li>对于繁体中文支持非常好</li>
+</ol>
+
+<h2 id="toc_1">安装</h2>
+
+<p>直接从官网下载安装包安装即可。</p>
+
+<p>Rime官网：<a href="http://rime.im/"></a></p>
+
+<p>使用<code>Ctrl-~</code>进行输入法的选择，这里选择<code>朙月拼音・簡化字</code>即可：</p>
+
+<p><img src="media/14824092772636/rime02.png" alt="rime02"/></p>
+
+<h2 id="toc_2">配置</h2>
+
+<p>默认的的配置其实已经可以使用了，但是为了更加符合自己的使用习惯，我们需要做一些自定义的配置。</p>
+
+<p>所有的配置文件都保存在<code>~/Library/Rime/</code>这个目录下面。</p>
+
+<p>不建议直接修改原先的配置文件，因为这样更新之后会导致修改的内容丢失，正确的做法是建立<code>custom</code>副本，这样自定义的配置内容会覆盖掉原来的。</p>
+
+<p>＊注：所有的修改完成了之后都需要重启输入法，快捷键<code>Option+Ctrl+~</code>。</p>
+
+<h3 id="toc_3">配置外观</h3>
+
+<p>初始的外观不是很符合自己的审美，可以进行更换主题、更改字体和字号大小等操作来配置成自己喜欢的样子。</p>
+
+<p>新建配置文件</p>
+
+<pre><code>touch squirrel.custom.yaml
+</code></pre>
+
+<p>然后将以下代码写入配置文件</p>
+
+<pre><code>patch:
+  style/color_scheme: dark_temple #主题
+  style/font_point: 18 #字号大小
+  style/horizontal: true #水平显示待选字
+</code></pre>
+
+<h4 id="toc_4">主题列表</h4>
+
+<p>自带的主题代码:</p>
+
+<pre><code>#   注：预设的配色方案及代码（指定为 style/color_scheme ）
+#   碧水 - aqua
+#   青天 - azure
+#   明月 - luna
+#   墨池 - ink
+#   孤寺 - lost_temple
+#   暗堂 - dark_temple
+#   星际我争霸 - starcraft
+#   谷歌 - google
+#   晒经石 - solarized_rock
+#   简约白 - clean_white
+</code></pre>
+
+<p>想要更换什么主题只要把代码替换掉就可以了。</p>
+
+<h4 id="toc_5">其他一些配置代码及其说明</h4>
+
+<pre><code>  style/page_size: 8                         # 设定候选词数目
+  style/inline_preedit: false              # 关闭内嵌编码，这样就可以显示首行的拼音
+  style/corner_radius: 10                  # 窗口圆角半径
+  style/border_height: 0                   # 窗口边界高度，大于圆角半径才有效果
+  style/border_width: 0                    # 窗口边界宽度，大于圆角半径才有效果
+  style/line_spacing: 1                    # 候选词的行间距
+  style/spacing: 5                         # 在非内嵌编码模式下，预编辑和候选词之间的距
+  style/font_face: &quot;Hiragino Sans GB W3&quot;   # 字体名称
+</code></pre>
+
+<p>更多的一些配置代码可以在<code>squirrel.yaml</code>中找到。</p>
+
+<h3 id="toc_6">定制标点符号</h3>
+
+<p>鼠须管有一个特别的功能就是输入一个标点的时候可以有很多的候选标点让你选择，比如说中括号：</p>
+
+<p><img src="media/14824092772636/rime03.png" alt="rime03"/></p>
+
+<p>但是有的时候默认就想选择第一个，多出了一个选择的步骤无疑上会增加击键的次数，所以我们可以通过修改配置来解决这个问题，同时也可以自定义想要输入的符号。</p>
+
+<p>这里我们使用的是<code>朙月拼音・簡化字</code>，所以需要建立相应的配置文件：</p>
+
+<pre><code>touch luna_pinyin_simp.custom.yaml
+</code></pre>
+
+<p>然后写入以下配置（可根据自己的需要修改，这里的代码的意思是在全角和半角的状态下输入<code>&lt;</code>均以<code>《</code>输出）。</p>
+
+<pre><code>patch:
+  punctuator/full_shape:
+    &quot;&lt;&quot;: &quot;《&quot;
+  punctuator/half_shape:
+    &quot;&lt;&quot;: &quot;《&quot;
+  punctuator/full_shape:
+    &quot;&gt;&quot;: &quot;》&quot;
+  punctuator/half_shape:
+    &quot;&gt;&quot;: &quot;》&quot;
+</code></pre>
+
+<h3 id="toc_7">安静模式</h3>
+
+<p>之前一直使用百度输入法的原因就是因为它有一个安静模式，可以在特定的程序内关闭输入法，比如说<code>Emacs</code>中大部分时间都是不需要输入中文的，所以当切换到这个程序的时候就自动将输入法切换到英文模式。</p>
+
+<p>需要找到应用软件的<code>Bundle Identifier</code>，保存在<code>Info.plist</code>这个文件当中。</p>
+
+<p>修改<code>squirrel.custom.yaml</code>（没有自己创建）：</p>
+
+<pre><code>patch:
+  style/color_scheme: dark_temple
+  style/font_point: 18
+  style/horizontal: true
+
+  app_options/com.apple.Xcode:
+    ascii_mode: true
+  app_options/com.runningwithcrayons.Alfred-2:
+    ascii_mode: true
+</code></pre>
+
+<h2 id="toc_8">快捷键</h2>
+
+<p>鼠须管默认支持<code>Emacs</code>的快捷键，所以基本上在<code>Emacs</code>中使用到的一些操作方式都可以在这里使用到。</p>
+
+<ul>
+<li>↑：Control+p</li>
+<li>↓：Control+n</li>
+<li>←：Control+b</li>
+<li>→：Control+f</li>
+<li>上頁：Alt+v</li>
+<li>下頁：Control+v</li>
+<li>句首：Control+a</li>
+<li>句末：Control+e</li>
+<li>回退：Control+h</li>
+<li>刪除：Control+d</li>
+<li>清空：Control+g</li>
+<li>刪詞：Control+k</li>
+</ul>
+
+<h2 id="toc_9">其他</h2>
+
+<p>完成以上的配置之后基本上就能够用得很顺手了，更多高级的配置方法可以参考官方的文档：<a href="http://rime.im/docs/">幫助與反饋</a></p>
+
+<h2 id="toc_10">参考资料</h2>
+
+<ul>
+<li><a href="http://rime.im/docs/">官方文档</a></li>
+<li><a href="http://www.dreamxu.com/install-config-squirrel/">安装及配置 Mac 上的 Rime 输入法——鼠鬚管 (Squirrel)</a></li>
+</ul>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2015/11/11</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='technology.html'>Tech</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+                        <a href="http://forrestchang.github.io/14824092772636.html#disqus_thread">comments</a>
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="14824097554043.html">
+                
+                  <h1>使用Emacs Org-mode + GitHub Pages 来写博客</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<p>这篇文章是教程性质的，尽量写得详细一点。</p>
+
+<p>这个博客就是使用Emacs org-mode + GitHub Pages搭建的，博客的主题是org-mode官网的主题，非常的简洁；评论采用的disqus，访问统计使用的是Google和Baidu的统计代码。</p>
+
+<p>另外，本文中进行操作的环境是在OSX下完成的，Windows用户请自行参考脑补:)</p>
+
+<h2 id="toc_0">起因</h2>
+
+<p>之前也折腾过好多的博客，Jekyll、Hexo、Farbox等，这些静态博客生成器都有一个共同点，都是采用的Markdown语法来进行书写的，而自己平时记笔记都是使用的Emacs org-mode，这样就导致了记笔记和写博客两个过程分裂开来了。</p>
+
+<p>昨晚偶然看到<a href="http://dirlt.com/">dirtysalt&#39;s homepage</a>，被深深的震撼了，博主写了很多的干货，专注与博客的内容而不是博客的外观。而自己也是一个极简主义者，觉得这样的博客样式还是挺好看的（很有Web1.0时代的复古风啊）。恰巧博主也是使用的Emacs来写博客，于是便花了一个上午的时间搜集相关的资料并把博客搭建起来了。</p>
+
+<h2 id="toc_1">准备</h2>
+
+<h3 id="toc_2">GitHub帐号与GitHub Pages</h3>
+
+<p>首先你需要一个存放博客的地方，这里采用的是GitHub，当让也可以使用其他的服务，只要支持静态页面展示即可。</p>
+
+<p>GitHub的注册过程省略。</p>
+
+<p>注册完GitHub帐号之后建立一个新的仓库，命名为 <code>xxx.github.io</code> ，其中 <code>xxx</code> 为你的用户名。</p>
+
+<h3 id="toc_3">Emacs环境</h3>
+
+<p>我使用的是最近比较火的<a href="https://github.com/syl20bnr/spacemacs">spacemacs</a> ，很多功能都配置好了，基本上手即用。</p>
+
+<p>如果不是用的spacemacs，确保你的Emacs版本为24，org-mode版本为8.0以上，不排除可能因为版本的原因出现各种各样的错误。</p>
+
+<p>什么，你还不知道Emacs是什么，那先去下载一个Emacs吧，使用org-mode基本不需要什么Emacs的基础，只需要记住几个快捷键就可以了。</p>
+
+<h2 id="toc_4">建立目录结构</h2>
+
+<p>随便在哪里建一个心得目录，这个目录就是存放你的org文件和html文件的地方。假设我们已经有了这么一个目录 <code>org</code> ：</p>
+
+<pre><code>$ mkdir notes
+$ mkdir public_html
+$ mkdir gtd
+</code></pre>
+
+<p>当然，那个gtd目录你可以不要，那是用来做时间管理的，如果你不想用Emacs做时间管理的话，可以不用建那个目录。</p>
+
+<ul>
+<li>notes: 这个目录就是用来存放元数据的地方，你的org文件、图片、CSS文件、PDF等全都是存放在这里的。</li>
+<li>public_html: 这个目录是用来存放导出的HTML文件的，那些非org格式的文件还会原封不动地拷贝过来。</li>
+</ul>
+
+<h2 id="toc_5">配置Emacs</h2>
+
+<p>这一步有一些复杂，没有Elisp基础的同学可能看不怎么懂，不过没关系，照着做就是了，现在看不懂可以以后学嘛。</p>
+
+<p>Emacs org-mode自带了很强大的导出功能，可以导出成HTML、markdown、PDF等格式的文件，我们这里使用自带的导出Project的功能，只不过在导出之前，要做一些配置，告诉Emacs要导出哪些东西，导出到哪里，采用什么规则。</p>
+
+<p>首先我们在配置文件中添加以下代码（普通的在.emacs中添加，spacemacs用户在.spacemacs中添加）：</p>
+
+<pre><code class="language-lisp">  (require &#39;ox-publish)
+  (setq org-publish-project-alist
+        &#39;(
+
+          ;; 把各部分的配置文件写到这里面来
+
+          ))
+</code></pre>
+
+<p>然后把其他的配置文件依次添加进来就可以了，主要有生成HTML的部分和原样拷贝的部分。</p>
+
+<p>下面来配置需要转换成HTML的内容：</p>
+
+<pre><code class="language-html">  (&quot;blog-notes&quot;
+   :base-directory &quot;~/org/notes&quot;
+   :base-extension &quot;org&quot;
+   :publishing-directory &quot;~/org/public_html/&quot;
+   :recursive t
+   :publishing-function org-html-publish-to-html
+   :headline-levels 4             ; Just the default for this project.
+   :auto-preamble t
+   :section-numbers nil
+   :author &quot;Yourname&quot;
+   :email &quot;example@test.com&quot;
+   :auto-sitemap t                ; Generate sitemap.org automagically...
+   :sitemap-filename &quot;sitemap.org&quot;  ; ... call it sitemap.org (it&#39;s the default)...
+   :sitemap-title &quot;Sitemap&quot;         ; ... with title &#39;Sitemap&#39;.
+   :sitemap-sort-files anti-chronologically
+   :sitemap-file-entry-format &quot;%d %t&quot;
+   )
+</code></pre>
+
+<ul>
+<li>:base-directory - 你存放笔记的目录（想将哪里的org文件导出成HTML）</li>
+<li>:base-extension - 导出的文件格式</li>
+<li>:publishing-directory - 导出HTML的目标目录</li>
+<li>:recursive - 设置为t会将子目录中的文件也导出</li>
+<li>:publishing-function - 使用哪个函数来进行publish（注：org 7与8在这个地方有区别）</li>
+<li>:auto-sitemap - 自动生存sitemap</li>
+<li>:sitemap-sort-files - 我这里采用的是按照从新到旧的排列方式</li>
+<li>:sitemap-file-entry-format - 这里采用时间+标题的方式生成sitemap</li>
+</ul>
+
+<p>并不是所有的文件都需要转化为HTML的，比如说一些图片、PDF、CSS样式等，只需要原样拷贝到目标文件就行，配置代码如下：</p>
+
+<pre><code class="language-lisp">  (&quot;blog-static&quot;
+   :base-directory &quot;~/org/notes&quot;
+   :base-extension &quot;css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf&quot;
+   :publishing-directory &quot;~/org/public_html/&quot;
+   :recursive t
+   :publishing-function org-publish-attachment
+   )
+</code></pre>
+
+<p>把这两段代码查到刚刚给的框架里面去即可。</p>
+
+<p>最后，我们再加一段代码：</p>
+
+<pre><code class="language-lisp">  (&quot;blog&quot; :components (&quot;blog-notes&quot; &quot;blog-static&quot;))
+</code></pre>
+
+<p>至此，基本的配置已经完成了，现在可以写一些org文件来生成HTML了。</p>
+
+<p>比如说我已经写完了一些org文件：</p>
+
+<pre><code>.
+├── blog-history.org
+├── css
+│   └── worg.css
+├── cv.org
+├── front-end-development
+│   ├── css.org
+│   └── html.org
+├── how-to-use-org-mode-build-blog.org
+├── index.org
+├── personal
+│   ├── how-to-study-efficiently.org
+│   └── index.org
+└── sitemap.org
+</code></pre>
+
+<p>然后使用<code>M-x org-publish-project</code>，输入<code>blog</code>，就会自动开始生成HTML文件了，现在已经可以在public_html文件夹中访问了。</p>
+
+<p>当然，index页面是需要自己来写的，可以参照我的主页来写，或者自由发挥。</p>
+
+<h2 id="toc_6">个性化定制</h2>
+
+<h3 id="toc_7">添加CSS文件</h3>
+
+<p>首先需要在notes文件夹内新建一个css文件夹，里面保存需要用到的CSS文件，这里我使用的是org-mode官网上用的CSS文件，非常的简洁。</p>
+
+<p>然后我们需要在 <code>blog-notes</code> 这个配置中新增一条属性：</p>
+
+<pre><code class="language-lisp"> :html-head &quot;&lt;link rel=\&quot;stylesheet\&quot; type=\&quot;text/css\&quot; href=\&quot;/css/worg.css\&quot;/&gt;&quot;
+</code></pre>
+
+<p>这样子的话再每次生成HTML的时候都会自动加上CSS，这里建议使用绝对路径来访问css文件，要不然在notes文件夹中新建文件夹的时候就无效了。</p>
+
+<h3 id="toc_8">添加评论功能</h3>
+
+<p>这里使用的Disqus的评论系统，使用Duoshuo的话配置过程应该也一样。</p>
+
+<p>首先在Disqus中注册一个服务，获得一段代码，在 <code>blog-notes</code> 中新增加一条属性：</p>
+
+<pre><code class="language-lisp">  :html-postamble &quot;&lt;p class=\&quot;postamble\&quot;&gt;Last Updated %C. Created by %a&lt;/p&gt;
+  &lt;div id=\&quot;disqus_thread\&quot;&gt;&lt;/div&gt;
+  &lt;script type=\&quot;text/javascript\&quot;&gt;
+  var disqus_shortname = &#39;yourshortname&#39;;
+  (function() {
+           var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
+           dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
+           (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
+           })();
+  &lt;/script&gt;
+  &quot;
+</code></pre>
+
+<p>需要注意的是代码中的双引号前面需要加上反斜杠来转义。</p>
+
+<h3 id="toc_9">添加统计功能</h3>
+
+<p>使用百度和Google的统计服务，和添加评论功能类似，还是添加在这条属性里面：</p>
+
+<pre><code class="language-lisp">    :html-postamble &quot;&lt;p class=\&quot;postamble\&quot;&gt;Last Updated %C. Created by %a&lt;/p&gt;
+  &lt;script&gt;
+  var _hmt = _hmt || [];
+  (function() {
+           var hm = document.createElement(\&quot;script\&quot;);
+           hm.src = \&quot;//hm.baidu.com/hm.js?yourkey\&quot;;
+           var s = document.getElementsByTagName(\&quot;script\&quot;)[0];
+           s.parentNode.insertBefore(hm, s);
+           })();
+  &lt;/script&gt;
+
+  &lt;div id=\&quot;disqus_thread\&quot;&gt;&lt;/div&gt;
+  &lt;script type=\&quot;text/javascript\&quot;&gt;
+  var disqus_shortname = &#39;yourshortname&#39;;
+  (function() {
+           var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
+           dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
+           (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
+           })();
+  &lt;/script&gt;
+
+  &lt;script&gt;
+  (function(i,s,o,g,r,a,m){i[&#39;GoogleAnalyticsObject&#39;]=r;i[r]=i[r]||function(){
+           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+           })(window,document,&#39;script&#39;,&#39;//www.google-analytics.com/analytics.js&#39;,&#39;ga&#39;);
+
+  ga(&#39;create&#39;, &#39;yourkey&#39;, &#39;auto&#39;);
+  ga(&#39;send&#39;, &#39;pageview&#39;);
+
+  &lt;/script&gt;
+  &quot;
+</code></pre>
+
+<p>同样注意双引号的转义问题即可。</p>
+
+<h2 id="toc_10">托管到GitHub上</h2>
+
+<p>生成了HTML文件之后需要把public_html目录托管到GitHub上：</p>
+
+<pre><code>$ git add .
+$ git commit -m &quot;first commit&quot;
+$ git remote add origin xxx
+$ git push -u origin master
+</code></pre>
+
+<p>其中<code>xxx</code>为你之前创建仓库的SSH路径。以后每次generate之后add、commit、push就可以了。</p>
+
+<p>现在访问 <code>xxx.github.io</code> 已经可以看到你的博客啦：）</p>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2015/10/10</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='technology.html'>Tech</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+                        <a href="http://forrestchang.github.io/14824097554043.html#disqus_thread">comments</a>
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="14824097073807.html">
+                
+                  <h1>谈谈时间管理</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<p>初次看到时间管理这个概念大概是高二的时候，在此之前，我一直在使用所谓的To-do List来管理自己每天的学习任务（那个时候还不知道）。知道了时间管理这个概念后，惊讶于原来自己早就在对时间进行管理了，只不过最简单的管理方式（后来实践表明，仅仅一个任务清单就足够了）。</p>
+
+<p>在知道了时间管理这个概念之后，我开始大量的阅读关于时间管理的文章，期间又接触到了GTD（Getting Things Done）这个个人管理系统，还专门读了一遍David的那本书。然后就是不断地下载软件、使用、删除、下载……从PC端到iOS到纸笔GTD都试过。突然发现，自己陷入到一个怪圈，主要工作不是变成了完成任务，而变成了寻找“更高效”的软件系统。相信人都会陷入到这个怪圈中，然后时间一步一步地被吞噬掉。然后你开始发现，最开始计划好要做的事情依旧没做好，甚至要找的高效软件也没有找到，因为你总是认为还会有更高效更方便的软件。</p>
+
+<p>时间管理的初衷不是最大化的利用时间吗？而现在却浪费了更多的时间。这又是为什么呢？</p>
+
+<p><strong>懒惰</strong>。是的，时间管理只不过是一个借口，一个用来迷惑自己“我是为了更高效的利用时间”的借口。说白了就是自己的懒惰，你就是不想完成任务，然后把“时间管理”当成幌子，找工具、看文章，试想一下，这些事情与你要完成的任务相比，哪一个更加困难？我想应该是你的任务更加困难吧，毕竟看文章只要看就行了。</p>
+
+<p>我是在阅读了李笑来<em>《把时间当作朋友》</em> 一书后突然明白了这个道理，哪里需要那么多花招去管理你的时间啊，JUST DO IT！尽管做就可以了，或者说找到一种方法，就一直用下去，不要换来换去，也不要再找别的方法了，甚至不要再看关于时间管理的文章。</p>
+
+<p>后来，通过李笑来的书，我又知道了<em>《奇特的一生》</em> 这本书（这是一本部头很小的书，几个小时便可以读完，网络上有免费的电子版），用了很快的时间读完了，除了震撼还是震撼。主人公柳比歇夫有一套强大而又完整的时间管理方法，并且坚持了五十几年。这套强大的系统也给他带来了巨大的成就：</p>
+
+<blockquote>
+<p>柳比歇夫生前发表了七十来部学术著作。其中有分散分析、生物分类学、昆虫学方面的经典著作；这些著作在国外广为翻译出版。各种各样的论文和专著，他一共写了五百多印张。五百印张，等于一万二千五百张打字稿。即使以专业作家而论，这也是个庞大的数字。</p>
+</blockquote>
+
+<p>他的成就定然是不凡的，这本书中还提到了门捷列夫等人，他们都有一个共同的特点：拥有一套独特的管理系统（时间&amp;知识），而且都是不断的改进，最后几乎完美的系统。</p>
+
+<p>原来强大的时间管理系统也能造就如此伟大的成绩啊。这时不禁又要问，到底要不要时间管理呢？经过一段时间的思考，答案是要的。或者说不是管理时间，而是管理你自己，因为时间终究是那么多时间。</p>
+
+<p>所以现在可能已经有了一个较为清晰的结论：我们需要管理时间，真的管理时间，而不是测试工具。坐在屏幕前阅读的你，如果还在为时间管理而困扰，依旧不知道选择哪款软件，我的建议是把注意力放到需要完成的任务上来。对于没有那么多繁杂事务的人（事实上绝大多数人没有），一个简单的任务清单就够了，做完一项任务划去一项，就是这么简单。</p>
+
+<p>还不知道时间管理是什么的同学，只需要阅读一两篇文章就够了，或者只要看一本书就够了，至于看什么书，对于不是“日理万机”的人，个人认为上文提到的两本书或许可以是一个选择。接着，就忘记时间管理这个说法吧，专注于要做的事，开始做！</p>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2014/2/12</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='productivity.html'>Productivity</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+                        <a href="http://forrestchang.github.io/14824097073807.html#disqus_thread">comments</a>
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+              
+
+
+			<div class="row">
+			  <div class="large-6 columns">
+			  <p class="text-left" style="padding-top:25px;">
+			   <a href="all_6.html">&laquo; Prev Page</a>  
+			  </p>
+			  </div>
+			  <div class="large-6 columns">
+			<p class="text-right" style="padding-top:25px;">
+			
+			</p>
+			  </div>
+			</div>
+		</div>
+	</div><!-- large 8 -->
+
+ <div class="large-4 medium-4 columns">
+  <div class="hide-for-small">
+    <div id="sidebar" class="sidebar">
+          <div id="site-info" class="site-info">
+            
+                <div class="site-a-logo"><img src="asset/img/avatar.jpg" /></div>
+            
+                <h1>Hack Notes</h1>
+                <div class="site-des"></div>
+                <div class="social">
+
+
+
+
+
+
+
+<a target="_blank" class="weibo" href="http://weibo.com/tisoga" title="weibo">Weibo</a>
+<a target="_blank" class="twitter" target="_blank" href="https://twitter.com/Tisoga" title="Twitter">Twitter</a>
+<a target="_blank" class="github" target="_blank" href="https://github.com/forrestchang" title="GitHub">GitHub</a>
+<a target="_blank" class="email" href="mailto:forrestchang7@gmail.com" title="Email">Email</a>
+  <a target="_blank" class="rss" href="atom.xml" title="RSS">RSS</a>
+                
+              	 </div>
+          	</div>
+
+             
+
+              <div id="site-categories" class="side-item ">
+                <div class="side-header">
+                  <h2>Categories</h2>
+                </div>
+                <div class="side-content">
+
+      	<p class="cat-list">
+        
+            <a href="life.html"><strong>Life</strong></a>
+        
+            <a href="machine-learning.html"><strong>ML</strong></a>
+        
+            <a href="python.html"><strong>Python</strong></a>
+        
+            <a href="productivity.html"><strong>Productivity</strong></a>
+        
+            <a href="technology.html"><strong>Tech</strong></a>
+         
+        </p>
+
+
+                </div>
+              </div>
+
+              <div id="site-categories" class="side-item">
+                <div class="side-header">
+                  <h2>Recent Posts</h2>
+                </div>
+                <div class="side-content">
+                <ul class="posts-list">
+	      
+		      
+			      <li class="post">
+			        <a href="14832795759469.html">2017 Week 1 Review</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="14827163208652.html">2016 Week 52 Review</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="14824086421976.html">推荐系统笔记</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="14824103542982.html">2016 Week 51 Review</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="14824081615573.html">2016 Week 46 Review</a>
+			      </li>
+		     
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		   
+		  		</ul>
+                </div>
+              </div>
+        </div><!-- sidebar -->
+      </div><!-- hide for small -->
+</div><!-- large 4 -->
+
+</div><!-- row -->
+
+ <div class="page-bottom clearfix">
+  <div class="row">
+   <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+
+
+<script type="text/javascript">
+    var disqus_shortname = 'tisogasnotes'; 
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<script type="text/javascript">
+var disqus_shortname = 'tisogasnotes'; 
+
+(function () {
+var s = document.createElement('script'); s.async = true;
+s.type = 'text/javascript';
+s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+  
+    
+
+    <script src="asset/js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+      function fixSidebarHeight(){
+        var w1 = $('.markdown-body').height();
+          var w2 = $('#sidebar').height();
+          if (w1 > w2) { $('#sidebar').height(w1); };
+      }
+      $(function(){
+        fixSidebarHeight();
+      })
+      $(window).load(function(){
+          fixSidebarHeight();
+      });
+     
+    </script>
+
+    <script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
+<script>
+                            var _hmt = _hmt || [];
+                            (function() {
+                                    var hm = document.createElement("script");
+                                    hm.src = "https://hm.baidu.com/hm.js?001e800887eba2f8f57ec8059aafdad6";
+                                    var s = document.getElementsByTagName("script")[0];
+                                    s.parentNode.insertBefore(hm, s);
+                                    })();
+                            </script>
+
+  </body>
+</html>

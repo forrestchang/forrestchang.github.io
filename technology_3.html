@@ -1,0 +1,1816 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  Tech - Hack Notes
+  
+  </title>
+  
+  
+  <link href="atom.xml" rel="alternate" title="Hack Notes" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+  <script src="asset/highlightjs/highlight.pack.js"></script>
+  <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script>hljs.initHighlightingOnLoad();</script>
+<script type="text/javascript">
+  function before_search(){
+    var searchVal = 'site:forrestchang.github.io ' + document.getElementById('search_input').value;
+    document.getElementById('search_q').value = searchVal;
+    return true;
+  }
+</script>
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+
+  <section class="top-bar-section">
+  <div class="row">
+      <div style="position: relative;width:100%;"><div style="position: absolute; width:100%;">
+        <ul id="main-menu" class="left">
+        
+        <li id=""><a target="_self" href="index.html">Home</a></li>
+        
+        <li id=""><a target="_self" href="archives.html">Archives</a></li>
+        
+        <li id=""><a target="_self" href="about.html">About</a></li>
+        
+        <li id=""><a target="_blank" href="portfolio.html">Portfolio</a></li>
+        
+        </ul>
+
+        <ul class="right" id="search-wrap">
+          <li>
+<form target="_blank" onsubmit="return before_search();" action="http://google.com/search" method="get">
+    <input type="hidden" id="search_q" name="q" value="" />
+    <input tabindex="1" type="search" id="search_input"  placeholder="Search"/>
+</form>
+</li>
+          </ul>
+      </div></div>
+  </div>
+  </section>
+
+</nav>
+
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; Hack Notes</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+       
+       <li><a href="index.html">HOME</a></li>
+    <li><a href="archives.html">Archives</a></li>
+    <li><a href="about.html">ABOUT</a></li>
+
+    <li><label>Categories</label></li>
+
+        
+            <li><a href="life.html">Life</a></li>
+        
+            <li><a href="machine-learning.html">ML</a></li>
+        
+            <li><a href="python.html">Python</a></li>
+        
+            <li><a href="productivity.html">Productivity</a></li>
+        
+            <li><a href="technology.html">Tech</a></li>
+         
+
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+
+        <section id="main-content" role="main" class="scroll-container">
+        
+       
+
+ <script type="text/javascript">
+	$(function(){
+		$('#menu_item_index').addClass('is_active');
+	});
+</script>
+<div class="row">
+	<div class="large-8 medium-8 columns">
+		<div class="markdown-body home-categories">
+		
+			<div class="article">
+                <a class="clearlink" href="14824093902273.html">
+                
+                  <h1>Swift 中的内存管理</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<p>这篇文章是在阅读《The Swift Programming Language》Automatic Reference Counting（ARC，自动引用计数）一章时做的一些笔记，同时参考了其他的一些资料。</p>
+
+<p>在早期的 iOS 开发中，内存管理是由开发者手动来完成的。因为传统的垃圾回收机制对于移动平台来说十分低效，苹果采用的是引用计数（RC，Reference Counting）的方式来管理内存，开发者需要通过手工的方式增加或减少一个实例的引用计数。在 iOS 5 之后，引入了 ARC 自动引用计数，使得开发者不需要手动地调用 <code>retain</code> 和 <code>release</code> 来管理引用计数，但是实际上这些方法还是会被调用，只不过是交给了编译器来完成，编译器会在合适的地方帮我们加入这些方法。</p>
+
+<p><strong>什么是自动引用计数？</strong></p>
+
+<p>每当你创建一个类的实例的时候，ARC 便会自动分配一块内存空间来存放这个实例的信息，当这个实例不再被使用的时候，ARC 便释放实例所占用的内存。一般每个被管理的实例都会与一个引用计数器相连，这个计数器保存着当前实例被引用的次数，一旦创建一个新的引用指向这个实例，引用计数器便加 1，每当指向该实例的引用失效，引用计数器便减 1，当某个实例的引用计数器变成 0 的时候，这个实例就会被立即销毁。</p>
+
+<p>在 Swift 中，对引用描述的关键字有三个：<code>strong</code>，<code>weak</code> 和 <code>unowned</code>，所有的引用没有特殊说明都是 <code>strong</code> 强引用类型。在 ARC 中，只有指向一个实例的所有 <code>strong</code> 强引用都断开了，这个实例才会被销毁。</p>
+
+<p>举一个简单的例子：</p>
+
+<pre><code class="language-swift">class A {
+    let name: String
+    init(name: String) {
+        self.name = name
+    }
+    deinit {
+        print(&quot;A deinit&quot;)
+    }
+}
+
+var a1: A?
+var a2: A?
+
+a1 = A(name: &quot;A&quot;)
+a2 = a1
+
+a1 = nil
+</code></pre>
+
+<p>上面这个例子中，虽然 <code>a1</code> 这个 <code>strong</code> 强引用断开了，但是还有 <code>a2</code> 这个强引用指向这个实例，所以不会在命令行中输出 <code>A deinit</code>，当我们把 <code>a2</code> 也设置为 <code>nil</code> 时，与这个实例关联的所有强引用均断开了，这个实例便会被销毁，在命令行中打印 <code>A deinit</code>。</p>
+
+<p><strong>循环强引用（Strong Reference Cycles）</strong></p>
+
+<p>但是，在某些情况下，一个类实例的强引用数永远不能变为 0，例如两个类实例互相持有对方的强引用，因而每个类实例都让对方一直存在，这就是所谓的强引用循环（Strong Reference Cycles）。</p>
+
+<p>这里引用 TSPL 中的例子：</p>
+
+<pre><code class="language-swift">class Person {
+    let name: String
+    init(name: String) { self.name = name }
+    var apartment: Apartment?
+    deinit { print(&quot;\(name) is being deinitialized&quot;) }
+}
+
+class Apartment {
+    let unit: String
+    init(unit: String) { self.unit = unit }
+    var tenant: Person?
+    deinit { print(&quot;Apartment \(unit) is being deinitialized&quot;) }
+}
+</code></pre>
+
+<p>每一个 <code>Person</code> 实例有一个可选的初始化为 <code>nil</code> 的 <code>Apartment</code> 类型，因为一个人并不总是拥有公寓。同样，每一个 <code>Apartment</code> 实例都有一个可选的初始化为 <code>nil</code> 的 <code>Person</code> 类型，因为一个公寓并不总是属于一个人。</p>
+
+<p>接下来的代码片段定义了两个可选类型的变量 <code>john</code> 和 <code>unit4A</code>，并分别设定为下面的 <code>Person</code> 和 <code>Apartment</code> 的实例，这两个变量都备受设定为 <code>nil</code>：</p>
+
+<pre><code class="language-swift">var john: Person?
+var unit4A: Apartment?
+</code></pre>
+
+<p>现在可以创建特定的 <code>Person</code> 和 <code>Apartment</code> 实例，并将它们赋值给 <code>john</code> 和 <code>unit4A</code> 变量：</p>
+
+<pre><code class="language-swift">john = Person(name: &quot;John Appleseed&quot;)
+unit4A = Apartment(unit: &quot;4A&quot;)
+</code></pre>
+
+<p>下面一段代码将这两个实例关联起来：</p>
+
+<pre><code class="language-swift">john!.apartment = unit4A
+unit4A!.tenant = john
+</code></pre>
+
+<p>将两个实例关联在一起后，强引用的关系如图所示：</p>
+
+<p><img src="media/14824093902273/14607053938205.jpg" alt="14607053938205"/></p>
+
+<p>这两个实例关联之后，会产生一个循环强引用，当断开 <code>john</code> 和 <code>unit4A</code> 所持有的强引用时，引用计数器并不会归零，所以这两块空间也得不到释放，这就导致了内存泄漏。</p>
+
+<p>可以将其中一个类中的变量设定为 <code>weak</code> 弱引用来打破这种强引用循环：</p>
+
+<pre><code class="language-swift">class Apartment {
+    let unit: String
+    init(unit: String) { self.unit = unit }
+    weak var tenant: Person?
+    deinit { print(&quot;Apartment \(unit) is being deinitialized&quot;) }
+}
+</code></pre>
+
+<p><img src="media/14824093902273/14607057294969.jpg" alt="14607057294969"/></p>
+
+<p>当断开 <code>john</code> 和 <code>unit4A</code> 所持有的强引用时，<code>Person instance</code> 的引用计数器变成 0，实例被销毁，从而 <code>Apartment instance</code> 的引用计数器也变为 0，实例被销毁。</p>
+
+<p><strong>什么时候使用 <code>weak</code>？</strong></p>
+
+<p>当两个实例是 optional 关联在一起时，确保其中的一个使用 <code>weak</code> 弱引用，就像上面所说的那个例子一样。</p>
+
+<p><strong><code>unowned</code> 无主引用</strong></p>
+
+<p>在某些情况下，声明的变量总是有值得时候，我们需要使用 <code>unowned</code> 无主引用。</p>
+
+<p>同样借用一下 TSPL 中的例子：</p>
+
+<pre><code class="language-swift">class Customer {
+    let name: String
+    var card: CreditCard?
+    init(name: String) {
+        self.name = name
+    }
+    deinit { print(&quot;\(name) is being deinitialized&quot;) }
+}
+
+class CreditCard {
+    let number: UInt64
+    unowned let customer: Customer
+    init(number: UInt64, customer: Customer) {
+        self.number = number
+        self.customer = customer
+    }
+    deinit { print(&quot;Card #\(number) is being deinitialized&quot;) }
+}
+</code></pre>
+
+<p>这里定义了两个类，<code>Customer</code> 和 <code>CreditCard</code>，模拟了银行客户和客户的信用卡，在这个例子中，每一个类都是将另一个类的实例作为自身的属性，所以会产生循环强引用。</p>
+
+<p>和之前那个例子不同的是，<code>CreditCard</code> 类中有一个非可选类型的 <code>customer</code> 属性，因为，一个客户可能有或者没有一张信用卡，但是一张信用卡总是关联着一个用户。</p>
+
+<pre><code class="language-swift">var john: Customer?
+john = Customer(name: &quot;John Appleseed&quot;)
+john!.card = CreditCard(number: 1234_5678_9012_3456, customer: john!)
+</code></pre>
+
+<p>关联两个实例后，它们的引用关系如图所示：</p>
+
+<p><img src="media/14824093902273/14607068387297.jpg" alt="14607068387297"/></p>
+
+<p>当断开 <code>john</code> 变量持有的强引用时，再也没有指向 <code>Customer</code> 的强引用了，所以该实例被销毁了，其后，再也没有指向 <code>CreditCard</code> 的强引用了，该实例也被销毁了。</p>
+
+<p><strong>什么时候使用 <code>unowned</code> 无主引用？</strong></p>
+
+<p>两个实例 A 和 B，如果实例 A 必须在实例 B 存在的前提下才能存在，那么实例 A 必须用 <code>unowned</code> 无主引用指向实例 B。也就是说，有强制依赖性的那个实例必须对另一个实例持有无主引用。</p>
+
+<p>例如上面那个例子所说，银行客户可能没有信用卡，但是每张信用卡总是绑定着一个银行客户，所以信用卡这个类就需要用 <code>unowned</code> 无主引用。</p>
+
+<p><strong>无主引用以及隐市解析可选属性</strong></p>
+
+<p>还有一种情况，两个属性都必须有值，并且初始化完成之后永远不会为 <code>nil</code>。在这种情况下，需要一个类使用 <code>unowned</code> 无主引用，另一个类使用<a href="http://wiki.jikexueyuan.com/project/swift/chapter2/01_The_Basics.html#implicityly_unwrapped_optionals">隐式解析可选属性</a>。</p>
+
+<p><strong>闭包引起的循环强引用</strong></p>
+
+<p>在 Swift 中，闭包和函数都属于引用类型。并且闭包还有一个特性：可以在其定义的上下文中捕获常量或者变量。所以，在一个类中，闭包被赋值给了一个属性，而这个闭包又使用了这个类的实例的时候，就会引起循环强引用。</p>
+
+<p>Swift 提供了一种方法来解决这个问题：闭包捕获列表（closure capture list）。在定义闭包的同时定义捕获列表作为闭包的一部分，捕获列表定义了闭包体内捕获一个或者多个引用类型的规则。跟解决两个类实例之间的循环强引用一样，声明每个捕获的引用为弱引用或者无主引用。</p>
+
+<p>捕获列表中的每一项都由一对元素组成，一个元素是 <code>weak</code> 或者 <code>unowned</code> 关键字，另一个元素是类实例的引用（例如最常见得是 <code>self</code>），这些在方括号内用逗号隔开。</p>
+
+<p>具体的使用方法请参考<a href="http://wiki.jikexueyuan.com/project/swift/chapter2/16_Automatic_Reference_Counting.html#resolving_strong_reference_cycles_for_closures">官方文档</a>。</p>
+
+<p><strong>何时使用 <code>weak</code>，何时使用 <code>unowned</code></strong></p>
+
+<p>在闭包和捕获的实例总是相互引用并且总是同时销毁的时候，将闭包内的捕获定义为 <code>unowned</code> 无主引用。</p>
+
+<p>在被捕获的实例可能变成 <code>nil</code> 的情况下，使用 <code>weak</code> 弱引用。如果被捕获的引用绝对不会变成 <code>nil</code>，应该使用 <code>unowned</code> 无主引用，而不是 <code>weak</code> 弱引用。</p>
+
+<p><strong>Garbage Collection（GC，垃圾回收）</strong></p>
+
+<p>其实 ARC 应该也算 GC 的一种，不过我们一谈到 GC，大多都会想到 Java 中的垃圾回收机制，相比较 GC，ARC 简单得许多。以后有机会可以讨论一下 Java 中的内存管理。</p>
+
+<p>另外，需要注意的一点是，这里所讲的都是针对于<code>引用类型</code>，<code>结构体</code>和<code>枚举</code>在 Swift 中属于值类型，不在 ARC 的考虑范围之内。</p>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2016/4/15</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='technology.html'>Tech</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+                        <a href="http://forrestchang.github.io/14824093902273.html#disqus_thread">comments</a>
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="linux-basic.html">
+                
+                  <h1>Linux 基础笔记</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">Shell 的基本操作</h2>
+
+<h3 id="toc_1">常用快捷键</h3>
+
+<table>
+<thead>
+<tr>
+<th>按键</th>
+<th>作用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>Tab</code></td>
+<td>命令补全</td>
+</tr>
+<tr>
+<td><code>Ctrl+c</code></td>
+<td>强行终止当前程序</td>
+</tr>
+<tr>
+<td><code>Ctrl+d</code></td>
+<td>键盘输入结束或退出终端</td>
+</tr>
+<tr>
+<td><code>Ctrl+s</code></td>
+<td>暂定当前程序，暂停后按下任意键恢复运行</td>
+</tr>
+<tr>
+<td><code>Ctrl+z</code></td>
+<td>将当前程序放到后台运行，恢复到前台命令 <code>fg</code></td>
+</tr>
+<tr>
+<td><code>Ctrl+a</code></td>
+<td>将光标移动到行首</td>
+</tr>
+<tr>
+<td><code>Ctrl+e</code></td>
+<td>将光标移动到行尾</td>
+</tr>
+<tr>
+<td><code>Ctrl+k</code></td>
+<td>删除从光标所在位置到行末</td>
+</tr>
+<tr>
+<td><code>Alt+Backspace</code></td>
+<td>向前删除一个单词</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_2">常用通配符</h3>
+
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>含义</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>*</code></td>
+<td>匹配0或多个字符</td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>匹配任意一个字符</td>
+</tr>
+<tr>
+<td><code>[list]</code></td>
+<td>匹配 list 中的任意单一字符</td>
+</tr>
+<tr>
+<td><code>[!list]</code></td>
+<td>匹配除 list 中的任意单一字符以外的字符</td>
+</tr>
+<tr>
+<td><code>[c1-c2]</code></td>
+<td>匹配c1-c2中的任意单一字符，如[0-9][a-z]</td>
+</tr>
+<tr>
+<td><code>{string1,string2,...}</code></td>
+<td>匹配其中一个字符串</td>
+</tr>
+<tr>
+<td><code>{c2..c2</code></td>
+<td>匹配c1-c2中全部字符，如{1..10}</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="toc_3">用户管理</h2>
+
+<h3 id="toc_4">查看用户</h3>
+
+<pre><code>$ who am i
+</code></pre>
+
+<p>或者</p>
+
+<pre><code>$ who mon likes
+</code></pre>
+
+<p><code>who</code> 命令其他常用参数</p>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>-a</code></td>
+<td>打印能打印的全部</td>
+</tr>
+<tr>
+<td><code>-d</code></td>
+<td>打印死掉的进程</td>
+</tr>
+<tr>
+<td><code>-m</code></td>
+<td>同 <code>am i</code>, <code>mom likes</code></td>
+</tr>
+<tr>
+<td><code>-q</code></td>
+<td>打印当前登陆用户数及用户名</td>
+</tr>
+<tr>
+<td><code>-u</code></td>
+<td>打印当前登陆用户登陆信息</td>
+</tr>
+<tr>
+<td><code>-r</code></td>
+<td>打印运行等级</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_5">创建用户</h3>
+
+<p>创建用户需要 <code>root</code> 用户的权限，所以需要使用 <code>sudo</code> 这个命令。使用 <code>sudo</code> 名利需要满足两个条件：</p>
+
+<ol>
+<li>知道当前登陆用户的密码</li>
+<li>当前用户必须在 <code>sudo</code> 用户组</li>
+</ol>
+
+<pre><code>$ su &lt;user&gt; # 切换用户到 user
+</code></pre>
+
+<pre><code>$ sudo &lt;cmd&gt; # 以 root 权限运行命令
+</code></pre>
+
+<pre><code>$ su - &lt;user&gt; # 切换用户，并且环境变量同时改变到目标用户的环境变量
+</code></pre>
+
+<p>新建用户命令：</p>
+
+<pre><code>$ sudo adduser &lt;username&gt;
+</code></pre>
+
+<p>创建用户的同时会为用户创建 home 目录。</p>
+
+<h3 id="toc_6">用户组</h3>
+
+<p>在 Linux 中每个用户都有一个用户组，它们共享一些资源和权限，同时拥有私有资源。</p>
+
+<h4 id="toc_7">查看自己的用户组</h4>
+
+<pre><code>$ groups &lt;username&gt;
+</code></pre>
+
+<p>或者，查看<code>/etc/group</code>文件</p>
+
+<pre><code>$ cat /etc/group | sort
+</code></pre>
+
+<p><code>sort</code> 表示将读取的文本进行一个字典排序再输出。</p>
+
+<h5 id="toc_8"><code>etc/group</code> 文件格式说明</h5>
+
+<p>/etc/group 的内容包括用户组（Group）、用户组口令、GID 及该用户组所包含的用户（User），每个用户组一条记录。格式如下：</p>
+
+<blockquote>
+<p>group_name:password:GID:user_list</p>
+</blockquote>
+
+<h4 id="toc_9">将其他用户加入 sudo 用户组</h4>
+
+<p>使用 <code>usermod</code> 命令可以为用户组添加用户，使用该命令需要有 root 权限。</p>
+
+<p>使用一个具有 root 权限的用户为一个不具有 root 权限的用户添加 <code>sudo</code> 权限：</p>
+
+<pre><code>$ sudo usermod -G sudo &lt;username&gt;
+</code></pre>
+
+<h3 id="toc_10">删除用户</h3>
+
+<pre><code>$ sudo deluser &lt;username&gt; --remove-home
+</code></pre>
+
+<h2 id="toc_11">文件权限</h2>
+
+<h3 id="toc_12">查看文件权限</h3>
+
+<pre><code>$ ls -l
+</code></pre>
+
+<p><img src="media/14587025785185/14587048876862.jpg" alt=""/></p>
+
+<p><img src="media/14587025785185/14587049042865.jpg" alt=""/></p>
+
+<p><img src="media/14587025785185/14587049141674.jpg" alt=""/></p>
+
+<h4 id="toc_13">文件类型</h4>
+
+<p>Linux 里面一切皆文件。</p>
+
+<h4 id="toc_14">文件权限</h4>
+
+<ul>
+<li>读权限：可以读取某个文件的内容</li>
+<li>写权限：可以编辑和修改某个文件</li>
+<li>执行权限：通常指可以运行的二进制程序文件或者脚本文件</li>
+</ul>
+
+<p>注：一个目录要同时具有读权限和执行权限才可以打开，要有写权限才允许在其中创建其他文件。Linux 不是用过文件的后缀名来区分文件的类型。</p>
+
+<h4 id="toc_15">链接数</h4>
+
+<p>链接到该文件所在的 inode 结点的文件名数目。</p>
+
+<h3 id="toc_16">修改文件权限</h3>
+
+<h4 id="toc_17">方法1：二进制数字表示</h4>
+
+<p><img src="media/14587025785185/14587054006459.jpg" alt=""/></p>
+
+<p>修改<filename>只能自己使用：</p>
+
+<pre><code>$ chmod 700 &lt;filename&gt;
+</code></pre>
+
+<h4 id="toc_18">方法2：加减赋值操作</h4>
+
+<pre><code>$ chmod go-rw &lt;filename&gt;
+</code></pre>
+
+<p>&#39;g&#39;&#39;o&#39;还有&#39;u&#39;，分别表示group，others，user，&#39;+&#39;，&#39;-&#39; 就分别表示增加和去掉相应的权限。</p>
+
+<h2 id="toc_19">目录结构</h2>
+
+<p>Windows 是以存储介质为主的，之下才是目录；而 Unix 是以目录为主的，存储介质是挂载在目录上的。Linux 以树形目录结构的形式来构建整个系统。</p>
+
+<h3 id="toc_20">FHS 标准</h3>
+
+<blockquote>
+<p>FHS（英文：Filesystem Hierarchy Standard 中文：文件系统层次结构标准），多数 Linux 版本采用这种文件组织形式，FHS 定义了系统中每个区域的用途、所需要的最小构成的文件和目录同时还给出了例外处理与矛盾处理。</p>
+</blockquote>
+
+<p>FHS 定义了两层规范，第一层是，/下面的各个目录应该要放什么文件数据，例如 /etc 应该要放设置文件，/bin 与 /sbin 则应该要放置可执行文件等等。</p>
+
+<p>第二层则是针对 /usr 及 /var 这两个目录的子目录来定义。例如 /var/log 放置系统登录文件，/usr/share 放置共享数据等等。</p>
+
+<p><img src="media/14587025785185/14587064442333.jpg" alt=""/></p>
+
+<p>FSH 是根据以往无数 Linux 用户和开发者的经验总结出来的，并且会持续更新，FSH 依据文件系统使用的频繁与否以及是否允许用户随意改动，将目录定义为四中交互作用的形态，如下表示：</p>
+
+<p><img src="media/14587025785185/14587065471253.jpg" alt=""/></p>
+
+<h3 id="toc_21">目录路径</h3>
+
+<h4 id="toc_22">绝对路径</h4>
+
+<p>以根目录为起点的完整路径。</p>
+
+<h4 id="toc_23">相对路径</h4>
+
+<p>相对于你当前目录的路径。</p>
+
+<h2 id="toc_24">文件的基本操作</h2>
+
+<h3 id="toc_25">新建</h3>
+
+<h4 id="toc_26">新建空白文件</h4>
+
+<pre><code>$ touch test
+</code></pre>
+
+<p>关于 <code>touch</code> 命令，其主要是用来更改文件时间戳的。</p>
+
+<h4 id="toc_27">新建目录</h4>
+
+<pre><code>$ mkdir testDir
+</code></pre>
+
+<p>使用 <code>-p</code> 参数，可以创建一个多级目录，例如：</p>
+
+<pre><code>$ mkdir -p father/son/grandson
+</code></pre>
+
+<h3 id="toc_28">复制</h3>
+
+<h4 id="toc_29">复制文件</h4>
+
+<pre><code>$ cp test testDir
+</code></pre>
+
+<h4 id="toc_30">复制目录</h4>
+
+<pre><code>$ cp -r father family
+</code></pre>
+
+<h3 id="toc_31">删除</h3>
+
+<pre><code>$ rm test
+</code></pre>
+
+<p>参数 <code>-f</code> 可以强制删除一些为只读权限的文件。</p>
+
+<pre><code>$ rm -f test
+</code></pre>
+
+<p>删除一个目录：</p>
+
+<pre><code>$ rm -r testDir
+</code></pre>
+
+<h3 id="toc_32">移动文件</h3>
+
+<pre><code>$ mv testFile testDir
+</code></pre>
+
+<h3 id="toc_33">重命名文件</h3>
+
+<p><code>mv</code> 命令还有重命名的作用：</p>
+
+<pre><code>$ mv oldName newName
+</code></pre>
+
+<h3 id="toc_34">查看文件</h3>
+
+<h4 id="toc_35"><code>cat</code> 与 <code>tac</code></h4>
+
+<p>这两个命令都是用来打印文件内容到标准输出（终端），其中<code>cat</code> 为正序显示，<code>tac</code> 为倒序显示。</p>
+
+<blockquote>
+<p>标准输入输出：当我们执行一个 shell 命令行时通常会自动打开三个标准文件，即标准输入文件（stdin），默认对应终端的键盘；标准输出文件（stdout）和标准错误输出文件（stderr），这两个文件都对应被重定向到终端的屏幕，以便我们能直接看到输出内容。进程将从标准输入文件中得到输入数据，将正常输出数据输出到标准输出文件，而将错误信息送到标准错误文件中。</p>
+</blockquote>
+
+<p>可以使用<code>-n</code> 参数来显示行号：</p>
+
+<pre><code>$ cat -n &lt;filename&gt;
+</code></pre>
+
+<h4 id="toc_36"><code>nl</code></h4>
+
+<p>添加行号并打印，比 <code>cat</code> 更加强大，参数说明：</p>
+
+<pre><code>-b : 指定添加行号的方式，主要有两种：
+    -b a:表示无论是否为空行，同样列出行号(&quot;cat -n&quot;就是这种方式)
+    -b t:只列出非空行的编号并列出（默认为这种方式）
+-n : 设置行号的样式，主要有三种：
+    -n ln:在行号字段最左端显示
+    -n rn:在行号字段最右边显示，且不加 0
+    -n rz:在行号字段最右边显示，且加 0
+-w : 行号字段占用的位数(默认为 6 位)
+</code></pre>
+
+<h3 id="toc_37">查看文件类型</h3>
+
+<p>使用 <code>file</code> 命令来查看文件类型：</p>
+
+<pre><code>$ file /bin/ls
+</code></pre>
+
+<p><img src="media/14587025785185/14587183045128.jpg" alt=""/></p>
+
+<p>这表示这是一个可执行文件。</p>
+
+<h2 id="toc_38">环境变量</h2>
+
+<h3 id="toc_39">变量</h3>
+
+<p>使用<code>declare</code>命令可以创建一个变量：</p>
+
+<pre><code>$ declare tmp
+</code></pre>
+
+<p>读取变量的值，使用<code>echo</code>命令和<code>$</code>符号：</p>
+
+<pre><code>$ echo $tmp
+</code></pre>
+
+<h3 id="toc_40">环境变量</h3>
+
+<p>环境变量就是作用域比自己定义的变量要大，如 Shell 的环境变量作用于自身和它的子进程。例如 Shell 环境变量作用于自身和它的子进程。在类 UNIX 系统中，每个进程都有其各自的环境变量设置，当一个进程被创建时，处理创建过程中明确指定的话，它将继承其父进程的绝大部分环境设置。</p>
+
+<p>通常我们会涉及到的环境变量有三种：</p>
+
+<ul>
+<li>当前 Shell 进程私有用户自定义变量，只在当前 Shell 中有效</li>
+<li>Shell 本身内建的变量</li>
+<li>从自定义变量导出的环境变量</li>
+</ul>
+
+<p><code>set</code>, <code>env</code>, <code>export</code>这三个命令可以用来打印相关环境变量，区别在于涉及的是不同范围的环境变量：</p>
+
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>set</code></td>
+<td>显示当前 shell 所有环境变量，包括其内建环境变量、用户自定义变量及导出的环境变量</td>
+</tr>
+<tr>
+<td><code>env</code></td>
+<td>显示与当前用户相关的环境变量，还可以让命令在制定环境中运行</td>
+</tr>
+<tr>
+<td><code>export</code></td>
+<td>显示从 Shell 中导出成环境变量的变量，也能通过它将自定义变量导出为环境变量</td>
+</tr>
+</tbody>
+</table>
+
+<p><img src="media/14587025785185/14592405427797.jpg" alt=""/></p>
+
+<h3 id="toc_41">命令的查找路径与顺序</h3>
+
+<p>Shell 通过环境变量<code>PATH</code>来搜索命令。</p>
+
+<p>查看 <code>PATH</code> 环境变量的内容：</p>
+
+<pre><code>$ echo $PATH
+</code></pre>
+
+<p>输出的内容为：</p>
+
+<pre><code>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+</code></pre>
+
+<p>这些目录下面存放的都是可执行文件。</p>
+
+<h3 id="toc_42">添加自定义路径到<code>PATH</code> 环境变量</h3>
+
+<p><code>PATH</code>里面的路径是以<code>:</code>作为分隔符，所以可以这样添加自定义路径：</p>
+
+<pre><code>$ PATH=$PATH:/home/xxxx
+</code></pre>
+
+<p>注意到这里一定要使用绝对路径。</p>
+
+<p>这种修改的方式只对当前的 Shell 有效，要想让每个用户都讷讷够使用，需要更改相应的配置文件，例如<code>zsh</code>需要修改相应的<code>.zshrc</code>。</p>
+
+<h3 id="toc_43">修改和删除已有变量</h3>
+
+<p>可以使用<code>unset</code>命令来删除一个环境变量：</p>
+
+<pre><code>$ unset temp
+</code></pre>
+
+<h3 id="toc_44">如何让环境变量立即生效</h3>
+
+<p>在修改了配置文件后，可以使用<code>source</code>命令来让其立即生效：</p>
+
+<pre><code>$ source .zshrc
+</code></pre>
+
+<h2 id="toc_45">搜索文件</h2>
+
+<h3 id="toc_46"><code>whereis</code>简单快速</h3>
+
+<pre><code>$ whereis who
+</code></pre>
+
+<p><code>whereis</code>只能搜索二进制文件(-b)，man 帮助文件(-m)和源代码文件(-s)。</p>
+
+<h3 id="toc_47"><code>locate</code>快而全</h3>
+
+<p>通过<code>/var/lib/mlocate/mlocate.db</code>数据库查找，不过这个数据库也不是实时更新的，系统会使用定时任务每天自动执行<code>updatedb</code>命令更新一次，所以有时候你刚添加的文件，它可能会找不到，需要手动执行一次<code>updatedb</code>命令。他可以用来查找指定目录下的不同文件类型，例如查找/usr/share/下所有的 jpg 文件：</p>
+
+<pre><code>$ locate /usr/share/\*.jpg
+</code></pre>
+
+<p>注意要添加<code>*</code>号前面的反斜杠转义，否则会无法找到</p>
+
+<h3 id="toc_48"><code>which</code>小而精</h3>
+
+<p>我们通常使用<code>which</code>来确定是否安装了某个指定的软件，因为它只从<code>PATH</code> 环境变量指定的路径中去搜索命令：</p>
+
+<pre><code>$ which man
+</code></pre>
+
+<h3 id="toc_49"><code>find</code> 精而细</h3>
+
+<p><code>find</code>命令应该是这几个命令中最强大的了，它不但可以通过文件类型、文件名进行查找，而且可以根据文件的属性（如文件的时间戳，文件的权限等）进行搜索。</p>
+
+<p>在指定目录下搜索指定文件名的文件：</p>
+
+<pre><code>$ find /etc/ -name interface
+</code></pre>
+
+<p><code>find</code> 命令的基本参数格式为：<code>find [path] [option] [action]</code></p>
+
+<p>与时间相关的命令参数：</p>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>-atime</code></td>
+<td>最后访问时间</td>
+</tr>
+<tr>
+<td><code>-ctime</code></td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td><code>-mtime</code></td>
+<td>最后修改时间</td>
+</tr>
+</tbody>
+</table>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2016/3/23</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='technology.html'>Tech</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+                        <a href="http://forrestchang.github.io/linux-basic.html#disqus_thread">comments</a>
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="14824091738545.html">
+                
+                  <h1>学院派编程自学指南</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<p>之前有不少学弟学妹问我如何学习编程，根据DRY法则（Don&#39;t Repeat Yourself），还是把自己学习过程中的一些经验整理成一篇博客吧。由于本人目前也处在学习的阶段，文章中列出来的内容也并未全部学习过，所以文章的客观性可能存在一些问题，还望读者自行判断。</p>
+
+<p>这份指南会不定期更新，有好的建议也可以留言或者给我发邮件。</p>
+
+<h1 id="toc_0">准备</h1>
+
+<p>需要的所有工具就是一台可以连接上网络的电脑以及你本人。</p>
+
+<h2 id="toc_1">科学上网</h2>
+
+<p>很可惜，即使是现在，大部分学习计算机的学生还是不会科学上网。在当前的网络环境下，不会科学上网，意味着你不能用Google查资料，不能再Reddit看最新的资讯，需要忍受龟速的GitHub，云云。然而，科学上网本身却是一件成本非常低的事情，不想折腾的话，一年花个几百块钱买个现成的服务；有折腾精神的人，可以买个服务器自己假设架设上网工具。这一步很重要，不能跳过，否则后面指南中的许多内容对你来说只能是404了。</p>
+
+<p>关于科学上网的具体内容，就不再多说了，给你一个关键词：<strong>Lantern</strong>。</p>
+
+<h2 id="toc_2">学会使用Google搜索</h2>
+
+<p>学会了科学上网，你就能够使用Google了，为什么不是Baidu？相信你用了Google之后就自然明白了。</p>
+
+<p>当了一个学期的助教之后发现，很多的同学其实是没有使用搜索引擎的意识的，遇到问题要么自己死磕，或者就直接求助于他人。这两种都不是很好的办法，正确的做法是<strong>在自己思考后没有结果，然后使用搜索引擎查找问题</strong>，现阶段，你遇到的所有问题（几乎）都能在Google上找到现成的答案，如果没找到，肯定是你搜索的方式不正确。</p>
+
+<p>使用Google的基本搜索功能就能够解决大部分问题了，当然，如果想要学习更加高级的技巧，这里有一份指南：<a href="https://www.zhihu.com/question/20161362">如何用好Google等搜索引擎？</a>。</p>
+
+<h2 id="toc_3">英语</h2>
+
+<p>你不得不承认，目前为止，编程世界的主流语言还是英文，所以英语能力的好坏决定了你编程能力的上界。中文资料和英文资料相比，实在是太匮乏了，就质量而言，也相对较低。比如我后面提到的很多的课程，都是英文的内容。</p>
+
+<p>值得庆幸的是，阅读编程资料所需要的英文水平并不需要很高，就个人经验来说，基本上四级水平就足够了，可能还会存在一些生词，但是基本上并不妨碍理解。</p>
+
+<p>英文的学习应该一直贯穿于编程的学习之中，作为一门工具语言，只需要花少量时间就可以带来比较大的收益（2/8法则）。</p>
+
+<p>本人的英文水平也不算好，但是基本上能够阅读技术书籍和文档，能够听懂公开课，所以还是有一些简单的经验可以分享一下。</p>
+
+<h3 id="toc_4">把系统换成英文的</h3>
+
+<p>有些同学可能看到英文就头疼，这很正常，因为在中文的环境下面生活的太久了。为此，可以试着将平常用的系统换成英文的，虽说不能学到几个单词（Copy/Paste 之类的词），但是可以让你不那么排斥英文，<del>顺便还可以提升一下B格</del>。</p>
+
+<h3 id="toc_5">安装电子词典</h3>
+
+<p>OS X下推荐欧路词典，在APP Store中购买完整版的，因为需要添加外部的词典。</p>
+
+<p>这里推荐一部比较好的词典：《Collins 英汉双解词典》，它是这个样子的：</p>
+
+<p><img src="media/14824091738545/eudic.jpg" alt="eudi"/></p>
+
+<p>主要看它的英文解释，一个词看得次数多了也就记住了。</p>
+
+<h3 id="toc_6">每天阅读英文的资料</h3>
+
+<p>一些个人经常阅读的网站：</p>
+
+<ul>
+<li><a href="http://quora.com/">Quora</a>：一个类似于知乎的问答类网站，可以挑自己感兴趣的内容来阅读。</li>
+<li><a href="https://news.ycombinator.com/">Hacker News</a>：IT资讯，IT界发生的最新的事件都会在上面。</li>
+<li><a href="http://www.reddit.com/r/programming/">PROGRAMMING</a>：Reddit的Programming板块，和Hacker News类似，不过更加专注于技术内容方面。</li>
+</ul>
+
+<p><strong>不要花太多时间在上面，每天浏览一下就行。</strong></p>
+
+<h2 id="toc_7">英文学习的总结</h2>
+
+<p>英语不是能够速成的东西，也不是三言两语能够讲完的东西，这里只是提供一个简单的指导，具体的学习计划还请自行搜索更加专业的学习指南。</p>
+
+<h1 id="toc_8">编程基础</h1>
+
+<p>完成了这一部分内容的学习后你应该具备：</p>
+
+<ul>
+<li>了解什么是Computer Science</li>
+<li>基本的计算机数学能力</li>
+<li>基本的程序开发能力</li>
+<li>基本的算法与数据结构的知识</li>
+</ul>
+
+<h2 id="toc_9">计算机科学导论</h2>
+
+<ul>
+<li><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-00sc-introduction-to-computer-science-and-programming-spring-2011/">Introduction to Computer Science and Programming</a>：面向<strong>无编程基础或者只有一点基础的人群</strong>，使用<strong>Python</strong>作为教学语言。</li>
+<li><a href="http://www.extension.harvard.edu/open-learning-initiative/intensive-introduction-computer-science">Intensive Introduction to Computer Science Open Learning Course</a>：CS50，哈佛很火的一门课，在网易公开课上可以找到翻译的视频内容。涵盖的主题有算法（设计、应用、分析）；软件开发（抽象、封装、数据结构、Debug、测试）；计算机体系结构等等。基本上是一门大杂烩的导论课。使用的语言是<strong>C</strong>、<strong>PHP</strong>、<strong>JavaScript</strong>。</li>
+<li><a href="https://www.youtube.com/view_play_list?p=FE6E58F856038C69">Programming Abstractions</a>：介绍了更加高级的编程主题（递归、算法分析、数据抽象等等），使用C++作为教学语言。</li>
+</ul>
+
+<h2 id="toc_10">数学</h2>
+
+<ul>
+<li><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-fall-2010/">Mathematics for Computer Science</a>：介绍了学习计算机所需要的一些数学知识，内容包括集合、关系、证明方法、数论、图论等等。</li>
+<li><a href="https://www.youtube.com/watch?v=h_9WjWENWV8&amp;feature=share&amp;list=PLTdIp1DywMlUpLHEg3ADhE6rrxhW_T5Rx">Discrete Mathematics</a>：离散数学。</li>
+</ul>
+
+<h2 id="toc_11">编程语言</h2>
+
+<ul>
+<li><a href="https://www.coursera.org/course/programming1">Learn to Program: The Fundamentals</a>：面向<strong>无编程基础或者只有一点基础的人群</strong>，使用<strong>Python</strong>作为教学语言。</li>
+<li><a href="https://www.coursera.org/course/programming2">Learn to Program: Crafting Quality Code</a>：如何编写高效与正确的代码。需要有<a href="https://www.coursera.org/course/programming1">Learn to Program: The Fundamentals</a>的基础。</li>
+<li><a href="http://cs61a.org/">The Structure and Interpretation of Computer Programs</a>：经典的SICP的Python版。</li>
+</ul>
+
+<h2 id="toc_12">计算理论</h2>
+
+<ul>
+<li><a href="https://www.youtube.com/playlist?list=PL601FC994BDD963E4">Introduction to the Theory of Computation</a></li>
+<li><a href="https://www.coursera.org/course/principlescomputing1">Principles of Computing (Part 1)</a>：介绍了CS中基本的数学和编程理论，需要有<strong>Python</strong>基础。</li>
+</ul>
+
+<h2 id="toc_13">算法与数据结构</h2>
+
+<ul>
+<li><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/">Introduction to Algorithms</a>：MIT的算法导论课，用《算法导论》作为教材，网上可以找到视频资源，网易公开课上有老版的翻译。</li>
+</ul>
+
+<h1 id="toc_14">核心课程</h1>
+
+<p>学完了「编程基础」部分的内容后，应该已经可以开发一些简单的程序了，「核心课程」的内容将深入学习计算机科学理论的几个重要的内容。</p>
+
+<h2 id="toc_15">数学</h2>
+
+<ul>
+<li><a href="https://www.coursera.org/course/matrix">Coding the Matrix: Linear Algebra through Computer Science Applications</a>：线性代数以及在计算机中的应用。</li>
+<li><a href="http://inst.eecs.berkeley.edu/%7Ecs70/sp16/">Discrete Mathematics and Probability Theory</a>：离散数学与概率论。</li>
+</ul>
+
+<h2 id="toc_16">计算理论</h2>
+
+<ul>
+<li><a href="https://www.youtube.com/playlist?list=PLslgisHe5tBM8UTCt1f66oMkpmjCblzkt">Theory of Computation - Fall 2011</a>：介绍了机器模型、上下文无关文法、图灵机等，使用的教材是Michael Sipser的*<a href="http://www.amazon.com/Introduction-Theory-Computation-Michael-Sipser/dp/113318779X">Introduction to the Theory of Computation</a>。</li>
+</ul>
+
+<h2 id="toc_17">算法与数据结构</h2>
+
+<ul>
+<li><a href="http://www-inst.eecs.berkeley.edu/%7Ecs61b/fa15/">Data Structures and Advanced Programming</a></li>
+<li><a href="http://www.cs.berkeley.edu/%7Ejrs/170/">Efficient Algorithms and Intractable Problems</a></li>
+</ul>
+
+<h2 id="toc_18">操作系统</h2>
+
+<ul>
+<li><a href="https://cs162.eecs.berkeley.edu/">Operating Systems and Systems Programming</a>：UCB经典的操作系统课程，介绍了操作系统的基本概念、系统编程、网络、分布式系统、内存分配、多线程等等。</li>
+<li><a href="https://www.edx.org/course/introduction-linux-linuxfoundationx-lfs101x-2#!">Introduction to Linux</a>：介绍了Linux以及一些简单的命令行使用。</li>
+</ul>
+
+<h2 id="toc_19">程序语言理论</h2>
+
+<ul>
+<li><a href="https://www.youtube.com/playlist?list=PL9D558D49CA734A02">Programming Paradigms</a>：编程范式。</li>
+<li><a href="https://www.coursera.org/course/compilers">Compilers</a>：Stanford的编译原理课。</li>
+<li><a href="http://freevideolectures.com/Course/2249/Principles-of-Programming-Languages/1">Principles of Programming Languages</a></li>
+</ul>
+
+<h2 id="toc_20">计算机体系结构</h2>
+
+<ul>
+<li><a href="https://www.youtube.com/playlist?list=PL5PHm2jkkXmgVhh8CHAu9N76TShJqfYDt">Computer Architecture</a>：CMU</li>
+<li><a href="https://www.coursera.org/course/comparch">Computer Architecture</a></li>
+</ul>
+
+<h2 id="toc_21">计算机网络</h2>
+
+<ul>
+<li><a href="http://www.cs.berkeley.edu/%7Eistoica/classes/cs268/10/">Computer Networks</a></li>
+<li><a href="https://www.youtube.com/channel/UCb1OiccPJ0wbMZMOleCvhWQ">Fundamentals of Computer Networking</a></li>
+</ul>
+
+<h1 id="toc_22">编程工具</h1>
+
+<h2 id="toc_23">IDE</h2>
+
+<ul>
+<li>Python: <a href="https://www.jetbrains.com/pycharm/">PyCharm</a></li>
+<li>Java:<a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a></li>
+<li>C/C++: <a href="https://www.visualstudio.com/en-us/visual-studio-homepage-vs.aspx">Visual Studio</a></li>
+</ul>
+
+<h2 id="toc_24">编辑器</h2>
+
+<ul>
+<li>Emacs/Vim</li>
+<li>Sublime Text 3</li>
+<li>VS Code</li>
+<li>Atom</li>
+</ul>
+
+<p>并不一定要用Emacs或者Vim，ST其实已经很强大了，足够做日常简单的编辑工作。（这里黑一下Atom，启动速度太感人了，所以放在最后一个。）</p>
+
+<h2 id="toc_25">Git &amp; GitHub</h2>
+
+<p>使用版本控制来管理自己平时写的代码。</p>
+
+<p>推荐阅读：</p>
+
+<ul>
+<li><a href="https://github.com/geeeeeeeeek/git-recipes/wiki">git-recipes</a></li>
+<li><a href="http://git-scm.com/book/zh/v2?f=tt&amp;hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io">Pro Git 2nd Edition</a></li>
+<li><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">Git教程 - 廖雪峰</a></li>
+</ul>
+
+<h1 id="toc_26">如何克服拖延</h1>
+
+<p>资料是有了，但是拖延症不去学怎么办？</p>
+
+<ul>
+<li><a href="http://www.pomodorotechnique.com/">番茄工作法</a></li>
+</ul>
+
+<h1 id="toc_27">参考资料</h1>
+
+<ul>
+<li><a href="https://github.com/prakhar1989/awesome-courses">https://github.com/prakhar1989/awesome-courses</a></li>
+<li><a href="http://blog.agupieware.com/2014/05/online-learning-bachelors-level.html">http://blog.agupieware.com/2014/05/online-learning-bachelors-level.html</a></li>
+<li><a href="https://docs.google.com/spreadsheets/d/1_kdHrT8izbROJNaxGflpcZm2ivsjRGF8j1hMzl3b8O0/htmlview">https://docs.google.com/spreadsheets/d/1_kdHrT8izbROJNaxGflpcZm2ivsjRGF8j1hMzl3b8O0/htmlview</a></li>
+<li><a href="https://www.reddit.com/r/programming/wiki/faq">https://www.reddit.com/r/programming/wiki/faq</a></li>
+</ul>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2016/2/13</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='technology.html'>Tech</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+                        <a href="http://forrestchang.github.io/14824091738545.html#disqus_thread">comments</a>
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="14824092772636.html">
+                
+                  <h1>极客的输入法：Squirrel（鼠须管）</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<p>输入法是一个每天都会使用的东西，所以它是否顺手一定程度上决定了每天的文字输入效率。在OS X平台下，一直没有用到一个很顺手的输入法。系统自带的输入法虽然经过几次的版本更新已经有了很大的改进，但是离能用还有很大的距离。所以之前一直凑合着使用百度输入法，不过最近一直遇到一些奇怪的问题，官方又长时间没有进行更新，恰逢之前听说过<code>Squirrel</code>这个输入法，于是就本着试用的心态用了一下，发现异常顺手，并且还有丰富的定制性，于是写一篇文章来介绍一下，也作为自己配置过程中的笔记。</p>
+
+<p>附上一段Gif效果展示：</p>
+
+<p><img src="media/14824092772636/luoshenfu.gif" alt="luoshenfu"/></p>
+
+<h2 id="toc_0">介绍</h2>
+
+<p>输入法的官方名称是<code>Rime</code>，中文名是<code>中州韵输入法</code>，但是在各自的平台下面又有不一样的别名。</p>
+
+<ul>
+<li><p>Linux<br/>
+中州韵 ｜ ibus-rime</p></li>
+<li><p>Windows<br/>
+小狼毫 ｜ Weasel</p></li>
+<li><p>OS X<br/>
+鼠须管 ｜ Squirrel</p></li>
+</ul>
+
+<p>使用了一段时间发现它有以下几个优点其他输入法是比不上的：</p>
+
+<ol>
+<li>速度很快，几乎没有延迟的时间</li>
+<li>极强的定制性，如果没有想要的功能还可以直接修改源码</li>
+<li>跨平台</li>
+<li>对于繁体中文支持非常好</li>
+</ol>
+
+<h2 id="toc_1">安装</h2>
+
+<p>直接从官网下载安装包安装即可。</p>
+
+<p>Rime官网：<a href="http://rime.im/"></a></p>
+
+<p>使用<code>Ctrl-~</code>进行输入法的选择，这里选择<code>朙月拼音・簡化字</code>即可：</p>
+
+<p><img src="media/14824092772636/rime02.png" alt="rime02"/></p>
+
+<h2 id="toc_2">配置</h2>
+
+<p>默认的的配置其实已经可以使用了，但是为了更加符合自己的使用习惯，我们需要做一些自定义的配置。</p>
+
+<p>所有的配置文件都保存在<code>~/Library/Rime/</code>这个目录下面。</p>
+
+<p>不建议直接修改原先的配置文件，因为这样更新之后会导致修改的内容丢失，正确的做法是建立<code>custom</code>副本，这样自定义的配置内容会覆盖掉原来的。</p>
+
+<p>＊注：所有的修改完成了之后都需要重启输入法，快捷键<code>Option+Ctrl+~</code>。</p>
+
+<h3 id="toc_3">配置外观</h3>
+
+<p>初始的外观不是很符合自己的审美，可以进行更换主题、更改字体和字号大小等操作来配置成自己喜欢的样子。</p>
+
+<p>新建配置文件</p>
+
+<pre><code>touch squirrel.custom.yaml
+</code></pre>
+
+<p>然后将以下代码写入配置文件</p>
+
+<pre><code>patch:
+  style/color_scheme: dark_temple #主题
+  style/font_point: 18 #字号大小
+  style/horizontal: true #水平显示待选字
+</code></pre>
+
+<h4 id="toc_4">主题列表</h4>
+
+<p>自带的主题代码:</p>
+
+<pre><code>#   注：预设的配色方案及代码（指定为 style/color_scheme ）
+#   碧水 - aqua
+#   青天 - azure
+#   明月 - luna
+#   墨池 - ink
+#   孤寺 - lost_temple
+#   暗堂 - dark_temple
+#   星际我争霸 - starcraft
+#   谷歌 - google
+#   晒经石 - solarized_rock
+#   简约白 - clean_white
+</code></pre>
+
+<p>想要更换什么主题只要把代码替换掉就可以了。</p>
+
+<h4 id="toc_5">其他一些配置代码及其说明</h4>
+
+<pre><code>  style/page_size: 8                         # 设定候选词数目
+  style/inline_preedit: false              # 关闭内嵌编码，这样就可以显示首行的拼音
+  style/corner_radius: 10                  # 窗口圆角半径
+  style/border_height: 0                   # 窗口边界高度，大于圆角半径才有效果
+  style/border_width: 0                    # 窗口边界宽度，大于圆角半径才有效果
+  style/line_spacing: 1                    # 候选词的行间距
+  style/spacing: 5                         # 在非内嵌编码模式下，预编辑和候选词之间的距
+  style/font_face: &quot;Hiragino Sans GB W3&quot;   # 字体名称
+</code></pre>
+
+<p>更多的一些配置代码可以在<code>squirrel.yaml</code>中找到。</p>
+
+<h3 id="toc_6">定制标点符号</h3>
+
+<p>鼠须管有一个特别的功能就是输入一个标点的时候可以有很多的候选标点让你选择，比如说中括号：</p>
+
+<p><img src="media/14824092772636/rime03.png" alt="rime03"/></p>
+
+<p>但是有的时候默认就想选择第一个，多出了一个选择的步骤无疑上会增加击键的次数，所以我们可以通过修改配置来解决这个问题，同时也可以自定义想要输入的符号。</p>
+
+<p>这里我们使用的是<code>朙月拼音・簡化字</code>，所以需要建立相应的配置文件：</p>
+
+<pre><code>touch luna_pinyin_simp.custom.yaml
+</code></pre>
+
+<p>然后写入以下配置（可根据自己的需要修改，这里的代码的意思是在全角和半角的状态下输入<code>&lt;</code>均以<code>《</code>输出）。</p>
+
+<pre><code>patch:
+  punctuator/full_shape:
+    &quot;&lt;&quot;: &quot;《&quot;
+  punctuator/half_shape:
+    &quot;&lt;&quot;: &quot;《&quot;
+  punctuator/full_shape:
+    &quot;&gt;&quot;: &quot;》&quot;
+  punctuator/half_shape:
+    &quot;&gt;&quot;: &quot;》&quot;
+</code></pre>
+
+<h3 id="toc_7">安静模式</h3>
+
+<p>之前一直使用百度输入法的原因就是因为它有一个安静模式，可以在特定的程序内关闭输入法，比如说<code>Emacs</code>中大部分时间都是不需要输入中文的，所以当切换到这个程序的时候就自动将输入法切换到英文模式。</p>
+
+<p>需要找到应用软件的<code>Bundle Identifier</code>，保存在<code>Info.plist</code>这个文件当中。</p>
+
+<p>修改<code>squirrel.custom.yaml</code>（没有自己创建）：</p>
+
+<pre><code>patch:
+  style/color_scheme: dark_temple
+  style/font_point: 18
+  style/horizontal: true
+
+  app_options/com.apple.Xcode:
+    ascii_mode: true
+  app_options/com.runningwithcrayons.Alfred-2:
+    ascii_mode: true
+</code></pre>
+
+<h2 id="toc_8">快捷键</h2>
+
+<p>鼠须管默认支持<code>Emacs</code>的快捷键，所以基本上在<code>Emacs</code>中使用到的一些操作方式都可以在这里使用到。</p>
+
+<ul>
+<li>↑：Control+p</li>
+<li>↓：Control+n</li>
+<li>←：Control+b</li>
+<li>→：Control+f</li>
+<li>上頁：Alt+v</li>
+<li>下頁：Control+v</li>
+<li>句首：Control+a</li>
+<li>句末：Control+e</li>
+<li>回退：Control+h</li>
+<li>刪除：Control+d</li>
+<li>清空：Control+g</li>
+<li>刪詞：Control+k</li>
+</ul>
+
+<h2 id="toc_9">其他</h2>
+
+<p>完成以上的配置之后基本上就能够用得很顺手了，更多高级的配置方法可以参考官方的文档：<a href="http://rime.im/docs/">幫助與反饋</a></p>
+
+<h2 id="toc_10">参考资料</h2>
+
+<ul>
+<li><a href="http://rime.im/docs/">官方文档</a></li>
+<li><a href="http://www.dreamxu.com/install-config-squirrel/">安装及配置 Mac 上的 Rime 输入法——鼠鬚管 (Squirrel)</a></li>
+</ul>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2015/11/11</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='technology.html'>Tech</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+                        <a href="http://forrestchang.github.io/14824092772636.html#disqus_thread">comments</a>
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="14824097554043.html">
+                
+                  <h1>使用Emacs Org-mode + GitHub Pages 来写博客</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<p>这篇文章是教程性质的，尽量写得详细一点。</p>
+
+<p>这个博客就是使用Emacs org-mode + GitHub Pages搭建的，博客的主题是org-mode官网的主题，非常的简洁；评论采用的disqus，访问统计使用的是Google和Baidu的统计代码。</p>
+
+<p>另外，本文中进行操作的环境是在OSX下完成的，Windows用户请自行参考脑补:)</p>
+
+<h2 id="toc_0">起因</h2>
+
+<p>之前也折腾过好多的博客，Jekyll、Hexo、Farbox等，这些静态博客生成器都有一个共同点，都是采用的Markdown语法来进行书写的，而自己平时记笔记都是使用的Emacs org-mode，这样就导致了记笔记和写博客两个过程分裂开来了。</p>
+
+<p>昨晚偶然看到<a href="http://dirlt.com/">dirtysalt&#39;s homepage</a>，被深深的震撼了，博主写了很多的干货，专注与博客的内容而不是博客的外观。而自己也是一个极简主义者，觉得这样的博客样式还是挺好看的（很有Web1.0时代的复古风啊）。恰巧博主也是使用的Emacs来写博客，于是便花了一个上午的时间搜集相关的资料并把博客搭建起来了。</p>
+
+<h2 id="toc_1">准备</h2>
+
+<h3 id="toc_2">GitHub帐号与GitHub Pages</h3>
+
+<p>首先你需要一个存放博客的地方，这里采用的是GitHub，当让也可以使用其他的服务，只要支持静态页面展示即可。</p>
+
+<p>GitHub的注册过程省略。</p>
+
+<p>注册完GitHub帐号之后建立一个新的仓库，命名为 <code>xxx.github.io</code> ，其中 <code>xxx</code> 为你的用户名。</p>
+
+<h3 id="toc_3">Emacs环境</h3>
+
+<p>我使用的是最近比较火的<a href="https://github.com/syl20bnr/spacemacs">spacemacs</a> ，很多功能都配置好了，基本上手即用。</p>
+
+<p>如果不是用的spacemacs，确保你的Emacs版本为24，org-mode版本为8.0以上，不排除可能因为版本的原因出现各种各样的错误。</p>
+
+<p>什么，你还不知道Emacs是什么，那先去下载一个Emacs吧，使用org-mode基本不需要什么Emacs的基础，只需要记住几个快捷键就可以了。</p>
+
+<h2 id="toc_4">建立目录结构</h2>
+
+<p>随便在哪里建一个心得目录，这个目录就是存放你的org文件和html文件的地方。假设我们已经有了这么一个目录 <code>org</code> ：</p>
+
+<pre><code>$ mkdir notes
+$ mkdir public_html
+$ mkdir gtd
+</code></pre>
+
+<p>当然，那个gtd目录你可以不要，那是用来做时间管理的，如果你不想用Emacs做时间管理的话，可以不用建那个目录。</p>
+
+<ul>
+<li>notes: 这个目录就是用来存放元数据的地方，你的org文件、图片、CSS文件、PDF等全都是存放在这里的。</li>
+<li>public_html: 这个目录是用来存放导出的HTML文件的，那些非org格式的文件还会原封不动地拷贝过来。</li>
+</ul>
+
+<h2 id="toc_5">配置Emacs</h2>
+
+<p>这一步有一些复杂，没有Elisp基础的同学可能看不怎么懂，不过没关系，照着做就是了，现在看不懂可以以后学嘛。</p>
+
+<p>Emacs org-mode自带了很强大的导出功能，可以导出成HTML、markdown、PDF等格式的文件，我们这里使用自带的导出Project的功能，只不过在导出之前，要做一些配置，告诉Emacs要导出哪些东西，导出到哪里，采用什么规则。</p>
+
+<p>首先我们在配置文件中添加以下代码（普通的在.emacs中添加，spacemacs用户在.spacemacs中添加）：</p>
+
+<pre><code class="language-lisp">  (require &#39;ox-publish)
+  (setq org-publish-project-alist
+        &#39;(
+
+          ;; 把各部分的配置文件写到这里面来
+
+          ))
+</code></pre>
+
+<p>然后把其他的配置文件依次添加进来就可以了，主要有生成HTML的部分和原样拷贝的部分。</p>
+
+<p>下面来配置需要转换成HTML的内容：</p>
+
+<pre><code class="language-html">  (&quot;blog-notes&quot;
+   :base-directory &quot;~/org/notes&quot;
+   :base-extension &quot;org&quot;
+   :publishing-directory &quot;~/org/public_html/&quot;
+   :recursive t
+   :publishing-function org-html-publish-to-html
+   :headline-levels 4             ; Just the default for this project.
+   :auto-preamble t
+   :section-numbers nil
+   :author &quot;Yourname&quot;
+   :email &quot;example@test.com&quot;
+   :auto-sitemap t                ; Generate sitemap.org automagically...
+   :sitemap-filename &quot;sitemap.org&quot;  ; ... call it sitemap.org (it&#39;s the default)...
+   :sitemap-title &quot;Sitemap&quot;         ; ... with title &#39;Sitemap&#39;.
+   :sitemap-sort-files anti-chronologically
+   :sitemap-file-entry-format &quot;%d %t&quot;
+   )
+</code></pre>
+
+<ul>
+<li>:base-directory - 你存放笔记的目录（想将哪里的org文件导出成HTML）</li>
+<li>:base-extension - 导出的文件格式</li>
+<li>:publishing-directory - 导出HTML的目标目录</li>
+<li>:recursive - 设置为t会将子目录中的文件也导出</li>
+<li>:publishing-function - 使用哪个函数来进行publish（注：org 7与8在这个地方有区别）</li>
+<li>:auto-sitemap - 自动生存sitemap</li>
+<li>:sitemap-sort-files - 我这里采用的是按照从新到旧的排列方式</li>
+<li>:sitemap-file-entry-format - 这里采用时间+标题的方式生成sitemap</li>
+</ul>
+
+<p>并不是所有的文件都需要转化为HTML的，比如说一些图片、PDF、CSS样式等，只需要原样拷贝到目标文件就行，配置代码如下：</p>
+
+<pre><code class="language-lisp">  (&quot;blog-static&quot;
+   :base-directory &quot;~/org/notes&quot;
+   :base-extension &quot;css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf&quot;
+   :publishing-directory &quot;~/org/public_html/&quot;
+   :recursive t
+   :publishing-function org-publish-attachment
+   )
+</code></pre>
+
+<p>把这两段代码查到刚刚给的框架里面去即可。</p>
+
+<p>最后，我们再加一段代码：</p>
+
+<pre><code class="language-lisp">  (&quot;blog&quot; :components (&quot;blog-notes&quot; &quot;blog-static&quot;))
+</code></pre>
+
+<p>至此，基本的配置已经完成了，现在可以写一些org文件来生成HTML了。</p>
+
+<p>比如说我已经写完了一些org文件：</p>
+
+<pre><code>.
+├── blog-history.org
+├── css
+│   └── worg.css
+├── cv.org
+├── front-end-development
+│   ├── css.org
+│   └── html.org
+├── how-to-use-org-mode-build-blog.org
+├── index.org
+├── personal
+│   ├── how-to-study-efficiently.org
+│   └── index.org
+└── sitemap.org
+</code></pre>
+
+<p>然后使用<code>M-x org-publish-project</code>，输入<code>blog</code>，就会自动开始生成HTML文件了，现在已经可以在public_html文件夹中访问了。</p>
+
+<p>当然，index页面是需要自己来写的，可以参照我的主页来写，或者自由发挥。</p>
+
+<h2 id="toc_6">个性化定制</h2>
+
+<h3 id="toc_7">添加CSS文件</h3>
+
+<p>首先需要在notes文件夹内新建一个css文件夹，里面保存需要用到的CSS文件，这里我使用的是org-mode官网上用的CSS文件，非常的简洁。</p>
+
+<p>然后我们需要在 <code>blog-notes</code> 这个配置中新增一条属性：</p>
+
+<pre><code class="language-lisp"> :html-head &quot;&lt;link rel=\&quot;stylesheet\&quot; type=\&quot;text/css\&quot; href=\&quot;/css/worg.css\&quot;/&gt;&quot;
+</code></pre>
+
+<p>这样子的话再每次生成HTML的时候都会自动加上CSS，这里建议使用绝对路径来访问css文件，要不然在notes文件夹中新建文件夹的时候就无效了。</p>
+
+<h3 id="toc_8">添加评论功能</h3>
+
+<p>这里使用的Disqus的评论系统，使用Duoshuo的话配置过程应该也一样。</p>
+
+<p>首先在Disqus中注册一个服务，获得一段代码，在 <code>blog-notes</code> 中新增加一条属性：</p>
+
+<pre><code class="language-lisp">  :html-postamble &quot;&lt;p class=\&quot;postamble\&quot;&gt;Last Updated %C. Created by %a&lt;/p&gt;
+  &lt;div id=\&quot;disqus_thread\&quot;&gt;&lt;/div&gt;
+  &lt;script type=\&quot;text/javascript\&quot;&gt;
+  var disqus_shortname = &#39;yourshortname&#39;;
+  (function() {
+           var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
+           dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
+           (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
+           })();
+  &lt;/script&gt;
+  &quot;
+</code></pre>
+
+<p>需要注意的是代码中的双引号前面需要加上反斜杠来转义。</p>
+
+<h3 id="toc_9">添加统计功能</h3>
+
+<p>使用百度和Google的统计服务，和添加评论功能类似，还是添加在这条属性里面：</p>
+
+<pre><code class="language-lisp">    :html-postamble &quot;&lt;p class=\&quot;postamble\&quot;&gt;Last Updated %C. Created by %a&lt;/p&gt;
+  &lt;script&gt;
+  var _hmt = _hmt || [];
+  (function() {
+           var hm = document.createElement(\&quot;script\&quot;);
+           hm.src = \&quot;//hm.baidu.com/hm.js?yourkey\&quot;;
+           var s = document.getElementsByTagName(\&quot;script\&quot;)[0];
+           s.parentNode.insertBefore(hm, s);
+           })();
+  &lt;/script&gt;
+
+  &lt;div id=\&quot;disqus_thread\&quot;&gt;&lt;/div&gt;
+  &lt;script type=\&quot;text/javascript\&quot;&gt;
+  var disqus_shortname = &#39;yourshortname&#39;;
+  (function() {
+           var dsq = document.createElement(&#39;script&#39;); dsq.type = &#39;text/javascript&#39;; dsq.async = true;
+           dsq.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/embed.js&#39;;
+           (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
+           })();
+  &lt;/script&gt;
+
+  &lt;script&gt;
+  (function(i,s,o,g,r,a,m){i[&#39;GoogleAnalyticsObject&#39;]=r;i[r]=i[r]||function(){
+           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+           })(window,document,&#39;script&#39;,&#39;//www.google-analytics.com/analytics.js&#39;,&#39;ga&#39;);
+
+  ga(&#39;create&#39;, &#39;yourkey&#39;, &#39;auto&#39;);
+  ga(&#39;send&#39;, &#39;pageview&#39;);
+
+  &lt;/script&gt;
+  &quot;
+</code></pre>
+
+<p>同样注意双引号的转义问题即可。</p>
+
+<h2 id="toc_10">托管到GitHub上</h2>
+
+<p>生成了HTML文件之后需要把public_html目录托管到GitHub上：</p>
+
+<pre><code>$ git add .
+$ git commit -m &quot;first commit&quot;
+$ git remote add origin xxx
+$ git push -u origin master
+</code></pre>
+
+<p>其中<code>xxx</code>为你之前创建仓库的SSH路径。以后每次generate之后add、commit、push就可以了。</p>
+
+<p>现在访问 <code>xxx.github.io</code> 已经可以看到你的博客啦：）</p>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2015/10/10</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='technology.html'>Tech</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+                        <a href="http://forrestchang.github.io/14824097554043.html#disqus_thread">comments</a>
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+              
+
+
+			<div class="row">
+			  <div class="large-6 columns">
+			  <p class="text-left" style="padding-top:25px;">
+			   <a href="technology_2.html">&laquo; Prev Page</a>  
+			  </p>
+			  </div>
+			  <div class="large-6 columns">
+			<p class="text-right" style="padding-top:25px;">
+			
+			</p>
+			  </div>
+			</div>
+		</div>
+	</div><!-- large 8 -->
+
+ <div class="large-4 medium-4 columns">
+  <div class="hide-for-small">
+    <div id="sidebar" class="sidebar">
+          <div id="site-info" class="site-info">
+            
+                <div class="site-a-logo"><img src="asset/img/avatar.jpg" /></div>
+            
+                <h1>Hack Notes</h1>
+                <div class="site-des"></div>
+                <div class="social">
+
+
+
+
+
+
+
+<a target="_blank" class="weibo" href="http://weibo.com/tisoga" title="weibo">Weibo</a>
+<a target="_blank" class="twitter" target="_blank" href="https://twitter.com/Tisoga" title="Twitter">Twitter</a>
+<a target="_blank" class="github" target="_blank" href="https://github.com/forrestchang" title="GitHub">GitHub</a>
+<a target="_blank" class="email" href="mailto:forrestchang7@gmail.com" title="Email">Email</a>
+  <a target="_blank" class="rss" href="atom.xml" title="RSS">RSS</a>
+                
+              	 </div>
+          	</div>
+
+             
+
+              <div id="site-categories" class="side-item ">
+                <div class="side-header">
+                  <h2>Categories</h2>
+                </div>
+                <div class="side-content">
+
+      	<p class="cat-list">
+        
+            <a href="life.html"><strong>Life</strong></a>
+        
+            <a href="machine-learning.html"><strong>ML</strong></a>
+        
+            <a href="python.html"><strong>Python</strong></a>
+        
+            <a href="productivity.html"><strong>Productivity</strong></a>
+        
+            <a href="technology.html"><strong>Tech</strong></a>
+         
+        </p>
+
+
+                </div>
+              </div>
+
+              <div id="site-categories" class="side-item">
+                <div class="side-header">
+                  <h2>Recent Posts</h2>
+                </div>
+                <div class="side-content">
+                <ul class="posts-list">
+	      
+		      
+			      <li class="post">
+			        <a href="14832795759469.html">2017 Week 1 Review</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="14827163208652.html">2016 Week 52 Review</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="14824086421976.html">推荐系统笔记</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="14824103542982.html">2016 Week 51 Review</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="14824081615573.html">2016 Week 46 Review</a>
+			      </li>
+		     
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		   
+		  		</ul>
+                </div>
+              </div>
+        </div><!-- sidebar -->
+      </div><!-- hide for small -->
+</div><!-- large 4 -->
+
+</div><!-- row -->
+
+ <div class="page-bottom clearfix">
+  <div class="row">
+   <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+
+
+<script type="text/javascript">
+    var disqus_shortname = 'tisogasnotes'; 
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<script type="text/javascript">
+var disqus_shortname = 'tisogasnotes'; 
+
+(function () {
+var s = document.createElement('script'); s.async = true;
+s.type = 'text/javascript';
+s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+  
+    
+
+    <script src="asset/js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+      function fixSidebarHeight(){
+        var w1 = $('.markdown-body').height();
+          var w2 = $('#sidebar').height();
+          if (w1 > w2) { $('#sidebar').height(w1); };
+      }
+      $(function(){
+        fixSidebarHeight();
+      })
+      $(window).load(function(){
+          fixSidebarHeight();
+      });
+     
+    </script>
+
+    <script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
+<script>
+                            var _hmt = _hmt || [];
+                            (function() {
+                                    var hm = document.createElement("script");
+                                    hm.src = "https://hm.baidu.com/hm.js?001e800887eba2f8f57ec8059aafdad6";
+                                    var s = document.getElementsByTagName("script")[0];
+                                    s.parentNode.insertBefore(hm, s);
+                                    })();
+                            </script>
+
+  </body>
+</html>

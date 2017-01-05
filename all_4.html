@@ -1,0 +1,968 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  Hack Notes
+  
+  </title>
+  
+  
+  <link href="atom.xml" rel="alternate" title="Hack Notes" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+  <script src="asset/highlightjs/highlight.pack.js"></script>
+  <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script>hljs.initHighlightingOnLoad();</script>
+<script type="text/javascript">
+  function before_search(){
+    var searchVal = 'site:forrestchang.github.io ' + document.getElementById('search_input').value;
+    document.getElementById('search_q').value = searchVal;
+    return true;
+  }
+</script>
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+
+  <section class="top-bar-section">
+  <div class="row">
+      <div style="position: relative;width:100%;"><div style="position: absolute; width:100%;">
+        <ul id="main-menu" class="left">
+        
+        <li id=""><a target="_self" href="index.html">Home</a></li>
+        
+        <li id=""><a target="_self" href="archives.html">Archives</a></li>
+        
+        <li id=""><a target="_self" href="about.html">About</a></li>
+        
+        <li id=""><a target="_blank" href="portfolio.html">Portfolio</a></li>
+        
+        </ul>
+
+        <ul class="right" id="search-wrap">
+          <li>
+<form target="_blank" onsubmit="return before_search();" action="http://google.com/search" method="get">
+    <input type="hidden" id="search_q" name="q" value="" />
+    <input tabindex="1" type="search" id="search_input"  placeholder="Search"/>
+</form>
+</li>
+          </ul>
+      </div></div>
+  </div>
+  </section>
+
+</nav>
+
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; Hack Notes</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+       
+       <li><a href="index.html">HOME</a></li>
+    <li><a href="archives.html">Archives</a></li>
+    <li><a href="about.html">ABOUT</a></li>
+
+    <li><label>Categories</label></li>
+
+        
+            <li><a href="life.html">Life</a></li>
+        
+            <li><a href="machine-learning.html">ML</a></li>
+        
+            <li><a href="python.html">Python</a></li>
+        
+            <li><a href="productivity.html">Productivity</a></li>
+        
+            <li><a href="technology.html">Tech</a></li>
+         
+
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+
+        <section id="main-content" role="main" class="scroll-container">
+        
+       
+
+ <script type="text/javascript">
+	$(function(){
+		$('#menu_item_index').addClass('is_active');
+	});
+</script>
+<div class="row">
+	<div class="large-8 medium-8 columns">
+		<div class="markdown-body home-categories">
+		
+			<div class="article">
+                <a class="clearlink" href="14627831551017.html">
+                
+                  <h1>Swift 学习笔记：基本运算符</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">空合运算符（NIl Coalescing Operator）</h2>
+
+<p>空合运算符（<code>a ?? b</code>）将对可选类型 <code>a</code> 进行空判断，如果 <code>a</code> 包含一个值就进行解封，否则就返回一个默认值 <code>b</code>。表达式 <code>a</code> 必须是 Optional 类型。默认值 <code>b</code> 的类型必须要和 <code>a</code> 存储值的类型保持一致。</p>
+
+<p>空合运算符是对以下代码的简短表达方法：</p>
+
+<pre><code class="language-swift">a != nil ? a! : b
+</code></pre>
+
+<p>如果 <code>a</code> 为非空值（non-nil），那么 <code>b</code> 值将不会被计算，这也就是所谓的短路求值。</p>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2016/5/9</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='technology.html'>Tech</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+                        <a href="http://forrestchang.github.io/14627831551017.html#disqus_thread">comments</a>
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="14623638528114.html">
+                
+                  <h1>2016 Week 19 阅读笔记</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0"><a href="http://swift.gg/2016/05/03/preparing-for-3-0-api-pruning/">准备好迎接 3.0 API 变化</a></h2>
+
+<p>在即将发布的 Swift 3 将在 Cocoa 和 CocoaTouch 上做出重大改变。</p>
+
+<p>某些 API 的名字变得更加简洁了。</p>
+
+<h2 id="toc_1"><a href="http://www.posteriorscience.net/?p=206">PROGRAMMING BY POKING: WHY MIT STOPPED TEACHING SICP</a></h2>
+
+<p>关于为什么 MIT 停止了赫赫有名的 6.001，Gerry Sussman 的回答：</p>
+
+<ol>
+<li>教了太多年，不想教了。</li>
+<li>这门课放到今天已经没有那么重要了。在 80 年代和 90 年代，工程师们通过把简单和易于理解的部分组成复杂的系统，SICP 就是为了提供这种抽象的语言而存在的。</li>
+</ol>
+
+<blockquote>
+<p>He said that programming today is “More like science. You grab this piece of library and you poke at it. You write programs that poke it and see what it does. And you say, ‘Can I tweak it to do the thing I want?&#39;”. The “analysis-by-synthesis” view of SICP — where you build a larger system out of smaller, simple parts — became irrelevant. Nowadays, we do programming by poking.</p>
+</blockquote>
+
+<p>为什么现在改用 Python 了？</p>
+
+<blockquote>
+<p>Python has a ton of libraries that make it applicable to many types of projects that instructors might want to assign (like writing software to control a robot.)</p>
+</blockquote>
+
+<p>Python 库多 -_-|||</p>
+
+<p>另外，Sussman 还说道 SICP 确实比现在使用 Python 教学更加 coherent。</p>
+
+<h2 id="toc_2"><a href="https://github.com/geeeeeeeeek/git-recipes/blob/master/sources/%E6%9E%9C%E5%A3%B3%E4%B8%AD%E7%9A%84Git.md">什么是 Git</a></h2>
+
+<p>Git 采用分散式架构，是分散式版本管理 DVCS（Distributed Version Control System）的代表。</p>
+
+<p><strong>性能</strong></p>
+
+<p>不同于某些版本管理软件，Git 在决定代码修改历史以及保存形式的时候不会被文件名的变化所愚弄，Git 关注的文件内容本身。在实际的操作中，Git 使用一种混合了差分编码（delta encoding，仅保存代码修改的差分），压缩，直接保存，以及版本元数据（version metadata objects）的管理方式。</p>
+
+<p><strong>安全性</strong></p>
+
+<p>Git 将保持所管理代码的整合性作为首要要务。所有的文件内容，文件相互关系，以及文件目录结构，版本，标签以及修改，都经过加密哈希校验算法（SHA1）的保护。这可以防止各种意外的代码修改食物，或者是第三者的恶意修改，使得代码修改历史完全有迹可循。</p>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2016/5/4</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='technology.html'>Tech</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+                        <a href="http://forrestchang.github.io/14623638528114.html#disqus_thread">comments</a>
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="14623593987548.html">
+                
+                  <h1>Swift 学习笔记：高级运算符</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<p>与 C 语言中的算术运算符不同，Swift 中的算数运算符默认是不会溢出的。所有溢出行为都会被捕获并报告错误。</p>
+
+<p>如果想让系统允许溢出行为，可以选择使用 Swift 中另一套默认支持溢出的运算符，所有的这些溢出运算符都是以<code>&amp;</code>开头的。</p>
+
+<p>在 Swift 中可以自由地定义中缀、前缀、后缀和赋值运算符，以及相应的优先级与结合性。这些运算符在代码中可以像预定义的运算符一样使用，我们甚至可以扩展已有的类型以支持自定义的运算符。</p>
+
+<h2 id="toc_0">位运算符</h2>
+
+<p>位运算符可以操作数据结构中每个独立的比特位。它们通常被用在底层开发中，比如图形编程和创建设备驱动。位运算符在处理外部资源的原始数据时也十分有用，比如对自定义通信协议传输的数据进行编码和解码。</p>
+
+<h2 id="toc_1">按位取反运算符</h2>
+
+<p>按位取反运算符 <code>~</code> 可以对一个数值的全部比特位进行取反：</p>
+
+<p><img src="media/14623593987548/14623598448776.jpg" alt=""/></p>
+
+<p>按位取反运算符是一个前缀运算符，需要直接放在运算的数之前，并且它们之间不能添加任何空格。</p>
+
+<h2 id="toc_2">按位与运算符</h2>
+
+<p>按位与运算符 <code>&amp;</code> 可以对两个数的比特位进行合并。</p>
+
+<p><img src="media/14623593987548/14623599594230.jpg" alt=""/></p>
+
+<h2 id="toc_3">按位或运算符</h2>
+
+<p>按位或运算符 <code>|</code> 可以对两个数的比特位进行比较。</p>
+
+<p><img src="media/14623593987548/14623600296926.jpg" alt=""/></p>
+
+<h2 id="toc_4">按位异或运算符</h2>
+
+<p>按位异或运算符 <code>^</code> 可以对两个数的比特位进行比较。</p>
+
+<p><img src="media/14623593987548/14623601009498.jpg" alt=""/></p>
+
+<h2 id="toc_5">按位左移、右移运算符</h2>
+
+<p>按位左移运算符 <code>&lt;&lt;</code> 和按位右移运算符 <code>&gt;&gt;</code> 可以对一个数的所有位进行制定位数的左移和右移，但是需要遵守下面定义的规则。</p>
+
+<p>对一个数进行按位左移或按位右移，相当于对这个数进行乘以2或除以2的运算。</p>
+
+<h3 id="toc_6">无符号整数的移位运算</h3>
+
+<p>规则：</p>
+
+<ol>
+<li>已经存在的位按制定的位数进行左移和右移</li>
+<li>任何因移位而超出整型存储范围的位都会被丢弃</li>
+<li>用 <code>0</code> 来填充移位后产生的空白位</li>
+</ol>
+
+<p>这种方法称为<code>逻辑移位</code>。</p>
+
+<p><img src="media/14623593987548/14623603707110.jpg" alt=""/></p>
+
+<h3 id="toc_7">有符号整数的移位运算</h3>
+
+<p>对比无符号整数，有符号整数的移位运算相对复杂得多，这种复杂性源于有符号整数的二进制表现形式。（为了简单起见，以下的示例都是基于 8 比特位的有符号整数的，但是其中的原理对于任何位数的有符号整数都是通用的。）</p>
+
+<p>有符号整数使用第 1 个比特位（通常被称为符号位）来表示这个数的正负。符号位为 <code>0</code> 代表正数，为 <code>1</code> 代表负数。</p>
+
+<p>其余的比特位（通常被称为数值位）存储了实际的值。有符号正整数和无符号数的存储方式是一样的，都是从 <code>0</code> 开始算起。</p>
+
+<p>负数的存储方式略有不同。它存储的值得绝对值等于 <code>2</code> 的 <code>n</code> 次方减去它的实际值（也就是数值位表示的值），这里的 <code>n</code> 是数值位的比特位。一个 8 比特位的数有 7 个比特位是数值位，所以是 <code>2</code> 的 <code>7</code> 次方，即 <code>128</code>。</p>
+
+<p><img src="media/14623593987548/14623612131011.jpg" alt=""/></p>
+
+<p>负数的表示通常被称为二进制的补码表示。用这种表示方法来表示负数乍看起来有点奇怪，但它有几个优点。</p>
+
+<p>首先，如果想对 <code>-1</code> 和 <code>-4</code> 进行加法运算，我们只需要将这两个数的全部 8 个比特位进行相加，并将计算结果中超出 8 位的数值丢弃：</p>
+
+<p><img src="media/14623593987548/14623613337905.jpg" alt=""/></p>
+
+<p>其次，使用二进制补码可以使负数的按位左移和右移运算得到跟正数相同的结果，即每向左移一位就将自身的数值乘以 2，每向右移一位就将自身除以 2。要达到此目的，对有符号整数的右移有一个额外的规则：</p>
+
+<p><img src="media/14623593987548/14623615004005.jpg" alt=""/></p>
+
+<p>这个行为可以确保有符号整数的符号位不会因为右移运算而改变，这通常被称为<code>算数移位</code>。</p>
+
+<h2 id="toc_8">溢出运算符</h2>
+
+<p>在默认情况下，当向一个整数赋予超过它容量的值时，Swift 默认会报错，而不是生成一个无效的数。这个行为为我们在运算过大或者过小的数的时候提供了额外的安全性。</p>
+
+<p>当然，也可以选择让系统在数值溢出的时候采取截断处理，而非报错。可以使用 Swift 提供的三个溢出运算符来让系统支持整数溢出运算。这些运算符都是以 <code>&amp;</code> 开头的：</p>
+
+<ul>
+<li>溢出加法 <code>&amp;+</code></li>
+<li>溢出减法 <code>&amp;-</code></li>
+<li>溢出乘法 <code>&amp;*</code></li>
+</ul>
+
+<h2 id="toc_9">数值溢出</h2>
+
+<p>数值有可能出现上溢或者下溢。</p>
+
+<p><img src="media/14623593987548/14623618680616.jpg" alt=""/></p>
+
+<p><img src="media/14623593987548/14623618951341.jpg" alt=""/></p>
+
+<p>溢出也会发生在有符号整型数值上。在对有符号整型数值进行溢出加法或溢出减法运算时，符号位也要参与计算，正如按位移位运算符所描述的。</p>
+
+<p><img src="media/14623593987548/14623621538611.jpg" alt=""/></p>
+
+<p>对于无符号与有符号整型数值来说，当出现上溢时，它们会从数值所能容纳的最大数编程最小的数。同样的，当发生下溢时，它们会从所能容纳的最小数编程最大的数。</p>
+
+<h2 id="toc_10">优先级和结合性</h2>
+
+<p>运算符的优先级使得一些运算符优先于其他运算符，高优先级的运算符会先被计算。</p>
+
+<p>结合性定义了相同优先级的运算符是如何结合的，也就是说，是与左边结合为一组，还是与右边结合为一组。</p>
+
+<h2 id="toc_11">运算符函数</h2>
+
+<p>类和结构体可以为现有的运算符提供自定义的实现，这通常被称为运算符重载。</p>
+
+<h2 id="toc_12">前缀和后缀运算符</h2>
+
+<p>类与结构体也能提供标准单目运算符的实现。单目运算符只运算一个值。当运算符出现在值之前时，它就是前缀的，而当它出现在值之后时，它就是后缀的。</p>
+
+<p>要实现前缀或者后缀运算符，需要在声明运算符函数的时候在 <code>func</code> 关键字之前制定 <code>prefix</code> 或者 <code>postfix</code> 修饰符。</p>
+
+<h2 id="toc_13">符合赋值运算符</h2>
+
+<p>符合赋值运算符将赋值运算符 <code>=</code> 与其他运算符进行结合。在实现的时候，需要把运算符的左参数设置成 <code>inout</code> 类型，因为这个参数的值会在运算符函数内被直接修改。</p>
+
+<p>还可以将赋值与 <code>prefix</code> 或 <code>postfix</code> 修饰符结合起来，例如实现自增运算符 <code>++</code>。</p>
+
+<p>注：不能对默认的赋值运算符 <code>=</code> 进行重载。只有组合赋值运算符可以被重载。同样地，也无法对三目条件运算符 <code>a ? b : c</code> 进行重载。</p>
+
+<h2 id="toc_14">等价运算符</h2>
+
+<p>自定义的类和结构体没有对等价运算符进行默认实现，等价运算符通常被称为相等运算符 <code>==</code> 与不等运算符 <code>!=</code>。对于自定义类型，Swift 无法判断其是否相等，因为「相等」的含义取决于这些自定义类型在你的代码中所扮演的角色。</p>
+
+<p>为了使等价运算符能对自定义的类型进行判等运算，需要为其提供自定义的实现，实现的方法与其他中缀运算符一样。</p>
+
+<h2 id="toc_15">自定义运算符</h2>
+
+<p>除了实现标准运算符，在 Swift 中还可以声明和实现自定义运算符。</p>
+
+<p>新的运算符要使用 <code>operato</code> 关键字在全局作用域内进行定义，同时还要指定 <code>prefi</code>、<code>infix</code>或者<code>postfix</code>修饰符：</p>
+
+<pre><code class="language-swift">prefix operator +++ {}
+</code></pre>
+
+<h2 id="toc_16">自定义中缀运算符的优先级和结合性</h2>
+
+<p>自定义的中缀运算符也可以指定优先级和结合性。</p>
+
+<p>结合性可取的值有 <code>left</code>、<code>right</code>和<code>none</code>。当做结合运算符跟其他相同优先级的左结合运算符写在一起时，会跟左边的值进行结合。同理，当右结合运算符跟其他相同优先级的右优先级运算符写在一起时，会跟右边的值进行结合。而非结合运算符不能跟其他相同优先级的运算符写在一起。</p>
+
+<p>结合性的默认值是 <code>none</code>，优先级的默认值是 <code>100</code>。</p>
+
+<p>下面的例子定义了一个新的中缀运算符 <code>+-</code>，此运算符的结合性为 <code>left</code>，并且它的优先级为 <code>140</code>：</p>
+
+<pre><code class="language-swift">infix operator +- { associativity left precedence 140 }
+</code></pre>
+
+<p>注：当定义前缀与后缀运算符的时候，我们并没有制定优先级。然而，如果对同一个值同时使用前缀和后缀运算符，则后缀运算符会先参与运算。</p>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2016/5/4</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='technology.html'>Tech</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+                        <a href="http://forrestchang.github.io/14623593987548.html#disqus_thread">comments</a>
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="14617168482919.html">
+                
+                  <h1>Swift 学习笔记：构造过程</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">存储属性的初始赋值</h2>
+
+<p>类和结构体在创建实例时，必须为所有存储型属性设置合适的初始值。存储属性的值不能处于一个未知的状态。</p>
+
+<p>当你为存储属性设置默认值或者在构造器中为其赋值时，它们的值是被直接设置的，不会触发任何属性观察者（property observers）。</p>
+
+<h2 id="toc_1">默认属性值</h2>
+
+<p>如果一个属性总是使用相同的初始值，那么为其设置一个默认值比每次都在构造器中赋值要好。两种方法的效果是一样的，只不过使用默认值让属性的初始化和声明结合得更加紧密。</p>
+
+<h2 id="toc_2">参数的内部名称和外部名称</h2>
+
+<p>跟函数和方法参数相同，构造参数也拥有一个在构造器内部使用的参数名字和一个在调用构造器时使用的外部参数名字。</p>
+
+<p>因为构造器并不像函数和方法那样在括号前有一个可辨别的名字。因此在调用构造器时，主要通过构造器中的参数名和类型来确定应该被调用的构造器。如果你在定义构造器时没有提供参数的外部名字，Swift 会为构造器的每个参数自动生成一个跟内部名字相同的外部名。</p>
+
+<h2 id="toc_3">不带外部名的构造器参数</h2>
+
+<p>如果你不希望构造器的某个参数提供外部名字，你可以使用下划线（<code>_</code>）来显式描述它的外部名。</p>
+
+<h2 id="toc_4">可选属性类型</h2>
+
+<p>可选类型的属性将自动化初始为 <code>nil</code>，表示这个属性是有意在初始化时设置为空的。</p>
+
+<h2 id="toc_5">构造过程中常量属性的修改</h2>
+
+<p>你可以在构造过程中的任意时间点给常量属性指定一个值，只要在构造过程结束时是一个确定的值。一旦常量属性被赋值，它将永远不可更改。</p>
+
+<h2 id="toc_6">默认构造器</h2>
+
+<p>如果结构体或类的所有属性都有默认值，同时没有定义的构造器，那么 Swift 将会给这些结构体或类提供一个默认构造器。这个默认构造器将简单创建一个所有属性都设置为默认值得实例。</p>
+
+<h2 id="toc_7">结构体的逐一成员构造器</h2>
+
+<p>如果<strong>结构体</strong>没有提供自定义的构造器，它们将自动获得一个逐一成员构造器，即使结构体的存储属性没有默认值。</p>
+
+<p>注：类类型没有逐一成员构造器。</p>
+
+<h2 id="toc_8">值类型的构造器代理</h2>
+
+<p>构造器可以通过调用其他构造器来完成实例的部分构造过程。这一过程称为构造器代理，它能减少多个构造器间的代码重用。</p>
+
+<p>构造器代理的实现规则和形式在值类型和类类型中有所不同。值类型不支持继承，所以构造器代理的过程相对简单，因为它们只能代理给自己的其他构造器。类则不同，它可以继承自其他类，这意味着类有责任保证其所有继承的存储属性在构造时也能正确的初始化。</p>
+
+<p>对于值类型，可以使用 <code>self.init</code> 在自定义的构造器中引用类型中的其他构造器。并且你只能在构造器内部调用 <code>self.init</code>。</p>
+
+<p>如果你为某个值类型定义了一个自定义的构造器，你将无法访问到默认构造器。</p>
+
+<p>加入你希望默认构造器、逐一成员构造器以及你自己的定义的构造器都能用来创建实例，可以将自定义的构造器写到 extension 中，而不是写在值类型的原始定义中。</p>
+
+<h2 id="toc_9">类的继承和构造过程</h2>
+
+<p>类里面的所有存储属性——包括所有继承自父类的属性——都必须在构造过程中设置初始值。</p>
+
+<h2 id="toc_10">制定构造器和便利构造器</h2>
+
+<p>制定构造器（designated initializers）是类中最主要的构造器。一个制定构造器将初始化类中提供的所有属性，并根据父类链往上调用父类的构造器来实现父类的初始化。</p>
+
+<p>便利构造器（convenience initializers）是类中比较次要的、辅助型的构造器。你可以定义便利构造器来调用同一个类中的指定构造器，并未其参数提供默认值。你也可以定义便利构造器来创建一个特殊用途或特定输入值得实例。</p>
+
+<h2 id="toc_11">制定构造器和便利构造器的语法</h2>
+
+<p>类的制定构造器的写法和值类型的简单构造器一样。</p>
+
+<p>便利构造器也采用相同样式的写法，但需要在 <code>init</code> 关键字之前放置 <code>convenience</code> 关键字。</p>
+
+<h2 id="toc_12">类的构造器代理规则</h2>
+
+<p>为了简化制定构造器和便利构造器之间的调用关系，Swift 采用以下三条规则来限制构造器之间的代理调用：</p>
+
+<ol>
+<li>指定构造器必须调用其直接分类的指定构造器。</li>
+<li>便利构造器必须调用同一类中定义的其他构造器。</li>
+<li>便利构造器必须最终导致一个制定构造器被调用。</li>
+</ol>
+
+<blockquote>
+<p>制定构造器必须总是向上代理<br/>
+便利构造器必须总是横向代理</p>
+</blockquote>
+
+<p><img src="media/14617168482919/14617189856135.jpg" alt=""/></p>
+
+<h2 id="toc_13">两段式构造过程</h2>
+
+<p>Swift 中类的构造过程包含两个阶段。</p>
+
+<ol>
+<li>每个存储属被引用它们类指定的一个初始值；</li>
+<li>当每个存储属性的初始值被确定后，第二阶段开始，它给每个类一次机会，在新实例准备使用之前进一步定制它们的存储属性。</li>
+</ol>
+
+<p>两段式构造过程让构造器更加安全，同时在整个类层级结构中给与了每个类完全的灵活性。两段式构造可以防止属性在初始化之前被访问，也可以防止属性被另外一个构造器意外地赋予不同的值。</p>
+
+<p>Swift 编译器将执行4中有效的安全检查，以确保两段式构造能不错地完成：</p>
+
+<ol>
+<li>制定构造器必须保证它坐在类引入的所有属性都必须先初始化完成，之后才能将其它构造任务向上代理给父类中的构造器。</li>
+<li>制定构造器必须先向上代理调用父类构造器，然后再为继承的属性设置新值。如果没有这么做，制定构造器赋予的新值将被父类中的构造器覆盖。</li>
+<li>便利构造器必须先代理调用同一类中的其他构造器，然后再为任意属性赋新值。如果没有这么做，便利构造器赋予的新值将被同一类中的其他制定构造器所覆盖。</li>
+<li>构造器在第一阶段完成之前，不能调用任何实例方法，不能读取任何实例属性的值，不能引用 <code>self</code> 作为一个值。</li>
+</ol>
+
+<h2 id="toc_14">构造器的继承和重写</h2>
+
+<p>Swift 中的子类默认情况下不会继承父类的构造器，这种机制可以防止一个父类的简单构造器被一个更专业的类继承，并被错误地用来创建子类实例。</p>
+
+<p>当你在编写一个和父类中指定构造器相匹配的子类构造器时，你实际上是在重写父类的这个指定构造器。因此，你必须在定义子类构造器时带上 <code>override</code> 修饰符。</p>
+
+<p>当你重写一个父类的指定构造器时，你总是需要写 <code>override</code> 修饰符，即使你的子类将父类的制定构造器重写为便利构造器。</p>
+
+<p>相反，如果你编写了一个和父类便利构造器想匹配的子类构造器，由于子类不能直接调用父类的便利构造器，因此，严格意义上来讲，你的子类并未对一个父类构造器提供重写。最后的结果就是，你在子类中「重写」一个父类便利构造器时，不需要加 <code>override</code> 前缀。</p>
+
+<p>子类可以在初始化时修改继承来的变量属性，但是不能修改继承来的常量属性。</p>
+
+<h2 id="toc_15">构造器的自动继承</h2>
+
+<p>如上所述，子类在默认情况下不会继承父类的构造器。但是如果满足特定条件，父类构造器是可以被自动继承的。在实践中，这意味着对于许多常见场景你不必重写父类的构造器，并且可以在安全的情况下以最小的代价继承父类的构造器。</p>
+
+<h2 id="toc_16">可失败构造器</h2>
+
+<p>如果一个类、结构体或枚举类型的对象，在构造过程中有可能失败，则为其定义一个可失败构造器。</p>
+
+<p>为了妥善处理这种构造过程中可能会失败的情况，你可以在一个类，结构体或是枚举类型的定义中，添加一个或多个可失败构造器，其语法为在 <code>init</code> 关键字后面添加问好 <code>init?</code>。</p>
+
+<p>可失败构造器的参数名和参数类型，不能与其他非可失败构造器的参数名、及参数类型相同。</p>
+
+<p>可失败构造器会创建一个类型为自身类型的可选类型对象。你通过 <code>return nil</code> 语句来表明可失败构造器在何种情况下应该失败。</p>
+
+<p>注：严格来说，构造器都不支持返回值。因为构造器本身的作用，只是为了确保对象能被正确构造。因此你只是用 <code>return nil</code> 表明可失败构造器失败，而不要用关键字 <code>return</code> 来表明构造器成功。</p>
+
+<h2 id="toc_17">枚举类型的可失败构造器</h2>
+
+<p>你可以通过一个带一个或多个参数的可失败构造器来获取枚举类型中特定的枚举成员。如果提供的参数无法匹配任何枚举成员，则构造失败。</p>
+
+<h2 id="toc_18">带原始值的枚举类型的可失败构造器</h2>
+
+<p>带原始值的枚举类型会自带一个可失败构造器 <code>init?(rawValue:)</code>，该可失败构造器有一个名为 <code>rawValue</code> 的参数，其类型和枚举类型的原始值类型一致，如果该参数的值能和某个枚举成员的原始值匹配，则该构造器会构成相应的枚举成员，否则构造失败。</p>
+
+<h2 id="toc_19">构造失败的传递</h2>
+
+<p>类、结构体、枚举的可失败构造器可以横向代理到乐熊中的其他可失败构造器。类似的，子类的可失败构造器也能向上代理到父类的可失败构造器。</p>
+
+<p>无论是向上代理还是横向代理，如果你代理到的其他可失败构造器触发构造失败，整个构造过程将立即终止，接下来的任何构造代码不会再被执行。</p>
+
+<h2 id="toc_20">重写一个可失败构造器</h2>
+
+<p>如果其他的构造器，你可以在子类中重写父类的可失败构造器。或者你也可以用子类的非可失败构造器重写一个父类的可失败构造器。这使你可以定义一个不会构造失败的子类，即使父类的构造器允许构造失败。</p>
+
+<h2 id="toc_21">必要构造器</h2>
+
+<p>在类的构造器前添加 <code>required</code> 修饰符表明所有该类的子类都必须实现该构造器。</p>
+
+<p>在重写父类中必要的指定构造器时，不需要添加 <code>override</code> 修饰符。</p>
+
+<h2 id="toc_22">通过闭包或函数设置属性的默认值</h2>
+
+<p>如果某个存储属性的默认值需要一些定制或设置，你可以使用闭包或全局函数为其提供定制的默认值。每当某个属性所在类型的新实例被创建时，对应的闭包或函数就会被调用，而它们的返回值会当做默认值赋值给这个属性。</p>
+
+<p>这种类型的闭包或函数通常会创建一个跟属性相同的临时变量，然后修改它的值以满足预期的初始状态，最后返回这个临时变量，作为属性的默认值。</p>
+
+<pre><code class="language-swift">class SomeClass {
+    let someProperty: SomeType = {
+        // 在这个闭包中给 someProperty 创建一个默认值
+        // someValue 必须和 SomeType 类型相同
+        return someValue
+    }()
+}
+</code></pre>
+
+<p>闭包结尾的大括号后面接了一对空的小括号。这用来告诉 Swift 立即执行此闭包，如果忽略了这对括号，相当于闭包本身作为值赋给了属性，而不是将闭包的返回值赋值给属性。</p>
+
+<p>注：如果你使用闭包来初始化属性，请记住在闭包执行时，实例的其他部分还没有初始化。这意味着你不能再闭包里访问其他属性，即使这些属性有默认值，同样，你也不能使用隐式的 <code>self</code> 属性，或者调用任何实例方法。</p>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2016/4/27</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='technology.html'>Tech</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+                        <a href="http://forrestchang.github.io/14617168482919.html#disqus_thread">comments</a>
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="14616582990381.html">
+                
+                  <h1>Swift 学习笔记：访问控制</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<p>访问控制可以限定其他源文件或者模块中的代码对你的代码的访问级别。这个特性可以让我们隐藏代码的一些实现细节，并且可以为其他人可以访问和使用的代码提供接口。</p>
+
+<h2 id="toc_0">模块和源文件</h2>
+
+<p>Swift 中的访问控制模型基于模块和源文件这两个概念。</p>
+
+<p>模块指的是独立的代码单元，框架或应用程序会作为一个独立的模块来构建和发布。一个模块可以使用 <code>import</code> 关键字导入另一个模块。</p>
+
+<p>在 Swift 中，Xcode 的每个 target（例如框架或应用程序）都被当做独立的模块处理。如果你是为了实现某个通用的功能，或者是为了封装一些常用方法而将代码打包成独立的框架，这个框架就是 Swift 中的一个模块。</p>
+
+<p>源文件就是 Swift 中的代码源文件，它通常属于一个模块，即一个应用程序或者框架。尽管我们一般会将不同的类型分别定义在不同的源文件中，但是同一个源文件也可以包含多个类型、函数之类的定义。</p>
+
+<h2 id="toc_1">访问级别</h2>
+
+<ul>
+<li><code>public</code>：可以访问同一模块源文件中的任何实体，在模块外也可以通过导入该模块来访问源文件里的所有实体。通常情况下，框架中的某个接口可以被任何人使用时，你可以将其设置为 <code>public</code> 级别。</li>
+<li><code>internal</code>：可以访问同一模块源文件中的任何实体，但是不能从模块外访问该模块源文件的实体。通常情况下，某个接口只在应用程序或框架内部使用时，你可以将其设置为 <code>internal</code> 级别。</li>
+<li><code>private</code>：限制实体只能在所在的源文件内部使用。使用 <code>private</code> 级别可以隐藏某些功能的实现细节。</li>
+</ul>
+
+<p>Swift 中的 <code>private</code> 访问级别不同于其他语言，它的范围限于源文件，而不是声明范围内。这就意味着，一个类型可以访问其所在源文件中的所有 <code>private</code> 实体，但是如果它的扩展定义在其他源文件中，那么它的扩展就不能访问它在这个源文件中定义的 <code>private</code> 实体。</p>
+
+<h2 id="toc_2">访问级别的基本原则</h2>
+
+<p>Swift 中的访问级别遵循一个基本原则：不可以在某个实体定义访问级别更高的实体。</p>
+
+<h2 id="toc_3">默认访问级别</h2>
+
+<p>不显式制定，默认为 <code>internal</code> 级别，有一些例外。</p>
+
+<h2 id="toc_4">单 target 应用程序的访问级别</h2>
+
+<p>当你编写一个单 target 应用程序时，应用的所有功能都是为该应用服务，而不需要提供给其他应用或者模块使用，所以我们不需要明确设置访问级别，使用默认的访问级别 <code>internal</code> 即可。但是，你也可以使用 <code>private</code> 级别，用于隐藏一些功能的实现细节。</p>
+
+<h2 id="toc_5">框架的访问级别</h2>
+
+<p>当你开发框架时，就需要把一些对外的接口定义为 <code>public</code> 级别，以便使用者导入该框架后可以正常使用其功能。这些被你定义为 <code>public</code> 的接口，就是这个框架的 API。</p>
+
+<h2 id="toc_6">单元测试 target 的访问级别</h2>
+
+<p>当你的应用程序包含单元测试 target 时，为了测试，测试模块需要访问应用程序模块中的代码。默认情况下只有 <code>public</code> 级别的实体才可以被其他模块访问。然而，如果在导入应用程序模块的语句前使用 <code>@testable</code> 特性，然后在允许测试的编译设置（Build Options -&gt; Enable Testability）下编译这个应用程序模块，单元测试 target 就可以访问应用程序模块中所有 <code>internal</code> 级别的实体。</p>
+
+<h2 id="toc_7">元组类型</h2>
+
+<p>元组的访问级别将由元组中访问级别最严格的类型来决定。例如，如果你构建了一个包含两种不同类型的元组，其中一个类型为 <code>private</code> 类型，那么这个元组的访问级别为 <code>private</code>。</p>
+
+<h2 id="toc_8">函数类型</h2>
+
+<p>函数的访问级别根据访问级别最严格的参数类型或返回值类型的访问级别来决定。</p>
+
+<h2 id="toc_9">枚举类型</h2>
+
+<p>枚举成员的访问级别和该枚举类型相同，你不能为枚举成员单独指定不同的访问级别。</p>
+
+<p>枚举定义中的任何原始值或关联值得类型的访问级别至少不能低于枚举类型的访问级别。例如，你不能在一个 <code>internal</code> 访问级别的枚举中定义 <code>private</code> 级别的原始值类型。</p>
+
+<h2 id="toc_10">子类</h2>
+
+<p>子类的访问级别不得高于父类的访问级别。例如，父类的访问级别是 <code>internal</code>，子类的访问级别就不能是 <code>public</code>。</p>
+
+<p>可以通过重写为继承来的类成员提供更高的访问级别。</p>
+
+<h2 id="toc_11">Getter 和 Setter</h2>
+
+<p>常量、变量、属性、下标的 <code>Getters</code> 和 <code>Setters</code> 的访问级别和它们所属类型的访问级别相同。</p>
+
+<p><code>Setter</code> 的访问级别可以低于对应的 <code>Getter</code> 的访问级别，这样就可以控制变量、属性或下标的读写权限。在 <code>var</code> 或 <code>subscript</code> 关键字之前，你可以通过 <code>privat(set)</code> 或 <code>internal(set)</code> 为它们的写入权限制定更低的访问级别。</p>
+
+<h2 id="toc_12">构造器</h2>
+
+<p>自定义构造器的访问级别可以低于或等于其所属类型的访问级别。唯一例外的是必要构造器，它的访问级别必须和所属类型的访问级别相同。</p>
+
+<p>如同函数或方法的参数，构造器参数的访问级别也不能低于构造器本身的访问级别。</p>
+
+<h2 id="toc_13">默认构造器</h2>
+
+<p>默认构造器的访问级别与所属类型的访问级别相同，除非类型的访问级别是 <code>public</code>。如果一个类型被指定为 <code>public</code> 级别，那么默认构造器的访问级别将为 <code>internal</code>。如果你希望一个 <code>public</code> 级别的参数类型也能在其他模块中使用这种无参数的默认构造器，你只能自己提供一个 <code>public</code> 访问级别的无参构造器。</p>
+
+<h2 id="toc_14">结构体默认的成员逐一构造器</h2>
+
+<p>如果结构体中任意存储型的访问级别为 <code>private</code>，那么该结构体默认的成员逐一构造器的访问级别就是 <code>private</code>。否则，这种构造器的访问级别依然是 <code>internal</code>。</p>
+
+<h2 id="toc_15">协议</h2>
+
+<p>协议中的每一个要求都具有和该协议相同的访问级别。你不能将协议中的要求设置为其他访问级别。这样才能确保该协议的所有要求对于任意采纳者都将可用。</p>
+
+<p>如果你定义了一个 <code>public</code> 访问级别的协议，那么该协议的所有实现也会是 <code>public</code> 访问级别。这一点不同于其他类型，例如，当类类型是 <code>public</code> 访问级别时，其成员的访问级别却只是 <code>internal</code>。</p>
+
+<h2 id="toc_16">协议继承</h2>
+
+<p>如果定义了一个继承自其他协议的新协议，那么新协议拥有的访问级别最高也只能和被继承协议的访问级别相同。</p>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2016/4/26</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='technology.html'>Tech</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+                        <a href="http://forrestchang.github.io/14616582990381.html#disqus_thread">comments</a>
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+              
+
+
+			<div class="row">
+			  <div class="large-6 columns">
+			  <p class="text-left" style="padding-top:25px;">
+			   <a href="all_3.html">&laquo; Prev Page</a>  
+			  </p>
+			  </div>
+			  <div class="large-6 columns">
+			<p class="text-right" style="padding-top:25px;">
+			 <a href="all_5.html">&raquo; Next Page</a> 
+			</p>
+			  </div>
+			</div>
+		</div>
+	</div><!-- large 8 -->
+
+ <div class="large-4 medium-4 columns">
+  <div class="hide-for-small">
+    <div id="sidebar" class="sidebar">
+          <div id="site-info" class="site-info">
+            
+                <div class="site-a-logo"><img src="asset/img/avatar.jpg" /></div>
+            
+                <h1>Hack Notes</h1>
+                <div class="site-des"></div>
+                <div class="social">
+
+
+
+
+
+
+
+<a target="_blank" class="weibo" href="http://weibo.com/tisoga" title="weibo">Weibo</a>
+<a target="_blank" class="twitter" target="_blank" href="https://twitter.com/Tisoga" title="Twitter">Twitter</a>
+<a target="_blank" class="github" target="_blank" href="https://github.com/forrestchang" title="GitHub">GitHub</a>
+<a target="_blank" class="email" href="mailto:forrestchang7@gmail.com" title="Email">Email</a>
+  <a target="_blank" class="rss" href="atom.xml" title="RSS">RSS</a>
+                
+              	 </div>
+          	</div>
+
+             
+
+              <div id="site-categories" class="side-item ">
+                <div class="side-header">
+                  <h2>Categories</h2>
+                </div>
+                <div class="side-content">
+
+      	<p class="cat-list">
+        
+            <a href="life.html"><strong>Life</strong></a>
+        
+            <a href="machine-learning.html"><strong>ML</strong></a>
+        
+            <a href="python.html"><strong>Python</strong></a>
+        
+            <a href="productivity.html"><strong>Productivity</strong></a>
+        
+            <a href="technology.html"><strong>Tech</strong></a>
+         
+        </p>
+
+
+                </div>
+              </div>
+
+              <div id="site-categories" class="side-item">
+                <div class="side-header">
+                  <h2>Recent Posts</h2>
+                </div>
+                <div class="side-content">
+                <ul class="posts-list">
+	      
+		      
+			      <li class="post">
+			        <a href="14832795759469.html">2017 Week 1 Review</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="14827163208652.html">2016 Week 52 Review</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="14824086421976.html">推荐系统笔记</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="14824103542982.html">2016 Week 51 Review</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="14824081615573.html">2016 Week 46 Review</a>
+			      </li>
+		     
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		   
+		  		</ul>
+                </div>
+              </div>
+        </div><!-- sidebar -->
+      </div><!-- hide for small -->
+</div><!-- large 4 -->
+
+</div><!-- row -->
+
+ <div class="page-bottom clearfix">
+  <div class="row">
+   <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+
+
+<script type="text/javascript">
+    var disqus_shortname = 'tisogasnotes'; 
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<script type="text/javascript">
+var disqus_shortname = 'tisogasnotes'; 
+
+(function () {
+var s = document.createElement('script'); s.async = true;
+s.type = 'text/javascript';
+s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+  
+    
+
+    <script src="asset/js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+      function fixSidebarHeight(){
+        var w1 = $('.markdown-body').height();
+          var w2 = $('#sidebar').height();
+          if (w1 > w2) { $('#sidebar').height(w1); };
+      }
+      $(function(){
+        fixSidebarHeight();
+      })
+      $(window).load(function(){
+          fixSidebarHeight();
+      });
+     
+    </script>
+
+    <script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
+<script>
+                            var _hmt = _hmt || [];
+                            (function() {
+                                    var hm = document.createElement("script");
+                                    hm.src = "https://hm.baidu.com/hm.js?001e800887eba2f8f57ec8059aafdad6";
+                                    var s = document.getElementsByTagName("script")[0];
+                                    s.parentNode.insertBefore(hm, s);
+                                    })();
+                            </script>
+
+  </body>
+</html>

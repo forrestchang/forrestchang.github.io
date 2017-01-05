@@ -1,0 +1,1019 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  Hack Notes
+  
+  </title>
+  
+  
+  <link href="atom.xml" rel="alternate" title="Hack Notes" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+  <script src="asset/highlightjs/highlight.pack.js"></script>
+  <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script>hljs.initHighlightingOnLoad();</script>
+<script type="text/javascript">
+  function before_search(){
+    var searchVal = 'site:forrestchang.github.io ' + document.getElementById('search_input').value;
+    document.getElementById('search_q').value = searchVal;
+    return true;
+  }
+</script>
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+
+  <section class="top-bar-section">
+  <div class="row">
+      <div style="position: relative;width:100%;"><div style="position: absolute; width:100%;">
+        <ul id="main-menu" class="left">
+        
+        <li id=""><a target="_self" href="index.html">Home</a></li>
+        
+        <li id=""><a target="_self" href="archives.html">Archives</a></li>
+        
+        <li id=""><a target="_self" href="about.html">About</a></li>
+        
+        <li id=""><a target="_blank" href="portfolio.html">Portfolio</a></li>
+        
+        </ul>
+
+        <ul class="right" id="search-wrap">
+          <li>
+<form target="_blank" onsubmit="return before_search();" action="http://google.com/search" method="get">
+    <input type="hidden" id="search_q" name="q" value="" />
+    <input tabindex="1" type="search" id="search_input"  placeholder="Search"/>
+</form>
+</li>
+          </ul>
+      </div></div>
+  </div>
+  </section>
+
+</nav>
+
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; Hack Notes</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+       
+       <li><a href="index.html">HOME</a></li>
+    <li><a href="archives.html">Archives</a></li>
+    <li><a href="about.html">ABOUT</a></li>
+
+    <li><label>Categories</label></li>
+
+        
+            <li><a href="life.html">Life</a></li>
+        
+            <li><a href="machine-learning.html">ML</a></li>
+        
+            <li><a href="python.html">Python</a></li>
+        
+            <li><a href="productivity.html">Productivity</a></li>
+        
+            <li><a href="technology.html">Tech</a></li>
+         
+
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+
+        <section id="main-content" role="main" class="scroll-container">
+        
+       
+
+ <script type="text/javascript">
+	$(function(){
+		$('#menu_item_index').addClass('is_active');
+	});
+</script>
+<div class="row">
+	<div class="large-8 medium-8 columns">
+		<div class="markdown-body home-categories">
+		
+			<div class="article">
+                <a class="clearlink" href="14616560170869.html">
+                
+                  <h1>Swift 学习笔记：错误处理</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">表示并抛出错误</h2>
+
+<p>Swift 中的枚举类型尤为适合构建一组相关的错误状态，枚举的关联值还可以提供错误状态的额外信息。</p>
+
+<p>抛出一个错误可以让你表明有意外情况发生，导致正常的执行流程无法继续执行。抛出错误使用 <code>throws</code> 关键字。</p>
+
+<h2 id="toc_1">处理错误</h2>
+
+<p>当某个错误被抛出时，附近的某部分代码必须负责处理这个错误，例如纠正这个问题、尝试另外一种方式、或是向用户报告错误。</p>
+
+<p>当一个函数抛出一个错误时，你的程序流程会发生改变，所以重要的是你能迅速识别代码中会抛出错误的地方。为了标识出这些地方，在调用一个能抛出错误的函数、方法或者构造器之前，加上 <code>try</code> 关键字，或者 <code>try?</code> 或 <code>try!</code> 这种变体。</p>
+
+<p>和其他语言中的异常处理不同的是，Swift 中的错误处理并不涉及解除调用栈，这是一个计算代价高昂的过程。就此而言，<code>throw</code> 语句的性能特性是可以和 <code>return</code> 语句媲美的。</p>
+
+<h2 id="toc_2">用 throwing 函数传递错误</h2>
+
+<p>为了表示一个函数、方法或构造器可以抛出错误，在函数声明的参数列表后面加上 <code>throws</code> 关键字。一个标有 <code>throws</code> 关键字的函数被称作 throwing 函数。</p>
+
+<p>一个 throwing 函数可以在其 nebula 抛出错误，并将错误传递到函数被调用时的作用域。</p>
+
+<h2 id="toc_3">用 Do-Catch 处理错误</h2>
+
+<p>可以使用一个 <code>do-catch</code> 语句运行一段闭包代码来处理错误。如果在 <code>do</code> 子句中的代码抛出了一个错误，这个错误会与 <code>catch</code> 子句做匹配，从而决定哪条子句能处理它。</p>
+
+<h2 id="toc_4">将错误转换成可选值</h2>
+
+<p>可以使用 <code>try?</code> 通过将错误转换成一个可选值来处理错误。如果在评估 <code>try?</code> 表达式时一个错误被抛出，那么表达式的值就是 <code>nil</code>。</p>
+
+<h2 id="toc_5">禁用错误传递</h2>
+
+<p>有时候你知道某个 throwing 函数实际上在运行的时候是不会抛出错误的，在这种情况下，你可以在表达式前面写 <code>try!</code> 来禁用错误传递，这会把调用包装在一个断言不会有错误抛出的运行时断言中。如果实际上抛出了错误，你会得到一个运行时错误。</p>
+
+<h2 id="toc_6">指定清理操作</h2>
+
+<p>可以使用 <code>defer</code> 语句在即将离开当前代码块时执行一系列语句。该语句让你能执行一些必要的清理工作，不管是以何种方式离开当前代码块的——无论是由于抛出错误而离开，还是由于诸如 <code>return</code> 或者 <code>break</code> 的语句。</p>
+
+<p>例如，你可以用 <code>defer</code> 语句来确保文件描述符得以关闭，以及手动分配的内存得以释放。</p>
+
+<p><code>defer</code> 语句将代码的执行延迟到当前的作用域退出之前。该语句由 <code>defer</code> 关键字和要被延迟执行的语句组成。延迟执行的语句不能包含任何控制转移语句，例如 <code>break</code> 或是 <code>return</code> 语句，或是抛出一个错误。</p>
+
+<p>延迟执行的操作会按照它们被指定时的顺序的相反顺序执行。</p>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2016/4/26</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='technology.html'>Tech</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+                        <a href="http://forrestchang.github.io/14616560170869.html#disqus_thread">comments</a>
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="14615726488001.html">
+                
+                  <h1>Swift 学习笔记：泛型</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<p>泛型代码让你能够根据自定义的需求，编写出使用与任意类型、灵活可重用的函数及类型。它能让你避免代码的重复，用一种清晰和抽闲的方式来表达代码的意图。</p>
+
+<h2 id="toc_0">类型约束</h2>
+
+<p>类型约束可以指定一个类型参数必须继承指定类，或者符合一个特定的协议或协议组合。</p>
+
+<p>当你创建自定义泛型类型时，你可以定义你自己的类型约束，这些约束将提供更为强大的泛型编程能力。抽象概念，例如可哈希的，描述的是类型在概念上的特征，而不是它们的显式类型。</p>
+
+<h2 id="toc_1">类型约束语法</h2>
+
+<p>你可以在一个类型参数名后面防止一个类名或者协议名，并用冒号进行分隔，来定义类型约束，它们将成为类型参数列表的一部分。对泛型函数添加类型约束的基本语法如下所示（作用于泛型类型时的语法与之相同）：</p>
+
+<pre><code class="language-swift">func someFunction&lt;T: SomeClass, U: SomeProtocol&gt;(someT: T, someU: U) {
+    // 这里是泛型函数的函数体部分
+}
+</code></pre>
+
+<p>上面这个函数有两个类型参数。第一个类型参数 <code>T</code>，有一个要求是 <code>T</code> 必须是 <code>SomeClass</code> 子类的类型约束，同理，第二个必须符合 <code>SomeProtocol</code> 协议的类型约束。</p>
+
+<h2 id="toc_2">关联类型</h2>
+
+<p>定义一个协议时，有的时候声明一个或多个关联类型作为协议定义的一部分将会非常有用。关联类型为协议中的某个类型提供了一个占3位名（或者说别名），其代表的实际类型在协议被采纳时才会被指定。你可以通过 <code>associatedtype</code> 关键字来指定关联类型。</p>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2016/4/25</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='technology.html'>Tech</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+                        <a href="http://forrestchang.github.io/14615726488001.html#disqus_thread">comments</a>
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="14615467401189.html">
+                
+                  <h1>Swift 学习笔记：协议</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<p>协议定义了一个蓝图，规定了用来实现某一特定任务或者功能的方法、属性，以及其他需要的东西。</p>
+
+<h2 id="toc_0">协议语法</h2>
+
+<p>拥有父类的类在采纳协议时，应该将父类名放在协议名之前，以逗号分隔。</p>
+
+<h2 id="toc_1">属性要求</h2>
+
+<p>协议不指定属性是存储属性还是计算属性，它只指定属性的名称和类型。此外，协议还指定属性是可读还是可读可写的。</p>
+
+<p>如果要求属性是可读可写的，那么该属性不能是常量属性或只读的计算属性；如果协议要求属性是可读的，那么该属性不仅可以是可读的，如果代码需要的话，还可以是可写的。</p>
+
+<p>协议总是用 <code>var</code> 关键字来声明变量属性，在类型后面加上 <code>{set get}</code> 来表示属性是可读可写的，可读属性则用 <code>{ get }</code> 来表示。</p>
+
+<p>在协议中定义类型属性时，总是使用 <code>static</code> 关键字作为前缀。</p>
+
+<h2 id="toc_2">方法要求</h2>
+
+<p>在协议中定义类方法的时候，总是使用 <code>static</code> 关键字作为前缀。</p>
+
+<h2 id="toc_3">Mutating 方法要求</h2>
+
+<p>有时需要在方法中改变方法所属的实例。将 <code>mutating</code> 关键字作为方法的前缀，写在 <code>func</code> 关键字之前，表示可以在该方法中修改它所属性的实例以及实例的任意属性的值。</p>
+
+<p>实现协议中的 <code>mutating</code> 方法时，若是类类型，则不用写 <code>mutating</code> 关键字。而对于结构体和枚举，则必须写 <code>mutating</code> 关键字。</p>
+
+<h2 id="toc_4">构造器要求</h2>
+
+<p>协议可以要求采纳协议的类型实现制定的构造器。你可以像编写普通构造器那样，在协议的定义里写下构造器的声明，但是不需要写花括号和构造器实体。</p>
+
+<h2 id="toc_5">构造器要求在类中的实现</h2>
+
+<p>你可以在采纳协议的类中实现构造器，无论是作为制定构造器，还是作为便利构造器，你都必须为构造器实现表上 <code>required</code> 修饰符。</p>
+
+<p>如果一个子类重写了父类的指定构造器，并且该构造器满足了某个协议的要求，那么该构造器的实现需要同时标注 <code>required</code> 和 <code>override</code> 修饰符。</p>
+
+<h2 id="toc_6">可失败构造器要求</h2>
+
+<h2 id="toc_7">协议作为类型</h2>
+
+<p>尽管协议本身并未实现任何功能，但是协议可以被当做一个成熟的类型来使用：</p>
+
+<ul>
+<li>作为函数、方法或构造器中的参数类型或返回值类型</li>
+<li>作为常量、变量或属性的类型</li>
+<li>作为数组、字典或其他容器中得元素类型</li>
+</ul>
+
+<h2 id="toc_8">委托（代理）模式</h2>
+
+<p>委托是一种设计模式，它允许类或结构体将一些需要它们负责的功能委托给其他类型的实例。</p>
+
+<p>委托模式的实现很简单：定义协议来封装那些需要被委托的功能，这样就能确保采纳协议的类型能提供这些类型。委托模式可以用来响应特定的动作，或者接受外部数据源提供的数据，而无需关心外部数据源的类型。</p>
+
+<h2 id="toc_9">通过扩展添加协议一致性</h2>
+
+<p>即便无法修改源代码，依然可以通过扩展令已有类型采纳并符合协议。扩展可以为已有类型添加属性、方法、下标以及构造器，因此可以符合协议中的相应要求。</p>
+
+<p>通过扩展采纳并符合协议，和在原始定义中采纳并符合协议的效果完全相同。</p>
+
+<h2 id="toc_10">通过扩展采纳协议</h2>
+
+<p>当一个类型已经符合了某个协议中的所有要求，却还没有声明采纳该协议时，可以通过空扩展体的扩展来采纳该协议。</p>
+
+<h2 id="toc_11">协议类型的集合</h2>
+
+<p>协议类型可以在数组或者字典这样的集合中使用。</p>
+
+<h2 id="toc_12">协议的继承</h2>
+
+<p>协议能够继承一个或者多个其他协议，可以在继承的协议的基础上正价新的要求。</p>
+
+<h2 id="toc_13">类类型专属协议</h2>
+
+<p>你可以在洗衣的继承列表中，通过添加 <code>class</code> 关键字来限制协议只能被类类型采纳，而结构体或枚举不能采纳该协议。<code>class</code> 关键字必须第一个出现在协议的继承列表中，在其他继承的协议之前。</p>
+
+<pre><code class="language-swift">protocol SomeClassOnlyProtocol: class, SomeInheritedProtocol {
+    // 这里是类类型专属协议的定义部分
+}
+</code></pre>
+
+<h2 id="toc_14">协议合成</h2>
+
+<p>有时候需要同时采纳多个协议，你可以将多个协议采用 <code>protocol&lt;SomeProtocol, AnotherProtocol&gt;</code> 这样的格式进行组合，称为协议合成（protocol composition）。你可以在<code>&lt;&gt;</code>张罗列任意多个你想要采纳的协议，以逗号分隔。</p>
+
+<p>协议合成并不会生成新的、永久的协议类型，而是将多个协议中的要求合成到一个旨在局部作用域中的有效临时协议中。</p>
+
+<h2 id="toc_15">检查协议一致性</h2>
+
+<p>你可以使用类型转换中描述的 <code>is</code> 和 <code>as</code> 操作符来检查协议一致性，即是否符合某协议，并且可以转换到制定的协议类型。</p>
+
+<ul>
+<li><code>is</code> 用来检查视力是否符合某个协议，符合返回 <code>true</code>。</li>
+<li><code>as?</code> 返回一个可选值，当实例符合某个协议时，返回类型为协议类型的可选值，否则返回 <code>nil</code>。</li>
+<li><code>as!</code> 将实例强制向下转换到某个协议类型，如果强转失败，会引发运行时错误。</li>
+</ul>
+
+<h2 id="toc_16">可选的协议要求</h2>
+
+<p>协议可以定义可选要求，采纳协议的类型可以选择是否实现这些要求。在协议中使用 <code>optional</code> 关键字作为前缀来定义可选要求。使用可选要求时（例如，可选的方法或者属性），它们的类型会自动变成可选的。比如，一个类型为 <code>(Int) -&gt; String</code> 的方法会变成 <code>((Int) -&gt; String)?</code>。需要注意的是整个函数类型是可选的，而不是函数的返回值。</p>
+
+<p>可选的协议要求只能用在标记 <code>@objc</code> 特性的协议中。该特性表示协议将暴露给 Objective-C 代码。即使你不打算和 OC 有什么交互，如果你想要指定可选的协议要求，都那么还是要为协议加上 <code>@obj</code> 特性。</p>
+
+<h2 id="toc_17">协议扩展</h2>
+
+<p>协议可以通过扩展来为采纳协议的类型提供属性、方法以及下标的实现。通过这种方式，你可以基于协议本身来实现这些功能，而无需再每个采纳协议的类型中都重复同样的实现，也无需使用全局函数。</p>
+
+<h2 id="toc_18">提供默认实现</h2>
+
+<p>可以通过协议扩展来为协议要求的属性、方法以及下标提供默认的实现。如果采纳协议的类型为这些要求提供了自己的实现，那么这些自定义实现将会替代扩展中默认实现被使用。</p>
+
+<h2 id="toc_19">为协议扩展添加限制条件</h2>
+
+<p>在扩展协议的时候，可以指定一些限制条件，只有采纳协议的类型满足这些限制条件时，才能获得协议扩展提供的默认实现。这些限制条件写在协议名之后，使用 <code>where</code> 子句来描述。</p>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2016/4/25</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='technology.html'>Tech</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+                        <a href="http://forrestchang.github.io/14615467401189.html#disqus_thread">comments</a>
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="14824093902273.html">
+                
+                  <h1>Swift 中的内存管理</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<p>这篇文章是在阅读《The Swift Programming Language》Automatic Reference Counting（ARC，自动引用计数）一章时做的一些笔记，同时参考了其他的一些资料。</p>
+
+<p>在早期的 iOS 开发中，内存管理是由开发者手动来完成的。因为传统的垃圾回收机制对于移动平台来说十分低效，苹果采用的是引用计数（RC，Reference Counting）的方式来管理内存，开发者需要通过手工的方式增加或减少一个实例的引用计数。在 iOS 5 之后，引入了 ARC 自动引用计数，使得开发者不需要手动地调用 <code>retain</code> 和 <code>release</code> 来管理引用计数，但是实际上这些方法还是会被调用，只不过是交给了编译器来完成，编译器会在合适的地方帮我们加入这些方法。</p>
+
+<p><strong>什么是自动引用计数？</strong></p>
+
+<p>每当你创建一个类的实例的时候，ARC 便会自动分配一块内存空间来存放这个实例的信息，当这个实例不再被使用的时候，ARC 便释放实例所占用的内存。一般每个被管理的实例都会与一个引用计数器相连，这个计数器保存着当前实例被引用的次数，一旦创建一个新的引用指向这个实例，引用计数器便加 1，每当指向该实例的引用失效，引用计数器便减 1，当某个实例的引用计数器变成 0 的时候，这个实例就会被立即销毁。</p>
+
+<p>在 Swift 中，对引用描述的关键字有三个：<code>strong</code>，<code>weak</code> 和 <code>unowned</code>，所有的引用没有特殊说明都是 <code>strong</code> 强引用类型。在 ARC 中，只有指向一个实例的所有 <code>strong</code> 强引用都断开了，这个实例才会被销毁。</p>
+
+<p>举一个简单的例子：</p>
+
+<pre><code class="language-swift">class A {
+    let name: String
+    init(name: String) {
+        self.name = name
+    }
+    deinit {
+        print(&quot;A deinit&quot;)
+    }
+}
+
+var a1: A?
+var a2: A?
+
+a1 = A(name: &quot;A&quot;)
+a2 = a1
+
+a1 = nil
+</code></pre>
+
+<p>上面这个例子中，虽然 <code>a1</code> 这个 <code>strong</code> 强引用断开了，但是还有 <code>a2</code> 这个强引用指向这个实例，所以不会在命令行中输出 <code>A deinit</code>，当我们把 <code>a2</code> 也设置为 <code>nil</code> 时，与这个实例关联的所有强引用均断开了，这个实例便会被销毁，在命令行中打印 <code>A deinit</code>。</p>
+
+<p><strong>循环强引用（Strong Reference Cycles）</strong></p>
+
+<p>但是，在某些情况下，一个类实例的强引用数永远不能变为 0，例如两个类实例互相持有对方的强引用，因而每个类实例都让对方一直存在，这就是所谓的强引用循环（Strong Reference Cycles）。</p>
+
+<p>这里引用 TSPL 中的例子：</p>
+
+<pre><code class="language-swift">class Person {
+    let name: String
+    init(name: String) { self.name = name }
+    var apartment: Apartment?
+    deinit { print(&quot;\(name) is being deinitialized&quot;) }
+}
+
+class Apartment {
+    let unit: String
+    init(unit: String) { self.unit = unit }
+    var tenant: Person?
+    deinit { print(&quot;Apartment \(unit) is being deinitialized&quot;) }
+}
+</code></pre>
+
+<p>每一个 <code>Person</code> 实例有一个可选的初始化为 <code>nil</code> 的 <code>Apartment</code> 类型，因为一个人并不总是拥有公寓。同样，每一个 <code>Apartment</code> 实例都有一个可选的初始化为 <code>nil</code> 的 <code>Person</code> 类型，因为一个公寓并不总是属于一个人。</p>
+
+<p>接下来的代码片段定义了两个可选类型的变量 <code>john</code> 和 <code>unit4A</code>，并分别设定为下面的 <code>Person</code> 和 <code>Apartment</code> 的实例，这两个变量都备受设定为 <code>nil</code>：</p>
+
+<pre><code class="language-swift">var john: Person?
+var unit4A: Apartment?
+</code></pre>
+
+<p>现在可以创建特定的 <code>Person</code> 和 <code>Apartment</code> 实例，并将它们赋值给 <code>john</code> 和 <code>unit4A</code> 变量：</p>
+
+<pre><code class="language-swift">john = Person(name: &quot;John Appleseed&quot;)
+unit4A = Apartment(unit: &quot;4A&quot;)
+</code></pre>
+
+<p>下面一段代码将这两个实例关联起来：</p>
+
+<pre><code class="language-swift">john!.apartment = unit4A
+unit4A!.tenant = john
+</code></pre>
+
+<p>将两个实例关联在一起后，强引用的关系如图所示：</p>
+
+<p><img src="media/14824093902273/14607053938205.jpg" alt="14607053938205"/></p>
+
+<p>这两个实例关联之后，会产生一个循环强引用，当断开 <code>john</code> 和 <code>unit4A</code> 所持有的强引用时，引用计数器并不会归零，所以这两块空间也得不到释放，这就导致了内存泄漏。</p>
+
+<p>可以将其中一个类中的变量设定为 <code>weak</code> 弱引用来打破这种强引用循环：</p>
+
+<pre><code class="language-swift">class Apartment {
+    let unit: String
+    init(unit: String) { self.unit = unit }
+    weak var tenant: Person?
+    deinit { print(&quot;Apartment \(unit) is being deinitialized&quot;) }
+}
+</code></pre>
+
+<p><img src="media/14824093902273/14607057294969.jpg" alt="14607057294969"/></p>
+
+<p>当断开 <code>john</code> 和 <code>unit4A</code> 所持有的强引用时，<code>Person instance</code> 的引用计数器变成 0，实例被销毁，从而 <code>Apartment instance</code> 的引用计数器也变为 0，实例被销毁。</p>
+
+<p><strong>什么时候使用 <code>weak</code>？</strong></p>
+
+<p>当两个实例是 optional 关联在一起时，确保其中的一个使用 <code>weak</code> 弱引用，就像上面所说的那个例子一样。</p>
+
+<p><strong><code>unowned</code> 无主引用</strong></p>
+
+<p>在某些情况下，声明的变量总是有值得时候，我们需要使用 <code>unowned</code> 无主引用。</p>
+
+<p>同样借用一下 TSPL 中的例子：</p>
+
+<pre><code class="language-swift">class Customer {
+    let name: String
+    var card: CreditCard?
+    init(name: String) {
+        self.name = name
+    }
+    deinit { print(&quot;\(name) is being deinitialized&quot;) }
+}
+
+class CreditCard {
+    let number: UInt64
+    unowned let customer: Customer
+    init(number: UInt64, customer: Customer) {
+        self.number = number
+        self.customer = customer
+    }
+    deinit { print(&quot;Card #\(number) is being deinitialized&quot;) }
+}
+</code></pre>
+
+<p>这里定义了两个类，<code>Customer</code> 和 <code>CreditCard</code>，模拟了银行客户和客户的信用卡，在这个例子中，每一个类都是将另一个类的实例作为自身的属性，所以会产生循环强引用。</p>
+
+<p>和之前那个例子不同的是，<code>CreditCard</code> 类中有一个非可选类型的 <code>customer</code> 属性，因为，一个客户可能有或者没有一张信用卡，但是一张信用卡总是关联着一个用户。</p>
+
+<pre><code class="language-swift">var john: Customer?
+john = Customer(name: &quot;John Appleseed&quot;)
+john!.card = CreditCard(number: 1234_5678_9012_3456, customer: john!)
+</code></pre>
+
+<p>关联两个实例后，它们的引用关系如图所示：</p>
+
+<p><img src="media/14824093902273/14607068387297.jpg" alt="14607068387297"/></p>
+
+<p>当断开 <code>john</code> 变量持有的强引用时，再也没有指向 <code>Customer</code> 的强引用了，所以该实例被销毁了，其后，再也没有指向 <code>CreditCard</code> 的强引用了，该实例也被销毁了。</p>
+
+<p><strong>什么时候使用 <code>unowned</code> 无主引用？</strong></p>
+
+<p>两个实例 A 和 B，如果实例 A 必须在实例 B 存在的前提下才能存在，那么实例 A 必须用 <code>unowned</code> 无主引用指向实例 B。也就是说，有强制依赖性的那个实例必须对另一个实例持有无主引用。</p>
+
+<p>例如上面那个例子所说，银行客户可能没有信用卡，但是每张信用卡总是绑定着一个银行客户，所以信用卡这个类就需要用 <code>unowned</code> 无主引用。</p>
+
+<p><strong>无主引用以及隐市解析可选属性</strong></p>
+
+<p>还有一种情况，两个属性都必须有值，并且初始化完成之后永远不会为 <code>nil</code>。在这种情况下，需要一个类使用 <code>unowned</code> 无主引用，另一个类使用<a href="http://wiki.jikexueyuan.com/project/swift/chapter2/01_The_Basics.html#implicityly_unwrapped_optionals">隐式解析可选属性</a>。</p>
+
+<p><strong>闭包引起的循环强引用</strong></p>
+
+<p>在 Swift 中，闭包和函数都属于引用类型。并且闭包还有一个特性：可以在其定义的上下文中捕获常量或者变量。所以，在一个类中，闭包被赋值给了一个属性，而这个闭包又使用了这个类的实例的时候，就会引起循环强引用。</p>
+
+<p>Swift 提供了一种方法来解决这个问题：闭包捕获列表（closure capture list）。在定义闭包的同时定义捕获列表作为闭包的一部分，捕获列表定义了闭包体内捕获一个或者多个引用类型的规则。跟解决两个类实例之间的循环强引用一样，声明每个捕获的引用为弱引用或者无主引用。</p>
+
+<p>捕获列表中的每一项都由一对元素组成，一个元素是 <code>weak</code> 或者 <code>unowned</code> 关键字，另一个元素是类实例的引用（例如最常见得是 <code>self</code>），这些在方括号内用逗号隔开。</p>
+
+<p>具体的使用方法请参考<a href="http://wiki.jikexueyuan.com/project/swift/chapter2/16_Automatic_Reference_Counting.html#resolving_strong_reference_cycles_for_closures">官方文档</a>。</p>
+
+<p><strong>何时使用 <code>weak</code>，何时使用 <code>unowned</code></strong></p>
+
+<p>在闭包和捕获的实例总是相互引用并且总是同时销毁的时候，将闭包内的捕获定义为 <code>unowned</code> 无主引用。</p>
+
+<p>在被捕获的实例可能变成 <code>nil</code> 的情况下，使用 <code>weak</code> 弱引用。如果被捕获的引用绝对不会变成 <code>nil</code>，应该使用 <code>unowned</code> 无主引用，而不是 <code>weak</code> 弱引用。</p>
+
+<p><strong>Garbage Collection（GC，垃圾回收）</strong></p>
+
+<p>其实 ARC 应该也算 GC 的一种，不过我们一谈到 GC，大多都会想到 Java 中的垃圾回收机制，相比较 GC，ARC 简单得许多。以后有机会可以讨论一下 Java 中的内存管理。</p>
+
+<p>另外，需要注意的一点是，这里所讲的都是针对于<code>引用类型</code>，<code>结构体</code>和<code>枚举</code>在 Swift 中属于值类型，不在 ARC 的考虑范围之内。</p>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2016/4/15</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='technology.html'>Tech</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+                        <a href="http://forrestchang.github.io/14824093902273.html#disqus_thread">comments</a>
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="14824089876210.html">
+                
+                  <h1>更有效率的程序员（一）：时间记录</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<p>两年前，曾经写过一篇有关时间管理的<a href="http://forrestchang.github.io/2014/02/12/time-management/">文章</a>，那个时候还在上高二，对于时间管理仅仅是有一点肤浅的了解，自然写出来的文字也是比较幼稚的。经过两年的实践，积累了很多时间管理的经验，想要拿出来分享一下。预计会写一个系列，包括使用的工具和日常的 Workflow。</p>
+
+<p>日常使用的工具有这些：</p>
+
+<ul>
+<li>纸质笔记本（Moleskine）</li>
+<li>OmniFocus</li>
+<li>Evernote</li>
+<li>Toggl</li>
+</ul>
+
+<p>这篇文章从题目也可以看出来，主要讲一些关于时间记录的内容，对应的工具是 Toggl。关于 Toggl，我已经在知乎的<a href="https://www.zhihu.com/question/36546814/answer/69161024">一个回答</a>里面推荐过了，这里会更加详细地介绍一下使用流程，在谈论术之前，先来说说道的问题，为什么要做时间记录。</p>
+
+<p>其实我们对时间是很不敏感的，相信你一定有过这样的体验：早晨醒来，干劲满满，准备打开电脑把昨天没有写完的代码解决，这时想到邮件还没看，先查一下邮件吧，反正花不了多少时间，在查看邮件的时候又发现知乎上有人给你发私信了，在到知乎上看一下私信，顺便回复一下，既然上了知乎，那么去首页看看订阅的内容里面有没有什么有意思的东西吧，看到一个有意思的回答，是推荐你买买买的，于是乎又打开淘宝看了看商品的具体情况，顺便加到购物车里，这是候发现已经中午了，算了，先去吃饭吧，代码等等吃完饭再写，吃过午饭后又觉得有一点困意，那就睡一会儿吧，一觉醒来，发现已经四点多了，不行了，赶紧写代码，等等，这个 bug 好像找不到问题所在啊，算了，去 Stack Overflow 上找找吧，在 Stack Overflow 上找到了答案，链接到一篇具体的解释文章，点进去看了看，发现太长了，还是先加到 Pocket 中，以后再看吧，这个人的博客似乎写得不错，浏览一下 Archive 页面看看还有没有其他的好文章，从头到尾浏览了一遍，心中不禁惊叹，写得真好！然后想到今天 Reddit 好像还没看，说不定又有什么好东西，于是又上 /r/programming 刷了一会儿，看到了几篇牛逼的文章，时间也不早了，该吃晚饭了，吃完晚饭自然又不想写代码，休息一会儿，逛一下 Bilibili 吧，看了几个视频之后突然想到今天的代码还没有写，于是又接着关掉网页去写代码，搞到深夜，终于把代码写完了，朋友圈发一条状态「奋战到深夜，终于把代码改完了！」。</p>
+
+<p>多么充实的一天，你这样想到，今天似乎做了很多事情。但是实际上呢？有效的时间几乎只有两三个小时。所以你需要把做什么事用了多长时间记录下来，然后就会发现这「充实」的一天过得是多么可怕了。</p>
+
+<p>根据这些时间的时间记录的经验来看，至少有以下三点好处：</p>
+
+<ol>
+<li>提高对时间的感知能力，发现和避免时间黑洞。记录下时间的时候，你会刻意地关注目前手上正在做的事，如果是一些浪费时间的事，会使你减少花在上面的时间。</li>
+<li>更好地制定计划。有段时间给自己制定的计划老是不能够完成，目标定得太高，再怎么跳也抓不到，通过记录一些事情所花费的时间，就可以更好地做计划，比如说看完一本书需要用多少时间。</li>
+<li>激励自己。积累了一段时间的数据之后，就可以看到在某一方面投入了多少时间了，根据 10000 小时定律，可以知道自己与专家级别的能力还相差多少。</li>
+</ol>
+
+<p>当然，凡事有利就必有弊。</p>
+
+<ol>
+<li>时间记录本身也会花费时间（可以通过工具来弥补）。</li>
+<li>最开始的时候总是会忘记记录。</li>
+<li>事无巨细地记录时间，增加压力（这一点会在下面详细说明）。</li>
+</ol>
+
+<p>简单地讲了一下「道」层面的问题，想要继续深入的可以看一下<a href="https://book.douban.com/subject/1115353/">《奇特的一生》</a>这本书。下面说一说「术」的层面。</p>
+
+<h3 id="toc_0">简单的系统</h3>
+
+<p>其实最开始的时候一支笔、一本本子、一块手表就够了，这一阶段主要是养成时间记录的习惯，当然使用 Evernote 或者 OneNote 之类的软件也是可以的。可以按照以下的模板来记录：</p>
+
+<blockquote>
+<p>2016/04/10<br/>
+7:00 - 8:30 阅读 xxx xx 页（1h30min）<br/>
+9:00 - 9:45 完成 xxx 项目 xx 功能的开发（45min）<br/>
+...</p>
+
+<p>总结：<br/>
+编程时间：xx h xx min<br/>
+阅读时间：xx h xx min<br/>
+有效时间合计：xx h xx min<br/>
+娱乐时间：xx h xx min<br/>
+...</p>
+</blockquote>
+
+<p>具体的分类可以根据自己的需求来进行。如果对时间记录没有接触过的同学可以选择这个方法试着用一段时间，看有没有什么改变。</p>
+
+<h3 id="toc_1">Toggl</h3>
+
+<p>前面说了这么多，中与引来了今天的主角：<a href="https://www.toggl.com/">Toggl</a>。什么是 Toggl，简单得来说，是一款时间记录的工具，试用过市面上几乎所有时间记录的工具，发现 Toggl 是最符合《奇特的一生》中的工作流的。</p>
+
+<h4 id="toc_2">安装</h4>
+
+<p>Toggl 几乎包含了全部平台，其中最强大的属于 Web 版，各种高级的报表功能需要在 Web 版上面才能试使用。</p>
+
+<ul>
+<li><a href="https://www.toggl.com/best-free-time-tracking-app-for-iphone">iPhone App</a></li>
+<li><a href="https://www.toggl.com/best-free-time-tracking-app-for-android">Android App</a></li>
+<li><a href="https://support.toggl.com/toggl-desktop-for-windows">Windows Desktop App</a></li>
+<li><a href="https://support.toggl.com/toggl-desktop-for-mac-osx">Mac Desktop App</a></li>
+<li><a href="https://support.toggl.com/toggl-desktop-for-linux">Linux Desktop App</a></li>
+</ul>
+
+<p>并且它还提供了 <a href="https://github.com/toggl/toggl_api_docs/blob/master/toggl_api.md">API</a>，可以自由定制。</p>
+
+<h4 id="toc_3">基本使用</h4>
+
+<p>下面主要介绍 Web 版的内容。注册完登陆进计时页面就是如下图所示：</p>
+
+<p><img src="media/14824089876210/14602871668402.jpg" alt="14602871668402"/></p>
+
+<ol>
+<li>你当前正在记录的内容（如果不确定，可以先不填，这个是比其他软件优秀的原因之一，有时候只是想先记录下时间，之后再进行区分）；</li>
+<li>当前记录内容所属分类，可以添加 Tag，后面的美元符号可以添加这个任务的花费，基本没有用到过这个功能；</li>
+<li>记录的时间，可以手动添加时间；</li>
+<li>Timeline，每天做了什么事情用了多少时间就记录在这里（周六周日没有怎么使用，所以比较空）；</li>
+<li>一周记录时间汇总。</li>
+</ol>
+
+<p>知道了以上的内容之后就可以开始记录了，比如说就把学习 Toggl 的使用当成第一个记录的内容。</p>
+
+<h4 id="toc_4">更好的分类</h4>
+
+<p>详细的分类可以更好地输出报表。我使用的是三级的分类：大类-具体领域分类-task。Toggl 默认只可以使用两个层级的分类，Project - Task，但是可以把 Client 这个用作最大的分类，这样就可以进行三个层级的分类，下面是我的分类内容；</p>
+
+<ul>
+<li>基本工作（Client）
+
+<ul>
+<li>计算机（Project）</li>
+<li>英语</li>
+<li>健身</li>
+<li>写作</li>
+<li>阅读</li>
+<li>工作（几乎用不到，因为还在学校里）</li>
+</ul></li>
+<li>固定日程
+
+<ul>
+<li>上课</li>
+<li>睡觉</li>
+<li>杂事</li>
+</ul></li>
+<li>娱乐
+
+<ul>
+<li>上网</li>
+<li>游戏</li>
+<li>视频/电影</li>
+</ul></li>
+</ul>
+
+<p>分级不宜过多，否则会增加选择的压力，可以在使用的过程中不断改进。</p>
+
+<p>最大的类别（Clients）可以在 Workspace Settings 中添加：</p>
+
+<p><img src="media/14824089876210/14602879238718.jpg" alt="14602879238718"/></p>
+
+<p>Project 的类别在 Projects 选项中添加，可以给每个 Project 不同的颜色以示区分。</p>
+
+<p>Tag 很少使用，可以为一些相同类型的事情设定相关的 Tag 来作为补充。</p>
+
+<h4 id="toc_5">强大的统计功能</h4>
+
+<p>使用纸笔做时间记录的麻烦之处就是统计的时候需要花费很多精力去计算，用 APP 就可以免除这些过程，直接根据记录的内容生成非常漂亮的报表，下面的是我这一周的统计内容，从柱状图可以看出这周的效率是逐渐递减的-_-|||</p>
+
+<p><img src="media/14824089876210/14602882623445.jpg" alt="14602882623445"/></p>
+
+<p>Reports 支持三种模式：Summary, Detailed, Weekly。上面的是 Summary 的 Reports，Detailed 会把你做的所有事情列出来，Weekly 会以周视图的方式来显示：</p>
+
+<p><img src="media/14824089876210/14602884725256.jpg" alt="14602884725256"/></p>
+
+<p>Reports 支持强大的过滤功能，可以根据需要选择 Reports 的时间长度、Project 内容、Tag 内容等等。比如说我想查看这周用在 iOS Dev 上的时间是多少，只需要选择 iOS Dev 这个 Tag 就可以了：</p>
+
+<p><img src="media/14824089876210/14602886317764.jpg" alt="14602886317764"/></p>
+
+<h4 id="toc_6">Dashboard</h4>
+
+<p>Toggl 还提供了仪表盘视图，在这里你可以看到最常 Track 的项目以及一些其他内容。</p>
+
+<p><img src="media/14824089876210/14602889789430.jpg" alt="14602889789430"/></p>
+
+<p>如果在本地 APP 里面打开了 Timeline Track，还可以在 Timeline For Today 这一栏里面查看使用了什么软件，用了多长时间。</p>
+
+<h4 id="toc_7">Workflow</h4>
+
+<p>每天从 Todo 里面拿出一件事情，打开计时器，开始做，本着「做一件事情就把它做好的原则」去完成。积累了一段时间的数据之后，就可以更好地计划自己了，比如说本周阅读多少专业书籍，写多少代码。具体的 Workflow 需要结合 OmniFocus 和笔记本来完成，所以会在下一篇文章中来说明。</p>
+
+<h4 id="toc_8">FAQ</h4>
+
+<h5 id="toc_9">什么事情都需要记录吗？</h5>
+
+<p>只需要记录重要的事情。日常生活中的吃喝拉撒记录了没有任何用处，有一段时间我一直在记录自己的睡眠时间，不过后来固定了之后就不记录了。</p>
+
+<h5 id="toc_10">忘了记录怎么办？</h5>
+
+<p>这个只能慢慢地养成记录的习惯，如果记得大概的时间的话，可以手动录入时间。</p>
+
+<h5 id="toc_11">手边没有电脑怎么办？</h5>
+
+<p>一般我都是用手机进行记录，如果连手机也不在手边的话，可以先拿张纸记着，之后再手动录入上去。</p>
+
+<h3 id="toc_12">后记</h3>
+
+<p>其实，等你做了一段时间的时间日志会发现，会发现效率并没有提高多少，有时候不得不承认这个悲伤的事实，根据自己的时间日志，最高效的一天记录了 7 个小时的学习时间，相比较那些动不动就每天学习 8 小时的人来说，还是差太多了，不过好歹也算是做出了一点点努力。</p>
+
+<p>写这篇文章的契机是看到了 pluskid 写的<a href="http://freemind.pluskid.org/misc/knowledge-accumulate/">《关于知识整理、积累与记忆》</a>，想到自己也有挺多经验可以分享的，于是便以试试的心态动笔开始写。</p>
+
+<p>仓促成文，错误在所难免，还望指正。</p>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2016/4/10</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='productivity.html'>Productivity</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+                        <a href="http://forrestchang.github.io/14824089876210.html#disqus_thread">comments</a>
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+              
+
+
+			<div class="row">
+			  <div class="large-6 columns">
+			  <p class="text-left" style="padding-top:25px;">
+			   <a href="all_4.html">&laquo; Prev Page</a>  
+			  </p>
+			  </div>
+			  <div class="large-6 columns">
+			<p class="text-right" style="padding-top:25px;">
+			 <a href="all_6.html">&raquo; Next Page</a> 
+			</p>
+			  </div>
+			</div>
+		</div>
+	</div><!-- large 8 -->
+
+ <div class="large-4 medium-4 columns">
+  <div class="hide-for-small">
+    <div id="sidebar" class="sidebar">
+          <div id="site-info" class="site-info">
+            
+                <div class="site-a-logo"><img src="asset/img/avatar.jpg" /></div>
+            
+                <h1>Hack Notes</h1>
+                <div class="site-des"></div>
+                <div class="social">
+
+
+
+
+
+
+
+<a target="_blank" class="weibo" href="http://weibo.com/tisoga" title="weibo">Weibo</a>
+<a target="_blank" class="twitter" target="_blank" href="https://twitter.com/Tisoga" title="Twitter">Twitter</a>
+<a target="_blank" class="github" target="_blank" href="https://github.com/forrestchang" title="GitHub">GitHub</a>
+<a target="_blank" class="email" href="mailto:forrestchang7@gmail.com" title="Email">Email</a>
+  <a target="_blank" class="rss" href="atom.xml" title="RSS">RSS</a>
+                
+              	 </div>
+          	</div>
+
+             
+
+              <div id="site-categories" class="side-item ">
+                <div class="side-header">
+                  <h2>Categories</h2>
+                </div>
+                <div class="side-content">
+
+      	<p class="cat-list">
+        
+            <a href="life.html"><strong>Life</strong></a>
+        
+            <a href="machine-learning.html"><strong>ML</strong></a>
+        
+            <a href="python.html"><strong>Python</strong></a>
+        
+            <a href="productivity.html"><strong>Productivity</strong></a>
+        
+            <a href="technology.html"><strong>Tech</strong></a>
+         
+        </p>
+
+
+                </div>
+              </div>
+
+              <div id="site-categories" class="side-item">
+                <div class="side-header">
+                  <h2>Recent Posts</h2>
+                </div>
+                <div class="side-content">
+                <ul class="posts-list">
+	      
+		      
+			      <li class="post">
+			        <a href="14832795759469.html">2017 Week 1 Review</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="14827163208652.html">2016 Week 52 Review</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="14824086421976.html">推荐系统笔记</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="14824103542982.html">2016 Week 51 Review</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="14824081615573.html">2016 Week 46 Review</a>
+			      </li>
+		     
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		   
+		  		</ul>
+                </div>
+              </div>
+        </div><!-- sidebar -->
+      </div><!-- hide for small -->
+</div><!-- large 4 -->
+
+</div><!-- row -->
+
+ <div class="page-bottom clearfix">
+  <div class="row">
+   <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+
+
+<script type="text/javascript">
+    var disqus_shortname = 'tisogasnotes'; 
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<script type="text/javascript">
+var disqus_shortname = 'tisogasnotes'; 
+
+(function () {
+var s = document.createElement('script'); s.async = true;
+s.type = 'text/javascript';
+s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+  
+    
+
+    <script src="asset/js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+      function fixSidebarHeight(){
+        var w1 = $('.markdown-body').height();
+          var w2 = $('#sidebar').height();
+          if (w1 > w2) { $('#sidebar').height(w1); };
+      }
+      $(function(){
+        fixSidebarHeight();
+      })
+      $(window).load(function(){
+          fixSidebarHeight();
+      });
+     
+    </script>
+
+    <script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
+<script>
+                            var _hmt = _hmt || [];
+                            (function() {
+                                    var hm = document.createElement("script");
+                                    hm.src = "https://hm.baidu.com/hm.js?001e800887eba2f8f57ec8059aafdad6";
+                                    var s = document.getElementsByTagName("script")[0];
+                                    s.parentNode.insertBefore(hm, s);
+                                    })();
+                            </script>
+
+  </body>
+</html>
