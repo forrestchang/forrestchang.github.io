@@ -4,13 +4,185 @@
   <title><![CDATA[Hack Notes]]></title>
   <link href="http://forrestchang.github.io/atom.xml" rel="self"/>
   <link href="http://forrestchang.github.io/"/>
-  <updated>2017-01-13T19:36:53+08:00</updated>
+  <updated>2017-02-11T19:39:54+08:00</updated>
   <id>http://forrestchang.github.io/</id>
   <author>
     <name><![CDATA[]]></name>
     
   </author>
   <generator uri="http://www.mweb.im/">MWeb</generator>
+  
+  <entry>
+    <title type="html"><![CDATA[Python 风格指南笔记]]></title>
+    <link href="http://forrestchang.github.io/14871569977647.html"/>
+    <updated>2017-02-15T19:09:57+08:00</updated>
+    <id>http://forrestchang.github.io/14871569977647.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">函数与方法装饰器</h2>
+
+<ul>
+<li>优点：优雅的在函数上指定一些转换，该转换可能减少一些重复代码，保持已有函数不变（enforce invariants）</li>
+<li>缺点：装饰器可以在函数的参数或返回值上执行任何操作，这可能导致让人惊异的隐藏行为。而且，装饰器在导入时执行。从装饰器代码的失败中恢复更加不可能。</li>
+<li>结论：如果好处很显然，就明智而谨慎的使用装饰器。装饰器应该遵守和函数一样的导入和命名规则。装饰器的 Python 文档应该清晰的说明函数是一个装饰器。请为装饰器编写单元测试。<strong>避免装饰器自身对外界的以来（即不要依赖于文件、socket、数据库连接等）</strong>。</li>
+</ul>
+
+<h2 id="toc_1">线程</h2>
+
+<p>优先使用 Queue 模块的 <code>Queue</code> 数据类型作为线程间的数据通信方式。另外，使用 threading 模块及其锁原语（locking primitives）。了解条件变量的合适使用方式，这样你就可以使用 <code>threading.Condition</code> 来取代低级级别的锁了。</p>
+
+<h2 id="toc_2">威力过大的特性</h2>
+
+<ul>
+<li>Tip：避免使用这些特性</li>
+<li>优点：强大的语言特性，能让你的代码更紧凑</li>
+<li>缺点：使用这些很 cool 的特性十分诱人，但不是绝对必要。使用奇技淫巧的代码将更加难以阅读和调试。开始可能还好，但当你回顾代码，它们可能比那些稍长一点但是更直接的代码更加难以理解。</li>
+<li>结论：在你的代码中避免使用这些特性。</li>
+</ul>
+
+<h2 id="toc_3">注释</h2>
+
+<p>Python 有一种独一无二的注释方式：使用文档字符串。文档字符串是包、模块、类或函数的第一个语句。这些字符串可以通过对象的 <code>__doc__</code> 成员被自动提取，并且被 <code>pydoc</code> 所用。</p>
+
+<p>组织方式：</p>
+
+<ul>
+<li>第一行以句号、问号或惊叹号结尾的概述（或者改文档字符串只有单纯的一行）</li>
+<li>接着是一个空行</li>
+<li>接着是文档字符串的剩余部分，它应当与文档字符串的第一行的第一个引号对齐</li>
+</ul>
+
+<h3 id="toc_4">模块</h3>
+
+<p>每个文件应该包含一个许可样板。根据项目使用的许可（例如：Apache 2.0、BSD、LGPL、GPL）选择合适的样板。</p>
+
+<h3 id="toc_5">函数和方法</h3>
+
+<p>一个函数必须要有文档字符串，除非它满足以下条件：</p>
+
+<ol>
+<li>外部不可见</li>
+<li>非常短小</li>
+<li>简单明了</li>
+</ol>
+
+<p>文档字符串应该包含函数做什么，以及输入和输出的详细描述。通常，<strong>不应该描述「怎么做」，除非是一些复杂的算法</strong>。文档字符串应该提供足够的信息，当别人编写代码调用该函数时，他不需要看一行代码，只要看文档字符串就可以了。<strong>对于复杂的代码，在代码旁边加注释胡比使用文档字符串更有意义</strong>。</p>
+
+<p>关于函数的几个方面应该在特定的小节中进行描述记录，这几个方面入下文所示，每节应该以一个标题行开始。标题行以冒号结尾，除标题行外，节的其他内容应被缩进 2 个空格。</p>
+
+<ul>
+<li>Args：列出每个每个参数的名字，并在名字后面使用一个冒号和空格，分隔对该参数的描述。如果描述太长超过了单行 80 个字符，使用 2 或者 4 个空格的悬挂缩进。<strong>描述应该包括所需的类型和含义</strong>。如果一个函数接受<code>可变长参数列表</code>或者<code>任意关键字参数</code>，应该详细列出这两者。</li>
+<li>Returns（或者 Yields，用于生成器）：描述返回值的类型和语义，如果函数返回 None，这一部分可以省略。</li>
+<li>Raises：列出与接口有关的所有异常。</li>
+</ul>
+
+<p>例子：</p>
+
+<pre><code class="language-python">def fetch_bigtable_rows(big_table, keys, other_silly_variable=None):
+    &quot;&quot;&quot;Fetches rows from a Bigtable.
+
+    Retrieves rows pertaining to the given keys from the Table instance
+    represented by big_table.  Silly things may happen if
+    other_silly_variable is not None.
+
+    Args:
+        big_table: An open Bigtable Table instance.
+        keys: A sequence of strings representing the key of each table row
+            to fetch.
+        other_silly_variable: Another optional variable, that has a much
+            longer name than the other args, and which does nothing.
+
+    Returns:
+        A dict mapping keys to the corresponding table row data
+        fetched. Each row is represented as a tuple of strings. For
+        example:
+
+        {&#39;Serak&#39;: (&#39;Rigel VII&#39;, &#39;Preparer&#39;),
+         &#39;Zim&#39;: (&#39;Irk&#39;, &#39;Invader&#39;),
+         &#39;Lrrr&#39;: (&#39;Omicron Persei 8&#39;, &#39;Emperor&#39;)}
+
+        If a key from the keys argument is missing from the dictionary,
+        then that row was not found in the table.
+
+    Raises:
+        IOError: An error occurred accessing the bigtable.Table object.
+    &quot;&quot;&quot;
+    pass
+</code></pre>
+
+<h3 id="toc_6">类</h3>
+
+<p>类应该在其定义下有一个用于描述该类的文档字符串。如果你的类有公有属性，那么文档中应该有一个属性段，并且应该遵守和函数参数相同的格式。</p>
+
+<pre><code class="language-python">class SampleClass(object):
+    &quot;&quot;&quot;Summary of class here.
+
+    Longer class information....
+    Longer class information....
+
+    Attributes:
+        likes_spam: A boolean indicating if we like SPAM or not.
+        eggs: An integer count of the eggs we have laid.
+    &quot;&quot;&quot;
+
+    def __init__(self, likes_spam=False):
+        &quot;&quot;&quot;Inits SampleClass with blah.&quot;&quot;&quot;
+        self.likes_spam = likes_spam
+        self.eggs = 0
+
+    def public_method(self):
+        &quot;&quot;&quot;Performs operation blah.&quot;&quot;&quot;
+</code></pre>
+
+<h3 id="toc_7">块注释和行注释</h3>
+
+<p><strong>最需要些注释的是代码中那些技巧性的部分</strong>。对于复杂的操作，应该在其操作开始前写上若干行注释，对于不是一幕了然的代码，应该在其行尾添加注释。</p>
+
+<p>为了提高可读性，注释至少应该离开代码 2 个空格。</p>
+
+<p><strong>绝对不要描述代码</strong>，假设阅读代码的人比你更懂 Python，他只是不知道你的代码要做什么。</p>
+
+<h2 id="toc_8">类</h2>
+
+<p>如果一个类不继承自其它类，就显式的从 object 继承，嵌套类也一样。</p>
+
+<h2 id="toc_9">TODO 注释</h2>
+
+<p>TODO 注释应该在所有开头处包含「TODO」字符串，紧跟着的是用括号括起来的你的名字，email 地址或者其他标识符。接着必须有一行注释，解释要做什么。</p>
+
+<p>Example：</p>
+
+<pre><code class="language-python"># TODO(kl@gmail.com): Use a &quot;*&quot; here for string repetition.
+# TODO(Zeke) Change this to use relations.
+</code></pre>
+
+<p>如果你的 TODO 是「将来做某事」的形式，那么请确保你包含了一个指定的日期或者一个特定的时间。</p>
+
+<h2 id="toc_10">导入格式</h2>
+
+<p>每个导入应该独占一行。导入总应该放在文件顶部，位于模块注释和文档字符串之后，模块全局变量和常量之前，导入应该按照从最通用到最不通用的顺序分组：</p>
+
+<ol>
+<li>标准库导入</li>
+<li>第三方库导入</li>
+<li>应用程序制定导入</li>
+</ol>
+
+<p>每种分组中，应该根据每个模块的完整包路径按字典顺序排序，忽略大小写。</p>
+
+<h2 id="toc_11">访问控制</h2>
+
+<p>字啊 Python 中，对于琐碎又不太重要的访问函数，你应该直接使用公有变量来取代它们，这样可以避免额外的函数调用开销。当添加更多的功能时，你可以用属性（property）来保持语法的一致性。</p>
+
+<p>另一方面，如果访问更复杂，或者变量的访问开销很显著，那么你应该使用像 <code>get_foo()</code> 和 <code>set_foo()</code> 这样的函数调用。如果之前的代码行为允许通过属性（property）访问，那么久不要井新的访问函数与属性绑定。这样，任何试图通过老方法访问变量的代码就没法运行，使用者也就会意识到复杂性发生了变化。</p>
+
+<h2 id="toc_12">命名</h2>
+
+<p>Python 之父 Guido 推荐的规范：</p>
+
+<p><img src="media/14871569977647/14872190162425.jpg" alt=""/></p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[2017 Week 1 Review]]></title>
@@ -1879,107 +2051,6 @@ Yuck!
 <h2 id="toc_7">类型属性</h2>
 
 <p>存储型类型属性是延迟初始化的，它们只有在第一次被访问的时候才会被初始化。即使它们被多个线程同时访问，系统也保证只会对其进行一次初始化，并且不需要对其使用 <code>lazy</code> 修饰符。</p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Swift 学习笔记：集合类型]]></title>
-    <link href="http://forrestchang.github.io/14627836147810.html"/>
-    <updated>2016-05-09T16:46:54+08:00</updated>
-    <id>http://forrestchang.github.io/14627836147810.html</id>
-    <content type="html"><![CDATA[
-<p>Swift 语言提供 Arrays、Sets 和 Dictionaries 三种基本的集合类型来存储数据合集。数组（Array）是有序数据的集；集合（Sets）是无序无重复数据的集；字典（Dictionaries）是无序的键值对的集。</p>
-
-<p><img src="media/14627836147810/14627837494241.jpg" alt=""/></p>
-
-<h2 id="toc_0">集合的可变性</h2>
-
-<p>在我们不需要改变集合的时候创建不可变集合是很好的实践（使用 <code>let</code>），如此 Swift 编译器可以优化我们创建的集合。</p>
-
-<h2 id="toc_1">数组</h2>
-
-<h3 id="toc_2">创建一个带有默认值的数组</h3>
-
-<p>Swift 中的 Array 类型提供一个可以创建特定大小并且所有数据都被默认的构造方法。我们可以把准备加入新数组的数据项数量（count）和适当类型的初始值（repeatedValue）传入数组构造函数：</p>
-
-<pre><code class="language-swift">var threeDoubles = [Double](count: 3, repeatedValue: 0.0)
-</code></pre>
-
-<h3 id="toc_3">通过两个数组相加创建一个数组</h3>
-
-<p>我们可以使用加法操作符来组合两种已经存在的相同类型数组。新数组的数据类型会被从两个数组的数据类型中推断出来。</p>
-
-<h3 id="toc_4">访问和修改数组</h3>
-
-<p><code>isEmpty</code> 检查数组是否为空。</p>
-
-<p>使用加法赋值运算符（<code>+=</code>）可以直接在数组后面添加一个或多个拥有相同类型的数据项。</p>
-
-<p>调用数组的 <code>insert(_:atIndex:)</code>方法来在某个具体的索引值之前添加数据项。</p>
-
-<h3 id="toc_5">数组的遍历</h3>
-
-<p>如果我们同事需要每个数据项的值和索引值，可以使用 <code>enumerate()</code> 方法来进行数组遍历。<code>enumerate()</code> 返回一个由每一个数据项索引值和数据值组成的元组。我们可以把这个元组分解成临时常量或者变量来进行遍历。</p>
-
-<h2 id="toc_6">集合（Sets）</h2>
-
-<p>集合用来存储相同类型且没有确定顺序的值。</p>
-
-<p>Swift 中的 <code>Set</code> 类型被桥接到 <code>Foundation</code> 中的 <code>NSset</code> 类。</p>
-
-<h3 id="toc_7">集合类型的哈希值</h3>
-
-<p>一个类型为了存储在集合中，该类型必须是可哈希化得——也就是说，该类型必须提供一个方法来计算它的哈希值。一个哈希值是 <code>Int</code> 类型的，相等的对象哈希值必须相同，比如<code>a=b</code>，因此必须是<code>a.hashValue = b.hashValue</code>。</p>
-
-<p>Swift 的所有基本类型默认都是可哈希化的，可以作为集合的值类型或者字典的键类型。没有关联值的枚举成员值默认也是可哈希化的。</p>
-
-<p>你可以使用你自定义的类型作为集合的值类型或者是字典的键的类型，但你需要使你的自定义类型符合 Swift 标准库中的 <code>Hashable</code> 协议。符合 <code>Hashable</code> 协议的类型需要提供一个类型为 <code>Int</code> 的可读属性 <code>hashValue</code>。由类型的 <code>hashValue</code> 属性返回的值不需要再同一程序的不同执行周期或者不同程序之间保持相同。</p>
-
-<p>因为 <code>hashValue</code> 协议符合 <code>Equatable</code> 协议，所以符合该协的类型也必须停工一个 <code>==</code> 运算符的实现。这个 <code>Equatable</code> 协议要求任何符合 <code>==</code> 实现的实例间都是一种相等的关系，也就是说，对于 a, b, c 三个值来说，必须满足下面三种情况：</p>
-
-<ul>
-<li>自反性：a == a</li>
-<li>对称性：a == b, b == a</li>
-<li>传递性：a == b &amp;&amp; b == c, a == c</li>
-</ul>
-
-<h3 id="toc_8">遍历一个集合</h3>
-
-<p>Swift 中的 <code>Set</code> 类型没有确定的顺序，为了按照特定顺序来遍历一个 <code>Set</code> 中的值可以使用 <code>sort()</code> 方法，它将根据提供的序列返回一个有序集合。</p>
-
-<pre><code class="language-swift">for genre in favoriteGenres.sort() {...}
-</code></pre>
-
-<h3 id="toc_9">集合操作</h3>
-
-<p><img src="media/14627836147810/14627853736261.jpg" alt=""/></p>
-
-<p><img src="media/14627836147810/14627854301808.jpg" alt=""/></p>
-
-<p><img src="media/14627836147810/14627854415802.jpg" alt=""/></p>
-
-<h2 id="toc_10">字典</h2>
-
-<p>字典中的数据项并没有具体顺序。</p>
-
-<p>Swift 中 Dictionary 类型被桥接到 Foundation 中的 NSDictionary 类。</p>
-
-<h3 id="toc_11">字典遍历</h3>
-
-<ol>
-<li>元组方式</li>
-<li>dic.keys</li>
-<li>dic.values</li>
-</ol>
-
-<p>如果我们只是需要某个字典的键值集合来作为某个接受 Array 实例的 API 的参数，可以直接使用 keys 或 values 属性构造一个新数组。</p>
-
-<pre><code class="language-swift">let airportCodes = [String](airports.keys)
-let airportNames = [String](airports.values)
-</code></pre>
-
-<p>Swift 的字典类型书无序集合类型。为了以特定的顺序便利字典的键或值，可以对字典的 keys 或 values 属性使用 <code>sort()</code> 方法。</p>
 
 ]]></content>
   </entry>
