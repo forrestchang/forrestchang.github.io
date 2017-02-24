@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  Swift 学习笔记：字符串和字符 - Hack Notes
+  换了一个新地方写东西 - Hack Notes
   
   </title>
   
@@ -111,19 +111,19 @@
       <div class="markdown-body article-wrap">
        <div class="article">
           
-          <h1>Swift 学习笔记：字符串和字符</h1>
+          <h1>换了一个新地方写东西</h1>
      
         <div class="read-more clearfix">
-          <span class="date">2016/5/17</span>
+          <span class="date">2017/2/24</span>
 
           <span>posted in&nbsp;</span> 
           
-              <span class="posted-in"><a href='technology.html'>Tech</a></span>
+              <span class="posted-in"><a href='life.html'>Life</a></span>
            
          
           <span class="comments">
             
-              <a href="http://forrestchang.github.io/14634546001476.html#disqus_thread">comments</a>
+              <a href="http://forrestchang.github.io/14878992387553.html#disqus_thread">comments</a>
             
 
             
@@ -133,83 +133,9 @@
       </div><!-- article -->
 
       <div class="article-content">
-      <h2 id="toc_0">字符串是值类型</h2>
+      <p>现在这个博客只写技术相关的内容，其他的随笔都写在<a href="https://medium.com/@Tisoga">新博客</a>里，Medium 是被大陆屏蔽的，所以请自备梯子。另外一些比较私人的笔记——例如「Week Review」系列就不发表在互联网上了。</p>
 
-<p>使用字符串会进行值拷贝。</p>
-
-<p>在实际的编译时，Swift 编译器会优化字符串的使用，使实际的复制只发生在绝对必要的情况下，这意味着将字符串作为值类型的同时可以获得极高的性能。</p>
-
-<h2 id="toc_1">Working with Characters</h2>
-
-<p>可以使用 <code>for-in</code> 循环来遍历字符串中的 <code>characters</code> 属性来获取每一个字符的值。</p>
-
-<p>字符串可以通过传递一个值类型为 <code>Character</code> 的数组作为自变量来初始化。</p>
-
-<h2 id="toc_2">连接字符串和字符</h2>
-
-<p>字符串可以通过加法运算符相加在一起创建一个新的字符串。</p>
-
-<p><code>append()</code> 方法可以将一个字符附加到一个字符串变量的尾部。</p>
-
-<h2 id="toc_3">Unicode</h2>
-
-<h3 id="toc_4">Unicode Scalars（Unicode 标量）</h3>
-
-<p>Swift 的 <code>String</code> 类型是基于 Unicode 标量建立的。Unicode 标量是对应字符或者修饰符的唯一的 21 位数字。</p>
-
-<p>Unicode 码位（code poing）的范围是 <code>U+0000</code> 到 <code>U+1F425</code> 或者 <code>U+E000</code> 到 <code>U+10FFFF</code>。Unicode 标量不包括 Unicode 代理项（surrogate pair）码位，其码位范围是 <code>U+D800</code> 到 <code>U+DFFF</code>。</p>
-
-<p>注意，并不是所有的 21 位 Unicode 标量都表示一个字符，因为有一些标量是留作未来分配的。</p>
-
-<h3 id="toc_5">字符串字面量的特殊字符（Special Character in String Literals）</h3>
-
-<p><img src="media/14634546001476/14634553799193.jpg" alt=""/></p>
-
-<h3 id="toc_6">可扩展的字形群集（Extended Grapheme Clusters）</h3>
-
-<p>每一个 Swift 的 Character 类型代表一个可扩展的字形群。一个可扩展的字形群是一个或多个可生成人类可读的字符 Unicode 标量的有序排列。</p>
-
-<h3 id="toc_7">计算字符数量</h3>
-
-<p>如果想要获得一个字符串中的 <code>Character</code> 值得数量，可以使用字符串的 <code>characters</code> 属性的 <code>count</code> 属性。</p>
-
-<p>注意在 Swift 中，使用可拓展的字符群集作为 <code>Character</code> 值来连接或改变字符串时，并不一定会更改字符串的字符数量。</p>
-
-<h2 id="toc_8">访问和修改字符串</h2>
-
-<h3 id="toc_9">字符串索引</h3>
-
-<p>使用 <code>startIndex</code> 属性可以获取一个 <code>String</code> 的第一个 <code>Character</code> 的索引。使用 <code>endIndex</code> 属性可以获取最后一个 <code>Character</code> 的后一个位置的索引，所以 <code>endIndex</code> 属性不能作为一个字符串的有效下标。如果 <code>String</code> 是空串，两者是相等的。</p>
-
-<p><code>String.Index.predecessor()</code> 获得前一个索引，<code>successor()</code> 获得后一个索引。</p>
-
-<p><code>Characters</code> 属性的 <code>indices</code> 属性会创建一个包含全部索引的范围（<code>Range</code>），用来在一个字符串中访问单个字符。</p>
-
-<h3 id="toc_10">插入和删除</h3>
-
-<ul>
-<li><code>insert(_:atIndex:)</code>：在一个字符串的制定索引插入一个字符</li>
-<li><code>insertContentsOf(_:at:)</code>：在一个字符串的指定索引插入一个字符串</li>
-<li>`removeAtIndex(_:)：在一个字符串的指定索引删除一个字符</li>
-<li><code>removeRange(_:)</code>：在一个字符串的指定索引删除一个子字符串</li>
-</ul>
-
-<h2 id="toc_11">比较字符串</h2>
-
-<h3 id="toc_12">字符串/字符相等</h3>
-
-<p>使用 <code>==</code> 和 <code>!=</code> 来比较两个字符/字符串是否相等/不等。</p>
-
-<h3 id="toc_13">前缀/后缀相等</h3>
-
-<ul>
-<li><code>hasPrefix(_:)</code></li>
-<li><code>hasSuffix(_:)</code></li>
-</ul>
-
-<h2 id="toc_14">字符串的 Unicode 表示形式（Unicode Representations of Strings）</h2>
-
-<p>当一个 Unicode 字符串被写进文本文件或其他存储时，字符串中的 Unicode 标量会用 Unicode 定义的几种编码格式（encoding forms）编码。每一个字符串中的小块编码都被称为 <code>code units</code>。这些包括 UTF-8,UTF-16,UTF-32 编码格式。</p>
+<p>至于原因，单纯得觉得 Medium 上的衬线字体很好看。如果需要魔改这个博客的话，还是挺麻烦的，自己目前的前端知识还处于未入门的水平，所以就不折腾了。</p>
 
 
     
@@ -220,16 +146,13 @@
         <div class="large-6 columns">
         <p class="text-left" style="padding:15px 0px;">
       
-          <a href="14635617646524.html" 
-          title="Previous Post: Swift学习笔记：控制流">&laquo; Swift学习笔记：控制流</a>
-      
         </p>
         </div>
         <div class="large-6 columns">
       <p class="text-right" style="padding:15px 0px;">
       
-          <a  href="14631242333306.html" 
-          title="Next Post: Swift 学习笔记：属性">Swift 学习笔记：属性 &raquo;</a>
+          <a  href="14871569977647.html" 
+          title="Next Post: Python 风格指南笔记">Python 风格指南笔记 &raquo;</a>
       
       </p>
         </div>

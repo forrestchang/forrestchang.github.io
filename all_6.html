@@ -111,6 +111,210 @@
 		<div class="markdown-body home-categories">
 		
 			<div class="article">
+                <a class="clearlink" href="14824093902273.html">
+                
+                  <h1>Swift 中的内存管理</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<p>这篇文章是在阅读《The Swift Programming Language》Automatic Reference Counting（ARC，自动引用计数）一章时做的一些笔记，同时参考了其他的一些资料。</p>
+
+<p>在早期的 iOS 开发中，内存管理是由开发者手动来完成的。因为传统的垃圾回收机制对于移动平台来说十分低效，苹果采用的是引用计数（RC，Reference Counting）的方式来管理内存，开发者需要通过手工的方式增加或减少一个实例的引用计数。在 iOS 5 之后，引入了 ARC 自动引用计数，使得开发者不需要手动地调用 <code>retain</code> 和 <code>release</code> 来管理引用计数，但是实际上这些方法还是会被调用，只不过是交给了编译器来完成，编译器会在合适的地方帮我们加入这些方法。</p>
+
+<p><strong>什么是自动引用计数？</strong></p>
+
+<p>每当你创建一个类的实例的时候，ARC 便会自动分配一块内存空间来存放这个实例的信息，当这个实例不再被使用的时候，ARC 便释放实例所占用的内存。一般每个被管理的实例都会与一个引用计数器相连，这个计数器保存着当前实例被引用的次数，一旦创建一个新的引用指向这个实例，引用计数器便加 1，每当指向该实例的引用失效，引用计数器便减 1，当某个实例的引用计数器变成 0 的时候，这个实例就会被立即销毁。</p>
+
+<p>在 Swift 中，对引用描述的关键字有三个：<code>strong</code>，<code>weak</code> 和 <code>unowned</code>，所有的引用没有特殊说明都是 <code>strong</code> 强引用类型。在 ARC 中，只有指向一个实例的所有 <code>strong</code> 强引用都断开了，这个实例才会被销毁。</p>
+
+<p>举一个简单的例子：</p>
+
+<pre><code class="language-swift">class A {
+    let name: String
+    init(name: String) {
+        self.name = name
+    }
+    deinit {
+        print(&quot;A deinit&quot;)
+    }
+}
+
+var a1: A?
+var a2: A?
+
+a1 = A(name: &quot;A&quot;)
+a2 = a1
+
+a1 = nil
+</code></pre>
+
+<p>上面这个例子中，虽然 <code>a1</code> 这个 <code>strong</code> 强引用断开了，但是还有 <code>a2</code> 这个强引用指向这个实例，所以不会在命令行中输出 <code>A deinit</code>，当我们把 <code>a2</code> 也设置为 <code>nil</code> 时，与这个实例关联的所有强引用均断开了，这个实例便会被销毁，在命令行中打印 <code>A deinit</code>。</p>
+
+<p><strong>循环强引用（Strong Reference Cycles）</strong></p>
+
+<p>但是，在某些情况下，一个类实例的强引用数永远不能变为 0，例如两个类实例互相持有对方的强引用，因而每个类实例都让对方一直存在，这就是所谓的强引用循环（Strong Reference Cycles）。</p>
+
+<p>这里引用 TSPL 中的例子：</p>
+
+<pre><code class="language-swift">class Person {
+    let name: String
+    init(name: String) { self.name = name }
+    var apartment: Apartment?
+    deinit { print(&quot;\(name) is being deinitialized&quot;) }
+}
+
+class Apartment {
+    let unit: String
+    init(unit: String) { self.unit = unit }
+    var tenant: Person?
+    deinit { print(&quot;Apartment \(unit) is being deinitialized&quot;) }
+}
+</code></pre>
+
+<p>每一个 <code>Person</code> 实例有一个可选的初始化为 <code>nil</code> 的 <code>Apartment</code> 类型，因为一个人并不总是拥有公寓。同样，每一个 <code>Apartment</code> 实例都有一个可选的初始化为 <code>nil</code> 的 <code>Person</code> 类型，因为一个公寓并不总是属于一个人。</p>
+
+<p>接下来的代码片段定义了两个可选类型的变量 <code>john</code> 和 <code>unit4A</code>，并分别设定为下面的 <code>Person</code> 和 <code>Apartment</code> 的实例，这两个变量都备受设定为 <code>nil</code>：</p>
+
+<pre><code class="language-swift">var john: Person?
+var unit4A: Apartment?
+</code></pre>
+
+<p>现在可以创建特定的 <code>Person</code> 和 <code>Apartment</code> 实例，并将它们赋值给 <code>john</code> 和 <code>unit4A</code> 变量：</p>
+
+<pre><code class="language-swift">john = Person(name: &quot;John Appleseed&quot;)
+unit4A = Apartment(unit: &quot;4A&quot;)
+</code></pre>
+
+<p>下面一段代码将这两个实例关联起来：</p>
+
+<pre><code class="language-swift">john!.apartment = unit4A
+unit4A!.tenant = john
+</code></pre>
+
+<p>将两个实例关联在一起后，强引用的关系如图所示：</p>
+
+<p><img src="media/14824093902273/14607053938205.jpg" alt="14607053938205"/></p>
+
+<p>这两个实例关联之后，会产生一个循环强引用，当断开 <code>john</code> 和 <code>unit4A</code> 所持有的强引用时，引用计数器并不会归零，所以这两块空间也得不到释放，这就导致了内存泄漏。</p>
+
+<p>可以将其中一个类中的变量设定为 <code>weak</code> 弱引用来打破这种强引用循环：</p>
+
+<pre><code class="language-swift">class Apartment {
+    let unit: String
+    init(unit: String) { self.unit = unit }
+    weak var tenant: Person?
+    deinit { print(&quot;Apartment \(unit) is being deinitialized&quot;) }
+}
+</code></pre>
+
+<p><img src="media/14824093902273/14607057294969.jpg" alt="14607057294969"/></p>
+
+<p>当断开 <code>john</code> 和 <code>unit4A</code> 所持有的强引用时，<code>Person instance</code> 的引用计数器变成 0，实例被销毁，从而 <code>Apartment instance</code> 的引用计数器也变为 0，实例被销毁。</p>
+
+<p><strong>什么时候使用 <code>weak</code>？</strong></p>
+
+<p>当两个实例是 optional 关联在一起时，确保其中的一个使用 <code>weak</code> 弱引用，就像上面所说的那个例子一样。</p>
+
+<p><strong><code>unowned</code> 无主引用</strong></p>
+
+<p>在某些情况下，声明的变量总是有值得时候，我们需要使用 <code>unowned</code> 无主引用。</p>
+
+<p>同样借用一下 TSPL 中的例子：</p>
+
+<pre><code class="language-swift">class Customer {
+    let name: String
+    var card: CreditCard?
+    init(name: String) {
+        self.name = name
+    }
+    deinit { print(&quot;\(name) is being deinitialized&quot;) }
+}
+
+class CreditCard {
+    let number: UInt64
+    unowned let customer: Customer
+    init(number: UInt64, customer: Customer) {
+        self.number = number
+        self.customer = customer
+    }
+    deinit { print(&quot;Card #\(number) is being deinitialized&quot;) }
+}
+</code></pre>
+
+<p>这里定义了两个类，<code>Customer</code> 和 <code>CreditCard</code>，模拟了银行客户和客户的信用卡，在这个例子中，每一个类都是将另一个类的实例作为自身的属性，所以会产生循环强引用。</p>
+
+<p>和之前那个例子不同的是，<code>CreditCard</code> 类中有一个非可选类型的 <code>customer</code> 属性，因为，一个客户可能有或者没有一张信用卡，但是一张信用卡总是关联着一个用户。</p>
+
+<pre><code class="language-swift">var john: Customer?
+john = Customer(name: &quot;John Appleseed&quot;)
+john!.card = CreditCard(number: 1234_5678_9012_3456, customer: john!)
+</code></pre>
+
+<p>关联两个实例后，它们的引用关系如图所示：</p>
+
+<p><img src="media/14824093902273/14607068387297.jpg" alt="14607068387297"/></p>
+
+<p>当断开 <code>john</code> 变量持有的强引用时，再也没有指向 <code>Customer</code> 的强引用了，所以该实例被销毁了，其后，再也没有指向 <code>CreditCard</code> 的强引用了，该实例也被销毁了。</p>
+
+<p><strong>什么时候使用 <code>unowned</code> 无主引用？</strong></p>
+
+<p>两个实例 A 和 B，如果实例 A 必须在实例 B 存在的前提下才能存在，那么实例 A 必须用 <code>unowned</code> 无主引用指向实例 B。也就是说，有强制依赖性的那个实例必须对另一个实例持有无主引用。</p>
+
+<p>例如上面那个例子所说，银行客户可能没有信用卡，但是每张信用卡总是绑定着一个银行客户，所以信用卡这个类就需要用 <code>unowned</code> 无主引用。</p>
+
+<p><strong>无主引用以及隐市解析可选属性</strong></p>
+
+<p>还有一种情况，两个属性都必须有值，并且初始化完成之后永远不会为 <code>nil</code>。在这种情况下，需要一个类使用 <code>unowned</code> 无主引用，另一个类使用<a href="http://wiki.jikexueyuan.com/project/swift/chapter2/01_The_Basics.html#implicityly_unwrapped_optionals">隐式解析可选属性</a>。</p>
+
+<p><strong>闭包引起的循环强引用</strong></p>
+
+<p>在 Swift 中，闭包和函数都属于引用类型。并且闭包还有一个特性：可以在其定义的上下文中捕获常量或者变量。所以，在一个类中，闭包被赋值给了一个属性，而这个闭包又使用了这个类的实例的时候，就会引起循环强引用。</p>
+
+<p>Swift 提供了一种方法来解决这个问题：闭包捕获列表（closure capture list）。在定义闭包的同时定义捕获列表作为闭包的一部分，捕获列表定义了闭包体内捕获一个或者多个引用类型的规则。跟解决两个类实例之间的循环强引用一样，声明每个捕获的引用为弱引用或者无主引用。</p>
+
+<p>捕获列表中的每一项都由一对元素组成，一个元素是 <code>weak</code> 或者 <code>unowned</code> 关键字，另一个元素是类实例的引用（例如最常见得是 <code>self</code>），这些在方括号内用逗号隔开。</p>
+
+<p>具体的使用方法请参考<a href="http://wiki.jikexueyuan.com/project/swift/chapter2/16_Automatic_Reference_Counting.html#resolving_strong_reference_cycles_for_closures">官方文档</a>。</p>
+
+<p><strong>何时使用 <code>weak</code>，何时使用 <code>unowned</code></strong></p>
+
+<p>在闭包和捕获的实例总是相互引用并且总是同时销毁的时候，将闭包内的捕获定义为 <code>unowned</code> 无主引用。</p>
+
+<p>在被捕获的实例可能变成 <code>nil</code> 的情况下，使用 <code>weak</code> 弱引用。如果被捕获的引用绝对不会变成 <code>nil</code>，应该使用 <code>unowned</code> 无主引用，而不是 <code>weak</code> 弱引用。</p>
+
+<p><strong>Garbage Collection（GC，垃圾回收）</strong></p>
+
+<p>其实 ARC 应该也算 GC 的一种，不过我们一谈到 GC，大多都会想到 Java 中的垃圾回收机制，相比较 GC，ARC 简单得许多。以后有机会可以讨论一下 Java 中的内存管理。</p>
+
+<p>另外，需要注意的一点是，这里所讲的都是针对于<code>引用类型</code>，<code>结构体</code>和<code>枚举</code>在 Swift 中属于值类型，不在 ARC 的考虑范围之内。</p>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2016/4/15</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='technology.html'>Tech</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+                        <a href="http://forrestchang.github.io/14824093902273.html#disqus_thread">comments</a>
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
                 <a class="clearlink" href="14824089876210.html">
                 
                   <h1>更有效率的程序员（一）：时间记录</h1>
@@ -1017,251 +1221,6 @@
                 </div>
               </div><!-- article -->
         
-			<div class="article">
-                <a class="clearlink" href="14824091738545.html">
-                
-                  <h1>学院派编程自学指南</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<p>之前有不少学弟学妹问我如何学习编程，根据DRY法则（Don&#39;t Repeat Yourself），还是把自己学习过程中的一些经验整理成一篇博客吧。由于本人目前也处在学习的阶段，文章中列出来的内容也并未全部学习过，所以文章的客观性可能存在一些问题，还望读者自行判断。</p>
-
-<p>这份指南会不定期更新，有好的建议也可以留言或者给我发邮件。</p>
-
-<h1 id="toc_0">准备</h1>
-
-<p>需要的所有工具就是一台可以连接上网络的电脑以及你本人。</p>
-
-<h2 id="toc_1">科学上网</h2>
-
-<p>很可惜，即使是现在，大部分学习计算机的学生还是不会科学上网。在当前的网络环境下，不会科学上网，意味着你不能用Google查资料，不能再Reddit看最新的资讯，需要忍受龟速的GitHub，云云。然而，科学上网本身却是一件成本非常低的事情，不想折腾的话，一年花个几百块钱买个现成的服务；有折腾精神的人，可以买个服务器自己假设架设上网工具。这一步很重要，不能跳过，否则后面指南中的许多内容对你来说只能是404了。</p>
-
-<p>关于科学上网的具体内容，就不再多说了，给你一个关键词：<strong>Lantern</strong>。</p>
-
-<h2 id="toc_2">学会使用Google搜索</h2>
-
-<p>学会了科学上网，你就能够使用Google了，为什么不是Baidu？相信你用了Google之后就自然明白了。</p>
-
-<p>当了一个学期的助教之后发现，很多的同学其实是没有使用搜索引擎的意识的，遇到问题要么自己死磕，或者就直接求助于他人。这两种都不是很好的办法，正确的做法是<strong>在自己思考后没有结果，然后使用搜索引擎查找问题</strong>，现阶段，你遇到的所有问题（几乎）都能在Google上找到现成的答案，如果没找到，肯定是你搜索的方式不正确。</p>
-
-<p>使用Google的基本搜索功能就能够解决大部分问题了，当然，如果想要学习更加高级的技巧，这里有一份指南：<a href="https://www.zhihu.com/question/20161362">如何用好Google等搜索引擎？</a>。</p>
-
-<h2 id="toc_3">英语</h2>
-
-<p>你不得不承认，目前为止，编程世界的主流语言还是英文，所以英语能力的好坏决定了你编程能力的上界。中文资料和英文资料相比，实在是太匮乏了，就质量而言，也相对较低。比如我后面提到的很多的课程，都是英文的内容。</p>
-
-<p>值得庆幸的是，阅读编程资料所需要的英文水平并不需要很高，就个人经验来说，基本上四级水平就足够了，可能还会存在一些生词，但是基本上并不妨碍理解。</p>
-
-<p>英文的学习应该一直贯穿于编程的学习之中，作为一门工具语言，只需要花少量时间就可以带来比较大的收益（2/8法则）。</p>
-
-<p>本人的英文水平也不算好，但是基本上能够阅读技术书籍和文档，能够听懂公开课，所以还是有一些简单的经验可以分享一下。</p>
-
-<h3 id="toc_4">把系统换成英文的</h3>
-
-<p>有些同学可能看到英文就头疼，这很正常，因为在中文的环境下面生活的太久了。为此，可以试着将平常用的系统换成英文的，虽说不能学到几个单词（Copy/Paste 之类的词），但是可以让你不那么排斥英文，<del>顺便还可以提升一下B格</del>。</p>
-
-<h3 id="toc_5">安装电子词典</h3>
-
-<p>OS X下推荐欧路词典，在APP Store中购买完整版的，因为需要添加外部的词典。</p>
-
-<p>这里推荐一部比较好的词典：《Collins 英汉双解词典》，它是这个样子的：</p>
-
-<p><img src="media/14824091738545/eudic.jpg" alt="eudi"/></p>
-
-<p>主要看它的英文解释，一个词看得次数多了也就记住了。</p>
-
-<h3 id="toc_6">每天阅读英文的资料</h3>
-
-<p>一些个人经常阅读的网站：</p>
-
-<ul>
-<li><a href="http://quora.com/">Quora</a>：一个类似于知乎的问答类网站，可以挑自己感兴趣的内容来阅读。</li>
-<li><a href="https://news.ycombinator.com/">Hacker News</a>：IT资讯，IT界发生的最新的事件都会在上面。</li>
-<li><a href="http://www.reddit.com/r/programming/">PROGRAMMING</a>：Reddit的Programming板块，和Hacker News类似，不过更加专注于技术内容方面。</li>
-</ul>
-
-<p><strong>不要花太多时间在上面，每天浏览一下就行。</strong></p>
-
-<h2 id="toc_7">英文学习的总结</h2>
-
-<p>英语不是能够速成的东西，也不是三言两语能够讲完的东西，这里只是提供一个简单的指导，具体的学习计划还请自行搜索更加专业的学习指南。</p>
-
-<h1 id="toc_8">编程基础</h1>
-
-<p>完成了这一部分内容的学习后你应该具备：</p>
-
-<ul>
-<li>了解什么是Computer Science</li>
-<li>基本的计算机数学能力</li>
-<li>基本的程序开发能力</li>
-<li>基本的算法与数据结构的知识</li>
-</ul>
-
-<h2 id="toc_9">计算机科学导论</h2>
-
-<ul>
-<li><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-00sc-introduction-to-computer-science-and-programming-spring-2011/">Introduction to Computer Science and Programming</a>：面向<strong>无编程基础或者只有一点基础的人群</strong>，使用<strong>Python</strong>作为教学语言。</li>
-<li><a href="http://www.extension.harvard.edu/open-learning-initiative/intensive-introduction-computer-science">Intensive Introduction to Computer Science Open Learning Course</a>：CS50，哈佛很火的一门课，在网易公开课上可以找到翻译的视频内容。涵盖的主题有算法（设计、应用、分析）；软件开发（抽象、封装、数据结构、Debug、测试）；计算机体系结构等等。基本上是一门大杂烩的导论课。使用的语言是<strong>C</strong>、<strong>PHP</strong>、<strong>JavaScript</strong>。</li>
-<li><a href="https://www.youtube.com/view_play_list?p=FE6E58F856038C69">Programming Abstractions</a>：介绍了更加高级的编程主题（递归、算法分析、数据抽象等等），使用C++作为教学语言。</li>
-</ul>
-
-<h2 id="toc_10">数学</h2>
-
-<ul>
-<li><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-fall-2010/">Mathematics for Computer Science</a>：介绍了学习计算机所需要的一些数学知识，内容包括集合、关系、证明方法、数论、图论等等。</li>
-<li><a href="https://www.youtube.com/watch?v=h_9WjWENWV8&amp;feature=share&amp;list=PLTdIp1DywMlUpLHEg3ADhE6rrxhW_T5Rx">Discrete Mathematics</a>：离散数学。</li>
-</ul>
-
-<h2 id="toc_11">编程语言</h2>
-
-<ul>
-<li><a href="https://www.coursera.org/course/programming1">Learn to Program: The Fundamentals</a>：面向<strong>无编程基础或者只有一点基础的人群</strong>，使用<strong>Python</strong>作为教学语言。</li>
-<li><a href="https://www.coursera.org/course/programming2">Learn to Program: Crafting Quality Code</a>：如何编写高效与正确的代码。需要有<a href="https://www.coursera.org/course/programming1">Learn to Program: The Fundamentals</a>的基础。</li>
-<li><a href="http://cs61a.org/">The Structure and Interpretation of Computer Programs</a>：经典的SICP的Python版。</li>
-</ul>
-
-<h2 id="toc_12">计算理论</h2>
-
-<ul>
-<li><a href="https://www.youtube.com/playlist?list=PL601FC994BDD963E4">Introduction to the Theory of Computation</a></li>
-<li><a href="https://www.coursera.org/course/principlescomputing1">Principles of Computing (Part 1)</a>：介绍了CS中基本的数学和编程理论，需要有<strong>Python</strong>基础。</li>
-</ul>
-
-<h2 id="toc_13">算法与数据结构</h2>
-
-<ul>
-<li><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/">Introduction to Algorithms</a>：MIT的算法导论课，用《算法导论》作为教材，网上可以找到视频资源，网易公开课上有老版的翻译。</li>
-</ul>
-
-<h1 id="toc_14">核心课程</h1>
-
-<p>学完了「编程基础」部分的内容后，应该已经可以开发一些简单的程序了，「核心课程」的内容将深入学习计算机科学理论的几个重要的内容。</p>
-
-<h2 id="toc_15">数学</h2>
-
-<ul>
-<li><a href="https://www.coursera.org/course/matrix">Coding the Matrix: Linear Algebra through Computer Science Applications</a>：线性代数以及在计算机中的应用。</li>
-<li><a href="http://inst.eecs.berkeley.edu/%7Ecs70/sp16/">Discrete Mathematics and Probability Theory</a>：离散数学与概率论。</li>
-</ul>
-
-<h2 id="toc_16">计算理论</h2>
-
-<ul>
-<li><a href="https://www.youtube.com/playlist?list=PLslgisHe5tBM8UTCt1f66oMkpmjCblzkt">Theory of Computation - Fall 2011</a>：介绍了机器模型、上下文无关文法、图灵机等，使用的教材是Michael Sipser的*<a href="http://www.amazon.com/Introduction-Theory-Computation-Michael-Sipser/dp/113318779X">Introduction to the Theory of Computation</a>。</li>
-</ul>
-
-<h2 id="toc_17">算法与数据结构</h2>
-
-<ul>
-<li><a href="http://www-inst.eecs.berkeley.edu/%7Ecs61b/fa15/">Data Structures and Advanced Programming</a></li>
-<li><a href="http://www.cs.berkeley.edu/%7Ejrs/170/">Efficient Algorithms and Intractable Problems</a></li>
-</ul>
-
-<h2 id="toc_18">操作系统</h2>
-
-<ul>
-<li><a href="https://cs162.eecs.berkeley.edu/">Operating Systems and Systems Programming</a>：UCB经典的操作系统课程，介绍了操作系统的基本概念、系统编程、网络、分布式系统、内存分配、多线程等等。</li>
-<li><a href="https://www.edx.org/course/introduction-linux-linuxfoundationx-lfs101x-2#!">Introduction to Linux</a>：介绍了Linux以及一些简单的命令行使用。</li>
-</ul>
-
-<h2 id="toc_19">程序语言理论</h2>
-
-<ul>
-<li><a href="https://www.youtube.com/playlist?list=PL9D558D49CA734A02">Programming Paradigms</a>：编程范式。</li>
-<li><a href="https://www.coursera.org/course/compilers">Compilers</a>：Stanford的编译原理课。</li>
-<li><a href="http://freevideolectures.com/Course/2249/Principles-of-Programming-Languages/1">Principles of Programming Languages</a></li>
-</ul>
-
-<h2 id="toc_20">计算机体系结构</h2>
-
-<ul>
-<li><a href="https://www.youtube.com/playlist?list=PL5PHm2jkkXmgVhh8CHAu9N76TShJqfYDt">Computer Architecture</a>：CMU</li>
-<li><a href="https://www.coursera.org/course/comparch">Computer Architecture</a></li>
-</ul>
-
-<h2 id="toc_21">计算机网络</h2>
-
-<ul>
-<li><a href="http://www.cs.berkeley.edu/%7Eistoica/classes/cs268/10/">Computer Networks</a></li>
-<li><a href="https://www.youtube.com/channel/UCb1OiccPJ0wbMZMOleCvhWQ">Fundamentals of Computer Networking</a></li>
-</ul>
-
-<h1 id="toc_22">编程工具</h1>
-
-<h2 id="toc_23">IDE</h2>
-
-<ul>
-<li>Python: <a href="https://www.jetbrains.com/pycharm/">PyCharm</a></li>
-<li>Java:<a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a></li>
-<li>C/C++: <a href="https://www.visualstudio.com/en-us/visual-studio-homepage-vs.aspx">Visual Studio</a></li>
-</ul>
-
-<h2 id="toc_24">编辑器</h2>
-
-<ul>
-<li>Emacs/Vim</li>
-<li>Sublime Text 3</li>
-<li>VS Code</li>
-<li>Atom</li>
-</ul>
-
-<p>并不一定要用Emacs或者Vim，ST其实已经很强大了，足够做日常简单的编辑工作。（这里黑一下Atom，启动速度太感人了，所以放在最后一个。）</p>
-
-<h2 id="toc_25">Git &amp; GitHub</h2>
-
-<p>使用版本控制来管理自己平时写的代码。</p>
-
-<p>推荐阅读：</p>
-
-<ul>
-<li><a href="https://github.com/geeeeeeeeek/git-recipes/wiki">git-recipes</a></li>
-<li><a href="http://git-scm.com/book/zh/v2?f=tt&amp;hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io">Pro Git 2nd Edition</a></li>
-<li><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">Git教程 - 廖雪峰</a></li>
-</ul>
-
-<h1 id="toc_26">如何克服拖延</h1>
-
-<p>资料是有了，但是拖延症不去学怎么办？</p>
-
-<ul>
-<li><a href="http://www.pomodorotechnique.com/">番茄工作法</a></li>
-</ul>
-
-<h1 id="toc_27">参考资料</h1>
-
-<ul>
-<li><a href="https://github.com/prakhar1989/awesome-courses">https://github.com/prakhar1989/awesome-courses</a></li>
-<li><a href="http://blog.agupieware.com/2014/05/online-learning-bachelors-level.html">http://blog.agupieware.com/2014/05/online-learning-bachelors-level.html</a></li>
-<li><a href="https://docs.google.com/spreadsheets/d/1_kdHrT8izbROJNaxGflpcZm2ivsjRGF8j1hMzl3b8O0/htmlview">https://docs.google.com/spreadsheets/d/1_kdHrT8izbROJNaxGflpcZm2ivsjRGF8j1hMzl3b8O0/htmlview</a></li>
-<li><a href="https://www.reddit.com/r/programming/wiki/faq">https://www.reddit.com/r/programming/wiki/faq</a></li>
-</ul>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2016/2/13</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='technology.html'>Tech</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-                        <a href="http://forrestchang.github.io/14824091738545.html#disqus_thread">comments</a>
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
               
 
 
@@ -1341,6 +1300,12 @@
 	      
 		      
 			      <li class="post">
+			        <a href="14878992387553.html">换了一个新地方写东西</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
 			        <a href="14871569977647.html">Python 风格指南笔记</a>
 			      </li>
 		     
@@ -1360,12 +1325,6 @@
 		      
 			      <li class="post">
 			        <a href="14824086421976.html">推荐系统笔记</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="14824103542982.html">2016 Week 51 Review</a>
 			      </li>
 		     
 		  
