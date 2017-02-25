@@ -27,14 +27,14 @@
             <nav class="site-nav">
                 <a href="#" class="menu-icon">
                     
-                    <!-- <svg viewBox="0 0 18 15">
+                    <svg viewBox="0 0 18 15">
                         <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"
                         />
                         <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"
                         />
                         <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"
                         />
-                    </svg> -->
+                    </svg>
 
                 </a>
                 <div class="trigger">
@@ -56,567 +56,45 @@
         <div class="home">
             <ul class="post-list">
                 
-                <li>
-                    <span class="post-meta">2017/2/15</span>
-                    <h2><a class="post-link" href="14871569977647.html">Python 风格指南笔记</a></h2>
-                    <div class="post-content" itemprop="articleBody">
-                        <h2 id="toc_0">函数与方法装饰器</h2>
-
-<ul>
-<li>优点：优雅的在函数上指定一些转换，该转换可能减少一些重复代码，保持已有函数不变（enforce invariants）</li>
-<li>缺点：装饰器可以在函数的参数或返回值上执行任何操作，这可能导致让人惊异的隐藏行为。而且，装饰器在导入时执行。从装饰器代码的失败中恢复更加不可能。</li>
-<li>结论：如果好处很显然，就明智而谨慎的使用装饰器。装饰器应该遵守和函数一样的导入和命名规则。装饰器的 Python 文档应该清晰的说明函数是一个装饰器。请为装饰器编写单元测试。<strong>避免装饰器自身对外界的以来（即不要依赖于文件、socket、数据库连接等）</strong>。</li>
-</ul>
-
-<h2 id="toc_1">线程</h2>
-
-<p>优先使用 Queue 模块的 <code>Queue</code> 数据类型作为线程间的数据通信方式。另外，使用 threading 模块及其锁原语（locking primitives）。了解条件变量的合适使用方式，这样你就可以使用 <code>threading.Condition</code> 来取代低级级别的锁了。</p>
-
-<h2 id="toc_2">威力过大的特性</h2>
-
-<ul>
-<li>Tip：避免使用这些特性</li>
-<li>优点：强大的语言特性，能让你的代码更紧凑</li>
-<li>缺点：使用这些很 cool 的特性十分诱人，但不是绝对必要。使用奇技淫巧的代码将更加难以阅读和调试。开始可能还好，但当你回顾代码，它们可能比那些稍长一点但是更直接的代码更加难以理解。</li>
-<li>结论：在你的代码中避免使用这些特性。</li>
-</ul>
-
-<h2 id="toc_3">注释</h2>
-
-<p>Python 有一种独一无二的注释方式：使用文档字符串。文档字符串是包、模块、类或函数的第一个语句。这些字符串可以通过对象的 <code>__doc__</code> 成员被自动提取，并且被 <code>pydoc</code> 所用。</p>
-
-<p>组织方式：</p>
-
-<ul>
-<li>第一行以句号、问号或惊叹号结尾的概述（或者改文档字符串只有单纯的一行）</li>
-<li>接着是一个空行</li>
-<li>接着是文档字符串的剩余部分，它应当与文档字符串的第一行的第一个引号对齐</li>
-</ul>
-
-<h3 id="toc_4">模块</h3>
-
-<p>每个文件应该包含一个许可样板。根据项目使用的许可（例如：Apache 2.0、BSD、LGPL、GPL）选择合适的样板。</p>
-
-<h3 id="toc_5">函数和方法</h3>
-
-<p>一个函数必须要有文档字符串，除非它满足以下条件：</p>
-
-<ol>
-<li>外部不可见</li>
-<li>非常短小</li>
-<li>简单明了</li>
-</ol>
-
-<p>文档字符串应该包含函数做什么，以及输入和输出的详细描述。通常，<strong>不应该描述「怎么做」，除非是一些复杂的算法</strong>。文档字符串应该提供足够的信息，当别人编写代码调用该函数时，他不需要看一行代码，只要看文档字符串就可以了。<strong>对于复杂的代码，在代码旁边加注释胡比使用文档字符串更有意义</strong>。</p>
-
-<p>关于函数的几个方面应该在特定的小节中进行描述记录，这几个方面入下文所示，每节应该以一个标题行开始。标题行以冒号结尾，除标题行外，节的其他内容应被缩进 2 个空格。</p>
-
-<ul>
-<li>Args：列出每个每个参数的名字，并在名字后面使用一个冒号和空格，分隔对该参数的描述。如果描述太长超过了单行 80 个字符，使用 2 或者 4 个空格的悬挂缩进。<strong>描述应该包括所需的类型和含义</strong>。如果一个函数接受<code>可变长参数列表</code>或者<code>任意关键字参数</code>，应该详细列出这两者。</li>
-<li>Returns（或者 Yields，用于生成器）：描述返回值的类型和语义，如果函数返回 None，这一部分可以省略。</li>
-<li>Raises：列出与接口有关的所有异常。</li>
-</ul>
-
-<p>例子：</p>
-
-<pre><code class="language-python">def fetch_bigtable_rows(big_table, keys, other_silly_variable=None):
-    &quot;&quot;&quot;Fetches rows from a Bigtable.
-
-    Retrieves rows pertaining to the given keys from the Table instance
-    represented by big_table.  Silly things may happen if
-    other_silly_variable is not None.
-
-    Args:
-        big_table: An open Bigtable Table instance.
-        keys: A sequence of strings representing the key of each table row
-            to fetch.
-        other_silly_variable: Another optional variable, that has a much
-            longer name than the other args, and which does nothing.
-
-    Returns:
-        A dict mapping keys to the corresponding table row data
-        fetched. Each row is represented as a tuple of strings. For
-        example:
-
-        {&#39;Serak&#39;: (&#39;Rigel VII&#39;, &#39;Preparer&#39;),
-         &#39;Zim&#39;: (&#39;Irk&#39;, &#39;Invader&#39;),
-         &#39;Lrrr&#39;: (&#39;Omicron Persei 8&#39;, &#39;Emperor&#39;)}
-
-        If a key from the keys argument is missing from the dictionary,
-        then that row was not found in the table.
-
-    Raises:
-        IOError: An error occurred accessing the bigtable.Table object.
-    &quot;&quot;&quot;
-    pass
-</code></pre>
-
-<h3 id="toc_6">类</h3>
-
-<p>类应该在其定义下有一个用于描述该类的文档字符串。如果你的类有公有属性，那么文档中应该有一个属性段，并且应该遵守和函数参数相同的格式。</p>
-
-<pre><code class="language-python">class SampleClass(object):
-    &quot;&quot;&quot;Summary of class here.
-
-    Longer class information....
-    Longer class information....
-
-    Attributes:
-        likes_spam: A boolean indicating if we like SPAM or not.
-        eggs: An integer count of the eggs we have laid.
-    &quot;&quot;&quot;
-
-    def __init__(self, likes_spam=False):
-        &quot;&quot;&quot;Inits SampleClass with blah.&quot;&quot;&quot;
-        self.likes_spam = likes_spam
-        self.eggs = 0
-
-    def public_method(self):
-        &quot;&quot;&quot;Performs operation blah.&quot;&quot;&quot;
-</code></pre>
-
-<h3 id="toc_7">块注释和行注释</h3>
-
-<p><strong>最需要些注释的是代码中那些技巧性的部分</strong>。对于复杂的操作，应该在其操作开始前写上若干行注释，对于不是一幕了然的代码，应该在其行尾添加注释。</p>
-
-<p>为了提高可读性，注释至少应该离开代码 2 个空格。</p>
-
-<p><strong>绝对不要描述代码</strong>，假设阅读代码的人比你更懂 Python，他只是不知道你的代码要做什么。</p>
-
-<h2 id="toc_8">类</h2>
-
-<p>如果一个类不继承自其它类，就显式的从 object 继承，嵌套类也一样。</p>
-
-<h2 id="toc_9">TODO 注释</h2>
-
-<p>TODO 注释应该在所有开头处包含「TODO」字符串，紧跟着的是用括号括起来的你的名字，email 地址或者其他标识符。接着必须有一行注释，解释要做什么。</p>
-
-<p>Example：</p>
-
-<pre><code class="language-python"># TODO(kl@gmail.com): Use a &quot;*&quot; here for string repetition.
-# TODO(Zeke) Change this to use relations.
-</code></pre>
-
-<p>如果你的 TODO 是「将来做某事」的形式，那么请确保你包含了一个指定的日期或者一个特定的时间。</p>
-
-<h2 id="toc_10">导入格式</h2>
-
-<p>每个导入应该独占一行。导入总应该放在文件顶部，位于模块注释和文档字符串之后，模块全局变量和常量之前，导入应该按照从最通用到最不通用的顺序分组：</p>
-
-<ol>
-<li>标准库导入</li>
-<li>第三方库导入</li>
-<li>应用程序制定导入</li>
-</ol>
-
-<p>每种分组中，应该根据每个模块的完整包路径按字典顺序排序，忽略大小写。</p>
-
-<h2 id="toc_11">访问控制</h2>
-
-<p>字啊 Python 中，对于琐碎又不太重要的访问函数，你应该直接使用公有变量来取代它们，这样可以避免额外的函数调用开销。当添加更多的功能时，你可以用属性（property）来保持语法的一致性。</p>
-
-<p>另一方面，如果访问更复杂，或者变量的访问开销很显著，那么你应该使用像 <code>get_foo()</code> 和 <code>set_foo()</code> 这样的函数调用。如果之前的代码行为允许通过属性（property）访问，那么久不要井新的访问函数与属性绑定。这样，任何试图通过老方法访问变量的代码就没法运行，使用者也就会意识到复杂性发生了变化。</p>
-
-<h2 id="toc_12">命名</h2>
-
-<p>Python 之父 Guido 推荐的规范：</p>
-
-<p><img src="media/14871569977647/14872190162425.jpg" alt=""/></p>
-
-                        
+                <li class="post-item" itemscope="" itemtype="http://schema.org/Article">
+                    <div class="post-meta">
+                        <time class="time-meta" datetime="">2017/2/15</time>
+                    </div>
+                    <div class="post-detail">
+                        <h2 itemprop="name"><a itemprop="url" href="14871569977647.html">Python 风格指南笔记</a></h2>
                     </div>
                 </li>
                 
-                <li>
-                    <span class="post-meta">2016/10/28</span>
-                    <h2><a class="post-link" href="14824083276745.html">搭建 Python 科学计算环境</a></h2>
-                    <div class="post-content" itemprop="articleBody">
-                        <p>最近在看《Python for Data Analysis》（利用 Python 进行数据分析）这本书，贴一点笔记，这一篇是关于环境搭建的。另外吐槽一下，书中还是有不少错误的，语法错误就发现了好多处，大概读完了之后会整理出一份勘误表出来，可能是因为写书的时候是 14 年，两年过去了，pandas 库也有了一些变化。</p>
-
-<h2 id="toc_0">安装虚拟环境</h2>
-
-<p>不想把系统的 python 库搞得乱乱的（其实已经很乱了），所以还是建一个独立虚拟环境专门来做科学计算吧。具体的方法我在<a href="http://forrestchang.github.io/2016/07/17/virtualenv-notes/">virtualenv 相关笔记</a>这篇博客中已经详细写了，建议将启动虚拟环境的命令添加到终端的配置文件中去（使用<code>alias</code>），这样就避免每次一打开就输入一长串命令了。</p>
-
-<p>因为科学计算社区的一些库还是基于 Python 2.x 版本的，所以这里我们使用的 Python 版本为 2.7。</p>
-
-<p>然后使用以下命令一键安装所需要的库：</p>
-
-<pre><code class="language-shell">sudo pip install numpy pandas matplotlib jupyter scikit-learn
-</code></pre>
-
-<p>安装不上的请检查是不是需要翻墙。</p>
-
-<h2 id="toc_1">IPython</h2>
-
-<p>熟悉 Python 的同学应该对这个解释器不陌生，自带的 Python 解释器实在是太弱了。它与传统的“edit-compile-run”（编辑-编译-运行）方式的区别在于，它鼓励使用“execute-explore”（执行-探索），所以特别适合用在计算和数据分析领域，可以方便得使用「试错法」和「迭代法」进行开发。这里主要介绍它基于 Web 的交互式笔记本功能（命令行中大同小异）。</p>
-
-<h3 id="toc_2">开启 IPython Notebook</h3>
-
-<p>使用以下命令来打开 IPython Notebook：</p>
-
-<pre><code class="language-shell">(ENV2.7)$ jupyter notebook
-</code></pre>
-
-<p>这样 server 就启动了，浏览器会自动打开一个目录树。</p>
-
-<p>Note：记住在启动了虚拟环境的状态下使用这条命令，要不然就会使用系统的 IPython 版本来运行。</p>
-
-<p>然后我们新建一个 IPython Notebook 用作演示：</p>
-
-<p><img src="media/14824083276745/14776647413275.jpg" alt="14776647413275"/></p>
-
-<p><code>In [1]</code> 中的命令是为了能让我们直接在 IPython Notebook 中集成显示 <code>matplotlib</code> 画的图片，所以如果是用作科学计算的话，首先先执行以下这条命令再说。</p>
-
-<h3 id="toc_3">内省</h3>
-
-<p>在变量的前面或后面加上一个 <code>?</code> 就可以将有关该对象的一些通用信息显示出来。</p>
-
-<p><img src="media/14824083276745/14776649884990.jpg" alt="14776649884990"/></p>
-
-<p>基本上什么都能看。</p>
-
-<h3 id="toc_4"><code>%run</code> 命令</h3>
-
-<p>使用 <code>%run</code> 可以运行本地的 Python 脚本，并可以在 IPython 中访问脚本中定义的所有变量。</p>
-
-<p>如果想要脚本能够访问 IPython 中的命名空间，可以使用 <code>%run -i</code> 命令。</p>
-
-<h3 id="toc_5">测试代码的执行时间</h3>
-
-<p>使用 <code>%time</code> 和 <code>%timeit</code> 可以用来测试代码的执行时间。</p>
-
-<p><img src="media/14824083276745/14776653395450.jpg" alt="14776653395450"/></p>
-
-<h2 id="toc_6">Example</h2>
-
-<p>下面使用一个具体的例子来演示 IPython Notebook 的使用。</p>
-
-<p>使用到的数据可以在<a href="https://www.ssa.gov/oact/babynames/limits.html">Beyond the Top 1000 Names</a>下载到，这是一份包含1880-2015年每年出生婴儿姓名出现次数的数据表。</p>
-
-<p>由于该数据按年份被分割成了好多文件，所以第一步我们需要把所有数据组装到一个 DataFrame 中去。</p>
-
-<p><img src="media/14824083276745/14776659007521.jpg" alt="14776659007521"/></p>
-
-<p>不知道这些 Python 代码没关系，因为这里只是用来演示 IPython Notebook。</p>
-
-<p>然后我们按照性别和年度统计总出生数：</p>
-
-<p><img src="media/14824083276745/14776660937109.jpg" alt="14776660937109"/></p>
-
-<p>然后绘制出表格：</p>
-
-<p><img src="media/14824083276745/14776661445090.jpg" alt="14776661445090"/></p>
-
-                        
+                <li class="post-item" itemscope="" itemtype="http://schema.org/Article">
+                    <div class="post-meta">
+                        <time class="time-meta" datetime="">2016/10/28</time>
+                    </div>
+                    <div class="post-detail">
+                        <h2 itemprop="name"><a itemprop="url" href="14824083276745.html">搭建 Python 科学计算环境</a></h2>
                     </div>
                 </li>
                 
-                <li>
-                    <span class="post-meta">2016/7/17</span>
-                    <h2><a class="post-link" href="14824097975366.html">virtualenv 相关笔记</a></h2>
-                    <div class="post-content" itemprop="articleBody">
-                        <p>记录一些有关 virtualenv 的使用笔记。</p>
-
-<h2 id="toc_0">安装</h2>
-
-<p>直接使用 pip 来进行安装：</p>
-
-<pre><code>$ sudo pip install virtualenv
-</code></pre>
-
-<h2 id="toc_1">用途</h2>
-
-<p>主要用来创建隔离的 Python 开发环境，比如说一个项目需要用到 2.7 的库，另一个项目需要用到 3.0 的库，我们就可以使用  virtualenv 来分别给这两个项目创建虚拟的 Python 环境，这样可以有效的避免冲突。</p>
-
-<p>virtualenv 会创建一个拥有独立安装目录的 Python 环境，该隔离环境不会与其他 virtualenv 环境共享模块（可以选择是否访问全局安装目录）。</p>
-
-<h2 id="toc_2">使用</h2>
-
-<h3 id="toc_3">创建虚拟环境</h3>
-
-<p>最基本的使用：</p>
-
-<pre><code>$ virtualenv ENV
-</code></pre>
-
-<p>其中 <code>ENV</code> 是用来存放虚拟环境的目录。</p>
-
-<pre><code>$tree -L 1 ENV
-ENV
-├── bin
-├── include
-├── lib
-└── pip-selfcheck.json
-</code></pre>
-
-<p>其中 <code>lib</code> 和 <code>include</code> 目录是用来存放新的虚拟 Python 环境的依赖库，Package 被安装到 <code>lib/pythonX.X/site-packages/</code> 中，<code>bin</code> 目录中是新的 Python 解释器。<code>pip</code> 和 <code>setuptools</code> 默认被安装的。</p>
-
-<h3 id="toc_4">active script</h3>
-
-<p>进入虚拟环境：</p>
-
-<pre><code>$ source ENV/bin/active
-</code></pre>
-
-<p>（如果 <code>source</code> 命令不存在可以使用 <code>.</code> 命令。）</p>
-
-<p>退出虚拟环境：</p>
-
-<pre><code>$ deactivate
-</code></pre>
-
-<h3 id="toc_5">Removing an Environment</h3>
-
-<pre><code>(ENV)$ deactivate
-$ rm -r /path/to/ENV
-</code></pre>
-
-<h3 id="toc_6"><code>--system-site-packages</code> 选项</h3>
-
-<p>使用 <code>virtualenv --system-site-packages ENV</code> 将会继承全局 packages。并不是很常用的功能。</p>
-
-<h3 id="toc_7">指定 Python 版本</h3>
-
-<p>使用 <code>-p PYTHON_EXE</code> 选项在创建虚拟环境的时候制定 Python 版本。</p>
-
-<p>Python 2.7:</p>
-
-<pre><code>$ virtualenv -p /usr/bin/python2.7 ENV2.7
-</code></pre>
-
-<p>Python 3.5:</p>
-
-<pre><code>$ virtualenv -p /usr/local/bin/python3.5 ENV3.5
-</code></pre>
-
-<h3 id="toc_8">生成可打包环境</h3>
-
-<p>某些情况下，我们可能需要在别的地方使用这个已经配置好的虚拟环境，可以使用 <code>virtualenv --relocatable</code> 将 ENV 修改为可迁移的。</p>
-
-<pre><code>(ENV)$ virutalenv --relocatable ./
-</code></pre>
-
-                        
+                <li class="post-item" itemscope="" itemtype="http://schema.org/Article">
+                    <div class="post-meta">
+                        <time class="time-meta" datetime="">2016/7/17</time>
+                    </div>
+                    <div class="post-detail">
+                        <h2 itemprop="name"><a itemprop="url" href="14824097975366.html">virtualenv 相关笔记</a></h2>
                     </div>
                 </li>
                 
-                <li>
-                    <span class="post-meta">2016/7/17</span>
-                    <h2><a class="post-link" href="14824095038232.html">The Python Tutorial Reading Notes</a></h2>
-                    <div class="post-content" itemprop="articleBody">
-                        <p><em>The Python Tutorial</em> is a good stuff to learn Python. I have already read it sketchily before, but didn&#39;t foucs on some detail things. This time I read it again and write some notes.</p>
-
-<h2 id="toc_0">Data Structures</h2>
-
-<h3 id="toc_1">More on Lists</h3>
-
-<ul>
-<li><code>list.append(x)</code>: Equivalent to <code>a[len(a):] = [x]</code></li>
-<li><code>list.extend(L)</code>: Extend the list by appending all the items in the given list. Equivalent to <code>a[len(a):] = L</code></li>
-<li><code>list.insert(i, x)</code>: The first argument is the index of the element before which to insert. <code>a.insert(len(a), x)</code> == <code>a.append(x)</code>.</li>
-<li><code>list.remove(x)</code>: Remove the first item form the list whose value is x.</li>
-<li><code>list.pop([i])</code>: Remove the item at the given position in the list, and return it. If no index is specified, <code>a.pop()</code> removes and returns the last item in the list.（parameters with square brackets are optional）</li>
-<li><code>list.clear()</code>: Remove all item from the list. Equivalent to <code>del a[:]</code></li>
-<li><code>list.index(x)</code>: Return the index in the list of the first item whose value is x.</li>
-<li><code>list.count(x)</code>: Return the number of times x appears in the list.</li>
-<li><code>list.sort(key=None, reverse=False)</code>: Sort the items of the list in place.</li>
-<li><code>list.reverse()</code>: Reverse the elements of the list in place.</li>
-<li><code>list.copy()</code>: Return a shallow copy of the list. Equivalent to <code>a[:]</code>.</li>
-</ul>
-
-<h4 id="toc_2">Using Lists as Stacks</h4>
-
-<p>Use <code>append</code> and <code>pop</code>.</p>
-
-<h4 id="toc_3">Using Lists as Queues</h4>
-
-<p>Lists are not efficient for this purpose. While appends and pops from the end of list are fast, doing inserts or pops from beginning of a list is slow.</p>
-
-<p>Better to use <code>collections.deque</code>.</p>
-
-<h4 id="toc_4">List Comprehensions</h4>
-
-<ul>
-<li><code>x = [item for item in series]</code></li>
-<li><code>x = [do_something(item) for item in series if expression]</code></li>
-</ul>
-
-<h4 id="toc_5">Nested List Comprehensions</h4>
-
-<p>The initial expression in a list comprehension can be any arbitrary expression, including another list comprehension.</p>
-
-<p>Example: <code>[[row[i] for row in matrix] for i in range(4)]</code>.</p>
-
-<h4 id="toc_6">The <code>del</code> statement</h4>
-
-<p>Remove an item from a list given its index. (Do not return a value) It can also remove slices from a list.</p>
-
-<p><code>del</code> can also be used to delete entire variables: <code>del a</code>.</p>
-
-<h3 id="toc_7">Tuples and Sequences</h3>
-
-<p>Tuples are <code>immutable</code>, and usually contain a heterogeneous sequence of elements that are accessed via unpacking or indexing. List are <code>mutable</code>, and their element are usually homogeneous and are accessed by iterating over the list.</p>
-
-<ul>
-<li>Empty tuples are constructed by and empty pair of parentheses: <code>empty = ()</code></li>
-<li>A tuple with one item is constructed by following a value with a comma:     <code>sigleton = &#39;hello&#39;,</code></li>
-</ul>
-
-<p>The statement <code>t = 1, 2, &#39;hello&#39;</code> is an example of <code>tuple packing</code>: the values are packed together in a tuple. The reverse operation is also possible: <code>x, y, z = t</code>.</p>
-
-<h3 id="toc_8">Sets</h3>
-
-<p><code>{}</code> or <code>set()</code> function can be used to create sets. Note: to create an empty set you have to use <code>set()</code>, not <code>{}</code>; the latter creates an empty dictionary.</p>
-
-<p>Example: </p>
-
-<pre><code class="language-python">a = set(&#39;abracadabra&#39;)
-b = set(&#39;alacazam&#39;)
-</code></pre>
-
-<ul>
-<li><code>a - b</code>: letters in a but not in b</li>
-<li><code>a | b</code>: letters in either a or b</li>
-<li><code>a &amp; b</code>: letters in both a and b</li>
-<li><code>a ^ b</code>: letters in a or b but not both</li>
-</ul>
-
-<p>Similaryly to list comprehensions, set comprehensions are also supported.</p>
-
-<h3 id="toc_9">Dictionaries</h3>
-
-<p>Dictionaries are indexed by keys, which can be any immutable type; strings and numbers can slways be keys. Tuples can be used as keys if they contain only one kind of item. You can&#39;t use use lists as keys, since lists can be modified in place using index assignments, slice assignments, or method like append() and extend().</p>
-
-<p>It is best to think of a dictionary as an unordered set of <code>key: value</code> pairs.</p>
-
-<ul>
-<li><code>del</code> can delete a <code>key: value</code></li>
-<li><code>list(d.keys())</code> on a dictionary returns a list of all the keys used in the dictionary, in arbitrary order (if you want it sorted, use <code>sortted(d.keys())</code> instead).</li>
-<li>To check whether a single key is in the dictionary, use the <code>in</code> keyword. (<code>in</code> or <code>not in</code>)</li>
-<li>Dict comprehensions can be used to create dictionaries from arbitrary key and value expressions: <code>{x: x**2 for x in range(10)}</code></li>
-<li>When the keys are simple strings, it is sometimes easier to specify pairs using keyword arguments: <code>dic(sape=1, guido=2, jack=3)</code> =&gt; <code>{&#39;sape&#39;: 1, &#39;jack&#39;: 3, &#39;guido&#39;: 2}</code></li>
-</ul>
-
-<h3 id="toc_10">Looping Techniques</h3>
-
-<p>When looping through dictionaries, the key and corresponding value can be retrieved at the same time using the items() method.</p>
-
-<pre><code class="language-python">knights = {&#39;gallahad&#39;: &#39;the pure&#39;, &#39;robin&#39;: &#39;the brave&#39;}
-for k, v in knights.items():
-    print(k, v)
-</code></pre>
-
-<p>When looping through a sequence, the position index and correspoding value can be retrieved at the same time using the <code>enumerate()</code> function.</p>
-
-<pre><code class="language-python">for i, v in enumerate([&#39;tic&#39;, &#39;tac&#39;, &#39;toe&#39;]):
-    print(i, v)
-</code></pre>
-
-<p>To loop over two or more sequences at the same time, the entries can be paired with the <code>zip()</code> function.</p>
-
-<pre><code class="language-python">numbers = [1, 2, 3]
-names = [&#39;one&#39;, &#39;two&#39;, &#39;three&#39;]
-for number, name in zip(numbers, names):
-    print(&#39;Number: {0}, Name: {1}&#39;.format(number, name))
-</code></pre>
-
-<p>To loop over a sequence in sorted order, use the <code>sorted()</code> function which return a new sorted list while leaving the source unaltered. <code>for item in soted(list)</code></p>
-
-<p>It is sometimes tempting to change a list while you are looping over it; however, it is often simple and safer to create a new list instead.</p>
-
-<h3 id="toc_11">More on Conditions</h3>
-
-<ul>
-<li><code>in</code> and <code>not in</code>: check whether a value occurs (or not) in a sequence.</li>
-<li><code>is</code> and <code>is not</code>: compare whether two objects are really the same object; this only matters for mutable objcts like lists.</li>
-<li>Comparisons can be chained. <code>a &lt; b == c</code></li>
-<li><code>and</code> and <code>or</code> are <code>short-circuit</code> operators</li>
-</ul>
-
-<h3 id="toc_12">Comparing Sequences and Other Types</h3>
-
-<p>The comparison uses lexicographical ordering.</p>
-
-<h2 id="toc_13">Modules</h2>
-
-<p>A module is a file containing Python definitions and statements. The file name is the module name with the suffix <code>.py</code> appended. Within a module, the module&#39;s name (as a string) is available as the value of the global variable <code>__name__</code>.</p>
-
-<h3 id="toc_14">More on Modules</h3>
-
-<p>Note that in general the practice of importing <code>*</code> from a module is frowned upon, since it often causes poorly readable code. (It ok to use in interactive sessions.)</p>
-
-<p>It&#39;s one module you want to test interactively, use <code>importlib.reload()</code>.</p>
-
-<pre><code class="language-python">import importlib
-importlib.reload(modulename)
-</code></pre>
-
-<h4 id="toc_15">Executing modules as scripts</h4>
-
-<pre><code class="language-python">if __name__ == &quot;__main__&quot;:
-    code
-</code></pre>
-
-<p>This is often used either to provide a convenient user interface to a module, or for testing purposes (running the module as a script executes a test suite).</p>
-
-<h4 id="toc_16">The Module Search Path</h4>
-
-<p>When a module named <em>spam</em> is imported, the interpreter first searches for a built-in module with that name. If not found, it then searches for a file named <code>spam.py</code> in a list of directories given by the variable <code>sys.path</code>, it is initialized from these locations:</p>
-
-<ul>
-<li>The directory containing the input script (or the current directory when no file is specified).</li>
-<li><code>PYTHONPATH</code> (a list of directory names, with the same syntax as the shell variable <em>PATH</em>).</li>
-<li>The installation-dependent default.</li>
-</ul>
-
-<p>After initialization, Python programs can modify <code>sys.path</code>. The directory containing the script being run is placed at the beginning of the search path, ahead of the standard library path. This means that scripts in that directory will be loaded instead of modules of the same name in the library directory.</p>
-
-<h4 id="toc_17">&quot;Compiled&quot; Python files</h4>
-
-<p>Python caches the compiled version of each module in the <code>__pycache__</code> directory. It generally contains the Python version number. This naming convention allows compiled modules from dirrerent release and different version of Python to coexist. (Example: <code>__pycache__/fib.python-27.pyc</code>)</p>
-
-<p>Python check the modification date of the source against the compiled version to see if it&#39;s out of date and needs to be recompiled.</p>
-
-<h3 id="toc_18">Standard Modules</h3>
-
-<pre><code class="language-python">&gt;&gt;&gt; import sys
-&gt;&gt;&gt; sys.ps1
-&#39;&gt;&gt;&gt; &#39;
-&gt;&gt;&gt; sys.ps2
-&#39;... &#39;
-&gt;&gt;&gt; sys.ps1 = &#39;C&gt; &#39;
-C&gt; print(&#39;Yuck!&#39;)
-Yuck!
-</code></pre>
-
-<p>The variable <code>sys.path</code> is a list of strings that determines the interpreter&#39;s search path for modules. You can modify it using standard list operations.</p>
-
-<h3 id="toc_19">The <code>dir()</code> Function</h3>
-
-<p>The built-in function <code>dir()</code> is used to find out which names a module defines.</p>
-
-<p>Without arguments, <code>dir()</code> lists the names you have defined currently.</p>
-
-<p>It list all types of names: variable, modules, functions, etc.</p>
-
-<h2 id="toc_20">Input and Output</h2>
-
-<h3 id="toc_21">Methods of File Objects</h3>
-
-<p>It is good practice to use the <code>with</code> keyword when dealing with file objects. This has the advantage that the file is properly closed after its suite finishes, even if an exceptiohn is raissed on the way. It is also much shorter thatn writing equivalent <code>try-finally</code> blocks:</p>
-
-<pre><code class="language-python">with open(&#39;workfile&#39;, &#39;r&#39;) as f:
-    read_data = f.read()
-</code></pre>
-
-                        
+                <li class="post-item" itemscope="" itemtype="http://schema.org/Article">
+                    <div class="post-meta">
+                        <time class="time-meta" datetime="">2016/7/17</time>
+                    </div>
+                    <div class="post-detail">
+                        <h2 itemprop="name"><a itemprop="url" href="14824095038232.html">The Python Tutorial Reading Notes</a></h2>
                     </div>
                 </li>
                 
             </ul>
             <p class="paging">
-                
-                
+                 
             </p>
         </div>
     </div>

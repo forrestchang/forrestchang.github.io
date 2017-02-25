@@ -27,14 +27,14 @@
             <nav class="site-nav">
                 <a href="#" class="menu-icon">
                     
-                    <!-- <svg viewBox="0 0 18 15">
+                    <svg viewBox="0 0 18 15">
                         <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"
                         />
                         <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"
                         />
                         <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"
                         />
-                    </svg> -->
+                    </svg>
 
                 </a>
                 <div class="trigger">
@@ -56,110 +56,55 @@
         <div class="home">
             <ul class="post-list">
                 
-                <li>
-                    <span class="post-meta">2017/2/24</span>
-                    <h2><a class="post-link" href="14878992387553.html">换了一个新地方写东西</a></h2>
-                    <div class="post-content" itemprop="articleBody">
-                        <p>现在这个博客只写技术相关的内容，其他的随笔都写在<a href="https://medium.com/@Tisoga">新博客</a>里，Medium 是被大陆屏蔽的，所以请自备梯子。另外一些比较私人的笔记——例如「Week Review」系列就不发表在互联网上了。</p>
-
-<p>至于原因，单纯得觉得 Medium 上的衬线字体很好看。如果需要魔改这个博客的话，还是挺麻烦的，自己目前的前端知识还处于未入门的水平，所以就不折腾了。</p>
-
-                        
+                <li class="post-item" itemscope="" itemtype="http://schema.org/Article">
+                    <div class="post-meta">
+                        <time class="time-meta" datetime="">2017/2/24</time>
+                    </div>
+                    <div class="post-detail">
+                        <h2 itemprop="name"><a itemprop="url" href="14878992387553.html">换了一个新地方写东西</a></h2>
                     </div>
                 </li>
                 
-                <li>
-                    <span class="post-meta">2017/1/1</span>
-                    <h2><a class="post-link" href="14832795759469.html">2017 Week 1 Review</a></h2>
-                    <div class="post-content" itemprop="articleBody">
-                        <p>今天是元旦，因为在 Calendar 中把今天归到 2017 年的第一周里了，所以就按照上面所写的把这周当做第一周吧。</p>
-
-<p>这周结束了在中软的课程设计实训，以前总嫌弃小渔村破，现在回来才知道还是小渔村好啊。课程设计实训的内容是用 Java 写一个点餐系统，一个小组只需要做一份就可以了，不过几乎所有人都不知道 Git 是个什么东西，小组合作还是用的 U 盘拷贝代码，所以代码质量可想而知了，本组的其他人都比较厉害，索性我就抱大腿划水了，什么也没有参与，代码也没有写一行。</p>
-
-<p>不过虽说没有写课程设计的项目，但还是有写代码的。这周把两个月前参加 HACKxFDU 的项目拿出来用 Python 3 重写了一遍。项目的地址：<a href="https://github.com/forrestchang/Neutron">Neutron</a>，当初我们考虑做 Neutron 的时候是想把它做成一个通用的智能家居语音终端的，类似于 Amazon 的 Echo，只要提供第三方的 API，就能轻松集成到 Neutron 来，但是实际上碍于 Hackathon 的时间限制，只是完成了一个简单的 Demo，完全没有拓展性。本来这个项目参加完 Hackathon 之后就没有管了，不过最近看到 Facebook CEO 扎克伯格写了一个 Jarvis，觉得和之前做的东西很像（当然还是差远了，基本我们做的东西就是用别人的 API），所以又掏出来拿 Python 3.5 重写了一遍。现在在 <a href="https://github.com/forrestchang/neutron/tree/develop">develop</a> 分支基本上把框架搭建好了，最底层是和 API 交互的 layer 层，这一层需要为每个 API 写特定的代码，其上是抽象的 handler 层，提供通用的接口，抽象 layer 层的操作：例如语音控制模块、AI 模块等，这一层上还可能包裹一层特定的 wrapper，例如对特定的 message 做语义分析。通过配置文件来选择使用哪个 layer 以及配置 layer 的内容（key 等内容），开始的时候打算用 json 来做配置文件的，后来看了一下还有 yaml 这种更加简洁的配置文件，所以打算换成 yaml 的。目前这个项目还有很多内容要写的，比如特定的 layer，都需要更具不同的 API 写特定的代码，这一点上我参考的 <a href="https://github.com/syl20bnr/spacemacs">Spacemacs</a> 的方法。</p>
-
-<p>这周在中软那边的宿舍里面把08版的《射雕英雄传》看完了，虽然槽点挺多的（特效、台词、演技），但是还是看得很欢乐，林依晨的黄蓉甚是喜欢。记得以前应该是看过朱茵版的黄蓉的，不过时间太久远了，已经记不太清了。小说倒没有读完，还是看剧比较快啊。看完后好长一段时间里面都觉得特别空虚，总感觉少了些什么。这种孤独感几乎在每次看完某部小说和电视剧后都会有（电影倒没有这种感觉，可能时间太短了），总觉得还沉浸在别人的故事里，可惜别人的故事已经结束，不得不回到现实中来。想起席慕蓉的一句话『在别人的故事里，留着自己的泪』 <sup id="fnref1"><a href="#fn1" rel="footnote">1</a></sup> 。</p>
-
-<hr/>
-
-<p>就借着这篇博客顺便说说 17 年的计划吧。</p>
-
-<ol>
-<li>学习一门新语言：14年学了 C、Scheme，15年学了 Java、Python，16年学了 Swift，再加上各种用过但是不熟的语言，也有好多个了。现在主力开发语言是 Python，17年打算学习 一下 JavaScript，这门 GitHub 上最火的语言，不会都不好意思说自己是程序员。也不用学到多么深，只求达到入门水平。</li>
-<li>Python 水平达到 professional，用了接近两年的 Python，但是水平也没有长进多少，今年打算深入一下 Python，多写一些项目。</li>
-<li>去周边国家玩一次，其实挺想去尼泊尔的，不知道今年有没有时间。不过即使不出国，也要多出去走走，一个人的旅行。</li>
-</ol>
-
-<div class="footnotes">
-<hr/>
-<ol>
-
-<li id="fn1">
-<p>席慕蓉的《戏子》，用在这里并不完全准确。&nbsp;<a href="#fnref1" rev="footnote">&#8617;</a></p>
-</li>
-
-</ol>
-</div>
-
-                        
+                <li class="post-item" itemscope="" itemtype="http://schema.org/Article">
+                    <div class="post-meta">
+                        <time class="time-meta" datetime="">2017/1/1</time>
+                    </div>
+                    <div class="post-detail">
+                        <h2 itemprop="name"><a itemprop="url" href="14832795759469.html">2017 Week 1 Review</a></h2>
                     </div>
                 </li>
                 
-                <li>
-                    <span class="post-meta">2016/12/26</span>
-                    <h2><a class="post-link" href="14827163208652.html">2016 Week 52 Review</a></h2>
-                    <div class="post-content" itemprop="articleBody">
-                        <p>2016 年最后一周（实际上还有6天，不过那一周就算到 2017 年第一周吧）。</p>
-
-<ul>
-<li><strong>编程</strong>：这周在看《Python 网络数据采集》，以前虽然也用过爬虫，但是毕竟没有系统地学过，所以还是找了一本书来看。但是说实话，这本书写得并不是很好，不知道是写书时间的原因还是什么，挺多语法错误的，而且代码的风格很差（完全不符合 PEP8 标准）。内容也比较浅，基本上都是之前已经知道了的东西，所以收获也不是很多，（下一篇的博客可以来写一写怎么写一个高效的爬虫）。面试的事情作废了，1）看了一下他们做的产品，感觉不是自己想要做的东西；2）开出的薪资太低，up to 2k（其实主要是薪资太低了，每天要往返金石滩和大连市，太累了）。所以还是好好学习准备明年的暑期实习吧。另外 GSoC 也应该放上日程了，即使有申请不上的可能，还是要试一试的。</li>
-<li><strong>阅读</strong>：开始读金庸的《射雕英雄传》，以前上学的时候一直被家里教导不要沉迷武侠小说，所以一直没有读过金庸和古龙（然而那些时间都用来看网文玄幻了……）。最近读来还是觉得很有意思，作为实训的时候消遣很不错（主要没有网）。</li>
-<li><strong>生活</strong>：这周五就可以离开这鬼地方了，见识过外包公司的情况后决定以后肯定是不会进这种公司的。在公司里实训也一直没有写代码，本来打算用 Python 实现一下实训的题目的，但是老师说不允许，这也没什么办法，索性就划水吧。</li>
-<li><strong>博客</strong>：可以看到，我博客又换样子了。用 Emacs 来写博客还是太麻烦了一些，而且 render 的速度实在是太感人，本地的 org 文件多了之后好几次 render 的时候卡住。现在这个博客是 Mweb 自带的 generator 生成的，就是主题不怎么好看，其他的都很方便。奈何自己的前端知识太渣，改了半天也没有改成自己想要的样子，所以还是凑合着先用吧。</li>
-</ul>
-
-                        
+                <li class="post-item" itemscope="" itemtype="http://schema.org/Article">
+                    <div class="post-meta">
+                        <time class="time-meta" datetime="">2016/12/26</time>
+                    </div>
+                    <div class="post-detail">
+                        <h2 itemprop="name"><a itemprop="url" href="14827163208652.html">2016 Week 52 Review</a></h2>
                     </div>
                 </li>
                 
-                <li>
-                    <span class="post-meta">2016/12/20</span>
-                    <h2><a class="post-link" href="14824103542982.html">2016 Week 51 Review</a></h2>
-                    <div class="post-content" itemprop="articleBody">
-                        <p>看了一下日历，上一周是 2016 年的倒数第二周了（写这篇文章的时候已经是 52 周了），换了新博客之后就一直没有再写过 Week Review，这其中虽然有一些外部的因素，但大抵上还是不想写。</p>
-
-<p>上周学校组织来中软做课程设计，所以这些天一直待在中软的培训中心里，课程设计的题目是一个点餐的 Web 应用，用 Java 开发，因为并不打算从事 Java，所以也并没有怎么听，大部分时间都是在自己看书和写自己的 Project。不过要吐槽一下这边的环境，宿舍除了床什么也没有，所以晚上回去什么都干不了，只能坐在床上看看电影，最不能忍的是网都没有……学校送来培训中心的这种做法我是很不认同的，好好的大学为什么要搞成职业教育呢？</p>
-
-<p>最近找到了大连的一家做 Python Web 的 start up，联系了一下准备过去面试，不过软件园离学校太远了，估计面过了也不会去吧。</p>
-
-                        
+                <li class="post-item" itemscope="" itemtype="http://schema.org/Article">
+                    <div class="post-meta">
+                        <time class="time-meta" datetime="">2016/12/20</time>
+                    </div>
+                    <div class="post-detail">
+                        <h2 itemprop="name"><a itemprop="url" href="14824103542982.html">2016 Week 51 Review</a></h2>
                     </div>
                 </li>
                 
-                <li>
-                    <span class="post-meta">2016/11/13</span>
-                    <h2><a class="post-link" href="14824081615573.html">2016 Week 46 Review</a></h2>
-                    <div class="post-content" itemprop="articleBody">
-                        <p>编程学习方面，不完全看完了《利用 Python 进行数据分析》，感觉光看没有进行练习的话很难一次记住那么多用法，所以这本书最好还是最 NumPy、Pandas 这几个库用过一段时间之后再看。之后开始看《集体智慧编程》，目前才看了两章，内容写得还是挺好的，不过很多代码不是很规范（比如命名、缩进什么的），还有就是可能书已经比较老了，很多例子中使用的 API 已经挂掉了，所以不得不自己找数据集下来测试。不知道别人看书是怎样的，反正我看书不把书中每个例子测试一下就感觉书好像没看过，所以看书的速度还是挺慢的，昨天和今天花了两天的时间把第2章的东西总结了一下，写了篇博客。</p>
-
-<p>朋友说我现在才开始学习机器学习并且想要以此为以后的职业简直在玩火（并且还不打算读研究生的情况下），说得也是，毕竟现在已经大三了，按照道理，应该刷刷题准备下学期的实习面试的。不过既然跳进这个火坑里了，就不能半途而废，至少先学习几个月看看情况再变更计划。如果实在不行，到时候再去做 Web 开发还是可以的。</p>
-
-<p>前几天在登录 iPad 上的 Evernote 的时候，突然提示我登录的设备超过了两台，需要开通会员（之前开通过一年的会员，后来没有续费），总觉得为了这个再开通会员有点不值得，并且之前 Evernote 在 Mac 上使用就有很多诟病，所以打算换 OneNote 了。更新了一下 Mac 上 OneNote，发现竟然支持手写了，果断用用用。不过 OneNote 最开始的字体问题到现在还没有解决……</p>
-
-<p>下周五就可以玩上 Pokemon Moon 了，激动不已，虽然破解党们早已二周目通关……</p>
-
-<p>另外，发现番茄工作法挺好用的，现在也没有什么课了，每天就直接到图书馆里来，打开番茄钟，然后无脑干活就好了。</p>
-
-                        
+                <li class="post-item" itemscope="" itemtype="http://schema.org/Article">
+                    <div class="post-meta">
+                        <time class="time-meta" datetime="">2016/11/13</time>
+                    </div>
+                    <div class="post-detail">
+                        <h2 itemprop="name"><a itemprop="url" href="14824081615573.html">2016 Week 46 Review</a></h2>
                     </div>
                 </li>
                 
             </ul>
             <p class="paging">
-                
-                
-                    <a href="life_1.html">Next</a> 
-                
+                 
+                <a href="life_1.html">Next</a> 
             </p>
         </div>
     </div>
