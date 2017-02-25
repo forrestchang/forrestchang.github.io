@@ -3,7 +3,7 @@
   <title><![CDATA[Hack Notes]]></title>
   <link href="http://forrestchang.github.io/atom.xml" rel="self"/>
   <link href="http://forrestchang.github.io/"/>
-  <updated>2017-02-25T19:36:36+08:00</updated>
+  <updated>2017-02-25T20:40:56+08:00</updated>
   <id>http://forrestchang.github.io/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -140,7 +140,7 @@
 <ul>
 <li>优点：优雅的在函数上指定一些转换，该转换可能减少一些重复代码，保持已有函数不变（enforce invariants）</li>
 <li>缺点：装饰器可以在函数的参数或返回值上执行任何操作，这可能导致让人惊异的隐藏行为。而且，装饰器在导入时执行。从装饰器代码的失败中恢复更加不可能。</li>
-<li>结论：如果好处很显然，就明智而谨慎的使用装饰器。装饰器应该遵守和函数一样的导入和命名规则。装饰器的 Python 文档应该清晰的说明函数是一个装饰器。请为装饰器编写单元测试。<strong>避免装饰器自身对外界的以来（即不要依赖于文件、socket、数据库连接等）</strong>。</li>
+<li>结论：如果好处很显然，就明智而谨慎的使用装饰器。装饰器应该遵守和函数一样的导入和命名规则。装饰器的 Python 文档应该清晰的说明函数是一个装饰器。请为装饰器编写单元测试。<strong>避免装饰器自身对外界的依赖（即不要依赖于文件、socket、数据库连接等）</strong>。</li>
 </ul>
 
 <h2 id="toc_1">线程</h2>
