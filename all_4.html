@@ -39,11 +39,9 @@
                 </a>
                 <div class="trigger">
                     
-                        <a class="page-link" href="index.html">Home</a>
+                        <a class="page-link" href="index.html">HOME</a>
                     
-                        <a class="page-link" href="archives.html">Archives</a>
-                    
-                        <a class="page-link" href="about.html">About</a>
+                        <a class="page-link" href="atom.xml">RSS</a>
                     
                 </div>
             </nav>
@@ -54,50 +52,429 @@
 </html> <div class="page-content yue">
     <div class="wrapper">
         <div class="home">
-            <ul class="post-list">
+            <ul class="entry-list">
                 
-                <li class="post-item" itemscope="" itemtype="http://schema.org/Article">
-                    <div class="post-meta">
-                        <time class="time-meta" datetime="">2016/5/13</time>
+                <li class="entry-item" itemscope="" itemtype="http://schema.org/Article">
+                    <div class="entry-meta">
+                        <time class="updated" datetime="2016/5/13 15:23 PM">2016/5/13 15:23 PM</time>
                     </div>
-                    <div class="post-detail">
+                    <div class="detail">
                         <h2 itemprop="name"><a itemprop="url" href="14631242333306.html">Swift 学习笔记：属性</a></h2>
+                        <div itemprop="description">
+                            <p>属性将值跟特定的类、结构或枚举关联。存储常量或变量作为实例的一部分，而计算属性（不是存储）一个值。</p>
+
+<ul>
+<li>计算属性：类、结构体、枚举</li>
+<li>存储属性：类、结构体</li>
+</ul>
+
+<h2 id="toc_0">存储属性</h2>
+
+<h3 id="toc_1">延迟存储属性</h3>
+
+<p>延迟存储属性是指当第一次被调用的时候才会计算其初始值的属性。在属性声明前使用 <code>lazy</code> 来标记一个延迟存储属性。</p>
+
+<p>必须将延迟存储属性声明称变量，因为属性的初始值可能在实例构造完成之后才会得到。<strong>而常量属性在构造过程完成之前必须要有初始值，因此无法声明称延迟属性。</strong></p>
+
+<p>延迟属性很有用，当属性的值依赖于在实例的构造过程结束后才会知道影响值得外部因素时，或者当获得属性的初始值需要复杂或大量计算时，可以只在需要的时候计算它。</p>
+
+<h2 id="toc_2">计算属性</h2>
+
+<p>计算属性不直接存储值，而是提供一个 getter 和一个可选的 setter，来间接获取和设置其他属性或变量的值。</p>
+
+<h3 id="toc_3">便捷 setter 声明</h3>
+
+<p>如果计算属性的 setter 没有定义表示新值的参数名，则可以使用默认名称 <code>newValue</code>。</p>
+
+<h3 id="toc_4">只读计算属性</h3>
+
+<p>只有 getter 没有 setter 的计算属性就是<strong>只读计算属性</strong>。只读计算属性总是返回一个值，可以通过点运算符访问，但不能设置新的值。</p>
+
+<h2 id="toc_5">属性观察器</h2>
+
+<p>属性观察器监控和响应属性值的变化，每次属性被设置新的值都会调用属性观察器，即使新值和当前值相同的时候也不例外。</p>
+
+<p>可以为除了延迟存储属性之外的其他存储属性添加属性观察器，也可以通过重写属性的方式为继承的属性（包括存储属性和计算属性）添加属性观察器。你不必为非重写的计算属性添加属性观察器，因为可以通过它的 setter 直接监控和响应值得变化。</p>
+
+<ul>
+<li><code>willSet</code> 在新的值被设置之前调用</li>
+<li><code>didSet</code> 在新的值被设置之后立即调用</li>
+</ul>
+
+<p><code>willSet</code> 观察器会将新的属性值作为常量参数传入，在 <code>willSet</code> 的实现代码中可以为这个参数指定一个名称，如果不指定则参数仍然可用，这时使用默认名称 <code>newValue</code> 表示。</p>
+
+<p><code>didSet</code> 观察器会将旧的属性值作为参数传入，可以为该参数名或者使用默认参数名 <code>oldValue</code>。如果在 <code>didSet</code> 方法中再次对该属性赋值，那么新值会覆盖旧的值。</p>
+
+<p>父类的属性在子类的构造器中被赋值时，它在父类中的 <code>willSet</code> 和 <code>didSet</code> 观察器会被调用，随后才会调用子类的观察器。在父类初始化方法调用之前，子类给属性赋值时，观察器不会被调用。</p>
+
+<p>如果将属性通过 in-out 方式传入函数， <code>willSet</code> 和 <code>didSet</code> 也会被调用。这是因为 in-out 参数采用了拷入拷出模式：即在函数内部使用的是参数的 copy，函数结束后，又对参数重新赋值。</p>
+
+<h2 id="toc_6">全局变量和局部变量</h2>
+
+<p>计算属性和属性观察器所描述的功能也可以用于全局变量和局部变量。全局变量是在函数、方法、闭包或任何类型之外定义的变量。局部变量是在函数、方法或闭包内部定义的变量。</p>
+
+<p>全局的常量或变量都是延迟计算的，跟延迟存储属性相似，不同的地方在于，全局的常量或变量不需要标记 <code>lazy</code>   修饰符。</p>
+
+<p>局部范围的常量或变量从不延迟计算。</p>
+
+<h2 id="toc_7">类型属性</h2>
+
+<p>存储型类型属性是延迟初始化的，它们只有在第一次被访问的时候才会被初始化。即使它们被多个线程同时访问，系统也保证只会对其进行一次初始化，并且不需要对其使用 <code>lazy</code> 修饰符。</p>
+
+                            
+                        </div>
                     </div>
                 </li>
                 
-                <li class="post-item" itemscope="" itemtype="http://schema.org/Article">
-                    <div class="post-meta">
-                        <time class="time-meta" datetime="">2016/5/9</time>
+                <li class="entry-item" itemscope="" itemtype="http://schema.org/Article">
+                    <div class="entry-meta">
+                        <time class="updated" datetime="2016/5/9 16:46 PM">2016/5/9 16:46 PM</time>
                     </div>
-                    <div class="post-detail">
+                    <div class="detail">
                         <h2 itemprop="name"><a itemprop="url" href="14627836147810.html">Swift 学习笔记：集合类型</a></h2>
+                        <div itemprop="description">
+                            <p>Swift 语言提供 Arrays、Sets 和 Dictionaries 三种基本的集合类型来存储数据合集。数组（Array）是有序数据的集；集合（Sets）是无序无重复数据的集；字典（Dictionaries）是无序的键值对的集。</p>
+
+<p><img src="media/14627836147810/14627837494241.jpg" alt=""/></p>
+
+<h2 id="toc_0">集合的可变性</h2>
+
+<p>在我们不需要改变集合的时候创建不可变集合是很好的实践（使用 <code>let</code>），如此 Swift 编译器可以优化我们创建的集合。</p>
+
+<h2 id="toc_1">数组</h2>
+
+<h3 id="toc_2">创建一个带有默认值的数组</h3>
+
+<p>Swift 中的 Array 类型提供一个可以创建特定大小并且所有数据都被默认的构造方法。我们可以把准备加入新数组的数据项数量（count）和适当类型的初始值（repeatedValue）传入数组构造函数：</p>
+
+<pre><code class="language-swift">var threeDoubles = [Double](count: 3, repeatedValue: 0.0)
+</code></pre>
+
+<h3 id="toc_3">通过两个数组相加创建一个数组</h3>
+
+<p>我们可以使用加法操作符来组合两种已经存在的相同类型数组。新数组的数据类型会被从两个数组的数据类型中推断出来。</p>
+
+<h3 id="toc_4">访问和修改数组</h3>
+
+<p><code>isEmpty</code> 检查数组是否为空。</p>
+
+<p>使用加法赋值运算符（<code>+=</code>）可以直接在数组后面添加一个或多个拥有相同类型的数据项。</p>
+
+<p>调用数组的 <code>insert(_:atIndex:)</code>方法来在某个具体的索引值之前添加数据项。</p>
+
+<h3 id="toc_5">数组的遍历</h3>
+
+<p>如果我们同事需要每个数据项的值和索引值，可以使用 <code>enumerate()</code> 方法来进行数组遍历。<code>enumerate()</code> 返回一个由每一个数据项索引值和数据值组成的元组。我们可以把这个元组分解成临时常量或者变量来进行遍历。</p>
+
+<h2 id="toc_6">集合（Sets）</h2>
+
+<p>集合用来存储相同类型且没有确定顺序的值。</p>
+
+<p>Swift 中的 <code>Set</code> 类型被桥接到 <code>Foundation</code> 中的 <code>NSset</code> 类。</p>
+
+<h3 id="toc_7">集合类型的哈希值</h3>
+
+<p>一个类型为了存储在集合中，该类型必须是可哈希化得——也就是说，该类型必须提供一个方法来计算它的哈希值。一个哈希值是 <code>Int</code> 类型的，相等的对象哈希值必须相同，比如<code>a=b</code>，因此必须是<code>a.hashValue = b.hashValue</code>。</p>
+
+<p>Swift 的所有基本类型默认都是可哈希化的，可以作为集合的值类型或者字典的键类型。没有关联值的枚举成员值默认也是可哈希化的。</p>
+
+<p>你可以使用你自定义的类型作为集合的值类型或者是字典的键的类型，但你需要使你的自定义类型符合 Swift 标准库中的 <code>Hashable</code> 协议。符合 <code>Hashable</code> 协议的类型需要提供一个类型为 <code>Int</code> 的可读属性 <code>hashValue</code>。由类型的 <code>hashValue</code> 属性返回的值不需要再同一程序的不同执行周期或者不同程序之间保持相同。</p>
+
+<p>因为 <code>hashValue</code> 协议符合 <code>Equatable</code> 协议，所以符合该协的类型也必须停工一个 <code>==</code> 运算符的实现。这个 <code>Equatable</code> 协议要求任何符合 <code>==</code> 实现的实例间都是一种相等的关系，也就是说，对于 a, b, c 三个值来说，必须满足下面三种情况：</p>
+
+<ul>
+<li>自反性：a == a</li>
+<li>对称性：a == b, b == a</li>
+<li>传递性：a == b &amp;&amp; b == c, a == c</li>
+</ul>
+
+<h3 id="toc_8">遍历一个集合</h3>
+
+<p>Swift 中的 <code>Set</code> 类型没有确定的顺序，为了按照特定顺序来遍历一个 <code>Set</code> 中的值可以使用 <code>sort()</code> 方法，它将根据提供的序列返回一个有序集合。</p>
+
+<pre><code class="language-swift">for genre in favoriteGenres.sort() {...}
+</code></pre>
+
+<h3 id="toc_9">集合操作</h3>
+
+<p><img src="media/14627836147810/14627853736261.jpg" alt=""/></p>
+
+<p><img src="media/14627836147810/14627854301808.jpg" alt=""/></p>
+
+<p><img src="media/14627836147810/14627854415802.jpg" alt=""/></p>
+
+<h2 id="toc_10">字典</h2>
+
+<p>字典中的数据项并没有具体顺序。</p>
+
+<p>Swift 中 Dictionary 类型被桥接到 Foundation 中的 NSDictionary 类。</p>
+
+<h3 id="toc_11">字典遍历</h3>
+
+<ol>
+<li>元组方式</li>
+<li>dic.keys</li>
+<li>dic.values</li>
+</ol>
+
+<p>如果我们只是需要某个字典的键值集合来作为某个接受 Array 实例的 API 的参数，可以直接使用 keys 或 values 属性构造一个新数组。</p>
+
+<pre><code class="language-swift">let airportCodes = [String](airports.keys)
+let airportNames = [String](airports.values)
+</code></pre>
+
+<p>Swift 的字典类型书无序集合类型。为了以特定的顺序便利字典的键或值，可以对字典的 keys 或 values 属性使用 <code>sort()</code> 方法。</p>
+
+                            
+                        </div>
                     </div>
                 </li>
                 
-                <li class="post-item" itemscope="" itemtype="http://schema.org/Article">
-                    <div class="post-meta">
-                        <time class="time-meta" datetime="">2016/5/9</time>
+                <li class="entry-item" itemscope="" itemtype="http://schema.org/Article">
+                    <div class="entry-meta">
+                        <time class="updated" datetime="2016/5/9 16:39 PM">2016/5/9 16:39 PM</time>
                     </div>
-                    <div class="post-detail">
+                    <div class="detail">
                         <h2 itemprop="name"><a itemprop="url" href="14627831551017.html">Swift 学习笔记：基本运算符</a></h2>
+                        <div itemprop="description">
+                            <h2 id="toc_0">空合运算符（NIl Coalescing Operator）</h2>
+
+<p>空合运算符（<code>a ?? b</code>）将对可选类型 <code>a</code> 进行空判断，如果 <code>a</code> 包含一个值就进行解封，否则就返回一个默认值 <code>b</code>。表达式 <code>a</code> 必须是 Optional 类型。默认值 <code>b</code> 的类型必须要和 <code>a</code> 存储值的类型保持一致。</p>
+
+<p>空合运算符是对以下代码的简短表达方法：</p>
+
+<pre><code class="language-swift">a != nil ? a! : b
+</code></pre>
+
+<p>如果 <code>a</code> 为非空值（non-nil），那么 <code>b</code> 值将不会被计算，这也就是所谓的短路求值。</p>
+
+                            
+                        </div>
                     </div>
                 </li>
                 
-                <li class="post-item" itemscope="" itemtype="http://schema.org/Article">
-                    <div class="post-meta">
-                        <time class="time-meta" datetime="">2016/5/4</time>
+                <li class="entry-item" itemscope="" itemtype="http://schema.org/Article">
+                    <div class="entry-meta">
+                        <time class="updated" datetime="2016/5/4 20:10 PM">2016/5/4 20:10 PM</time>
                     </div>
-                    <div class="post-detail">
+                    <div class="detail">
                         <h2 itemprop="name"><a itemprop="url" href="14623638528114.html">2016 Week 19 阅读笔记</a></h2>
+                        <div itemprop="description">
+                            <h2 id="toc_0"><a href="http://swift.gg/2016/05/03/preparing-for-3-0-api-pruning/">准备好迎接 3.0 API 变化</a></h2>
+
+<p>在即将发布的 Swift 3 将在 Cocoa 和 CocoaTouch 上做出重大改变。</p>
+
+<p>某些 API 的名字变得更加简洁了。</p>
+
+<h2 id="toc_1"><a href="http://www.posteriorscience.net/?p=206">PROGRAMMING BY POKING: WHY MIT STOPPED TEACHING SICP</a></h2>
+
+<p>关于为什么 MIT 停止了赫赫有名的 6.001，Gerry Sussman 的回答：</p>
+
+<ol>
+<li>教了太多年，不想教了。</li>
+<li>这门课放到今天已经没有那么重要了。在 80 年代和 90 年代，工程师们通过把简单和易于理解的部分组成复杂的系统，SICP 就是为了提供这种抽象的语言而存在的。</li>
+</ol>
+
+<blockquote>
+<p>He said that programming today is “More like science. You grab this piece of library and you poke at it. You write programs that poke it and see what it does. And you say, ‘Can I tweak it to do the thing I want?&#39;”. The “analysis-by-synthesis” view of SICP — where you build a larger system out of smaller, simple parts — became irrelevant. Nowadays, we do programming by poking.</p>
+</blockquote>
+
+<p>为什么现在改用 Python 了？</p>
+
+<blockquote>
+<p>Python has a ton of libraries that make it applicable to many types of projects that instructors might want to assign (like writing software to control a robot.)</p>
+</blockquote>
+
+<p>Python 库多 -_-|||</p>
+
+<p>另外，Sussman 还说道 SICP 确实比现在使用 Python 教学更加 coherent。</p>
+
+<h2 id="toc_2"><a href="https://github.com/geeeeeeeeek/git-recipes/blob/master/sources/%E6%9E%9C%E5%A3%B3%E4%B8%AD%E7%9A%84Git.md">什么是 Git</a></h2>
+
+<p>Git 采用分散式架构，是分散式版本管理 DVCS（Distributed Version Control System）的代表。</p>
+
+<p><strong>性能</strong></p>
+
+<p>不同于某些版本管理软件，Git 在决定代码修改历史以及保存形式的时候不会被文件名的变化所愚弄，Git 关注的文件内容本身。在实际的操作中，Git 使用一种混合了差分编码（delta encoding，仅保存代码修改的差分），压缩，直接保存，以及版本元数据（version metadata objects）的管理方式。</p>
+
+<p><strong>安全性</strong></p>
+
+<p>Git 将保持所管理代码的整合性作为首要要务。所有的文件内容，文件相互关系，以及文件目录结构，版本，标签以及修改，都经过加密哈希校验算法（SHA1）的保护。这可以防止各种意外的代码修改食物，或者是第三者的恶意修改，使得代码修改历史完全有迹可循。</p>
+
+                            
+                        </div>
                     </div>
                 </li>
                 
-                <li class="post-item" itemscope="" itemtype="http://schema.org/Article">
-                    <div class="post-meta">
-                        <time class="time-meta" datetime="">2016/5/4</time>
+                <li class="entry-item" itemscope="" itemtype="http://schema.org/Article">
+                    <div class="entry-meta">
+                        <time class="updated" datetime="2016/5/4 18:56 PM">2016/5/4 18:56 PM</time>
                     </div>
-                    <div class="post-detail">
+                    <div class="detail">
                         <h2 itemprop="name"><a itemprop="url" href="14623593987548.html">Swift 学习笔记：高级运算符</a></h2>
+                        <div itemprop="description">
+                            <p>与 C 语言中的算术运算符不同，Swift 中的算数运算符默认是不会溢出的。所有溢出行为都会被捕获并报告错误。</p>
+
+<p>如果想让系统允许溢出行为，可以选择使用 Swift 中另一套默认支持溢出的运算符，所有的这些溢出运算符都是以<code>&amp;</code>开头的。</p>
+
+<p>在 Swift 中可以自由地定义中缀、前缀、后缀和赋值运算符，以及相应的优先级与结合性。这些运算符在代码中可以像预定义的运算符一样使用，我们甚至可以扩展已有的类型以支持自定义的运算符。</p>
+
+<h2 id="toc_0">位运算符</h2>
+
+<p>位运算符可以操作数据结构中每个独立的比特位。它们通常被用在底层开发中，比如图形编程和创建设备驱动。位运算符在处理外部资源的原始数据时也十分有用，比如对自定义通信协议传输的数据进行编码和解码。</p>
+
+<h2 id="toc_1">按位取反运算符</h2>
+
+<p>按位取反运算符 <code>~</code> 可以对一个数值的全部比特位进行取反：</p>
+
+<p><img src="media/14623593987548/14623598448776.jpg" alt=""/></p>
+
+<p>按位取反运算符是一个前缀运算符，需要直接放在运算的数之前，并且它们之间不能添加任何空格。</p>
+
+<h2 id="toc_2">按位与运算符</h2>
+
+<p>按位与运算符 <code>&amp;</code> 可以对两个数的比特位进行合并。</p>
+
+<p><img src="media/14623593987548/14623599594230.jpg" alt=""/></p>
+
+<h2 id="toc_3">按位或运算符</h2>
+
+<p>按位或运算符 <code>|</code> 可以对两个数的比特位进行比较。</p>
+
+<p><img src="media/14623593987548/14623600296926.jpg" alt=""/></p>
+
+<h2 id="toc_4">按位异或运算符</h2>
+
+<p>按位异或运算符 <code>^</code> 可以对两个数的比特位进行比较。</p>
+
+<p><img src="media/14623593987548/14623601009498.jpg" alt=""/></p>
+
+<h2 id="toc_5">按位左移、右移运算符</h2>
+
+<p>按位左移运算符 <code>&lt;&lt;</code> 和按位右移运算符 <code>&gt;&gt;</code> 可以对一个数的所有位进行制定位数的左移和右移，但是需要遵守下面定义的规则。</p>
+
+<p>对一个数进行按位左移或按位右移，相当于对这个数进行乘以2或除以2的运算。</p>
+
+<h3 id="toc_6">无符号整数的移位运算</h3>
+
+<p>规则：</p>
+
+<ol>
+<li>已经存在的位按制定的位数进行左移和右移</li>
+<li>任何因移位而超出整型存储范围的位都会被丢弃</li>
+<li>用 <code>0</code> 来填充移位后产生的空白位</li>
+</ol>
+
+<p>这种方法称为<code>逻辑移位</code>。</p>
+
+<p><img src="media/14623593987548/14623603707110.jpg" alt=""/></p>
+
+<h3 id="toc_7">有符号整数的移位运算</h3>
+
+<p>对比无符号整数，有符号整数的移位运算相对复杂得多，这种复杂性源于有符号整数的二进制表现形式。（为了简单起见，以下的示例都是基于 8 比特位的有符号整数的，但是其中的原理对于任何位数的有符号整数都是通用的。）</p>
+
+<p>有符号整数使用第 1 个比特位（通常被称为符号位）来表示这个数的正负。符号位为 <code>0</code> 代表正数，为 <code>1</code> 代表负数。</p>
+
+<p>其余的比特位（通常被称为数值位）存储了实际的值。有符号正整数和无符号数的存储方式是一样的，都是从 <code>0</code> 开始算起。</p>
+
+<p>负数的存储方式略有不同。它存储的值得绝对值等于 <code>2</code> 的 <code>n</code> 次方减去它的实际值（也就是数值位表示的值），这里的 <code>n</code> 是数值位的比特位。一个 8 比特位的数有 7 个比特位是数值位，所以是 <code>2</code> 的 <code>7</code> 次方，即 <code>128</code>。</p>
+
+<p><img src="media/14623593987548/14623612131011.jpg" alt=""/></p>
+
+<p>负数的表示通常被称为二进制的补码表示。用这种表示方法来表示负数乍看起来有点奇怪，但它有几个优点。</p>
+
+<p>首先，如果想对 <code>-1</code> 和 <code>-4</code> 进行加法运算，我们只需要将这两个数的全部 8 个比特位进行相加，并将计算结果中超出 8 位的数值丢弃：</p>
+
+<p><img src="media/14623593987548/14623613337905.jpg" alt=""/></p>
+
+<p>其次，使用二进制补码可以使负数的按位左移和右移运算得到跟正数相同的结果，即每向左移一位就将自身的数值乘以 2，每向右移一位就将自身除以 2。要达到此目的，对有符号整数的右移有一个额外的规则：</p>
+
+<p><img src="media/14623593987548/14623615004005.jpg" alt=""/></p>
+
+<p>这个行为可以确保有符号整数的符号位不会因为右移运算而改变，这通常被称为<code>算数移位</code>。</p>
+
+<h2 id="toc_8">溢出运算符</h2>
+
+<p>在默认情况下，当向一个整数赋予超过它容量的值时，Swift 默认会报错，而不是生成一个无效的数。这个行为为我们在运算过大或者过小的数的时候提供了额外的安全性。</p>
+
+<p>当然，也可以选择让系统在数值溢出的时候采取截断处理，而非报错。可以使用 Swift 提供的三个溢出运算符来让系统支持整数溢出运算。这些运算符都是以 <code>&amp;</code> 开头的：</p>
+
+<ul>
+<li>溢出加法 <code>&amp;+</code></li>
+<li>溢出减法 <code>&amp;-</code></li>
+<li>溢出乘法 <code>&amp;*</code></li>
+</ul>
+
+<h2 id="toc_9">数值溢出</h2>
+
+<p>数值有可能出现上溢或者下溢。</p>
+
+<p><img src="media/14623593987548/14623618680616.jpg" alt=""/></p>
+
+<p><img src="media/14623593987548/14623618951341.jpg" alt=""/></p>
+
+<p>溢出也会发生在有符号整型数值上。在对有符号整型数值进行溢出加法或溢出减法运算时，符号位也要参与计算，正如按位移位运算符所描述的。</p>
+
+<p><img src="media/14623593987548/14623621538611.jpg" alt=""/></p>
+
+<p>对于无符号与有符号整型数值来说，当出现上溢时，它们会从数值所能容纳的最大数编程最小的数。同样的，当发生下溢时，它们会从所能容纳的最小数编程最大的数。</p>
+
+<h2 id="toc_10">优先级和结合性</h2>
+
+<p>运算符的优先级使得一些运算符优先于其他运算符，高优先级的运算符会先被计算。</p>
+
+<p>结合性定义了相同优先级的运算符是如何结合的，也就是说，是与左边结合为一组，还是与右边结合为一组。</p>
+
+<h2 id="toc_11">运算符函数</h2>
+
+<p>类和结构体可以为现有的运算符提供自定义的实现，这通常被称为运算符重载。</p>
+
+<h2 id="toc_12">前缀和后缀运算符</h2>
+
+<p>类与结构体也能提供标准单目运算符的实现。单目运算符只运算一个值。当运算符出现在值之前时，它就是前缀的，而当它出现在值之后时，它就是后缀的。</p>
+
+<p>要实现前缀或者后缀运算符，需要在声明运算符函数的时候在 <code>func</code> 关键字之前制定 <code>prefix</code> 或者 <code>postfix</code> 修饰符。</p>
+
+<h2 id="toc_13">符合赋值运算符</h2>
+
+<p>符合赋值运算符将赋值运算符 <code>=</code> 与其他运算符进行结合。在实现的时候，需要把运算符的左参数设置成 <code>inout</code> 类型，因为这个参数的值会在运算符函数内被直接修改。</p>
+
+<p>还可以将赋值与 <code>prefix</code> 或 <code>postfix</code> 修饰符结合起来，例如实现自增运算符 <code>++</code>。</p>
+
+<p>注：不能对默认的赋值运算符 <code>=</code> 进行重载。只有组合赋值运算符可以被重载。同样地，也无法对三目条件运算符 <code>a ? b : c</code> 进行重载。</p>
+
+<h2 id="toc_14">等价运算符</h2>
+
+<p>自定义的类和结构体没有对等价运算符进行默认实现，等价运算符通常被称为相等运算符 <code>==</code> 与不等运算符 <code>!=</code>。对于自定义类型，Swift 无法判断其是否相等，因为「相等」的含义取决于这些自定义类型在你的代码中所扮演的角色。</p>
+
+<p>为了使等价运算符能对自定义的类型进行判等运算，需要为其提供自定义的实现，实现的方法与其他中缀运算符一样。</p>
+
+<h2 id="toc_15">自定义运算符</h2>
+
+<p>除了实现标准运算符，在 Swift 中还可以声明和实现自定义运算符。</p>
+
+<p>新的运算符要使用 <code>operato</code> 关键字在全局作用域内进行定义，同时还要指定 <code>prefi</code>、<code>infix</code>或者<code>postfix</code>修饰符：</p>
+
+<pre><code class="language-swift">prefix operator +++ {}
+</code></pre>
+
+<h2 id="toc_16">自定义中缀运算符的优先级和结合性</h2>
+
+<p>自定义的中缀运算符也可以指定优先级和结合性。</p>
+
+<p>结合性可取的值有 <code>left</code>、<code>right</code>和<code>none</code>。当做结合运算符跟其他相同优先级的左结合运算符写在一起时，会跟左边的值进行结合。同理，当右结合运算符跟其他相同优先级的右优先级运算符写在一起时，会跟右边的值进行结合。而非结合运算符不能跟其他相同优先级的运算符写在一起。</p>
+
+<p>结合性的默认值是 <code>none</code>，优先级的默认值是 <code>100</code>。</p>
+
+<p>下面的例子定义了一个新的中缀运算符 <code>+-</code>，此运算符的结合性为 <code>left</code>，并且它的优先级为 <code>140</code>：</p>
+
+<pre><code class="language-swift">infix operator +- { associativity left precedence 140 }
+</code></pre>
+
+<p>注：当定义前缀与后缀运算符的时候，我们并没有制定优先级。然而，如果对同一个值同时使用前缀和后缀运算符，则后缀运算符会先参与运算。</p>
+
+                            
+                        </div>
                     </div>
                 </li>
                 

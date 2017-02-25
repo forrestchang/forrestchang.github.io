@@ -3,7 +3,7 @@
   <title><![CDATA[Hack Notes]]></title>
   <link href="http://forrestchang.github.io/atom.xml" rel="self"/>
   <link href="http://forrestchang.github.io/"/>
-  <updated>2017-02-25T15:35:42+08:00</updated>
+  <updated>2017-02-25T16:09:44+08:00</updated>
   <id>http://forrestchang.github.io/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -16,7 +16,11 @@
     <updated>2017-02-24T09:20:38+08:00</updated>
     <id>http://forrestchang.github.io/14878992387553.html</id>
     <content type="html">
-<![CDATA[<p>现在这个博客只写技术相关的内容，其他的随笔都写在<a href="https://medium.com/@Tisoga">新博客</a>里，Medium 是被大陆屏蔽的，所以请自备梯子。另外一些比较私人的笔记——例如「Week Review」系列就不发表在互联网上了。</p>
+<![CDATA[<p>又开始折腾博客了。</p>
+
+<span id="more"></span><!-- more -->
+
+<p>现在这个博客只写技术相关的内容，其他的随笔都写在<a href="https://medium.com/@Tisoga">新博客</a>里，Medium 是被大陆屏蔽的，所以请自备梯子。另外一些比较私人的笔记——例如「Week Review」系列就不发表在互联网上了。</p>
 
 <p>至于原因，单纯得觉得 Medium 上的衬线字体很好看。如果需要魔改这个博客的话，还是挺麻烦的，自己目前的前端知识还处于未入门的水平，所以就不折腾了。</p>
 ]]>
@@ -29,7 +33,11 @@
     <updated>2017-02-15T19:09:57+08:00</updated>
     <id>http://forrestchang.github.io/14871569977647.html</id>
     <content type="html">
-<![CDATA[<h2 id="toc_0">函数与方法装饰器</h2>
+<![CDATA[<p>Just some notes on Python.</p>
+
+<span id="more"></span><!-- more -->
+
+<h2 id="toc_0">函数与方法装饰器</h2>
 
 <ul>
 <li>优点：优雅的在函数上指定一些转换，该转换可能减少一些重复代码，保持已有函数不变（enforce invariants）</li>
@@ -201,7 +209,11 @@
     <updated>2017-01-01T22:06:15+08:00</updated>
     <id>http://forrestchang.github.io/14832795759469.html</id>
     <content type="html">
-<![CDATA[<p>今天是元旦，因为在 Calendar 中把今天归到 2017 年的第一周里了，所以就按照上面所写的把这周当做第一周吧。</p>
+<![CDATA[<p>二〇一七年的第一周。</p>
+
+<span id="more"></span><!-- more -->
+
+<p>今天是元旦，因为在 Calendar 中把今天归到 2017 年的第一周里了，所以就按照上面所写的把这周当做第一周吧。</p>
 
 <p>这周结束了在中软的课程设计实训，以前总嫌弃小渔村破，现在回来才知道还是小渔村好啊。课程设计实训的内容是用 Java 写一个点餐系统，一个小组只需要做一份就可以了，不过几乎所有人都不知道 Git 是个什么东西，小组合作还是用的 U 盘拷贝代码，所以代码质量可想而知了，本组的其他人都比较厉害，索性我就抱大腿划水了，什么也没有参与，代码也没有写一行。</p>
 
@@ -239,7 +251,11 @@
     <updated>2016-12-26T09:38:40+08:00</updated>
     <id>http://forrestchang.github.io/14827163208652.html</id>
     <content type="html">
-<![CDATA[<p>2016 年最后一周（实际上还有6天，不过那一周就算到 2017 年第一周吧）。</p>
+<![CDATA[<p>二〇一六年的第五十二周。</p>
+
+<span id="more"></span><!-- more -->
+
+<p>2016 年最后一周（实际上还有6天，不过那一周就算到 2017 年第一周吧）。</p>
 
 <ul>
 <li><strong>编程</strong>：这周在看《Python 网络数据采集》，以前虽然也用过爬虫，但是毕竟没有系统地学过，所以还是找了一本书来看。但是说实话，这本书写得并不是很好，不知道是写书时间的原因还是什么，挺多语法错误的，而且代码的风格很差（完全不符合 PEP8 标准）。内容也比较浅，基本上都是之前已经知道了的东西，所以收获也不是很多，（下一篇的博客可以来写一写怎么写一个高效的爬虫）。面试的事情作废了，1）看了一下他们做的产品，感觉不是自己想要做的东西；2）开出的薪资太低，up to 2k（其实主要是薪资太低了，每天要往返金石滩和大连市，太累了）。所以还是好好学习准备明年的暑期实习吧。另外 GSoC 也应该放上日程了，即使有申请不上的可能，还是要试一试的。</li>
@@ -257,7 +273,11 @@
     <updated>2016-12-22T20:10:42+08:00</updated>
     <id>http://forrestchang.github.io/14824086421976.html</id>
     <content type="html">
-<![CDATA[<p>开始学习机器学习/数据挖掘相关的内容，打算每学习一部分知识就写一篇博客总结一下，当做学习过程中的笔记，也为以后看的时候提供存档。</p>
+<![CDATA[<p>写给自己看的推荐系统笔记。</p>
+
+<span id="more"></span><!-- more -->
+
+<p>开始学习机器学习/数据挖掘相关的内容，打算每学习一部分知识就写一篇博客总结一下，当做学习过程中的笔记，也为以后看的时候提供存档。</p>
 
 <p>这一篇笔记是关于推荐系统的，主要讲了两种推荐算法（基于用户和基于物品的协同过滤）。</p>
 
@@ -899,7 +919,11 @@ def getRecommendations(prefs, person, similarity=sim_pearson):
     <updated>2016-12-22T20:39:14+08:00</updated>
     <id>http://forrestchang.github.io/14824103542982.html</id>
     <content type="html">
-<![CDATA[<p>看了一下日历，上一周是 2016 年的倒数第二周了（写这篇文章的时候已经是 52 周了），换了新博客之后就一直没有再写过 Week Review，这其中虽然有一些外部的因素，但大抵上还是不想写。</p>
+<![CDATA[<p>二〇一六年的第五十一周。</p>
+
+<span id="more"></span><!-- more -->
+
+<p>看了一下日历，上一周是 2016 年的倒数第二周了（写这篇文章的时候已经是 52 周了），换了新博客之后就一直没有再写过 Week Review，这其中虽然有一些外部的因素，但大抵上还是不想写。</p>
 
 <p>上周学校组织来中软做课程设计，所以这些天一直待在中软的培训中心里，课程设计的题目是一个点餐的 Web 应用，用 Java 开发，因为并不打算从事 Java，所以也并没有怎么听，大部分时间都是在自己看书和写自己的 Project。不过要吐槽一下这边的环境，宿舍除了床什么也没有，所以晚上回去什么都干不了，只能坐在床上看看电影，最不能忍的是网都没有……学校送来培训中心的这种做法我是很不认同的，好好的大学为什么要搞成职业教育呢？</p>
 
