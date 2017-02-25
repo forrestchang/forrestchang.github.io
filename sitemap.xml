@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>http://forrestchang.github.io/</loc>
-  <lastmod>2017-02-25T16:12:42+08:00</lastmod>
+  <lastmod>2017-02-25T17:09:14+08:00</lastmod>
 </url>
 
 <url>
@@ -218,23 +218,11 @@
 
 
 <url>
-  <loc>http://forrestchang.github.io/life.html</loc>
+  <loc>http://forrestchang.github.io/tech.html</loc>
 </url>
 
 <url>
-  <loc>http://forrestchang.github.io/machine-learning.html</loc>
-</url>
-
-<url>
-  <loc>http://forrestchang.github.io/python.html</loc>
-</url>
-
-<url>
-  <loc>http://forrestchang.github.io/productivity.html</loc>
-</url>
-
-<url>
-  <loc>http://forrestchang.github.io/technology.html</loc>
+  <loc>http://forrestchang.github.io/essay.html</loc>
 </url>
 
 </urlset>

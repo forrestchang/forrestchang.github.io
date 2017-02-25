@@ -6,7 +6,7 @@
 }
 
 .site-title {
-    font-size: 26px;
+    font-size: 30px;
     font-weight: 300;
     line-height: 56px;
     letter-spacing: -1px;
@@ -14,10 +14,6 @@
     float: left;
 }
 
-.site-title,
-.site-title:visited {
-    color: #424242;
-}
 
 .site-nav {
     float: right;
@@ -118,7 +114,7 @@
 
 /* Link */
 .post-content a {
-    color: #39F89D;
+    color: #3FCC87;
     padding-bottom: 2px;
     padding-left: 1px;
     padding-right: 1px;
@@ -155,4 +151,35 @@ time.update {
     font-family: serif;
     font-size: 14px;
     font-style: italic;
+}
+
+time.post-time {
+    font-size: 15px;
+    color: #999;
+}
+
+a.site-title {
+    font-size: 30px;
+    color: #787879;
+}
+
+a.site-title:hover {
+    color: #444443;
+}
+
+.yue {
+    font-size: 20px;
+}
+
+.post-content {
+    font-family: Helvetica, STSong, SimSun, "PingFang SC";
+    font-size: 21px;
+}
+
+.yue pre {
+    font-size: 0.80em;
+}
+
+.yue code {
+    font-size: 0.87em;
 }
