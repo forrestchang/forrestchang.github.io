@@ -3,7 +3,7 @@
   <title><![CDATA[Hack Notes]]></title>
   <link href="http://forrestchang.github.io/atom.xml" rel="self"/>
   <link href="http://forrestchang.github.io/"/>
-  <updated>2017-02-25T20:41:34+08:00</updated>
+  <updated>2017-02-25T20:46:19+08:00</updated>
   <id>http://forrestchang.github.io/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -2069,7 +2069,8 @@ Yuck!
 
 <p>语法：</p>
 
-<pre><code class="language-swift label"></code></pre>
+<pre><code class="language-swift">label name: while condition { statements }
+</code></pre>
 
 <h2 id="toc_10">提前退出</h2>
 
