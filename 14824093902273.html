@@ -59,20 +59,16 @@
             <header class="post-header">
                 <h1 class="post-title" itemprop="name headline">Swift 中的内存管理</h1>
                 <div class="post-description">
-                    <p>Notes on Swift.</p>
-
-
+                    
+                        Notes on Swift.
+                    
                 </div>
                 <p class="post-meta">
                     <time class="post-time" datetime="2016-04-15T20:23:10+08:00" itemprop="datePublished">Created by Tisoga at 2016/4/15</time>
                 </p>
             </header>
             <div class="post-content" itemprop="articleBody">
-                <p>Notes on Swift.</p>
-
-<span id="more"></span><!-- more -->
-
-<p>这篇文章是在阅读《The Swift Programming Language》Automatic Reference Counting（ARC，自动引用计数）一章时做的一些笔记，同时参考了其他的一些资料。</p>
+                <p>这篇文章是在阅读《The Swift Programming Language》Automatic Reference Counting（ARC，自动引用计数）一章时做的一些笔记，同时参考了其他的一些资料。</p>
 
 <p>在早期的 iOS 开发中，内存管理是由开发者手动来完成的。因为传统的垃圾回收机制对于移动平台来说十分低效，苹果采用的是引用计数（RC，Reference Counting）的方式来管理内存，开发者需要通过手工的方式增加或减少一个实例的引用计数。在 iOS 5 之后，引入了 ARC 自动引用计数，使得开发者不需要手动地调用 <code>retain</code> 和 <code>release</code> 来管理引用计数，但是实际上这些方法还是会被调用，只不过是交给了编译器来完成，编译器会在合适的地方帮我们加入这些方法。</p>
 
