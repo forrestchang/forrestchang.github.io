@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title><![CDATA[Hack Notes]]></title>
-  <link href="http://forrestchang.github.io/atom.xml" rel="self"/>
-  <link href="http://forrestchang.github.io/"/>
-  <updated>2017-02-26T11:56:33+08:00</updated>
-  <id>http://forrestchang.github.io/</id>
+  <link href="http://forrestchang.com/atom.xml" rel="self"/>
+  <link href="http://forrestchang.com/"/>
+  <updated>2017-02-26T15:55:24+08:00</updated>
+  <id>http://forrestchang.com/</id>
   <author>
     <name><![CDATA[]]></name>
   </author>
@@ -12,9 +12,9 @@
   
   <entry>
     <title type="html"><![CDATA[Digital Life in 2016: 音乐篇]]></title>
-    <link href="http://forrestchang.github.io/digital-life-in-2016-music-part.html"/>
+    <link href="http://forrestchang.com/digital-life-in-2016-music-part.html"/>
     <updated>2017-02-24T11:52:04+08:00</updated>
-    <id>http://forrestchang.github.io/digital-life-in-2016-music-part.html</id>
+    <id>http://forrestchang.com/digital-life-in-2016-music-part.html</id>
     <content type="html">
 <![CDATA[<p>最近知乎上的一个朋友和我私信聊了一些关于效率工具以及 Workflow 方面的一些问题。</p>
 
@@ -106,9 +106,9 @@
   
   <entry>
     <title type="html"><![CDATA[换了一个新地方写东西]]></title>
-    <link href="http://forrestchang.github.io/14878992387553.html"/>
+    <link href="http://forrestchang.com/14878992387553.html"/>
     <updated>2017-02-24T09:20:38+08:00</updated>
-    <id>http://forrestchang.github.io/14878992387553.html</id>
+    <id>http://forrestchang.com/14878992387553.html</id>
     <content type="html">
 <![CDATA[<p>又开始折腾博客了。</p>
 
@@ -127,9 +127,9 @@
   
   <entry>
     <title type="html"><![CDATA[Python 风格指南笔记]]></title>
-    <link href="http://forrestchang.github.io/14871569977647.html"/>
+    <link href="http://forrestchang.com/14871569977647.html"/>
     <updated>2017-02-15T19:09:57+08:00</updated>
-    <id>http://forrestchang.github.io/14871569977647.html</id>
+    <id>http://forrestchang.com/14871569977647.html</id>
     <content type="html">
 <![CDATA[<p>Just some notes on Python.</p>
 
@@ -303,9 +303,9 @@
   
   <entry>
     <title type="html"><![CDATA[2017 Week 1 Review]]></title>
-    <link href="http://forrestchang.github.io/14832795759469.html"/>
+    <link href="http://forrestchang.com/14832795759469.html"/>
     <updated>2017-01-01T22:06:15+08:00</updated>
-    <id>http://forrestchang.github.io/14832795759469.html</id>
+    <id>http://forrestchang.com/14832795759469.html</id>
     <content type="html">
 <![CDATA[<p>二〇一七年的第一周。</p>
 
@@ -345,9 +345,9 @@
   
   <entry>
     <title type="html"><![CDATA[2016 Week 52 Review]]></title>
-    <link href="http://forrestchang.github.io/14827163208652.html"/>
+    <link href="http://forrestchang.com/14827163208652.html"/>
     <updated>2016-12-26T09:38:40+08:00</updated>
-    <id>http://forrestchang.github.io/14827163208652.html</id>
+    <id>http://forrestchang.com/14827163208652.html</id>
     <content type="html">
 <![CDATA[<p>二〇一六年的第五十二周。</p>
 
@@ -367,9 +367,9 @@
   
   <entry>
     <title type="html"><![CDATA[推荐系统笔记]]></title>
-    <link href="http://forrestchang.github.io/14824086421976.html"/>
+    <link href="http://forrestchang.com/14824086421976.html"/>
     <updated>2016-12-22T20:10:42+08:00</updated>
-    <id>http://forrestchang.github.io/14824086421976.html</id>
+    <id>http://forrestchang.com/14824086421976.html</id>
     <content type="html">
 <![CDATA[<p>写给自己看的推荐系统笔记。</p>
 
@@ -1013,9 +1013,9 @@ def getRecommendations(prefs, person, similarity=sim_pearson):
   
   <entry>
     <title type="html"><![CDATA[2016 Week 51 Review]]></title>
-    <link href="http://forrestchang.github.io/14824103542982.html"/>
+    <link href="http://forrestchang.com/14824103542982.html"/>
     <updated>2016-12-22T20:39:14+08:00</updated>
-    <id>http://forrestchang.github.io/14824103542982.html</id>
+    <id>http://forrestchang.com/14824103542982.html</id>
     <content type="html">
 <![CDATA[<p>二〇一六年的第五十一周。</p>
 
@@ -1032,9 +1032,9 @@ def getRecommendations(prefs, person, similarity=sim_pearson):
   
   <entry>
     <title type="html"><![CDATA[2016 Week 46 Review]]></title>
-    <link href="http://forrestchang.github.io/14824081615573.html"/>
+    <link href="http://forrestchang.com/14824081615573.html"/>
     <updated>2016-12-22T20:02:41+08:00</updated>
-    <id>http://forrestchang.github.io/14824081615573.html</id>
+    <id>http://forrestchang.com/14824081615573.html</id>
     <content type="html">
 <![CDATA[<p>二〇一六年的第四十六周。</p>
 
@@ -1055,9 +1055,9 @@ def getRecommendations(prefs, person, similarity=sim_pearson):
   
   <entry>
     <title type="html"><![CDATA[2016 Week 45 Review]]></title>
-    <link href="http://forrestchang.github.io/14824080993859.html"/>
+    <link href="http://forrestchang.com/14824080993859.html"/>
     <updated>2016-12-22T20:01:39+08:00</updated>
-    <id>http://forrestchang.github.io/14824080993859.html</id>
+    <id>http://forrestchang.com/14824080993859.html</id>
     <content type="html">
 <![CDATA[<p>二〇一六年的第四十五周。</p>
 
@@ -1078,9 +1078,9 @@ def getRecommendations(prefs, person, similarity=sim_pearson):
   
   <entry>
     <title type="html"><![CDATA[2016 Week 44 Review]]></title>
-    <link href="http://forrestchang.github.io/14824080414983.html"/>
+    <link href="http://forrestchang.com/14824080414983.html"/>
     <updated>2016-12-22T20:00:41+08:00</updated>
-    <id>http://forrestchang.github.io/14824080414983.html</id>
+    <id>http://forrestchang.com/14824080414983.html</id>
     <content type="html">
 <![CDATA[<p>二〇一六年的第四十四周。</p>
 
@@ -1099,9 +1099,9 @@ def getRecommendations(prefs, person, similarity=sim_pearson):
   
   <entry>
     <title type="html"><![CDATA[搭建 Python 科学计算环境]]></title>
-    <link href="http://forrestchang.github.io/14824083276745.html"/>
+    <link href="http://forrestchang.com/14824083276745.html"/>
     <updated>2016-12-22T20:05:27+08:00</updated>
-    <id>http://forrestchang.github.io/14824083276745.html</id>
+    <id>http://forrestchang.com/14824083276745.html</id>
     <content type="html">
 <![CDATA[<p>仅仅是搭个环境。</p>
 
@@ -1188,9 +1188,9 @@ def getRecommendations(prefs, person, similarity=sim_pearson):
   
   <entry>
     <title type="html"><![CDATA[2016 Week 42-43 Review]]></title>
-    <link href="http://forrestchang.github.io/14824079755630.html"/>
+    <link href="http://forrestchang.com/14824079755630.html"/>
     <updated>2016-12-22T19:59:35+08:00</updated>
-    <id>http://forrestchang.github.io/14824079755630.html</id>
+    <id>http://forrestchang.com/14824079755630.html</id>
     <content type="html">
 <![CDATA[<p>二〇一六年的第四十二周和第四十三周。</p>
 
@@ -1237,9 +1237,9 @@ def getRecommendations(prefs, person, similarity=sim_pearson):
   
   <entry>
     <title type="html"><![CDATA[2016 Week 40 Review]]></title>
-    <link href="http://forrestchang.github.io/14824078620114.html"/>
+    <link href="http://forrestchang.com/14824078620114.html"/>
     <updated>2016-12-22T19:57:42+08:00</updated>
-    <id>http://forrestchang.github.io/14824078620114.html</id>
+    <id>http://forrestchang.com/14824078620114.html</id>
     <content type="html">
 <![CDATA[<p>二〇一六年的第四十周。</p>
 
@@ -1303,9 +1303,9 @@ def getRecommendations(prefs, person, similarity=sim_pearson):
   
   <entry>
     <title type="html"><![CDATA[2016 Week 39 Review]]></title>
-    <link href="http://forrestchang.github.io/14824077552377.html"/>
+    <link href="http://forrestchang.com/14824077552377.html"/>
     <updated>2016-12-22T19:55:55+08:00</updated>
-    <id>http://forrestchang.github.io/14824077552377.html</id>
+    <id>http://forrestchang.com/14824077552377.html</id>
     <content type="html">
 <![CDATA[<p>好久没有写周总结了，所以这几周都过得比较颓废……</p>
 
@@ -1366,9 +1366,9 @@ def getRecommendations(prefs, person, similarity=sim_pearson):
   
   <entry>
     <title type="html"><![CDATA[2016/08/08 阅读笔记]]></title>
-    <link href="http://forrestchang.github.io/14706584948925.html"/>
+    <link href="http://forrestchang.com/14706584948925.html"/>
     <updated>2016-08-08T20:14:54+08:00</updated>
-    <id>http://forrestchang.github.io/14706584948925.html</id>
+    <id>http://forrestchang.com/14706584948925.html</id>
     <content type="html">
 <![CDATA[<p>Just some reading notes.</p>
 
@@ -1423,9 +1423,9 @@ def getRecommendations(prefs, person, similarity=sim_pearson):
   
   <entry>
     <title type="html"><![CDATA[virtualenv 相关笔记]]></title>
-    <link href="http://forrestchang.github.io/14824097975366.html"/>
+    <link href="http://forrestchang.com/14824097975366.html"/>
     <updated>2016-12-22T20:29:57+08:00</updated>
-    <id>http://forrestchang.github.io/14824097975366.html</id>
+    <id>http://forrestchang.com/14824097975366.html</id>
     <content type="html">
 <![CDATA[<p>记录一些有关 virtualenv 的使用笔记。</p>
 
@@ -1515,9 +1515,9 @@ $ rm -r /path/to/ENV
   
   <entry>
     <title type="html"><![CDATA[The Python Tutorial Reading Notes]]></title>
-    <link href="http://forrestchang.github.io/14824095038232.html"/>
+    <link href="http://forrestchang.com/14824095038232.html"/>
     <updated>2016-12-22T20:25:03+08:00</updated>
-    <id>http://forrestchang.github.io/14824095038232.html</id>
+    <id>http://forrestchang.com/14824095038232.html</id>
     <content type="html">
 <![CDATA[<p><em>The Python Tutorial</em> is a good stuff to learn Python. I have already read it sketchily before, but didn&#39;t foucs on some detail things. This time I read it again and write some notes.</p>
 
@@ -1731,9 +1731,9 @@ Yuck!
   
   <entry>
     <title type="html"><![CDATA[2016/07/02 阅读笔记]]></title>
-    <link href="http://forrestchang.github.io/14674443542637.html"/>
+    <link href="http://forrestchang.com/14674443542637.html"/>
     <updated>2016-07-02T15:25:54+08:00</updated>
-    <id>http://forrestchang.github.io/14674443542637.html</id>
+    <id>http://forrestchang.com/14674443542637.html</id>
     <content type="html">
 <![CDATA[<p>Reading notes.</p>
 
@@ -1824,9 +1824,9 @@ Yuck!
   
   <entry>
     <title type="html"><![CDATA[2016 Week 21 阅读笔记]]></title>
-    <link href="http://forrestchang.github.io/14636395892916.html"/>
+    <link href="http://forrestchang.com/14636395892916.html"/>
     <updated>2016-05-19T14:33:09+08:00</updated>
-    <id>http://forrestchang.github.io/14636395892916.html</id>
+    <id>http://forrestchang.com/14636395892916.html</id>
     <content type="html">
 <![CDATA[<p>这周我读了些什么？</p>
 
@@ -2008,9 +2008,9 @@ Yuck!
   
   <entry>
     <title type="html"><![CDATA[Swift学习笔记：控制流]]></title>
-    <link href="http://forrestchang.github.io/14635617646524.html"/>
+    <link href="http://forrestchang.com/14635617646524.html"/>
     <updated>2016-05-18T16:56:04+08:00</updated>
-    <id>http://forrestchang.github.io/14635617646524.html</id>
+    <id>http://forrestchang.com/14635617646524.html</id>
     <content type="html">
 <![CDATA[<p>Notes on Swift.</p>
 
