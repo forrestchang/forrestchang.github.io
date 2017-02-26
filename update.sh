@@ -3,4 +3,4 @@
 cd ~/Documents/Blog
 git add .
 git commit -m 'auto update'
-proxychains4 git push
+git push
