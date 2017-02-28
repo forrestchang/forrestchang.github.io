@@ -2,7 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>http://forrestchang.com/</loc>
-  <lastmod>2017-02-27T12:14:45+08:00</lastmod>
+  <lastmod>2017-02-28T12:30:23+08:00</lastmod>
+</url>
+
+<url>
+  <loc>http://forrestchang.com/resume.html</loc>
+  <lastmod>2017-02-28T12:26:33+08:00</lastmod>
 </url>
 
 <url>
@@ -224,6 +229,10 @@
 
 <url>
   <loc>http://forrestchang.com/tech.html</loc>
+</url>
+
+<url>
+  <loc>http://forrestchang.com/misc.html</loc>
 </url>
 
 <url>
