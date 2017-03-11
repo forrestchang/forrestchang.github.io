@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2016-11-23 Wed 15:59 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>柳比歇夫时间记录法</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Tisoga" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="./css/light.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">柳比歇夫时间记录法</h1>
+<p>
+他是逐步完善他的时间统计法的。开始，他只是充分利用事情间的空余时间做统计，后来对时间的需求越来越大，于是他不断完善自己的时间统计法。
+</p>
+
+<p>
+他不让自己负担过重，力不胜任。他循着他能力的边缘前进，对自己的能力的掂量愈来愈精确。
+</p>
+
+<p>
+对于精力，他根据自己的身体状况，精力旺盛和低迷的不同状态去安排计划，安排事情；对于时间，他计算出一天可以用于工作的纯时间，用于完成达到自己的目标。
+</p>
+
+<p>
+达到的效果：
+</p>
+
+<ul class="org-ul">
+<li>一生无数成就。</li>
+<li>获得了大量的时间。确切的说是大量的时间去做达到目标的事。首先是很强的时间观念，让他不浪费时间到无意义的事上；再就是做的计划，使柳比歇夫尽可能不偏离自己的计划轨道。</li>
+<li>身体虽然不好，但长寿，一生基本健康。睡眠时间很长，有十个小时；根据自己的身体规律去工作，投入和产出达到了一定的平衡。</li>
+<li>证明，如果把才能集中到一个目标上，可以取得多么多的成就。</li>
+<li>可以了解到自己的变化，看书的数量，各种类的比重，时间的具体流向。</li>
+<li>对自己要做的事情做到心中有数，为做计划提供很好的参考。</li>
+</ul>
+
+<p>
+什么事情都记下起始时间，任何活动，休息、看报、散步，都记下时间，误差不超过 5 分钟。
+</p>
+
+<p>
+不断看表，无休无止的进行自我工时标定。
+</p>
+
+<p>
+小结用的时间也记录。他的每篇论文都有时间成本。
+</p>
+
+<p>
+每天临睡前进行时间统计。计算时间花在什么地方了，花了多少。最后算出基本消耗时间。每天合计第一类的工作时间。
+</p>
+
+<p>
+计算的是纯时间，即刨除工作中的任何间歇。
+</p>
+
+<pre class="example">
+乌里扬诺夫斯克。一九六四年四月七日
+
+- 分类昆虫学（画两张无名袋蛾的图） - 三小时十五分
+- 鉴定袋蛾 - 二十分（1.0）
+- 附加工作：给斯拉瓦写信 - 二小时四十五分（0.5）
+- 社会工作：植物保护小组开会 - 二小时二十五分
+- 休息：给伊戈尔写信 - 十分；《乌里扬诺夫斯克真理报》 - 十分；列夫·托尔斯泰的《塞瓦斯托波尔纪事》 - 一小时二十五分
+
+基本工作合计 - 六小时二十分
+</pre>
+
+<ul class="org-ul">
+<li><p>
+每月总结
+</p>
+
+<p>
+将这个月第一类工作时间，第二类工作时间分别合计出来。然后是第一、第二类的工作的详细一览表。
+</p></li>
+
+<li><p>
+年终总结
+</p>
+
+<p>
+根据月小结做份年度总结，列出一览表，旁边标注着数字。
+</p>
+
+<p>
+年终总结篇幅巨大，很详尽，什么记录都有。看了多少书、什么书，各国的文艺作品看了多少等。
+</p>
+
+<p>
+即使月小结中已详细记录，年度总结中也再统计一遍。把所有干了的，读了的，看了的通通收集到一起，加以计算，分门别类。
+</p>
+
+<p>
+年度总结有个欠债的账单，列着每月看完的书留下的尾巴。每年重复一次，没有减少。
+</p>
+
+<p>
+每份小结，总结的末尾都注明了它们的代价：花了多长时间。
+</p></li>
+
+<li><p>
+月计划
+</p>
+
+<p>
+先是通过时间统计法，了解到自己每天，每月能用于工作的时间有多少，以此为标准容器；通过时间统计法，还了解到自己做每样工作需要消耗的时间，于是以这两个标准，安排工作和活动。
+</p>
+
+<p>
+每天分为必须活动和非必须活动。吃饭、睡觉，这是必须的标准活动，一般消耗十一二个小时；非标准活动，即办公、学术工作、娱乐等，约占十二至十三小时，这是毛时间。
+</p>
+
+<p>
+第一类工作包括中心工作（写作、搞研究）和例行工作（看参考书、做笔记、写信等）。
+</p>
+
+<p>
+第二类工作包括做学术报告、讲课、开学术讨论会、看文艺作品，不属于直接科研工作的活动都包括在内。
+</p></li>
+</ul>
+
+<hr  />
+
+<p>
+读书方法：
+</p>
+
+<ul class="org-ul">
+<li>写很多东西，备而不用；</li>
+<li>读的慢（但由于做摘要，所以不容易忘记）；</li>
+<li>不太了解的书，尽量做摘要。重要的论著，摘要详尽；最重要的论著，要写个提纲，评论性简介；</li>
+<li>读的东西很多，很杂；</li>
+</ul>
+
+<hr  />
+
+<ul class="org-ul">
+<li>不承担必须完成的任务</li>
+<li>不接受紧急的任务</li>
+<li>一累马上停止工作休息</li>
+<li>不同内容书籍交替着看</li>
+<li>睡很多，一天十个小时左右</li>
+<li>累人工作和愉快工作结合一起</li>
+</ul>
+</div>
+<div id="postamble" class="status">
+<p class="postamble">Last Updated 2016-11-23 Wed 15:59. Created by Tisoga</p>
+                            <div id="disqus_thread"></div>
+                            <script type="text/javascript">
+                            var disqus_shortname = 'tisogasnotes';
+                            (function() {
+                                         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                                          })();
+                            </script>
+</div>
+</body>
+</html>
