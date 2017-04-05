@@ -3,91 +3,12 @@
   <title><![CDATA[Hack Notes]]></title>
   <link href="http://forrestchang.com/atom.xml" rel="self"/>
   <link href="http://forrestchang.com/"/>
-  <updated>2017-03-26T20:17:57+08:00</updated>
+  <updated>2017-03-26T20:34:55+08:00</updated>
   <id>http://forrestchang.com/</id>
   <author>
     <name><![CDATA[]]></name>
   </author>
   <generator uri="http://www.coderforart.com/">CoderForArt</generator>
-  
-  <entry>
-    <title type="html"><![CDATA[这周在读什么 Issue#1]]></title>
-    <link href="http://forrestchang.com/14903286295184.html"/>
-    <updated>2017-03-24T12:10:29+08:00</updated>
-    <id>http://forrestchang.com/14903286295184.html</id>
-    <content type="html">
-<![CDATA[<p>为什么要写这个？最主要的原因还是激励自己多多阅读，读好书和好文章，然后写 review。</p>
-
-<p>读些什么？平常的阅读比较杂，除了书籍之外，还会读很多的博客文章，所以会写这周的 book review，主要是针对这周读完的书，读了一半放弃不打算再读的书也会写，没有读完的书不写；文章就简单写一些笔记性的 review。</p>
-
-<p>*注：标注了 <code>[TECH]</code> 是和我专业相关的内容，可以跳过。</p>
-
-<h2 id="toc_0">Books</h2>
-
-<h3 id="toc_1"><a href="https://book.douban.com/subject/4251102/">《清华园日记》</a>，季羡林，外语教学与研究出版社，二零零九。</h3>
-
-<p>这本书断断续续得读了有一个月的时间，因为是日记体的形式，所以什么时候都可以拿出来读一下。</p>
-
-<blockquote>
-<p>日记是写给自己看的，什么样的思想，什么样在人前难以说出口的话，都写了进去。万没想到今天会把日记公开。这些话是不是要删掉呢？我考虑了一下，决定不删。一仍其旧，一句话也没有删。<mark>我七十年前不是圣人，将来也不会成为圣人。我不想到孔庙里去陪着吃冷猪肉。我把自己活脱脱地暴露于光天化日之下。</mark></p>
-</blockquote>
-
-<p>这本日记是季羡林在清华园求学时所记，从大三一直写到大四。百年之前的大学生活和现在相比，并无什么太大的不同。季老也有过迷茫，对前途的忧虑，但是更多的是在勤勉地读书、写文章。</p>
-
-<blockquote>
-<p>苏东坡词「谁到人生无再少，门前流水尚能西」。难道这就是「再少」吗？</p>
-</blockquote>
-
-<p>阅读用时：7 小时 26 分，<a href="https://www.evernote.com/l/AYC42MIUq-5BXIHRNGdRcL1OxXt3DPzLT5k">摘录</a>。</p>
-
-<h2 id="toc_2">Articles</h2>
-
-<h3 id="toc_3">1. <a href="https://medium.freecodecamp.com/how-i-got-a-second-degree-and-earned-5-developer-certifications-in-just-one-year-while-working-and-2b902ee291ab#.gblxpzdk0">How I got a second degree and earned 5 developer certifications in just one year, while working and raising two kids</a></h3>
-
-<p>全职教师、两个孩子、五张开发者证书、一个第二学位。如何在一年内实现这么多事？</p>
-
-<blockquote>
-<p>Ambitious goals are important.</p>
-</blockquote>
-
-<p>另外，你还不得不放弃一些东西。比如，剧是不能追了。</p>
-
-<blockquote>
-<p>It was important for me to give things up in order to accomplish my goals.</p>
-</blockquote>
-
-<p>学会使用 8/2 法则，逃出自己的 comfort zone。</p>
-
-<blockquote>
-<p>Really, when learning anything, you should ask yourself if it is part of the 20% of learning content that will give you 80% of value.</p>
-</blockquote>
-
-<p>这和很久前看的<a href="https://www.douban.com/group/topic/34856495/">一篇文章</a>很像。</p>
-
-<h3 id="toc_4">2. <a href="https://hackernoon.com/unconventional-way-of-learning-a-new-programming-language-e4d1f600342c#.6o98rs4xs">Unconventional way of learning a new programming language</a></h3>
-
-<p>Open source projects oriented programming.</p>
-
-<p>如何学习一门新的语言，参加关于那个语言的开源项目。开源项目没有想象的那么难。</p>
-
-<blockquote>
-<p>I had a look at the issues and found a lot of “beginner” issues. I immediately started working on them and submitted a couple of pull requests. Fast forward to today, I am one of the main contributors for a couple of their open projects and also one of the 20 Open Source Community Leaders for DuckDuckGo.</p>
-</blockquote>
-
-<h3 id="toc_5">3. <a href="https://medium.freecodecamp.com/looking-back-to-what-started-it-all-731ef5424aec#.scacfw9pe">A Vision of Coding, Without Opening your Eyes</a></h3>
-
-<blockquote>
-<p>I’m a coder. I’m also blind. Blind as a bat, you might say. And I was born this way.</p>
-</blockquote>
-
-<p>这篇文章写自一个 blind coder，解释了三个（在我看来）有点 offensive 的问题：1）如何阅读；2）如何 coding；3）会做梦吗？</p>
-
-<blockquote>
-<p>I’ll try and sketch out an image for those of you who are curious about accessibility, and how blind people use computers to code, and to do the work of the 21st century.</p>
-</blockquote>
-]]>
-    </content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[叛逃 Spotify]]></title>
