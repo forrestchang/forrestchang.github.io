@@ -3,7 +3,7 @@
   <title><![CDATA[Hack Notes]]></title>
   <link href="http://forrestchang.com/atom.xml" rel="self"/>
   <link href="http://forrestchang.com/"/>
-  <updated>2017-04-10T20:45:49+08:00</updated>
+  <updated>2017-04-10T20:52:48+08:00</updated>
   <id>http://forrestchang.com/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -44,6 +44,244 @@
 </ol>
 
 <p>不过毕竟才用了几天，还没有深度体验过。Mac 上推荐配合 Alfred 的 Workflow 来使用，可以避免到 Spotify 应用里面进行操作。</p>
+]]>
+    </content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[LeetCode 刷题笔记]]></title>
+    <link href="http://forrestchang.com/14891114444883.html"/>
+    <updated>2017-03-10T10:04:04+08:00</updated>
+    <id>http://forrestchang.com/14891114444883.html</id>
+    <content type="html">
+<![CDATA[<ul>
+<li>
+<a href="#toc_0">001 Two Sum [Easy]</a>
+<ul>
+<li>
+<a href="#toc_1">题目</a>
+</li>
+<li>
+<a href="#toc_2">时间复杂度</a>
+</li>
+<li>
+<a href="#toc_3">思路</a>
+</li>
+<li>
+<a href="#toc_4">代码</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_5">002 Add Two Numbers [Medium]</a>
+<ul>
+<li>
+<a href="#toc_6">时间复杂度</a>
+</li>
+<li>
+<a href="#toc_7">思路</a>
+</li>
+<li>
+<a href="#toc_8">代码</a>
+</li>
+<li>
+<a href="#toc_9">笔记</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_10">007 Reverse Integer [Easy]</a>
+<ul>
+<li>
+<a href="#toc_11">题目</a>
+</li>
+<li>
+<a href="#toc_12">思路</a>
+</li>
+<li>
+<a href="#toc_13">代码</a>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h2 id="toc_0">001 Two Sum [Easy]</h2>
+
+<h3 id="toc_1">题目</h3>
+
+<p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
+
+<p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
+
+<p>Example：</p>
+
+<pre><code>Given nums = [2, 7, 11, 15], target = 9,
+
+Because nums[0] + nums[1] = 2 + 7 = 9,
+return [0, 1].
+</code></pre>
+
+<h3 id="toc_2">时间复杂度</h3>
+
+<p>\(O(n)\)</p>
+
+<h3 id="toc_3">思路</h3>
+
+<p>比较暴力的做法就是用两个循环来穷举，这样的话时间复杂度会达到 \(O(n^2)\)。</p>
+
+<p>另外一种思路就是使用一个 dict 来保存外循环中 target 与 num 的差值，这样在数组中只要发现这个值就可以直接返回了，而在 dic 查找的时间复杂度为 \(O(1)\)。</p>
+
+<h3 id="toc_4">代码</h3>
+
+<pre><code class="language-python">class Solution(object):
+    def twoSum(self, nums, target):
+        &quot;&quot;&quot;
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        &quot;&quot;&quot;
+        dic = {}
+        for i, num in enumerate(nums):
+            if num in dic:
+                return [dic[num], i]
+            else:
+                dic[target - num] = i
+</code></pre>
+
+<h2 id="toc_5">002 Add Two Numbers [Medium]</h2>
+
+<p>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</p>
+
+<p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</p>
+
+<p>Example:</p>
+
+<pre><code>Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)
+Output: 7 -&gt; 0 -&gt; 8
+</code></pre>
+
+<h3 id="toc_6">时间复杂度</h3>
+
+<p>\(O(n)\)</p>
+
+<h3 id="toc_7">思路</h3>
+
+<p>把两个数相加存在链表里，这两个数字的每一位都存在链表中，并且链表是反转的。思路很简单，就是遍历链表，把数取出来，然后加完后再添加到链表中。</p>
+
+<p>代码写得很直白。</p>
+
+<h3 id="toc_8">代码</h3>
+
+<pre><code class="language-python"># Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution(object):
+    def addTwoNumbers(self, l1, l2):
+        &quot;&quot;&quot;
+        :type l1: ListNode
+        :type l2: ListNode
+        :rtype: ListNode
+        &quot;&quot;&quot;
+        num1 = []
+        num2 = []
+        current = l1
+        while current != None:
+            num1.append(str(current.val))
+            current = current.next
+        current = l2
+        while current != None:
+            num2.append(str(current.val))
+            current = current.next
+        num1 = &#39;&#39;.join(num1)[::-1]
+        num2 = &#39;&#39;.join(num2)[::-1]
+        sum = int(num1) + int(num2)
+        first = ListNode(str(sum)[0])
+        for i in str(sum)[1:]:
+            oldfirst = first
+            first = ListNode(i)
+            first.next = oldfirst
+        return first
+</code></pre>
+
+<h3 id="toc_9">笔记</h3>
+
+<p>翻了一下 discuss，发现我的解法实在是太 dirty 了。</p>
+
+<p>下面这一段代码我认为还是非常优美的实现：</p>
+
+<pre><code class="language-python">class Solution:
+    def addTwoNumbers(self, l1, l2):
+        def toint(node):
+            return node.val + 10 * toint(node.next) if node else 0
+        def tolist(n):
+            node = ListNode(n % 10)
+            if n &gt; 9:
+                node.next = tolist(n // 10)
+            return node
+        return tolist(toint(l1) + toint(l2))
+</code></pre>
+
+<p>非递归版本：</p>
+
+<pre><code class="language-python">class Solution:
+    def addTwoNumbers(self, l1, l2):
+        def toint(node):
+            return node.val + 10 * toint(node.next) if node else 0
+        n = toint(l1) + toint(l2)
+        first = last = ListNode(n % 10)
+        while n &gt; 9:
+            n /= 10
+            last.next = last = ListNode(n % 10)
+        return first
+</code></pre>
+
+<p>解释一下思路。</p>
+
+<p>首先 <code>toint(node)</code> 函数是将链表转化成 <code>int</code> 类型的数据，因为 Python 中 <code>int</code> 可以存非常大的数，所以不用考虑链表的长度。算法也很简单，因为链表是转置的，所以高位在链表后面，依次乘以 10 的 n 次方再相加就可以了。</p>
+
+<p><code>tolist(n)</code> 函数式将计算好的数据转化成链表，再纸上拿一个一个例子画一个图就很好理解了。<code>node = ListNode(n % 10)</code> 每一次递归都创建一个节点来存放某一位的数据，<code>tolist(n // 10)</code> 每一次递归都截取一位数字。</p>
+
+<p>非递归的方法类似。</p>
+
+<h2 id="toc_10">007 Reverse Integer [Easy]</h2>
+
+<h3 id="toc_11">题目</h3>
+
+<p>Reverse digits of an integer.</p>
+
+<p>The input is assumed to be a 32-bit signed integer. Your function should return 0 when the reversed integer overflows.</p>
+
+<p>Ex：</p>
+
+<pre><code>Example1: x = 123, return 321
+Example2: x = -123, return -321
+</code></pre>
+
+<h3 id="toc_12">思路</h3>
+
+<p>这道题很简单，但是要考虑转置之后会不会溢出，但是 Python 的 <code>int</code> 是不会溢出的，所以就需要手动判断一下，INT32 最大值是 \(2^{31}-1\)，用十六进制表示就是 <code>0x7FFFFFFF</code>。</p>
+
+<h3 id="toc_13">代码</h3>
+
+<pre><code class="language-python">class Solution(object):
+    def reverse(self, x):
+        &quot;&quot;&quot;
+        :type x: int
+        :rtype: int
+        &quot;&quot;&quot;
+        if x &lt; 0:
+            result = -(int(str(x).lstrip(&#39;-&#39;)[::-1]))
+        else:
+            result = int(str(x)[::-1])
+        
+        if abs(result) &gt; 0x7FFFFFFF:
+            return 0
+        return result
+</code></pre>
 ]]>
     </content>
   </entry>
