@@ -3,12 +3,35 @@
   <title><![CDATA[Hack Notes]]></title>
   <link href="http://forrestchang.com/atom.xml" rel="self"/>
   <link href="http://forrestchang.com/"/>
-  <updated>2017-05-07T17:40:38+08:00</updated>
+  <updated>2017-05-07T17:41:57+08:00</updated>
   <id>http://forrestchang.com/</id>
   <author>
     <name><![CDATA[]]></name>
   </author>
   <generator uri="http://www.coderforart.com/">CoderForArt</generator>
+  
+  <entry>
+    <title type="html"><![CDATA[Start A Coding Challenge]]></title>
+    <link href="http://forrestchang.com/14943348129857.html"/>
+    <updated>2017-05-09T21:00:12+08:00</updated>
+    <id>http://forrestchang.com/14943348129857.html</id>
+    <content type="html">
+<![CDATA[<p>最近在 YouTube 上看了很多 <a href="https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw">Daniel Shiffman</a> 做的 <a href="https://www.youtube.com/playlist?list=PLRqwX-V7Uu6ZiZxtDDRCi6uhfTH4FilpH">Coding Challenges</a> 系类的视频，然后自己也用 p5.js 写了两个<a href="https://github.com/forrestchang/p5js-coding-challenges">项目</a>，发现还挺有意思的。在这之前我的 JavaScript 水平仅仅只是看过「XX 分钟速成 JavaScript」的水平，除了学校的作业几乎也没有写过 JS。所以想借此机会来练习一下 JavaScript。</p>
+
+<p>在 GitHub 上开了一个 repo，名字叫「p5js-coding-challenges」，给自己定几个要求：</p>
+
+<ol>
+<li>每天用 p5.js 完成一个小的 Project（已经写了 <a href="http://forrestchang.com/p5js-coding-challenges/Day001-StarField/">Star Field</a> 和 <a href="http://forrestchang.com/p5js-coding-challenges/Day002-Flappy-Bird/">Flappy Bird</a></li>
+<li>Project Idea 可以是参考别人的，也可以是自己想，但是不能照着抄代码，可以看完了自己写出来或者改进别人的实现</li>
+<li>每天想好第二天要写的 Project 是什么，避免第二天多花时间想这个</li>
+<li>因为最近的主要任务是看《计算机网络——自顶向下方法》，所以这个不能够花太多时间在上面，写的时候也要控制一下自己的时间，quick coding</li>
+<li>也不知道能够坚持多久，先定一个礼拜的挑战时间</li>
+</ol>
+
+<p>因为写完了就可以在浏览器中跑起来，所以交互性很强。每天写了什么和第二天打算写的项目应该会在 <a href="https://twitter.com/tisoga">Twitter</a> 中更新。</p>
+]]>
+    </content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Week 19：时间管理]]></title>
