@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>http://forrestchang.com/</loc>
-  <lastmod>2017-06-12T21:26:02+08:00</lastmod>
+  <lastmod>2017-06-12T21:30:11+08:00</lastmod>
 </url>
 
 <url>
@@ -13,6 +13,11 @@
 <url>
   <loc>http://forrestchang.com/14941475791022.html</loc>
   <lastmod>2017-05-07T16:59:39+08:00</lastmod>
+</url>
+
+<url>
+  <loc>http://forrestchang.com/14903286295184.html</loc>
+  <lastmod>2017-03-24T12:10:29+08:00</lastmod>
 </url>
 
 <url>
@@ -36,13 +41,58 @@
 </url>
 
 <url>
+  <loc>http://forrestchang.com/14832795759469.html</loc>
+  <lastmod>2017-01-01T22:06:15+08:00</lastmod>
+</url>
+
+<url>
+  <loc>http://forrestchang.com/14827163208652.html</loc>
+  <lastmod>2016-12-26T09:38:40+08:00</lastmod>
+</url>
+
+<url>
   <loc>http://forrestchang.com/14824086421976.html</loc>
   <lastmod>2016-12-22T20:10:42+08:00</lastmod>
 </url>
 
 <url>
+  <loc>http://forrestchang.com/14824103542982.html</loc>
+  <lastmod>2016-12-20T20:39:14+08:00</lastmod>
+</url>
+
+<url>
+  <loc>http://forrestchang.com/14824081615573.html</loc>
+  <lastmod>2016-11-13T20:02:41+08:00</lastmod>
+</url>
+
+<url>
+  <loc>http://forrestchang.com/14824080993859.html</loc>
+  <lastmod>2016-11-07T20:01:39+08:00</lastmod>
+</url>
+
+<url>
+  <loc>http://forrestchang.com/14824080414983.html</loc>
+  <lastmod>2016-10-30T20:00:41+08:00</lastmod>
+</url>
+
+<url>
   <loc>http://forrestchang.com/14824083276745.html</loc>
   <lastmod>2016-10-28T20:05:27+08:00</lastmod>
+</url>
+
+<url>
+  <loc>http://forrestchang.com/14824079755630.html</loc>
+  <lastmod>2016-10-26T19:59:35+08:00</lastmod>
+</url>
+
+<url>
+  <loc>http://forrestchang.com/14824078620114.html</loc>
+  <lastmod>2016-10-02T22:57:42+08:00</lastmod>
+</url>
+
+<url>
+  <loc>http://forrestchang.com/14824077552377.html</loc>
+  <lastmod>2016-09-25T19:55:55+08:00</lastmod>
 </url>
 
 <url>
@@ -63,6 +113,11 @@
 <url>
   <loc>http://forrestchang.com/linux-basic.html</loc>
   <lastmod>2016-03-23T11:09:38+08:00</lastmod>
+</url>
+
+<url>
+  <loc>http://forrestchang.com/14824076959660.html</loc>
+  <lastmod>2016-03-20T19:54:55+08:00</lastmod>
 </url>
 
 <url>
@@ -129,6 +184,10 @@
 
 <url>
   <loc>http://forrestchang.com/tech.html</loc>
+</url>
+
+<url>
+  <loc>http://forrestchang.com/misc.html</loc>
 </url>
 
 <url>
