@@ -3,12 +3,219 @@
   <title><![CDATA[Hack Notes]]></title>
   <link href="http://forrestchang.com/atom.xml" rel="self"/>
   <link href="http://forrestchang.com/"/>
-  <updated>2017-07-15T21:42:29+08:00</updated>
+  <updated>2017-08-13T13:54:56+08:00</updated>
   <id>http://forrestchang.com/</id>
   <author>
     <name><![CDATA[]]></name>
   </author>
   <generator uri="http://www.coderforart.com/">CoderForArt</generator>
+  
+  <entry>
+    <title type="html"><![CDATA[《程序员修炼之道》阅读笔记（一）]]></title>
+    <link href="http://forrestchang.com/15026034118735.html"/>
+    <updated>2017-08-13T13:50:11+08:00</updated>
+    <id>http://forrestchang.com/15026034118735.html</id>
+    <content type="html">
+<![CDATA[<p>实习到现在差不多两个月了，博客也一直荒废了没写。这次更新就先来写写读书笔记好了。</p>
+
+<p>这本书从书名来看其实很像那种鸡汤类的书，英文名「The Pragmatic Programmer」（注重实效的程序员）看上去就好了许多。<a href="https://book.douban.com/subject/1152111/">豆瓣评分</a> 8.6 分。大一的时候买的书，之前随意地写过几年的玩具代码，所以初读这本书的时候觉得很有道理，但是读完了之后发现什么也没有记住。用<a href="http://blog.youxu.info">徐宥</a>的话来说就是「读者如果没有类似的经历，看到这些珠玑，也只是觉得把玩颇为有趣而已，极少能有同感。」大一的时候读这是这种感觉。</p>
+
+<p>出来实习之后，接触到实际生产中的代码，在代码量比较大的情况下（几十万行），之前书中所讲的一些问题都一一浮现了。为了写出优雅的代码，有必要把这本书再读一遍，可能以后还要反复读很多遍（不是所有的内容看一遍就能内化在心里的），所以每读一部分就记一点笔记，留作日后复习用。</p>
+
+<p>给自己制定以下阅读的计划，因为这本书每一张的内容读起来都比较轻松，所以预计用两周的时间读完：</p>
+
+<ol>
+<li>每 1-2 天阅读一章（共 8 章）</li>
+<li>每一章都写一篇笔记，读的时候可以做一些摘录，读完一章之后写一篇总结性的笔记；</li>
+</ol>
+
+<p>下面是「序言」和「第一章」的笔记。</p>
+
+<hr/>
+
+<h2 id="toc_0">序</h2>
+
+<h3 id="toc_1">注重实效的程序员都有哪些特征</h3>
+
+<ul>
+<li>早期的采纳者/快速的改编者：给你一样新东西，你很快能把握它，并把它与你的知识的其余部分结合在一起（尝试新技术）；</li>
+<li>好奇：你喜欢提问，你是收集小知识的林鼠（建立自己的知识 wiki）；</li>
+<li>批判的思考者：你会首先抓住事实，而不是照搬别人所说的；</li>
+<li>有现实感：你会设法理解你面临的每个问题的内在本质（事情有多困难，需要花多长时间完成？）</li>
+<li>多才多艺：你尽力熟悉广泛的技术和环境；</li>
+</ul>
+
+<p>（审视一下自己，上面几点好像都没有做到，或者说有的做到了但是并不到位。）</p>
+
+<blockquote>
+<blockquote>
+<p>Tip 1<br/>
+Care About Your Craft<br/>
+关心你的技艺</p>
+</blockquote>
+</blockquote>
+
+<p>如何做到上面所说的？<strong>在你做某件事情的时候思考你在做什么</strong>。</p>
+
+<blockquote>
+<blockquote>
+<p>Tip 2<br/>
+Think! About Your Work<br/>
+思考！你的工作</p>
+</blockquote>
+</blockquote>
+
+<h3 id="toc_2">它是一个持续的过程</h3>
+
+<p>每天为提炼你所拥有的技能而工作，为把新的工具增加到你的技能列表中二工作。草坪不是一天修成的。</p>
+
+<h2 id="toc_3">第一章：注重实效的哲学</h2>
+
+<h3 id="toc_4">我的源码让猫给吃了</h3>
+
+<blockquote>
+<blockquote>
+<p>在所有的弱点中，最大的弱点就是害怕暴露弱点。—— J.B.Bossuet</p>
+</blockquote>
+</blockquote>
+
+<p>如果你确实同意要为某个结果负责，你就应该切实负起责任。当你犯错误的时候，不要责备别人或别的东西，或是拼凑借口。你可以选择提供解决方案，而不是寻找借口。</p>
+
+<blockquote>
+<blockquote>
+<p>Tip 3<br/>
+Provide Options, Don&#39;t Make Lame Excuses<br/>
+提供各种选择，不要找蹩脚的借口</p>
+</blockquote>
+</blockquote>
+
+<p>在你走向任何人，告诉他们为何某件事做不到、为何耽搁、为何出现问题之前，先停下来，听一听你心里的声音。在你去告诉他们坏消息之前，是否还有其他你可以再试一试的办法？有时，你其实知道他们会说什么，所以还是不要给他们添麻烦。</p>
+
+<p>（这一点深有感触，在实习的这一段时间里面，经常因为一些小事去麻烦 leader，比如说环境跑步起来，某个莫名其妙的报错等，这虽然有文档不全的原因在，不过自己也没想着去补全文档这种解决办法。）</p>
+
+<h3 id="toc_5">软件的熵</h3>
+
+<p>软件中的无序增长时，程序员们称之为「软件腐烂」（software rot）。</p>
+
+<p>「破窗理论」：以一幢有少许破窗的建筑为例，如果那些窗不被修理好，可能将会有破坏者破坏更多的窗户。最终他们甚至会闯入建筑内，如果发现无人居住，也许就在那里占领、定居或者纵火。又或想像一条人行道有些许纸屑，如果无人清理，不久后就会有更多垃圾，最终人们会视为理所当然地将垃圾顺手丢弃在地上。</p>
+
+<blockquote>
+<blockquote>
+<p>Tip 4<br/>
+Don&#39;t Live with Broken Windows<br/>
+不要容忍破窗户</p>
+</blockquote>
+</blockquote>
+
+<p>不要留着「破窗户」（低劣的设计、错误决策、或是糟糕的代码）不修，发现一个修一个。</p>
+
+<p>如果没有足够的时间进行适当的修理，可以把出现问题的代码放到注释中，或者是用虚拟的数据来代替。<strong>采取某种行动防止进一步破坏，并说明情势处在你的控制之下</strong>。</p>
+
+<p>如果你发现自己在有好些破窗户的项目里工作，会很容易产生这样的想法：「这些代码的其余部分也是垃圾，我只要照着做就行了。」</p>
+
+<h3 id="toc_6">石头汤与煮青蛙</h3>
+
+<blockquote>
+<blockquote>
+<p>Tip 5<br/>
+Be a Catalyst for Change<br/>
+做变化的催化剂</p>
+</blockquote>
+</blockquote>
+
+<p>（有的时候想要做出一个新功能，可以先开发一个简单的版本，然后诱导别人往其中添加新功能。）</p>
+
+<blockquote>
+<blockquote>
+<p>Tip 6<br/>
+Remember the Big Picture<br/>
+记住大图景</p>
+</blockquote>
+</blockquote>
+
+<p>当你设法催生变化时，你能否确定你是在做石头汤还是青蛙汤？决策是主观的还是客观的？</p>
+
+<h3 id="toc_7">足够好的软件</h3>
+
+<blockquote>
+<blockquote>
+<p>Tip 7<br/>
+Make Quality a Requirements Issue<br/>
+使质量称为需求问题</p>
+</blockquote>
+</blockquote>
+
+<p>不要因为过度修饰和过于精于求精而破坏完好的程序。继续前进，让你的代码凭借自己的质量站立一会儿，它也许不完美，但不用担心：它不可能完美。</p>
+
+<h3 id="toc_8">你的知识资产</h3>
+
+<blockquote>
+<blockquote>
+<p>知识上的投资总能得到最好的回报。—— 本杰明·富兰克林</p>
+</blockquote>
+</blockquote>
+
+<p>管理知识资产与管理金融资产非常相似：</p>
+
+<ul>
+<li>严肃的投资者定期投资</li>
+<li>多元化是长期成功的关键：你知道的不同的事情越多，你就越有价值。作为底线，你需要知道你目前所用的特定技术的各种特性，但不要就此止步。</li>
+<li>聪明的投资者在保守的投资和高风险、高回报的投资之间平衡他们的资产</li>
+<li>投资者设法低买高卖，以获取最大回报：在新兴的技术流行之前学习它可能就和找到被低估的股票一样困难，但所得到的就和那样的股票带来的收益一样。</li>
+<li>应周期性地重新评估和平衡资产</li>
+</ul>
+
+<blockquote>
+<blockquote>
+<p>Tip 8<br/>
+Invest Regularly in YOur Knowledge Portfolio<br/>
+定期为你的知识资产投资</p>
+</blockquote>
+</blockquote>
+
+<ul>
+<li><strong>每年至少学习一种新语言</strong>。</li>
+<li><strong>每季度阅读一本技术书籍</strong>。一旦你养成习惯，就一个月读一本书。在你掌握了你正在使用的技术之后，扩宽范围，阅读一些与你的项目无关的书籍。</li>
+<li><strong>也要阅读非技术书籍</strong>。</li>
+<li><strong>上课</strong>。</li>
+<li><strong>参加本地用户组织</strong>。不要只是去听讲，而要主动参与。</li>
+<li><strong>试验不同的环境</strong>。</li>
+<li><strong>跟上潮流</strong>。订阅商务杂志和其他期刊。</li>
+<li><strong>上网</strong>。</li>
+</ul>
+
+<p>持续投入非常重要，一旦你熟悉了某种新语言或技术，继续前进，学习另外一种。设法把你学到的东西应用到你当前的项目当中，即使你的项目没有使用该技术，你或许也能借鉴一些想法。</p>
+
+<p>所有阅读和研究都需要时间，而时间已经很短缺。所以你需要预先规划。让自己在空闲的片刻时间里总有东西可读。</p>
+
+<p>最后一个药店是，批判地思考你读到的和听到的。你需要确保你的资产中的知识是准确的。</p>
+
+<blockquote>
+<blockquote>
+<p>Tip 9<br/>
+Critically Analyze What You Read and Hear<br/>
+批判地分析你读到的和听到的</p>
+</blockquote>
+</blockquote>
+
+<h3 id="toc_9">交流</h3>
+
+<blockquote>
+<blockquote>
+<p>Tip 10<br/>
+It&#39;s Both What You Say and the Way You Say It<br/>
+你说什么和你怎么说同样重要</p>
+</blockquote>
+</blockquote>
+
+<p>除非你生活在真空中，你猜不需要交流，交流越有效，你就越有影响力。</p>
+
+<h2 id="toc_10">总结</h2>
+
+<p>大概花了两个多小时的时间把第一章的内容看了一遍，顺便摘录了一些内容。这一章其实更多的是讲「道」层面上的内容，与技术内容关联不大，但又是至关重要的，做好了上面几点可以从「码农」蜕变成「程序员」，能有自己的思考，能够与他人交流，能够对自己进行投资，而不是一味地按照要求写代码。</p>
+]]>
+    </content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Start A Coding Challenge]]></title>
@@ -1646,186 +1853,6 @@ $ rm -r /path/to/ENV
 
 <pre><code>(ENV)$ virutalenv --relocatable ./
 </code></pre>
-]]>
-    </content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Swift 中的内存管理]]></title>
-    <link href="http://forrestchang.com/14824093902273.html"/>
-    <updated>2016-12-22T20:23:10+08:00</updated>
-    <id>http://forrestchang.com/14824093902273.html</id>
-    <content type="html">
-<![CDATA[<p>这篇文章是在阅读《The Swift Programming Language》Automatic Reference Counting（ARC，自动引用计数）一章时做的一些笔记，同时参考了其他的一些资料。</p>
-
-<p>在早期的 iOS 开发中，内存管理是由开发者手动来完成的。因为传统的垃圾回收机制对于移动平台来说十分低效，苹果采用的是引用计数（RC，Reference Counting）的方式来管理内存，开发者需要通过手工的方式增加或减少一个实例的引用计数。在 iOS 5 之后，引入了 ARC 自动引用计数，使得开发者不需要手动地调用 <code>retain</code> 和 <code>release</code> 来管理引用计数，但是实际上这些方法还是会被调用，只不过是交给了编译器来完成，编译器会在合适的地方帮我们加入这些方法。</p>
-
-<p><strong>什么是自动引用计数？</strong></p>
-
-<p>每当你创建一个类的实例的时候，ARC 便会自动分配一块内存空间来存放这个实例的信息，当这个实例不再被使用的时候，ARC 便释放实例所占用的内存。一般每个被管理的实例都会与一个引用计数器相连，这个计数器保存着当前实例被引用的次数，一旦创建一个新的引用指向这个实例，引用计数器便加 1，每当指向该实例的引用失效，引用计数器便减 1，当某个实例的引用计数器变成 0 的时候，这个实例就会被立即销毁。</p>
-
-<p>在 Swift 中，对引用描述的关键字有三个：<code>strong</code>，<code>weak</code> 和 <code>unowned</code>，所有的引用没有特殊说明都是 <code>strong</code> 强引用类型。在 ARC 中，只有指向一个实例的所有 <code>strong</code> 强引用都断开了，这个实例才会被销毁。</p>
-
-<p>举一个简单的例子：</p>
-
-<pre><code class="language-swift">class A {
-    let name: String
-    init(name: String) {
-        self.name = name
-    }
-    deinit {
-        print(&quot;A deinit&quot;)
-    }
-}
-
-var a1: A?
-var a2: A?
-
-a1 = A(name: &quot;A&quot;)
-a2 = a1
-
-a1 = nil
-</code></pre>
-
-<p>上面这个例子中，虽然 <code>a1</code> 这个 <code>strong</code> 强引用断开了，但是还有 <code>a2</code> 这个强引用指向这个实例，所以不会在命令行中输出 <code>A deinit</code>，当我们把 <code>a2</code> 也设置为 <code>nil</code> 时，与这个实例关联的所有强引用均断开了，这个实例便会被销毁，在命令行中打印 <code>A deinit</code>。</p>
-
-<p><strong>循环强引用（Strong Reference Cycles）</strong></p>
-
-<p>但是，在某些情况下，一个类实例的强引用数永远不能变为 0，例如两个类实例互相持有对方的强引用，因而每个类实例都让对方一直存在，这就是所谓的强引用循环（Strong Reference Cycles）。</p>
-
-<p>这里引用 TSPL 中的例子：</p>
-
-<pre><code class="language-swift">class Person {
-    let name: String
-    init(name: String) { self.name = name }
-    var apartment: Apartment?
-    deinit { print(&quot;\(name) is being deinitialized&quot;) }
-}
-
-class Apartment {
-    let unit: String
-    init(unit: String) { self.unit = unit }
-    var tenant: Person?
-    deinit { print(&quot;Apartment \(unit) is being deinitialized&quot;) }
-}
-</code></pre>
-
-<p>每一个 <code>Person</code> 实例有一个可选的初始化为 <code>nil</code> 的 <code>Apartment</code> 类型，因为一个人并不总是拥有公寓。同样，每一个 <code>Apartment</code> 实例都有一个可选的初始化为 <code>nil</code> 的 <code>Person</code> 类型，因为一个公寓并不总是属于一个人。</p>
-
-<p>接下来的代码片段定义了两个可选类型的变量 <code>john</code> 和 <code>unit4A</code>，并分别设定为下面的 <code>Person</code> 和 <code>Apartment</code> 的实例，这两个变量都备受设定为 <code>nil</code>：</p>
-
-<pre><code class="language-swift">var john: Person?
-var unit4A: Apartment?
-</code></pre>
-
-<p>现在可以创建特定的 <code>Person</code> 和 <code>Apartment</code> 实例，并将它们赋值给 <code>john</code> 和 <code>unit4A</code> 变量：</p>
-
-<pre><code class="language-swift">john = Person(name: &quot;John Appleseed&quot;)
-unit4A = Apartment(unit: &quot;4A&quot;)
-</code></pre>
-
-<p>下面一段代码将这两个实例关联起来：</p>
-
-<pre><code class="language-swift">john!.apartment = unit4A
-unit4A!.tenant = john
-</code></pre>
-
-<p>将两个实例关联在一起后，强引用的关系如图所示：</p>
-
-<p><img src="media/14824093902273/14607053938205.jpg" alt="14607053938205"/></p>
-
-<p>这两个实例关联之后，会产生一个循环强引用，当断开 <code>john</code> 和 <code>unit4A</code> 所持有的强引用时，引用计数器并不会归零，所以这两块空间也得不到释放，这就导致了内存泄漏。</p>
-
-<p>可以将其中一个类中的变量设定为 <code>weak</code> 弱引用来打破这种强引用循环：</p>
-
-<pre><code class="language-swift">class Apartment {
-    let unit: String
-    init(unit: String) { self.unit = unit }
-    weak var tenant: Person?
-    deinit { print(&quot;Apartment \(unit) is being deinitialized&quot;) }
-}
-</code></pre>
-
-<p><img src="media/14824093902273/14607057294969.jpg" alt="14607057294969"/></p>
-
-<p>当断开 <code>john</code> 和 <code>unit4A</code> 所持有的强引用时，<code>Person instance</code> 的引用计数器变成 0，实例被销毁，从而 <code>Apartment instance</code> 的引用计数器也变为 0，实例被销毁。</p>
-
-<p><strong>什么时候使用 <code>weak</code>？</strong></p>
-
-<p>当两个实例是 optional 关联在一起时，确保其中的一个使用 <code>weak</code> 弱引用，就像上面所说的那个例子一样。</p>
-
-<p><strong><code>unowned</code> 无主引用</strong></p>
-
-<p>在某些情况下，声明的变量总是有值得时候，我们需要使用 <code>unowned</code> 无主引用。</p>
-
-<p>同样借用一下 TSPL 中的例子：</p>
-
-<pre><code class="language-swift">class Customer {
-    let name: String
-    var card: CreditCard?
-    init(name: String) {
-        self.name = name
-    }
-    deinit { print(&quot;\(name) is being deinitialized&quot;) }
-}
-
-class CreditCard {
-    let number: UInt64
-    unowned let customer: Customer
-    init(number: UInt64, customer: Customer) {
-        self.number = number
-        self.customer = customer
-    }
-    deinit { print(&quot;Card #\(number) is being deinitialized&quot;) }
-}
-</code></pre>
-
-<p>这里定义了两个类，<code>Customer</code> 和 <code>CreditCard</code>，模拟了银行客户和客户的信用卡，在这个例子中，每一个类都是将另一个类的实例作为自身的属性，所以会产生循环强引用。</p>
-
-<p>和之前那个例子不同的是，<code>CreditCard</code> 类中有一个非可选类型的 <code>customer</code> 属性，因为，一个客户可能有或者没有一张信用卡，但是一张信用卡总是关联着一个用户。</p>
-
-<pre><code class="language-swift">var john: Customer?
-john = Customer(name: &quot;John Appleseed&quot;)
-john!.card = CreditCard(number: 1234_5678_9012_3456, customer: john!)
-</code></pre>
-
-<p>关联两个实例后，它们的引用关系如图所示：</p>
-
-<p><img src="media/14824093902273/14607068387297.jpg" alt="14607068387297"/></p>
-
-<p>当断开 <code>john</code> 变量持有的强引用时，再也没有指向 <code>Customer</code> 的强引用了，所以该实例被销毁了，其后，再也没有指向 <code>CreditCard</code> 的强引用了，该实例也被销毁了。</p>
-
-<p><strong>什么时候使用 <code>unowned</code> 无主引用？</strong></p>
-
-<p>两个实例 A 和 B，如果实例 A 必须在实例 B 存在的前提下才能存在，那么实例 A 必须用 <code>unowned</code> 无主引用指向实例 B。也就是说，有强制依赖性的那个实例必须对另一个实例持有无主引用。</p>
-
-<p>例如上面那个例子所说，银行客户可能没有信用卡，但是每张信用卡总是绑定着一个银行客户，所以信用卡这个类就需要用 <code>unowned</code> 无主引用。</p>
-
-<p><strong>无主引用以及隐市解析可选属性</strong></p>
-
-<p>还有一种情况，两个属性都必须有值，并且初始化完成之后永远不会为 <code>nil</code>。在这种情况下，需要一个类使用 <code>unowned</code> 无主引用，另一个类使用<a href="http://wiki.jikexueyuan.com/project/swift/chapter2/01_The_Basics.html#implicityly_unwrapped_optionals">隐式解析可选属性</a>。</p>
-
-<p><strong>闭包引起的循环强引用</strong></p>
-
-<p>在 Swift 中，闭包和函数都属于引用类型。并且闭包还有一个特性：可以在其定义的上下文中捕获常量或者变量。所以，在一个类中，闭包被赋值给了一个属性，而这个闭包又使用了这个类的实例的时候，就会引起循环强引用。</p>
-
-<p>Swift 提供了一种方法来解决这个问题：闭包捕获列表（closure capture list）。在定义闭包的同时定义捕获列表作为闭包的一部分，捕获列表定义了闭包体内捕获一个或者多个引用类型的规则。跟解决两个类实例之间的循环强引用一样，声明每个捕获的引用为弱引用或者无主引用。</p>
-
-<p>捕获列表中的每一项都由一对元素组成，一个元素是 <code>weak</code> 或者 <code>unowned</code> 关键字，另一个元素是类实例的引用（例如最常见得是 <code>self</code>），这些在方括号内用逗号隔开。</p>
-
-<p>具体的使用方法请参考<a href="http://wiki.jikexueyuan.com/project/swift/chapter2/16_Automatic_Reference_Counting.html#resolving_strong_reference_cycles_for_closures">官方文档</a>。</p>
-
-<p><strong>何时使用 <code>weak</code>，何时使用 <code>unowned</code></strong></p>
-
-<p>在闭包和捕获的实例总是相互引用并且总是同时销毁的时候，将闭包内的捕获定义为 <code>unowned</code> 无主引用。</p>
-
-<p>在被捕获的实例可能变成 <code>nil</code> 的情况下，使用 <code>weak</code> 弱引用。如果被捕获的引用绝对不会变成 <code>nil</code>，应该使用 <code>unowned</code> 无主引用，而不是 <code>weak</code> 弱引用。</p>
-
-<p><strong>Garbage Collection（GC，垃圾回收）</strong></p>
-
-<p>其实 ARC 应该也算 GC 的一种，不过我们一谈到 GC，大多都会想到 Java 中的垃圾回收机制，相比较 GC，ARC 简单得许多。以后有机会可以讨论一下 Java 中的内存管理。</p>
-
-<p>另外，需要注意的一点是，这里所讲的都是针对于<code>引用类型</code>，<code>结构体</code>和<code>枚举</code>在 Swift 中属于值类型，不在 ARC 的考虑范围之内。</p>
 ]]>
     </content>
   </entry>
