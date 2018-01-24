@@ -3,12 +3,129 @@
   <title><![CDATA[Hack Notes]]></title>
   <link href="http://forrestchang.com/atom.xml" rel="self"/>
   <link href="http://forrestchang.com/"/>
-  <updated>2018-01-08T10:00:30+08:00</updated>
+  <updated>2018-01-22T22:24:09+08:00</updated>
   <id>http://forrestchang.com/</id>
   <author>
     <name><![CDATA[]]></name>
   </author>
   <generator uri="http://www.coderforart.com/">CoderForArt</generator>
+  
+  <entry>
+    <title type="html"><![CDATA[使用 Pipenv 来管理你的 Python 项目]]></title>
+    <link href="http://forrestchang.com/15167955255016.html"/>
+    <updated>2018-01-24T20:05:25+08:00</updated>
+    <id>http://forrestchang.com/15167955255016.html</id>
+    <content type="html">
+<![CDATA[<h2 id="toc_0">1. 简介</h2>
+
+<p>N 久前，曾经写过一篇文章介绍过 Python 的虚拟环境（<a href="14824097975366.html">virtualenv 相关笔记</a>），不过 virtualenv 使用起来实在是不太友好，所以后来在其基础上又有了 virtualwrapper、pyenv、Pipenv，今天主要介绍一下 Pipenv 这个工具，现在已经成了<a href="https://packaging.python.org/tutorials/managing-dependencies/#managing-dependencies">官方推荐</a>的包管理工具了。</p>
+
+<h3 id="toc_1">1.1 为什么需要虚拟环境</h3>
+
+<p>使用虚拟环境有很多好处：</p>
+
+<ol>
+<li>项目之间的包隔离，比如不同的项目之间需要使用不同版本的包；</li>
+<li>防止污染系统 Python 环境，因为系统中还是有很多地方需要用到 Python 环境的（macOS 是 2.7），如果你的项目是使用 Python 3+ 的话，可能会带来一些迷之问题；</li>
+<li>方便其他开发者来部署开发环境，使用虚拟环境可以方便地导出一份 requirements.txt（或者 Pipfile）来供开发者一键安装所需要的包，而不是运行的是否通过 <code>ImportError</code> 来得知缺少安装了什么包。</li>
+</ol>
+
+<p>这里建议为每个 Project 都创建一份虚拟环境。</p>
+
+<h2 id="toc_2">2. 安装</h2>
+
+<p>Pipenv 的安装十分简单：</p>
+
+<pre><code>pip install pipenv
+</code></pre>
+
+<p>如果你是 Mac 用户的话，也可以使用 Homebrew 来进行安装：</p>
+
+<pre><code>brew install pipenv
+</code></pre>
+
+<h2 id="toc_3">3. 基本使用</h2>
+
+<p>切换到你的 Project，创建一个 Python 3 环境：</p>
+
+<pre><code>$ pipenv --three
+Creating a virtualenv for this project…
+Using /usr/local/bin/python3 to create virtualenv…
+⠋Running virtualenv with interpreter /usr/local/bin/python3
+Using base prefix &#39;/Library/Frameworks/Python.framework/Versions/3.7&#39;
+/usr/local/Cellar/pipenv/8.3.2/libexec/lib/python2.7/site-packages/virtualenv.py:1039: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module&#39;s documentation for alternative uses
+  import imp
+New python executable in /Users/jiayuan/.local/share/virtualenvs/demo-0922AcvC/bin/python3
+Also creating executable in /Users/jiayuan/.local/share/virtualenvs/demo-0922AcvC/bin/python
+Installing setuptools, pip, wheel...done.
+
+Virtualenv location: /Users/jiayuan/.local/share/virtualenvs/demo-0922AcvC
+Creating a Pipfile for this project…
+</code></pre>
+
+<p>可以看到，它会使用你系统的 Python 3（在我的机器上是 Python 3.7）版本在 <code>/Users/xxx/.local/share/virtualenvs/</code> 目录下为当前的 Project 创建一个虚拟环境。</p>
+
+<p>如果你想使用 Python 2，可以使用 <code>pipenv --two</code> 来创建。</p>
+
+<p>或者你想要自己制定 Python 的版本，可以使用 <code>pipenv --python 3.5</code> 来进行创建。</p>
+
+<p>创建完虚拟环境后，会在目录下面生成一个 Pipfile：</p>
+
+<pre><code>$ cat Pipfile
+[[source]]
+
+url = &quot;https://pypi.python.org/simple&quot;
+verify_ssl = true
+name = &quot;pypi&quot;
+
+
+[dev-packages]
+
+
+
+[packages]
+
+
+
+[requires]
+
+python_version = &quot;3.7&quot;
+</code></pre>
+
+<p>在虚拟环境中安装包：</p>
+
+<pre><code>$ pipenv install flask
+</code></pre>
+
+<p>这会安装 flask 以及相关的依赖包，可以使用 <code>pipenv graph</code> 来查看包的依赖关系：</p>
+
+<pre><code>$ pipenv graph
+Flask==0.12.2
+  - click [required: &gt;=2.0, installed: 6.7]
+  - itsdangerous [required: &gt;=0.21, installed: 0.24]
+  - Jinja2 [required: &gt;=2.4, installed: 2.10]
+    - MarkupSafe [required: &gt;=0.23, installed: 1.0]
+  - Werkzeug [required: &gt;=0.7, installed: 0.14.1]
+</code></pre>
+
+<p>然后使用 <code>pipenv shell</code> 进入虚拟环境：</p>
+
+<pre><code>$ pipenv shell
+Spawning environment shell (/usr/local/bin/fish). Use &#39;exit&#39; to leave.
+</code></pre>
+
+<p>这会创建一个新的 shell 进程，不想使用的时候输入 <code>eixt</code> 就可以退出了。</p>
+
+<p>如果进入了一个新的项目，其中有 <code>requirements.txt</code> 或者 <code>Pipfile</code> 的话，运行 <code>pipenv install</code> 会自动为当前的 Project 创建一个虚拟环境并安装相关依赖。</p>
+
+<h2 id="toc_4">4. 和 fish shell 一起使用</h2>
+
+<p>最近开始把 shell 从 zsh 切换到 fish，发现很多东西都不用配置了，比如想要 cd 进项目的时候就直接激活虚拟环境，只需要在 fish 中安装一个 pipenv 的插件就可以了：<code>fisher pipenv</code>。具体 fish shell 的使用和配置，打算下篇文章详细讲一下。</p>
+
+<p>感觉这篇博客整篇都在灌水……</p>
+]]>
+    </content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[PyCharm 的一个非常实用的功能]]></title>
@@ -1916,91 +2033,6 @@ def getRecommendations(prefs, person, similarity=sim_pearson):
 <li><strong>Reading</strong> - 发现这学期都没有读过几本书，上学期还能保持基本每周都读一本书，现在 Kindle 都吃灰了。下周先把《挪威的森林》这本书看完吧……</li>
 <li><strong>Game</strong> - 等《精灵宝可梦 日月》发售，还有20天的样子，没有预定，直接买现货或者买下载版吧。</li>
 </ul>
-]]>
-    </content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[搭建 Python 科学计算环境]]></title>
-    <link href="http://forrestchang.com/14824083276745.html"/>
-    <updated>2016-12-22T20:05:27+08:00</updated>
-    <id>http://forrestchang.com/14824083276745.html</id>
-    <content type="html">
-<![CDATA[<p>最近在看《Python for Data Analysis》（利用 Python 进行数据分析）这本书，贴一点笔记，这一篇是关于环境搭建的。另外吐槽一下，书中还是有不少错误的，语法错误就发现了好多处，大概读完了之后会整理出一份勘误表出来，可能是因为写书的时候是 14 年，两年过去了，pandas 库也有了一些变化。</p>
-
-<h2 id="toc_0">安装虚拟环境</h2>
-
-<p>不想把系统的 python 库搞得乱乱的（其实已经很乱了），所以还是建一个独立虚拟环境专门来做科学计算吧。具体的方法我在<a href="http://forrestchang.github.io/2016/07/17/virtualenv-notes/">virtualenv 相关笔记</a>这篇博客中已经详细写了，建议将启动虚拟环境的命令添加到终端的配置文件中去（使用<code>alias</code>），这样就避免每次一打开就输入一长串命令了。</p>
-
-<p>因为科学计算社区的一些库还是基于 Python 2.x 版本的，所以这里我们使用的 Python 版本为 2.7。</p>
-
-<p>然后使用以下命令一键安装所需要的库：</p>
-
-<pre><code class="language-shell">sudo pip install numpy pandas matplotlib jupyter scikit-learn
-</code></pre>
-
-<p>安装不上的请检查是不是需要翻墙。</p>
-
-<h2 id="toc_1">IPython</h2>
-
-<p>熟悉 Python 的同学应该对这个解释器不陌生，自带的 Python 解释器实在是太弱了。它与传统的“edit-compile-run”（编辑-编译-运行）方式的区别在于，它鼓励使用“execute-explore”（执行-探索），所以特别适合用在计算和数据分析领域，可以方便得使用「试错法」和「迭代法」进行开发。这里主要介绍它基于 Web 的交互式笔记本功能（命令行中大同小异）。</p>
-
-<h3 id="toc_2">开启 IPython Notebook</h3>
-
-<p>使用以下命令来打开 IPython Notebook：</p>
-
-<pre><code class="language-shell">(ENV2.7)$ jupyter notebook
-</code></pre>
-
-<p>这样 server 就启动了，浏览器会自动打开一个目录树。</p>
-
-<p>Note：记住在启动了虚拟环境的状态下使用这条命令，要不然就会使用系统的 IPython 版本来运行。</p>
-
-<p>然后我们新建一个 IPython Notebook 用作演示：</p>
-
-<p><img src="media/14824083276745/14776647413275.jpg" alt="14776647413275"/></p>
-
-<p><code>In [1]</code> 中的命令是为了能让我们直接在 IPython Notebook 中集成显示 <code>matplotlib</code> 画的图片，所以如果是用作科学计算的话，首先先执行以下这条命令再说。</p>
-
-<h3 id="toc_3">内省</h3>
-
-<p>在变量的前面或后面加上一个 <code>?</code> 就可以将有关该对象的一些通用信息显示出来。</p>
-
-<p><img src="media/14824083276745/14776649884990.jpg" alt="14776649884990"/></p>
-
-<p>基本上什么都能看。</p>
-
-<h3 id="toc_4"><code>%run</code> 命令</h3>
-
-<p>使用 <code>%run</code> 可以运行本地的 Python 脚本，并可以在 IPython 中访问脚本中定义的所有变量。</p>
-
-<p>如果想要脚本能够访问 IPython 中的命名空间，可以使用 <code>%run -i</code> 命令。</p>
-
-<h3 id="toc_5">测试代码的执行时间</h3>
-
-<p>使用 <code>%time</code> 和 <code>%timeit</code> 可以用来测试代码的执行时间。</p>
-
-<p><img src="media/14824083276745/14776653395450.jpg" alt="14776653395450"/></p>
-
-<h2 id="toc_6">Example</h2>
-
-<p>下面使用一个具体的例子来演示 IPython Notebook 的使用。</p>
-
-<p>使用到的数据可以在<a href="https://www.ssa.gov/oact/babynames/limits.html">Beyond the Top 1000 Names</a>下载到，这是一份包含1880-2015年每年出生婴儿姓名出现次数的数据表。</p>
-
-<p>由于该数据按年份被分割成了好多文件，所以第一步我们需要把所有数据组装到一个 DataFrame 中去。</p>
-
-<p><img src="media/14824083276745/14776659007521.jpg" alt="14776659007521"/></p>
-
-<p>不知道这些 Python 代码没关系，因为这里只是用来演示 IPython Notebook。</p>
-
-<p>然后我们按照性别和年度统计总出生数：</p>
-
-<p><img src="media/14824083276745/14776660937109.jpg" alt="14776660937109"/></p>
-
-<p>然后绘制出表格：</p>
-
-<p><img src="media/14824083276745/14776661445090.jpg" alt="14776661445090"/></p>
 ]]>
     </content>
   </entry>
