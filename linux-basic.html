@@ -45,8 +45,6 @@
                     
                         <a class="page-link" href="life.html">LIFE</a>
                     
-                        <a class="page-link" href="photography.html">PHOTOGRAPHY</a>
-                    
                         <a class="page-link" href="archives.html">ARCHIVE</a>
                     
                         <a class="page-link" href="atom.xml">RSS</a>
@@ -69,7 +67,7 @@
                     
                 </div>
                 <p class="post-meta">
-                    <time class="post-time" datetime="2016-03-23T11:09:38+08:00"itemprop="datePublished">Created by Tisoga at 2016/3/23 11:9 AM</time>
+                    <time class="post-time" datetime="2016-03-23T11:09:38+08:00"itemprop="datePublished">Created by Jiayuan at 2016/3/23 11:9 AM</time>
                 </p>
             </header>
             <div class="post-content" itemprop="articleBody">
@@ -171,12 +169,12 @@
 
 <h3 id="toc_4">查看用户</h3>
 
-<pre><code>$ who am i
+<pre><code class="language-text">$ who am i
 </code></pre>
 
 <p>或者</p>
 
-<pre><code>$ who mon likes
+<pre><code class="language-text">$ who mon likes
 </code></pre>
 
 <p><code>who</code> 命令其他常用参数</p>
@@ -226,18 +224,18 @@
 <li>当前用户必须在 <code>sudo</code> 用户组</li>
 </ol>
 
-<pre><code>$ su &lt;user&gt; # 切换用户到 user
+<pre><code class="language-text">$ su &lt;user&gt; # 切换用户到 user
 </code></pre>
 
-<pre><code>$ sudo &lt;cmd&gt; # 以 root 权限运行命令
+<pre><code class="language-text">$ sudo &lt;cmd&gt; # 以 root 权限运行命令
 </code></pre>
 
-<pre><code>$ su - &lt;user&gt; # 切换用户，并且环境变量同时改变到目标用户的环境变量
+<pre><code class="language-text">$ su - &lt;user&gt; # 切换用户，并且环境变量同时改变到目标用户的环境变量
 </code></pre>
 
 <p>新建用户命令：</p>
 
-<pre><code>$ sudo adduser &lt;username&gt;
+<pre><code class="language-text">$ sudo adduser &lt;username&gt;
 </code></pre>
 
 <p>创建用户的同时会为用户创建 home 目录。</p>
@@ -248,12 +246,12 @@
 
 <h4 id="toc_7">查看自己的用户组</h4>
 
-<pre><code>$ groups &lt;username&gt;
+<pre><code class="language-text">$ groups &lt;username&gt;
 </code></pre>
 
 <p>或者，查看<code>/etc/group</code>文件</p>
 
-<pre><code>$ cat /etc/group | sort
+<pre><code class="language-text">$ cat /etc/group | sort
 </code></pre>
 
 <p><code>sort</code> 表示将读取的文本进行一个字典排序再输出。</p>
@@ -272,19 +270,19 @@
 
 <p>使用一个具有 root 权限的用户为一个不具有 root 权限的用户添加 <code>sudo</code> 权限：</p>
 
-<pre><code>$ sudo usermod -G sudo &lt;username&gt;
+<pre><code class="language-text">$ sudo usermod -G sudo &lt;username&gt;
 </code></pre>
 
 <h3 id="toc_10">删除用户</h3>
 
-<pre><code>$ sudo deluser &lt;username&gt; --remove-home
+<pre><code class="language-text">$ sudo deluser &lt;username&gt; --remove-home
 </code></pre>
 
 <h2 id="toc_11">文件权限</h2>
 
 <h3 id="toc_12">查看文件权限</h3>
 
-<pre><code>$ ls -l
+<pre><code class="language-text">$ ls -l
 </code></pre>
 
 <p><img src="media/14587025785185/14587048876862.jpg" alt=""/></p>
@@ -319,12 +317,12 @@
 
 <p>修改<filename>只能自己使用：</p>
 
-<pre><code>$ chmod 700 &lt;filename&gt;
+<pre><code class="language-text">$ chmod 700 &lt;filename&gt;
 </code></pre>
 
 <h4 id="toc_18">方法2：加减赋值操作</h4>
 
-<pre><code>$ chmod go-rw &lt;filename&gt;
+<pre><code class="language-text">$ chmod go-rw &lt;filename&gt;
 </code></pre>
 
 <p>&#39;g&#39;&#39;o&#39;还有&#39;u&#39;，分别表示group，others，user，&#39;+&#39;，&#39;-&#39; 就分别表示增加和去掉相应的权限。</p>
@@ -365,58 +363,58 @@
 
 <h4 id="toc_26">新建空白文件</h4>
 
-<pre><code>$ touch test
+<pre><code class="language-text">$ touch test
 </code></pre>
 
 <p>关于 <code>touch</code> 命令，其主要是用来更改文件时间戳的。</p>
 
 <h4 id="toc_27">新建目录</h4>
 
-<pre><code>$ mkdir testDir
+<pre><code class="language-text">$ mkdir testDir
 </code></pre>
 
 <p>使用 <code>-p</code> 参数，可以创建一个多级目录，例如：</p>
 
-<pre><code>$ mkdir -p father/son/grandson
+<pre><code class="language-text">$ mkdir -p father/son/grandson
 </code></pre>
 
 <h3 id="toc_28">复制</h3>
 
 <h4 id="toc_29">复制文件</h4>
 
-<pre><code>$ cp test testDir
+<pre><code class="language-text">$ cp test testDir
 </code></pre>
 
 <h4 id="toc_30">复制目录</h4>
 
-<pre><code>$ cp -r father family
+<pre><code class="language-text">$ cp -r father family
 </code></pre>
 
 <h3 id="toc_31">删除</h3>
 
-<pre><code>$ rm test
+<pre><code class="language-text">$ rm test
 </code></pre>
 
 <p>参数 <code>-f</code> 可以强制删除一些为只读权限的文件。</p>
 
-<pre><code>$ rm -f test
+<pre><code class="language-text">$ rm -f test
 </code></pre>
 
 <p>删除一个目录：</p>
 
-<pre><code>$ rm -r testDir
+<pre><code class="language-text">$ rm -r testDir
 </code></pre>
 
 <h3 id="toc_32">移动文件</h3>
 
-<pre><code>$ mv testFile testDir
+<pre><code class="language-text">$ mv testFile testDir
 </code></pre>
 
 <h3 id="toc_33">重命名文件</h3>
 
 <p><code>mv</code> 命令还有重命名的作用：</p>
 
-<pre><code>$ mv oldName newName
+<pre><code class="language-text">$ mv oldName newName
 </code></pre>
 
 <h3 id="toc_34">查看文件</h3>
@@ -431,14 +429,14 @@
 
 <p>可以使用<code>-n</code> 参数来显示行号：</p>
 
-<pre><code>$ cat -n &lt;filename&gt;
+<pre><code class="language-text">$ cat -n &lt;filename&gt;
 </code></pre>
 
 <h4 id="toc_36"><code>nl</code></h4>
 
 <p>添加行号并打印，比 <code>cat</code> 更加强大，参数说明：</p>
 
-<pre><code>-b : 指定添加行号的方式，主要有两种：
+<pre><code class="language-text">-b : 指定添加行号的方式，主要有两种：
     -b a:表示无论是否为空行，同样列出行号(&quot;cat -n&quot;就是这种方式)
     -b t:只列出非空行的编号并列出（默认为这种方式）
 -n : 设置行号的样式，主要有三种：
@@ -452,7 +450,7 @@
 
 <p>使用 <code>file</code> 命令来查看文件类型：</p>
 
-<pre><code>$ file /bin/ls
+<pre><code class="language-text">$ file /bin/ls
 </code></pre>
 
 <p><img src="media/14587025785185/14587183045128.jpg" alt=""/></p>
@@ -465,12 +463,12 @@
 
 <p>使用<code>declare</code>命令可以创建一个变量：</p>
 
-<pre><code>$ declare tmp
+<pre><code class="language-text">$ declare tmp
 </code></pre>
 
 <p>读取变量的值，使用<code>echo</code>命令和<code>$</code>符号：</p>
 
-<pre><code>$ echo $tmp
+<pre><code class="language-text">$ echo $tmp
 </code></pre>
 
 <h3 id="toc_40">环境变量</h3>
@@ -519,12 +517,12 @@
 
 <p>查看 <code>PATH</code> 环境变量的内容：</p>
 
-<pre><code>$ echo $PATH
+<pre><code class="language-text">$ echo $PATH
 </code></pre>
 
 <p>输出的内容为：</p>
 
-<pre><code>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+<pre><code class="language-text">/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 </code></pre>
 
 <p>这些目录下面存放的都是可执行文件。</p>
@@ -533,7 +531,7 @@
 
 <p><code>PATH</code>里面的路径是以<code>:</code>作为分隔符，所以可以这样添加自定义路径：</p>
 
-<pre><code>$ PATH=$PATH:/home/xxxx
+<pre><code class="language-text">$ PATH=$PATH:/home/xxxx
 </code></pre>
 
 <p>注意到这里一定要使用绝对路径。</p>
@@ -544,21 +542,21 @@
 
 <p>可以使用<code>unset</code>命令来删除一个环境变量：</p>
 
-<pre><code>$ unset temp
+<pre><code class="language-text">$ unset temp
 </code></pre>
 
 <h3 id="toc_44">如何让环境变量立即生效</h3>
 
 <p>在修改了配置文件后，可以使用<code>source</code>命令来让其立即生效：</p>
 
-<pre><code>$ source .zshrc
+<pre><code class="language-text">$ source .zshrc
 </code></pre>
 
 <h2 id="toc_45">搜索文件</h2>
 
 <h3 id="toc_46"><code>whereis</code>简单快速</h3>
 
-<pre><code>$ whereis who
+<pre><code class="language-text">$ whereis who
 </code></pre>
 
 <p><code>whereis</code>只能搜索二进制文件(-b)，man 帮助文件(-m)和源代码文件(-s)。</p>
@@ -567,7 +565,7 @@
 
 <p>通过<code>/var/lib/mlocate/mlocate.db</code>数据库查找，不过这个数据库也不是实时更新的，系统会使用定时任务每天自动执行<code>updatedb</code>命令更新一次，所以有时候你刚添加的文件，它可能会找不到，需要手动执行一次<code>updatedb</code>命令。他可以用来查找指定目录下的不同文件类型，例如查找/usr/share/下所有的 jpg 文件：</p>
 
-<pre><code>$ locate /usr/share/\*.jpg
+<pre><code class="language-text">$ locate /usr/share/\*.jpg
 </code></pre>
 
 <p>注意要添加<code>*</code>号前面的反斜杠转义，否则会无法找到</p>
@@ -576,7 +574,7 @@
 
 <p>我们通常使用<code>which</code>来确定是否安装了某个指定的软件，因为它只从<code>PATH</code> 环境变量指定的路径中去搜索命令：</p>
 
-<pre><code>$ which man
+<pre><code class="language-text">$ which man
 </code></pre>
 
 <h3 id="toc_49"><code>find</code> 精而细</h3>
@@ -585,7 +583,7 @@
 
 <p>在指定目录下搜索指定文件名的文件：</p>
 
-<pre><code>$ find /etc/ -name interface
+<pre><code class="language-text">$ find /etc/ -name interface
 </code></pre>
 
 <p><code>find</code> 命令的基本参数格式为：<code>find [path] [option] [action]</code></p>
@@ -646,7 +644,7 @@ var _hmt = _hmt || [];
 </div>
   <footer id="footer" class="yue">
     <div class="wrapper">
-        <p>Designed and Written by <a href="https://twitter.com/Tisoga">Tisoga</a></p>
+        <p>Designed and Written by <a href="mailto:forrestchang7@gmail.com">Jiayuan Zhang</a></p>
     </div>
 </footer>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>

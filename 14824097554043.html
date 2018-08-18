@@ -45,8 +45,6 @@
                     
                         <a class="page-link" href="life.html">LIFE</a>
                     
-                        <a class="page-link" href="photography.html">PHOTOGRAPHY</a>
-                    
                         <a class="page-link" href="archives.html">ARCHIVE</a>
                     
                         <a class="page-link" href="atom.xml">RSS</a>
@@ -69,7 +67,7 @@
                     
                 </div>
                 <p class="post-meta">
-                    <time class="post-time" datetime="2015-10-10T20:29:15+08:00"itemprop="datePublished">Created by Tisoga at 2015/10/10 20:29 PM</time>
+                    <time class="post-time" datetime="2015-10-10T20:29:15+08:00"itemprop="datePublished">Created by Jiayuan at 2015/10/10 20:29 PM</time>
                 </p>
             </header>
             <div class="post-content" itemprop="articleBody">
@@ -105,7 +103,7 @@
 
 <p>随便在哪里建一个心得目录，这个目录就是存放你的org文件和html文件的地方。假设我们已经有了这么一个目录 <code>org</code> ：</p>
 
-<pre><code>$ mkdir notes
+<pre><code class="language-text">$ mkdir notes
 $ mkdir public_html
 $ mkdir gtd
 </code></pre>
@@ -138,7 +136,7 @@ $ mkdir gtd
 
 <p>下面来配置需要转换成HTML的内容：</p>
 
-<pre><code class="language-html">  (&quot;blog-notes&quot;
+<pre><code class="language-markup">  (&quot;blog-notes&quot;
    :base-directory &quot;~/org/notes&quot;
    :base-extension &quot;org&quot;
    :publishing-directory &quot;~/org/public_html/&quot;
@@ -190,7 +188,7 @@ $ mkdir gtd
 
 <p>比如说我已经写完了一些org文件：</p>
 
-<pre><code>.
+<pre><code class="language-text">.
 ├── blog-history.org
 ├── css
 │   └── worg.css
@@ -288,7 +286,7 @@ $ mkdir gtd
 
 <p>生成了HTML文件之后需要把public_html目录托管到GitHub上：</p>
 
-<pre><code>$ git add .
+<pre><code class="language-text">$ git add .
 $ git commit -m &quot;first commit&quot;
 $ git remote add origin xxx
 $ git push -u origin master
@@ -328,7 +326,7 @@ var _hmt = _hmt || [];
 </div>
   <footer id="footer" class="yue">
     <div class="wrapper">
-        <p>Designed and Written by <a href="https://twitter.com/Tisoga">Tisoga</a></p>
+        <p>Designed and Written by <a href="mailto:forrestchang7@gmail.com">Jiayuan Zhang</a></p>
     </div>
 </footer>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>

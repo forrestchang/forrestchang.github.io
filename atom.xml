@@ -3,7 +3,7 @@
   <title><![CDATA[Hack Notes]]></title>
   <link href="http://forrestchang.com/atom.xml" rel="self"/>
   <link href="http://forrestchang.com/"/>
-  <updated>2018-04-17T15:13:55+08:00</updated>
+  <updated>2018-08-18T14:38:04+08:00</updated>
   <id>http://forrestchang.com/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -64,24 +64,16 @@ DRY - Don&#39;t Repeat Yourself<br/>
 
 <ul>
 <li><p>信息的多种表示</p>
-
 <p>我们也许在编写客户-服务器应用，在客户和服务器端使用了不同的语言，并且需要在两端都表示某种共有的结构。我们或许需要一个类，其属性是某个数据库表的 schema。</p>
-
 <p>解决办法是编写简单的过滤器或代码生成器。可以在每次构建（build）软件时，使用简单的代码生成器，根据公共的元数据表示构建多种语言下的结构。可以用最初用于构建 schema 的元数据，自动生成类定义。</p></li>
 <li><p>代码中的文档</p>
-
 <p>代码为什么需要注释：糟糕的代码才需要许多注释。</p>
-
 <p>DRY 法则告诉我们，要把低级的知识放在代码中，它属于那里；把注释保留给其他高级说明。否则，我们就是在重复知识，而每一次改变都意味着既要改变代码，也要改变注释。注释将不可避免地变得过时，而不可信任的注释比完全没有注释更糟。</p></li>
 <li><p>文档与代码</p>
-
 <p>你撰写文档，然后编写代码。有些东西变了，你修订文档、更新代码。文档和代码都含有同一知识表示。</p>
-
 <p>可以根据文档来生成测试。</p></li>
 <li><p>语言问题</p>
-
 <p>许多语言会在源码中强加可观的重复。如果语言使模块的接口与其实现分离，就常常会出现这样的情况。C/C++ 有头文件，在其中重复了被导出变量、函数和（C++）类的名称和类型信息。</p>
-
 <p>再思考一下头文件和实现文件中的注释。绝对没有理由在这两种文件之间重复函数或类头注释（head comment）。应该用头文件记载接口问题，用实现文件记载代码的使用者无需了解的实际细节。</p></li>
 </ul>
 
@@ -91,7 +83,7 @@ DRY - Don&#39;t Repeat Yourself<br/>
 
 <p>举个例子：</p>
 
-<pre><code class="language-c++">class Line {
+<pre><code class="language-cpp">class Line {
     public:
         Point start;
         Point end;
@@ -101,7 +93,7 @@ DRY - Don&#39;t Repeat Yourself<br/>
 
 <p>第一眼看上去这个类似乎是合理的。线段显然有起点和终点，并总是有长度的。但这里有重复，长度是由起点和终点决定的：改变其中一个，长度就会变化。最好是让长度编程计算字段：</p>
 
-<pre><code class="language-c++">class Line {
+<pre><code class="language-cpp">class Line {
     public:
         Point start;
         Point end;
@@ -153,14 +145,12 @@ Eliminate Effects Between Unrelated Things<br/>
 
 <ul>
 <li>提高生产率
-
 <ul>
 <li>改动得以局部化，所以开发实践和测试时间得以降低。编写多个相对较小的、自足的组件更为容易，你可以设计、编写简单的组间，对其进行单元测试。当你增加新代码时，无需不断改动已有的代码。</li>
 <li>正交的途径还能够促进复用。如果组间具有明确而具体的、良好定义的责任，就可以把它们和新组件整合到一起。</li>
 <li>如果你对正交的组件进行组合，生产效率会有相当微妙的提高（M x N &gt; M * (N - i), i 为 M、N 重复内容）</li>
 </ul></li>
 <li>降低风险
-
 <ul>
 <li>有问题的代码区域被隔离开来。</li>
 <li>所得的系统更健壮。</li>
@@ -742,7 +732,7 @@ It&#39;s Both What You Say and the Way You Say It<br/>
 
 <p>Example：</p>
 
-<pre><code>Given nums = [2, 7, 11, 15], target = 9,
+<pre><code class="language-text">Given nums = [2, 7, 11, 15], target = 9,
 
 Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
@@ -783,7 +773,7 @@ return [0, 1].
 
 <p>Example:</p>
 
-<pre><code>Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)
+<pre><code class="language-text">Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)
 Output: 7 -&gt; 0 -&gt; 8
 </code></pre>
 
@@ -883,7 +873,7 @@ class Solution(object):
 
 <p>Ex：</p>
 
-<pre><code>Example1: x = 123, return 321
+<pre><code class="language-text">Example1: x = 123, return 321
 Example2: x = -123, return -321
 </code></pre>
 
@@ -1256,7 +1246,7 @@ def topMatches(prefs, person, n=5, similarity=sim_pearson):
 
 <p>以以下数据集为例：</p>
 
-<pre><code>{&#39;Lisa Rose&#39;: {&#39;Lady in the Water&#39;: 2.5,
+<pre><code class="language-text">{&#39;Lisa Rose&#39;: {&#39;Lady in the Water&#39;: 2.5,
                &#39;Snakes on a Plane&#39;: 3.5,
                &#39;Just My Luck&#39;: 3.0,
                &#39;Superman Returns&#39;: 3.5,

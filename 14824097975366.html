@@ -45,8 +45,6 @@
                     
                         <a class="page-link" href="life.html">LIFE</a>
                     
-                        <a class="page-link" href="photography.html">PHOTOGRAPHY</a>
-                    
                         <a class="page-link" href="archives.html">ARCHIVE</a>
                     
                         <a class="page-link" href="atom.xml">RSS</a>
@@ -69,7 +67,7 @@
                     
                 </div>
                 <p class="post-meta">
-                    <time class="post-time" datetime="2016-07-17T20:29:57+08:00"itemprop="datePublished">Created by Tisoga at 2016/7/17 20:29 PM</time>
+                    <time class="post-time" datetime="2016-07-17T20:29:57+08:00"itemprop="datePublished">Created by Jiayuan at 2016/7/17 20:29 PM</time>
                 </p>
             </header>
             <div class="post-content" itemprop="articleBody">
@@ -77,7 +75,7 @@
 
 <p>直接使用 pip 来进行安装：</p>
 
-<pre><code>$ sudo pip install virtualenv
+<pre><code class="language-text">$ sudo pip install virtualenv
 </code></pre>
 
 <h2 id="toc_1">用途</h2>
@@ -92,12 +90,12 @@
 
 <p>最基本的使用：</p>
 
-<pre><code>$ virtualenv ENV
+<pre><code class="language-text">$ virtualenv ENV
 </code></pre>
 
 <p>其中 <code>ENV</code> 是用来存放虚拟环境的目录。</p>
 
-<pre><code>$tree -L 1 ENV
+<pre><code class="language-text">$tree -L 1 ENV
 ENV
 ├── bin
 ├── include
@@ -111,19 +109,19 @@ ENV
 
 <p>进入虚拟环境：</p>
 
-<pre><code>$ source ENV/bin/active
+<pre><code class="language-text">$ source ENV/bin/active
 </code></pre>
 
 <p>（如果 <code>source</code> 命令不存在可以使用 <code>.</code> 命令。）</p>
 
 <p>退出虚拟环境：</p>
 
-<pre><code>$ deactivate
+<pre><code class="language-text">$ deactivate
 </code></pre>
 
 <h3 id="toc_5">Removing an Environment</h3>
 
-<pre><code>(ENV)$ deactivate
+<pre><code class="language-text">(ENV)$ deactivate
 $ rm -r /path/to/ENV
 </code></pre>
 
@@ -137,19 +135,19 @@ $ rm -r /path/to/ENV
 
 <p>Python 2.7:</p>
 
-<pre><code>$ virtualenv -p /usr/bin/python2.7 ENV2.7
+<pre><code class="language-text">$ virtualenv -p /usr/bin/python2.7 ENV2.7
 </code></pre>
 
 <p>Python 3.5:</p>
 
-<pre><code>$ virtualenv -p /usr/local/bin/python3.5 ENV3.5
+<pre><code class="language-text">$ virtualenv -p /usr/local/bin/python3.5 ENV3.5
 </code></pre>
 
 <h3 id="toc_8">生成可打包环境</h3>
 
 <p>某些情况下，我们可能需要在别的地方使用这个已经配置好的虚拟环境，可以使用 <code>virtualenv --relocatable</code> 将 ENV 修改为可迁移的。</p>
 
-<pre><code>(ENV)$ virutalenv --relocatable ./
+<pre><code class="language-text">(ENV)$ virutalenv --relocatable ./
 </code></pre>
 
             </div>
@@ -182,7 +180,7 @@ var _hmt = _hmt || [];
 </div>
   <footer id="footer" class="yue">
     <div class="wrapper">
-        <p>Designed and Written by <a href="https://twitter.com/Tisoga">Tisoga</a></p>
+        <p>Designed and Written by <a href="mailto:forrestchang7@gmail.com">Jiayuan Zhang</a></p>
     </div>
 </footer>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
