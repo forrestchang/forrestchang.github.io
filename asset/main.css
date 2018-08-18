@@ -122,8 +122,8 @@
 }
 
 .post-content a:hover {
-    color: #DD7E42;
-    border-bottom-color: #DD7E42;
+    color: #61D8A8;
+    border-bottom-color: #61D8A8;
 }
 
 /**/
@@ -201,8 +201,7 @@ a.site-title:hover {
 }
 
 .yue strong {
-    color: #F7915D;
-    font-weight: normal;
+    font-weight: bold;
 }
 
 .detail p {
