@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Essay on Jiayuan&#39;s Blog</title>
+    <link>http://jiayuanzhang.com/categories/essay/</link>
+    <description>Recent content in Essay on Jiayuan&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 28 Nov 2018 18:08:37 +0800</lastBuildDate>
+    
+	<atom:link href="http://jiayuanzhang.com/categories/essay/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>OmniFocus 3 最佳实践</title>
+      <link>http://jiayuanzhang.com/post/omnifocus-3-experience/</link>
+      <pubDate>Wed, 28 Nov 2018 18:08:37 +0800</pubDate>
+      
+      <guid>http://jiayuanzhang.com/post/omnifocus-3-experience/</guid>
+      <description>OmniFocus 3 距离发布到现在已经有半年多时间了，在这半年多时间里面，我用 OmniFocus 3 完成了上千个任务。在这个过程中，经过不断尝试和优化，最终找到了一套非常适合</description>
+    </item>
+    
+  </channel>
+</rss>

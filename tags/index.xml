@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Jiayuan&#39;s Blog</title>
+    <link>http://jiayuanzhang.com/tags/</link>
+    <description>Recent content in Tags on Jiayuan&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 28 Nov 2018 18:08:37 +0800</lastBuildDate>
+    
+	<atom:link href="http://jiayuanzhang.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>OmniFocus</title>
+      <link>http://jiayuanzhang.com/tags/omnifocus/</link>
+      <pubDate>Wed, 28 Nov 2018 18:08:37 +0800</pubDate>
+      
+      <guid>http://jiayuanzhang.com/tags/omnifocus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>时间管理</title>
+      <link>http://jiayuanzhang.com/tags/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Wed, 28 Nov 2018 18:08:37 +0800</pubDate>
+      
+      <guid>http://jiayuanzhang.com/tags/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
