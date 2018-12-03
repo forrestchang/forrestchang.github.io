@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jiayuan&#39;s Blog</title>
-    <link>http://jiayuanzhang.com/</link>
-    <description>Recent content on Jiayuan&#39;s Blog</description>
+    <title>Http on Jiayuan&#39;s Blog</title>
+    <link>http://jiayuanzhang.com/tags/http/</link>
+    <description>Recent content in Http on Jiayuan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 02 Dec 2018 14:40:35 +0800</lastBuildDate>
     
-	<atom:link href="http://jiayuanzhang.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://jiayuanzhang.com/tags/http/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>http://jiayuanzhang.com/post/cors-tutorial/</guid>
       <description>Web 后端开发者很少会去充分了解跨域问题，原因是他们很少和 JavaScript 打交道。但是作为一个 Web 开发者，知道跨域请求和如何解决跨域问题可以和前端开发者在沟通上</description>
-    </item>
-    
-    <item>
-      <title>OmniFocus 3 最佳实践</title>
-      <link>http://jiayuanzhang.com/post/omnifocus-3-experience/</link>
-      <pubDate>Wed, 28 Nov 2018 18:08:37 +0800</pubDate>
-      
-      <guid>http://jiayuanzhang.com/post/omnifocus-3-experience/</guid>
-      <description>OmniFocus 3 距离发布到现在已经有半年多时间了，在这半年多时间里面，我用 OmniFocus 3 完成了上千个任务。在这个过程中，经过不断尝试和优化，最终找到了一套非常适合</description>
     </item>
     
   </channel>

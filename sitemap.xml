@@ -3,10 +3,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://jiayuanzhang.com/post/cors-tutorial/</loc>
+    <lastmod>2018-12-02T14:40:35+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://jiayuanzhang.com/post/omnifocus-3-experience/</loc>
     <lastmod>2018-11-28T18:08:37+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://jiayuanzhang.com/tags/cors/</loc>
+    <lastmod>2018-12-02T14:40:35+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -23,8 +37,15 @@
   </url>
   
   <url>
+    <loc>http://jiayuanzhang.com/tags/http/</loc>
+    <lastmod>2018-12-02T14:40:35+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://jiayuanzhang.com/</loc>
-    <lastmod>2018-11-28T18:08:37+08:00</lastmod>
+    <lastmod>2018-12-02T14:40:35+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -38,14 +59,28 @@
   
   <url>
     <loc>http://jiayuanzhang.com/post/</loc>
-    <lastmod>2018-11-28T18:08:37+08:00</lastmod>
+    <lastmod>2018-12-02T14:40:35+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://jiayuanzhang.com/tags/</loc>
-    <lastmod>2018-11-28T18:08:37+08:00</lastmod>
+    <lastmod>2018-12-02T14:40:35+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jiayuanzhang.com/categories/technology/</loc>
+    <lastmod>2018-12-02T14:40:35+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jiayuanzhang.com/tags/%E5%89%8D%E7%AB%AF/</loc>
+    <lastmod>2018-12-02T14:40:35+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
