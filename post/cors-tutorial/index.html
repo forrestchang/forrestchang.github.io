@@ -330,7 +330,7 @@
 
 <p>和简单请求不同，「需预检的请求」要求必须先使用 <code>OPTIONS</code> 方法发送一个预检请求到服务器，以获知服务器是否允许该请求，或者是否需要携带身份认证信息。「预检请求」的使用，可以避免跨域请求对服务器的用户数据产生未预期的影响。</p>
 
-<p>当一个请求满足所有以下条件时，该请求需要首先发送预检请求。</p>
+<p>当一个请求满足以下任一条件时，该请求需要首先发送预检请求。</p>
 
 <ul>
 <li>使用了下面任一 HTTP 方法：<code>PUT</code>、<code>DELETE</code>、<code>CONNECT</code>、<code>OPTIONS</code>、<code>TRACE</code>、<code>PATCH</code>；</li>
@@ -702,7 +702,7 @@
   <span class="copyright-year">
     &copy; 
     2014 - 
-    2018
+    2019
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
