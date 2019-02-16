@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+         《程序员修炼之道》阅读笔记（二） - Jiayuan's Blog 
+    </title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+
+    <link rel="stylesheet" type="text/css" href="asset/yue.css">
+    <link rel="stylesheet" type="text/css" href="asset/main.css">
+    <link rel="stylesheet" type="text/css" href="asset/tomorrow.css">
+
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Jiayuan's Blog">
+
+    <script src="asset/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+    <header class="yue site-header">
+        <div class="wrapper">
+            <a class="site-title" href="index.html">Jiayuan's Blog</a>
+            <nav class="site-nav">
+                <a href="#" class="menu-icon">
+                    
+                    <svg viewBox="0 0 18 15">
+                        <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"
+                        />
+                        <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"
+                        />
+                        <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"
+                        />
+                    </svg>
+
+                </a>
+                <div class="trigger">
+                    
+                        <a class="page-link" href="tech.html">TECH</a>
+                    
+                        <a class="page-link" href="essay.html">ESSAY</a>
+                    
+                        <a class="page-link" href="life.html">LIFE</a>
+                    
+                        <a class="page-link" href="archives.html">ARCHIVE</a>
+                    
+                        <a class="page-link" href="atom.xml">RSS</a>
+                    
+                </div>
+            </nav>
+        </div>
+    </header>
+</body>
+
+</html> <div class="page-content yue">
+    <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+            <header class="post-header">
+                <h1 class="post-title" itemprop="name headline">《程序员修炼之道》阅读笔记（二）</h1>
+                <div class="post-description">
+                    
+                        注重实效的途径。
+                    
+                </div>
+            </header>
+            <div class="post-content" itemprop="articleBody">
+                <h3 id="toc_0">重复的危害</h3>
+
+<p>系统中的每一项知识都必须具有单一、无歧义、权威的表示。（感觉翻译得怪怪的）</p>
+
+<blockquote>
+<p>Tip 11<br/>
+DRY - Don&#39;t Repeat Yourself<br/>
+不要重复你自己</p>
+</blockquote>
+
+<h4 id="toc_1">重复是怎样发生的</h4>
+
+<ul>
+<li>强加的重复（imposed duplication）：开发者觉得他们无可选择 —— 环境似乎要求重复。</li>
+<li>无意的重复（inadvertent duplication）：开发者没有意识到他们在重复信息。</li>
+<li>无耐性的重复（impatient duplication）：开发者偷懒，他们重复，因为那样似乎更容易。</li>
+<li>开发者之间的重复（interdeveloper duplication）：同一团队（或不同团队）的几个人重复了同样的信息。</li>
+</ul>
+
+<h5 id="toc_2">强加的重复</h5>
+
+<ul>
+<li><p>信息的多种表示</p>
+<p>我们也许在编写客户-服务器应用，在客户和服务器端使用了不同的语言，并且需要在两端都表示某种共有的结构。我们或许需要一个类，其属性是某个数据库表的 schema。</p>
+<p>解决办法是编写简单的过滤器或代码生成器。可以在每次构建（build）软件时，使用简单的代码生成器，根据公共的元数据表示构建多种语言下的结构。可以用最初用于构建 schema 的元数据，自动生成类定义。</p></li>
+<li><p>代码中的文档</p>
+<p>代码为什么需要注释：糟糕的代码才需要许多注释。</p>
+<p>DRY 法则告诉我们，要把低级的知识放在代码中，它属于那里；把注释保留给其他高级说明。否则，我们就是在重复知识，而每一次改变都意味着既要改变代码，也要改变注释。注释将不可避免地变得过时，而不可信任的注释比完全没有注释更糟。</p></li>
+<li><p>文档与代码</p>
+<p>你撰写文档，然后编写代码。有些东西变了，你修订文档、更新代码。文档和代码都含有同一知识表示。</p>
+<p>可以根据文档来生成测试。</p></li>
+<li><p>语言问题</p>
+<p>许多语言会在源码中强加可观的重复。如果语言使模块的接口与其实现分离，就常常会出现这样的情况。C/C++ 有头文件，在其中重复了被导出变量、函数和（C++）类的名称和类型信息。</p>
+<p>再思考一下头文件和实现文件中的注释。绝对没有理由在这两种文件之间重复函数或类头注释（head comment）。应该用头文件记载接口问题，用实现文件记载代码的使用者无需了解的实际细节。</p></li>
+</ul>
+
+<h5 id="toc_3">无意的重复</h5>
+
+<p>有时，重复来自设计中的错误。</p>
+
+<p>举个例子：</p>
+
+<pre><code class="language-cpp">class Line {
+    public:
+        Point start;
+        Point end;
+        double lenght;
+};
+</code></pre>
+
+<p>第一眼看上去这个类似乎是合理的。线段显然有起点和终点，并总是有长度的。但这里有重复，长度是由起点和终点决定的：改变其中一个，长度就会变化。最好是让长度编程计算字段：</p>
+
+<pre><code class="language-cpp">class Line {
+    public:
+        Point start;
+        Point end;
+        double lenght() { return start.distanceTo(end); }
+};
+</code></pre>
+
+<h5 id="toc_4">无耐性的重复</h5>
+
+<p>每个项目都有时间压力。</p>
+
+<p>如果你觉得受到了诱惑，想一想古老的格言「欲速则不达」。你现在也许可以节省几秒钟（感觉不止），但以后可能损失几小时。（如果一个人不打算在公司长久待下去的话是会写出重复的代码的，所以 code review 要做好）</p>
+
+<p>无耐性的重复是一种容易检测和处理的重复形式，但那需要你接受训练，并愿意为避免以后的痛苦而预先话一些时间。</p>
+
+<h5 id="toc_5">开发者之间的重复</h5>
+
+<p>或许最难检测和处理的重复发生在项目的不同开发者之间。处理这个问题的最佳方式是鼓励开发者进行主动地交流。</p>
+
+<blockquote>
+<p>Tip 12<br/>
+Make It Easy to Reuse<br/>
+让复用变得容易</p>
+</blockquote>
+
+<p>你所要做的就是营造一种环境，在其中找到并复用已有的东西，比自己编写更容易。</p>
+
+<h3 id="toc_6">正交性</h3>
+
+<p>如果你想要制作易于设计、构建、测试及扩展的系统，正交性是一个十分关键的概念。</p>
+
+<h4 id="toc_7">什么是正交性</h4>
+
+<p>「正交性」是从几何学中借来的术语。如果两条直线相交成直角，它们就是正交的。</p>
+
+<p>在计算机技术中，该术语用于表示某种不相依赖性和解耦性。如果两个或更多事物中的一个发生变化，不会影响到其他事物，这些事物就是正交的。</p>
+
+<h4 id="toc_8">正交的好处</h4>
+
+<p>非正交系统的改变与控制更复杂是其固有的性质。当任何系统的各组件互相高度依赖时，就不在具有局部修正这样的事情。</p>
+
+<blockquote>
+<p>Tip 13<br/>
+Eliminate Effects Between Unrelated Things<br/>
+消除无关事物之间的影响</p>
+</blockquote>
+
+<p>我们想要设计自足（self-contained）的组件：独立、具有单一、良好定义的目的（内聚）。如果组件是相互隔离的，你就知道你能够改变其中之一，而不用担心其余组件。只要你不改变组件的外部接口。</p>
+
+<ul>
+<li>提高生产率
+<ul>
+<li>改动得以局部化，所以开发实践和测试时间得以降低。编写多个相对较小的、自足的组件更为容易，你可以设计、编写简单的组间，对其进行单元测试。当你增加新代码时，无需不断改动已有的代码。</li>
+<li>正交的途径还能够促进复用。如果组间具有明确而具体的、良好定义的责任，就可以把它们和新组件整合到一起。</li>
+<li>如果你对正交的组件进行组合，生产效率会有相当微妙的提高（M x N &gt; M * (N - i), i 为 M、N 重复内容）</li>
+</ul></li>
+<li>降低风险
+<ul>
+<li>有问题的代码区域被隔离开来。</li>
+<li>所得的系统更健壮。</li>
+<li>政教系统很可能得到更好的测试。</li>
+</ul></li>
+</ul>
+
+<h4 id="toc_9">项目团队</h4>
+
+<p>怎样把团队划分为责任得到了良好定义的小组，并使重叠降至最低呢？没有简单的答案。我们的偏好是从使基础设施与应用分离开始。每个主要的基础设施组间（数据库、通信接口、中间件层等）有自己的子团队。如果应用功能的划分显而易见，那就照此划分。然后我们考察现有的人员，并对分组进行相应的调整。</p>
+
+<p>在讨论每个所需改动时需要涉及多少人。人数越多，团队的正交性就越差。</p>
+
+<h4 id="toc_10">设计</h4>
+
+<p>对于正交设计，有一种简单的测试方法。一旦设计好组件，问问你自己：如果我显著地改变了某个特定功能背后的需求，有多少模块会受到影响？在正交系统中，大难应该是「一个」。</p>
+
+<p>不要依赖你无法控制的事物属性。</p>
+
+<h4 id="toc_11">工具箱与库</h4>
+
+<p>在你引入第三方工具箱和库时，要注意保持系统的正交性。要明智地选择技术。它是否会迫使你对代码进行不必要的改动。如果对象持久模型（object persistence scheme）是透明的，那么它就是正交的。如果它要求你以一种特殊的方式创建或访问对象，那么它就不是正交的。</p>
+
+<p>正交性的另一个有趣的变体是面向切片编程（Aspect-Oriented Programming, AOP）。AOP 能让你在一个地方表达本来会分散在源码各处的某种行为。例如，日志消息通常是在源码各处、通过显式地调用某个日志函数生成的。通过 AOP，你可以把日志功能正交地实现到要进行日志记录的代码中。（Python 中的装饰器就可以实现这个功能）</p>
+
+<h4 id="toc_12">编码</h4>
+
+<p>你可以将若干技术用于维持正交性：</p>
+
+<ul>
+<li>让你的代码保持「解耦」：编写不会没有必要地向其他模块暴露任何事情、也不依赖其他模块具体实现的模块。</li>
+<li>避免使用全局数据</li>
+<li>避免编写相似的函数：使用 Strategy（策略）模式</li>
+</ul>
+
+<p>养成不断地批判对待自己打的代码的习惯，寻找任何重新进行组织、以改善其结构和正交性的机会。这个过程叫重构（refactoring）。</p>
+
+<h4 id="toc_13">测试</h4>
+
+<p>正交地设计和实现的系统也更易于测试，因为系统的各组件间的交互是形式化和有限的，更多的系统测试可以在单个的模块进行。</p>
+
+<h3 id="toc_14">可撤销性</h3>
+
+<blockquote>
+<p>如果某个想法是你唯一的想法，再没有什么比这更危险的事了。 —— Emil-Auguste Chartier</p>
+
+<p>Tip 14<br/>
+There Are No Final Decisions<br/>
+不存在最终决策</p>
+</blockquote>
+
+<p>通常，你可以把第三方产品隐藏在定义良好的抽象接口后面。</p>
+
+<h3 id="toc_15">曳光弹</h3>
+
+<p>为了在代码中获得「曳光弹」的效果，我们要找到某种东西，让我们能快速、直观和可重复地从需求出发，满足最终系统的某个方面要求。</p>
+
+<blockquote>
+<p>Tip 15<br/>
+Use Tracer Bullets to Find the Target<br/>
+用曳光弹找到目标</p>
+</blockquote>
+
+<p>曳光弹告诉你击中的是什么，那不一定总是目标，于是你调整准心，直到完全击中目标为止，这正是要点所在。</p>
+
+<h3 id="toc_16">原型与便笺</h3>
+
+<p>你可以为下列事物制作原型：</p>
+
+<ul>
+<li>架构</li>
+<li>已有系统中的新功能</li>
+<li>外部数据的结构或内容</li>
+<li>第三方工具或组件</li>
+<li>性能问题</li>
+<li>用户界面设计</li>
+</ul>
+
+<p>原型制作是一种学习经验。其价值并不在于所产生的代码，而在于所学到的经验教训。那才是原型制作的要点所在。</p>
+
+<blockquote>
+<p>Tip 16<br/>
+Prototype to Learn<br/>
+为了学习而制作原型</p>
+</blockquote>
+
+<h4 id="toc_17">怎样使用原型</h4>
+
+<p>在构建原型时，你可以忽略哪些细节？</p>
+
+<ul>
+<li>正确性：你也许可以在适当的地方使用虚假的数据；</li>
+<li>完整性：原型也许只能在非常有限的意义上工作；</li>
+<li>健壮性：错误检查很有可能不完整。如果你偏离预定路径，原型就可能崩溃，这没有关系；</li>
+<li>风格：原型代码可能没有多少注释或文档。</li>
+</ul>
+
+<p>因为原型应该遮盖细节，并聚焦于所考虑系统的某些具体方面，你可以用非常高级的语言实现原型。高级的脚本语言能让你推迟考虑许多细节，并且仍然能制作出可以工作的代码。</p>
+
+<h4 id="toc_18">制作架构原型</h4>
+
+<p>一些你可以在架构原型中寻求解答的具体问题：</p>
+
+<ul>
+<li>主要组间的责任是否得到了良好的定义？是否适当？</li>
+<li>主要组间间的协作是否得到了良好的定义？</li>
+<li>耦合是否得以最小化？</li>
+<li>你能否确定重复的潜在来源？</li>
+<li>接口定义和各项约束是否可接受？</li>
+<li>每个模块在执行过程中是否能访问到其所需的数据？能够在需要时进行访问？</li>
+</ul>
+
+<h3 id="toc_19">领域语言</h3>
+
+<blockquote>
+<p>Tip 17<br/>
+Program Close to the Problem domain<br/>
+靠近问题领域编程</p>
+</blockquote>
+
+<p>无论适用于配置和控制应用程序的简单语言，还是用于指定规则或过程的更为复杂的语言，我们认为，你都应该考虑让你的项目更靠近问题领域。通过在更高的抽象层面上编码，你获得了专心解决领域问题的自由，并且可以忽略琐碎的实现细节。</p>
+
+<h3 id="toc_20">估算</h3>
+
+<blockquote>
+<p>Tip 18<br/>
+Estimate to Avoid Surprises<br/>
+估算，以避免发生意外</p>
+</blockquote>
+
+<h4 id="toc_21">估算来自哪里</h4>
+
+<ol>
+<li>理解提问内容：任何估算练习的第一步都是建立对提问内容的理解。除了上面讨论的精确度以外，你还需要把我问题域的范围。这常常隐含在问题中，但你需要养成在开始猜想之前先思考范围的习惯。</li>
+<li>建立系统的模型：根据你对所提问题的理解，建立粗略、就绪的思维模型骨架。</li>
+<li>把模型分解为组件：你需要找出描述这些组件怎样交互的数学规则。你将会发现，在典型的情况下，每个组件都有一些参数，会对它给整个模型带来什么造成影响。在这一阶段，只要确定每个参数就行了。</li>
+<li>给每个参数指定值：一旦你分解出各个参数，你就可以逐一给每个参数赋值。在这个步骤中你可能会引入一些错误。诀窍是找出哪些参数对结果的影响最大，并致力于让它们大致正确。</li>
+<li>计算答案：在计算阶段，你可能会得到看起来很奇怪的答案。不哟啊太快放弃它们，如果你的运算是正确的，那你对问题或模型的理解就很可能是错的。这是非常宝贵的信息。</li>
+<li>追踪你的估算能力</li>
+</ol>
+
+<h4 id="toc_22">估算项目进度</h4>
+
+<p>在面对相当大的应用开发的各种复杂问题与反复无常的情况时，普通的估算规则可能会失效。为项目确定进度表的唯一途径常常是在相同的项目上获取经验。</p>
+
+<ul>
+<li>检查需求</li>
+<li>分析风险</li>
+<li>设计、实现、继承</li>
+<li>向用户确认</li>
+</ul>
+
+<blockquote>
+<p>Tip 19<br/>
+Iterate the Schedule with the Code<br/>
+通过代码对进度表进行迭代</p>
+</blockquote>
+
+<h3 id="toc_23">总结</h3>
+
+<p>第二章其实更多的再讲团队和产品设计方面的问题，自己在这两方面并没有什么经验。不过 DRY 和正交性的概念还是比较重要的。</p>
+
+
+                <p class="post-meta">
+                    <time class="post-time" datetime="2017-08-17T07:26:48+08:00"itemprop="datePublished">Created by Jiayuan at 2017/8/17 7:26 AM</time>
+                </p>
+            </div>
+            <div>
+                <script type="text/javascript">
+    var disqus_shortname = 'tisogasnotes'; 
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?001e800887eba2f8f57ec8059aafdad6";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+                
+                    <div id="disqus_thread"></div>
+                
+                
+            </div>
+        </article>
+    </div>
+</div>
+  <footer id="footer" class="yue">
+    <div class="wrapper">
+        <p>Designed and Written by <a href="mailto:forrestchang7@gmail.com">Jiayuan Zhang</a></p>
+    </div>
+</footer>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>

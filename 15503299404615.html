@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+         Linux 命令行详解：SFTP - Jiayuan's Blog 
+    </title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+
+    <link rel="stylesheet" type="text/css" href="asset/yue.css">
+    <link rel="stylesheet" type="text/css" href="asset/main.css">
+    <link rel="stylesheet" type="text/css" href="asset/tomorrow.css">
+
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Jiayuan's Blog">
+
+    <script src="asset/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+    <header class="yue site-header">
+        <div class="wrapper">
+            <a class="site-title" href="index.html">Jiayuan's Blog</a>
+            <nav class="site-nav">
+                <a href="#" class="menu-icon">
+                    
+                    <svg viewBox="0 0 18 15">
+                        <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"
+                        />
+                        <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"
+                        />
+                        <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"
+                        />
+                    </svg>
+
+                </a>
+                <div class="trigger">
+                    
+                        <a class="page-link" href="tech.html">TECH</a>
+                    
+                        <a class="page-link" href="essay.html">ESSAY</a>
+                    
+                        <a class="page-link" href="life.html">LIFE</a>
+                    
+                        <a class="page-link" href="archives.html">ARCHIVE</a>
+                    
+                        <a class="page-link" href="atom.xml">RSS</a>
+                    
+                </div>
+            </nav>
+        </div>
+    </header>
+</body>
+
+</html> <div class="page-content yue">
+    <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+            <header class="post-header">
+                <h1 class="post-title" itemprop="name headline">Linux 命令行详解：SFTP</h1>
+                <div class="post-description">
+                    
+                        安全文件传输协议。
+                    
+                </div>
+            </header>
+            <div class="post-content" itemprop="articleBody">
+                <p>「Linux 命令详解」这个系列的文章将会介绍 Linux/Unix/macOS 系统中使用到的常用命令，包括该命令的简单介绍、常用参数解释以及最佳实践，如果需要快速使用这个命令，直接跳到最佳实践部分即可。</p>
+
+<p>「Linux 命令详解」系列文章：</p>
+
+<ul>
+<li><a href="http://jiayuanzhang.com/post/linux-sftp-tutorial/">Linux命令详解：SFTP</a></li>
+</ul>
+
+<h2 id="toc_0">一、介绍</h2>
+
+<p>SFTP（Secure File Transfer Protocol，安全文件传输协议）是一种基于可靠数据流（data stream），提供文件存取和管理的网络传输协议，它在网络协议层的结构如下图<sup id="fnref1"><a href="#fn1" rel="footnote">1</a></sup>所示：</p>
+
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxx2ngca7kj31dv0u0dij.jpg" alt="sftp-layer"/></p>
+
+<p>与 FTP 协议相比，SFTP 在客户端与服务器间提供了一种更为安全的文件传输方式，如果你还在使用 FTP 来进行文件传输，强烈建议切换到更为安全的 SFTP 上来。</p>
+
+<p>本篇文章将会介绍 SFTP 的链接，以及在交互式命令行中的一些常用命令，并对一些参数进行解释，最后给出实际使用中的最佳实践。目前已经有很多 GUI 客户端支持 SFTP 协议，但是不在本篇文章的讨论范围之内。</p>
+
+<h2 id="toc_1">二、使用 SFTP 进行连接</h2>
+
+<p>因为 SFTP 是基于 SSH 协议的，所以默认的身份认证方法与 SSH 协议保持一致。通常我们使用 SSH Key 来进行连接，如果你已经可以使用 SSH 连接到远程服务器上，那么可以使用以下命令来连接 SFTP：</p>
+
+<pre><code class="language-bash">sftp user_name@remote_server_address[:path]
+</code></pre>
+
+<p>如果远程服务器自定义了连接的端口，可以使用 <code>-P</code> 参数：</p>
+
+<pre><code class="language-bash">sftp -P remote_port user_name@remote_server_address[:path]
+</code></pre>
+
+<p>连接成功后将进入一个 SFTP 的解释器，可以发现命令行提示符变成了 <code>sftp&gt;</code>，使用 <code>exit</code> 命令可以退出连接。</p>
+
+<p>如果连接地址存在 <code>path</code> 并且 <code>path</code> 不是一个目录，那么 SFTP 会直接从服务器端取回这个文件。</p>
+
+<h2 id="toc_2">三、连接参数详解</h2>
+
+<ul>
+<li><code>-B</code>: buffer_size，制定传输 buffer 的大小，更大的 buffer 会消耗更多的内存，默认为 32768 bytes；</li>
+<li><code>-P</code>: port，制定连接的端口号；</li>
+<li><code>-R</code>: num_requests，制定一次连接的请求数，可以略微提升传输速度，但是会增加内存的使用量。</li>
+</ul>
+
+<h2 id="toc_3">四、目录管理</h2>
+
+<p>在 SFTP 解释器中可以使用 <code>help</code> 命令来查看帮助文档。</p>
+
+<pre><code class="language-bash">sftp&gt; help
+Available commands:
+bye                                Quit sftp
+cd path                            Change remote directory to &#39;path&#39;
+chgrp grp path                     Change group of file &#39;path&#39; to &#39;grp&#39;
+chmod mode path                    Change permissions of file &#39;path&#39; to &#39;mode&#39;
+chown own path                     Change owner of file &#39;path&#39; to &#39;own&#39;
+df [-hi] [path]                    Display statistics for current directory or
+                                   filesystem containing &#39;path&#39;
+exit                               Quit sftp
+get [-afPpRr] remote [local]       Download file
+reget [-fPpRr] remote [local]      Resume download file
+reput [-fPpRr] [local] remote      Resume upload file
+help                               Display this help text
+lcd path                           Change local directory to &#39;path&#39;
+lls [ls-options [path]]            Display local directory listing
+lmkdir path                        Create local directory
+ln [-s] oldpath newpath            Link remote file (-s for symlink)
+lpwd                               Print local working directory
+ls [-1afhlnrSt] [path]             Display remote directory listing
+lumask umask                       Set local umask to &#39;umask&#39;
+mkdir path                         Create remote directory
+progress                           Toggle display of progress meter
+put [-afPpRr] local [remote]       Upload file
+pwd                                Display remote working directory
+quit                               Quit sftp
+rename oldpath newpath             Rename remote file
+rm path                            Delete remote file
+rmdir path                         Remove remote directory
+symlink oldpath newpath            Symlink remote file
+version                            Show SFTP version
+!command                           Execute &#39;command&#39; in local shell
+!                                  Escape to local shell
+?                                  Synonym for help
+</code></pre>
+
+<p>SFTP 解释器中预置了常用的命令，但是没有自带的 Bash 来得丰富。</p>
+
+<p>1）显示当前的工作目录：</p>
+
+<pre><code class="language-bash">sftp&gt; pwd
+Remote working directory: /
+</code></pre>
+
+<p>2）查看当前目录的内容：</p>
+
+<pre><code class="language-bash">sftp&gt; ls
+Summary.txt     info.html       temp.txt        testDirectory
+</code></pre>
+
+<p>3）使用 <code>-la</code> 参数可以以列表形式查看，并显示隐藏文件：</p>
+
+<pre><code class="language-bash">sftp&gt; ls -la
+drwxr-xr-x    5 demouser   demouser       4096 Aug 13 15:11 .
+drwxr-xr-x    3 root       root           4096 Aug 13 15:02 ..
+-rw-------    1 demouser   demouser          5 Aug 13 15:04 .bash_history
+-rw-r--r--    1 demouser   demouser        220 Aug 13 15:02 .bash_logout
+-rw-r--r--    1 demouser   demouser       3486 Aug 13 15:02 .bashrc
+drwx------    2 demouser   demouser       4096 Aug 13 15:04 .cache
+-rw-r--r--    1 demouser   demouser        675 Aug 13 15:02 .profile
+. . .
+</code></pre>
+
+<p>4）切换目录：</p>
+
+<pre><code class="language-bash">sftp&gt; cd testDirectory
+</code></pre>
+
+<p>5）建立文件夹：</p>
+
+<pre><code class="language-bash">sftp&gt; mkdir anotherDirectory
+</code></pre>
+
+<p>以上的命令都是用来操作远程服务器的，如果想要操作本地目录呢？只需要在每个命令前添加 <code>l</code> 即可，例如显示本地操作目录下的文件：</p>
+
+<pre><code class="language-bash">sftp&gt; lls
+localFiles
+</code></pre>
+
+<p>使用 <code>!</code> 可以直接运行 Shell 中的指令：</p>
+
+<pre><code class="language-bash">sftp&gt; !df -h
+Filesystem      Size   Used  Avail Capacity iused               ifree %iused  Mounted on
+/dev/disk1s1   466Gi  360Gi  101Gi    79% 3642919 9223372036851132888    0%   /
+devfs          336Ki  336Ki    0Bi   100%    1162                   0  100%   /dev
+/dev/disk1s4   466Gi  4.0Gi  101Gi     4%       5 9223372036854775802    0%   /private/var/vm
+map -hosts       0Bi    0Bi    0Bi   100%       0                   0  100%   /net
+map auto_home    0Bi    0Bi    0Bi   100%       0                   0  100%   /home
+</code></pre>
+
+<h2 id="toc_4">五、传输文件</h2>
+
+<h3 id="toc_5">5.1 从远程服务器拉取文件</h3>
+
+<p>使用 <code>get</code> 命令可以从远程服务器拉取文件到本地：</p>
+
+<pre><code class="language-bash">sftp&gt; get remoteFile [newName]
+</code></pre>
+
+<p>如果不指定 <code>newName</code>，将使用和远程服务器相同的文件名。</p>
+
+<p>使用 <code>-r</code> 参数可以拉取整个目录：</p>
+
+<pre><code class="language-bash">sftp&gt; get -r remoteDirectory
+</code></pre>
+
+<h3 id="toc_6">5.2 从本地上传文件到服务器</h3>
+
+<p>使用 <code>put</code> 命令可以从本地上传文件到服务器：</p>
+
+<pre><code class="language-bash">sftp&gt; put localFile
+</code></pre>
+
+<p>同样的，可以使用 <code>-r</code> 参数来上传整个目录，但是有一点要注意，<strong>如果服务器上不存在这个目录需要首先新建</strong>：</p>
+
+<pre><code class="language-bash">sftp&gt; mkdir folderName
+sftp&gt; put -r folderName
+</code></pre>
+
+<h2 id="toc_7">六、最佳实践</h2>
+
+<p>1）连接远程服务器</p>
+
+<pre><code class="language-bash">sftp remote_user@remote_host
+</code></pre>
+
+<p>2）使用端口进行连接</p>
+
+<pre><code class="language-bash">sftp -P remote_port remote_user@remote_host
+</code></pre>
+
+<p>3）从远程服务器拉取文件</p>
+
+<pre><code class="language-bash">get /path/remote_file
+</code></pre>
+
+<p>4）上传本地文件到服务器</p>
+
+<pre><code class="language-bash">put local_file
+</code></pre>
+
+<p>5）查看远程服务器目录内容</p>
+
+<pre><code class="language-bash">ls
+</code></pre>
+
+<p>6）查看本地目录内容</p>
+
+<pre><code class="language-bassh">lls
+</code></pre>
+
+<p>7）执行本地 Shell 命令</p>
+
+<pre><code class="language-bash">![command]
+</code></pre>
+
+<h2 id="toc_8">参考资料</h2>
+
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol">SSH File Transfer Protocol</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-use-sftp-to-securely-transfer-files-with-a-remote-server">How To Use SFTP to Securely Transfer Files with a Remote Server</a></li>
+</ul>
+
+<div class="footnotes">
+<hr/>
+<ol>
+
+<li id="fn1">
+<p>图片使用 Sketch 绘制，灵感来源于<a href="https://draveness.me/">面向信仰编程</a>&nbsp;<a href="#fnref1" rev="footnote">&#8617;</a></p>
+</li>
+
+</ol>
+</div>
+
+
+                <p class="post-meta">
+                    <time class="post-time" datetime="2018-12-06T23:12:20+08:00"itemprop="datePublished">Created by Jiayuan at 2018/12/6 23:12 PM</time>
+                </p>
+            </div>
+            <div>
+                <script type="text/javascript">
+    var disqus_shortname = 'tisogasnotes'; 
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?001e800887eba2f8f57ec8059aafdad6";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+                
+                    <div id="disqus_thread"></div>
+                
+                
+            </div>
+        </article>
+    </div>
+</div>
+  <footer id="footer" class="yue">
+    <div class="wrapper">
+        <p>Designed and Written by <a href="mailto:forrestchang7@gmail.com">Jiayuan Zhang</a></p>
+    </div>
+</footer>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
