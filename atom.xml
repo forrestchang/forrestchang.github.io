@@ -3,7 +3,7 @@
   <title><![CDATA[Jiayuan's Blog]]></title>
   <link href="http://jiayuanzhang.com/atom.xml" rel="self"/>
   <link href="http://jiayuanzhang.com/"/>
-  <updated>2019-02-17T01:27:10+08:00</updated>
+  <updated>2019-02-22T17:26:50+08:00</updated>
   <id>http://jiayuanzhang.com/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -12,9 +12,9 @@
   
   <entry>
     <title type="html"><![CDATA[Linux 命令行详解：SFTP]]></title>
-    <link href="http://jiayuanzhang.com/15503299404615.html"/>
+    <link href="http://jiayuanzhang.com/linux-command-sftp.html"/>
     <updated>2019-02-16T23:12:20+08:00</updated>
-    <id>http://jiayuanzhang.com/15503299404615.html</id>
+    <id>http://jiayuanzhang.com/linux-command-sftp.html</id>
     <content type="html">
 <![CDATA[<p>「Linux 命令详解」这个系列的文章将会介绍 Linux/Unix/macOS 系统中使用到的常用命令，包括该命令的简单介绍、常用参数解释以及最佳实践，如果需要快速使用这个命令，直接跳到最佳实践部分即可。</p>
 
@@ -241,9 +241,9 @@ sftp&gt; put -r folderName
   
   <entry>
     <title type="html"><![CDATA[Web 后端开发者也需要了解的跨域问题]]></title>
-    <link href="http://jiayuanzhang.com/15503304166752.html"/>
+    <link href="http://jiayuanzhang.com/cors-tutorial.html"/>
     <updated>2019-02-16T23:20:16+08:00</updated>
-    <id>http://jiayuanzhang.com/15503304166752.html</id>
+    <id>http://jiayuanzhang.com/cors-tutorial.html</id>
     <content type="html">
 <![CDATA[<p>Web 后端开发者很少会去充分了解跨域问题，原因是他们很少和 JavaScript 打交道。但是作为一个 Web 开发者，知道跨域请求和如何解决跨域问题可以和前端开发者在沟通上变得更为顺畅。</p>
 
@@ -583,9 +583,9 @@ def after_request(response):
   
   <entry>
     <title type="html"><![CDATA[任务管理系统最佳实践]]></title>
-    <link href="http://jiayuanzhang.com/15429374209015.html"/>
+    <link href="http://jiayuanzhang.com/omnifocus-3-tutorial.html"/>
     <updated>2018-11-23T09:43:40+08:00</updated>
-    <id>http://jiayuanzhang.com/15429374209015.html</id>
+    <id>http://jiayuanzhang.com/omnifocus-3-tutorial.html</id>
     <content type="html">
 <![CDATA[<p>这篇文章主要分享一下我多年使用的一套任务管理系统的经验，工具是次要的，主要是一些想法的实践。有了基本的思路，无论是 OmniFocus、Todoist 还是 org-mode（Emacs 中的一个时间管理模式），都可以有自己的一套方式来实践。本篇文章主要以 OmniFocus 3 为载体来介绍这些内容。</p>
 
@@ -841,9 +841,9 @@ def after_request(response):
   
   <entry>
     <title type="html"><![CDATA[第三十五周]]></title>
-    <link href="http://jiayuanzhang.com/15357911520293.html"/>
+    <link href="http://jiayuanzhang.com/2018-week-35.html"/>
     <updated>2018-09-01T16:39:12+08:00</updated>
-    <id>http://jiayuanzhang.com/15357911520293.html</id>
+    <id>http://jiayuanzhang.com/2018-week-35.html</id>
     <content type="html">
 <![CDATA[<p>重启之前写 Weekly Review 的习惯，一方面为了总结上一周都做了什么，另一方面也为了督促自己多多做事，不要碌碌无为。</p>
 
@@ -891,9 +891,9 @@ def after_request(response):
   
   <entry>
     <title type="html"><![CDATA[《程序员修炼之道》阅读笔记（二）]]></title>
-    <link href="http://jiayuanzhang.com/15029260086085.html"/>
+    <link href="http://jiayuanzhang.com/notes-on-the-pragmatic-programmer-2.html"/>
     <updated>2017-08-17T07:26:48+08:00</updated>
-    <id>http://jiayuanzhang.com/15029260086085.html</id>
+    <id>http://jiayuanzhang.com/notes-on-the-pragmatic-programmer-2.html</id>
     <content type="html">
 <![CDATA[<h3 id="toc_0">重复的危害</h3>
 
@@ -1172,9 +1172,9 @@ Iterate the Schedule with the Code<br/>
   
   <entry>
     <title type="html"><![CDATA[《程序员修炼之道》阅读笔记（一）]]></title>
-    <link href="http://jiayuanzhang.com/15026034118735.html"/>
+    <link href="http://jiayuanzhang.com/notes-on-the-pragmatic-programmer-1.html"/>
     <updated>2017-08-13T13:50:11+08:00</updated>
-    <id>http://jiayuanzhang.com/15026034118735.html</id>
+    <id>http://jiayuanzhang.com/notes-on-the-pragmatic-programmer-1.html</id>
     <content type="html">
 <![CDATA[<p>实习到现在差不多两个月了，博客也一直荒废了没写。这次更新就先来写写读书笔记好了。</p>
 
@@ -1355,9 +1355,9 @@ It&#39;s Both What You Say and the Way You Say It<br/>
   
   <entry>
     <title type="html"><![CDATA[Week 19：时间管理]]></title>
-    <link href="http://jiayuanzhang.com/14941475791022.html"/>
+    <link href="http://jiayuanzhang.com/2017-week-19.html"/>
     <updated>2017-05-07T16:59:39+08:00</updated>
-    <id>http://jiayuanzhang.com/14941475791022.html</id>
+    <id>http://jiayuanzhang.com/2017-week-19.html</id>
     <content type="html">
 <![CDATA[<p>之前有在博客上写 Weekly Review 的习惯，后来因为被朋友说博客真水然后都撤下来了，有些文章确实是类似于「流水账」的记事，但也有一些是围绕这周做的东西来讨论的。总的来说，写 Weekly Review 对自己帮助还是很大的，可以在一周中 Focus 一个特定的主题，而不是想到什么做什么，所以这个系列以后还会继续写下去，只是写的内容更加具体一天，可以围绕着这周的 Project，或者这周听的音乐，或者读的书之类的。以前的文章看情况要不要放上来。</p>
 
@@ -1404,9 +1404,9 @@ It&#39;s Both What You Say and the Way You Say It<br/>
   
   <entry>
     <title type="html"><![CDATA[这周在读什么 Issue#1]]></title>
-    <link href="http://jiayuanzhang.com/14903286295184.html"/>
+    <link href="http://jiayuanzhang.com/weekly-reading-report-1.html"/>
     <updated>2017-03-24T12:10:29+08:00</updated>
-    <id>http://jiayuanzhang.com/14903286295184.html</id>
+    <id>http://jiayuanzhang.com/weekly-reading-report-1.html</id>
     <content type="html">
 <![CDATA[<p>为什么要写这个？最主要的原因还是激励自己多多阅读，读好书和好文章，然后写 review。</p>
 
@@ -1483,9 +1483,9 @@ It&#39;s Both What You Say and the Way You Say It<br/>
   
   <entry>
     <title type="html"><![CDATA[叛逃 Spotify]]></title>
-    <link href="http://jiayuanzhang.com/14899058720947.html"/>
+    <link href="http://jiayuanzhang.com/go-to-spotify.html"/>
     <updated>2017-03-19T14:44:32+08:00</updated>
-    <id>http://jiayuanzhang.com/14899058720947.html</id>
+    <id>http://jiayuanzhang.com/go-to-spotify.html</id>
     <content type="html">
 <![CDATA[<p>不久前我还<a href="digital-life-in-2016-music-part.html">写文</a>称赞过 Apple Music，现在光速打脸，叛逃 Spotify。</p>
 
@@ -1521,9 +1521,9 @@ It&#39;s Both What You Say and the Way You Say It<br/>
   
   <entry>
     <title type="html"><![CDATA[LeetCode 刷题笔记]]></title>
-    <link href="http://jiayuanzhang.com/14891114444883.html"/>
+    <link href="http://jiayuanzhang.com/notes-on-leetcode.html"/>
     <updated>2017-03-10T10:04:04+08:00</updated>
-    <id>http://jiayuanzhang.com/14891114444883.html</id>
+    <id>http://jiayuanzhang.com/notes-on-leetcode.html</id>
     <content type="html">
 <![CDATA[<ul>
 <li>
@@ -1849,9 +1849,9 @@ Example2: x = -123, return -321
   
   <entry>
     <title type="html"><![CDATA[换了一个新地方写东西]]></title>
-    <link href="http://jiayuanzhang.com/14878992387553.html"/>
+    <link href="http://jiayuanzhang.com/new-blog.html"/>
     <updated>2017-02-24T09:20:38+08:00</updated>
-    <id>http://jiayuanzhang.com/14878992387553.html</id>
+    <id>http://jiayuanzhang.com/new-blog.html</id>
     <content type="html">
 <![CDATA[<p>现在这个博客只写技术相关的内容，其他的随笔都写在<a href="https://medium.com/@Tisoga">新博客</a>里，Medium 是被大陆屏蔽的，所以请自备梯子。另外一些比较私人的笔记——例如「Week Review」系列就不发表在互联网上了。</p>
 
@@ -1866,9 +1866,9 @@ Example2: x = -123, return -321
   
   <entry>
     <title type="html"><![CDATA[2017 Week 1 Review]]></title>
-    <link href="http://jiayuanzhang.com/14832795759469.html"/>
+    <link href="http://jiayuanzhang.com/2017-week-1.html"/>
     <updated>2017-01-01T22:06:15+08:00</updated>
-    <id>http://jiayuanzhang.com/14832795759469.html</id>
+    <id>http://jiayuanzhang.com/2017-week-1.html</id>
     <content type="html">
 <![CDATA[<p>今天是元旦，因为在 Calendar 中把今天归到 2017 年的第一周里了，所以就按照上面所写的把这周当做第一周吧。</p>
 
@@ -1904,9 +1904,9 @@ Example2: x = -123, return -321
   
   <entry>
     <title type="html"><![CDATA[2016 Week 52 Review]]></title>
-    <link href="http://jiayuanzhang.com/14827163208652.html"/>
+    <link href="http://jiayuanzhang.com/2016-week-12.html"/>
     <updated>2016-12-26T09:38:40+08:00</updated>
-    <id>http://jiayuanzhang.com/14827163208652.html</id>
+    <id>http://jiayuanzhang.com/2016-week-12.html</id>
     <content type="html">
 <![CDATA[<p>2016 年最后一周（实际上还有6天，不过那一周就算到 2017 年第一周吧）。</p>
 
@@ -1922,9 +1922,9 @@ Example2: x = -123, return -321
   
   <entry>
     <title type="html"><![CDATA[推荐系统笔记]]></title>
-    <link href="http://jiayuanzhang.com/14824086421976.html"/>
+    <link href="http://jiayuanzhang.com/notes-on-recommandation-system.html"/>
     <updated>2016-12-22T20:10:42+08:00</updated>
-    <id>http://jiayuanzhang.com/14824086421976.html</id>
+    <id>http://jiayuanzhang.com/notes-on-recommandation-system.html</id>
     <content type="html">
 <![CDATA[<p>开始学习机器学习/数据挖掘相关的内容，打算每学习一部分知识就写一篇博客总结一下，当做学习过程中的笔记，也为以后看的时候提供存档。</p>
 
@@ -2564,9 +2564,9 @@ def getRecommendations(prefs, person, similarity=sim_pearson):
   
   <entry>
     <title type="html"><![CDATA[2016 Week 51 Review]]></title>
-    <link href="http://jiayuanzhang.com/14824103542982.html"/>
+    <link href="http://jiayuanzhang.com/2016-week-51.html"/>
     <updated>2016-12-22T20:39:14+08:00</updated>
-    <id>http://jiayuanzhang.com/14824103542982.html</id>
+    <id>http://jiayuanzhang.com/2016-week-51.html</id>
     <content type="html">
 <![CDATA[<p>看了一下日历，上一周是 2016 年的倒数第二周了（写这篇文章的时候已经是 52 周了），换了新博客之后就一直没有再写过 Week Review，这其中虽然有一些外部的因素，但大抵上还是不想写。</p>
 
@@ -2579,9 +2579,9 @@ def getRecommendations(prefs, person, similarity=sim_pearson):
   
   <entry>
     <title type="html"><![CDATA[2016 Week 46 Review]]></title>
-    <link href="http://jiayuanzhang.com/14824081615573.html"/>
+    <link href="http://jiayuanzhang.com/2016-week-46.html"/>
     <updated>2016-12-22T20:02:41+08:00</updated>
-    <id>http://jiayuanzhang.com/14824081615573.html</id>
+    <id>http://jiayuanzhang.com/2016-week-46.html</id>
     <content type="html">
 <![CDATA[<p>编程学习方面，不完全看完了《利用 Python 进行数据分析》，感觉光看没有进行练习的话很难一次记住那么多用法，所以这本书最好还是最 NumPy、Pandas 这几个库用过一段时间之后再看。之后开始看《集体智慧编程》，目前才看了两章，内容写得还是挺好的，不过很多代码不是很规范（比如命名、缩进什么的），还有就是可能书已经比较老了，很多例子中使用的 API 已经挂掉了，所以不得不自己找数据集下来测试。不知道别人看书是怎样的，反正我看书不把书中每个例子测试一下就感觉书好像没看过，所以看书的速度还是挺慢的，昨天和今天花了两天的时间把第2章的东西总结了一下，写了篇博客。</p>
 
@@ -2598,9 +2598,9 @@ def getRecommendations(prefs, person, similarity=sim_pearson):
   
   <entry>
     <title type="html"><![CDATA[2016 Week 45 Review]]></title>
-    <link href="http://jiayuanzhang.com/14824080993859.html"/>
+    <link href="http://jiayuanzhang.com/2016-week-45.html"/>
     <updated>2016-12-22T20:01:39+08:00</updated>
-    <id>http://jiayuanzhang.com/14824080993859.html</id>
+    <id>http://jiayuanzhang.com/2016-week-45.html</id>
     <content type="html">
 <![CDATA[<p>已经第 45 周了啊，再过 10 周 2016 年就要过去了。今天大连下起了雪，似乎冬天就这么不知不觉得来了，记得上一次下大雪的时候去了一次海边，可惜 Photos 在一次事故中数据全部丢失了。作为一个南方人当初决定来北方的时候其实是对雪有一种很强烈的期待的，不过来了大连之后发现其实这里也不怎么下雪，偶尔下一次的雪也不是很大，这在一定程度上有点令人失望。</p>
 
@@ -2617,9 +2617,9 @@ def getRecommendations(prefs, person, similarity=sim_pearson):
   
   <entry>
     <title type="html"><![CDATA[2016 Week 44 Review]]></title>
-    <link href="http://jiayuanzhang.com/14824080414983.html"/>
+    <link href="http://jiayuanzhang.com/2016-week-44.html"/>
     <updated>2016-12-22T20:00:41+08:00</updated>
-    <id>http://jiayuanzhang.com/14824080414983.html</id>
+    <id>http://jiayuanzhang.com/2016-week-44.html</id>
     <content type="html">
 <![CDATA[<ul>
 <li><strong>Coding</strong> - 本周主要在看《利用 Python 进行数据分析》，大概看了有一半的样子，下周应该能够结束掉。接下来的打算可能是先不看书，而是把<a href="https://www.quora.com/What-should-I-learn-in-data-science-in-100-hours">What should I learn in data science in 100 hours?</a>这个问题下面的回答内容实践一遍。</li>
@@ -2634,9 +2634,9 @@ def getRecommendations(prefs, person, similarity=sim_pearson):
   
   <entry>
     <title type="html"><![CDATA[搭建 Python 科学计算环境]]></title>
-    <link href="http://jiayuanzhang.com/14824083276745.html"/>
+    <link href="http://jiayuanzhang.com/build-python-scienfic-computing-environment.html"/>
     <updated>2016-12-22T20:05:27+08:00</updated>
-    <id>http://jiayuanzhang.com/14824083276745.html</id>
+    <id>http://jiayuanzhang.com/build-python-scienfic-computing-environment.html</id>
     <content type="html">
 <![CDATA[<p>最近在看《Python for Data Analysis》（利用 Python 进行数据分析）这本书，贴一点笔记，这一篇是关于环境搭建的。另外吐槽一下，书中还是有不少错误的，语法错误就发现了好多处，大概读完了之后会整理出一份勘误表出来，可能是因为写书的时候是 14 年，两年过去了，pandas 库也有了一些变化。</p>
 
