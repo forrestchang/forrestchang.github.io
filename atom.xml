@@ -3,7 +3,7 @@
   <title><![CDATA[Jiayuan's Blog]]></title>
   <link href="http://jiayuanzhang.com/atom.xml" rel="self"/>
   <link href="http://jiayuanzhang.com/"/>
-  <updated>2019-02-22T17:27:32+08:00</updated>
+  <updated>2019-02-28T21:05:27+08:00</updated>
   <id>http://jiayuanzhang.com/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -337,7 +337,7 @@ sftp&gt; put -r folderName
 <li><code>Accept-Language</code></li>
 <li><code>Content-Language</code></li>
 <li><code>Content-Type</code> 为下面三者之一：</li>
-<li>text / plain`</li>
+<li><code>text / plain</code></li>
 <li><code>multipart / form-data</code></li>
 <li><code>application / x-www.form-urlencoded</code></li>
 <li><code>DPR</code></li>
