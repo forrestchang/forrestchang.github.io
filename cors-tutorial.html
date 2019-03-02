@@ -17,7 +17,7 @@
     <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Jiayuan's Blog">
 
     <script src="asset/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+<!--    <script>hljs.initHighlightingOnLoad();</script>-->
 </head>
 
 <body>
@@ -312,7 +312,7 @@ Content-Type: text/plain
 
 <p>一般而言，对于跨域 <code>XMLHTTPRequest</code> 或者 <code>Fetch</code> 请求，浏览器不会发送身份凭证信息，如果需要发送身份凭证信息，需要把 <code>XMLHTTPRequest</code> 的 <code>withCredentials</code> 属性设置为 <code>true</code>。</p>
 
-<p>举个例子[<sup>1]，下面这段代码表示</sup> <code>http://foo.example</code> 向 <code>http://bar.other</code> 发送一个 <code>GET</code> 请求，并且设置 <code>Cookies</code>。</p>
+<p>举个例子，下面这段代码表示 <code>http://foo.example</code> 向 <code>http://bar.other</code> 发送一个 <code>GET</code> 请求，并且设置 <code>Cookies</code>。</p>
 
 <pre><code class="language-javascript">var invocation = new XMLHttpRequest();
 var url = &#39;http://bar.other/resources/credentialed-content/&#39;;
@@ -390,7 +390,7 @@ def after_request(response):
 <ol>
 
 <li id="fn1">
-<p>这个例子的来源：[Cross-Origin Resource Sharing (CORS)&nbsp;<a href="#fnref1" rev="footnote">&#8617;</a></p>
+<p>这个例子的来源：<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">Cross-Origin Resource Sharing (CORS)</a>&nbsp;<a href="#fnref1" rev="footnote">&#8617;</a></p>
 </li>
 
 </ol>

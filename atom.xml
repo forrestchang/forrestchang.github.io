@@ -3,7 +3,7 @@
   <title><![CDATA[Jiayuan's Blog]]></title>
   <link href="http://jiayuanzhang.com/atom.xml" rel="self"/>
   <link href="http://jiayuanzhang.com/"/>
-  <updated>2019-02-28T21:05:27+08:00</updated>
+  <updated>2019-03-02T15:45:49+08:00</updated>
   <id>http://jiayuanzhang.com/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -494,7 +494,7 @@ Content-Type: text/plain
 
 <p>一般而言，对于跨域 <code>XMLHTTPRequest</code> 或者 <code>Fetch</code> 请求，浏览器不会发送身份凭证信息，如果需要发送身份凭证信息，需要把 <code>XMLHTTPRequest</code> 的 <code>withCredentials</code> 属性设置为 <code>true</code>。</p>
 
-<p>举个例子[<sup>1]，下面这段代码表示</sup> <code>http://foo.example</code> 向 <code>http://bar.other</code> 发送一个 <code>GET</code> 请求，并且设置 <code>Cookies</code>。</p>
+<p>举个例子，下面这段代码表示 <code>http://foo.example</code> 向 <code>http://bar.other</code> 发送一个 <code>GET</code> 请求，并且设置 <code>Cookies</code>。</p>
 
 <pre><code class="language-javascript">var invocation = new XMLHttpRequest();
 var url = &#39;http://bar.other/resources/credentialed-content/&#39;;
@@ -572,7 +572,7 @@ def after_request(response):
 <ol>
 
 <li id="fn1">
-<p>这个例子的来源：[Cross-Origin Resource Sharing (CORS)&nbsp;<a href="#fnref1" rev="footnote">&#8617;</a></p>
+<p>这个例子的来源：<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">Cross-Origin Resource Sharing (CORS)</a>&nbsp;<a href="#fnref1" rev="footnote">&#8617;</a></p>
 </li>
 
 </ol>
@@ -636,9 +636,9 @@ def after_request(response):
 
 <p>如果想保证项目比较有序，分成三个层级即可：大的领域（Folder）- 子领域（Folder）- 项目（Project）。</p>
 
-<p>例如，我的项目分级如下：</p>
+<p>例如，我的项目分类如下：</p>
 
-<p><img src="media/15429374209015/15429375074012.jpg" alt=""/></p>
+<p><img src="media/15429374209015/15429375074012.jpg" alt="OmniFocus 项目分类"/></p>
 
 <p>我主要分成了 5 个比较大的项目：工作、学习、生活、兴趣、系统，基本上可以涵盖涉及到的所有领域了。在每个大的项目中再细分出小的项目，这个可以根据自己的需要来进行细分。OmniFocus 支持无限层级的项目划分，但是个人只建议分三层，最后一层直接是任务就可以了，这样可以保证项目层级不会过于复杂。</p>
 
