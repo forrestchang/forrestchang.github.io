@@ -232,8 +232,3 @@ a.page-link {
 ul.post-list {
   margin-top: 2em;
 }
-
-img[alt]::after {
-  content: attr(alt);
-  font-size: 20px;
-}
