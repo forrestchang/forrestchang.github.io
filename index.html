@@ -1,11 +1,11 @@
 <html>
-  <head id="head">
+  <head>
     <title>Jiayuan's Blog</title>
 
     <meta name="description" content="Personal blog" />
   </head>
 
-  <body id="body">
+  <body>
     <div class="blog-meta" style="margin-bottom: 20px">
       <h1>Jiayuan's Blog</h1>
       <p>个人博客，没有 CSS。</p>
@@ -18,19 +18,16 @@
         </li>
       </ul>
     </div>
-    <div class="blog-comment"></div>
+    <div id="disqus_thread"></div>
+    <script>
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://tisogasnotes.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
   </body>
-  <script type="text/javascript">
-    var disqus_shortname = 'tisogasnotes'
-
-    ;(function() {
-      var dsq = document.createElement('script')
-      dsq.type = 'text/javascript'
-      dsq.async = true
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js'
-      document.getElementsByClassName('blog-comment')[0].appendChild(dsq)
-    })()
-  </script>
   <script>
     var _hmt = _hmt || []
     ;(function() {
