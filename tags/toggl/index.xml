@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>toggl on Jiayuan.Z</title>
+    <link>http://blog.jiayuanzhang.com/tags/toggl/</link>
+    <description>Recent content in toggl on Jiayuan.Z</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 10 Apr 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.jiayuanzhang.com/tags/toggl/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>时间记录不完全指北</title>
+      <link>http://blog.jiayuanzhang.com/post/time-recording-tutorial/</link>
+      <pubDate>Sun, 10 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/time-recording-tutorial/</guid>
+      <description>两年前，曾经写过一篇有关时间管理的文章，那个时候还在上高二，对于时间管理仅仅是有一点肤浅的了解，自然写出来的文字也是比较幼稚的。经过两年的实</description>
+    </item>
+    
+  </channel>
+</rss>

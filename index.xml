@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jiayuan.Z</title>
+    <link>http://blog.jiayuanzhang.com/</link>
+    <description>Recent content on Jiayuan.Z</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 06 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.jiayuanzhang.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SFTP 使用详解</title>
+      <link>http://blog.jiayuanzhang.com/post/linux-command-sftp/</link>
+      <pubDate>Thu, 06 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/linux-command-sftp/</guid>
+      <description>「Linux 命令详解」这个系列的文章将会介绍 Linux/Unix/macOS 系统中使用到的常用命令，包括该命令的简单介绍、常用参数解释以及最佳实践，如果需要快速使用这个命</description>
+    </item>
+    
+    <item>
+      <title>跨域资源共享（CORS）详解</title>
+      <link>http://blog.jiayuanzhang.com/post/cors-tutorial/</link>
+      <pubDate>Sun, 02 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/cors-tutorial/</guid>
+      <description>Web 后端开发者很少会去充分了解跨域问题，原因是他们很少和 JavaScript 打交道。但是作为一个 Web 开发者，知道跨域请求和如何解决跨域问题可以和前端开发者在沟通上</description>
+    </item>
+    
+    <item>
+      <title>OmniFocus 3 最佳实践</title>
+      <link>http://blog.jiayuanzhang.com/post/omnifocus-3-workflow/</link>
+      <pubDate>Fri, 23 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/omnifocus-3-workflow/</guid>
+      <description>这篇文章主要分享一下我多年使用的一套任务管理系统的经验，工具是次要的，主要是一些想法的实践。有了基本的思路，无论是 OmniFocus、Tod</description>
+    </item>
+    
+    <item>
+      <title>2018 Weekly 35 Review</title>
+      <link>http://blog.jiayuanzhang.com/post/2018-week-35-review/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/2018-week-35-review/</guid>
+      <description>重启之前写 Weekly Review 的习惯，一方面为了总结上一周都做了什么，另一方面也为了督促自己多多做事，不要碌碌无为。 2018 这半年多的时间里面博客一直没有再继续写</description>
+    </item>
+    
+    <item>
+      <title>《程序员修炼之道》阅读笔记（二）</title>
+      <link>http://blog.jiayuanzhang.com/post/notes-on-the-pragmatic-programmer-part-2/</link>
+      <pubDate>Thu, 17 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/notes-on-the-pragmatic-programmer-part-2/</guid>
+      <description>重复的危害 系统中的每一项知识都必须具有单一、无歧义、权威的表示。（感觉翻译得怪怪的） Tip 11 DRY - Don&amp;rsquo;t Repeat Yourself 不要重复你自己 重复是怎样发生的 强加的重复（</description>
+    </item>
+    
+    <item>
+      <title>《程序员修炼之道》阅读笔记（一）</title>
+      <link>http://blog.jiayuanzhang.com/post/notes-on-the-pragmatic-programmer-part-1/</link>
+      <pubDate>Sun, 13 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/notes-on-the-pragmatic-programmer-part-1/</guid>
+      <description>实习到现在差不多两个月了，博客也一直荒废了没写。这次更新就先来写写读书笔记好了。 这本书从书名来看其实很像那种鸡汤类的书，英文名「The Pragmatic Pr</description>
+    </item>
+    
+    <item>
+      <title>2017 Week 19 Review</title>
+      <link>http://blog.jiayuanzhang.com/post/2017-week-19-review/</link>
+      <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/2017-week-19-review/</guid>
+      <description>警告 因为七牛云已取消测试域名，文章中的图片已丢失。 之前有在博客上写 Weekly Review 的习惯，后来因为被朋友说博客真水然后都撤下来了，有些文章确实是类似于「</description>
+    </item>
+    
+    <item>
+      <title>这周在读什么 Issue#1</title>
+      <link>http://blog.jiayuanzhang.com/post/weekly-reading-report-issue-01/</link>
+      <pubDate>Fri, 24 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/weekly-reading-report-issue-01/</guid>
+      <description>为什么要写这个？最主要的原因还是激励自己多多阅读，读好书和好文章，然后写 review。 读些什么？平常的阅读比较杂，除了书籍之外，还会读很多的</description>
+    </item>
+    
+    <item>
+      <title>叛逃 Spotify</title>
+      <link>http://blog.jiayuanzhang.com/post/go-to-spotify/</link>
+      <pubDate>Sun, 19 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/go-to-spotify/</guid>
+      <description>不久前我还写文称赞过 Apple Music，现在光速打脸，叛逃 Spotify。 主要原因有几点： Apple Music 的「My Favorites Mix」一周才更新一次，不够听。 推荐的歌单</description>
+    </item>
+    
+    <item>
+      <title>2016 音乐总结</title>
+      <link>http://blog.jiayuanzhang.com/post/digital-life-in-2016-music-part/</link>
+      <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/digital-life-in-2016-music-part/</guid>
+      <description>最近知乎上的一个朋友和我私信聊了一些关于效率工具以及 Workflow（此处指的是「工作流」）方面的一些问题。聊的内容比较碎片，所以还是打算写</description>
+    </item>
+    
+    <item>
+      <title>换了一个新地方写东西</title>
+      <link>http://blog.jiayuanzhang.com/post/new-blog/</link>
+      <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/new-blog/</guid>
+      <description>现在这个博客只写技术相关的内容，其他的随笔都写在新博客里，Medium 是被大陆屏蔽的，所以请自备梯子。另外一些比较私人的笔记——例如「Wee</description>
+    </item>
+    
+    <item>
+      <title>2017 Week 01 Review</title>
+      <link>http://blog.jiayuanzhang.com/post/2017-week-01-review/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/2017-week-01-review/</guid>
+      <description>今天是元旦，因为在 Calendar 中把今天归到 2017 年的第一周里了，所以就按照上面所写的把这周当做第一周吧。 这周结束了在中软的课程设计实训，以前总嫌弃小渔村破</description>
+    </item>
+    
+    <item>
+      <title>2016 Week 52 Review</title>
+      <link>http://blog.jiayuanzhang.com/post/2016-week-52-review/</link>
+      <pubDate>Mon, 26 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/2016-week-52-review/</guid>
+      <description>2016 年最后一周（实际上还有6天，不过那一周就算到 2017 年第一周吧）。 编程：这周在看《Python 网络数据采集》，以前虽然也用过爬虫，但是毕竟没有系</description>
+    </item>
+    
+    <item>
+      <title>推荐系统笔记</title>
+      <link>http://blog.jiayuanzhang.com/post/notes-on-recommandation-system/</link>
+      <pubDate>Thu, 22 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/notes-on-recommandation-system/</guid>
+      <description>开始学习机器学习/数据挖掘相关的内容，打算每学习一部分知识就写一篇博客总结一下，当做学习过程中的笔记，也为以后看的时候提供存档。 这一篇笔记是</description>
+    </item>
+    
+    <item>
+      <title>2016 Week 51 Review</title>
+      <link>http://blog.jiayuanzhang.com/post/2016-weekly-51-review/</link>
+      <pubDate>Tue, 20 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/2016-weekly-51-review/</guid>
+      <description>看了一下日历，上一周是 2016 年的倒数第二周了（写这篇文章的时候已经是 52 周了），换了新博客之后就一直没有再写过 Week Review，这其中虽然有一些外部</description>
+    </item>
+    
+    <item>
+      <title>2016 Week 46 Review</title>
+      <link>http://blog.jiayuanzhang.com/post/2016-week-46-review/</link>
+      <pubDate>Sun, 13 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/2016-week-46-review/</guid>
+      <description>编程学习方面，不完全看完了《利用 Python 进行数据分析》，感觉光看没有进行练习的话很难一次记住那么多用法，所以这本书最好还是最 NumPy、Panda</description>
+    </item>
+    
+    <item>
+      <title>2016 Week 45 Review</title>
+      <link>http://blog.jiayuanzhang.com/post/2016-week-45-review/</link>
+      <pubDate>Mon, 07 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/2016-week-45-review/</guid>
+      <description>已经第 45 周了啊，再过 10 周 2016 年就要过去了。今天大连下起了雪，似乎冬天就这么不知不觉得来了，记得上一次下大雪的时候去了一次海边，可惜 Photos 在一次事故</description>
+    </item>
+    
+    <item>
+      <title>搭建 Python 科学计算环境</title>
+      <link>http://blog.jiayuanzhang.com/post/build-python-scienfic-computing-environment/</link>
+      <pubDate>Fri, 28 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/build-python-scienfic-computing-environment/</guid>
+      <description>最近在看《Python for Data Analysis》（利用 Python 进行数据分析）这本书，贴一点笔记，这一篇是关于环境搭建的。另外吐槽一下，书中还是有不少错</description>
+    </item>
+    
+    <item>
+      <title>2016 Week 42-43 Review</title>
+      <link>http://blog.jiayuanzhang.com/post/2016-week-42-43-review/</link>
+      <pubDate>Wed, 26 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/2016-week-42-43-review/</guid>
+      <description>连续两周没写周总结了，41周的周总结因为涉及到一些私事所以还是删掉了（当然感兴趣的还是可以在我的 repo 里面找到之前的 commit）。 过去两周还是</description>
+    </item>
+    
+    <item>
+      <title>2016 Week 44 Review</title>
+      <link>http://blog.jiayuanzhang.com/post/2016-week-44-review/</link>
+      <pubDate>Mon, 03 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/2016-week-44-review/</guid>
+      <description>Coding - 本周主要在看《利用 Python 进行数据分析》，大概看了有一半的样子，下周应该能够结束掉。接下来的打算可能是先不看书，而是把What should I learn in data science in 100</description>
+    </item>
+    
+    <item>
+      <title>2016 Week 40 Review</title>
+      <link>http://blog.jiayuanzhang.com/post/2016-week-40-review/</link>
+      <pubDate>Sun, 02 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/2016-week-40-review/</guid>
+      <description>这周恰逢国庆假期，休息了两天（感觉今天貌似也在休息），明天学校断电断网（大农村条件艰苦），所以应该要出去一天，暂时的行程还没有安排。 编程 总结</description>
+    </item>
+    
+    <item>
+      <title>2016 Week 39 Review</title>
+      <link>http://blog.jiayuanzhang.com/post/2016-week-39-review/</link>
+      <pubDate>Sun, 25 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/2016-week-39-review/</guid>
+      <description>编程 总的来说，好像这一周并没有做出什么东西来。本来是在看《Web Scraping with Python》这本书的，可以看到后面发现错误挺多的，都有一些最基本的语法</description>
+    </item>
+    
+    <item>
+      <title>virtualenv 相关笔记</title>
+      <link>http://blog.jiayuanzhang.com/post/notes-on-virtualenv/</link>
+      <pubDate>Sun, 17 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/notes-on-virtualenv/</guid>
+      <description>安装 直接使用 pip 来进行安装： 1 $ sudo pip install virtualenv 用途 主要用来创建隔离的 Python 开发环境，比如说一个项目需要用到 2.7 的库，另一个项目需要用到 3.0 的库，我们就可以使</description>
+    </item>
+    
+    <item>
+      <title>Swift 中的内存管理</title>
+      <link>http://blog.jiayuanzhang.com/post/garbage-collection-in-swift-lang/</link>
+      <pubDate>Fri, 15 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/garbage-collection-in-swift-lang/</guid>
+      <description>这篇文章是在阅读《The Swift Programming Language》Automatic Reference Counting（ARC，自动引用计数）一章时做的一些笔记，同时参考了其他</description>
+    </item>
+    
+    <item>
+      <title>时间记录不完全指北</title>
+      <link>http://blog.jiayuanzhang.com/post/time-recording-tutorial/</link>
+      <pubDate>Sun, 10 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/time-recording-tutorial/</guid>
+      <description>两年前，曾经写过一篇有关时间管理的文章，那个时候还在上高二，对于时间管理仅仅是有一点肤浅的了解，自然写出来的文字也是比较幼稚的。经过两年的实</description>
+    </item>
+    
+    <item>
+      <title>Linux 基础笔记</title>
+      <link>http://blog.jiayuanzhang.com/post/linux-basic-notes/</link>
+      <pubDate>Wed, 23 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/linux-basic-notes/</guid>
+      <description>Shell 的基本操作 常用快捷键 按键 作用 Tab 命令补全 Ctrl+c 强行终止当前程序 Ctrl+d 键盘输入结束或退出终端 Ctrl+s 暂定当前程序，暂停后按下任意键恢复运行 Ctrl+z 将当前程序放到后</description>
+    </item>
+    
+    <item>
+      <title>2016 Week 12 Review</title>
+      <link>http://blog.jiayuanzhang.com/post/2016-week-12-review/</link>
+      <pubDate>Sun, 20 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/2016-week-12-review/</guid>
+      <description>这周的主题是跑步，大连的天气开始变暖，终于可以去操场跑步了，不过由于学校在海边，风还是很大的。今天跑完了一个线上马拉松（10km 健康赛），明</description>
+    </item>
+    
+    <item>
+      <title>Apple Music，古典音乐，阅读</title>
+      <link>http://blog.jiayuanzhang.com/post/apple-music-and-classical-music-and-reading/</link>
+      <pubDate>Wed, 24 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/apple-music-and-classical-music-and-reading/</guid>
+      <description>Apple Music 自从Apple Music（以下简称「AM」）发布以来，就一直在使用，从最开始的免费试用到现在每个月10￥的订阅。自从Windows时代就</description>
+    </item>
+    
+    <item>
+      <title>学院派编程自学指南</title>
+      <link>http://blog.jiayuanzhang.com/post/self-learning-programer-manual-college-part/</link>
+      <pubDate>Wed, 03 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/self-learning-programer-manual-college-part/</guid>
+      <description>由于本人目前也处在学习的阶段，文章中列出来的内容也并未全部学习过，所以文章的客观性可能存在一些问题，还望读者自行判断。 这份指南会不定期更新，</description>
+    </item>
+    
+    <item>
+      <title>极客的输入法：Squirrel（鼠须管）</title>
+      <link>http://blog.jiayuanzhang.com/post/squirrel-tutorial/</link>
+      <pubDate>Wed, 11 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/squirrel-tutorial/</guid>
+      <description>在OS X平台下，一直没有用到一个很顺手的输入法。系统自带的输入法虽然经过几次的版本更新已经有了很大的改进，但是离能用还有很大的距离。所以之前</description>
+    </item>
+    
+    <item>
+      <title>使用Emacs Org-mode &#43; GitHub Pages 来写博客</title>
+      <link>http://blog.jiayuanzhang.com/post/how-to-use-emacs-and-org-mode-to-build-a-blog/</link>
+      <pubDate>Sat, 10 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/how-to-use-emacs-and-org-mode-to-build-a-blog/</guid>
+      <description>这个博客就是使用Emacs org-mode + GitHub Pages搭建的，博客的主题是org-mode官网的主题，非常的简洁；评论采用的disqus，访问统计使用的</description>
+    </item>
+    
+    <item>
+      <title>谈谈时间管理</title>
+      <link>http://blog.jiayuanzhang.com/post/notes-on-time-management/</link>
+      <pubDate>Fri, 14 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/notes-on-time-management/</guid>
+      <description>初次看到时间管理这个概念大概是高二的时候，在此之前，我一直在使用所谓的To-do List来管理自己每天的学习任务（那个时候还不知道）。知道了</description>
+    </item>
+    
+    <item>
+      <title>为什么我要写博客</title>
+      <link>http://blog.jiayuanzhang.com/post/why-i-blog/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/why-i-blog/</guid>
+      <description>很显然，写一个长期的价值博客会带来很多益处，却不会有什么明显的坏处（当然，在某些特定的国家讨论某些特定的话题不在此列）。 下面是我了解到的写一</description>
+    </item>
+    
+  </channel>
+</rss>

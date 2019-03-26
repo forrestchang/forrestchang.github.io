@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>input-source on Jiayuan.Z</title>
+    <link>http://blog.jiayuanzhang.com/tags/input-source/</link>
+    <description>Recent content in input-source on Jiayuan.Z</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 11 Nov 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.jiayuanzhang.com/tags/input-source/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>极客的输入法：Squirrel（鼠须管）</title>
+      <link>http://blog.jiayuanzhang.com/post/squirrel-tutorial/</link>
+      <pubDate>Wed, 11 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/squirrel-tutorial/</guid>
+      <description>在OS X平台下，一直没有用到一个很顺手的输入法。系统自带的输入法虽然经过几次的版本更新已经有了很大的改进，但是离能用还有很大的距离。所以之前</description>
+    </item>
+    
+  </channel>
+</rss>

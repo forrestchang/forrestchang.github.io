@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>推荐系统笔记 - Jiayuan.Z</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Jiayuan Zhang" /><meta name="description" content="开始学习机器学习/数据挖掘相关的内容，打算每学习一部分知识就写一篇博客总结一下，当做学习过程中的笔记，也为以后看的时候提供存档。 这一篇笔记是" /><meta name="keywords" content="blog, time-management, knowledge-management, python, programming, linux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.0-DEV with even 4.0.0" />
+
+
+<link rel="canonical" href="http://blog.jiayuanzhang.com/post/notes-on-recommandation-system/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.75e9582c.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="推荐系统笔记" />
+<meta property="og:description" content="开始学习机器学习/数据挖掘相关的内容，打算每学习一部分知识就写一篇博客总结一下，当做学习过程中的笔记，也为以后看的时候提供存档。 这一篇笔记是" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.jiayuanzhang.com/post/notes-on-recommandation-system/" />
+<meta property="article:published_time" content="2016-12-22T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2016-12-22T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="推荐系统笔记">
+<meta itemprop="description" content="开始学习机器学习/数据挖掘相关的内容，打算每学习一部分知识就写一篇博客总结一下，当做学习过程中的笔记，也为以后看的时候提供存档。 这一篇笔记是">
+
+
+<meta itemprop="datePublished" content="2016-12-22T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2016-12-22T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="5097">
+
+
+
+<meta itemprop="keywords" content="machine-learning,recommendation-system,python," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="推荐系统笔记"/>
+<meta name="twitter:description" content="开始学习机器学习/数据挖掘相关的内容，打算每学习一部分知识就写一篇博客总结一下，当做学习过程中的笔记，也为以后看的时候提供存档。 这一篇笔记是"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Jiayuan.Z</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="http://jiayuanzhang.com">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Jiayuan.Z</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="http://jiayuanzhang.com">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">推荐系统笔记</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-12-22 </span>
+        
+          <span class="more-meta"> 约 5097 字 </span>
+          <span class="more-meta"> 预计阅读 11 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#基于用户的协同过滤">基于用户的协同过滤</a>
+<ul>
+<li><a href="#协同过滤-collaborative-filtering">协同过滤（Collaborative filtering）</a></li>
+<li><a href="#测试数据集">测试数据集</a></li>
+<li><a href="#相似度计算">相似度计算</a>
+<ul>
+<li><a href="#欧几里德距离评价-euclidean-distance-score">欧几里德距离评价（Euclidean Distance Score）</a></li>
+<li><a href="#皮尔逊相关系数-pearson-correlation-coefficient">皮尔逊相关系数（Pearson Correlation Coefficient）</a></li>
+<li><a href="#关于该使用哪一种相似性度量方法">关于该使用哪一种相似性度量方法</a></li>
+</ul></li>
+<li><a href="#寻找相似的用户">寻找相似的用户</a></li>
+<li><a href="#推荐物品">推荐物品</a></li>
+<li><a href="#匹配商品">匹配商品</a></li>
+</ul></li>
+<li><a href="#基于物品的协同过滤">基于物品的协同过滤</a>
+<ul>
+<li><a href="#构造物品比较数据集">构造物品比较数据集</a></li>
+<li><a href="#获得推荐">获得推荐</a></li>
+</ul></li>
+<li><a href="#基于用户进行过滤还是基于物品进行过滤">基于用户进行过滤还是基于物品进行过滤</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<p>开始学习机器学习/数据挖掘相关的内容，打算每学习一部分知识就写一篇博客总结一下，当做学习过程中的笔记，也为以后看的时候提供存档。</p>
+
+<p>这一篇笔记是关于推荐系统的，主要讲了两种推荐算法（基于用户和基于物品的协同过滤）。</p>
+
+<h2 id="基于用户的协同过滤">基于用户的协同过滤</h2>
+
+<h3 id="协同过滤-collaborative-filtering">协同过滤（Collaborative filtering）</h3>
+
+<p>一个协作型过滤算法通常的做法是对一大群人进行搜索，并从中找出与我们品味相近的一小群人。算法会对这些人所偏爱的其他内容进行考察，并将它们组合起来构造出一个经过排名的推荐列表。</p>
+
+<h3 id="测试数据集">测试数据集</h3>
+
+<p>为了演示一些算法，我们需要从<a href="http://grouplens.org/datasets/movielens/">这个网站</a>上下载一份数据集。这里因为是作为演示使用，所以只需要下载<a href="http://files.grouplens.org/datasets/movielens/ml-latest-small.zip">ml-latest-small.zip</a>这一份简单的数据集就可以了。</p>
+
+<h3 id="相似度计算">相似度计算</h3>
+
+<p>在有了数据之后，我们需要有一种方法来确定人们在品味方面的相似程度。为此，我们可以将每个人与所有其他人进行对比，并计算他们的<strong>相似度评价值</strong>。</p>
+
+<h4 id="欧几里德距离评价-euclidean-distance-score">欧几里德距离评价（Euclidean Distance Score）</h4>
+
+<p>欧几里德距离是指多维空间中两点间的距离，这是一种用直尺测量出来的距离。如果我们将两个点分别记作$(p_1, p_2, p_3, p_4, &hellip;)$和$(q_1, q_2, q_3, q_4, &hellip;)$，则欧几里德距离的计算公式为：</p>
+
+<p>$$
+\sqrt{((p_1-q_1)^2+(p_2-q_2)^2+&hellip;+(p_n-q<em>n)^2)} = \sqrt{(\sum</em>{i=1}^n(p_i-q_i)^2)}
+$$</p>
+
+<p>创建 <code>recommendations.py</code>。</p>
+
+<p>用代码表示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+
+<span class="c1"># 返回一个有关 person1 与 person2 的基于距离的相似度评价</span>
+<span class="k">def</span> <span class="nf">sim_distance</span><span class="p">(</span><span class="n">prefs</span><span class="p">,</span> <span class="n">person1</span><span class="p">,</span> <span class="n">person2</span><span class="p">):</span>
+	<span class="c1"># 得到 shared_items 的列表</span>
+	<span class="n">shared_items</span> <span class="o">=</span> <span class="p">{}</span>
+	<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">prefs</span><span class="p">[</span><span class="n">person1</span><span class="p">]:</span>
+		<span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">prefs</span><span class="p">[</span><span class="n">person2</span><span class="p">]:</span>
+		<span class="n">shared_items</span><span class="p">[</span><span class="n">item</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+	
+	<span class="c1"># 如果两者没有共同之处，则返回 0</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">shared_items</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+		<span class="k">return</span> <span class="mi">0</span>
+		
+	<span class="c1"># 计算所有差值的平方和</span>
+	<span class="n">sum_of_squares</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="nb">pow</span><span class="p">(</span><span class="n">prefs</span><span class="p">[</span><span class="n">person1</span><span class="p">][</span><span class="n">item</span><span class="p">]</span><span class="o">-</span><span class="n">prefs</span><span class="p">[</span><span class="n">person2</span><span class="p">][</span><span class="n">item</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">prefs</span><span class="p">[</span><span class="n">person1</span><span class="p">]</span> <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">prefs</span><span class="p">[</span><span class="n">person2</span><span class="p">]])</span>
+	
+	<span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">sum_of_squares</span><span class="p">))</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>欧几里德距离计算公式可以计算出距离值，偏好越相似的人，其距离就越短。不过，我们还需要一个函数，来对偏好越相近的情况给出越大的值，为此，我们可以将函数的值加 1（这样就可以避免遇到被 0 整除的错误了），并取其倒数，入上面代码最后一行所示。</p>
+
+<p>好了，现在我们需要先将数据读取进来，在 <code>recommendations.py</code> 中添加如下代码:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">loadMovieLens</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">):</span>
+    <span class="n">movies</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="s1">&#39;/movies.csv&#39;</span><span class="p">):</span>
+        <span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">title</span><span class="p">)</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">movies</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">title</span>
+
+    <span class="n">prefs</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="o">+</span><span class="s1">&#39;/ratings.csv&#39;</span><span class="p">):</span>
+        <span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">movieid</span><span class="p">,</span> <span class="n">rating</span><span class="p">,</span> <span class="n">ts</span><span class="p">)</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+        <span class="n">prefs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="n">prefs</span><span class="p">[</span><span class="n">user</span><span class="p">][</span><span class="n">movies</span><span class="p">[</span><span class="n">movieid</span><span class="p">]]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">rating</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">prefs</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>在 ipython 交互环境中：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">recommendations</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">prefs</span> <span class="o">=</span> <span class="n">recommendations</span><span class="o">.</span><span class="n">loadMovieLens</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="c1"># 比较 10 号用户 和 20 号用户的相似度评价</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">recommendations</span><span class="o">.</span><span class="n">sim_distance</span><span class="p">(</span><span class="n">prefs</span><span class="p">,</span> <span class="s1">&#39;10&#39;</span><span class="p">,</span> <span class="s1">&#39;20&#39;</span><span class="p">)</span>
+<span class="mf">0.23371479611805132</span></code></pre></td></tr></table>
+</div>
+</div>
+<h4 id="皮尔逊相关系数-pearson-correlation-coefficient">皮尔逊相关系数（Pearson Correlation Coefficient）</h4>
+
+<p>皮尔逊相关系数是一种度量两个变量间相关程度的方法，它是一个介于 1 和 -1 之间的值，其中，1 表示变量完全正相关，0 表示无关， -1 则表示完全负相关（一个变量的值越大，则另一个变量的值反而会越小）。</p>
+
+<p>计算公式：</p>
+
+<p>$$
+r = \frac{\sum{XY}-\frac{\sum X \sum Y}{N}}{\sqrt{(\sum X^2 - \frac{(\sum X)^2}{N})(\sum Y^2 - \frac{(\sum Y)^2}{N})}}
+$$</p>
+
+<p>在 <code>recommendations.py</code> 中添加如下代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">sim_pearson</span><span class="p">(</span><span class="n">prefs</span><span class="p">,</span> <span class="n">person1</span><span class="p">,</span> <span class="n">person2</span><span class="p">):</span>
+	  <span class="c1"># 得到双方都曾评价过的物品列表</span>
+    <span class="n">shared_items</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">prefs</span><span class="p">[</span><span class="n">person1</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">prefs</span><span class="p">[</span><span class="n">person2</span><span class="p">]:</span>
+            <span class="n">shared_items</span><span class="p">[</span><span class="n">item</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+	  <span class="c1"># 得到物品列表元素的个数</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">shared_items</span><span class="p">)</span>
+
+	  <span class="c1"># 如果两者没有共同元素，则返回0</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+
+	  <span class="c1"># 计算 person1 和 person2 的皮尔逊相关系数</span>
+    <span class="n">sumxy</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">prefs</span><span class="p">[</span><span class="n">person1</span><span class="p">][</span><span class="n">item</span><span class="p">]</span> <span class="o">*</span> <span class="n">prefs</span><span class="p">[</span><span class="n">person2</span><span class="p">][</span><span class="n">item</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">shared_items</span><span class="p">])</span>
+    <span class="n">sumx</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">prefs</span><span class="p">[</span><span class="n">person1</span><span class="p">][</span><span class="n">item</span><span class="p">]</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">shared_items</span><span class="p">])</span>
+    <span class="n">sumy</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">prefs</span><span class="p">[</span><span class="n">person2</span><span class="p">][</span><span class="n">item</span><span class="p">]</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">shared_items</span><span class="p">])</span>
+    <span class="n">sumx2</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">prefs</span><span class="p">[</span><span class="n">person1</span><span class="p">][</span><span class="n">item</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">shared_items</span><span class="p">])</span>
+    <span class="n">sumy2</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">prefs</span><span class="p">[</span><span class="n">person2</span><span class="p">][</span><span class="n">item</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">shared_items</span><span class="p">])</span>
+
+    <span class="n">zahler</span> <span class="o">=</span> <span class="n">sumxy</span> <span class="o">-</span> <span class="p">(</span><span class="n">sumx</span> <span class="o">*</span> <span class="n">sumy</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span>
+    <span class="n">nenner</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">((</span><span class="n">sumx2</span> <span class="o">-</span> <span class="p">(</span><span class="n">sumx</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">sumy2</span> <span class="o">-</span> <span class="p">(</span><span class="n">sumy</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">nenner</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">zahler</span> <span class="o">/</span> <span class="n">nenner</span>
+
+    <span class="k">return</span> <span class="n">r</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>在 ipython 交互环境中：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="nb">reload</span><span class="p">(</span><span class="n">recommendations</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">prefs</span> <span class="o">=</span> <span class="n">recommendations</span><span class="o">.</span><span class="n">loadMovieLens</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">recommendations</span><span class="o">.</span><span class="n">sim_pearson</span><span class="p">(</span><span class="n">prefs</span><span class="p">,</span> <span class="s1">&#39;10&#39;</span><span class="p">,</span> <span class="s1">&#39;20&#39;</span><span class="p">)</span>
+<span class="mf">0.4908806936738162</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>可以看到和上面使用欧几里德距离评价计算出来的相似度是不一样的。</p>
+
+<h4 id="关于该使用哪一种相似性度量方法">关于该使用哪一种相似性度量方法</h4>
+
+<p>除了这两种计算相似度的方法，实际上还有许多别的计算相似度的算法，例如<strong>Tanimoto 分值</strong>。使用哪一种方法，完全取决于具体的应用。</p>
+
+<p>下面的代码中，将使用一个通用的相似性函数来计算相似度，只要它满足以下条件：拥有同样的函数签名，以一个浮点数作为返回值，其数值越大代表相似度越大。</p>
+
+<h3 id="寻找相似的用户">寻找相似的用户</h3>
+
+<p>既然我们已经有了对两个人进行比较的函数，下面我们就可以编写，根据指定人员对每个人进行打分，并找出最接近的匹配结果了。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 从反映偏好的字典中返回最佳匹配者</span>
+<span class="c1"># 返回结果的个数和相似度函数均为可选参数</span>
+<span class="k">def</span> <span class="nf">topMatches</span><span class="p">(</span><span class="n">prefs</span><span class="p">,</span> <span class="n">person</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">similarity</span><span class="o">=</span><span class="n">sim_pearson</span><span class="p">):</span>
+	<span class="n">scores</span> <span class="o">=</span> <span class="p">[(</span><span class="n">similarity</span><span class="p">(</span><span class="n">prefs</span><span class="p">,</span> <span class="n">person</span><span class="p">,</span> <span class="n">other</span><span class="p">),</span> <span class="n">other</span><span class="p">)</span> <span class="k">for</span> <span class="n">other</span> <span class="ow">in</span> <span class="n">prefs</span> <span class="k">if</span> <span class="n">other</span> <span class="o">!=</span> <span class="n">person</span><span class="p">]</span>
+	
+	<span class="c1"># 对列表进行排序，评价值最高者排在最前面</span>
+	<span class="n">scores</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">scores</span><span class="p">[:</span><span class="n">n</span><span class="p">]</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>在 ipython 交互环境中测试：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="nb">reload</span><span class="p">(</span><span class="n">recommendations</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">prefs</span> <span class="o">=</span> <span class="n">recommendations</span><span class="o">.</span><span class="n">loadMovieLens</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="c1"># 与 40 号用户相似的 10 个用户</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">recommendations</span><span class="o">.</span><span class="n">topMatches</span><span class="p">(</span><span class="n">prefs</span><span class="p">,</span> <span class="s1">&#39;40&#39;</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="p">[(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;63&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;582&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;326&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;260&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;220&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;198&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;153&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;116&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">0.9999999999999947</span><span class="p">,</span> <span class="s1">&#39;474&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">0.9999999999999947</span><span class="p">,</span> <span class="s1">&#39;215&#39;</span><span class="p">)]</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="推荐物品">推荐物品</h3>
+
+<p>有的时候我们可能不需要寻找相似的用户，例如在购物网站中，我们需要的是一份可能会想要购买的物品列表，一种方法是从相似的用户所购买的物品列表中选出没有购买的，但是这种方法不确定的因素太多，例如可能相似用户还未购买某些物品，而这些物品恰恰就是我们所需要的。</p>
+
+<p>为了解决上面的问题，我们需要通过一个经过加权的评价值来为影片打分，评论者的评分结果因此而形成了先后的排名。为此，我们需要取得所有其他评论者的评价结果，借此得到相似度之后，再乘以他们为每部影片所给的评价值。</p>
+
+<p>以以下数据集为例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">{&#39;Lisa Rose&#39;: {&#39;Lady in the Water&#39;: 2.5,
+               &#39;Snakes on a Plane&#39;: 3.5,
+               &#39;Just My Luck&#39;: 3.0,
+               &#39;Superman Returns&#39;: 3.5,
+               &#39;You, Me and Dupree&#39;: 2.5,
+               &#39;The Night Listener&#39;: 3.0},
+ &#39;Gene Seymour&#39;: {&#39;Lady in the Water&#39;: 3.0,
+                  &#39;Snakes on a Plane&#39;: 3.5,
+                  &#39;Just My Luck&#39;: 1.5,
+                  &#39;Superman Returns&#39;: 5.0,
+                  &#39;The Night Listener&#39;: 3.0,
+                  &#39;You, Me and Dupree&#39;: 3.5},
+ &#39;Michael Phillips&#39;: {&#39;Lady in the Water&#39;: 2.5,
+                      &#39;Snakes on a Plane&#39;: 3.0,
+                      &#39;Superman Returns&#39;: 3.5,
+                      &#39;The Night Listener&#39;: 4.0},
+ &#39;Claudia Puig&#39;: {&#39;Snakes on a Plane&#39;: 3.5,
+                  &#39;Just My Luck&#39;: 3.0,
+                  &#39;The Night Listener&#39;: 4.5,
+                  &#39;Superman Returns&#39;: 4.0,
+                  &#39;You, Me and Dupree&#39;: 2.5},
+ &#39;Mick LaSalle&#39;: {&#39;Lady in the Water&#39;: 3.0,
+                  &#39;Snakes on a Plane&#39;: 4.0,
+                  &#39;Just My Luck&#39;: 2.0,
+                  &#39;Superman Returns&#39;: 3.0,
+                  &#39;The Night Listener&#39;: 3.0,
+                  &#39;You, Me and Dupree&#39;: 2.0},
+ &#39;Jack Matthews&#39;: {&#39;Lady in the Water&#39;: 3.0,
+                   &#39;Snakes on a Plane&#39;: 4.0,
+                   &#39;The Night Listener&#39;: 3.0,
+                   &#39;Superman Returns&#39;: 5.0,
+                   &#39;You, Me and Dupree&#39;: 3.5},
+ &#39;Toby&#39;: {&#39;Snakes on a Plane&#39;: 4.5,
+          &#39;You, Me and Dupree&#39;: 1.0,
+          &#39;Superman Returns&#39;: 4.0}}</pre></td></tr></table>
+</div>
+</div>
+<p>假设我们需要给 Toby 提供影片推荐，我们可以根据上面的算法得出一张表：</p>
+
+<table>
+<thead>
+<tr>
+<th>评论者</th>
+<th>相似度</th>
+<th>Night</th>
+<th>S.xNight</th>
+<th>Lady</th>
+<th>S.xLady</th>
+<th>Luck</th>
+<th>S.xLuck</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Rose</td>
+<td>0.99</td>
+<td>3.0</td>
+<td>2.97</td>
+<td>2.5</td>
+<td>2.48</td>
+<td>3.0</td>
+<td>2.97</td>
+</tr>
+
+<tr>
+<td>Seymour</td>
+<td>0.38</td>
+<td>3.0</td>
+<td>1.14</td>
+<td>3.0</td>
+<td>1.14</td>
+<td>1.5</td>
+<td>0.57</td>
+</tr>
+
+<tr>
+<td>Puig</td>
+<td>0.89</td>
+<td>4.5</td>
+<td>4.02</td>
+<td></td>
+<td></td>
+<td>3.0</td>
+<td>2.68</td>
+</tr>
+
+<tr>
+<td>LaSalle</td>
+<td>0.92</td>
+<td>3.0</td>
+<td>2.77</td>
+<td>3.0</td>
+<td>2.77</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Matthews</td>
+<td>0.66</td>
+<td>3.0</td>
+<td>1.99</td>
+<td>3.0</td>
+<td>1.99</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>总计</td>
+<td></td>
+<td></td>
+<td>12.89</td>
+<td></td>
+<td>8.38</td>
+<td></td>
+<td>8.07</td>
+</tr>
+
+<tr>
+<td>Sim.Sum</td>
+<td></td>
+<td></td>
+<td>3.84</td>
+<td></td>
+<td>2.95</td>
+<td></td>
+<td>3.18</td>
+</tr>
+
+<tr>
+<td>总计/Sim.Sum</td>
+<td></td>
+<td></td>
+<td>3.35</td>
+<td></td>
+<td>2.83</td>
+<td></td>
+<td>2.53</td>
+</tr>
+</tbody>
+</table>
+
+<p>表中列出来每位评论者的相关度评价值，以及他们对三部影片的评分情况。以 S.x 打头的列给出了乘以评价值之后的相似度。如此一来，相比于与我们不相近的人，那些与我们相近的人将会对整体评价拥有更多的贡献。总计所有加权评价值的和。</p>
+
+<p>我们也可以选择利用总计值来计算排名，但是这其中有一个问题，一部受更多人评论的影片会对结果产生很大影响。为了修正这一问题，我们需要除以表总名为 Sim.Sum 的那一行，它代表了<strong>所有对这部电影有过评论的评论者的相似度之和</strong>。对于影片《Lady in the Water》来说，Puig 并未做过评论，所以我们将这部影片的总计值除以所有其他人的相似度之和。</p>
+
+<p>在 <code>recommendations.py</code> 中添加如下代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 利用所有其他人评价值得加权平均，为某人提供建议</span>
+<span class="k">def</span> <span class="nf">getRecommendations</span><span class="p">(</span><span class="n">prefs</span><span class="p">,</span> <span class="n">person</span><span class="p">,</span> <span class="n">similarity</span><span class="o">=</span><span class="n">sim_pearson</span><span class="p">):</span>
+	<span class="n">totals</span> <span class="o">=</span> <span class="p">{}</span>
+	<span class="n">simSums</span> <span class="o">=</span> <span class="p">{}</span>
+	<span class="k">for</span> <span class="n">other</span> <span class="ow">in</span> <span class="n">prefs</span><span class="p">:</span>
+		<span class="c1"># 不要和自己做比较</span>
+		<span class="k">if</span> <span class="n">other</span> <span class="o">==</span> <span class="n">person</span><span class="p">:</span>
+			<span class="k">continue</span>
+		<span class="n">sim</span> <span class="o">=</span> <span class="n">similarity</span><span class="p">(</span><span class="n">prefs</span><span class="p">,</span> <span class="n">person</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
+		
+		<span class="c1"># 忽略评价值为零或者小于零的情况</span>
+		<span class="k">if</span> <span class="n">sim</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="k">continue</span>
+			
+		<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">prefs</span><span class="p">[</span><span class="n">other</span><span class="p">]:</span>
+			<span class="c1"># 只对自己还未看过的影片进行评价</span>
+			<span class="k">if</span> <span class="n">item</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">prefs</span><span class="p">[</span><span class="n">person</span><span class="p">]</span> <span class="ow">or</span> <span class="n">prefs</span><span class="p">[</span><span class="n">person</span><span class="p">][</span><span class="n">item</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+				<span class="c1"># 相似度*评价值</span>
+				<span class="n">totals</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+				<span class="n">totals</span><span class="p">[</span><span class="n">item</span><span class="p">]</span> <span class="o">+=</span> <span class="n">prefs</span><span class="p">[</span><span class="n">other</span><span class="p">][</span><span class="n">item</span><span class="p">]</span> <span class="o">*</span> <span class="n">sim</span>
+				<span class="c1"># 相似度之和</span>
+				<span class="n">simSums</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+				<span class="n">simSums</span><span class="p">[</span><span class="n">item</span><span class="p">]</span> <span class="o">+=</span> <span class="n">sim</span>
+		
+		<span class="c1"># 建立一个归一化的列表</span>
+		<span class="n">rankings</span> <span class="o">=</span> <span class="p">[(</span><span class="n">total</span> <span class="o">/</span> <span class="n">simSums</span><span class="p">[</span><span class="n">item</span><span class="p">],</span> <span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span><span class="p">,</span> <span class="n">total</span> <span class="ow">in</span> <span class="n">totals</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+		
+		<span class="c1"># 返回经过排序的列表</span>
+		<span class="n">rankings</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">rankings</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>在 ipython 中测试一下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">relaod</span><span class="p">(</span><span class="n">recommendations</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">prefs</span> <span class="o">=</span> <span class="n">recommendations</span><span class="o">.</span><span class="n">loadMovieLens</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">recommendations</span><span class="o">.</span><span class="n">getRecommendations</span><span class="p">(</span><span class="n">prefs</span><span class="p">,</span> <span class="s1">&#39;10&#39;</span><span class="p">)[:</span><span class="mi">20</span><span class="p">]</span>
+<span class="p">[(</span><span class="mf">5.000000000000001</span><span class="p">,</span>
+  <span class="s1">&#39;The Slipper and the Rose: The Story of Cinderella (1976)&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.000000000000001</span><span class="p">,</span> <span class="s1">&#39;Hands on a Hard Body (1996)&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.000000000000001</span><span class="p">,</span> <span class="s1">&#39;For the Birds (2000)&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.000000000000001</span><span class="p">,</span> <span class="s1">&#39;Diva (1981)&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;Zorba the Greek (Alexis Zorbas) (1964)&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;Zerophilia (2005)&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;Zelary (2003)&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;Z Channel: A Magnificent Obsession (2004)&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;Yossi (Ha-Sippur Shel Yossi) (2012)&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;World of Tomorrow (2015)&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;Woody Allen: A Documentary (2012)&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;Woman on Top (2000)&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;Without a Clue (1988)&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;Withnail &amp; I (1987)&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;Wild Zero (2000)&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;War Room (2015)&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;Walker (1987)&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;Voices from the List (2004)&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;Videodrome (1983)&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;Victoria (2015)&#39;</span><span class="p">)]</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="匹配商品">匹配商品</h3>
+
+<p>现在我们已经可以为指定人员寻找品味相近的用户，以及如何向其推荐商品。假如我们想要了解哪些物品是相近的，那又该如何呢？</p>
+
+<p>在我们浏览 Amazon 的时候，经常会看到页面底部会推荐与当前浏览的物品相似的商品。这种情况，我们可以通过查看哪些人喜欢某一特定物品，以及这些人喜欢哪些其他物品来决定相似度。事实上，这和我们之前用来计算人与人之间的相似度是一样的，只需要把人和物品相互调换就行了。</p>
+
+<p>我们来编写这个翻转字典的函数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">transformPrefs</span><span class="p">(</span><span class="n">prefs</span><span class="p">):</span>
+	<span class="n">result</span> <span class="o">=</span> <span class="p">{}</span>
+	<span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">prefs</span><span class="p">:</span>
+		<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">prefs</span><span class="p">[</span><span class="n">person</span><span class="p">]:</span>
+			<span class="n">result</span><span class="o">.</span><span class="n">setdefault</span><span class="p">[</span><span class="n">item</span><span class="p">,</span> <span class="p">{}]</span>
+			<span class="c1"># 将物品和人对调</span>
+			<span class="n">result</span><span class="p">[</span><span class="n">item</span><span class="p">][</span><span class="n">person</span><span class="p">]</span> <span class="o">=</span> <span class="n">prefs</span><span class="p">[</span><span class="n">person</span><span class="p">][</span><span class="n">item</span><span class="p">]</span>
+	<span class="k">return</span> <span class="n">result</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>有了这个方法之后，我们就可以复用之前所写的方法了。</p>
+
+<p>在 ipython 环境中测试：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">load</span><span class="p">(</span><span class="n">recommendations</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">movies</span> <span class="o">=</span> <span class="n">recommendations</span><span class="o">.</span><span class="n">transformPrefs</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">recommendations</span><span class="o">.</span><span class="n">topMatches</span><span class="p">(</span><span class="n">movies</span><span class="p">,</span> <span class="s1">&#39;For the Birds (2000)&#39;</span><span class="p">)</span>
+<span class="p">[(</span><span class="mf">1.000000000000016</span><span class="p">,</span> <span class="s1">&#39;&#34;Silence of the Lambs&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;World War Z (2013)&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;Wallace &amp; Gromit in The Curse of the Were-Rabbit (2005)&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;Tron: Legacy (2010)&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;Transcendence (2014)&#39;</span><span class="p">)]</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>我们还可以为影片推荐评论者：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">recommendations</span><span class="o">.</span><span class="n">getRecommendations</span><span class="p">(</span><span class="n">movies</span><span class="p">,</span> <span class="s1">&#39;For the Birds (2000)&#39;</span><span class="p">)[:</span><span class="mi">20</span><span class="p">]</span>
+<span class="p">[(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;668&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;618&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;543&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;541&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;536&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;52&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;464&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;46&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;409&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;357&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;308&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;296&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;29&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;28&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;197&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;196&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;190&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;131&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;113&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">4.999999999999999</span><span class="p">,</span> <span class="s1">&#39;465&#39;</span><span class="p">)]</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="基于物品的协同过滤">基于物品的协同过滤</h2>
+
+<p>当前所完成的推荐系统，要求我们使用每一位用户的全部评分来构建数据集，这种方法对于小规模的数据集是没有问题的，但是对于像 Amazon 这样有着上百万用户和商品的大型网站而言，讲一个用户同其他所有用户进行比较，然后再对每位用户评过分的商品进行比较，时间花费上是巨大的。</p>
+
+<p>目前为止我们所使用的技术被称为<strong>基于用户的协同过滤</strong>（user-based collaborative filtering）。除此以外，还有一种可供选择的方法被称为<strong>基于物品的协同过滤</strong>（item-based collaborative filtering）。在拥有大量数据集的情况下，基于物品的协同过滤能够得出更好的结论，而且它允许我们将大量的计算任务预先执行，从而使需要给予推荐的用户能够更快地得到他们所要的结果。</p>
+
+<p>基于物品的协同过滤总体思路就是为每件物品预先计算好最为相近的其他物品。然后，当我们想为某位用户提供推荐的时候，就可以查看他曾经评过分的物品，并从中选出排名靠前者，再构造一个加权列表，其中包含了与这些选中物品最相近的其他物品。此处最显著的区别在于，尽管第一步要求我们检查所有的数据，但是物品间的比较不会像用户间比较那么频繁变化。</p>
+
+<h3 id="构造物品比较数据集">构造物品比较数据集</h3>
+
+<p>为了对物品进行比较，我们要做的第一件事就是编写一个函数，构造一个包含相近物品的完整数据集。构建完数据集之后，我们就可以在需要的时候重复使用它。</p>
+
+<p>将下面代码添加到 <code>recommendations.py</code> 中：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">calculateSimilarItems</span><span class="p">(</span><span class="n">prefs</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+	<span class="c1"># 建立字典，以给出与这些物品最为相近的其他物品</span>
+	<span class="n">result</span> <span class="o">=</span> <span class="p">{}</span>
+	
+	<span class="c1"># 以物品为中心最偏好矩阵进行倒置处理</span>
+	<span class="n">itemPrefs</span> <span class="o">=</span> <span class="n">transformPrefs</span><span class="p">(</span><span class="n">prefs</span><span class="p">)</span>
+	<span class="n">c</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">itemPrefs</span><span class="p">:</span>
+		<span class="c1"># 针对大数据集更新状态变量</span>
+		<span class="n">c</span> <span class="o">+=</span> <span class="mi">1</span>
+		<span class="k">if</span> <span class="n">c</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="k">print</span> <span class="s2">&#34;</span><span class="si">%d</span><span class="s2"> / </span><span class="si">%d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">itemPrefs</span><span class="p">))</span>
+		<span class="n">scores</span> <span class="o">=</span> <span class="n">tomMatchs</span><span class="p">(</span><span class="n">itemPrefs</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">similarity</span><span class="o">=</span><span class="n">sim_pearson</span><span class="p">)</span>
+		<span class="n">result</span><span class="p">[</span><span class="n">item</span><span class="p">]</span> <span class="o">=</span> <span class="n">scores</span>
+	<span class="k">return</span> <span class="n">result</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>该函数首先利用了此前定义过得 <code>transformPrefs</code> 函数，对反映评价的字典进行倒置处理，从而得到一个有关物品及其用户评价情况的列表，然后程序又循环遍历每项物品，并将转换了的字典传入 <code>tomMatches</code> 函数中，求得最为相近的物品及其相似度评价值，最后，它建立并返回了一个包含物品及其最相近物品列表的字典。</p>
+
+<p>在 ipython 交互环境中测试：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="nb">reload</span><span class="p">(</span><span class="n">recommendations</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">itemsim</span> <span class="o">=</span> <span class="n">recommendations</span><span class="o">.</span><span class="n">calculateSimilarItems</span><span class="p">(</span><span class="n">prefs</span><span class="p">)</span>
+<span class="mi">100</span> <span class="o">/</span> <span class="mi">8963</span>
+<span class="mi">200</span> <span class="o">/</span> <span class="mi">8963</span>
+<span class="mi">300</span> <span class="o">/</span> <span class="mi">8963</span>
+<span class="mi">400</span> <span class="o">/</span> <span class="mi">8963</span>
+<span class="mi">500</span> <span class="o">/</span> <span class="mi">8963</span>
+<span class="mi">600</span> <span class="o">/</span> <span class="mi">8963</span>
+<span class="mi">700</span> <span class="o">/</span> <span class="mi">8963</span>
+<span class="mi">800</span> <span class="o">/</span> <span class="mi">8963</span>
+<span class="mi">900</span> <span class="o">/</span> <span class="mi">8963</span>
+<span class="mi">1000</span> <span class="o">/</span> <span class="mi">8963</span>
+<span class="mi">1100</span> <span class="o">/</span> <span class="mi">8963</span>
+<span class="mi">1200</span> <span class="o">/</span> <span class="mi">8963</span>
+<span class="mi">1300</span> <span class="o">/</span> <span class="mi">8963</span>
+<span class="mi">1400</span> <span class="o">/</span> <span class="mi">8963</span>
+<span class="mi">1500</span> <span class="o">/</span> <span class="mi">8963</span>
+<span class="mi">1600</span> <span class="o">/</span> <span class="mi">8963</span>
+<span class="mi">1700</span> <span class="o">/</span> <span class="mi">8963</span>
+<span class="mi">1800</span> <span class="o">/</span> <span class="mi">8963</span>
+<span class="mi">1900</span> <span class="o">/</span> <span class="mi">8963</span>
+<span class="o">...</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>首次运行需要等待一段时间进行计算。</p>
+
+<p>只有频繁执行该函数，才能令物品的相似度不至于过期。通常我们需要在用户基数和评分数量不是很大的时候执行这一函数，但是随着用户数量的不断增长，物品间的相似度评价通常会变得越来越稳定。</p>
+
+<h3 id="获得推荐">获得推荐</h3>
+
+<p>现在，我们可以利用反映物品相似度的字典来给出推荐了，我们可以去到用户评价过得所有物品，并找出其相近的物品，根据相似度对其进行加权。</p>
+
+<p>下表给出了利用基于物品的方法寻找推荐的过程，所用到的数据可以在上面<strong>推荐物品</strong>一节中找到。</p>
+
+<p>为 Toby 提供基于物品的推荐：</p>
+
+<table>
+<thead>
+<tr>
+<th>影片</th>
+<th>评分</th>
+<th>Night</th>
+<th>R.xNight</th>
+<th>Lady</th>
+<th>R.xLady</th>
+<th>Luck</th>
+<th>R.xLuck</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Snakes</td>
+<td>4.5</td>
+<td>0.182</td>
+<td>0.818</td>
+<td>0.222</td>
+<td>0.999</td>
+<td>0.105</td>
+<td>0.474</td>
+</tr>
+
+<tr>
+<td>Superman</td>
+<td>4.0</td>
+<td>0.103</td>
+<td>0.412</td>
+<td>0.091</td>
+<td>0.363</td>
+<td>0.065</td>
+<td>0.258</td>
+</tr>
+
+<tr>
+<td>Dupree</td>
+<td>1.0</td>
+<td>0.148</td>
+<td>0.148</td>
+<td>0.4</td>
+<td>0.4</td>
+<td>0.182</td>
+<td>0.182</td>
+</tr>
+
+<tr>
+<td>总计</td>
+<td></td>
+<td>0.433</td>
+<td>1.378</td>
+<td>0.713</td>
+<td>1.762</td>
+<td>0.352</td>
+<td>0.914</td>
+</tr>
+
+<tr>
+<td>归一化结果</td>
+<td></td>
+<td></td>
+<td>3.183</td>
+<td></td>
+<td>2.473</td>
+<td></td>
+<td>2.598</td>
+</tr>
+</tbody>
+</table>
+
+<p>此处每一行都列出了一部我们曾经观看过的影片，以及对该片的个人评价。对于每一部我们还未曾看过的影片，相应有一列会指出它与已观看影片的相似程度。以 R.x 打头的列给出了我们队影片的评价值乘以相似度之后的结果。</p>
+
+<p>总计一行给出了每部影片相似度评价值的总和以及 R.x 列的总和，为了预测我们对每一部影片的评分情况，只要将 R.x 列的总计值除以相似度一列的总计值即可。</p>
+
+<p>在 <code>recommendations.py</code> 中添加如下代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">getRecommendedItems</span><span class="p">(</span><span class="n">prefs</span><span class="p">,</span> <span class="n">itemMatch</span><span class="p">,</span> <span class="n">user</span><span class="p">):</span>
+	<span class="n">userRatings</span> <span class="o">=</span> <span class="n">prefs</span><span class="p">[</span><span class="n">user</span><span class="p">]</span>
+	<span class="n">scores</span> <span class="o">=</span> <span class="p">{}</span>
+	<span class="n">totlaSim</span> <span class="o">=</span> <span class="p">{}</span>
+	
+	<span class="c1"># 循环遍历由当前用户评分的物品</span>
+	<span class="k">for</span> <span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">rating</span><span class="p">)</span> <span class="ow">in</span> <span class="n">userRatings</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+		
+		<span class="c1"># 循环遍历与当前物品相近的物品</span>
+		<span class="k">for</span> <span class="p">(</span><span class="n">similarity</span><span class="p">,</span> <span class="n">item2</span><span class="p">)</span> <span class="ow">in</span> <span class="n">itemMatch</span><span class="p">[</span><span class="n">item</span><span class="p">]:</span>
+		
+			<span class="c1"># 如果该用户已经对当前物品做过评价，则将其忽略</span>
+			<span class="k">if</span> <span class="n">item2</span> <span class="ow">in</span> <span class="n">userRatings</span><span class="p">:</span>
+				<span class="k">continue</span>
+			
+			<span class="c1"># 评价值与相似度加权之和</span>
+			<span class="n">scores</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">item2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+			<span class="n">scores</span><span class="p">[</span><span class="n">item2</span><span class="p">]</span> <span class="o">+=</span> <span class="n">similarity</span> <span class="o">*</span> <span class="n">rating</span>
+			
+			<span class="c1"># 全部相似度之和</span>
+			<span class="n">totalSim</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">item2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+			<span class="n">totalSim</span><span class="p">[</span><span class="n">item2</span><span class="p">]</span> <span class="o">+=</span> <span class="n">similarity</span>
+			
+	<span class="c1"># 将每个合计值除以加权和，求出平均值</span>
+	<span class="n">rankings</span> <span class="o">=</span> <span class="p">[(</span><span class="n">score</span> <span class="o">/</span> <span class="n">totalSim</span><span class="p">[</span><span class="n">item</span><span class="p">],</span> <span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">scores</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+	
+	<span class="c1"># 按最高值到最低值的顺序，返回评分结果</span>
+	<span class="n">rankings</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">rankings</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>在 ipython 中测试一下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="nb">reload</span><span class="p">(</span><span class="n">recommendations</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">recommendations</span><span class="o">.</span><span class="n">getRecommendedItems</span><span class="p">(</span><span class="n">prefs</span><span class="p">,</span> <span class="n">itemsim</span><span class="p">,</span> <span class="s1">&#39;20&#39;</span><span class="p">)[:</span><span class="mi">10</span><span class="p">]</span>
+<span class="p">[(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;Zoot Suit (1981)&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;Zoolander (2001)&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;Zack and Miri Make a Porno (2008)&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s2">&#34;You&#39;ve Got Mail (1998)&#34;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;X-Men: The Last Stand (2006)&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;X-Men: Apocalypse (2016)&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;X-Men (2000)&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s2">&#34;Von Ryan&#39;s Express (1965)&#34;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">4.75</span><span class="p">,</span> <span class="s1">&#39;Willow (1988)&#39;</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">4.75</span><span class="p">,</span> <span class="s2">&#34;White Men Can&#39;t Jump (1992)&#34;</span><span class="p">)]</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="基于用户进行过滤还是基于物品进行过滤">基于用户进行过滤还是基于物品进行过滤</h2>
+
+<p>在数据集大小上，基于物品进行过滤的方式要比基于用户进行过滤更快；在数据的稀疏程度上，稀疏的数据集使用基于物品的过滤方法更优，而对于秘密集的数据集而言，两者的效果几乎一样。</p>
+
+<p>基于用户的过滤方法更加易于实现，而且无需额外步骤，因此它通常更适用于规模较小的变化非常频繁的数据集。在一些应用中，告诉用户还有哪些人与自己有着相近偏好是有一定价值的——也许对于一个购物网站而言，我们并不想这么做，但是对于一个音乐分享类或者电影评分类网站而言，这种潜在的需求却是存在的。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Jiayuan Zhang</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2016-12-22
+        
+    </span>
+  </p>
+  <p class="copyright-item">
+      <span class="item-title">原始文档</span>
+      <span class="item-content"><a class="link-to-markdown" href="http://blog.jiayuanzhang.com/post/notes-on-recommandation-system/index.md" target="_blank">查看本文 Markdown 版本 »</a></span>
+    </p>
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/machine-learning/">machine-learning</a>
+          <a href="/tags/recommendation-system/">recommendation-system</a>
+          <a href="/tags/python/">python</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2016-week-52-review/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">2016 Week 52 Review</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2016-weekly-51-review/">
+            <span class="next-text nav-default">2016 Week 51 Review</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'tisogasnotes';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:forrestchang7@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/Tisoga" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/forrestchang" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/jiayuan3055/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="http://blog.jiayuanzhang.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2014 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Jiayuan Zhang</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-130256365-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function() {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script"); hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?001e800887eba2f8f57ec8059aafdad6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+
+
+
+
+
+</body>
+</html>

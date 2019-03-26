@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>《程序员修炼之道》阅读笔记（一） - Jiayuan.Z</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Jiayuan Zhang" /><meta name="description" content="实习到现在差不多两个月了，博客也一直荒废了没写。这次更新就先来写写读书笔记好了。 这本书从书名来看其实很像那种鸡汤类的书，英文名「The Pragmatic Pr" /><meta name="keywords" content="blog, time-management, knowledge-management, python, programming, linux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.0-DEV with even 4.0.0" />
+
+
+<link rel="canonical" href="http://blog.jiayuanzhang.com/post/notes-on-the-pragmatic-programmer-part-1/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.75e9582c.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="《程序员修炼之道》阅读笔记（一）" />
+<meta property="og:description" content="实习到现在差不多两个月了，博客也一直荒废了没写。这次更新就先来写写读书笔记好了。 这本书从书名来看其实很像那种鸡汤类的书，英文名「The Pragmatic Pr" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.jiayuanzhang.com/post/notes-on-the-pragmatic-programmer-part-1/" />
+<meta property="article:published_time" content="2017-08-13T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-08-13T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="《程序员修炼之道》阅读笔记（一）">
+<meta itemprop="description" content="实习到现在差不多两个月了，博客也一直荒废了没写。这次更新就先来写写读书笔记好了。 这本书从书名来看其实很像那种鸡汤类的书，英文名「The Pragmatic Pr">
+
+
+<meta itemprop="datePublished" content="2017-08-13T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2017-08-13T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2524">
+
+
+
+<meta itemprop="keywords" content="programming," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="《程序员修炼之道》阅读笔记（一）"/>
+<meta name="twitter:description" content="实习到现在差不多两个月了，博客也一直荒废了没写。这次更新就先来写写读书笔记好了。 这本书从书名来看其实很像那种鸡汤类的书，英文名「The Pragmatic Pr"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Jiayuan.Z</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="http://jiayuanzhang.com">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Jiayuan.Z</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="http://jiayuanzhang.com">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">《程序员修炼之道》阅读笔记（一）</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-08-13 </span>
+        
+          <span class="more-meta"> 约 2524 字 </span>
+          <span class="more-meta"> 预计阅读 6 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#序">序</a>
+<ul>
+<li><a href="#注重实效的程序员都有哪些特征">注重实效的程序员都有哪些特征</a></li>
+<li><a href="#它是一个持续的过程">它是一个持续的过程</a></li>
+</ul></li>
+<li><a href="#第一章-注重实效的哲学">第一章：注重实效的哲学</a>
+<ul>
+<li><a href="#我的源码让猫给吃了">我的源码让猫给吃了</a></li>
+<li><a href="#软件的熵">软件的熵</a></li>
+<li><a href="#石头汤与煮青蛙">石头汤与煮青蛙</a></li>
+<li><a href="#足够好的软件">足够好的软件</a></li>
+<li><a href="#你的知识资产">你的知识资产</a></li>
+<li><a href="#交流">交流</a></li>
+</ul></li>
+<li><a href="#总结">总结</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<p>实习到现在差不多两个月了，博客也一直荒废了没写。这次更新就先来写写读书笔记好了。</p>
+
+<p>这本书从书名来看其实很像那种鸡汤类的书，英文名「The Pragmatic Programmer」（注重实效的程序员）看上去就好了许多。<a href="https://book.douban.com/subject/1152111/">豆瓣评分</a> 8.6 分。大一的时候买的书，之前随意地写过几年的玩具代码，所以初读这本书的时候觉得很有道理，但是读完了之后发现什么也没有记住。用<a href="http://blog.youxu.info">徐宥</a>的话来说就是「读者如果没有类似的经历，看到这些珠玑，也只是觉得把玩颇为有趣而已，极少能有同感。」大一的时候读这是这种感觉。</p>
+
+<p>出来实习之后，接触到实际生产中的代码，在代码量比较大的情况下（几十万行），之前书中所讲的一些问题都一一浮现了。为了写出优雅的代码，有必要把这本书再读一遍，可能以后还要反复读很多遍（不是所有的内容看一遍就能内化在心里的），所以每读一部分就记一点笔记，留作日后复习用。</p>
+
+<p>给自己制定以下阅读的计划，因为这本书每一张的内容读起来都比较轻松，所以预计用两周的时间读完：</p>
+
+<ol>
+<li>每 1-2 天阅读一章（共 8 章）</li>
+<li>每一章都写一篇笔记，读的时候可以做一些摘录，读完一章之后写一篇总结性的笔记；</li>
+</ol>
+
+<p>下面是「序言」和「第一章」的笔记。</p>
+
+<hr />
+
+<h2 id="序">序</h2>
+
+<h3 id="注重实效的程序员都有哪些特征">注重实效的程序员都有哪些特征</h3>
+
+<ul>
+<li>早期的采纳者/快速的改编者：给你一样新东西，你很快能把握它，并把它与你的知识的其余部分结合在一起（尝试新技术）；</li>
+<li>好奇：你喜欢提问，你是收集小知识的林鼠（建立自己的知识 wiki）；</li>
+<li>批判的思考者：你会首先抓住事实，而不是照搬别人所说的；</li>
+<li>有现实感：你会设法理解你面临的每个问题的内在本质（事情有多困难，需要花多长时间完成？）</li>
+<li>多才多艺：你尽力熟悉广泛的技术和环境；</li>
+</ul>
+
+<p>（审视一下自己，上面几点好像都没有做到，或者说有的做到了但是并不到位。）</p>
+
+<blockquote>
+<p>Tip 1
+Care About Your Craft
+关心你的技艺</p>
+</blockquote>
+
+<p>如何做到上面所说的？<strong>在你做某件事情的时候思考你在做什么</strong>。</p>
+
+<blockquote>
+<p>Tip 2
+Think! About Your Work
+思考！你的工作</p>
+</blockquote>
+
+<h3 id="它是一个持续的过程">它是一个持续的过程</h3>
+
+<p>每天为提炼你所拥有的技能而工作，为把新的工具增加到你的技能列表中二工作。草坪不是一天修成的。</p>
+
+<h2 id="第一章-注重实效的哲学">第一章：注重实效的哲学</h2>
+
+<h3 id="我的源码让猫给吃了">我的源码让猫给吃了</h3>
+
+<blockquote>
+<p>在所有的弱点中，最大的弱点就是害怕暴露弱点。—— J.B.Bossuet</p>
+</blockquote>
+
+<p>如果你确实同意要为某个结果负责，你就应该切实负起责任。当你犯错误的时候，不要责备别人或别的东西，或是拼凑借口。你可以选择提供解决方案，而不是寻找借口。</p>
+
+<blockquote>
+<p>Tip 3
+Provide Options, Don&rsquo;t Make Lame Excuses
+提供各种选择，不要找蹩脚的借口</p>
+</blockquote>
+
+<p>在你走向任何人，告诉他们为何某件事做不到、为何耽搁、为何出现问题之前，先停下来，听一听你心里的声音。在你去告诉他们坏消息之前，是否还有其他你可以再试一试的办法？有时，你其实知道他们会说什么，所以还是不要给他们添麻烦。</p>
+
+<p>（这一点深有感触，在实习的这一段时间里面，经常因为一些小事去麻烦 leader，比如说环境跑步起来，某个莫名其妙的报错等，这虽然有文档不全的原因在，不过自己也没想着去补全文档这种解决办法。）</p>
+
+<h3 id="软件的熵">软件的熵</h3>
+
+<p>软件中的无序增长时，程序员们称之为「软件腐烂」（software rot）。</p>
+
+<p>「破窗理论」：以一幢有少许破窗的建筑为例，如果那些窗不被修理好，可能将会有破坏者破坏更多的窗户。最终他们甚至会闯入建筑内，如果发现无人居住，也许就在那里占领、定居或者纵火。又或想像一条人行道有些许纸屑，如果无人清理，不久后就会有更多垃圾，最终人们会视为理所当然地将垃圾顺手丢弃在地上。</p>
+
+<blockquote>
+<p>Tip 4
+Don&rsquo;t Live with Broken Windows
+不要容忍破窗户</p>
+</blockquote>
+
+<p>不要留着「破窗户」（低劣的设计、错误决策、或是糟糕的代码）不修，发现一个修一个。</p>
+
+<p>如果没有足够的时间进行适当的修理，可以把出现问题的代码放到注释中，或者是用虚拟的数据来代替。<strong>采取某种行动防止进一步破坏，并说明情势处在你的控制之下</strong>。</p>
+
+<p>如果你发现自己在有好些破窗户的项目里工作，会很容易产生这样的想法：「这些代码的其余部分也是垃圾，我只要照着做就行了。」</p>
+
+<h3 id="石头汤与煮青蛙">石头汤与煮青蛙</h3>
+
+<blockquote>
+<p>Tip 5
+Be a Catalyst for Change
+做变化的催化剂</p>
+</blockquote>
+
+<p>（有的时候想要做出一个新功能，可以先开发一个简单的版本，然后诱导别人往其中添加新功能。）</p>
+
+<blockquote>
+<p>Tip 6
+Remember the Big Picture
+记住大图景</p>
+</blockquote>
+
+<p>当你设法催生变化时，你能否确定你是在做石头汤还是青蛙汤？决策是主观的还是客观的？</p>
+
+<h3 id="足够好的软件">足够好的软件</h3>
+
+<blockquote>
+<p>Tip 7
+Make Quality a Requirements Issue
+使质量称为需求问题</p>
+</blockquote>
+
+<p>不要因为过度修饰和过于精于求精而破坏完好的程序。继续前进，让你的代码凭借自己的质量站立一会儿，它也许不完美，但不用担心：它不可能完美。</p>
+
+<h3 id="你的知识资产">你的知识资产</h3>
+
+<blockquote>
+<p>知识上的投资总能得到最好的回报。—— 本杰明·富兰克林</p>
+</blockquote>
+
+<p>管理知识资产与管理金融资产非常相似：</p>
+
+<ul>
+<li>严肃的投资者定期投资</li>
+<li>多元化是长期成功的关键：你知道的不同的事情越多，你就越有价值。作为底线，你需要知道你目前所用的特定技术的各种特性，但不要就此止步。</li>
+<li>聪明的投资者在保守的投资和高风险、高回报的投资之间平衡他们的资产</li>
+<li>投资者设法低买高卖，以获取最大回报：在新兴的技术流行之前学习它可能就和找到被低估的股票一样困难，但所得到的就和那样的股票带来的收益一样。</li>
+<li>应周期性地重新评估和平衡资产</li>
+</ul>
+
+<blockquote>
+<p>Tip 8
+Invest Regularly in YOur Knowledge Portfolio
+定期为你的知识资产投资</p>
+</blockquote>
+
+<ul>
+<li><strong>每年至少学习一种新语言</strong>。</li>
+<li><strong>每季度阅读一本技术书籍</strong>。一旦你养成习惯，就一个月读一本书。在你掌握了你正在使用的技术之后，扩宽范围，阅读一些与你的项目无关的书籍。</li>
+<li><strong>也要阅读非技术书籍</strong>。</li>
+<li><strong>上课</strong>。</li>
+<li><strong>参加本地用户组织</strong>。不要只是去听讲，而要主动参与。</li>
+<li><strong>试验不同的环境</strong>。</li>
+<li><strong>跟上潮流</strong>。订阅商务杂志和其他期刊。</li>
+<li><strong>上网</strong>。</li>
+</ul>
+
+<p>持续投入非常重要，一旦你熟悉了某种新语言或技术，继续前进，学习另外一种。设法把你学到的东西应用到你当前的项目当中，即使你的项目没有使用该技术，你或许也能借鉴一些想法。</p>
+
+<p>所有阅读和研究都需要时间，而时间已经很短缺。所以你需要预先规划。让自己在空闲的片刻时间里总有东西可读。</p>
+
+<p>最后一个药店是，批判地思考你读到的和听到的。你需要确保你的资产中的知识是准确的。</p>
+
+<blockquote>
+<p>Tip 9
+Critically Analyze What You Read and Hear
+批判地分析你读到的和听到的</p>
+</blockquote>
+
+<h3 id="交流">交流</h3>
+
+<blockquote>
+<p>Tip 10
+It&rsquo;s Both What You Say and the Way You Say It
+你说什么和你怎么说同样重要</p>
+</blockquote>
+
+<p>除非你生活在真空中，你猜不需要交流，交流越有效，你就越有影响力。</p>
+
+<h2 id="总结">总结</h2>
+
+<p>大概花了两个多小时的时间把第一章的内容看了一遍，顺便摘录了一些内容。这一章其实更多的是讲「道」层面上的内容，与技术内容关联不大，但又是至关重要的，做好了上面几点可以从「码农」蜕变成「程序员」，能有自己的思考，能够与他人交流，能够对自己进行投资，而不是一味地按照要求写代码。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Jiayuan Zhang</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2017-08-13
+        
+    </span>
+  </p>
+  <p class="copyright-item">
+      <span class="item-title">原始文档</span>
+      <span class="item-content"><a class="link-to-markdown" href="http://blog.jiayuanzhang.com/post/notes-on-the-pragmatic-programmer-part-1/index.md" target="_blank">查看本文 Markdown 版本 »</a></span>
+    </p>
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/programming/">programming</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/notes-on-the-pragmatic-programmer-part-2/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">《程序员修炼之道》阅读笔记（二）</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2017-week-19-review/">
+            <span class="next-text nav-default">2017 Week 19 Review</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'tisogasnotes';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:forrestchang7@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/Tisoga" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/forrestchang" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/jiayuan3055/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="http://blog.jiayuanzhang.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2014 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Jiayuan Zhang</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-130256365-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function() {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script"); hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?001e800887eba2f8f57ec8059aafdad6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+
+
+
+
+
+</body>
+</html>

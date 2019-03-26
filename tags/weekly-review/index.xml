@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>weekly-review on Jiayuan.Z</title>
+    <link>http://blog.jiayuanzhang.com/tags/weekly-review/</link>
+    <description>Recent content in weekly-review on Jiayuan.Z</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 01 Sep 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.jiayuanzhang.com/tags/weekly-review/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2018 Weekly 35 Review</title>
+      <link>http://blog.jiayuanzhang.com/post/2018-week-35-review/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/2018-week-35-review/</guid>
+      <description>重启之前写 Weekly Review 的习惯，一方面为了总结上一周都做了什么，另一方面也为了督促自己多多做事，不要碌碌无为。 2018 这半年多的时间里面博客一直没有再继续写</description>
+    </item>
+    
+    <item>
+      <title>2017 Week 19 Review</title>
+      <link>http://blog.jiayuanzhang.com/post/2017-week-19-review/</link>
+      <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/2017-week-19-review/</guid>
+      <description>警告 因为七牛云已取消测试域名，文章中的图片已丢失。 之前有在博客上写 Weekly Review 的习惯，后来因为被朋友说博客真水然后都撤下来了，有些文章确实是类似于「</description>
+    </item>
+    
+    <item>
+      <title>2017 Week 01 Review</title>
+      <link>http://blog.jiayuanzhang.com/post/2017-week-01-review/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/2017-week-01-review/</guid>
+      <description>今天是元旦，因为在 Calendar 中把今天归到 2017 年的第一周里了，所以就按照上面所写的把这周当做第一周吧。 这周结束了在中软的课程设计实训，以前总嫌弃小渔村破</description>
+    </item>
+    
+    <item>
+      <title>2016 Week 52 Review</title>
+      <link>http://blog.jiayuanzhang.com/post/2016-week-52-review/</link>
+      <pubDate>Mon, 26 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/2016-week-52-review/</guid>
+      <description>2016 年最后一周（实际上还有6天，不过那一周就算到 2017 年第一周吧）。 编程：这周在看《Python 网络数据采集》，以前虽然也用过爬虫，但是毕竟没有系</description>
+    </item>
+    
+    <item>
+      <title>2016 Week 51 Review</title>
+      <link>http://blog.jiayuanzhang.com/post/2016-weekly-51-review/</link>
+      <pubDate>Tue, 20 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/2016-weekly-51-review/</guid>
+      <description>看了一下日历，上一周是 2016 年的倒数第二周了（写这篇文章的时候已经是 52 周了），换了新博客之后就一直没有再写过 Week Review，这其中虽然有一些外部</description>
+    </item>
+    
+    <item>
+      <title>2016 Week 46 Review</title>
+      <link>http://blog.jiayuanzhang.com/post/2016-week-46-review/</link>
+      <pubDate>Sun, 13 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/2016-week-46-review/</guid>
+      <description>编程学习方面，不完全看完了《利用 Python 进行数据分析》，感觉光看没有进行练习的话很难一次记住那么多用法，所以这本书最好还是最 NumPy、Panda</description>
+    </item>
+    
+    <item>
+      <title>2016 Week 45 Review</title>
+      <link>http://blog.jiayuanzhang.com/post/2016-week-45-review/</link>
+      <pubDate>Mon, 07 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/2016-week-45-review/</guid>
+      <description>已经第 45 周了啊，再过 10 周 2016 年就要过去了。今天大连下起了雪，似乎冬天就这么不知不觉得来了，记得上一次下大雪的时候去了一次海边，可惜 Photos 在一次事故</description>
+    </item>
+    
+    <item>
+      <title>2016 Week 42-43 Review</title>
+      <link>http://blog.jiayuanzhang.com/post/2016-week-42-43-review/</link>
+      <pubDate>Wed, 26 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/2016-week-42-43-review/</guid>
+      <description>连续两周没写周总结了，41周的周总结因为涉及到一些私事所以还是删掉了（当然感兴趣的还是可以在我的 repo 里面找到之前的 commit）。 过去两周还是</description>
+    </item>
+    
+    <item>
+      <title>2016 Week 44 Review</title>
+      <link>http://blog.jiayuanzhang.com/post/2016-week-44-review/</link>
+      <pubDate>Mon, 03 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/2016-week-44-review/</guid>
+      <description>Coding - 本周主要在看《利用 Python 进行数据分析》，大概看了有一半的样子，下周应该能够结束掉。接下来的打算可能是先不看书，而是把What should I learn in data science in 100</description>
+    </item>
+    
+    <item>
+      <title>2016 Week 40 Review</title>
+      <link>http://blog.jiayuanzhang.com/post/2016-week-40-review/</link>
+      <pubDate>Sun, 02 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/2016-week-40-review/</guid>
+      <description>这周恰逢国庆假期，休息了两天（感觉今天貌似也在休息），明天学校断电断网（大农村条件艰苦），所以应该要出去一天，暂时的行程还没有安排。 编程 总结</description>
+    </item>
+    
+    <item>
+      <title>2016 Week 39 Review</title>
+      <link>http://blog.jiayuanzhang.com/post/2016-week-39-review/</link>
+      <pubDate>Sun, 25 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/2016-week-39-review/</guid>
+      <description>编程 总的来说，好像这一周并没有做出什么东西来。本来是在看《Web Scraping with Python》这本书的，可以看到后面发现错误挺多的，都有一些最基本的语法</description>
+    </item>
+    
+    <item>
+      <title>2016 Week 12 Review</title>
+      <link>http://blog.jiayuanzhang.com/post/2016-week-12-review/</link>
+      <pubDate>Sun, 20 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/2016-week-12-review/</guid>
+      <description>这周的主题是跑步，大连的天气开始变暖，终于可以去操场跑步了，不过由于学校在海边，风还是很大的。今天跑完了一个线上马拉松（10km 健康赛），明</description>
+    </item>
+    
+  </channel>
+</rss>

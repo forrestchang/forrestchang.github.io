@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cuckoo on Jiayuan.Z</title>
+    <link>http://blog.jiayuanzhang.com/tags/cuckoo/</link>
+    <description>Recent content in cuckoo on Jiayuan.Z</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 24 Feb 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.jiayuanzhang.com/tags/cuckoo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>换了一个新地方写东西</title>
+      <link>http://blog.jiayuanzhang.com/post/new-blog/</link>
+      <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/new-blog/</guid>
+      <description>现在这个博客只写技术相关的内容，其他的随笔都写在新博客里，Medium 是被大陆屏蔽的，所以请自备梯子。另外一些比较私人的笔记——例如「Wee</description>
+    </item>
+    
+  </channel>
+</rss>

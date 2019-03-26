@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>omnifocus on Jiayuan.Z</title>
+    <link>http://blog.jiayuanzhang.com/tags/omnifocus/</link>
+    <description>Recent content in omnifocus on Jiayuan.Z</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 23 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.jiayuanzhang.com/tags/omnifocus/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>OmniFocus 3 最佳实践</title>
+      <link>http://blog.jiayuanzhang.com/post/omnifocus-3-workflow/</link>
+      <pubDate>Fri, 23 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/omnifocus-3-workflow/</guid>
+      <description>这篇文章主要分享一下我多年使用的一套任务管理系统的经验，工具是次要的，主要是一些想法的实践。有了基本的思路，无论是 OmniFocus、Tod</description>
+    </item>
+    
+  </channel>
+</rss>

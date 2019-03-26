@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>music on Jiayuan.Z</title>
+    <link>http://blog.jiayuanzhang.com/tags/music/</link>
+    <description>Recent content in music on Jiayuan.Z</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 19 Mar 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.jiayuanzhang.com/tags/music/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>叛逃 Spotify</title>
+      <link>http://blog.jiayuanzhang.com/post/go-to-spotify/</link>
+      <pubDate>Sun, 19 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/go-to-spotify/</guid>
+      <description>不久前我还写文称赞过 Apple Music，现在光速打脸，叛逃 Spotify。 主要原因有几点： Apple Music 的「My Favorites Mix」一周才更新一次，不够听。 推荐的歌单</description>
+    </item>
+    
+    <item>
+      <title>2016 音乐总结</title>
+      <link>http://blog.jiayuanzhang.com/post/digital-life-in-2016-music-part/</link>
+      <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/digital-life-in-2016-music-part/</guid>
+      <description>最近知乎上的一个朋友和我私信聊了一些关于效率工具以及 Workflow（此处指的是「工作流」）方面的一些问题。聊的内容比较碎片，所以还是打算写</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>学院派编程自学指南 - Jiayuan.Z</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Jiayuan Zhang" /><meta name="description" content="由于本人目前也处在学习的阶段，文章中列出来的内容也并未全部学习过，所以文章的客观性可能存在一些问题，还望读者自行判断。 这份指南会不定期更新，" /><meta name="keywords" content="blog, time-management, knowledge-management, python, programming, linux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.0-DEV with even 4.0.0" />
+
+
+<link rel="canonical" href="http://blog.jiayuanzhang.com/post/self-learning-programer-manual-college-part/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.75e9582c.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="学院派编程自学指南" />
+<meta property="og:description" content="由于本人目前也处在学习的阶段，文章中列出来的内容也并未全部学习过，所以文章的客观性可能存在一些问题，还望读者自行判断。 这份指南会不定期更新，" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.jiayuanzhang.com/post/self-learning-programer-manual-college-part/" />
+<meta property="article:published_time" content="2016-02-03T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2016-02-03T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="学院派编程自学指南">
+<meta itemprop="description" content="由于本人目前也处在学习的阶段，文章中列出来的内容也并未全部学习过，所以文章的客观性可能存在一些问题，还望读者自行判断。 这份指南会不定期更新，">
+
+
+<meta itemprop="datePublished" content="2016-02-03T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2016-02-03T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2618">
+
+
+
+<meta itemprop="keywords" content="programming,self-learning,python,computer-science,syllabus,manual," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="学院派编程自学指南"/>
+<meta name="twitter:description" content="由于本人目前也处在学习的阶段，文章中列出来的内容也并未全部学习过，所以文章的客观性可能存在一些问题，还望读者自行判断。 这份指南会不定期更新，"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Jiayuan.Z</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="http://jiayuanzhang.com">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Jiayuan.Z</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="http://jiayuanzhang.com">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">学院派编程自学指南</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-02-03 </span>
+        
+          <span class="more-meta"> 约 2618 字 </span>
+          <span class="more-meta"> 预计阅读 6 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#准备">准备</a>
+<ul>
+<li><a href="#科学上网">科学上网</a></li>
+<li><a href="#学会使用google搜索">学会使用Google搜索</a></li>
+<li><a href="#英语">英语</a>
+<ul>
+<li><a href="#把系统换成英文的">把系统换成英文的</a></li>
+<li><a href="#安装电子词典">安装电子词典</a></li>
+<li><a href="#每天阅读英文的资料">每天阅读英文的资料</a></li>
+</ul></li>
+<li><a href="#英文学习的总结">英文学习的总结</a></li>
+</ul></li>
+<li><a href="#编程基础">编程基础</a>
+<ul>
+<li><a href="#计算机科学导论">计算机科学导论</a></li>
+<li><a href="#数学">数学</a></li>
+<li><a href="#编程语言">编程语言</a></li>
+<li><a href="#计算理论">计算理论</a></li>
+<li><a href="#算法与数据结构">算法与数据结构</a></li>
+</ul></li>
+<li><a href="#核心课程">核心课程</a>
+<ul>
+<li><a href="#数学-1">数学</a></li>
+<li><a href="#计算理论-1">计算理论</a></li>
+<li><a href="#算法与数据结构-1">算法与数据结构</a></li>
+<li><a href="#操作系统">操作系统</a></li>
+<li><a href="#程序语言理论">程序语言理论</a></li>
+<li><a href="#计算机体系结构">计算机体系结构</a></li>
+<li><a href="#计算机网络">计算机网络</a></li>
+</ul></li>
+<li><a href="#编程工具">编程工具</a>
+<ul>
+<li><a href="#ide">IDE</a></li>
+<li><a href="#编辑器">编辑器</a></li>
+<li><a href="#git-github">Git &amp; GitHub</a></li>
+</ul></li>
+<li><a href="#如何克服拖延">如何克服拖延</a></li>
+<li><a href="#参考资料">参考资料</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<p>由于本人目前也处在学习的阶段，文章中列出来的内容也并未全部学习过，所以文章的客观性可能存在一些问题，还望读者自行判断。</p>
+
+<p>这份指南会不定期更新，有好的建议也可以留言或者给我发邮件。</p>
+
+<h1 id="准备">准备</h1>
+
+<p>需要的所有工具就是一台可以连接上网络的电脑以及你本人。</p>
+
+<h2 id="科学上网">科学上网</h2>
+
+<p>很可惜，即使是现在，大部分学习计算机的学生还是不会科学上网。在当前的网络环境下，不会科学上网，意味着你不能用Google查资料，不能再Reddit看最新的资讯，需要忍受龟速的GitHub，云云。然而，科学上网本身却是一件成本非常低的事情，不想折腾的话，一年花个几百块钱买个现成的服务；有折腾精神的人，可以买个服务器自己假设架设上网工具。这一步很重要，不能跳过，否则后面指南中的许多内容对你来说只能是404了。</p>
+
+<p>关于科学上网的具体内容，就不再多说了，给你一个关键词：<strong>Lantern</strong>。</p>
+
+<h2 id="学会使用google搜索">学会使用Google搜索</h2>
+
+<p>学会了科学上网，你就能够使用Google了，为什么不是Baidu？相信你用了Google之后就自然明白了。</p>
+
+<p>当了一个学期的助教之后发现，很多的同学其实是没有使用搜索引擎的意识的，遇到问题要么自己死磕，或者就直接求助于他人。这两种都不是很好的办法，正确的做法是<strong>在自己思考后没有结果，然后使用搜索引擎查找问题</strong>，现阶段，你遇到的所有问题（几乎）都能在Google上找到现成的答案，如果没找到，肯定是你搜索的方式不正确。</p>
+
+<p>使用Google的基本搜索功能就能够解决大部分问题了，当然，如果想要学习更加高级的技巧，这里有一份指南：<a href="https://www.zhihu.com/question/20161362">如何用好Google等搜索引擎？</a>。</p>
+
+<h2 id="英语">英语</h2>
+
+<p>你不得不承认，目前为止，编程世界的主流语言还是英文，所以英语能力的好坏决定了你编程能力的上界。中文资料和英文资料相比，实在是太匮乏了，就质量而言，也相对较低。比如我后面提到的很多的课程，都是英文的内容。</p>
+
+<p>值得庆幸的是，阅读编程资料所需要的英文水平并不需要很高，就个人经验来说，基本上四级水平就足够了，可能还会存在一些生词，但是基本上并不妨碍理解。</p>
+
+<p>英文的学习应该一直贯穿于编程的学习之中，作为一门工具语言，只需要花少量时间就可以带来比较大的收益（2/8法则）。</p>
+
+<p>本人的英文水平也不算好，但是基本上能够阅读技术书籍和文档，能够听懂公开课，所以还是有一些简单的经验可以分享一下。</p>
+
+<h3 id="把系统换成英文的">把系统换成英文的</h3>
+
+<p>有些同学可能看到英文就头疼，这很正常，因为在中文的环境下面生活的太久了。为此，可以试着将平常用的系统换成英文的，虽说不能学到几个单词（Copy/Paste 之类的词），但是可以让你不那么排斥英文，<del>顺便还可以提升一下B格</del>。</p>
+
+<h3 id="安装电子词典">安装电子词典</h3>
+
+<p>OS X下推荐欧路词典，在APP Store中购买完整版的，因为需要添加外部的词典。</p>
+
+<p>这里推荐一部比较好的词典：《Collins 英汉双解词典》，它是这个样子的：</p>
+
+<p><img src="https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326142830.png" alt="eudi" /></p>
+
+<p>主要看它的英文解释，一个词看得次数多了也就记住了。</p>
+
+<h3 id="每天阅读英文的资料">每天阅读英文的资料</h3>
+
+<p>一些个人经常阅读的网站：</p>
+
+<ul>
+<li><a href="http://quora.com/">Quora</a>：一个类似于知乎的问答类网站，可以挑自己感兴趣的内容来阅读。</li>
+<li><a href="https://news.ycombinator.com/">Hacker News</a>：IT资讯，IT界发生的最新的事件都会在上面。</li>
+<li><a href="http://www.reddit.com/r/programming/">PROGRAMMING</a>：Reddit的Programming板块，和Hacker News类似，不过更加专注于技术内容方面。</li>
+</ul>
+
+<p><strong>不要花太多时间在上面，每天浏览一下就行。</strong></p>
+
+<h2 id="英文学习的总结">英文学习的总结</h2>
+
+<p>英语不是能够速成的东西，也不是三言两语能够讲完的东西，这里只是提供一个简单的指导，具体的学习计划还请自行搜索更加专业的学习指南。</p>
+
+<h1 id="编程基础">编程基础</h1>
+
+<p>完成了这一部分内容的学习后你应该具备：</p>
+
+<ul>
+<li>了解什么是Computer Science</li>
+<li>基本的计算机数学能力</li>
+<li>基本的程序开发能力</li>
+<li>基本的算法与数据结构的知识</li>
+</ul>
+
+<h2 id="计算机科学导论">计算机科学导论</h2>
+
+<ul>
+<li><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-00sc-introduction-to-computer-science-and-programming-spring-2011/">Introduction to Computer Science and Programming</a>：面向<strong>无编程基础或者只有一点基础的人群</strong>，使用<strong>Python</strong>作为教学语言。</li>
+<li><a href="http://www.extension.harvard.edu/open-learning-initiative/intensive-introduction-computer-science">Intensive Introduction to Computer Science Open Learning Course</a>：CS50，哈佛很火的一门课，在网易公开课上可以找到翻译的视频内容。涵盖的主题有算法（设计、应用、分析）；软件开发（抽象、封装、数据结构、Debug、测试）；计算机体系结构等等。基本上是一门大杂烩的导论课。使用的语言是<strong>C</strong>、<strong>PHP</strong>、<strong>JavaScript</strong>。</li>
+<li><a href="https://www.youtube.com/view_play_list?p=FE6E58F856038C69">Programming Abstractions</a>：介绍了更加高级的编程主题（递归、算法分析、数据抽象等等），使用C++作为教学语言。</li>
+</ul>
+
+<h2 id="数学">数学</h2>
+
+<ul>
+<li><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-fall-2010/">Mathematics for Computer Science</a>：介绍了学习计算机所需要的一些数学知识，内容包括集合、关系、证明方法、数论、图论等等。</li>
+<li><a href="https://www.youtube.com/watch?v=h_9WjWENWV8&amp;feature=share&amp;list=PLTdIp1DywMlUpLHEg3ADhE6rrxhW_T5Rx">Discrete Mathematics</a>：离散数学。</li>
+</ul>
+
+<h2 id="编程语言">编程语言</h2>
+
+<ul>
+<li><a href="https://www.coursera.org/course/programming1">Learn to Program: The Fundamentals</a>：面向<strong>无编程基础或者只有一点基础的人群</strong>，使用<strong>Python</strong>作为教学语言。</li>
+<li><a href="https://www.coursera.org/course/programming2">Learn to Program: Crafting Quality Code</a>：如何编写高效与正确的代码。需要有<a href="https://www.coursera.org/course/programming1">Learn to Program: The Fundamentals</a>的基础。</li>
+<li><a href="http://cs61a.org/">The Structure and Interpretation of Computer Programs</a>：经典的SICP的Python版。</li>
+</ul>
+
+<h2 id="计算理论">计算理论</h2>
+
+<ul>
+<li><a href="https://www.youtube.com/playlist?list=PL601FC994BDD963E4">Introduction to the Theory of Computation</a></li>
+<li><a href="https://www.coursera.org/course/principlescomputing1">Principles of Computing (Part 1)</a>：介绍了CS中基本的数学和编程理论，需要有<strong>Python</strong>基础。</li>
+</ul>
+
+<h2 id="算法与数据结构">算法与数据结构</h2>
+
+<ul>
+<li><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/">Introduction to Algorithms</a>：MIT的算法导论课，用《算法导论》作为教材，网上可以找到视频资源，网易公开课上有老版的翻译。</li>
+</ul>
+
+<h1 id="核心课程">核心课程</h1>
+
+<p>学完了「编程基础」部分的内容后，应该已经可以开发一些简单的程序了，「核心课程」的内容将深入学习计算机科学理论的几个重要的内容。</p>
+
+<h2 id="数学-1">数学</h2>
+
+<ul>
+<li><a href="https://www.coursera.org/course/matrix">Coding the Matrix: Linear Algebra through Computer Science Applications</a>：线性代数以及在计算机中的应用。</li>
+<li><a href="http://inst.eecs.berkeley.edu/~cs70/sp16/">Discrete Mathematics and Probability Theory</a>：离散数学与概率论。</li>
+</ul>
+
+<h2 id="计算理论-1">计算理论</h2>
+
+<ul>
+<li><a href="https://www.youtube.com/playlist?list=PLslgisHe5tBM8UTCt1f66oMkpmjCblzkt">Theory of Computation - Fall 2011</a>：介绍了机器模型、上下文无关文法、图灵机等，使用的教材是Michael Sipser的*<a href="http://www.amazon.com/Introduction-Theory-Computation-Michael-Sipser/dp/113318779X">Introduction to the Theory of Computation</a>。</li>
+</ul>
+
+<h2 id="算法与数据结构-1">算法与数据结构</h2>
+
+<ul>
+<li><a href="http://www-inst.eecs.berkeley.edu/~cs61b/fa15/">Data Structures and Advanced Programming</a></li>
+<li><a href="http://www.cs.berkeley.edu/~jrs/170/">Efficient Algorithms and Intractable Problems</a></li>
+</ul>
+
+<h2 id="操作系统">操作系统</h2>
+
+<ul>
+<li><a href="https://cs162.eecs.berkeley.edu/">Operating Systems and Systems Programming</a>：UCB经典的操作系统课程，介绍了操作系统的基本概念、系统编程、网络、分布式系统、内存分配、多线程等等。</li>
+<li><a href="https://www.edx.org/course/introduction-linux-linuxfoundationx-lfs101x-2#!">Introduction to Linux</a>：介绍了Linux以及一些简单的命令行使用。</li>
+</ul>
+
+<h2 id="程序语言理论">程序语言理论</h2>
+
+<ul>
+<li><a href="https://www.youtube.com/playlist?list=PL9D558D49CA734A02">Programming Paradigms</a>：编程范式。</li>
+<li><a href="https://www.coursera.org/course/compilers">Compilers</a>：Stanford的编译原理课。</li>
+<li><a href="http://freevideolectures.com/Course/2249/Principles-of-Programming-Languages/1">Principles of Programming Languages</a></li>
+</ul>
+
+<h2 id="计算机体系结构">计算机体系结构</h2>
+
+<ul>
+<li><a href="https://www.youtube.com/playlist?list=PL5PHm2jkkXmgVhh8CHAu9N76TShJqfYDt">Computer Architecture</a>：CMU</li>
+<li><a href="https://www.coursera.org/course/comparch">Computer Architecture</a></li>
+</ul>
+
+<h2 id="计算机网络">计算机网络</h2>
+
+<ul>
+<li><a href="http://www.cs.berkeley.edu/~istoica/classes/cs268/10/">Computer Networks</a></li>
+<li><a href="https://www.youtube.com/channel/UCb1OiccPJ0wbMZMOleCvhWQ">Fundamentals of Computer Networking</a></li>
+</ul>
+
+<h1 id="编程工具">编程工具</h1>
+
+<h2 id="ide">IDE</h2>
+
+<ul>
+<li>Python: <a href="https://www.jetbrains.com/pycharm/">PyCharm</a></li>
+<li>Java:<a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a></li>
+<li>C/C++: <a href="https://www.visualstudio.com/en-us/visual-studio-homepage-vs.aspx">Visual Studio</a></li>
+</ul>
+
+<h2 id="编辑器">编辑器</h2>
+
+<ul>
+<li>Emacs/Vim</li>
+<li>Sublime Text 3</li>
+<li>VS Code</li>
+<li>Atom</li>
+</ul>
+
+<p>并不一定要用Emacs或者Vim，ST其实已经很强大了，足够做日常简单的编辑工作。（这里黑一下Atom，启动速度太感人了，所以放在最后一个。）</p>
+
+<h2 id="git-github">Git &amp; GitHub</h2>
+
+<p>使用版本控制来管理自己平时写的代码。</p>
+
+<p>推荐阅读：</p>
+
+<ul>
+<li><a href="https://github.com/geeeeeeeeek/git-recipes/wiki">git-recipes</a></li>
+<li><a href="http://git-scm.com/book/zh/v2?f=tt&amp;hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io">Pro Git 2nd Edition</a></li>
+<li><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">Git教程 - 廖雪峰</a></li>
+</ul>
+
+<h1 id="如何克服拖延">如何克服拖延</h1>
+
+<p>资料是有了，但是拖延症不去学怎么办？</p>
+
+<ul>
+<li><a href="http://www.pomodorotechnique.com/">番茄工作法</a></li>
+</ul>
+
+<h1 id="参考资料">参考资料</h1>
+
+<ul>
+<li><a href="https://github.com/prakhar1989/awesome-courses">https://github.com/prakhar1989/awesome-courses</a></li>
+<li><a href="http://blog.agupieware.com/2014/05/online-learning-bachelors-level.html">http://blog.agupieware.com/2014/05/online-learning-bachelors-level.html</a></li>
+<li><a href="https://docs.google.com/spreadsheets/d/1_kdHrT8izbROJNaxGflpcZm2ivsjRGF8j1hMzl3b8O0/htmlview">https://docs.google.com/spreadsheets/d/1_kdHrT8izbROJNaxGflpcZm2ivsjRGF8j1hMzl3b8O0/htmlview</a></li>
+<li><a href="https://www.reddit.com/r/programming/wiki/faq">https://www.reddit.com/r/programming/wiki/faq</a></li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Jiayuan Zhang</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2016-02-03
+        
+    </span>
+  </p>
+  <p class="copyright-item">
+      <span class="item-title">原始文档</span>
+      <span class="item-content"><a class="link-to-markdown" href="http://blog.jiayuanzhang.com/post/self-learning-programer-manual-college-part/index.md" target="_blank">查看本文 Markdown 版本 »</a></span>
+    </p>
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/programming/">programming</a>
+          <a href="/tags/self-learning/">self-learning</a>
+          <a href="/tags/python/">python</a>
+          <a href="/tags/computer-science/">computer-science</a>
+          <a href="/tags/syllabus/">syllabus</a>
+          <a href="/tags/manual/">manual</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/apple-music-and-classical-music-and-reading/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Apple Music，古典音乐，阅读</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/squirrel-tutorial/">
+            <span class="next-text nav-default">极客的输入法：Squirrel（鼠须管）</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'tisogasnotes';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:forrestchang7@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/Tisoga" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/forrestchang" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/jiayuan3055/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="http://blog.jiayuanzhang.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2014 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Jiayuan Zhang</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-130256365-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function() {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script"); hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?001e800887eba2f8f57ec8059aafdad6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>github-pages on Jiayuan.Z</title>
+    <link>http://blog.jiayuanzhang.com/tags/github-pages/</link>
+    <description>Recent content in github-pages on Jiayuan.Z</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 10 Oct 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.jiayuanzhang.com/tags/github-pages/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用Emacs Org-mode &#43; GitHub Pages 来写博客</title>
+      <link>http://blog.jiayuanzhang.com/post/how-to-use-emacs-and-org-mode-to-build-a-blog/</link>
+      <pubDate>Sat, 10 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/how-to-use-emacs-and-org-mode-to-build-a-blog/</guid>
+      <description>这个博客就是使用Emacs org-mode + GitHub Pages搭建的，博客的主题是org-mode官网的主题，非常的简洁；评论采用的disqus，访问统计使用的</description>
+    </item>
+    
+  </channel>
+</rss>

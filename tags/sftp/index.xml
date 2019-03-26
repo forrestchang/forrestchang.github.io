@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sftp on Jiayuan.Z</title>
+    <link>http://blog.jiayuanzhang.com/tags/sftp/</link>
+    <description>Recent content in sftp on Jiayuan.Z</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 06 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.jiayuanzhang.com/tags/sftp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SFTP 使用详解</title>
+      <link>http://blog.jiayuanzhang.com/post/linux-command-sftp/</link>
+      <pubDate>Thu, 06 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/linux-command-sftp/</guid>
+      <description>「Linux 命令详解」这个系列的文章将会介绍 Linux/Unix/macOS 系统中使用到的常用命令，包括该命令的简单介绍、常用参数解释以及最佳实践，如果需要快速使用这个命</description>
+    </item>
+    
+  </channel>
+</rss>

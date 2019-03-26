@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>computer-science on Jiayuan.Z</title>
+    <link>http://blog.jiayuanzhang.com/tags/computer-science/</link>
+    <description>Recent content in computer-science on Jiayuan.Z</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 03 Feb 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.jiayuanzhang.com/tags/computer-science/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>学院派编程自学指南</title>
+      <link>http://blog.jiayuanzhang.com/post/self-learning-programer-manual-college-part/</link>
+      <pubDate>Wed, 03 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/self-learning-programer-manual-college-part/</guid>
+      <description>由于本人目前也处在学习的阶段，文章中列出来的内容也并未全部学习过，所以文章的客观性可能存在一些问题，还望读者自行判断。 这份指南会不定期更新，</description>
+    </item>
+    
+  </channel>
+</rss>

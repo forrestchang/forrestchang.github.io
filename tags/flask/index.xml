@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>flask on Jiayuan.Z</title>
+    <link>http://blog.jiayuanzhang.com/tags/flask/</link>
+    <description>Recent content in flask on Jiayuan.Z</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 02 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.jiayuanzhang.com/tags/flask/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>跨域资源共享（CORS）详解</title>
+      <link>http://blog.jiayuanzhang.com/post/cors-tutorial/</link>
+      <pubDate>Sun, 02 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/cors-tutorial/</guid>
+      <description>Web 后端开发者很少会去充分了解跨域问题，原因是他们很少和 JavaScript 打交道。但是作为一个 Web 开发者，知道跨域请求和如何解决跨域问题可以和前端开发者在沟通上</description>
+    </item>
+    
+  </channel>
+</rss>

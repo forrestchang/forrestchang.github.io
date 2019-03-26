@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blog on Jiayuan.Z</title>
+    <link>http://blog.jiayuanzhang.com/tags/blog/</link>
+    <description>Recent content in blog on Jiayuan.Z</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 24 Feb 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.jiayuanzhang.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>换了一个新地方写东西</title>
+      <link>http://blog.jiayuanzhang.com/post/new-blog/</link>
+      <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/new-blog/</guid>
+      <description>现在这个博客只写技术相关的内容，其他的随笔都写在新博客里，Medium 是被大陆屏蔽的，所以请自备梯子。另外一些比较私人的笔记——例如「Wee</description>
+    </item>
+    
+    <item>
+      <title>使用Emacs Org-mode &#43; GitHub Pages 来写博客</title>
+      <link>http://blog.jiayuanzhang.com/post/how-to-use-emacs-and-org-mode-to-build-a-blog/</link>
+      <pubDate>Sat, 10 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/how-to-use-emacs-and-org-mode-to-build-a-blog/</guid>
+      <description>这个博客就是使用Emacs org-mode + GitHub Pages搭建的，博客的主题是org-mode官网的主题，非常的简洁；评论采用的disqus，访问统计使用的</description>
+    </item>
+    
+    <item>
+      <title>为什么我要写博客</title>
+      <link>http://blog.jiayuanzhang.com/post/why-i-blog/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/why-i-blog/</guid>
+      <description>很显然，写一个长期的价值博客会带来很多益处，却不会有什么明显的坏处（当然，在某些特定的国家讨论某些特定的话题不在此列）。 下面是我了解到的写一</description>
+    </item>
+    
+  </channel>
+</rss>
