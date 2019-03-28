@@ -3,15 +3,13 @@
 
 「Linux 命令详解」系列文章：
 
-- [Linux命令详解：SFTP](http://jiayuanzhang.com/linux-command-sftp/)
+- [Linux命令详解：SFTP][1]
 
 ## 一、介绍
 
 SFTP（Secure File Transfer Protocol，安全文件传输协议）是一种基于可靠数据流（data stream），提供文件存取和管理的网络传输协议，它在网络协议层的结构如下图[^1]所示：
 
-[^1]: 图片使用 Sketch 绘制，灵感来源于[面向信仰编程](https://draveness.me/)
-
-![sftp-layer](https://ws3.sinaimg.cn/large/006tNbRwgy1fxx2ngca7kj31dv0u0dij.jpg)
+![sftp-layer][image-1]
 
 与 FTP 协议相比，SFTP 在客户端与服务器间提供了一种更为安全的文件传输方式，如果你还在使用 FTP 来进行文件传输，强烈建议切换到更为安全的 SFTP 上来。
 
@@ -37,9 +35,9 @@ sftp -P remote_port user_name@remote_server_address[:path]
 
 ## 三、连接参数详解
 
-- `-B`: buffer_size，制定传输 buffer 的大小，更大的 buffer 会消耗更多的内存，默认为 32768 bytes；
+- `-B`: buffer\_size，制定传输 buffer 的大小，更大的 buffer 会消耗更多的内存，默认为 32768 bytes；
 - `-P`: port，制定连接的端口号；
-- `-R`: num_requests，制定一次连接的请求数，可以略微提升传输速度，但是会增加内存的使用量。
+- `-R`: num\_requests，制定一次连接的请求数，可以略微提升传输速度，但是会增加内存的使用量。
 
 ## 四、目录管理
 
@@ -222,5 +220,14 @@ lls
 
 ## 参考资料
 
-- [SSH File Transfer Protocol](https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol)
-- [How To Use SFTP to Securely Transfer Files with a Remote Server](https://www.digitalocean.com/community/tutorials/how-to-use-sftp-to-securely-transfer-files-with-a-remote-server)
+- [SSH File Transfer Protocol][3]
+- [How To Use SFTP to Securely Transfer Files with a Remote Server][4]
+
+[^1]:	图片使用 Sketch 绘制，灵感来源于[面向信仰编程][2]
+
+[1]:	http://jiayuanzhang.com/linux-command-sftp/
+[2]:	https://draveness.me/
+[3]:	https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol
+[4]:	https://www.digitalocean.com/community/tutorials/how-to-use-sftp-to-securely-transfer-files-with-a-remote-server
+
+[image-1]:	https://ws3.sinaimg.cn/large/006tNbRwgy1fxx2ngca7kj31dv0u0dij.jpg
