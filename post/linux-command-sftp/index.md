@@ -230,4 +230,4 @@ lls
 [3]:	https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol
 [4]:	https://www.digitalocean.com/community/tutorials/how-to-use-sftp-to-securely-transfer-files-with-a-remote-server
 
-[image-1]:	https://ws3.sinaimg.cn/large/006tNbRwgy1fxx2ngca7kj31dv0u0dij.jpg
+[image-1]: https://raw.githubusercontent.com/forrestchang/img-repo/master/sftp-layer.png
