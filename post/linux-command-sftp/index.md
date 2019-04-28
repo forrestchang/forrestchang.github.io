@@ -7,7 +7,7 @@
 
 ## 一、介绍
 
-SFTP（Secure File Transfer Protocol，安全文件传输协议）是一种基于可靠数据流（data stream），提供文件存取和管理的网络传输协议，它在网络协议层的结构如下图[^1]所示：
+SFTP（Secure File Transfer Protocol，安全文件传输协议）是一种基于可靠数据流（data stream），提供文件存取和管理的网络传输协议，它在网络协议层的结构如下图所示：
 
 ![sftp-layer][image-1]
 
@@ -222,8 +222,6 @@ lls
 
 - [SSH File Transfer Protocol][3]
 - [How To Use SFTP to Securely Transfer Files with a Remote Server][4]
-
-[^1]:	图片使用 Sketch 绘制，灵感来源于[面向信仰编程][2]
 
 [1]:	http://jiayuanzhang.com/linux-command-sftp/
 [2]:	https://draveness.me/

@@ -17,7 +17,7 @@
       <pubDate>Thu, 06 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/linux-command-sftp/</guid>
-      <description>「Linux 命令详解」这个系列的文章将会介绍 Linux/Unix/macOS 系统中使用到的常用命令，包括该命令的简单介绍、常用参数解释以及最佳实践，如果需要快速使用这个命</description>
+      <description>「Linux 命令详解」这个系列的文章将会介绍 Linux/Unix/macOS 系统中使用到的常用命令，包括该命令的简单介绍、常用参数解释以及最佳实践，如果需要快速使用这个命令，直接跳到最佳实践部分即可。 「Linux 命令详解」系列文章： Linux命令详解：SFTP 一、介绍 SFTP（Secure File Transfer Protocol</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Wed, 23 Mar 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/linux-basic-notes/</guid>
-      <description>Shell 的基本操作 常用快捷键 按键 作用 Tab 命令补全 Ctrl+c 强行终止当前程序 Ctrl+d 键盘输入结束或退出终端 Ctrl+s 暂定当前程序，暂停后按下任意键恢复运行 Ctrl+z 将当前程序放到后</description>
+      <description>Shell 的基本操作 常用快捷键 按键 作用 Tab 命令补全 Ctrl+c 强行终止当前程序 Ctrl+d 键盘输入结束或退出终端 Ctrl+s 暂定当前程序，暂停后按下任意键恢复运行 Ctrl+z 将当前程序放到后台运行，恢复到前台命令 fg Ctrl+a 将光标移动到行首 Ctrl+e 将光标移动到行尾 Ctrl+k 删除从光标所在位置到行末 Alt+Backspace 向前删除一个单词 常用通配符 字符 含义 * 匹配0或多个字符</description>
     </item>
     
   </channel>
