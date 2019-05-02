@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>book-review on Jiayuan&#39;s Blog</title>
+    <link>http://blog.jiayuanzhang.com/tags/book-review/</link>
+    <description>Recent content in book-review on Jiayuan&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 02 May 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.jiayuanzhang.com/tags/book-review/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>读《代码大全》</title>
+      <link>http://blog.jiayuanzhang.com/post/notes-on-code-complete-part-1/</link>
+      <pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/notes-on-code-complete-part-1/</guid>
+      <description>这本书最开始是大一的时候买的，买回来后翻了一些章节就成为了显示器的支架，直到最近工作了一段时间才重新开始读，这一次阅读和几年前初次阅读有很大不同，大一阅读时候的编码经验仅仅是局限于算法方面，对大型项目的构建没有特别多感触；这一次是在写了很多业务代码，积累了一定问题的基础上去阅读的</description>
+    </item>
+    
+  </channel>
+</rss>

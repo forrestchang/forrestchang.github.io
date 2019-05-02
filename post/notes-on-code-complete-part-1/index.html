@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>读《代码大全》 - Jiayuan&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Jiayuan" /><meta name="description" content="这本书最开始是大一的时候买的，买回来后翻了一些章节就成为了显示器的支架，直到最近工作了一段时间才重新开始读，这一次阅读和几年前初次阅读有很大不同，大一阅读时候的编码经验仅仅是局限于算法方面，对大型项目的构建没有特别多感触；这一次是在写了很多业务代码，积累了一定问题的基础上去阅读的" /><meta name="keywords" content="blog, time-management, knowledge-management, python, programming, linux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.0-DEV with even 4.0.0" />
+
+
+<link rel="canonical" href="http://blog.jiayuanzhang.com/post/notes-on-code-complete-part-1/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.0d83b4ab.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="读《代码大全》" />
+<meta property="og:description" content="这本书最开始是大一的时候买的，买回来后翻了一些章节就成为了显示器的支架，直到最近工作了一段时间才重新开始读，这一次阅读和几年前初次阅读有很大不同，大一阅读时候的编码经验仅仅是局限于算法方面，对大型项目的构建没有特别多感触；这一次是在写了很多业务代码，积累了一定问题的基础上去阅读的" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.jiayuanzhang.com/post/notes-on-code-complete-part-1/" />
+<meta property="article:published_time" content="2019-05-02T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-05-02T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="读《代码大全》">
+<meta itemprop="description" content="这本书最开始是大一的时候买的，买回来后翻了一些章节就成为了显示器的支架，直到最近工作了一段时间才重新开始读，这一次阅读和几年前初次阅读有很大不同，大一阅读时候的编码经验仅仅是局限于算法方面，对大型项目的构建没有特别多感触；这一次是在写了很多业务代码，积累了一定问题的基础上去阅读的">
+
+
+<meta itemprop="datePublished" content="2019-05-02T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-05-02T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="4175">
+
+
+
+<meta itemprop="keywords" content="programming,reading-notes,book-review,code-complete," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="读《代码大全》"/>
+<meta name="twitter:description" content="这本书最开始是大一的时候买的，买回来后翻了一些章节就成为了显示器的支架，直到最近工作了一段时间才重新开始读，这一次阅读和几年前初次阅读有很大不同，大一阅读时候的编码经验仅仅是局限于算法方面，对大型项目的构建没有特别多感触；这一次是在写了很多业务代码，积累了一定问题的基础上去阅读的"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Jiayuan&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="http://jiayuanzhang.com">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="http://jiayuanzhang.com">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Jiayuan&#39;s Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="http://jiayuanzhang.com">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="http://jiayuanzhang.com">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">读《代码大全》</h1>
+
+      <div class="post-meta">
+        <span class="post-time">Posted on <a href="">2019-05-02</a></a> </span>
+        
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+        <span class="more-meta">
+          Written by
+          <a href="">
+          
+            Jiayuan
+          
+          </a>
+        </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#第-11-章-变量名的力量">第 11 章：变量名的力量</a>
+<ul>
+<li><a href="#怎样给一个变量命名">怎样给一个变量命名？</a></li>
+<li><a href="#长名字还是短名字">长名字还是短名字？</a></li>
+<li><a href="#命名的最佳实践有哪些">命名的最佳实践有哪些？</a>
+<ul>
+<li><a href="#循环变量">循环变量</a></li>
+<li><a href="#状态变量">状态变量</a></li>
+<li><a href="#临时变量">临时变量</a></li>
+<li><a href="#布尔变量">布尔变量</a></li>
+<li><a href="#枚举变量">枚举变量</a></li>
+<li><a href="#常量">常量</a></li>
+</ul></li>
+<li><a href="#有哪些常见的命名方法">有哪些常见的命名方法？</a>
+<ul>
+<li><a href="#驼峰命名法-camelcase">驼峰命名法（CamelCase）</a></li>
+<li><a href="#下划线命名法-underline-case">下划线命名法（underline_case）</a></li>
+<li><a href="#匈牙利命名法">匈牙利命名法</a></li>
+</ul></li>
+<li><a href="#在命名中应该要避免的东西有哪些">在命名中应该要避免的东西有哪些？</a></li>
+</ul></li>
+<li><a href="#总结">总结</a></li>
+<li><a href="#参考文献">参考文献</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<p>这本书最开始是大一的时候买的，买回来后翻了一些章节就成为了显示器的支架，直到最近工作了一段时间才重新开始读，这一次阅读和几年前初次阅读有很大不同，大一阅读时候的编码经验仅仅是局限于算法方面，对大型项目的构建没有特别多感触；这一次是在写了很多业务代码，积累了一定问题的基础上去阅读的，阅读的深度自然不是第一次阅读可以比较的。</p>
+
+<p>和这本书类似的还有一本叫做 <a href="https://book.douban.com/subject/1152111/">《程序员修炼之道——从小工到专家》</a>（我也写过 <a href="http://blog.jiayuanzhang.com/post/notes-on-the-pragmatic-programmer-part-1/">笔记</a>）。这本书讲了很多软件工程领域的行话和规则，比如熟悉的 <a href="https://zh.wikipedia.org/wiki/%E4%B8%80%E6%AC%A1%E4%B8%94%E4%BB%85%E4%B8%80%E6%AC%A1">DRY 原则</a>，如果觉得《代码大全》比较厚（大概九百多页），也可以先读一下这本书。</p>
+
+<p>《代码大全》并不是一本需要从头到尾依次阅读的书，章节和章节之间的联系也不是很大，完全可以随便挑选感兴趣的章节来阅读。这次阅读我主要遵从书上的建议，按照以下顺序来阅读：</p>
+
+<ul>
+<li>第 11 章：变量名的力量</li>
+<li>第 8 章：防御式编程</li>
+<li>第 7 章：高质量的子程序</li>
+<li>第 18 章：表驱动法</li>
+<li>第 4 章：关键的「构建」决策</li>
+<li>第 33 章：个人性格</li>
+<li>第 32 章：自说明代码</li>
+<li>其他章节按照顺序或者兴趣度依次阅读</li>
+</ul>
+
+<p>这个「读《代码大全》」系列的文章主要是记录一些阅读笔记。之前的阅读笔记比较喜欢把书上的内容抄下来，但是实际上发现，「抄书」可能抄完就忘了，因为「抄」其实很简单，不需要动脑，打字快的话也不会觉得很累。这次阅读笔记主要是「问题 - 回答」的模式来写，在阅读每章之前，先提出几个问题，然后在阅读的过程中解决问题。</p>
+
+<h2 id="第-11-章-变量名的力量">第 11 章：变量名的力量</h2>
+
+<p>问题：</p>
+
+<ol>
+<li>怎样给一个变量命名？</li>
+<li>长名字还是短名字？</li>
+<li>命名的最佳实践有哪些？</li>
+<li>有哪些常见的命名方法？</li>
+<li>在命名中应该要避免的东西有哪些？</li>
+</ol>
+
+<h3 id="怎样给一个变量命名">怎样给一个变量命名？</h3>
+
+<blockquote>
+<p>通常，对变量的描述就是最佳的变量名。</p>
+</blockquote>
+
+<p>书中举了几个简单的例子，例如表示美国奥林匹克代表团成员数量的变量 <code>numberOfPeopleOnTheUsOlympicTeam</code>，表示某国代表团在现代奥运会上获得的最高分数的变量 <code>maximumNumberOfPointsInModernOlympics</code>。这种变量命名的好处是一眼就能看出这个变量表示的是什么，它们都是非常明确的。而像 <code>nums</code> 和 <code>maxPoints</code> 就相对来说没有那么明确，至于 <code>n</code> 和 <code>m</code> 这样的命名就是非常差的描述，移除了上下文根本无法理解。</p>
+
+<p>这种对变量描述的命名方法也有一个缺点：变量名太长了，这一点会之后讨论。</p>
+
+<p>另外一个命名的方法是「以问题为导向（Problem Orientation）」。</p>
+
+<blockquote>
+<p>一个好名字通常表达的是「什么（what）」，而不是「如何（how）」。如果一个名字反映了计算的某些方面而不是问题本省，那么它反应的就是「how」，而不是「what」了，应该避免取这样的名字。</p>
+</blockquote>
+
+<p>书中也举了几个例子，例如一条员工数据记录可以称作 <code>inputRec</code> 或者 <code>employeeData</code>，<code>inputRec</code> 是一个反映输入、记录这些计算概念的计算机术语，二 <code>employeeData</code> 则直指问题领域。</p>
+
+<p>变量命名中有很多的限定词，例如 <code>Total</code>、<code>Sum</code>、<code>Average</code>、<code>Max</code>、<code>Min</code>、<code>Record</code> 等。使用这样的限定词的时候，最好把这些限定词加到最后，这样做的好处有：</p>
+
+<ol>
+<li>避免歧义：<code>moneyTotal</code> 和 <code>totalMoney</code> 产生的歧义；</li>
+<li>一致性：<code>numberTotal</code>、<code>moneyTotal</code>、<code>costTotal</code> 这样的命名具有一致性。</li>
+</ol>
+
+<p>使用好「对仗词」也可以很好得提升变量的可读性：</p>
+
+<ul>
+<li>begin/end</li>
+<li>first/last</li>
+<li>locked/unlocked</li>
+<li>min/max</li>
+<li>next/previous</li>
+<li>old/new</li>
+<li>opened/closed</li>
+<li>visible/invisible</li>
+<li>source/target</li>
+<li>source/destination</li>
+<li>up/down</li>
+</ul>
+
+<p>个人经验：</p>
+
+<ul>
+<li>使用名词来命名变量名，可以是 <code>adj + noun</code> 这种格式。</li>
+</ul>
+
+<h3 id="长名字还是短名字">长名字还是短名字？</h3>
+
+<p>上一个问题里所讲的「对变量的描述就是最佳的变量名」这种命名方法很有可能会导致变量名过长，例如 <code>maximumNumberOfPointsInMordernOlympics</code>，虽然现代的编辑器和 IDE 都拥有非常智能的补全，这些长名字的输入也不是什么问题，但是无疑会让代码看起来过于臃肿。</p>
+
+<blockquote>
+<p>Gorla 和 Benander 发现，当变量名的平均长度在 10 到 16 个字符的时候，调试程序所花费的力气是最小的（1990）。</p>
+</blockquote>
+
+<p>例如上面的这个变量名可以简化为 <code>maxPointsInOlympics</code> ，这样既保留了变量的原本意思（参考上下文的情况下），又缩短的变量名的长度。</p>
+
+<p>在编写变量名的时候还需要考虑作用域的问题，一般来说，小作用域里的变量名可以简短一些，因为只作用于几行代码，例如 Python 中的列表推导式（Python 3，Python 2 中的列表推导式不是块级作用域）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="n">do_something</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span> <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">some_list</span><span class="p">]</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>甚至在不需要使用这个变量的时候可以把它忽略：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 生成一个随机数列表</span>
+<span class="n">random_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>相反的，如果是一个全局作用域，变量名就需要取得独特一些，避免产生命名空间冲突。例如用户接口部分的雇员类可以命名为 <code>uiEmployee</code>，数据库部分的雇员类可以命名为 <code>dbEmployee</code>。</p>
+
+<h3 id="命名的最佳实践有哪些">命名的最佳实践有哪些？</h3>
+
+<p>程序中常见的变量类型有「循环变量」、「状态变量」、「临时变量」、「布尔变量」、「枚举变量」和「具名常量」，这一部分会针对这些不同的变量（常量）类型讨论最佳实践。</p>
+
+<h4 id="循环变量">循环变量</h4>
+
+<ol>
+<li>（不推荐）简单的循环可以使用 <code>i</code>, <code>j</code>, <code>k</code> 来命名；</li>
+<li>复杂的循环或者循环变量需要在循环外使用的应该使用富有含义的命名。</li>
+</ol>
+
+<p>例如，我需要便利一个用户列表信息来对每个用户的信息做处理：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">user_info</span> <span class="ow">in</span> <span class="n">user_infos</span><span class="p">:</span>
+    <span class="n">do_something</span><span class="p">(</span><span class="n">user_info</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>要注意的事，在 Python 中，<code>for</code> 循环是不存在子作用域的，所以在循环外访问 <code>user_info</code> 会获取 <code>user_infos</code> 中的最后一个值。</p>
+
+<p>个人经验：</p>
+
+<ul>
+<li>便利下标可以使用 <code>idx</code> 或者 <code>index</code> 作为结尾，例如 <code>user_info_idx</code></li>
+</ul>
+
+<h4 id="状态变量">状态变量</h4>
+
+<p>状态变量一般用来描述程序的状态。最常用的状态变量名就是 <code>flag</code>，但是这种命名方法缺少具体的含义，不推荐。</p>
+
+<p>最好的命名方法是名字中不含有 <code>flag</code>，并且能够精准地表述状态。例如用来描述是否符合某一条件的变量名：<code>matched</code>，它是一个布尔值。</p>
+
+<p>如果某个状态含有多个值，可以使用枚举值来代替。</p>
+
+<h4 id="临时变量">临时变量</h4>
+
+<p>临时变量用于存储计算的中间结果，它常被命名为 <code>temp</code>, <code>x</code> 等模糊且缺乏描述性的名字。</p>
+
+<p>虽然临时变量是「临时」使用的，但是也不应该随意给它们命名，赋予一个更有意义的名字会让程序更加可读。</p>
+
+<p>例如下面一段计算二元一次方程的代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">temp</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">b</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span>
+<span class="n">answer</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="n">temp</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
+<span class="n">answer</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="n">temp</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>虽然上面这段代码没有什么逻辑问题，但是 <code>temp</code> 这个变量并不能很好的表述计算的中间结果，如果把 <code>temp</code> 改为 <code>discriminant</code>（判别式） 会更好。</p>
+
+<h4 id="布尔变量">布尔变量</h4>
+
+<p>一些常用的布尔变量：</p>
+
+<ul>
+<li>done：表示某件事已经完成。在完成之前把 done 的值设为 false；</li>
+<li>error：表示有错误发生。在错误发生之前把 error 的值设为 false；</li>
+<li>found：表示某个值已经找到了。在未找到之前把 found 的值设为 false；</li>
+<li>success/ok：表示某一项操作是否成功。在操作失败的情况下把它的值设为 false。</li>
+</ul>
+
+<p>最佳实践：
+- 给布尔变量赋于隐含「真/假」含义的名字；
+- 使用肯定的布尔变量名。</p>
+
+<p>个人经验：
+- 可以在布尔变量之前添加 <code>is</code> 前缀来区分，例如 <code>is_done</code>，这样做法的唯一缺点是写在条件判断中不是那么清晰，<code>if (done)</code> 要比 <code>if (is_done)</code> 更加清晰一些。</p>
+
+<h4 id="枚举变量">枚举变量</h4>
+
+<p>在使用枚举类型的时候，可以通过使用组前缀，如 <code>Color_</code>, <code>Planet_</code> 等来明确表示该类型的成员属于同一个组。</p>
+
+<h4 id="常量">常量</h4>
+
+<p>常量应该始终大写，并使用有意义的值，避免在程序中使用魔法变量。</p>
+
+<h3 id="有哪些常见的命名方法">有哪些常见的命名方法？</h3>
+
+<p>命名规范首先应该参考项目的规范或者所编写的语言规范，例如 Java 通常使用的是驼峰命名法，Python 使用的是下划线命名法。</p>
+
+<h4 id="驼峰命名法-camelcase">驼峰命名法（CamelCase）</h4>
+
+<p>驼峰命名法来源于 Perl 语言中普遍使用的大小写混合命名，而 Larry Wall 所著的《Programming Perl》的封面就是一匹骆驼。</p>
+
+<p>一般来说，变量名、函数使用小驼峰命名法（lowerCamelCase）；类使用大驼峰命名法（UpperCamelCase）。</p>
+
+<p>驼峰命名法常在 Java、JavaScript 等语言中被使用。</p>
+
+<h4 id="下划线命名法-underline-case">下划线命名法（underline_case）</h4>
+
+<p>下划线命名法使用下划线 <code>_</code> 来分隔多个单词。这种命名方式通常在 Python 等语言中被使用。它的缺点是会使含有多个单词的变量名的长度增加。</p>
+
+<h4 id="匈牙利命名法">匈牙利命名法</h4>
+
+<p>在匈牙利命名法中，一个变量由一个或多个小些字母开始，这些字母有助于记忆变量的类型和用途，紧跟着的就是程序员选择的任何名称。这个后半部分的首字母可以大写，以区别前面的类型指示字母。</p>
+
+<p>匈牙利命名法被广泛用在 Microsoft Windows 系统的开发中。但是目前这种命名方式已经被很少使用，不推荐。</p>
+
+<h3 id="在命名中应该要避免的东西有哪些">在命名中应该要避免的东西有哪些？</h3>
+
+<p>（这是《代码大全》中列出的指导原则。）</p>
+
+<ul>
+<li>避免使用令人误解的名字和缩写。要确保名字的含义是明确的。例如 FALSE 常用做 TRUE 的反义词，如果它用做「Fig and Almond Season」的缩写就很糟糕了；</li>
+<li>避免使用具有相似含义的名字。如果你能够交换两个变量的名字而不会妨碍对程序的理解，那么你就需要为这两个变量重新命名了。</li>
+<li>避免使用具有不同含义但却有相似名字的变量。如果你有两个名字相似但含义不同的变量，那么试着给其中之一重新命名。</li>
+<li>避免使用发音相近的名字。例如 wrap 和 rap，当你试图和别人讨论代码的时候，同音字会产生麻烦。</li>
+<li>避免在名字中使用数字。如果名字中的数字真的非常重要，可以使用数组来代替一组单个的变量。</li>
+<li>避免在名字中拼错单词。（后期要修改非常麻烦。）</li>
+<li>避免使用英语中常常拼错的单词。很多英语手册会包含一份常常拼错单词的清单，避免在你的变量名中使用这些单词。</li>
+<li>不要仅靠大小写来区分变量名。（大写仅作为常量命名。）</li>
+<li>避免使用多种自然语言。（统一使用标准现代英语，避免使用 emoji、中文和其他语言。）</li>
+<li>避免使用标准类型、变量和子程序的名字。所有的编程语言指南都会包含一份该语言保留的和预定的名字列表，不要使用列表上的名字作为变量名。</li>
+<li>不要使用与变量含义完全无关的名字。</li>
+<li>避免在名字中包含容易混淆的字符。要意识到有些字符看上去非常接近，很难把它们区分开来。</li>
+</ul>
+
+<h2 id="总结">总结</h2>
+
+<p>变量的命名是程序开发中非常小的一个环节，但是却能够发展出这么多的理论，原因之一就是「程序首先是给人阅读的，其次才是给机器执行的」。良好的命名方法可以让代码更加易于维护，也可以让别人更好地理解你的代码。</p>
+
+<p>变量的命名规范首先应当符合团队或者项目制定的编码规范，如果没有制定规范或者是个人项目，可以沿用社区的编码规范。下面列出一些常见语言的编码规范：</p>
+
+<ul>
+<li>Python: <a href="https://github.com/google/styleguide/blob/gh-pages/pyguide.md">styleguide/pyguide.md at gh-pages · google/styleguide</a></li>
+<li>Java: <a href="https://github.com/alibaba/p3c">alibaba/p3c: Alibaba Java Coding Guidelines pmd implements and IDE plugin</a></li>
+<li>JavaScript: <a href="https://github.com/airbnb/javascript">airbnb/javascript: JavaScript Style Guide</a></li>
+<li>C/C++: <a href="https://google.github.io/styleguide/cppguide.html">Google C++ Style Guide</a></li>
+<li>Golang: <a href="https://github.com/golang/go/wiki/CodeReviewComments">CodeReviewComments · golang/go Wiki</a></li>
+</ul>
+
+<p>编码规范也不能够完全依靠文档来约束，集成到 IDE 或者 CI 中是更好的方式。各种语言都提供了各种 format 工具，例如 Python 的 <a href="https://github.com/google/yapf">yapf</a>，Golang 的 <a href="https://golang.org/cmd/gofmt/">gofmt</a> 等。</p>
+
+<p>IDE 和代码编辑器也提供了很好的格式化代码的功能，例如 Jebbrains 的 IDE 就可以通过导入 XML 格式的文件来进行配置格式化代码的风格。</p>
+
+<h2 id="参考文献">参考文献</h2>
+
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">Don&rsquo;t repeat yourself - Wikipedia</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Camel_case">Camel case - Wikipedia</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Hungarian_notation">Hungarian notation - Wikipedia</a></li>
+<li><a href="https://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670">Code Complete: A Practical Handbook of Software Construction, Second Edition: Steve McConnell: 0790145196705: Amazon.com: Books</a></li>
+</ul>
+
+    </div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/programming/">programming</a>
+          <a href="/tags/reading-notes/">reading-notes</a>
+          <a href="/tags/book-review/">book-review</a>
+          <a href="/tags/code-complete/">code-complete</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/linux-command-sftp/">
+            <span class="next-text nav-default">SFTP 使用详解</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'tisogasnotes';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:forrestchang7@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/Tisoga" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/forrestchang" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/jiayuan3055/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="http://blog.jiayuanzhang.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2014 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Jiayuan</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-130256365-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function() {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script"); hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?001e800887eba2f8f57ec8059aafdad6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+
+
+
+
+
+</body>
+</html>

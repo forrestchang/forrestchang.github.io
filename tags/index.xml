@@ -29,11 +29,29 @@
     </item>
     
     <item>
+      <title>book-review</title>
+      <link>http://blog.jiayuanzhang.com/tags/book-review/</link>
+      <pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/tags/book-review/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>classical-music</title>
       <link>http://blog.jiayuanzhang.com/tags/classical-music/</link>
       <pubDate>Wed, 24 Feb 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/tags/classical-music/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>code-complete</title>
+      <link>http://blog.jiayuanzhang.com/tags/code-complete/</link>
+      <pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/tags/code-complete/</guid>
       <description></description>
     </item>
     
@@ -211,7 +229,7 @@
     <item>
       <title>programming</title>
       <link>http://blog.jiayuanzhang.com/tags/programming/</link>
-      <pubDate>Thu, 17 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/tags/programming/</guid>
       <description></description>
@@ -232,6 +250,15 @@
       <pubDate>Fri, 24 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/tags/reading/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reading-notes</title>
+      <link>http://blog.jiayuanzhang.com/tags/reading-notes/</link>
+      <pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/tags/reading-notes/</guid>
       <description></description>
     </item>
     
