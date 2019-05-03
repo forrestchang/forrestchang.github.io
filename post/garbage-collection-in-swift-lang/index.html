@@ -55,7 +55,7 @@
 
 
 
-<meta itemprop="keywords" content="swift,garbage-collection," />
+<meta itemprop="keywords" content="Swift,Garbage Collection," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Swift 中的内存管理"/>
 <meta name="twitter:description" content="这篇文章是在阅读《The Swift Programming Language》Automatic Reference Counting（ARC，自动引用计数）一章时做的一些笔记，同时参考了其他的一些资料。 在早期的 iOS 开发中，内存管理是由开发者手动来完成的。因为传统的垃圾回收机制对于移动平台来说十分低效，苹果采用的是引用计数（RC，R"/>
@@ -83,12 +83,12 @@
 </div>
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list">
-    <a href="http://jiayuanzhang.com">
-        <li class="mobile-menu-item">Home</li>
-      </a><a href="/post/">
-        <li class="mobile-menu-item">Archives</li>
+    <a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
       </a><a href="/tags/">
         <li class="mobile-menu-item">Tags</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
       </a><a href="http://jiayuanzhang.com">
         <li class="mobile-menu-item">About</li>
       </a>
@@ -103,11 +103,11 @@
 <nav class="site-navbar">
   <ul id="menu" class="menu">
     <li class="menu-item">
-        <a class="menu-item-link" href="http://jiayuanzhang.com">Home</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/post/">Archives</a>
+        <a class="menu-item-link" href="/categories/">Categories</a>
       </li><li class="menu-item">
         <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
       </li><li class="menu-item">
         <a class="menu-item-link" href="http://jiayuanzhang.com">About</a>
       </li>
@@ -125,7 +125,9 @@
 
       <div class="post-meta">
         <span class="post-time">Posted on <a href="">2016-04-15</a></a> </span>
-        
+        <div class="post-category">
+            <a href="/categories/programming/"> Programming </a>
+            </div>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
         <span class="more-meta">
           Written by
@@ -410,8 +412,8 @@
 
     <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/swift/">swift</a>
-          <a href="/tags/garbage-collection/">garbage-collection</a>
+          <a href="/tags/swift/">Swift</a>
+          <a href="/tags/garbage-collection/">Garbage Collection</a>
           </div>
       <nav class="post-nav">
         <a class="prev" href="/post/notes-on-virtualenv/">

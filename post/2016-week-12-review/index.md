@@ -11,4 +11,4 @@
 
 马上23：00了，赶紧去睡觉了。
 
-[1]:	http://forrestchang.github.io/2016/02/13/self-learning-guide/
+[1]: http://forrestchang.github.io/2016/02/13/self-learning-guide/

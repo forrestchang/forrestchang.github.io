@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>music on Jiayuan&#39;s Blog</title>
+    <title>Music on Jiayuan&#39;s Blog</title>
     <link>http://blog.jiayuanzhang.com/tags/music/</link>
-    <description>Recent content in music on Jiayuan&#39;s Blog</description>
+    <description>Recent content in Music on Jiayuan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 19 Mar 2017 00:00:00 +0000</lastBuildDate>
@@ -27,6 +27,15 @@
       
       <guid>http://blog.jiayuanzhang.com/post/digital-life-in-2016-music-part/</guid>
       <description>最近知乎上的一个朋友和我私信聊了一些关于效率工具以及 Workflow（此处指的是「工作流」）方面的一些问题。聊的内容比较碎片，所以还是打算写一篇文章来具体讨论一下。考虑到会涉及很多不同的主题，所以还是一个主题写一篇，这样也可以控制文章的长度。暂定按照以下主题来写：音乐篇、阅读篇、</description>
+    </item>
+    
+    <item>
+      <title>Apple Music，古典音乐，阅读</title>
+      <link>http://blog.jiayuanzhang.com/post/apple-music-and-classical-music-and-reading/</link>
+      <pubDate>Wed, 24 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/apple-music-and-classical-music-and-reading/</guid>
+      <description>Apple Music 自从Apple Music（以下简称「AM」）发布以来，就一直在使用，从最开始的免费试用到现在每个月10￥的订阅。自从Windows时代就使用iTunes听音乐了（当时有一部iPod），在没有AM的时候，都是从论坛下好别人买的专辑来听。一方面在国内想要在iTunes Store上</description>
     </item>
     
   </channel>

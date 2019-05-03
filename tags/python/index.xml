@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>python on Jiayuan&#39;s Blog</title>
+    <title>Python on Jiayuan&#39;s Blog</title>
     <link>http://blog.jiayuanzhang.com/tags/python/</link>
-    <description>Recent content in python on Jiayuan&#39;s Blog</description>
+    <description>Recent content in Python on Jiayuan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 02 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Dec 2016 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://blog.jiayuanzhang.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>跨域资源共享（CORS）详解</title>
-      <link>http://blog.jiayuanzhang.com/post/cors-tutorial/</link>
-      <pubDate>Sun, 02 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.jiayuanzhang.com/post/cors-tutorial/</guid>
-      <description>Web 后端开发者很少会去充分了解跨域问题，原因是他们很少和 JavaScript 打交道。但是作为一个 Web 开发者，知道跨域请求和如何解决跨域问题可以和前端开发者在沟通上变得更为顺畅。 这篇文章会介绍和跨域请求相关的一些概念，以及如何在后端（Python）解决浏览器的跨域请求问题。 一、什么是跨域请求 首先，我们要</description>
-    </item>
     
     <item>
       <title>推荐系统笔记</title>
@@ -45,15 +36,6 @@
       
       <guid>http://blog.jiayuanzhang.com/post/notes-on-virtualenv/</guid>
       <description>安装 直接使用 pip 来进行安装： 1 $ sudo pip install virtualenv 用途 主要用来创建隔离的 Python 开发环境，比如说一个项目需要用到 2.7 的库，另一个项目需要用到 3.0 的库，我们就可以使用 virtualenv 来分别给这两个项目创建虚拟的 Python 环境，这样可以有效的避免冲突。 virtualenv 会创建一个拥有独立安装目录的 Python 环境，该隔离环境不会与其他 virtualenv 环境共享模块（可</description>
-    </item>
-    
-    <item>
-      <title>学院派编程自学指南</title>
-      <link>http://blog.jiayuanzhang.com/post/self-learning-programer-manual-college-part/</link>
-      <pubDate>Wed, 03 Feb 2016 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.jiayuanzhang.com/post/self-learning-programer-manual-college-part/</guid>
-      <description>由于本人目前也处在学习的阶段，文章中列出来的内容也并未全部学习过，所以文章的客观性可能存在一些问题，还望读者自行判断。 这份指南会不定期更新，有好的建议也可以留言或者给我发邮件。 准备 需要的所有工具就是一台可以连接上网络的电脑以及你本人。 科学上网 很可惜，即使是现在，大部分学习计算机的</description>
     </item>
     
   </channel>

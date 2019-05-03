@@ -10,5 +10,41 @@
 	<atom:link href="http://blog.jiayuanzhang.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Essay</title>
+      <link>http://blog.jiayuanzhang.com/categories/essay/</link>
+      <pubDate>Fri, 24 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/categories/essay/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Journal</title>
+      <link>http://blog.jiayuanzhang.com/categories/journal/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/categories/journal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Productivity</title>
+      <link>http://blog.jiayuanzhang.com/categories/productivity/</link>
+      <pubDate>Fri, 23 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/categories/productivity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming</title>
+      <link>http://blog.jiayuanzhang.com/categories/programming/</link>
+      <pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/categories/programming/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

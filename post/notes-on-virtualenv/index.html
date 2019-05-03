@@ -55,7 +55,7 @@
 
 
 
-<meta itemprop="keywords" content="python,virtualenv," />
+<meta itemprop="keywords" content="Python," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="virtualenv 相关笔记"/>
 <meta name="twitter:description" content="安装 直接使用 pip 来进行安装： 1 $ sudo pip install virtualenv 用途 主要用来创建隔离的 Python 开发环境，比如说一个项目需要用到 2.7 的库，另一个项目需要用到 3.0 的库，我们就可以使用 virtualenv 来分别给这两个项目创建虚拟的 Python 环境，这样可以有效的避免冲突。 virtualenv 会创建一个拥有独立安装目录的 Python 环境，该隔离环境不会与其他 virtualenv 环境共享模块（可"/>
@@ -83,12 +83,12 @@
 </div>
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list">
-    <a href="http://jiayuanzhang.com">
-        <li class="mobile-menu-item">Home</li>
-      </a><a href="/post/">
-        <li class="mobile-menu-item">Archives</li>
+    <a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
       </a><a href="/tags/">
         <li class="mobile-menu-item">Tags</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
       </a><a href="http://jiayuanzhang.com">
         <li class="mobile-menu-item">About</li>
       </a>
@@ -103,11 +103,11 @@
 <nav class="site-navbar">
   <ul id="menu" class="menu">
     <li class="menu-item">
-        <a class="menu-item-link" href="http://jiayuanzhang.com">Home</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/post/">Archives</a>
+        <a class="menu-item-link" href="/categories/">Categories</a>
       </li><li class="menu-item">
         <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
       </li><li class="menu-item">
         <a class="menu-item-link" href="http://jiayuanzhang.com">About</a>
       </li>
@@ -125,7 +125,9 @@
 
       <div class="post-meta">
         <span class="post-time">Posted on <a href="">2016-07-17</a></a> </span>
-        
+        <div class="post-category">
+            <a href="/categories/programming/"> Programming </a>
+            </div>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
         <span class="more-meta">
           Written by
@@ -292,8 +294,7 @@ $ rm -r /path/to/ENV</pre></td></tr></table>
 
     <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/python/">python</a>
-          <a href="/tags/virtualenv/">virtualenv</a>
+          <a href="/tags/python/">Python</a>
           </div>
       <nav class="post-nav">
         <a class="prev" href="/post/2016-week-39-review/">

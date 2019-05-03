@@ -12,7 +12,6 @@
 3. 番茄工作法
 
 ![](http://omaacpco9.bkt.clouddn.com/2017-05-07-092455.jpg)
-<center style="font-style: italic; color: #8F8F8B; font-size:12px;">Spacemacs org mode</center>
 
 自定义生成的时间记录表：
 
