@@ -51,11 +51,11 @@
 
 <meta itemprop="datePublished" content="2019-05-02T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-05-02T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="4175">
+<meta itemprop="wordCount" content="4172">
 
 
 
-<meta itemprop="keywords" content="Book Review,代码大全," />
+<meta itemprop="keywords" content="代码大全," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="读《代码大全》"/>
 <meta name="twitter:description" content="这本书最开始是大一的时候买的，买回来后翻了一些章节就成为了显示器的支架，直到最近工作了一段时间才重新开始读，这一次阅读和几年前初次阅读有很大不同，大一阅读时候的编码经验仅仅是局限于算法方面，对大型项目的构建没有特别多感触；这一次是在写了很多业务代码，积累了一定问题的基础上去阅读的"/>
@@ -358,12 +358,18 @@
 <li>success/ok：表示某一项操作是否成功。在操作失败的情况下把它的值设为 false。</li>
 </ul>
 
-<p>最佳实践：
-- 给布尔变量赋于隐含「真/假」含义的名字；
-- 使用肯定的布尔变量名。</p>
+<p>最佳实践：</p>
 
-<p>个人经验：
-- 可以在布尔变量之前添加 <code>is</code> 前缀来区分，例如 <code>is_done</code>，这样做法的唯一缺点是写在条件判断中不是那么清晰，<code>if (done)</code> 要比 <code>if (is_done)</code> 更加清晰一些。</p>
+<ul>
+<li>给布尔变量赋于隐含「真/假」含义的名字；</li>
+<li>使用肯定的布尔变量名。</li>
+</ul>
+
+<p>个人经验：</p>
+
+<ul>
+<li>可以在布尔变量之前添加 <code>is</code> 前缀来区分，例如 <code>is_done</code>，这样做法的唯一缺点是写在条件判断中不是那么清晰，<code>if (done)</code> 要比 <code>if (is_done)</code> 更加清晰一些。</li>
+</ul>
 
 <h4 id="枚举变量">枚举变量</h4>
 
@@ -448,7 +454,6 @@
 
     <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/book-review/">Book Review</a>
           <a href="/tags/%E4%BB%A3%E7%A0%81%E5%A4%A7%E5%85%A8/">代码大全</a>
           </div>
       <nav class="post-nav">
