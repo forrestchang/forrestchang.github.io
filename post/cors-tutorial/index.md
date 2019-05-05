@@ -112,7 +112,7 @@ function callOtherDomain() {
 
 请求报文：
 
-![2018-12-02-request-msg](https://ws2.sinaimg.cn/large/006tNbRwgy1fxsiwv09frj31uo0rsn1s.jpg)
+![2018-12-02-request-msg](https://raw.githubusercontent.com/forrestchang/img-repo/master/20190505164610.png)
 
 响应报文：
 
