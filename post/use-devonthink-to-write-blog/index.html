@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Jiayuan" /><meta name="description" content="这是一篇测试博客. 自定义 tag 自定义时间 this is just a test" /><meta name="keywords" content="blog, time-management, knowledge-management, python, programming, linux" />
+<meta name="author" content="Jiayuan" /><meta name="description" content="虽然博客没有写太多篇，但是写博客的工具却折腾过不少。从最开始的 org-mode，到 Jekyll、Hexo，再到现在的 Hugo，一直没有找到一个满意的工作流。 我的需求： 使用统一的工具来管理笔记和写作的文章； 能够多端同步； 自动化。 之前使用 Hugo 写作的流程是： 在命令行新建一篇文章； 打开 Typora 进" /><meta name="keywords" content="blog, time-management, knowledge-management, python, programming, linux" />
 
 
 
@@ -39,26 +39,26 @@
 
 
 <meta property="og:title" content="使用 Devonthink 来写博客" />
-<meta property="og:description" content="这是一篇测试博客. 自定义 tag 自定义时间 this is just a test" />
+<meta property="og:description" content="虽然博客没有写太多篇，但是写博客的工具却折腾过不少。从最开始的 org-mode，到 Jekyll、Hexo，再到现在的 Hugo，一直没有找到一个满意的工作流。 我的需求： 使用统一的工具来管理笔记和写作的文章； 能够多端同步； 自动化。 之前使用 Hugo 写作的流程是： 在命令行新建一篇文章； 打开 Typora 进" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://blog.jiayuanzhang.com/post/use-devonthink-to-write-blog/" />
 <meta property="article:published_time" content="2019-05-04T00:00:00&#43;00:00"/>
 <meta property="article:modified_time" content="2019-05-13T00:00:00&#43;00:00"/>
 
 <meta itemprop="name" content="使用 Devonthink 来写博客">
-<meta itemprop="description" content="这是一篇测试博客. 自定义 tag 自定义时间 this is just a test">
+<meta itemprop="description" content="虽然博客没有写太多篇，但是写博客的工具却折腾过不少。从最开始的 org-mode，到 Jekyll、Hexo，再到现在的 Hugo，一直没有找到一个满意的工作流。 我的需求： 使用统一的工具来管理笔记和写作的文章； 能够多端同步； 自动化。 之前使用 Hugo 写作的流程是： 在命令行新建一篇文章； 打开 Typora 进">
 
 
 <meta itemprop="datePublished" content="2019-05-04T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-05-13T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="23">
+<meta itemprop="wordCount" content="1523">
 
 
 
-<meta itemprop="keywords" content="" />
+<meta itemprop="keywords" content="org-mode,blog,devonthink,hugo,jxa,applescript,automation," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="使用 Devonthink 来写博客"/>
-<meta name="twitter:description" content="这是一篇测试博客. 自定义 tag 自定义时间 this is just a test"/>
+<meta name="twitter:description" content="虽然博客没有写太多篇，但是写博客的工具却折腾过不少。从最开始的 org-mode，到 Jekyll、Hexo，再到现在的 Hugo，一直没有找到一个满意的工作流。 我的需求： 使用统一的工具来管理笔记和写作的文章； 能够多端同步； 自动化。 之前使用 Hugo 写作的流程是： 在命令行新建一篇文章； 打开 Typora 进"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -147,13 +147,342 @@
   </div>
 </div>
     <div class="post-content">
-      <p>这是一篇测试博客.</p>
+      <p>虽然博客没有写太多篇，但是写博客的工具却折腾过不少。从最开始的 org-mode，到 Jekyll、Hexo，再到现在的 Hugo，一直没有找到一个满意的工作流。</p>
 
-<p>自定义 tag</p>
+<p>我的需求：</p>
 
-<p>自定义时间</p>
+<ul>
+<li>使用统一的工具来管理笔记和写作的文章；</li>
+<li>能够多端同步；</li>
+<li>自动化。</li>
+</ul>
 
-<p>this is just a test</p>
+<p>之前使用 Hugo 写作的流程是：</p>
+
+<ol>
+<li>在命令行新建一篇文章；</li>
+<li>打开 Typora 进行写作；</li>
+<li>写完了再去命令行 generate 并 push 到 GitHub 上。</li>
+</ol>
+
+<p>后来使用 Ulysses 作为写作的工具，把 Hugo 的 post 文件夹作为 Ulysses 的外部文件夹来进行写作。Ulysses 是一个很强大的写作工具，但是唯一的缺点是它自带的 Markdown 语法与通用的 Markdown 语法不兼容，这导致了之前写的很多文章都需要转码一遍才能够正确在 Ulysses 中显示。</p>
+
+<p>Devonthink 是我用来做知识管理的工具，你可以把它看做是一个增强版的 Finder + Evernote，我主要用它来写笔记和剪裁网页，配合 Alfred 的搜索可以快速找到想要的内容，关于 Devonthink 的具体使用我之后会写一篇文章来介绍，如果你有疑问，可以先看一下这篇文章：<a href="https://sspai.com/post/44774">DEVONthink 和 Evernote，谁是更好的知识管理工具？ - 少数派</a>。</p>
+
+<p>既然我把我写的和剪裁的东西都统一管理在 Devonthink 中，那么能不能把博客的写作流程也整合进去呢？</p>
+
+<p>搜索了一下，发现 Devonthink 能够支持 AppleScript 和 JavaScript for Automation（JXA），实现的思路如下：</p>
+
+<ol>
+<li>用一个 Folder 统一管理写作的文章；</li>
+<li>读取这个 Folder 中的所有文章和元数据；</li>
+<li>把元数据生成 YAML 格式的内容插入到文章的开头；</li>
+<li>把新生成的文章写入到 Hugo 对应的文件夹下。</li>
+</ol>
+
+<p>实现的逻辑很简单，困难点主要在于 JXA 的文档缺乏，有一些操作需要调用系统的 Objective-C Bridge 来进行（相当于在 JavaScript 中写 Objective-C 的代码）。</p>
+
+<p>我写了一个 Alfred Workflow 来完成这个功能，核心代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="cm">/**
+</span><span class="cm"> * Constants
+</span><span class="cm"> */</span>
+<span class="k">const</span> <span class="nx">devonthink</span> <span class="o">=</span> <span class="nx">Application</span><span class="p">(</span><span class="s1">&#39;DEVONthink 3&#39;</span><span class="p">)</span>
+<span class="k">const</span> <span class="nx">blogPath</span> <span class="o">=</span> <span class="s1">&#39;/Users/jiayuan/Dropbox/personal-site/blog/content/post/&#39;</span>
+
+
+<span class="cm">/**
+</span><span class="cm"> * Utils
+</span><span class="cm"> */</span>
+
+<span class="kd">function</span> <span class="nx">formatTime</span><span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="nx">cFormat</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">null</span>
+  <span class="p">}</span>
+  <span class="k">const</span> <span class="nx">format</span> <span class="o">=</span> <span class="nx">cFormat</span> <span class="o">||</span> <span class="s1">&#39;{y}-{m}-{d} {h}:{i}:{s}&#39;</span>
+  <span class="kd">let</span> <span class="nx">date</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">time</span> <span class="o">===</span> <span class="s1">&#39;object&#39;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">date</span> <span class="o">=</span> <span class="nx">time</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">((</span><span class="s1">&#39;&#39;</span> <span class="o">+</span> <span class="nx">time</span><span class="p">).</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">10</span><span class="p">)</span> <span class="nx">time</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">time</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span>
+    <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">time</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="k">const</span> <span class="nx">formatObj</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">y</span><span class="o">:</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">(),</span>
+    <span class="nx">m</span><span class="o">:</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nx">d</span><span class="o">:</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getDate</span><span class="p">(),</span>
+    <span class="nx">h</span><span class="o">:</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getHours</span><span class="p">(),</span>
+    <span class="nx">i</span><span class="o">:</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">(),</span>
+    <span class="nx">s</span><span class="o">:</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">(),</span>
+    <span class="nx">a</span><span class="o">:</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getDay</span><span class="p">()</span>
+  <span class="p">}</span>
+  <span class="k">const</span> <span class="nx">time_str</span> <span class="o">=</span> <span class="nx">format</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/{([ymdhisa])+}/g</span><span class="p">,</span> <span class="p">(</span><span class="nx">result</span><span class="p">,</span> <span class="nx">key</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">formatObj</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">key</span> <span class="o">===</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;一&#39;</span><span class="p">,</span> <span class="s1">&#39;二&#39;</span><span class="p">,</span> <span class="s1">&#39;三&#39;</span><span class="p">,</span> <span class="s1">&#39;四&#39;</span><span class="p">,</span> <span class="s1">&#39;五&#39;</span><span class="p">,</span> <span class="s1">&#39;六&#39;</span><span class="p">,</span> <span class="s1">&#39;日&#39;</span><span class="p">][</span><span class="nx">value</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">value</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">value</span> <span class="o">=</span> <span class="s1">&#39;0&#39;</span> <span class="o">+</span> <span class="nx">value</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">value</span> <span class="o">||</span> <span class="mi">0</span>
+  <span class="p">})</span>
+  <span class="k">return</span> <span class="nx">time_str</span>
+<span class="p">}</span>
+
+
+<span class="cm">/**
+</span><span class="cm"> * Functions
+</span><span class="cm"> */</span>
+
+<span class="kd">function</span> <span class="nx">writeToFile</span><span class="p">(</span><span class="nx">filename</span><span class="p">,</span> <span class="nx">path</span><span class="p">,</span> <span class="nx">content</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">path</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">path</span> <span class="o">=</span> <span class="nx">path</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span>
+  <span class="p">}</span>
+  <span class="nx">filePath</span> <span class="o">=</span> <span class="nx">path</span> <span class="o">+</span> <span class="nx">filename</span>
+
+  <span class="nx">contentEncoded</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">NSString</span><span class="p">.</span><span class="nx">alloc</span><span class="p">.</span><span class="nx">initWithUTF8String</span><span class="p">(</span><span class="nx">content</span><span class="p">);</span>
+  <span class="nx">contentEncoded</span><span class="p">.</span><span class="nx">writeToFileAtomicallyEncodingError</span><span class="p">(</span><span class="nx">filePath</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">$</span><span class="p">.</span><span class="nx">NSUTF8StringEncoding</span><span class="p">,</span> <span class="kc">null</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">getMetaData</span><span class="p">(</span><span class="nx">record</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="c1">// Get created time
+</span><span class="c1"></span>  <span class="k">const</span> <span class="nx">createdTime</span> <span class="o">=</span> <span class="nx">formatTime</span><span class="p">(</span><span class="nx">record</span><span class="p">.</span><span class="nx">creationDate</span><span class="p">(),</span> <span class="s1">&#39;{y}-{m}-{d}&#39;</span><span class="p">)</span>
+
+  <span class="c1">// Get updated time
+</span><span class="c1"></span>  <span class="k">const</span> <span class="nx">updatedTime</span> <span class="o">=</span> <span class="nx">formatTime</span><span class="p">(</span><span class="nx">record</span><span class="p">.</span><span class="nx">modificationDate</span><span class="p">(),</span> <span class="s1">&#39;{y}-{m}-{d}&#39;</span><span class="p">)</span>
+
+  <span class="c1">// Get file name
+</span><span class="c1"></span>  <span class="k">const</span> <span class="nx">customMetaData</span> <span class="o">=</span> <span class="nx">record</span><span class="p">.</span><span class="nx">customMetaData</span><span class="p">()</span>
+  <span class="kd">let</span> <span class="nx">fileName</span> <span class="o">=</span> <span class="nx">customMetaData</span><span class="p">.</span><span class="nx">mdblogfilename</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">fileName</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="s1">&#39;.md&#39;</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">fileName</span> <span class="o">=</span> <span class="nx">fileName</span> <span class="o">+</span> <span class="s1">&#39;.md&#39;</span>
+  <span class="p">}</span>
+
+  <span class="c1">// Get tags
+</span><span class="c1"></span>  <span class="k">const</span> <span class="nx">tags</span> <span class="o">=</span> <span class="nx">record</span><span class="p">.</span><span class="nx">tags</span><span class="p">()</span>
+
+  <span class="c1">// Get categories
+</span><span class="c1"></span>  <span class="k">const</span> <span class="nx">category</span> <span class="o">=</span> <span class="nx">customMetaData</span><span class="p">.</span><span class="nx">mdcategory</span>
+
+  <span class="c1">// Get draft info
+</span><span class="c1"></span>  <span class="k">const</span> <span class="nx">isDraft</span> <span class="o">=</span> <span class="nx">customMetaData</span><span class="p">.</span><span class="nx">mddraft</span>
+
+  <span class="c1">// Get title
+</span><span class="c1"></span>  <span class="k">const</span> <span class="nx">title</span> <span class="o">=</span> <span class="nx">record</span><span class="p">.</span><span class="nx">name</span><span class="p">()</span>
+
+  <span class="k">const</span> <span class="nx">metaData</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">createdTime</span><span class="p">,</span>
+    <span class="nx">updatedTime</span><span class="p">,</span>
+    <span class="nx">fileName</span><span class="p">,</span>
+    <span class="nx">tags</span><span class="p">,</span>
+    <span class="nx">category</span><span class="p">,</span>
+    <span class="nx">title</span><span class="p">,</span>
+    <span class="nx">isDraft</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">metaData</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">generateYamlMetaString</span><span class="p">(</span><span class="nx">metaData</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">yamlMetaString</span> <span class="o">=</span> <span class="sb">`---
+</span><span class="sb">title: </span><span class="si">${</span><span class="nx">metaData</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="sb">
+</span><span class="sb">date: </span><span class="si">${</span><span class="nx">metaData</span><span class="p">.</span><span class="nx">createdTime</span><span class="si">}</span><span class="sb">
+</span><span class="sb">lastmod: </span><span class="si">${</span><span class="nx">metaData</span><span class="p">.</span><span class="nx">updatedTime</span><span class="si">}</span><span class="sb">
+</span><span class="sb">categories: [</span><span class="si">${</span><span class="nx">metaData</span><span class="p">.</span><span class="nx">category</span><span class="si">}</span><span class="sb">]
+</span><span class="sb">tags: [</span><span class="si">${</span><span class="nx">metaData</span><span class="p">.</span><span class="nx">tags</span><span class="si">}</span><span class="sb">]
+</span><span class="sb">draft: </span><span class="si">${</span><span class="nx">metaData</span><span class="p">.</span><span class="nx">isDraft</span> <span class="o">===</span> <span class="kc">true</span><span class="si">}</span><span class="sb">
+</span><span class="sb">---
+</span><span class="sb">  `</span>
+
+  <span class="k">return</span> <span class="nx">yamlMetaString</span>
+<span class="p">}</span>
+
+
+<span class="kd">function</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">const</span> <span class="nx">blogPosts</span> <span class="o">=</span> <span class="nx">devonthink</span><span class="p">.</span><span class="nx">databases</span><span class="p">.</span><span class="nx">byName</span><span class="p">(</span><span class="s1">&#39;02.Writing&#39;</span><span class="p">).</span><span class="nx">parents</span><span class="p">.</span><span class="nx">byName</span><span class="p">(</span><span class="s1">&#39;Blog&#39;</span><span class="p">).</span><span class="nx">children</span><span class="p">()</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">blogPosts</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">const</span> <span class="nx">selectedRecord</span> <span class="o">=</span> <span class="nx">blogPosts</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+
+    <span class="k">const</span> <span class="nx">metaData</span> <span class="o">=</span> <span class="nx">getMetaData</span><span class="p">(</span><span class="nx">selectedRecord</span><span class="p">)</span>
+
+    <span class="k">const</span> <span class="nx">yamlMetaString</span> <span class="o">=</span> <span class="nx">generateYamlMetaString</span><span class="p">(</span><span class="nx">metaData</span><span class="p">)</span>
+    <span class="k">const</span> <span class="nx">content</span> <span class="o">=</span> <span class="nx">selectedRecord</span><span class="p">.</span><span class="nx">plainText</span><span class="p">()</span>
+    <span class="k">const</span> <span class="nx">blogPostContent</span> <span class="o">=</span> <span class="sb">`</span><span class="si">${</span><span class="nx">yamlMetaString</span><span class="si">}</span><span class="sb">
+</span><span class="sb"></span><span class="si">${</span><span class="nx">content</span><span class="si">}</span><span class="sb">
+</span><span class="sb">`</span>
+    <span class="nx">writeToFile</span><span class="p">(</span><span class="nx">metaData</span><span class="p">.</span><span class="nx">fileName</span><span class="p">,</span> <span class="nx">blogPath</span><span class="p">,</span> <span class="nx">blogPostContent</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="k">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">Application</span><span class="p">.</span><span class="nx">currentApplication</span><span class="p">()</span>
+  <span class="nx">app</span><span class="p">.</span><span class="nx">includeStandardAdditions</span> <span class="o">=</span> <span class="kc">true</span>
+
+  <span class="nx">app</span><span class="p">.</span><span class="nx">displayNotification</span><span class="p">(</span><span class="sb">`You have generated </span><span class="si">${</span><span class="nx">blogPosts</span><span class="p">.</span><span class="nx">length</span><span class="si">}</span><span class="sb"> articles.`</span><span class="p">,</span> <span class="p">{</span> <span class="nx">withTitle</span><span class="o">:</span> <span class="s1">&#39;Success&#39;</span> <span class="p">})</span>
+<span class="p">}</span>
+
+<span class="cm">/**
+</span><span class="cm"> * Main
+</span><span class="cm"> */</span>
+<span class="nx">main</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>源代码可以在这里看到：<a href="https://github.com/forrestchang/alfred-workflows/tree/master/src/Devonthink-to-Hugo-Blog">alfred-workflows/src/Devonthink-to-Hugo-Blog at master · forrestchang/alfred-workflows</a>。</p>
+
+<p>如果你需要用到你的工作流中，需要配置以下内容：</p>
+
+<ul>
+<li>hugo 的 <code>post</code> 路径，在 <code>blogPath</code> 中定义；</li>
+<li>Devonthink 中的 Blog 文件夹，在 <code>blogPosts</code> 中定义；</li>
+<li>需要使用 Devonthink 3 的 Custom Metadata 功能，添加三个 Metadata：<code>Category</code> 用来作为此篇博客的分类，<code>Blog File Name</code> 用来作为生成的路径名，<code>Draft</code> 用来判断是否是草稿。</li>
+</ul>
+
+<p>这个脚本支持读取 Devonthink 的文章标题为博客标题，创建时间为博客的创建时间，Tags 为博客的 Tags，其他的 Metadata 也可以在 <code>getMetaData</code> 这个函数中自行定义。</p>
+
+<p>现在这个脚本还不是特别完善，之后会添加一些错误处理的功能并支持 org-mode 格式的文件。</p>
+
+<p><img src="https://raw.githubusercontent.com/forrestchang/img-repo/master/20190513165627.png" alt="" /></p>
 
     </div>
 
@@ -161,7 +490,15 @@
     
 
     <footer class="post-footer">
-      
+      <div class="post-tags">
+          <a href="/tags/org-mode/">org-mode</a>
+          <a href="/tags/blog/">blog</a>
+          <a href="/tags/devonthink/">devonthink</a>
+          <a href="/tags/hugo/">hugo</a>
+          <a href="/tags/jxa/">jxa</a>
+          <a href="/tags/applescript/">applescript</a>
+          <a href="/tags/automation/">automation</a>
+          </div>
       <nav class="post-nav">
         
         <a class="next" href="/post/notes-on-code-complete-part-1/">

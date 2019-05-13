@@ -20,9 +20,27 @@
     </item>
     
     <item>
+      <title>applescript</title>
+      <link>http://blog.jiayuanzhang.com/tags/applescript/</link>
+      <pubDate>Sat, 04 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/tags/applescript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>automation</title>
+      <link>http://blog.jiayuanzhang.com/tags/automation/</link>
+      <pubDate>Sat, 04 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/tags/automation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>blog</title>
       <link>http://blog.jiayuanzhang.com/tags/blog/</link>
-      <pubDate>Sat, 04 Feb 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 04 May 2019 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/tags/blog/</guid>
       <description></description>
@@ -52,6 +70,15 @@
       <pubDate>Sun, 02 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/tags/cors/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>devonthink</title>
+      <link>http://blog.jiayuanzhang.com/tags/devonthink/</link>
+      <pubDate>Sat, 04 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/tags/devonthink/</guid>
       <description></description>
     </item>
     
@@ -101,6 +128,15 @@
     </item>
     
     <item>
+      <title>hugo</title>
+      <link>http://blog.jiayuanzhang.com/tags/hugo/</link>
+      <pubDate>Sat, 04 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>ipython</title>
       <link>http://blog.jiayuanzhang.com/tags/ipython/</link>
       <pubDate>Fri, 28 Oct 2016 00:00:00 +0000</pubDate>
@@ -115,6 +151,15 @@
       <pubDate>Fri, 28 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/tags/jupyter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jxa</title>
+      <link>http://blog.jiayuanzhang.com/tags/jxa/</link>
+      <pubDate>Sat, 04 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/tags/jxa/</guid>
       <description></description>
     </item>
     
@@ -157,7 +202,7 @@
     <item>
       <title>org-mode</title>
       <link>http://blog.jiayuanzhang.com/tags/org-mode/</link>
-      <pubDate>Sat, 10 Oct 2015 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 04 May 2019 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/tags/org-mode/</guid>
       <description></description>
