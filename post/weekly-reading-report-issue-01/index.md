@@ -1,4 +1,4 @@
-
+  
 为什么要写这个？最主要的原因还是激励自己多多阅读，读好书和好文章，然后写 review。
 
 读些什么？平常的阅读比较杂，除了书籍之外，还会读很多的博客文章，所以会写这周的 book review，主要是针对这周读完的书，读了一半放弃不打算再读的书也会写，没有读完的书不写；文章就简单写一些笔记性的 review。
@@ -52,3 +52,4 @@ Open source projects oriented programming.
 这篇文章写自一个 blind coder，解释了三个（在我看来）有点 offensive 的问题：1）如何阅读；2）如何 coding；3）会做梦吗？
 
 > I’ll try and sketch out an image for those of you who are curious about accessibility, and how blind people use computers to code, and to do the work of the 21st century.
+

@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Jiayuan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 02 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 04 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://blog.jiayuanzhang.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>使用 Devonthink 来写博客</title>
+      <link>http://blog.jiayuanzhang.com/post/use-devonthink-to-write-blog/</link>
+      <pubDate>Sat, 04 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/use-devonthink-to-write-blog/</guid>
+      <description>这是一篇测试博客. 自定义 tag 自定义时间 this is just a test</description>
+    </item>
     
     <item>
       <title>读《代码大全》</title>
@@ -93,7 +102,7 @@
     </item>
     
     <item>
-      <title>叛逃 Spotify</title>
+      <title>go-to-spotify</title>
       <link>http://blog.jiayuanzhang.com/post/go-to-spotify/</link>
       <pubDate>Sun, 19 Mar 2017 00:00:00 +0000</pubDate>
       
@@ -113,7 +122,7 @@
     <item>
       <title>换了一个新地方写东西</title>
       <link>http://blog.jiayuanzhang.com/post/new-blog/</link>
-      <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 04 Feb 2017 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/new-blog/</guid>
       <description>现在这个博客只写技术相关的内容，其他的随笔都写在新博客里，Medium 是被大陆屏蔽的，所以请自备梯子。另外一些比较私人的笔记——例如「Week Review」系列就不发表在互联网上了。 至于原因，单纯得觉得 Medium 上的衬线字体很好看。如果需要魔改这个博客的话，还是挺麻烦的，自己目前的前端知</description>
@@ -257,7 +266,7 @@
     <item>
       <title>2016 Week 12 Review</title>
       <link>http://blog.jiayuanzhang.com/post/2016-week-12-review/</link>
-      <pubDate>Sun, 20 Mar 2016 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 02 Mar 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/2016-week-12-review/</guid>
       <description>这周的主题是跑步，大连的天气开始变暖，终于可以去操场跑步了，不过由于学校在海边，风还是很大的。今天跑完了一个线上马拉松（10km 健康赛），明天大连国际马拉松开始开放报名，打算参加半程马拉松，不知道能不能报上名，毕竟今年有一个目标就是参加一次马拉松（全马或者半马）。比赛日期是5.2</description>

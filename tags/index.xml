@@ -6,13 +6,12 @@
     <description>Recent content in Tags on Jiayuan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 19 Mar 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://blog.jiayuanzhang.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Apple Music</title>
+      <title>apple-music</title>
       <link>http://blog.jiayuanzhang.com/tags/apple-music/</link>
       <pubDate>Sun, 19 Mar 2017 00:00:00 +0000</pubDate>
       
@@ -21,34 +20,25 @@
     </item>
     
     <item>
-      <title>Blog</title>
+      <title>blog</title>
       <link>http://blog.jiayuanzhang.com/tags/blog/</link>
-      <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 04 Feb 2017 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/tags/blog/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Classical Music</title>
-      <link>http://blog.jiayuanzhang.com/tags/classical-music/</link>
-      <pubDate>Wed, 24 Feb 2016 00:00:00 +0000</pubDate>
+      <title>code-complete</title>
+      <link>http://blog.jiayuanzhang.com/tags/code-complete/</link>
+      <pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/tags/classical-music/</guid>
+      <guid>http://blog.jiayuanzhang.com/tags/code-complete/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Computer Network</title>
-      <link>http://blog.jiayuanzhang.com/tags/computer-network/</link>
-      <pubDate>Sun, 02 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.jiayuanzhang.com/tags/computer-network/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Computer Science</title>
+      <title>computer-science</title>
       <link>http://blog.jiayuanzhang.com/tags/computer-science/</link>
       <pubDate>Wed, 03 Feb 2016 00:00:00 +0000</pubDate>
       
@@ -57,16 +47,16 @@
     </item>
     
     <item>
-      <title>Cuckoo</title>
-      <link>http://blog.jiayuanzhang.com/tags/cuckoo/</link>
-      <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
+      <title>cors</title>
+      <link>http://blog.jiayuanzhang.com/tags/cors/</link>
+      <pubDate>Sun, 02 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/tags/cuckoo/</guid>
+      <guid>http://blog.jiayuanzhang.com/tags/cors/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Emacs</title>
+      <title>emacs</title>
       <link>http://blog.jiayuanzhang.com/tags/emacs/</link>
       <pubDate>Sat, 10 Oct 2015 00:00:00 +0000</pubDate>
       
@@ -75,16 +65,7 @@
     </item>
     
     <item>
-      <title>Frontend Development</title>
-      <link>http://blog.jiayuanzhang.com/tags/frontend-development/</link>
-      <pubDate>Sun, 02 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.jiayuanzhang.com/tags/frontend-development/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Garbage Collection</title>
+      <title>garbage-collection</title>
       <link>http://blog.jiayuanzhang.com/tags/garbage-collection/</link>
       <pubDate>Fri, 15 Apr 2016 00:00:00 +0000</pubDate>
       
@@ -93,16 +74,25 @@
     </item>
     
     <item>
-      <title>GitHub</title>
-      <link>http://blog.jiayuanzhang.com/tags/github/</link>
+      <title>github-pages</title>
+      <link>http://blog.jiayuanzhang.com/tags/github-pages/</link>
       <pubDate>Sat, 10 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/tags/github/</guid>
+      <guid>http://blog.jiayuanzhang.com/tags/github-pages/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>HTTP</title>
+      <title>gtd</title>
+      <link>http://blog.jiayuanzhang.com/tags/gtd/</link>
+      <pubDate>Fri, 14 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/tags/gtd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>http</title>
       <link>http://blog.jiayuanzhang.com/tags/http/</link>
       <pubDate>Sun, 02 Dec 2018 00:00:00 +0000</pubDate>
       
@@ -111,7 +101,25 @@
     </item>
     
     <item>
-      <title>Linux</title>
+      <title>ipython</title>
+      <link>http://blog.jiayuanzhang.com/tags/ipython/</link>
+      <pubDate>Fri, 28 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/tags/ipython/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jupyter</title>
+      <link>http://blog.jiayuanzhang.com/tags/jupyter/</link>
+      <pubDate>Fri, 28 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/tags/jupyter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
       <link>http://blog.jiayuanzhang.com/tags/linux/</link>
       <pubDate>Thu, 06 Dec 2018 00:00:00 +0000</pubDate>
       
@@ -120,7 +128,7 @@
     </item>
     
     <item>
-      <title>Machine Learning</title>
+      <title>machine-learning</title>
       <link>http://blog.jiayuanzhang.com/tags/machine-learning/</link>
       <pubDate>Thu, 22 Dec 2016 00:00:00 +0000</pubDate>
       
@@ -129,7 +137,7 @@
     </item>
     
     <item>
-      <title>Music</title>
+      <title>music</title>
       <link>http://blog.jiayuanzhang.com/tags/music/</link>
       <pubDate>Sun, 19 Mar 2017 00:00:00 +0000</pubDate>
       
@@ -138,7 +146,7 @@
     </item>
     
     <item>
-      <title>OmniFocus</title>
+      <title>omnifocus</title>
       <link>http://blog.jiayuanzhang.com/tags/omnifocus/</link>
       <pubDate>Fri, 23 Nov 2018 00:00:00 +0000</pubDate>
       
@@ -147,7 +155,7 @@
     </item>
     
     <item>
-      <title>Org Mode</title>
+      <title>org-mode</title>
       <link>http://blog.jiayuanzhang.com/tags/org-mode/</link>
       <pubDate>Sat, 10 Oct 2015 00:00:00 +0000</pubDate>
       
@@ -156,7 +164,7 @@
     </item>
     
     <item>
-      <title>Python</title>
+      <title>python</title>
       <link>http://blog.jiayuanzhang.com/tags/python/</link>
       <pubDate>Thu, 22 Dec 2016 00:00:00 +0000</pubDate>
       
@@ -165,7 +173,7 @@
     </item>
     
     <item>
-      <title>Reading</title>
+      <title>reading</title>
       <link>http://blog.jiayuanzhang.com/tags/reading/</link>
       <pubDate>Wed, 24 Feb 2016 00:00:00 +0000</pubDate>
       
@@ -174,16 +182,25 @@
     </item>
     
     <item>
-      <title>Recommendation System</title>
-      <link>http://blog.jiayuanzhang.com/tags/recommendation-system/</link>
-      <pubDate>Thu, 22 Dec 2016 00:00:00 +0000</pubDate>
+      <title>reading-notes</title>
+      <link>http://blog.jiayuanzhang.com/tags/reading-notes/</link>
+      <pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/tags/recommendation-system/</guid>
+      <guid>http://blog.jiayuanzhang.com/tags/reading-notes/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Spotify</title>
+      <title>sftp</title>
+      <link>http://blog.jiayuanzhang.com/tags/sftp/</link>
+      <pubDate>Thu, 06 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/tags/sftp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spotify</title>
       <link>http://blog.jiayuanzhang.com/tags/spotify/</link>
       <pubDate>Sun, 19 Mar 2017 00:00:00 +0000</pubDate>
       
@@ -192,7 +209,7 @@
     </item>
     
     <item>
-      <title>Squirrel</title>
+      <title>squirrel</title>
       <link>http://blog.jiayuanzhang.com/tags/squirrel/</link>
       <pubDate>Wed, 11 Nov 2015 00:00:00 +0000</pubDate>
       
@@ -201,7 +218,7 @@
     </item>
     
     <item>
-      <title>Swift</title>
+      <title>swift</title>
       <link>http://blog.jiayuanzhang.com/tags/swift/</link>
       <pubDate>Fri, 15 Apr 2016 00:00:00 +0000</pubDate>
       
@@ -210,7 +227,7 @@
     </item>
     
     <item>
-      <title>Time Management</title>
+      <title>time-management</title>
       <link>http://blog.jiayuanzhang.com/tags/time-management/</link>
       <pubDate>Fri, 23 Nov 2018 00:00:00 +0000</pubDate>
       
@@ -219,7 +236,7 @@
     </item>
     
     <item>
-      <title>Toggl</title>
+      <title>toggl</title>
       <link>http://blog.jiayuanzhang.com/tags/toggl/</link>
       <pubDate>Sun, 10 Apr 2016 00:00:00 +0000</pubDate>
       
@@ -228,38 +245,11 @@
     </item>
     
     <item>
-      <title>Weekly Review</title>
-      <link>http://blog.jiayuanzhang.com/tags/weekly-review/</link>
-      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      <title>virtualenv</title>
+      <link>http://blog.jiayuanzhang.com/tags/virtualenv/</link>
+      <pubDate>Sun, 17 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/tags/weekly-review/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>weekly-review</title>
-      <link>http://blog.jiayuanzhang.com/tags/weekly-review/</link>
-      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.jiayuanzhang.com/tags/weekly-review/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>代码大全</title>
-      <link>http://blog.jiayuanzhang.com/tags/%E4%BB%A3%E7%A0%81%E5%A4%A7%E5%85%A8/</link>
-      <pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.jiayuanzhang.com/tags/%E4%BB%A3%E7%A0%81%E5%A4%A7%E5%85%A8/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>程序员修炼之道</title>
-      <link>http://blog.jiayuanzhang.com/tags/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%BF%AE%E7%82%BC%E4%B9%8B%E9%81%93/</link>
-      <pubDate>Thu, 17 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.jiayuanzhang.com/tags/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%BF%AE%E7%82%BC%E4%B9%8B%E9%81%93/</guid>
+      <guid>http://blog.jiayuanzhang.com/tags/virtualenv/</guid>
       <description></description>
     </item>
     

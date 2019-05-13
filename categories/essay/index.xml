@@ -6,10 +6,19 @@
     <description>Recent content in Essay on Jiayuan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 24 Mar 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 04 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://blog.jiayuanzhang.com/categories/essay/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>使用 Devonthink 来写博客</title>
+      <link>http://blog.jiayuanzhang.com/post/use-devonthink-to-write-blog/</link>
+      <pubDate>Sat, 04 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/use-devonthink-to-write-blog/</guid>
+      <description>这是一篇测试博客. 自定义 tag 自定义时间 this is just a test</description>
+    </item>
     
     <item>
       <title>这周在读什么 Issue#1</title>
@@ -21,7 +30,7 @@
     </item>
     
     <item>
-      <title>叛逃 Spotify</title>
+      <title>go-to-spotify</title>
       <link>http://blog.jiayuanzhang.com/post/go-to-spotify/</link>
       <pubDate>Sun, 19 Mar 2017 00:00:00 +0000</pubDate>
       
@@ -30,18 +39,9 @@
     </item>
     
     <item>
-      <title>2016 音乐总结</title>
-      <link>http://blog.jiayuanzhang.com/post/digital-life-in-2016-music-part/</link>
-      <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.jiayuanzhang.com/post/digital-life-in-2016-music-part/</guid>
-      <description>最近知乎上的一个朋友和我私信聊了一些关于效率工具以及 Workflow（此处指的是「工作流」）方面的一些问题。聊的内容比较碎片，所以还是打算写一篇文章来具体讨论一下。考虑到会涉及很多不同的主题，所以还是一个主题写一篇，这样也可以控制文章的长度。暂定按照以下主题来写：音乐篇、阅读篇、</description>
-    </item>
-    
-    <item>
       <title>换了一个新地方写东西</title>
       <link>http://blog.jiayuanzhang.com/post/new-blog/</link>
-      <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 04 Feb 2017 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/new-blog/</guid>
       <description>现在这个博客只写技术相关的内容，其他的随笔都写在新博客里，Medium 是被大陆屏蔽的，所以请自备梯子。另外一些比较私人的笔记——例如「Week Review」系列就不发表在互联网上了。 至于原因，单纯得觉得 Medium 上的衬线字体很好看。如果需要魔改这个博客的话，还是挺麻烦的，自己目前的前端知</description>

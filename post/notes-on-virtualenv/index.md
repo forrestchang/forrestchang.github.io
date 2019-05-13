@@ -1,3 +1,4 @@
+  
 
 ## 安装
 
@@ -86,3 +87,4 @@ $ virtualenv -p /usr/local/bin/python3.5 ENV3.5
 ```
 (ENV)$ virutalenv --relocatable ./
 ```
+

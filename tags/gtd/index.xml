@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gtd on Jiayuan&#39;s Blog</title>
+    <link>http://blog.jiayuanzhang.com/tags/gtd/</link>
+    <description>Recent content in gtd on Jiayuan&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 14 Feb 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.jiayuanzhang.com/tags/gtd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>谈谈时间管理</title>
+      <link>http://blog.jiayuanzhang.com/post/notes-on-time-management/</link>
+      <pubDate>Fri, 14 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/notes-on-time-management/</guid>
+      <description>初次看到时间管理这个概念大概是高二的时候，在此之前，我一直在使用所谓的To-do List来管理自己每天的学习任务（那个时候还不知道）。知道了时间管理这个概念后，惊讶于原来自己早就在对时间进行管理了，只不过最简单的管理方式（后来实践表明，仅仅一个任务清单就足够了）。 在知道了时间管理</description>
+    </item>
+    
+  </channel>
+</rss>

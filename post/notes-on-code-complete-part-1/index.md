@@ -1,4 +1,4 @@
-
+  
 这本书最开始是大一的时候买的，买回来后翻了一些章节就成为了显示器的支架，直到最近工作了一段时间才重新开始读，这一次阅读和几年前初次阅读有很大不同，大一阅读时候的编码经验仅仅是局限于算法方面，对大型项目的构建没有特别多感触；这一次是在写了很多业务代码，积累了一定问题的基础上去阅读的，阅读的深度自然不是第一次阅读可以比较的。
 
 和这本书类似的还有一本叫做 [《程序员修炼之道——从小工到专家》](https://book.douban.com/subject/1152111/)（我也写过 [笔记](http://blog.jiayuanzhang.com/post/notes-on-the-pragmatic-programmer-part-1/)）。这本书讲了很多软件工程领域的行话和规则，比如熟悉的 [DRY 原则](https://zh.wikipedia.org/wiki/%E4%B8%80%E6%AC%A1%E4%B8%94%E4%BB%85%E4%B8%80%E6%AC%A1)，如果觉得《代码大全》比较厚（大概九百多页），也可以先读一下这本书。
@@ -218,3 +218,4 @@ IDE 和代码编辑器也提供了很好的格式化代码的功能，例如 Jeb
 - [Camel case - Wikipedia](https://en.wikipedia.org/wiki/Camel_case)
 - [Hungarian notation - Wikipedia](https://en.wikipedia.org/wiki/Hungarian_notation)
 - [Code Complete: A Practical Handbook of Software Construction, Second Edition: Steve McConnell: 0790145196705: Amazon.com: Books](https://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670)
+
