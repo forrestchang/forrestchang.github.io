@@ -3,13 +3,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.jiayuanzhang.com/post/use-devonthink-to-write-blog/</loc>
-    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.jiayuanzhang.com/post/notes-on-code-complete-part-1/</loc>
     <lastmod>2019-05-06T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -255,14 +248,14 @@
   
   <url>
     <loc>http://blog.jiayuanzhang.com/categories/essay/</loc>
-    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://blog.jiayuanzhang.com/</loc>
-    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0</priority>
   </url>
@@ -276,7 +269,7 @@
   
   <url>
     <loc>http://blog.jiayuanzhang.com/post/</loc>
-    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0</priority>
   </url>
