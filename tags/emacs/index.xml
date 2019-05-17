@@ -6,10 +6,37 @@
     <description>Recent content in emacs on Jiayuan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 10 Oct 2015 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 07 May 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://blog.jiayuanzhang.com/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2017 Week 19 Review</title>
+      <link>http://blog.jiayuanzhang.com/post/2017-week-19-review/</link>
+      <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/2017-week-19-review/</guid>
+      <description>警告 因为七牛云已取消测试域名，文章中的图片已丢失。 之前有在博客上写 Weekly Review 的习惯，后来因为被朋友说博客真水然后都撤下来了，有些文章确实是类似于「流水账」的记事，但也有一些是围绕这周做的东西来讨论的。总的来说，写 Weekly Review 对自己帮助还是很大的，可以在一周中 Focus 一个特定的主题，而不是想到什么做什</description>
+    </item>
+    
+    <item>
+      <title>2016 Week 52 Review</title>
+      <link>http://blog.jiayuanzhang.com/post/2016-week-52-review/</link>
+      <pubDate>Mon, 26 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/2016-week-52-review/</guid>
+      <description>2016 年最后一周（实际上还有6天，不过那一周就算到 2017 年第一周吧）。 编程：这周在看《Python 网络数据采集》，以前虽然也用过爬虫，但是毕竟没有系统地学过，所以还是找了一本书来看。但是说实话，这本书写得并不是很好，不知道是写书时间的原因还是什么，挺多语法错误的，而且代码的风格很差（完全</description>
+    </item>
+    
+    <item>
+      <title>2016 Week 39 Review</title>
+      <link>http://blog.jiayuanzhang.com/post/2016-week-39-review/</link>
+      <pubDate>Sun, 25 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/2016-week-39-review/</guid>
+      <description>编程 总的来说，好像这一周并没有做出什么东西来。本来是在看《Web Scraping with Python》这本书的，可以看到后面发现错误挺多的，都有一些最基本的语法错误，所以索性就直接不看了。然后知乎专栏的爬虫也一直没有开始写。 从前几周就开始使用 VS Code 了，比想象中的好用很多，上一次使用还是刚出的时候，很多</description>
+    </item>
     
     <item>
       <title>使用Emacs Org-mode &#43; GitHub Pages 来写博客</title>

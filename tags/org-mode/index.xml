@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>2017 Week 19 Review</title>
+      <link>http://blog.jiayuanzhang.com/post/2017-week-19-review/</link>
+      <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/2017-week-19-review/</guid>
+      <description>警告 因为七牛云已取消测试域名，文章中的图片已丢失。 之前有在博客上写 Weekly Review 的习惯，后来因为被朋友说博客真水然后都撤下来了，有些文章确实是类似于「流水账」的记事，但也有一些是围绕这周做的东西来讨论的。总的来说，写 Weekly Review 对自己帮助还是很大的，可以在一周中 Focus 一个特定的主题，而不是想到什么做什</description>
+    </item>
+    
+    <item>
       <title>使用Emacs Org-mode &#43; GitHub Pages 来写博客</title>
       <link>http://blog.jiayuanzhang.com/post/how-to-use-emacs-and-org-mode-to-build-a-blog/</link>
       <pubDate>Sat, 10 Oct 2015 00:00:00 +0000</pubDate>

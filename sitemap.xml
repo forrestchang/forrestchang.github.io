@@ -359,7 +359,7 @@
   
   <url>
     <loc>http://blog.jiayuanzhang.com/tags/emacs/</loc>
-    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0</priority>
   </url>
@@ -512,6 +512,13 @@
   </url>
   
   <url>
+    <loc>http://blog.jiayuanzhang.com/tags/todoist/</loc>
+    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.jiayuanzhang.com/tags/toggl/</loc>
     <lastmod>2019-05-06T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -521,6 +528,13 @@
   <url>
     <loc>http://blog.jiayuanzhang.com/tags/virtualenv/</loc>
     <lastmod>2019-05-06T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/tags/vscode/</loc>
+    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0</priority>
   </url>

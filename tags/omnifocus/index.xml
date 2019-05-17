@@ -20,5 +20,14 @@
       <description>这篇文章主要分享一下我多年使用的一套任务管理系统的经验，工具是次要的，主要是一些想法的实践。有了基本的思路，无论是 OmniFocus、Todoist 还是 org-mode（Emacs 中的一个时间管理模式），都可以有自己的一套方式来实践。本篇文章主要以 OmniFocus 3 为载体来介绍这些内容。 每个人</description>
     </item>
     
+    <item>
+      <title>2017 Week 19 Review</title>
+      <link>http://blog.jiayuanzhang.com/post/2017-week-19-review/</link>
+      <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/2017-week-19-review/</guid>
+      <description>警告 因为七牛云已取消测试域名，文章中的图片已丢失。 之前有在博客上写 Weekly Review 的习惯，后来因为被朋友说博客真水然后都撤下来了，有些文章确实是类似于「流水账」的记事，但也有一些是围绕这周做的东西来讨论的。总的来说，写 Weekly Review 对自己帮助还是很大的，可以在一周中 Focus 一个特定的主题，而不是想到什么做什</description>
+    </item>
+    
   </channel>
 </rss>

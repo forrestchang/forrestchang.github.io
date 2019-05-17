@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vscode on Jiayuan&#39;s Blog</title>
+    <link>http://blog.jiayuanzhang.com/tags/vscode/</link>
+    <description>Recent content in vscode on Jiayuan&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 25 Sep 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.jiayuanzhang.com/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2016 Week 39 Review</title>
+      <link>http://blog.jiayuanzhang.com/post/2016-week-39-review/</link>
+      <pubDate>Sun, 25 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/2016-week-39-review/</guid>
+      <description>编程 总的来说，好像这一周并没有做出什么东西来。本来是在看《Web Scraping with Python》这本书的，可以看到后面发现错误挺多的，都有一些最基本的语法错误，所以索性就直接不看了。然后知乎专栏的爬虫也一直没有开始写。 从前几周就开始使用 VS Code 了，比想象中的好用很多，上一次使用还是刚出的时候，很多</description>
+    </item>
+    
+  </channel>
+</rss>
