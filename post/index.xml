@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Jiayuan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 04 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 23 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://blog.jiayuanzhang.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>修改 OmniFocus 3 的字体的外观</title>
+      <link>http://blog.jiayuanzhang.com/post/how-to-modify-omnifocus-3-theme/</link>
+      <pubDate>Thu, 23 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/how-to-modify-omnifocus-3-theme/</guid>
+      <description>OmniFocus 3 提供了 Dark Mode，但是却没有提供自定义主题的功能，Dark Mode 看久了也会腻，所以最近又切换到 Light Mode 下来了。搜索了一下，看到这篇讨论：Is it possible to reduce fontsize or fontstyle of the headline of a perspective? - OmniFocus / OmniFocus for Mac - The Omni Group Forums。可以通过修改配置的方式来修改 OmniFocus 的主题。 具体的修改方法为： 在 /Applications/OmniFocus.app/Contents/Resources/ThemeResources/SystemFont 下面修改字体的大小和页边</description>
+    </item>
     
     <item>
       <title>使用 Devonthink 来写博客</title>

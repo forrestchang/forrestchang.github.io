@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.jiayuanzhang.com/post/how-to-modify-omnifocus-3-theme/</loc>
+    <lastmod>2019-05-23T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.jiayuanzhang.com/post/use-devonthink-to-write-blog/</loc>
     <lastmod>2019-05-13T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -262,7 +269,7 @@
   
   <url>
     <loc>http://blog.jiayuanzhang.com/</loc>
-    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-23T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0</priority>
   </url>
@@ -276,14 +283,14 @@
   
   <url>
     <loc>http://blog.jiayuanzhang.com/post/</loc>
-    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-23T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://blog.jiayuanzhang.com/categories/productivity/</loc>
-    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-23T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0</priority>
   </url>
@@ -443,7 +450,7 @@
   
   <url>
     <loc>http://blog.jiayuanzhang.com/tags/omnifocus/</loc>
-    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-23T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0</priority>
   </url>

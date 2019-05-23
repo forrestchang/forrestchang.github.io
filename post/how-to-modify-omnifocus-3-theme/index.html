@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>修改 OmniFocus 3 的字体的外观 - Jiayuan&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Jiayuan" /><meta name="description" content="OmniFocus 3 提供了 Dark Mode，但是却没有提供自定义主题的功能，Dark Mode 看久了也会腻，所以最近又切换到 Light Mode 下来了。搜索了一下，看到这篇讨论：Is it possible to reduce fontsize or fontstyle of the headline of a perspective? - OmniFocus / OmniFocus for Mac - The Omni Group Forums。可以通过修改配置的方式来修改 OmniFocus 的主题。 具体的修改方法为： 在 /Applications/OmniFocus.app/Contents/Resources/ThemeResources/SystemFont 下面修改字体的大小和页边" /><meta name="keywords" content="blog, time-management, knowledge-management, python, programming, linux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.0-DEV with even 4.0.0" />
+
+
+<link rel="canonical" href="http://blog.jiayuanzhang.com/post/how-to-modify-omnifocus-3-theme/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.0d83b4ab.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="修改 OmniFocus 3 的字体的外观" />
+<meta property="og:description" content="OmniFocus 3 提供了 Dark Mode，但是却没有提供自定义主题的功能，Dark Mode 看久了也会腻，所以最近又切换到 Light Mode 下来了。搜索了一下，看到这篇讨论：Is it possible to reduce fontsize or fontstyle of the headline of a perspective? - OmniFocus / OmniFocus for Mac - The Omni Group Forums。可以通过修改配置的方式来修改 OmniFocus 的主题。 具体的修改方法为： 在 /Applications/OmniFocus.app/Contents/Resources/ThemeResources/SystemFont 下面修改字体的大小和页边" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.jiayuanzhang.com/post/how-to-modify-omnifocus-3-theme/" />
+<meta property="article:published_time" content="2019-05-23T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-05-23T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="修改 OmniFocus 3 的字体的外观">
+<meta itemprop="description" content="OmniFocus 3 提供了 Dark Mode，但是却没有提供自定义主题的功能，Dark Mode 看久了也会腻，所以最近又切换到 Light Mode 下来了。搜索了一下，看到这篇讨论：Is it possible to reduce fontsize or fontstyle of the headline of a perspective? - OmniFocus / OmniFocus for Mac - The Omni Group Forums。可以通过修改配置的方式来修改 OmniFocus 的主题。 具体的修改方法为： 在 /Applications/OmniFocus.app/Contents/Resources/ThemeResources/SystemFont 下面修改字体的大小和页边">
+
+
+<meta itemprop="datePublished" content="2019-05-23T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-05-23T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="557">
+
+
+
+<meta itemprop="keywords" content="omnifocus," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="修改 OmniFocus 3 的字体的外观"/>
+<meta name="twitter:description" content="OmniFocus 3 提供了 Dark Mode，但是却没有提供自定义主题的功能，Dark Mode 看久了也会腻，所以最近又切换到 Light Mode 下来了。搜索了一下，看到这篇讨论：Is it possible to reduce fontsize or fontstyle of the headline of a perspective? - OmniFocus / OmniFocus for Mac - The Omni Group Forums。可以通过修改配置的方式来修改 OmniFocus 的主题。 具体的修改方法为： 在 /Applications/OmniFocus.app/Contents/Resources/ThemeResources/SystemFont 下面修改字体的大小和页边"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Jiayuan&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="http://jiayuanzhang.com">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Jiayuan&#39;s Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="http://jiayuanzhang.com">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">修改 OmniFocus 3 的字体的外观</h1>
+
+      <div class="post-meta">
+        <span class="post-time">Posted on <a href="">2019-05-23</a></a> </span>
+        <div class="post-category">
+            <a href="/categories/productivity/"> Productivity </a>
+            </div>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+        <span class="more-meta">
+          Written by
+          <a href="">
+          
+            Jiayuan
+          
+          </a>
+        </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    
+  </div>
+</div>
+    <div class="post-content">
+      <p>OmniFocus 3 提供了 Dark Mode，但是却没有提供自定义主题的功能，Dark Mode 看久了也会腻，所以最近又切换到 Light Mode 下来了。搜索了一下，看到这篇讨论：<a href="https://discourse.omnigroup.com/t/is-it-possible-to-reduce-fontsize-or-fontstyle-of-the-headline-of-a-perspective/44258/8?u=jannock">Is it possible to reduce fontsize or fontstyle of the headline of a perspective? - OmniFocus / OmniFocus for Mac - The Omni Group Forums</a>。可以通过修改配置的方式来修改 OmniFocus 的主题。</p>
+
+<p><img src="https://raw.githubusercontent.com/forrestchang/img-repo/master/20190523111224.png" alt="" /></p>
+
+<p>具体的修改方法为：</p>
+
+<p>在 <code>/Applications/OmniFocus.app/Contents/Resources/ThemeResources/SystemFont</code> 下面修改字体的大小和页边距，首先我们先修改边距大小，我默认选择的是 Extra Large 的字体，所以需要修改 <code>OFIExtraLargeLayoutConstraintConstants.plit</code>。</p>
+
+<p>找到以下代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;key&gt;</span>extraPaddingBelowNoteForActionCells<span class="nt">&lt;/key&gt;</span>
+<span class="nt">&lt;real&gt;</span>20<span class="nt">&lt;/real&gt;</span>
+<span class="nt">&lt;key&gt;</span>extraPaddingBelowNoteForColumnarActionCells<span class="nt">&lt;/key&gt;</span>
+<span class="nt">&lt;real&gt;</span>20<span class="nt">&lt;/real&gt;</span>
+<span class="nt">&lt;key&gt;</span>extraPaddingBelowNoteForProjectCells<span class="nt">&lt;/key&gt;</span>
+<span class="nt">&lt;real&gt;</span>20<span class="nt">&lt;/real&gt;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>然后把 <code>real</code> 的值设定成自己想要的就好了，我这边设定为 20，最后看起来的效果还可以。</p>
+
+<p>然后修改 Note 的字体，打开 <code>OFIFontRegistry.plit</code>，找到以下代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;key&gt;</span>OFITextStyleNoteBody<span class="nt">&lt;/key&gt;</span>
+<span class="nt">&lt;dict&gt;</span>
+	<span class="nt">&lt;key&gt;</span>content-sizes<span class="nt">&lt;/key&gt;</span>
+	<span class="nt">&lt;array&gt;</span>
+		<span class="nt">&lt;real&gt;</span>13<span class="nt">&lt;/real&gt;</span>
+		<span class="nt">&lt;real&gt;</span>13<span class="nt">&lt;/real&gt;</span>
+		<span class="nt">&lt;real&gt;</span>14<span class="nt">&lt;/real&gt;</span>
+		<span class="nt">&lt;real&gt;</span>15<span class="nt">&lt;/real&gt;</span>
+		<span class="nt">&lt;real&gt;</span>16<span class="nt">&lt;/real&gt;</span>
+	<span class="nt">&lt;/array&gt;</span>
+	<span class="nt">&lt;key&gt;</span>font-name<span class="nt">&lt;/key&gt;</span>
+	<span class="nt">&lt;string&gt;</span>regular<span class="nt">&lt;/string&gt;</span>
+<span class="nt">&lt;/dict&gt;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>依次修改 <code>real</code> 的值，对应 OmniFocus 的以下配置：</p>
+
+<p><img src="https://raw.githubusercontent.com/forrestchang/img-repo/master/20190523112118.png" alt="" /></p>
+
+<p>Next Action, Due 和 Overdue 的颜色可以在 <code>/Applications/OmniFocus.app/Contents/Resources/ThemeResources/</code> 下面修改，找到对应的主题，例如我现在使用的是 Light Mode，就修改 <code>30-Light-ColoredText/OFIThemeAppearance.plist</code> 文件。</p>
+
+<p>其中颜色的值使用的 NSColor HSB<sup class="footnote-ref" id="fnref:nscolor"><a href="#fn:nscolor">1</a></sup> 格式的，需要对 RGB 或者 Hex 格式的颜色值做一下转换，可以找到喜欢的颜色值，然后在<a href="https://rgb.to/">这个网站</a><sup class="footnote-ref" id="fnref:convert"><a href="#fn:convert">2</a></sup>转换。</p>
+
+<p>把 Resource 中的配置文件浏览了一下，发现还是可以定制很多其他东西的，基于这个可以实现一个主题工具，但是不知道 OmniFocus 更新会不会把 Resource 文件覆盖掉，这个之后测试一下。</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:nscolor"><a href="https://developer.apple.com/documentation/appkit/nscolor">NSColor - AppKit | Apple Developer Documentation</a>
+ <a class="footnote-return" href="#fnref:nscolor"><sup>[return]</sup></a></li>
+<li id="fn:convert"><a href="https://rgb.to/">Convert Hex color #7ca746 to Rgb, Pantone, RAL, HSL, HSV, HSB, JSON. Get color scheme.</a>
+ <a class="footnote-return" href="#fnref:convert"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+    </div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/omnifocus/">omnifocus</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/use-devonthink-to-write-blog/">
+            <span class="next-text nav-default">使用 Devonthink 来写博客</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'tisogasnotes';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:forrestchang7@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/Tisoga" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/forrestchang" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/jiayuan3055/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="http://blog.jiayuanzhang.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2014 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Jiayuan</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-130256365-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function() {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script"); hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?001e800887eba2f8f57ec8059aafdad6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+
+
+
+
+
+</body>
+</html>
