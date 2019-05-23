@@ -1,5 +1,5 @@
   
-OmniFocus 3 提供了 Dark Mode，但是却没有提供自定义主题的功能，Dark Mode 看久了也会腻，所以最近又切换到 Light Mode 下来了。搜索了一下，看到这篇讨论：[Is it possible to reduce fontsize or fontstyle of the headline of a perspective?](https://discourse.omnigroup.com/t/is-it-possible-to-reduce-fontsize-or-fontstyle-of-the-headline-of-a-perspective/44258/8?u=jannock)。可以通过修改配置的方式来修改 OmniFocus 的主题。
+OmniFocus 3 提供了 Dark Mode，但是却没有提供自定义主题的功能，Dark Mode 看久了也会腻，所以最近又切换到 Light Mode 下来了。搜索了一下，看到这篇讨论：[Is it possible to reduce fontsize or fontstyle of the headline of a perspective?](https://discourse.omnigroup.com/t/is-it-possible-to-reduce-fontsize-or-fontstyle-of-the-headline-of-a-perspective/44258/8?u=jannock)，可以通过修改配置的方式来修改 OmniFocus 的主题。
 
 ![](https://raw.githubusercontent.com/forrestchang/img-repo/master/20190523111224.png)
 
