@@ -47,13 +47,13 @@ h3, .h3 {
   font-size: 24px; }
 
 h4, .h4 {
-  font-size: 20px; }
+  font-size: 24px; }
 
 h5, .h5 {
-  font-size: 16px; }
+  font-size: 24px; }
 
 h6, .h6 {
-  font-size: 12px;
+  font-size: 24px;
   text-transform: uppercase;
   letter-spacing: 0.02em; }
 
@@ -66,19 +66,18 @@ a {
 a:hover {
   color: #2B2826;
   text-decoration: none;
-  border-bottom: 1px dotted; }
+  border-bottom: 2px solid #2B2826; }
 
 pre {
   border-left: 8px solid #D7D5D1;
   margin: 32px 0;
   padding-left: 16px;
-  width: 75%;
+  max-width: 100%;
   overflow-x: auto; }
 
 code {
   color: #423F38;
-  font-size: 16px;
-  padding: 1px 4px; }
+  font-size: 18px; }
 
 .prose p, .prose ol, .prose ul {
   font-size: 24px;
@@ -103,6 +102,8 @@ code {
   border-left: 8px solid #D7D5D1;
   font-style: italic; }
   .prose blockquote p {
+    font-size: 24px; }
+  .prose blockquote code {
     font-size: 24px; }
   @media (min-width: 52em) {
     .prose blockquote {
@@ -130,7 +131,6 @@ code {
 
 .prose table {
   border-collapse: collapse;
-  display: block;
   width: 100%;
   margin-bottom: 1.5em;
   overflow: auto;
@@ -380,6 +380,9 @@ code {
 .py-4 {
   padding-top: 64px;
   padding-bottom: 64px; }
+
+.prose.py-4 {
+  padding-bottom: 0px; }
 
 /* Margin */
 .mx-auto {
