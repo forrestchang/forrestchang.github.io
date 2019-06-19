@@ -1,153 +1,67 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
-<head>
+<html>
+  <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>2016 Week 44 Review - Jiayuan&#39;s Blog</title>
-  <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+  <title>
+  
+    2016 Week 44 Review | Jiayuan&#39;s Blog
+  
+  </title>
 
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+  <meta name="description" content="编程，效率和随笔。">
 
+  
+  
+  <link rel="stylesheet" href="/main.css" media="screen">
 
-<meta name="author" content="Jiayuan" /><meta name="description" content="Coding - 本周主要在看《利用 Python 进行数据分析》，大概看了有一半的样子，下周应该能够结束掉。接下来的打算可能是先不看书，而是把What should I learn in data science in 100 hours?这个问题下面的回答内容实践一遍。 Japanese - 日语已经落下好久了，大概还有1个月的时间考试，虽然只是报了一个三级试试水，但是不去考试总感觉" /><meta name="keywords" content="blog, time-management, knowledge-management, python, programming, linux" />
+  <link rel="canonical" href="http://blog.jiayuanzhang.com/post/2016-week-44-review/">
+  <link href="" rel="alternate" type="application/rss+xml" title="Jiayuan&#39;s Blog" />
 
-
-
-
-
-
-<meta name="generator" content="Hugo 0.55.0-DEV with even 4.0.0" />
-
-
-<link rel="canonical" href="http://blog.jiayuanzhang.com/post/2016-week-44-review/" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.60503a49.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
-
-
-<meta property="og:title" content="2016 Week 44 Review" />
-<meta property="og:description" content="Coding - 本周主要在看《利用 Python 进行数据分析》，大概看了有一半的样子，下周应该能够结束掉。接下来的打算可能是先不看书，而是把What should I learn in data science in 100 hours?这个问题下面的回答内容实践一遍。 Japanese - 日语已经落下好久了，大概还有1个月的时间考试，虽然只是报了一个三级试试水，但是不去考试总感觉" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.jiayuanzhang.com/post/2016-week-44-review/" />
-<meta property="article:published_time" content="2016-10-03T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-05-13T00:00:00&#43;00:00"/>
-
-<meta itemprop="name" content="2016 Week 44 Review">
-<meta itemprop="description" content="Coding - 本周主要在看《利用 Python 进行数据分析》，大概看了有一半的样子，下周应该能够结束掉。接下来的打算可能是先不看书，而是把What should I learn in data science in 100 hours?这个问题下面的回答内容实践一遍。 Japanese - 日语已经落下好久了，大概还有1个月的时间考试，虽然只是报了一个三级试试水，但是不去考试总感觉">
-
-
-<meta itemprop="datePublished" content="2016-10-03T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-05-13T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="580">
-
-
-
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="2016 Week 44 Review"/>
-<meta name="twitter:description" content="Coding - 本周主要在看《利用 Python 进行数据分析》，大概看了有一半的样子，下周应该能够结束掉。接下来的打算可能是先不看书，而是把What should I learn in data science in 100 hours?这个问题下面的回答内容实践一遍。 Japanese - 日语已经落下好久了，大概还有1个月的时间考试，虽然只是报了一个三级试试水，但是不去考试总感觉"/>
-
-<!--[if lte IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
-<![endif]-->
-
-<!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
-
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
 </head>
-<body>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="/" class="logo">Jiayuan&#39;s Blog</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    <a href="/categories/">
-        <li class="mobile-menu-item">Categories</li>
-      </a><a href="/tags/">
-        <li class="mobile-menu-item">Tags</li>
-      </a><a href="/post/">
-        <li class="mobile-menu-item">Archives</li>
-      </a><a href="http://jiayuanzhang.com">
-        <li class="mobile-menu-item">About</li>
-      </a>
-  </ul>
-</nav>
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="/" class="logo">Jiayuan&#39;s Blog</a>
-</div>
 
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item">
-        <a class="menu-item-link" href="/categories/">Categories</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/tags/">Tags</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/post/">Archives</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="http://jiayuanzhang.com">About</a>
+
+  
+  <body class="font-smoothing">
+    <header class="px-2 clearfix">
+  <div class="right-lg absolute-lg right-0 top-0">
+    <ul class="mt-1 mt-lg-2 mr-2 mr-lg-3">
+      <li class="inline-block block-lg text-right ml-1 ml-lg-0">
+        <a class="italic h4 bold no-underline" href="http://blog.jiayuanzhang.com">
+          Home
+        </a>
       </li>
-  </ul>
-</nav>
-    </header>
-
-    <main id="main" class="main">
-      <div class="content-wrapper">
-        <div id="content" class="content">
-          <article class="post">
-    
-    <header class="post-header">
-      <h1 class="post-title">2016 Week 44 Review</h1>
-
-      <div class="post-meta">
-        <span class="post-time">Posted on <a href="">2016-10-03</a></a> </span>
-        <div class="post-category">
-            <a href="/categories/journal/"> Journal </a>
-            </div>
-        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
-        <span class="more-meta">
-          Written by
-          <a href="">
-          
-            Jiayuan
-          
-          </a>
-        </span>
-      </div>
-    </header>
-
-    <div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">文章目录</h2>
-  <div class="post-toc-content always-active">
-    
+      
+      <li class="inline-block block-lg text-right ml-1 ml-lg-0">
+        <a class="italic no-underline h4" href="http://blog.jiayuanzhang.com/post">
+          post
+        </a>
+      </li>
+      
+    </ul>
   </div>
-</div>
-    <div class="post-content">
-      <ul>
+</header>
+
+
+    <div>
+      <article class="container mx-auto px-2">
+        <div class="prose mb-4 py-4">
+          <article class="container mx-auto px-2" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="mt-4 mb-2 clearfix header-text">
+    <h1 class="h0 inline-block py-2 mt-4 header-title">2016 Week 44 Review</h1>
+    <div class="clearfix mb-4 py-1">
+      <p class="h4 lh-condensed">
+      <time datetime="2016-10-03T00:00:00Z" itemprop="datePublished">October 3, 2016</time></p>
+      <div class="col-1 sm-width-full border-top-thick">
+      </div>
+    </div>
+  </div>
+
+  <div class="prose py-4" itemprop="articleBody">
+    <ul>
 <li><strong>Coding</strong> - 本周主要在看《利用 Python 进行数据分析》，大概看了有一半的样子，下周应该能够结束掉。接下来的打算可能是先不看书，而是把<a href="https://www.quora.com/What-should-I-learn-in-data-science-in-100-hours">What should I learn in data science in 100 hours?</a>这个问题下面的回答内容实践一遍。</li>
 <li><strong>Japanese</strong> - 日语已经落下好久了，大概还有1个月的时间考试，虽然只是报了一个三级试试水，但是不去考试总感觉白费报名费了，当初以为交了钱就会好好学，然而想多了。另外，日语现在并不是刚需的语言，之前决定学习是为了玩游戏，现在基本想玩的游戏都出了中文，《怪物猎人》玩了几个小时，发现不适合我这种手残。所以到底要不要继续学习日语还有待商榷……</li>
 <li><strong>English</strong> - 英语自从到了大学以来就没有刻意地学过，除了准备托福的那段时间背了一些单词，然后其他都是直接用，导致了现在听说读写水平参差不齐，听力和阅读还算可以（至少能听懂和读懂技术相关的内容），口语基本就是没有说过，写作也没怎么练过，写一些基本的句子也要查语法（靠语感来写作结果就是一堆语法错……）。相比较日语来说，英语还算一个刚需的技能，尤其是写作和口语部分，还需要加强训练。接下来的一段时间内也会把英语学习提到日程上来，暂时的计划还没有想好，先加到 TODO 中。</li>
@@ -155,128 +69,78 @@
 <li><strong>Game</strong> - 等《精灵宝可梦 日月》发售，还有20天的样子，没有预定，直接买现货或者买下载版吧。</li>
 </ul>
 
-    </div>
+  </div>
+</article>
 
-    
-    
+<div class="container mx-auto px-2 py-2 clearfix">
+  
 
-    <footer class="post-footer">
-      
-      <nav class="post-nav">
-        <a class="prev" href="/post/2016-week-42-43-review/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">2016 Week 42-43 Review</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/2016-week-40-review/">
-            <span class="next-text nav-default">2016 Week 40 Review</span>
-            <span class="next-text nav-mobile">下一篇</span>
-            <i class="iconfont icon-right"></i>
-          </a>
-      </nav>
-    </footer>
-  </article>
+</div>
+
         </div>
-        
-   
-   <div class="post bg-white">
-     <script src="https://utteranc.es/client.js"
-           repo= "forrestchang/forrestchang.github.io"
-           issue-term="pathname"
-           theme="github-light"
-           label="utterances"
-           crossorigin="anonymous"
-           async>
-     </script>
-   </div>
- 
+      </article>
 
-  
-
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="mailto:forrestchang7@email.com" class="iconfont icon-email" title="email"></a>
-      <a href="https://twitter.com/Tisoga" class="iconfont icon-twitter" title="twitter"></a>
-      <a href="https://github.com/forrestchang" class="iconfont icon-github" title="github"></a>
-      <a href="https://www.instagram.com/jiayuan3055/" class="iconfont icon-instagram" title="instagram"></a>
-  <a href="http://blog.jiayuanzhang.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
-</div>
-
-<div class="copyright">
-  <span class="power-by">
-    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    主题 - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
-
-  <div class="busuanzi-footer">
-    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
-      <span class="division">|</span>
-    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
-  </div>
-
-  <span class="copyright-year">
-    &copy; 
-    2014 - 
-    2019
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">Jiayuan</span>
-  </span>
-</div>
-    </footer>
-
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
+      <div>
+        <div class="post bg-white">
+        <script src="https://utteranc.es/client.js"
+            repo= "forrestchang/forrestchang.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            label="utterances"
+            crossorigin="anonymous"
+            async>
+        </script>
     </div>
+      </div>
+    </div>
+
+    <div class="container mx-auto clearfix mt-2 mt-lg-4 px-2">
+  <div class="border-top-thick">
+    <p class="col-8 sm-width-full left py-2 mb-0">
+      This project is maintained by
+      <a
+        class="text-accent"
+        href="https://github.com/forrestchang"
+        >forrestchang</a
+      >
+    </p>
+    <ul class="list-reset right clearfix sm-width-full py-2 mb-2 mb-lg-0">
+      <li class="inline-block mr-1">
+        <a
+          href="https://twitter.com/share"
+          class="twitter-share-button"
+          data-hashtags="2016 Week 44 Review"
+          >Tweet</a
+        >
+        <script>
+          !(function(d, s, id) {
+            var js,
+              fjs = d.getElementsByTagName(s)[0],
+              p = /^http:/.test(d.location) ? "http" : "https";
+            if (!d.getElementById(id)) {
+              js = d.createElement(s);
+              js.id = id;
+              js.src = p + "://platform.twitter.com/widgets.js";
+              fjs.parentNode.insertBefore(js, fjs);
+            }
+          })(document, "script", "twitter-wjs");
+        </script>
+      </li>
+      <li class="inline-block">
+        <a
+          class="github-button"
+          href="https://github.com/forrestchang/forrestchang.github.io"
+          data-icon="octicon-star"
+          data-count-href="forrestchang/forrestchang.github.io/stargazers"
+          data-count-api="/repos/forrestchang/forrestchang.github.io#stargazers_count"
+          data-count-aria-label="# stargazers on GitHub"
+          aria-label="Star forrestchang/forrestchang.github.io on GitHub"
+          >Star</a
+        >
+      </li>
+    </ul>
   </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
-  <script type="text/javascript">
-    window.MathJax = {
-      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
-      showProcessingMessages: false,
-      messageStyle: 'none'
-    };
-  </script>
-  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+</div>
 
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-130256365-1', 'auto');
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-<script id="baidu_analytics">
-  var _hmt = _hmt || [];
-  (function() {
-    if (window.location.hostname === 'localhost') return;
-    var hm = document.createElement("script"); hm.async = true;
-    hm.src = "https://hm.baidu.com/hm.js?001e800887eba2f8f57ec8059aafdad6";
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
-  })();
-</script>
-
-
-
-
-
-
-</body>
+  </body>
 </html>
