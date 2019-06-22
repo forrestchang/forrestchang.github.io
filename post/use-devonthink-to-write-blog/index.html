@@ -1,153 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>使用 Devonthink 来写博客 - Jiayuan&#39;s Blog</title>
-  <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="content-language" content="zh-CN" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    
+    
+    <title>使用 Devonthink 来写博客</title>
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+    
 
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function(event) {
+                anchors.options = {
+                visible: 'hover',
+                placement: 'left',
+                icon: "¶"
+                };
+            anchors.add();
+            })
+        </script>
+        
+        
 
+        
 
-<meta name="author" content="Jiayuan" /><meta name="description" content="虽然博客没有写太多篇，但是写博客的工具却折腾过不少。从最开始的 org-mode，到 Jekyll、Hexo，再到现在的 Hugo，一直没有找到一个满意的工作流。 我的需求： 使用统一的工具来管理笔记和写作的文章； 能够多端同步； 自动化。 之前使用 Hugo 写作的流程是： 在命令行新建一篇文章； 打开 Typora 进" /><meta name="keywords" content="blog, time-management, knowledge-management, python, programming, linux" />
+        
+        
 
+        
+        
+            <link rel="stylesheet" href="http://blog.jiayuanzhang.com/css/main.css">
+        
 
+        
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css" rel="stylesheet">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
 
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
 
-
-
-<meta name="generator" content="Hugo 0.55.0-DEV with even 4.0.0" />
-
-
-<link rel="canonical" href="http://blog.jiayuanzhang.com/post/use-devonthink-to-write-blog/" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.60503a49.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
-
-
-<meta property="og:title" content="使用 Devonthink 来写博客" />
-<meta property="og:description" content="虽然博客没有写太多篇，但是写博客的工具却折腾过不少。从最开始的 org-mode，到 Jekyll、Hexo，再到现在的 Hugo，一直没有找到一个满意的工作流。 我的需求： 使用统一的工具来管理笔记和写作的文章； 能够多端同步； 自动化。 之前使用 Hugo 写作的流程是： 在命令行新建一篇文章； 打开 Typora 进" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.jiayuanzhang.com/post/use-devonthink-to-write-blog/" />
-<meta property="article:published_time" content="2019-05-04T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-05-13T00:00:00&#43;00:00"/>
-
-<meta itemprop="name" content="使用 Devonthink 来写博客">
-<meta itemprop="description" content="虽然博客没有写太多篇，但是写博客的工具却折腾过不少。从最开始的 org-mode，到 Jekyll、Hexo，再到现在的 Hugo，一直没有找到一个满意的工作流。 我的需求： 使用统一的工具来管理笔记和写作的文章； 能够多端同步； 自动化。 之前使用 Hugo 写作的流程是： 在命令行新建一篇文章； 打开 Typora 进">
-
-
-<meta itemprop="datePublished" content="2019-05-04T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-05-13T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1523">
-
-
-
-<meta itemprop="keywords" content="org-mode,blog,devonthink,hugo,jxa,applescript,automation," />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="使用 Devonthink 来写博客"/>
-<meta name="twitter:description" content="虽然博客没有写太多篇，但是写博客的工具却折腾过不少。从最开始的 org-mode，到 Jekyll、Hexo，再到现在的 Hugo，一直没有找到一个满意的工作流。 我的需求： 使用统一的工具来管理笔记和写作的文章； 能够多端同步； 自动化。 之前使用 Hugo 写作的流程是： 在命令行新建一篇文章； 打开 Typora 进"/>
-
-<!--[if lte IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
-<![endif]-->
-
-<!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
+    
 
 </head>
+
+
 <body>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="/" class="logo">Jiayuan&#39;s Blog</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    <a href="/categories/">
-        <li class="mobile-menu-item">Categories</li>
-      </a><a href="/tags/">
-        <li class="mobile-menu-item">Tags</li>
-      </a><a href="/post/">
-        <li class="mobile-menu-item">Archives</li>
-      </a><a href="http://jiayuanzhang.com">
-        <li class="mobile-menu-item">About</li>
-      </a>
-  </ul>
-</nav>
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="/" class="logo">Jiayuan&#39;s Blog</a>
-</div>
+    <script>
+        window.addEventListener("resize", resizeThrottler, false);
 
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item">
-        <a class="menu-item-link" href="/categories/">Categories</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/tags/">Tags</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/post/">Archives</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="http://jiayuanzhang.com">About</a>
-      </li>
-  </ul>
-</nav>
-    </header>
+        var resizeTimeout;
+        function resizeThrottler() {
+        
+        if ( !resizeTimeout ) {
+            resizeTimeout = setTimeout(function() {
+            resizeTimeout = null;
+            actualResizeHandler();
+        
+            
+            }, 66);
+        }
+        }
+        actualResizeHandler()
+        function actualResizeHandler() {
+                if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
+                {
+                    document.body.classList.add('mobile');
+                }else{
+                    document.body.classList.remove('mobile');  
+                }
+    }</script>
 
-    <main id="main" class="main">
-      <div class="content-wrapper">
-        <div id="content" class="content">
-          <article class="post">
     
-    <header class="post-header">
-      <h1 class="post-title">使用 Devonthink 来写博客</h1>
-
-      <div class="post-meta">
-        <span class="post-time">Posted on <a href="">2019-05-04</a></a> </span>
-        <div class="post-category">
-            <a href="/categories/essay/"> Essay </a>
-            </div>
-        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
-        <span class="more-meta">
-          Written by
-          <a href="">
-          
-            Jiayuan
-          
-          </a>
-        </span>
-      </div>
-    </header>
-
-    <div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">Contents</h2>
-  <div class="post-toc-content always-active">
     
-  </div>
-</div>
-    <div class="post-content">
-      <p>虽然博客没有写太多篇，但是写博客的工具却折腾过不少。从最开始的 org-mode，到 Jekyll、Hexo，再到现在的 Hugo，一直没有找到一个满意的工作流。</p>
+
+
+    
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+   window.MathJax = {
+     
+     
+     showProcessingMessages: false,
+     messageStyle: 'none'
+   };
+  </script>
+
+
+<div class="inner" style="position:relative;">
+  
+  <div class="side-btn"><a href="http://blog.jiayuanzhang.com/" class="back">Home</a></div>
+  
+<div class="blog-post">
+  <h2>使用 Devonthink 来写博客</h2>
+        <p>虽然博客没有写太多篇，但是写博客的工具却折腾过不少。从最开始的 org-mode，到 Jekyll、Hexo，再到现在的 Hugo，一直没有找到一个满意的工作流。</p>
 
 <p>我的需求：</p>
 
@@ -183,291 +141,148 @@
 <p>实现的逻辑很简单，困难点主要在于 JXA 的文档缺乏，有一些操作需要调用系统的 Objective-C Bridge 来进行（相当于在 JavaScript 中写 Objective-C 的代码）。</p>
 
 <p>我写了一个 Alfred Workflow 来完成这个功能，核心代码如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt">  1
-</span><span class="lnt">  2
-</span><span class="lnt">  3
-</span><span class="lnt">  4
-</span><span class="lnt">  5
-</span><span class="lnt">  6
-</span><span class="lnt">  7
-</span><span class="lnt">  8
-</span><span class="lnt">  9
-</span><span class="lnt"> 10
-</span><span class="lnt"> 11
-</span><span class="lnt"> 12
-</span><span class="lnt"> 13
-</span><span class="lnt"> 14
-</span><span class="lnt"> 15
-</span><span class="lnt"> 16
-</span><span class="lnt"> 17
-</span><span class="lnt"> 18
-</span><span class="lnt"> 19
-</span><span class="lnt"> 20
-</span><span class="lnt"> 21
-</span><span class="lnt"> 22
-</span><span class="lnt"> 23
-</span><span class="lnt"> 24
-</span><span class="lnt"> 25
-</span><span class="lnt"> 26
-</span><span class="lnt"> 27
-</span><span class="lnt"> 28
-</span><span class="lnt"> 29
-</span><span class="lnt"> 30
-</span><span class="lnt"> 31
-</span><span class="lnt"> 32
-</span><span class="lnt"> 33
-</span><span class="lnt"> 34
-</span><span class="lnt"> 35
-</span><span class="lnt"> 36
-</span><span class="lnt"> 37
-</span><span class="lnt"> 38
-</span><span class="lnt"> 39
-</span><span class="lnt"> 40
-</span><span class="lnt"> 41
-</span><span class="lnt"> 42
-</span><span class="lnt"> 43
-</span><span class="lnt"> 44
-</span><span class="lnt"> 45
-</span><span class="lnt"> 46
-</span><span class="lnt"> 47
-</span><span class="lnt"> 48
-</span><span class="lnt"> 49
-</span><span class="lnt"> 50
-</span><span class="lnt"> 51
-</span><span class="lnt"> 52
-</span><span class="lnt"> 53
-</span><span class="lnt"> 54
-</span><span class="lnt"> 55
-</span><span class="lnt"> 56
-</span><span class="lnt"> 57
-</span><span class="lnt"> 58
-</span><span class="lnt"> 59
-</span><span class="lnt"> 60
-</span><span class="lnt"> 61
-</span><span class="lnt"> 62
-</span><span class="lnt"> 63
-</span><span class="lnt"> 64
-</span><span class="lnt"> 65
-</span><span class="lnt"> 66
-</span><span class="lnt"> 67
-</span><span class="lnt"> 68
-</span><span class="lnt"> 69
-</span><span class="lnt"> 70
-</span><span class="lnt"> 71
-</span><span class="lnt"> 72
-</span><span class="lnt"> 73
-</span><span class="lnt"> 74
-</span><span class="lnt"> 75
-</span><span class="lnt"> 76
-</span><span class="lnt"> 77
-</span><span class="lnt"> 78
-</span><span class="lnt"> 79
-</span><span class="lnt"> 80
-</span><span class="lnt"> 81
-</span><span class="lnt"> 82
-</span><span class="lnt"> 83
-</span><span class="lnt"> 84
-</span><span class="lnt"> 85
-</span><span class="lnt"> 86
-</span><span class="lnt"> 87
-</span><span class="lnt"> 88
-</span><span class="lnt"> 89
-</span><span class="lnt"> 90
-</span><span class="lnt"> 91
-</span><span class="lnt"> 92
-</span><span class="lnt"> 93
-</span><span class="lnt"> 94
-</span><span class="lnt"> 95
-</span><span class="lnt"> 96
-</span><span class="lnt"> 97
-</span><span class="lnt"> 98
-</span><span class="lnt"> 99
-</span><span class="lnt">100
-</span><span class="lnt">101
-</span><span class="lnt">102
-</span><span class="lnt">103
-</span><span class="lnt">104
-</span><span class="lnt">105
-</span><span class="lnt">106
-</span><span class="lnt">107
-</span><span class="lnt">108
-</span><span class="lnt">109
-</span><span class="lnt">110
-</span><span class="lnt">111
-</span><span class="lnt">112
-</span><span class="lnt">113
-</span><span class="lnt">114
-</span><span class="lnt">115
-</span><span class="lnt">116
-</span><span class="lnt">117
-</span><span class="lnt">118
-</span><span class="lnt">119
-</span><span class="lnt">120
-</span><span class="lnt">121
-</span><span class="lnt">122
-</span><span class="lnt">123
-</span><span class="lnt">124
-</span><span class="lnt">125
-</span><span class="lnt">126
-</span><span class="lnt">127
-</span><span class="lnt">128
-</span><span class="lnt">129
-</span><span class="lnt">130
-</span><span class="lnt">131
-</span><span class="lnt">132
-</span><span class="lnt">133
-</span><span class="lnt">134
-</span><span class="lnt">135
-</span><span class="lnt">136
-</span><span class="lnt">137
-</span><span class="lnt">138
-</span><span class="lnt">139
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="cm">/**
-</span><span class="cm"> * Constants
-</span><span class="cm"> */</span>
-<span class="k">const</span> <span class="nx">devonthink</span> <span class="o">=</span> <span class="nx">Application</span><span class="p">(</span><span class="s1">&#39;DEVONthink 3&#39;</span><span class="p">)</span>
-<span class="k">const</span> <span class="nx">blogPath</span> <span class="o">=</span> <span class="s1">&#39;/Users/jiayuan/Dropbox/personal-site/blog/content/post/&#39;</span>
+
+<pre><code class="language-javascript">/**
+ * Constants
+ */
+const devonthink = Application('DEVONthink 3')
+const blogPath = '/Users/jiayuan/Dropbox/personal-site/blog/content/post/'
 
 
-<span class="cm">/**
-</span><span class="cm"> * Utils
-</span><span class="cm"> */</span>
+/**
+ * Utils
+ */
 
-<span class="kd">function</span> <span class="nx">formatTime</span><span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="nx">cFormat</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="kc">null</span>
-  <span class="p">}</span>
-  <span class="k">const</span> <span class="nx">format</span> <span class="o">=</span> <span class="nx">cFormat</span> <span class="o">||</span> <span class="s1">&#39;{y}-{m}-{d} {h}:{i}:{s}&#39;</span>
-  <span class="kd">let</span> <span class="nx">date</span>
-  <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">time</span> <span class="o">===</span> <span class="s1">&#39;object&#39;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">date</span> <span class="o">=</span> <span class="nx">time</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">((</span><span class="s1">&#39;&#39;</span> <span class="o">+</span> <span class="nx">time</span><span class="p">).</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">10</span><span class="p">)</span> <span class="nx">time</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">time</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span>
-    <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">time</span><span class="p">)</span>
-  <span class="p">}</span>
-  <span class="k">const</span> <span class="nx">formatObj</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">y</span><span class="o">:</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">(),</span>
-    <span class="nx">m</span><span class="o">:</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nx">d</span><span class="o">:</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getDate</span><span class="p">(),</span>
-    <span class="nx">h</span><span class="o">:</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getHours</span><span class="p">(),</span>
-    <span class="nx">i</span><span class="o">:</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">(),</span>
-    <span class="nx">s</span><span class="o">:</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">(),</span>
-    <span class="nx">a</span><span class="o">:</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getDay</span><span class="p">()</span>
-  <span class="p">}</span>
-  <span class="k">const</span> <span class="nx">time_str</span> <span class="o">=</span> <span class="nx">format</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/{([ymdhisa])+}/g</span><span class="p">,</span> <span class="p">(</span><span class="nx">result</span><span class="p">,</span> <span class="nx">key</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">formatObj</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">key</span> <span class="o">===</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;一&#39;</span><span class="p">,</span> <span class="s1">&#39;二&#39;</span><span class="p">,</span> <span class="s1">&#39;三&#39;</span><span class="p">,</span> <span class="s1">&#39;四&#39;</span><span class="p">,</span> <span class="s1">&#39;五&#39;</span><span class="p">,</span> <span class="s1">&#39;六&#39;</span><span class="p">,</span> <span class="s1">&#39;日&#39;</span><span class="p">][</span><span class="nx">value</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">value</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">value</span> <span class="o">=</span> <span class="s1">&#39;0&#39;</span> <span class="o">+</span> <span class="nx">value</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="nx">value</span> <span class="o">||</span> <span class="mi">0</span>
-  <span class="p">})</span>
-  <span class="k">return</span> <span class="nx">time_str</span>
-<span class="p">}</span>
-
-
-<span class="cm">/**
-</span><span class="cm"> * Functions
-</span><span class="cm"> */</span>
-
-<span class="kd">function</span> <span class="nx">writeToFile</span><span class="p">(</span><span class="nx">filename</span><span class="p">,</span> <span class="nx">path</span><span class="p">,</span> <span class="nx">content</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">path</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">))</span> <span class="p">{</span>
-    <span class="nx">path</span> <span class="o">=</span> <span class="nx">path</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span>
-  <span class="p">}</span>
-  <span class="nx">filePath</span> <span class="o">=</span> <span class="nx">path</span> <span class="o">+</span> <span class="nx">filename</span>
-
-  <span class="nx">contentEncoded</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">NSString</span><span class="p">.</span><span class="nx">alloc</span><span class="p">.</span><span class="nx">initWithUTF8String</span><span class="p">(</span><span class="nx">content</span><span class="p">);</span>
-  <span class="nx">contentEncoded</span><span class="p">.</span><span class="nx">writeToFileAtomicallyEncodingError</span><span class="p">(</span><span class="nx">filePath</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">$</span><span class="p">.</span><span class="nx">NSUTF8StringEncoding</span><span class="p">,</span> <span class="kc">null</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kd">function</span> <span class="nx">getMetaData</span><span class="p">(</span><span class="nx">record</span><span class="p">)</span> <span class="p">{</span>
-
-  <span class="c1">// Get created time
-</span><span class="c1"></span>  <span class="k">const</span> <span class="nx">createdTime</span> <span class="o">=</span> <span class="nx">formatTime</span><span class="p">(</span><span class="nx">record</span><span class="p">.</span><span class="nx">creationDate</span><span class="p">(),</span> <span class="s1">&#39;{y}-{m}-{d}&#39;</span><span class="p">)</span>
-
-  <span class="c1">// Get updated time
-</span><span class="c1"></span>  <span class="k">const</span> <span class="nx">updatedTime</span> <span class="o">=</span> <span class="nx">formatTime</span><span class="p">(</span><span class="nx">record</span><span class="p">.</span><span class="nx">modificationDate</span><span class="p">(),</span> <span class="s1">&#39;{y}-{m}-{d}&#39;</span><span class="p">)</span>
-
-  <span class="c1">// Get file name
-</span><span class="c1"></span>  <span class="k">const</span> <span class="nx">customMetaData</span> <span class="o">=</span> <span class="nx">record</span><span class="p">.</span><span class="nx">customMetaData</span><span class="p">()</span>
-  <span class="kd">let</span> <span class="nx">fileName</span> <span class="o">=</span> <span class="nx">customMetaData</span><span class="p">.</span><span class="nx">mdblogfilename</span>
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">fileName</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="s1">&#39;.md&#39;</span><span class="p">))</span> <span class="p">{</span>
-    <span class="nx">fileName</span> <span class="o">=</span> <span class="nx">fileName</span> <span class="o">+</span> <span class="s1">&#39;.md&#39;</span>
-  <span class="p">}</span>
-
-  <span class="c1">// Get tags
-</span><span class="c1"></span>  <span class="k">const</span> <span class="nx">tags</span> <span class="o">=</span> <span class="nx">record</span><span class="p">.</span><span class="nx">tags</span><span class="p">()</span>
-
-  <span class="c1">// Get categories
-</span><span class="c1"></span>  <span class="k">const</span> <span class="nx">category</span> <span class="o">=</span> <span class="nx">customMetaData</span><span class="p">.</span><span class="nx">mdcategory</span>
-
-  <span class="c1">// Get draft info
-</span><span class="c1"></span>  <span class="k">const</span> <span class="nx">isDraft</span> <span class="o">=</span> <span class="nx">customMetaData</span><span class="p">.</span><span class="nx">mddraft</span>
-
-  <span class="c1">// Get title
-</span><span class="c1"></span>  <span class="k">const</span> <span class="nx">title</span> <span class="o">=</span> <span class="nx">record</span><span class="p">.</span><span class="nx">name</span><span class="p">()</span>
-
-  <span class="k">const</span> <span class="nx">metaData</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">createdTime</span><span class="p">,</span>
-    <span class="nx">updatedTime</span><span class="p">,</span>
-    <span class="nx">fileName</span><span class="p">,</span>
-    <span class="nx">tags</span><span class="p">,</span>
-    <span class="nx">category</span><span class="p">,</span>
-    <span class="nx">title</span><span class="p">,</span>
-    <span class="nx">isDraft</span>
-  <span class="p">}</span>
-
-  <span class="k">return</span> <span class="nx">metaData</span>
-<span class="p">}</span>
-
-<span class="kd">function</span> <span class="nx">generateYamlMetaString</span><span class="p">(</span><span class="nx">metaData</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">yamlMetaString</span> <span class="o">=</span> <span class="sb">`---
-</span><span class="sb">title: </span><span class="si">${</span><span class="nx">metaData</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="sb">
-</span><span class="sb">date: </span><span class="si">${</span><span class="nx">metaData</span><span class="p">.</span><span class="nx">createdTime</span><span class="si">}</span><span class="sb">
-</span><span class="sb">lastmod: </span><span class="si">${</span><span class="nx">metaData</span><span class="p">.</span><span class="nx">updatedTime</span><span class="si">}</span><span class="sb">
-</span><span class="sb">categories: [</span><span class="si">${</span><span class="nx">metaData</span><span class="p">.</span><span class="nx">category</span><span class="si">}</span><span class="sb">]
-</span><span class="sb">tags: [</span><span class="si">${</span><span class="nx">metaData</span><span class="p">.</span><span class="nx">tags</span><span class="si">}</span><span class="sb">]
-</span><span class="sb">draft: </span><span class="si">${</span><span class="nx">metaData</span><span class="p">.</span><span class="nx">isDraft</span> <span class="o">===</span> <span class="kc">true</span><span class="si">}</span><span class="sb">
-</span><span class="sb">---
-</span><span class="sb">  `</span>
-
-  <span class="k">return</span> <span class="nx">yamlMetaString</span>
-<span class="p">}</span>
+function formatTime(time, cFormat) {
+  if (arguments.length === 0) {
+    return null
+  }
+  const format = cFormat || '{y}-{m}-{d} {h}:{i}:{s}'
+  let date
+  if (typeof time === 'object') {
+    date = time
+  } else {
+    if (('' + time).length === 10) time = parseInt(time) * 1000
+    date = new Date(time)
+  }
+  const formatObj = {
+    y: date.getFullYear(),
+    m: date.getMonth() + 1,
+    d: date.getDate(),
+    h: date.getHours(),
+    i: date.getMinutes(),
+    s: date.getSeconds(),
+    a: date.getDay()
+  }
+  const time_str = format.replace(/{([ymdhisa])+}/g, (result, key) =&gt; {
+    let value = formatObj[key]
+    if (key === 'a') return ['一', '二', '三', '四', '五', '六', '日'][value - 1]
+    if (result.length &gt; 0 &amp;&amp; value &lt; 10) {
+      value = '0' + value
+    }
+    return value || 0
+  })
+  return time_str
+}
 
 
-<span class="kd">function</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">const</span> <span class="nx">blogPosts</span> <span class="o">=</span> <span class="nx">devonthink</span><span class="p">.</span><span class="nx">databases</span><span class="p">.</span><span class="nx">byName</span><span class="p">(</span><span class="s1">&#39;02.Writing&#39;</span><span class="p">).</span><span class="nx">parents</span><span class="p">.</span><span class="nx">byName</span><span class="p">(</span><span class="s1">&#39;Blog&#39;</span><span class="p">).</span><span class="nx">children</span><span class="p">()</span>
+/**
+ * Functions
+ */
 
-  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">blogPosts</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">const</span> <span class="nx">selectedRecord</span> <span class="o">=</span> <span class="nx">blogPosts</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+function writeToFile(filename, path, content) {
+  if (!path.endsWith('/')) {
+    path = path + '/'
+  }
+  filePath = path + filename
 
-    <span class="k">const</span> <span class="nx">metaData</span> <span class="o">=</span> <span class="nx">getMetaData</span><span class="p">(</span><span class="nx">selectedRecord</span><span class="p">)</span>
+  contentEncoded = $.NSString.alloc.initWithUTF8String(content);
+  contentEncoded.writeToFileAtomicallyEncodingError(filePath, true, $.NSUTF8StringEncoding, null);
+}
 
-    <span class="k">const</span> <span class="nx">yamlMetaString</span> <span class="o">=</span> <span class="nx">generateYamlMetaString</span><span class="p">(</span><span class="nx">metaData</span><span class="p">)</span>
-    <span class="k">const</span> <span class="nx">content</span> <span class="o">=</span> <span class="nx">selectedRecord</span><span class="p">.</span><span class="nx">plainText</span><span class="p">()</span>
-    <span class="k">const</span> <span class="nx">blogPostContent</span> <span class="o">=</span> <span class="sb">`</span><span class="si">${</span><span class="nx">yamlMetaString</span><span class="si">}</span><span class="sb">
-</span><span class="sb"></span><span class="si">${</span><span class="nx">content</span><span class="si">}</span><span class="sb">
-</span><span class="sb">`</span>
-    <span class="nx">writeToFile</span><span class="p">(</span><span class="nx">metaData</span><span class="p">.</span><span class="nx">fileName</span><span class="p">,</span> <span class="nx">blogPath</span><span class="p">,</span> <span class="nx">blogPostContent</span><span class="p">)</span>
-  <span class="p">}</span>
+function getMetaData(record) {
 
-  <span class="k">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">Application</span><span class="p">.</span><span class="nx">currentApplication</span><span class="p">()</span>
-  <span class="nx">app</span><span class="p">.</span><span class="nx">includeStandardAdditions</span> <span class="o">=</span> <span class="kc">true</span>
+  // Get created time
+  const createdTime = formatTime(record.creationDate(), '{y}-{m}-{d}')
 
-  <span class="nx">app</span><span class="p">.</span><span class="nx">displayNotification</span><span class="p">(</span><span class="sb">`You have generated </span><span class="si">${</span><span class="nx">blogPosts</span><span class="p">.</span><span class="nx">length</span><span class="si">}</span><span class="sb"> articles.`</span><span class="p">,</span> <span class="p">{</span> <span class="nx">withTitle</span><span class="o">:</span> <span class="s1">&#39;Success&#39;</span> <span class="p">})</span>
-<span class="p">}</span>
+  // Get updated time
+  const updatedTime = formatTime(record.modificationDate(), '{y}-{m}-{d}')
 
-<span class="cm">/**
-</span><span class="cm"> * Main
-</span><span class="cm"> */</span>
-<span class="nx">main</span><span class="p">()</span>
-</code></pre></td></tr></table>
-</div>
-</div>
+  // Get file name
+  const customMetaData = record.customMetaData()
+  let fileName = customMetaData.mdblogfilename
+  if (!fileName.endsWith('.md')) {
+    fileName = fileName + '.md'
+  }
+
+  // Get tags
+  const tags = record.tags()
+
+  // Get categories
+  const category = customMetaData.mdcategory
+
+  // Get draft info
+  const isDraft = customMetaData.mddraft
+
+  // Get title
+  const title = record.name()
+
+  const metaData = {
+    createdTime,
+    updatedTime,
+    fileName,
+    tags,
+    category,
+    title,
+    isDraft
+  }
+
+  return metaData
+}
+
+function generateYamlMetaString(metaData) {
+  let yamlMetaString = `---
+title: ${metaData.title}
+date: ${metaData.createdTime}
+lastmod: ${metaData.updatedTime}
+categories: [${metaData.category}]
+tags: [${metaData.tags}]
+draft: ${metaData.isDraft === true}
+---
+  `
+
+  return yamlMetaString
+}
+
+
+function main() {
+  const blogPosts = devonthink.databases.byName('02.Writing').parents.byName('Blog').children()
+
+  for (let i = 0; i &lt; blogPosts.length; i++) {
+    const selectedRecord = blogPosts[i]
+
+    const metaData = getMetaData(selectedRecord)
+
+    const yamlMetaString = generateYamlMetaString(metaData)
+    const content = selectedRecord.plainText()
+    const blogPostContent = `${yamlMetaString}
+${content}
+`
+    writeToFile(metaData.fileName, blogPath, blogPostContent)
+  }
+
+  const app = Application.currentApplication()
+  app.includeStandardAdditions = true
+
+  app.displayNotification(`You have generated ${blogPosts.length} articles.`, { withTitle: 'Success' })
+}
+
+/**
+ * Main
+ */
+main()
+</code></pre>
+
 <p>源代码可以在这里看到：<a href="https://github.com/forrestchang/alfred-workflows/tree/master/src/Devonthink-to-Hugo-Blog">alfred-workflows/src/Devonthink-to-Hugo-Blog at master · forrestchang/alfred-workflows</a>。</p>
 
 <p>如果你需要用到你的工作流中，需要配置以下内容：</p>
@@ -484,136 +299,59 @@
 
 <p><img src="https://raw.githubusercontent.com/forrestchang/img-repo/master/20190513165627.png" alt="" /></p>
 
+  </div>
+
+<br>
+  
+
+
+<br><div class="post bg-white">
+        <script src="https://utteranc.es/client.js"
+            repo= "forrestchang/forrestchang.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            label="utterances"
+            crossorigin="anonymous"
+            async>
+        </script>
     </div>
 
-    
-    
-
-    <footer class="post-footer">
-      <div class="post-tags">
-          <a href="/tags/org-mode/">org-mode</a>
-          <a href="/tags/blog/">blog</a>
-          <a href="/tags/devonthink/">devonthink</a>
-          <a href="/tags/hugo/">hugo</a>
-          <a href="/tags/jxa/">jxa</a>
-          <a href="/tags/applescript/">applescript</a>
-          <a href="/tags/automation/">automation</a>
-          </div>
-      <nav class="post-nav">
-        <a class="prev" href="/post/how-to-modify-omnifocus-3-theme/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">修改 OmniFocus 3 的主题</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/notes-on-code-complete-part-1/">
-            <span class="next-text nav-default">读《代码大全》</span>
-            <span class="next-text nav-mobile">Next</span>
-            <i class="iconfont icon-right"></i>
-          </a>
-      </nav>
-    </footer>
-  </article>
-        </div>
+<footer>
+    <p style="float:right;margin:0 1rem;">
+        &copy; 2019 <a href="https://github.com/">Jiayuan Zhang.</a>
         
-   
-   <div class="post bg-white">
-     <script src="https://utteranc.es/client.js"
-           repo= "forrestchang/forrestchang.github.io"
-           issue-term="pathname"
-           theme="github-light"
-           label="utterances"
-           crossorigin="anonymous"
-           async>
-     </script>
-   </div>
- 
+      </p>
+  <hr>
+  <hr>
 
   
+  <br>
 
-      </div>
-    </main>
 
-    <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="mailto:forrestchang7@email.com" class="iconfont icon-email" title="email"></a>
-      <a href="https://twitter.com/Tisoga" class="iconfont icon-twitter" title="twitter"></a>
-      <a href="https://github.com/forrestchang" class="iconfont icon-github" title="github"></a>
-      <a href="https://www.instagram.com/jiayuan3055/" class="iconfont icon-instagram" title="instagram"></a>
-  <a href="http://blog.jiayuanzhang.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</footer>
 </div>
 
-<div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
 
-  <div class="busuanzi-footer">
-    <span id="busuanzi_container_site_pv"> Site PV: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
-      <span class="division">|</span>
-    <span id="busuanzi_container_site_uv"> Site UV: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
-  </div>
-
-  <span class="copyright-year">
-    &copy; 
-    2014 - 
-    2019
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">Jiayuan</span>
-  </span>
-</div>
-    </footer>
-
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
-    </div>
-  </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
-  <script type="text/javascript">
-    window.MathJax = {
-      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
-      showProcessingMessages: false,
-      messageStyle: 'none'
-    };
-  </script>
-  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-130256365-1', 'auto');
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-<script id="baidu_analytics">
-  var _hmt = _hmt || [];
-  (function() {
-    if (window.location.hostname === 'localhost') return;
-    var hm = document.createElement("script"); hm.async = true;
-    hm.src = "https://hm.baidu.com/hm.js?001e800887eba2f8f57ec8059aafdad6";
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
-  })();
-</script>
 
 
+
+
+
+
+
+
+
+    
 
 
 
 
 </body>
+
 </html>
+

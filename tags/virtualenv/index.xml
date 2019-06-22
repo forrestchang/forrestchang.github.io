@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>virtualenv on Jiayuan&#39;s Blog</title>
+    <title>Virtualenv on Jiayuan&#39;s Blog</title>
     <link>http://blog.jiayuanzhang.com/tags/virtualenv/</link>
-    <description>Recent content in virtualenv on Jiayuan&#39;s Blog</description>
+    <description>Recent content in Virtualenv on Jiayuan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>zh-CN</language>
     <lastBuildDate>Sun, 17 Jul 2016 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://blog.jiayuanzhang.com/tags/virtualenv/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,13 @@
       <pubDate>Sun, 17 Jul 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/notes-on-virtualenv/</guid>
-      <description>安装 直接使用 pip 来进行安装： 1 $ sudo pip install virtualenv 用途 主要用来创建隔离的 Python 开发环境，比如说一个项目需要用到 2.7 的库，另一个项目需要用到 3.0 的库，我们就可以使用 virtualenv 来分别给这两个项目创建虚拟的 Python 环境，这样可以有效的避免冲突。 virtualenv 会创建一个拥有独立安装目录的 Python 环境，该隔离环境不会与其他 virtualenv 环境共享模块（可</description>
+      <description>安装 直接使用 pip 来进行安装：
+$ sudo pip install virtualenv  用途 主要用来创建隔离的 Python 开发环境，比如说一个项目需要用到 2.7 的库，另一个项目需要用到 3.0 的库，我们就可以使用 virtualenv 来分别给这两个项目创建虚拟的 Python 环境，这样可以有效的避免冲突。
+virtualenv 会创建一个拥有独立安装目录的 Python 环境，该隔离环境不会与其他 virtualenv 环境共享模块（可以选择是否访问全局安装目录）。
+使用 创建虚拟环境 最基本的使用：
+$ virtualenv ENV  其中 ENV 是用来存放虚拟环境的目录。
+$tree -L 1 ENV ENV ├── bin ├── include ├── lib └── pip-selfcheck.json  其中 lib 和 include 目录是用来存放新的虚拟 Python 环境的依赖库，Package 被安装到 lib/pythonX.X/site-packages/ 中，bin 目录中是新的 Python 解释器。pip 和 setuptools 默认被安装的。
+active script 进入虚拟环境：</description>
     </item>
     
   </channel>

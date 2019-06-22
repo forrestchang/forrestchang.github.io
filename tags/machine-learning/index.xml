@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>machine-learning on Jiayuan&#39;s Blog</title>
+    <title>Machine Learning on Jiayuan&#39;s Blog</title>
     <link>http://blog.jiayuanzhang.com/tags/machine-learning/</link>
-    <description>Recent content in machine-learning on Jiayuan&#39;s Blog</description>
+    <description>Recent content in Machine Learning on Jiayuan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>zh-CN</language>
     <lastBuildDate>Thu, 22 Dec 2016 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://blog.jiayuanzhang.com/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,16 @@
       <pubDate>Thu, 22 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/notes-on-recommandation-system/</guid>
-      <description>开始学习机器学习/数据挖掘相关的内容，打算每学习一部分知识就写一篇博客总结一下，当做学习过程中的笔记，也为以后看的时候提供存档。 这一篇笔记是关于推荐系统的，主要讲了两种推荐算法（基于用户和基于物品的协同过滤）。 基于用户的协同过滤 协同过滤（Collaborative filterin</description>
+      <description>开始学习机器学习/数据挖掘相关的内容，打算每学习一部分知识就写一篇博客总结一下，当做学习过程中的笔记，也为以后看的时候提供存档。
+这一篇笔记是关于推荐系统的，主要讲了两种推荐算法（基于用户和基于物品的协同过滤）。
+基于用户的协同过滤 协同过滤（Collaborative filtering） 一个协作型过滤算法通常的做法是对一大群人进行搜索，并从中找出与我们品味相近的一小群人。算法会对这些人所偏爱的其他内容进行考察，并将它们组合起来构造出一个经过排名的推荐列表。
+测试数据集 为了演示一些算法，我们需要从这个网站上下载一份数据集。这里因为是作为演示使用，所以只需要下载ml-latest-small.zip这一份简单的数据集就可以了。
+相似度计算 在有了数据之后，我们需要有一种方法来确定人们在品味方面的相似程度。为此，我们可以将每个人与所有其他人进行对比，并计算他们的相似度评价值。
+欧几里德距离评价（Euclidean Distance Score） 欧几里德距离是指多维空间中两点间的距离，这是一种用直尺测量出来的距离。如果我们将两个点分别记作$(p_1, p_2, p_3, p_4, &amp;hellip;)$和$(q_1, q_2, q_3, q_4, &amp;hellip;)$，则欧几里德距离的计算公式为：
+$$ \sqrt{((p_1-q_1)^2+(p_2-q_2)^2+&amp;hellip;+(p_n-qn)^2)} = \sqrt{(\sum{i=1}^n(p_i-q_i)^2)} $$
+创建 recommendations.py。
+用代码表示：
+from math import sqrt # 返回一个有关 person1 与 person2 的基于距离的相似度评价 def sim_distance(prefs, person1, person2): # 得到 shared_items 的列表 shared_items = {} for item in prefs[person1]: if item in prefs[person2]: shared_items[item] = 1 # 如果两者没有共同之处，则返回 0 if len(shared_items) == 0: return 0 # 计算所有差值的平方和 sum_of_squares = sum([pow(prefs[person1][item]-prefs[person2][item], 2)for item in prefs[person1] if item in prefs[person2]]) return 1 / (1 + sqrt(sum_of_squares))  欧几里德距离计算公式可以计算出距离值，偏好越相似的人，其距离就越短。不过，我们还需要一个函数，来对偏好越相近的情况给出越大的值，为此，我们可以将函数的值加 1（这样就可以避免遇到被 0 整除的错误了），并取其倒数，入上面代码最后一行所示。</description>
     </item>
     
   </channel>

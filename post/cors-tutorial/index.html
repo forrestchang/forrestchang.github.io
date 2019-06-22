@@ -1,171 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>跨域资源共享（CORS）详解 - Jiayuan&#39;s Blog</title>
-  <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="content-language" content="zh-CN" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    
+    
+    <title>跨域资源共享（CORS）详解</title>
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+    
 
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function(event) {
+                anchors.options = {
+                visible: 'hover',
+                placement: 'left',
+                icon: "¶"
+                };
+            anchors.add();
+            })
+        </script>
+        
+        
 
+        
 
-<meta name="author" content="Jiayuan" /><meta name="description" content="Web 后端开发者很少会去充分了解跨域问题，原因是他们很少和 JavaScript 打交道。但是作为一个 Web 开发者，知道跨域请求和如何解决跨域问题可以和前端开发者在沟通上变得更为顺畅。 这篇文章会介绍和跨域请求相关的一些概念，以及如何在后端（Python）解决浏览器的跨域请求问题。 一、什么是跨域请求 首先，我们要" /><meta name="keywords" content="blog, time-management, knowledge-management, python, programming, linux" />
+        
+        
 
+        
+        
+            <link rel="stylesheet" href="http://blog.jiayuanzhang.com/css/main.css">
+        
 
+        
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css" rel="stylesheet">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
 
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
 
-
-
-<meta name="generator" content="Hugo 0.55.0-DEV with even 4.0.0" />
-
-
-<link rel="canonical" href="http://blog.jiayuanzhang.com/post/cors-tutorial/" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.60503a49.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
-
-
-<meta property="og:title" content="跨域资源共享（CORS）详解" />
-<meta property="og:description" content="Web 后端开发者很少会去充分了解跨域问题，原因是他们很少和 JavaScript 打交道。但是作为一个 Web 开发者，知道跨域请求和如何解决跨域问题可以和前端开发者在沟通上变得更为顺畅。 这篇文章会介绍和跨域请求相关的一些概念，以及如何在后端（Python）解决浏览器的跨域请求问题。 一、什么是跨域请求 首先，我们要" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.jiayuanzhang.com/post/cors-tutorial/" />
-<meta property="article:published_time" content="2018-12-02T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-05-06T00:00:00&#43;00:00"/>
-
-<meta itemprop="name" content="跨域资源共享（CORS）详解">
-<meta itemprop="description" content="Web 后端开发者很少会去充分了解跨域问题，原因是他们很少和 JavaScript 打交道。但是作为一个 Web 开发者，知道跨域请求和如何解决跨域问题可以和前端开发者在沟通上变得更为顺畅。 这篇文章会介绍和跨域请求相关的一些概念，以及如何在后端（Python）解决浏览器的跨域请求问题。 一、什么是跨域请求 首先，我们要">
-
-
-<meta itemprop="datePublished" content="2018-12-02T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-05-06T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="4086">
-
-
-
-<meta itemprop="keywords" content="cors,http," />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="跨域资源共享（CORS）详解"/>
-<meta name="twitter:description" content="Web 后端开发者很少会去充分了解跨域问题，原因是他们很少和 JavaScript 打交道。但是作为一个 Web 开发者，知道跨域请求和如何解决跨域问题可以和前端开发者在沟通上变得更为顺畅。 这篇文章会介绍和跨域请求相关的一些概念，以及如何在后端（Python）解决浏览器的跨域请求问题。 一、什么是跨域请求 首先，我们要"/>
-
-<!--[if lte IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
-<![endif]-->
-
-<!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
+    
 
 </head>
+
+
 <body>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="/" class="logo">Jiayuan&#39;s Blog</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    <a href="/categories/">
-        <li class="mobile-menu-item">Categories</li>
-      </a><a href="/tags/">
-        <li class="mobile-menu-item">Tags</li>
-      </a><a href="/post/">
-        <li class="mobile-menu-item">Archives</li>
-      </a><a href="http://jiayuanzhang.com">
-        <li class="mobile-menu-item">About</li>
-      </a>
-  </ul>
-</nav>
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="/" class="logo">Jiayuan&#39;s Blog</a>
-</div>
+    <script>
+        window.addEventListener("resize", resizeThrottler, false);
 
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item">
-        <a class="menu-item-link" href="/categories/">Categories</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/tags/">Tags</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/post/">Archives</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="http://jiayuanzhang.com">About</a>
-      </li>
-  </ul>
-</nav>
-    </header>
+        var resizeTimeout;
+        function resizeThrottler() {
+        
+        if ( !resizeTimeout ) {
+            resizeTimeout = setTimeout(function() {
+            resizeTimeout = null;
+            actualResizeHandler();
+        
+            
+            }, 66);
+        }
+        }
+        actualResizeHandler()
+        function actualResizeHandler() {
+                if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
+                {
+                    document.body.classList.add('mobile');
+                }else{
+                    document.body.classList.remove('mobile');  
+                }
+    }</script>
 
-    <main id="main" class="main">
-      <div class="content-wrapper">
-        <div id="content" class="content">
-          <article class="post">
     
-    <header class="post-header">
-      <h1 class="post-title">跨域资源共享（CORS）详解</h1>
+    
 
-      <div class="post-meta">
-        <span class="post-time">Posted on <a href="">2018-12-02</a></a> </span>
-        <div class="post-category">
-            <a href="/categories/programming/"> Programming </a>
-            </div>
-        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
-        <span class="more-meta">
-          Written by
-          <a href="">
-          
-            Jiayuan
-          
-          </a>
-        </span>
-      </div>
-    </header>
 
-    <div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">Contents</h2>
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#一-什么是跨域请求">一、什么是跨域请求</a></li>
-<li><a href="#二-浏览器同源策略">二、浏览器同源策略</a></li>
-<li><a href="#三-cors-cross-origin-resource-sharing-跨域资源共享">三、CORS（Cross-origin resource sharing，跨域资源共享）</a>
-<ul>
-<li><a href="#3-1-什么是-cors">3.1 什么是 CORS</a></li>
-<li><a href="#3-2-简单请求-simple-requests">3.2 简单请求（Simple requests）</a></li>
-<li><a href="#3-3-预检请求-preflight-request">3.3 预检请求（Preflight Request）</a></li>
-<li><a href="#3-4-附带身份认证的请求">3.4 附带身份认证的请求</a></li>
-<li><a href="#3-5-用于-cors-的-headers">3.5 用于 CORS 的 Headers</a></li>
-</ul></li>
-<li><a href="#四-服务器端实现">四、服务器端实现</a></li>
-<li><a href="#参考资料">参考资料</a></li>
-</ul></li>
-</ul>
-</nav>
-  </div>
-</div>
-    <div class="post-content">
-      
+    
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+   window.MathJax = {
+     
+     
+     showProcessingMessages: false,
+     messageStyle: 'none'
+   };
+  </script>
+
+
+<div class="inner" style="position:relative;">
+  
+  <div class="side-btn"><a href="http://blog.jiayuanzhang.com/" class="back">Home</a></div>
+  
+<div class="blog-post">
+  <h2>跨域资源共享（CORS）详解</h2>
+        
 
 <p>Web 后端开发者很少会去充分了解跨域问题，原因是他们很少和 JavaScript 打交道。但是作为一个 Web 开发者，知道跨域请求和如何解决跨域问题可以和前端开发者在沟通上变得更为顺畅。</p>
 
@@ -196,15 +136,10 @@
 <p>如果不同时满足这上面三个条件，那就不符合浏览器的同源策略。</p>
 
 <p>修改 <code>document.domain</code> 参数可以更改当前的源，例如 <code>blog.example.com</code> 想要访问父域 <code>example.com</code> 的资源时，可以执行以下 JavaScript 脚本来进行修改：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nb">document</span><span class="p">.</span><span class="nx">domain</span> <span class="o">=</span> <span class="s1">&#39;example.com&#39;</span><span class="p">;</span>
-</code></pre></td></tr></table>
-</div>
-</div>
+
+<pre><code class="language-js">document.domain = 'example.com';
+</code></pre>
+
 <p>但是 <code>document.domain</code> 不能被设置为 <code>foo.com</code> 或者是 <code>bar.com</code>，因为它们不是 <code>blog.example.com</code> 的超级域。</p>
 
 <p>当然，也不是所有的交互都会被同源策略拦截下来，下面两种交互就不会触发同源策略：</p>
@@ -280,33 +215,19 @@
 </ul>
 
 <p>举一个例子<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>，例如站点 <code>http://foo.example</code> 的网页应用想要访问 <code>http://bar.other</code> 的资源，<code>http://foo.example</code> 的网页中可能包含类似于下面的 JavaScript 代码：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">invocation</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
-<span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s1">&#39;http://bar.other/resources/public-data/&#39;</span><span class="p">;</span>
+
+<pre><code class="language-javascript">var invocation = new XMLHttpRequest();
+var url = 'http://bar.other/resources/public-data/';
    
-<span class="kd">function</span> <span class="nx">callOtherDomain</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">if</span><span class="p">(</span><span class="nx">invocation</span><span class="p">)</span> <span class="p">{</span>    
-    <span class="nx">invocation</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-    <span class="nx">invocation</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="nx">handler</span><span class="p">;</span>
-    <span class="nx">invocation</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span> 
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div>
+function callOtherDomain() {
+  if(invocation) {    
+    invocation.open('GET', url, true);
+    invocation.onreadystatechange = handler;
+    invocation.send(); 
+  }
+}
+</code></pre>
+
 <p>熟悉 JavaScript 的同学可能发现这段代码向 <code>http://bar.other/resources/public-data/</code> 发起了一个 <code>GET</code> 请求，请求和响应的报文如下。</p>
 
 <p>请求报文：</p>
@@ -322,14 +243,10 @@
 <p>在响应报文中，<code>Access-Control-Allow-Origin</code> 字段被设置为 <code>*</code>，表明该资源可以被任意的域访问。</p>
 
 <p>使用 <code>Origin</code> 和 <code>Access-Control-Allow-Origin</code> 就能完成最简单访问控制。如果服务端仅允许来自 <code>http://foo.example</code> 域的访问，应该把 进行如下设置：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-http" data-lang="http"><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-http" data-lang="http"><span class="err">Access-Control-Allow-Origin: http://foo.example</span></code></pre></td></tr></table>
-</div>
-</div>
+
+<pre><code class="language-http">Access-Control-Allow-Origin: http://foo.example
+</code></pre>
+
 <h3 id="3-3-预检请求-preflight-request">3.3 预检请求（Preflight Request）</h3>
 
 <p>和简单请求不同，「需预检的请求」要求必须先使用 <code>OPTIONS</code> 方法发送一个预检请求到服务器，以获知服务器是否允许该请求，或者是否需要携带身份认证信息。「预检请求」的使用，可以避免跨域请求对服务器的用户数据产生未预期的影响。</p>
@@ -351,41 +268,23 @@
 </ul>
 
 <p>例如下面这个例子<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">invocation</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
-<span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s1">&#39;http://bar.other/resources/post-here/&#39;</span><span class="p">;</span>
-<span class="kd">var</span> <span class="nx">body</span> <span class="o">=</span> <span class="s1">&#39;&lt;?xml version=&#34;1.0&#34;?&gt;&lt;person&gt;&lt;name&gt;Arun&lt;/name&gt;&lt;/person&gt;&#39;</span><span class="p">;</span>
+
+<pre><code class="language-js">var invocation = new XMLHttpRequest();
+var url = 'http://bar.other/resources/post-here/';
+var body = '&lt;?xml version=&quot;1.0&quot;?&gt;&lt;person&gt;&lt;name&gt;Arun&lt;/name&gt;&lt;/person&gt;';
     
-<span class="kd">function</span> <span class="nx">callOtherDomain</span><span class="p">(){</span>
-  <span class="k">if</span><span class="p">(</span><span class="nx">invocation</span><span class="p">)</span>
-    <span class="p">{</span>
-      <span class="nx">invocation</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-      <span class="nx">invocation</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s1">&#39;X-PINGOTHER&#39;</span><span class="p">,</span> <span class="s1">&#39;pingpong&#39;</span><span class="p">);</span>
-      <span class="nx">invocation</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">,</span> <span class="s1">&#39;application/xml&#39;</span><span class="p">);</span>
-      <span class="nx">invocation</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="nx">handler</span><span class="p">;</span>
-      <span class="nx">invocation</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span> 
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div>
+function callOtherDomain(){
+  if(invocation)
+    {
+      invocation.open('POST', url, true);
+      invocation.setRequestHeader('X-PINGOTHER', 'pingpong');
+      invocation.setRequestHeader('Content-Type', 'application/xml');
+      invocation.onreadystatechange = handler;
+      invocation.send(body); 
+    }
+}
+</code></pre>
+
 <p>上面的代码使用 POST 请求发送一个 XML 文档，该请求中包含了一个自定义的 Header 字段 <code>X-PINGOTHER: pingpong</code>。另外，该请求的 <code>Content-Type</code> 为 <code>application/xml</code>，因此，该请求需要首先发起「预检请求」。</p>
 
 <p>OPTIONS 请求报文：</p>
@@ -397,33 +296,21 @@
 <p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtiwydue5j31uo0rsjwi.jpg" alt="2018-12-03-option-response-msg" /></p>
 
 <p>OPTIONS 方法是 HTTP/1.1 中定义的方法，用以从服务器获取更多的信息，该方法不会对服务器资源产生影响。预检请求的 Headers 中携带了两个字段：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-http" data-lang="http"><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-http" data-lang="http"><span class="err">Access-Control-Request-Method: POST
-</span><span class="err">Access-Control-Request-Headers: X-PINGOTHER, Content-Type</span></code></pre></td></tr></table>
-</div>
-</div>
+
+<pre><code class="language-http">Access-Control-Request-Method: POST
+Access-Control-Request-Headers: X-PINGOTHER, Content-Type
+</code></pre>
+
 <p><code>Access-Control-Request-Method: POST</code> 字段告诉服务器，实际请求将使用 <code>POST</code> 方法；<code>Access-Control-Request-Headers</code> 字段告诉服务器，实际请求将携带两个自定义请求的 Header 字段：<code>X-PINGOTHER</code> 和 <code>Content-Type</code>，服务器根据此决定，该实际请求是否被允许。</p>
 
 <p>OPTIONS 响应报文表明服务器将接受后续的实际请求，其中：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-http" data-lang="http"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-http" data-lang="http"><span class="err">Access-Control-Allow-Origin: http://foo.example
-</span><span class="err">Access-Control-Allow-Methods: POST, GET, OPTIONS
-</span><span class="err">Access-Control-Allow-Headers: X-PINGOTHER, Content-Type
-</span><span class="err">Access-Control-Max-Age: 86400</span></code></pre></td></tr></table>
-</div>
-</div>
+
+<pre><code class="language-http">Access-Control-Allow-Origin: http://foo.example
+Access-Control-Allow-Methods: POST, GET, OPTIONS
+Access-Control-Allow-Headers: X-PINGOTHER, Content-Type
+Access-Control-Max-Age: 86400
+</code></pre>
+
 <ul>
 <li><code>Access-Control-Allow-Origin</code>表示允许 <code>http://foo.example</code> 的域进行访问；</li>
 <li><code>Access-Control-Allow-Methods</code> 表明允许客户端发送 <code>POST</code>，<code>GET</code>，<code>OPTIONS</code> 请求；</li>
@@ -432,111 +319,61 @@
 </ul>
 
 <p>预检请求完成之后，发送实际的请求，请求报文如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-http" data-lang="http"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-http" data-lang="http"><span class="nf">POST</span> <span class="nn">/resources/post-here/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-<span class="n">Host</span><span class="o">:</span> <span class="l">bar.other</span>
-<span class="n">User-Agent</span><span class="o">:</span> <span class="l">Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1b3pre) Gecko/20081130 Minefield/3.1b3pre</span>
-<span class="n">Accept</span><span class="o">:</span> <span class="l">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</span>
-<span class="n">Accept-Language</span><span class="o">:</span> <span class="l">en-us,en;q=0.5</span>
-<span class="n">Accept-Encoding</span><span class="o">:</span> <span class="l">gzip,deflate</span>
-<span class="n">Accept-Charset</span><span class="o">:</span> <span class="l">ISO-8859-1,utf-8;q=0.7,*;q=0.7</span>
-<span class="n">Connection</span><span class="o">:</span> <span class="l">keep-alive</span>
-<span class="n">X-PINGOTHER</span><span class="o">:</span> <span class="l">pingpong</span>
-<span class="n">Content-Type</span><span class="o">:</span> <span class="l">text/xml; charset=UTF-8</span>
-<span class="n">Referer</span><span class="o">:</span> <span class="l">http://foo.example/examples/preflightInvocation.html</span>
-<span class="n">Content-Length</span><span class="o">:</span> <span class="l">55</span>
-<span class="n">Origin</span><span class="o">:</span> <span class="l">http://foo.example</span>
-<span class="n">Pragma</span><span class="o">:</span> <span class="l">no-cache</span>
-<span class="n">Cache-Control</span><span class="o">:</span> <span class="l">no-cache</span>
 
-<span class="cp">&lt;?xml version=&#34;1.0&#34;?&gt;</span><span class="nt">&lt;person&gt;&lt;name&gt;</span>Arun<span class="nt">&lt;/name&gt;&lt;/person&gt;</span></code></pre></td></tr></table>
-</div>
-</div>
+<pre><code class="language-http">POST /resources/post-here/ HTTP/1.1
+Host: bar.other
+User-Agent: Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1b3pre) Gecko/20081130 Minefield/3.1b3pre
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip,deflate
+Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Connection: keep-alive
+X-PINGOTHER: pingpong
+Content-Type: text/xml; charset=UTF-8
+Referer: http://foo.example/examples/preflightInvocation.html
+Content-Length: 55
+Origin: http://foo.example
+Pragma: no-cache
+Cache-Control: no-cache
+
+&lt;?xml version=&quot;1.0&quot;?&gt;&lt;person&gt;&lt;name&gt;Arun&lt;/name&gt;&lt;/person&gt;
+</code></pre>
+
 <p>响应报文：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-http" data-lang="http"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-http" data-lang="http"><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
-<span class="n">Date</span><span class="o">:</span> <span class="l">Mon, 01 Dec 2008 01:15:40 GMT</span>
-<span class="n">Server</span><span class="o">:</span> <span class="l">Apache/2.0.61 (Unix)</span>
-<span class="n">Access-Control-Allow-Origin</span><span class="o">:</span> <span class="l">http://foo.example</span>
-<span class="n">Vary</span><span class="o">:</span> <span class="l">Accept-Encoding, Origin</span>
-<span class="n">Content-Encoding</span><span class="o">:</span> <span class="l">gzip</span>
-<span class="n">Content-Length</span><span class="o">:</span> <span class="l">235</span>
-<span class="n">Keep-Alive</span><span class="o">:</span> <span class="l">timeout=2, max=99</span>
-<span class="n">Connection</span><span class="o">:</span> <span class="l">Keep-Alive</span>
-<span class="n">Content-Type</span><span class="o">:</span> <span class="l">text/plain</span>
 
-[Some GZIP&#39;d payload]</code></pre></td></tr></table>
-</div>
-</div>
+<pre><code class="language-http">HTTP/1.1 200 OK
+Date: Mon, 01 Dec 2008 01:15:40 GMT
+Server: Apache/2.0.61 (Unix)
+Access-Control-Allow-Origin: http://foo.example
+Vary: Accept-Encoding, Origin
+Content-Encoding: gzip
+Content-Length: 235
+Keep-Alive: timeout=2, max=99
+Connection: Keep-Alive
+Content-Type: text/plain
+
+[Some GZIP'd payload]
+</code></pre>
+
 <h3 id="3-4-附带身份认证的请求">3.4 附带身份认证的请求</h3>
 
 <p>一般而言，对于跨域 <code>XMLHTTPRequest</code> 或者 <code>Fetch</code> 请求，浏览器不会发送身份凭证信息，如果需要发送身份凭证信息，需要把 <code>XMLHTTPRequest</code> 的 <code>withCredentials</code> 属性设置为 <code>true</code>。</p>
 
 <p>举个例子，下面这段代码表示 <code>http://foo.example</code> 向 <code>http://bar.other</code> 发送一个 <code>GET</code> 请求，并且设置 <code>Cookies</code>。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">invocation</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
-<span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s1">&#39;http://bar.other/resources/credentialed-content/&#39;</span><span class="p">;</span>
+
+<pre><code class="language-js">var invocation = new XMLHttpRequest();
+var url = 'http://bar.other/resources/credentialed-content/';
     
-<span class="kd">function</span> <span class="nx">callOtherDomain</span><span class="p">(){</span>
-  <span class="k">if</span><span class="p">(</span><span class="nx">invocation</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">invocation</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-    <span class="nx">invocation</span><span class="p">.</span><span class="nx">withCredentials</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-    <span class="nx">invocation</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="nx">handler</span><span class="p">;</span>
-    <span class="nx">invocation</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span> 
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div>
+function callOtherDomain(){
+  if(invocation) {
+    invocation.open('GET', url, true);
+    invocation.withCredentials = true;
+    invocation.onreadystatechange = handler;
+    invocation.send(); 
+  }
+}
+</code></pre>
+
 <p>通过把 <code>withCredentials</code> 设置为 <code>true</code>，从而向服务器发送一个携带 <code>Cookies</code> 的请求。因为这是一个简单的 <code>GET</code> 请求，所以浏览器不会发起预检请求，但是，服务端的响应中如果未携带 <code>Access-Control-Allow-Credentials: true</code> ，浏览器不会把响应内容返回给请求的发送者。</p>
 
 <p>对于携带身份认证的请求，服务器不得设置 <code>Access-Control-Allow-Origin</code> 的值为 <code>*</code>。</p>
@@ -568,40 +405,23 @@
 <p>为了实现 CORS，在服务器端需要做一些工作，最主要的就是在响应 Header 中添加指定的字段。</p>
 
 <p>如果是使用 Python + Flask 的开发的话，可以在 <code>after_app_request</code> 钩子函数中添加指定的响应头：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="nd">@app.after_app_request</span>
-<span class="k">def</span> <span class="nf">after_request</span><span class="p">(</span><span class="n">response</span><span class="p">):</span>
-    <span class="s2">&#34;&#34;&#34;正常请求结束后的处理&#34;&#34;&#34;</span>
-    <span class="c1"># ... some code here</span>
+
+<pre><code class="language-python">@app.after_app_request
+def after_request(response):
+    &quot;&quot;&quot;正常请求结束后的处理&quot;&quot;&quot;
+    # ... some code here
     
-    <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">&#39;Access-Control-Allow-Origin&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;http://example.com&#39;</span>
-    <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">&#39;Access-Control-Allow-Methods&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;GET, PUT, POST, DELETE, HEAD, OPTIONS&#39;</span>
-    <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">&#39;Access-Control-Allow-Headers&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="s1">&#39;Content-Type, Authorization, X-Requested-With&#39;</span>
-    <span class="p">)</span>
+    response.headers['Access-Control-Allow-Origin'] = 'http://example.com'
+    response.headers['Access-Control-Allow-Methods'] = 'GET, PUT, POST, DELETE, HEAD, OPTIONS'
+    response.headers['Access-Control-Allow-Headers'] = (
+        'Content-Type, Authorization, X-Requested-With'
+    )
     
-    <span class="c1"># ... some code here</span>
+    # ... some code here
     
-    <span class="k">return</span> <span class="n">response</span></code></pre></td></tr></table>
-</div>
-</div>
+    return response
+</code></pre>
+
 <p>其他语言在对应的钩子函数中处理即可。</p>
 
 <h2 id="参考资料">参考资料</h2>
@@ -621,131 +441,59 @@
 </ol>
 </div>
 
+  </div>
+
+<br>
+  
+
+
+<br><div class="post bg-white">
+        <script src="https://utteranc.es/client.js"
+            repo= "forrestchang/forrestchang.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            label="utterances"
+            crossorigin="anonymous"
+            async>
+        </script>
     </div>
 
-    
-    
-
-    <footer class="post-footer">
-      <div class="post-tags">
-          <a href="/tags/cors/">cors</a>
-          <a href="/tags/http/">http</a>
-          </div>
-      <nav class="post-nav">
-        <a class="prev" href="/post/linux-command-sftp/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">SFTP 使用详解</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/omnifocus-3-workflow/">
-            <span class="next-text nav-default">OmniFocus 3 最佳实践</span>
-            <span class="next-text nav-mobile">Next</span>
-            <i class="iconfont icon-right"></i>
-          </a>
-      </nav>
-    </footer>
-  </article>
-        </div>
+<footer>
+    <p style="float:right;margin:0 1rem;">
+        &copy; 2019 <a href="https://github.com/">Jiayuan Zhang.</a>
         
-   
-   <div class="post bg-white">
-     <script src="https://utteranc.es/client.js"
-           repo= "forrestchang/forrestchang.github.io"
-           issue-term="pathname"
-           theme="github-light"
-           label="utterances"
-           crossorigin="anonymous"
-           async>
-     </script>
-   </div>
- 
+      </p>
+  <hr>
+  <hr>
 
   
+  <br>
 
-      </div>
-    </main>
 
-    <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="mailto:forrestchang7@email.com" class="iconfont icon-email" title="email"></a>
-      <a href="https://twitter.com/Tisoga" class="iconfont icon-twitter" title="twitter"></a>
-      <a href="https://github.com/forrestchang" class="iconfont icon-github" title="github"></a>
-      <a href="https://www.instagram.com/jiayuan3055/" class="iconfont icon-instagram" title="instagram"></a>
-  <a href="http://blog.jiayuanzhang.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</footer>
 </div>
 
-<div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
 
-  <div class="busuanzi-footer">
-    <span id="busuanzi_container_site_pv"> Site PV: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
-      <span class="division">|</span>
-    <span id="busuanzi_container_site_uv"> Site UV: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
-  </div>
-
-  <span class="copyright-year">
-    &copy; 
-    2014 - 
-    2019
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">Jiayuan</span>
-  </span>
-</div>
-    </footer>
-
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
-    </div>
-  </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
-  <script type="text/javascript">
-    window.MathJax = {
-      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
-      showProcessingMessages: false,
-      messageStyle: 'none'
-    };
-  </script>
-  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-130256365-1', 'auto');
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-<script id="baidu_analytics">
-  var _hmt = _hmt || [];
-  (function() {
-    if (window.location.hostname === 'localhost') return;
-    var hm = document.createElement("script"); hm.async = true;
-    hm.src = "https://hm.baidu.com/hm.js?001e800887eba2f8f57ec8059aafdad6";
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
-  })();
-</script>
 
 
+
+
+
+
+
+
+
+    
 
 
 
 
 </body>
+
 </html>
+

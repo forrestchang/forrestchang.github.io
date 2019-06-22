@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>omnifocus on Jiayuan&#39;s Blog</title>
+    <title>Omnifocus on Jiayuan&#39;s Blog</title>
     <link>http://blog.jiayuanzhang.com/tags/omnifocus/</link>
-    <description>Recent content in omnifocus on Jiayuan&#39;s Blog</description>
+    <description>Recent content in Omnifocus on Jiayuan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>zh-CN</language>
     <lastBuildDate>Thu, 23 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://blog.jiayuanzhang.com/tags/omnifocus/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,14 @@
       <pubDate>Thu, 23 May 2019 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/how-to-modify-omnifocus-3-theme/</guid>
-      <description>OmniFocus 3 提供了 Dark Mode，但是却没有提供自定义主题的功能，Dark Mode 看久了也会腻，所以最近又切换到 Light Mode 下来了。搜索了一下，看到这篇讨论：Is it possible to reduce fontsize or fontstyle of the headline of a perspective?，可以通过修改配置的方式来修改 OmniFocus 的主题。 具体的修改方法为： 在 /Applications/OmniFocus.app/Contents/Resources/ThemeResources/SystemFont 下面修改字体的大小和页边距，首先我</description>
+      <description>OmniFocus 3 提供了 Dark Mode，但是却没有提供自定义主题的功能，Dark Mode 看久了也会腻，所以最近又切换到 Light Mode 下来了。搜索了一下，看到这篇讨论：Is it possible to reduce fontsize or fontstyle of the headline of a perspective?，可以通过修改配置的方式来修改 OmniFocus 的主题。
+具体的修改方法为：
+在 /Applications/OmniFocus.app/Contents/Resources/ThemeResources/SystemFont 下面修改字体的大小和页边距，首先我们先修改边距大小，我默认选择的是 Extra Large 的字体，所以需要修改 OFIExtraLargeLayoutConstraintConstants.plit。
+找到以下代码：
+&amp;lt;key&amp;gt;extraPaddingBelowNoteForActionCells&amp;lt;/key&amp;gt; &amp;lt;real&amp;gt;20&amp;lt;/real&amp;gt; &amp;lt;key&amp;gt;extraPaddingBelowNoteForColumnarActionCells&amp;lt;/key&amp;gt; &amp;lt;real&amp;gt;20&amp;lt;/real&amp;gt; &amp;lt;key&amp;gt;extraPaddingBelowNoteForProjectCells&amp;lt;/key&amp;gt; &amp;lt;real&amp;gt;20&amp;lt;/real&amp;gt;  然后把 real 的值设定成自己想要的就好了，我这边设定为 20，最后看起来的效果还可以。
+然后修改 Note 的字体，打开 OFIFontRegistry.plit，找到以下代码：
+&amp;lt;key&amp;gt;OFITextStyleNoteBody&amp;lt;/key&amp;gt; &amp;lt;dict&amp;gt; &amp;lt;key&amp;gt;content-sizes&amp;lt;/key&amp;gt; &amp;lt;array&amp;gt; &amp;lt;real&amp;gt;13&amp;lt;/real&amp;gt; &amp;lt;real&amp;gt;13&amp;lt;/real&amp;gt; &amp;lt;real&amp;gt;14&amp;lt;/real&amp;gt; &amp;lt;real&amp;gt;15&amp;lt;/real&amp;gt; &amp;lt;real&amp;gt;16&amp;lt;/real&amp;gt; &amp;lt;/array&amp;gt; &amp;lt;key&amp;gt;font-name&amp;lt;/key&amp;gt; &amp;lt;string&amp;gt;regular&amp;lt;/string&amp;gt; &amp;lt;/dict&amp;gt;  依次修改 real 的值，对应 OmniFocus 的以下配置：
+Next Action, Due 和 Overdue 的颜色可以在 /Applications/OmniFocus.</description>
     </item>
     
     <item>
@@ -26,7 +33,21 @@
       <pubDate>Fri, 23 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/omnifocus-3-workflow/</guid>
-      <description>这篇文章主要分享一下我多年使用的一套任务管理系统的经验，工具是次要的，主要是一些想法的实践。有了基本的思路，无论是 OmniFocus、Todoist 还是 org-mode（Emacs 中的一个时间管理模式），都可以有自己的一套方式来实践。本篇文章主要以 OmniFocus 3 为载体来介绍这些内容。 每个人</description>
+      <description>这篇文章主要分享一下我多年使用的一套任务管理系统的经验，工具是次要的，主要是一些想法的实践。有了基本的思路，无论是 OmniFocus、Todoist 还是 org-mode（Emacs 中的一个时间管理模式），都可以有自己的一套方式来实践。本篇文章主要以 OmniFocus 3 为载体来介绍这些内容。
+每个人都有一套适合自己的工作流，所以读者不必要完全按照我所写的来操作，正确的方式是从中获取一些灵感，实践并融合到自己的工作流当中。
+什么是一个好的任务管理系统 首先，任务管理系统的目的是为了更好得完成任务，一切脱离这个基本条件的系统都是不可用的。如果你觉得一个最简单的 Todo List 就能很好地完成任务，那么这就是最适合你的任务管理系统。
+在我看来，一个优秀的任务管理系统至少需要满足以下条件：
+ 收集能力 在特定的情况下要知道可以做哪些事情  「收集能力」指的是这个任务系统要能够容纳（几乎）所有的内容，一个任务、一条想法、一封未读的邮件、一个笔记、一个链接、没有报销的发票等等。
+具体实践起来并不是真的需要把所有的东西都塞进任务系统里面，例如我使用 Evernote 作为剪裁和笔记的工具，很显然把每条笔记都复制一份到 OmniFocus 中很不现实，但是我会在 OmniFocus 中添加一个「定期清理 Evernote Inbox」的任务，这样就相当于把 Evernote 作为 OmniFocus 的子 Inbox，来统一进行管理。对于一些支持 URL Schema 的应用，完全可以在 OmniFocus 中建立一个链接直接指定，这样在 OmniFocus 中也可以直接打开其他应用中的内容了。
+收集能力决定了要处理的内容，第二个条件则决定了一个任务系统是否高可用。具体的情境来说，你要知道早上的时候该干哪些事，工作的时候该干哪些事，无聊的时候该干哪些事等等，而不是依靠大脑来记录什么时间要做什么事情，这样很容易进入游离的状态。
+一个任务系统做好了这两件事情，至少不会让你感到「有事可做，但无从下手」的状况，真正的执行还是需要靠自己的意志力了，从另一种情况下来说，即使意志力不强，完全可以找一些「不太重要、很轻松」的事，这在一定程度上利用了「结构性拖延」的办法来完成一些任务。
+任务管理系统的三要素 到现在为止，我还没有讲到一种具体工具的使用。因为工具是次要的，了解了本质的思想，使用什么工具都没有问题。纵观各种任务管理的工具：OmniFocus、Todoist、Things、org-mode，它们支持的功能也各不相同，Project、无限层级、Defer、Due、Repeat、Context、Label、Tag、Filter、Perspective 等等，有没有被这些名词给吓到？难道我们每切换一种系统都需要再重新学习一遍？
+抛开这些名词，我们来分析一下一个任务系统到底是由什么组成的。在我看来，一个任务系统最本质的东西只有三个：任务、附加元素和过滤器。
+任务：一个最小可执行的单元即为一个任务。这个是最好理解的，所以不做过多解释。
+附加元素：作用在任务上的不同维度的限制。这句话读起来有点拗口，举个简单例子，「去 XXX 取快递（截止今天 10:00）」，其中，「截止今天 10:00」就是在时间维度上对这个任务的一个限制。同样的，「项目」、「标签」等等这些都是作用在某个任务上的附加元素。
+过滤器：组合不同附加元素的过滤规则。只有附加元素并没有什么实际的作用，但是有了过滤器之后，就可以编写不同的过滤规则来过滤指定规则的任务。例如，我想知道「最近 10 天内重要的事情」，那么过滤规则可能就是「Due date &amp;lt; 10 and flagged」。
+了解了上面三个基本的概念，那么再重新审视各种任务管理工具，就可以从一个比较宏观的角度来看待了，这也可以避免切换工具造成的重新学习成本。
+OmniFocus 3 实践 把上面任务系统的基本三要素运用到 OmniFocus 上，任务就是一个个的单独 Todo item，附加元素就是 Todo item 所属的项目、Due Date、Defer Date、Tags、Flag、Repeat rule 等，过滤器就是透视（Perspective）。</description>
     </item>
     
     <item>
@@ -35,7 +56,13 @@
       <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/2017-week-19-review/</guid>
-      <description>之前有在博客上写 Weekly Review 的习惯，后来因为被朋友说博客真水然后都撤下来了，有些文章确实是类似于「流水账」的记事，但也有一些是围绕这周做的东西来讨论的。总的来说，写 Weekly Review 对自己帮助还是很大的，可以在一周中 Focus 一个特定的主题，而不是想到什么做什么，所以这个系列以后还会继续写下去，只是写的内容更</description>
+      <description>之前有在博客上写 Weekly Review 的习惯，后来因为被朋友说博客真水然后都撤下来了，有些文章确实是类似于「流水账」的记事，但也有一些是围绕这周做的东西来讨论的。总的来说，写 Weekly Review 对自己帮助还是很大的，可以在一周中 Focus 一个特定的主题，而不是想到什么做什么，所以这个系列以后还会继续写下去，只是写的内容更加具体一天，可以围绕着这周的 Project，或者这周听的音乐，或者读的书之类的。以前的文章看情况要不要放上来。
+这周算是正式把我的任务管理系统从 org-mode 转移到 Todoist 上来了。在不考虑时间成本和易用性上来说，org-mode 依然是目前我认为最完备的任务和时间管理系统，我用它来：
+ 任务管理：类似于 OmniFocus 的多层级任务管理，支持标签和优先级，可以自定义过滤视图 时间记录：按照项目的方式来记录时间，基本是在做哪件事之前把计时器打开，一个番茄时间后自动关闭，可以自定义生成各种时间报表 番茄工作法  自定义生成的时间记录表：
+虽然 org-mode 的优点众多，但是始终是一个基于 Emacs 的 major mode，所以诸多限制在所难免：
+ 没有一个简单易用的移动端 没办法做到全局 capture，虽然借助 Alfred 的 Workflow 和 Elisp 脚本能够实现这一功能，但是使用起来体验并不是很好 编辑功能过重，很显然，做任务管理不需要多么高效的编辑操作，类似于 OmniFocus 使用鼠标 + 快捷键才是更高效的方法，在 Emacs 里经常编辑速度过快把整个文件搞乱了  不用 OmniFocus 的原因是本来就是从 OmniFocus 转到 org-mode 上来的，OmniFocus 有一个很致命的缺点就是不支持多标签，并且 Perspective 提供的设置选项也很有限，根不能不能满足一些复杂的过滤要求。除此之外，OmniFocus 应该是最优秀的任务管理软件了。
+Todoist 初次使用的时候感觉很难用，尤其是鼠标点击就进入编辑模式，这个设计真的不知道怎么想的，并且各平台的客户端一点也不 Native，基本就是 Web 版套了一个壳。macOS 客户端经常有一些莫名的 bug，反正软件的使用体验上来说和 OmniFocus 简直不能比。
+经过一段时间的调教，现在基本还能满足日常使用了。我认为一个可靠的任务管理系统需要满足两点：</description>
     </item>
     
   </channel>

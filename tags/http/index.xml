@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>http on Jiayuan&#39;s Blog</title>
+    <title>Http on Jiayuan&#39;s Blog</title>
     <link>http://blog.jiayuanzhang.com/tags/http/</link>
-    <description>Recent content in http on Jiayuan&#39;s Blog</description>
+    <description>Recent content in Http on Jiayuan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>zh-CN</language>
     <lastBuildDate>Sun, 02 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://blog.jiayuanzhang.com/tags/http/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,18 @@
       <pubDate>Sun, 02 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/cors-tutorial/</guid>
-      <description>Web 后端开发者很少会去充分了解跨域问题，原因是他们很少和 JavaScript 打交道。但是作为一个 Web 开发者，知道跨域请求和如何解决跨域问题可以和前端开发者在沟通上变得更为顺畅。 这篇文章会介绍和跨域请求相关的一些概念，以及如何在后端（Python）解决浏览器的跨域请求问题。 一、什么是跨域请求 首先，我们要</description>
+      <description>Web 后端开发者很少会去充分了解跨域问题，原因是他们很少和 JavaScript 打交道。但是作为一个 Web 开发者，知道跨域请求和如何解决跨域问题可以和前端开发者在沟通上变得更为顺畅。
+这篇文章会介绍和跨域请求相关的一些概念，以及如何在后端（Python）解决浏览器的跨域请求问题。
+一、什么是跨域请求 首先，我们要了解什么是跨域请求。简单来说，当一台服务器资源从另一台服务器（不同的域名或者端口）请求一个资源时，就会发起一个跨域 HTTP 请求。
+举个简单的例子，http://example-a.com/index.html 这个 HTML 页面请求了 http://example-b.com/resource/image.jpg 这个图片资源时（发起 Ajax 请求，非 &amp;lt;img&amp;gt; 标签），就是发起了一个跨域请求。
+在不做任何处理的情况下，这个跨域请求是无法被成功请求的，因为浏览器基于同源策略会对跨域请求做一定的限制。
+二、浏览器同源策略 这就引出了浏览器的同源策略（Same-origin policy），同源策略限制了从同一个源加载的文档或者脚本如何与来自另一个源的资源进行交互。这是一个用于隔离潜在恶意文件的重要安全机制。
+什么是同源？同源需要同时满足三个条件：
+ 请求的协议相同（例如同为 http 协议） 请求的域名相同（例如同为 www.example.com） 请求的端口相同（例如同为 80 端口）  第 2 点需要注意的是，必须是域名完全相同，比如说 blog.example.com 和 mail.example.com 这两个域名，虽然它们的顶级域名和二级域名（均为 example.com）都相同，但是三级域名（blog 和 mail）不相同，所以也不能算作域名相同。
+如果不同时满足这上面三个条件，那就不符合浏览器的同源策略。
+修改 document.domain 参数可以更改当前的源，例如 blog.example.com 想要访问父域 example.com 的资源时，可以执行以下 JavaScript 脚本来进行修改：
+document.domain = &#39;example.com&#39;;  但是 document.domain 不能被设置为 foo.com 或者是 bar.com，因为它们不是 blog.example.com 的超级域。
+当然，也不是所有的交互都会被同源策略拦截下来，下面两种交互就不会触发同源策略：</description>
     </item>
     
   </channel>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>github-pages on Jiayuan&#39;s Blog</title>
+    <title>Github Pages on Jiayuan&#39;s Blog</title>
     <link>http://blog.jiayuanzhang.com/tags/github-pages/</link>
-    <description>Recent content in github-pages on Jiayuan&#39;s Blog</description>
+    <description>Recent content in Github Pages on Jiayuan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>zh-CN</language>
     <lastBuildDate>Sat, 10 Oct 2015 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://blog.jiayuanzhang.com/tags/github-pages/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,24 @@
       <pubDate>Sat, 10 Oct 2015 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/how-to-use-emacs-and-org-mode-to-build-a-blog/</guid>
-      <description>这个博客就是使用Emacs org-mode + GitHub Pages搭建的，博客的主题是org-mode官网的主题，非常的简洁；评论采用的disqus，访问统计使用的是Google和Baidu的统计代码。 另外，本文中进行操作的环境是在OSX下完成的，Windows用户请自行参考脑补:) 起因 之前也折腾过好多</description>
+      <description>这个博客就是使用Emacs org-mode + GitHub Pages搭建的，博客的主题是org-mode官网的主题，非常的简洁；评论采用的disqus，访问统计使用的是Google和Baidu的统计代码。
+另外，本文中进行操作的环境是在OSX下完成的，Windows用户请自行参考脑补:)
+起因 之前也折腾过好多的博客，Jekyll、Hexo、Farbox等，这些静态博客生成器都有一个共同点，都是采用的Markdown语法来进行书写的，而自己平时记笔记都是使用的Emacs org-mode，这样就导致了记笔记和写博客两个过程分裂开来了。
+昨晚偶然看到dirtysalt&amp;rsquo;s homepage，被深深的震撼了，博主写了很多的干货，专注与博客的内容而不是博客的外观。而自己也是一个极简主义者，觉得这样的博客样式还是挺好看的（很有Web1.0时代的复古风啊）。恰巧博主也是使用的Emacs来写博客，于是便花了一个上午的时间搜集相关的资料并把博客搭建起来了。
+准备 GitHub帐号与GitHub Pages 首先你需要一个存放博客的地方，这里采用的是GitHub，当让也可以使用其他的服务，只要支持静态页面展示即可。
+GitHub的注册过程省略。
+注册完GitHub帐号之后建立一个新的仓库，命名为 xxx.github.io ，其中 xxx 为你的用户名。
+Emacs环境 我使用的是最近比较火的spacemacs ，很多功能都配置好了，基本上手即用。
+如果不是用的spacemacs，确保你的Emacs版本为24，org-mode版本为8.0以上，不排除可能因为版本的原因出现各种各样的错误。
+什么，你还不知道Emacs是什么，那先去下载一个Emacs吧，使用org-mode基本不需要什么Emacs的基础，只需要记住几个快捷键就可以了。
+建立目录结构 随便在哪里建一个心得目录，这个目录就是存放你的org文件和html文件的地方。假设我们已经有了这么一个目录 org ：
+$ mkdir notes $ mkdir public_html $ mkdir gtd  当然，那个gtd目录你可以不要，那是用来做时间管理的，如果你不想用Emacs做时间管理的话，可以不用建那个目录。
+ notes: 这个目录就是用来存放元数据的地方，你的org文件、图片、CSS文件、PDF等全都是存放在这里的。 public_html: 这个目录是用来存放导出的HTML文件的，那些非org格式的文件还会原封不动地拷贝过来。  配置Emacs 这一步有一些复杂，没有Elisp基础的同学可能看不怎么懂，不过没关系，照着做就是了，现在看不懂可以以后学嘛。
+Emacs org-mode自带了很强大的导出功能，可以导出成HTML、markdown、PDF等格式的文件，我们这里使用自带的导出Project的功能，只不过在导出之前，要做一些配置，告诉Emacs要导出哪些东西，导出到哪里，采用什么规则。
+首先我们在配置文件中添加以下代码（普通的在.emacs中添加，spacemacs用户在.spacemacs中添加）：
+(require &#39;ox-publish) (setq org-publish-project-alist &#39;( ;; 把各部分的配置文件写到这里面来 ))  然后把其他的配置文件依次添加进来就可以了，主要有生成HTML的部分和原样拷贝的部分。
+下面来配置需要转换成HTML的内容：
+(&amp;quot;blog-notes&amp;quot; :base-directory &amp;quot;~/org/notes&amp;quot; :base-extension &amp;quot;org&amp;quot; :publishing-directory &amp;quot;~/org/public_html/&amp;quot; :recursive t :publishing-function org-html-publish-to-html :headline-levels 4 ; Just the default for this project.</description>
     </item>
     
   </channel>

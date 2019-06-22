@@ -1,329 +1,651 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Jiayuan&#39;s Blog</title>
-  <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+	<meta name="generator" content="Hugo 0.55.0-DEV" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="content-language" content="zh-CN" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=1, user-scalable=no">
+    
+    
+    <title>Jiayuan&#39;s Blog</title>
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+    
+    
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="http://blog.jiayuanzhang.com/css/stylesheet.css">
+    <link rel="stylesheet" href="http://blog.jiayuanzhang.com/css/home.css">
 
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
-
-
-<meta name="author" content="Jiayuan" /><meta name="description" content="Jiayuan Zhang&#39;s Personal Blog." /><meta name="keywords" content="blog, time-management, knowledge-management, python, programming, linux" />
-
-
-
-
-
-
-<meta name="generator" content="Hugo 0.55.0-DEV with even 4.0.0" />
-
-
-<link rel="canonical" href="http://blog.jiayuanzhang.com/" />
-  <link href="http://blog.jiayuanzhang.com/index.xml" rel="alternate" type="application/rss+xml" title="Jiayuan&#39;s Blog" />
-  <link href="http://blog.jiayuanzhang.com/index.xml" rel="feed" type="application/rss+xml" title="Jiayuan&#39;s Blog" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.60503a49.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
-
-
-<meta property="og:title" content="Jiayuan&#39;s Blog" />
-<meta property="og:description" content="Jiayuan Zhang&#39;s Personal Blog." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://blog.jiayuanzhang.com/" />
-
-<meta property="og:updated_time" content="2019-05-23T00:00:00&#43;00:00"/>
-
-<meta itemprop="name" content="Jiayuan&#39;s Blog">
-<meta itemprop="description" content="Jiayuan Zhang&#39;s Personal Blog.">
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Jiayuan&#39;s Blog"/>
-<meta name="twitter:description" content="Jiayuan Zhang&#39;s Personal Blog."/>
-
-<!--[if lte IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
-<![endif]-->
-
-<!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
+    
+    
+    
+    
 
 </head>
+
+
 <body>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="/" class="logo">Jiayuan&#39;s Blog</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    <a href="/categories/">
-        <li class="mobile-menu-item">Categories</li>
-      </a><a href="/tags/">
-        <li class="mobile-menu-item">Tags</li>
-      </a><a href="/post/">
-        <li class="mobile-menu-item">Archives</li>
-      </a><a href="http://jiayuanzhang.com">
-        <li class="mobile-menu-item">About</li>
-      </a>
-  </ul>
-</nav>
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="/" class="logo">Jiayuan&#39;s Blog</a>
-</div>
+    <script>
+        window.addEventListener("resize", resizeThrottler, false);
 
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item">
-        <a class="menu-item-link" href="/categories/">Categories</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/tags/">Tags</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/post/">Archives</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="http://jiayuanzhang.com">About</a>
-      </li>
-  </ul>
-</nav>
-    </header>
-
-    <main id="main" class="main">
-      <div class="content-wrapper">
-        <div id="content" class="content">
-          <section id="posts" class="posts">
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/how-to-modify-omnifocus-3-theme/">修改 OmniFocus 3 的主题</a></h1>
-    <div class="post-meta">
-      <span class="post-time">Posted on <a href="">2019-05-23</a></a> </span>
-      <div class="post-category">
-          <a href="/categories/productivity/"> Productivity </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      OmniFocus 3 提供了 Dark Mode，但是却没有提供自定义主题的功能，Dark Mode 看久了也会腻，所以最近又切换到 Light Mode 下来了。搜索了一下，看到这篇讨论：Is it possible to reduce fontsize or fontstyle of the headline of a perspective?，可以通过修改配置的方式来修改 OmniFocus 的主题。 具体的修改方法为： 在 /Applications/OmniFocus.app/Contents/Resources/ThemeResources/SystemFont 下面修改字体的大小和页边距，首先我 ...
-    </div>
-    <div class="read-more-link">
-      <a href="/post/how-to-modify-omnifocus-3-theme/">Read more..</a>
-    </div>
-    <div class="read-more">
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/use-devonthink-to-write-blog/">使用 Devonthink 来写博客</a></h1>
-    <div class="post-meta">
-      <span class="post-time">Posted on <a href="">2019-05-04</a></a> </span>
-      <div class="post-category">
-          <a href="/categories/essay/"> Essay </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      虽然博客没有写太多篇，但是写博客的工具却折腾过不少。从最开始的 org-mode，到 Jekyll、Hexo，再到现在的 Hugo，一直没有找到一个满意的工作流。 我的需求： 使用统一的工具来管理笔记和写作的文章； 能够多端同步； 自动化。 之前使用 Hugo 写作的流程是： 在命令行新建一篇文章； 打开 Typora 进 ...
-    </div>
-    <div class="read-more-link">
-      <a href="/post/use-devonthink-to-write-blog/">Read more..</a>
-    </div>
-    <div class="read-more">
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/notes-on-code-complete-part-1/">读《代码大全》</a></h1>
-    <div class="post-meta">
-      <span class="post-time">Posted on <a href="">2019-05-02</a></a> </span>
-      <div class="post-category">
-          <a href="/categories/programming/"> Programming </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      这本书最开始是大一的时候买的，买回来后翻了一些章节就成为了显示器的支架，直到最近工作了一段时间才重新开始读，这一次阅读和几年前初次阅读有很大不同，大一阅读时候的编码经验仅仅是局限于算法方面，对大型项目的构建没有特别多感触；这一次是在写了很多业务代码，积累了一定问题的基础上去阅读的 ...
-    </div>
-    <div class="read-more-link">
-      <a href="/post/notes-on-code-complete-part-1/">Read more..</a>
-    </div>
-    <div class="read-more">
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/linux-command-sftp/">SFTP 使用详解</a></h1>
-    <div class="post-meta">
-      <span class="post-time">Posted on <a href="">2018-12-06</a></a> </span>
-      <div class="post-category">
-          <a href="/categories/programming/"> Programming </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      「Linux 命令详解」这个系列的文章将会介绍 Linux/Unix/macOS 系统中使用到的常用命令，包括该命令的简单介绍、常用参数解释以及最佳实践，如果需要快速使用这个命令，直接跳到最佳实践部分即可。 「Linux 命令详解」系列文章： Linux命令详解：SFTP 一、介绍 SFTP（Secure File Transfer Protocol ...
-    </div>
-    <div class="read-more-link">
-      <a href="/post/linux-command-sftp/">Read more..</a>
-    </div>
-    <div class="read-more">
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/cors-tutorial/">跨域资源共享（CORS）详解</a></h1>
-    <div class="post-meta">
-      <span class="post-time">Posted on <a href="">2018-12-02</a></a> </span>
-      <div class="post-category">
-          <a href="/categories/programming/"> Programming </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      Web 后端开发者很少会去充分了解跨域问题，原因是他们很少和 JavaScript 打交道。但是作为一个 Web 开发者，知道跨域请求和如何解决跨域问题可以和前端开发者在沟通上变得更为顺畅。 这篇文章会介绍和跨域请求相关的一些概念，以及如何在后端（Python）解决浏览器的跨域请求问题。 一、什么是跨域请求 首先，我们要 ...
-    </div>
-    <div class="read-more-link">
-      <a href="/post/cors-tutorial/">Read more..</a>
-    </div>
-    <div class="read-more">
-    </div>
-  </div>
-</article>
-
-    </section>
-  
-  <nav class="pagination">
-    
-    <a class="next" href="/page/2/">
-        <span class="next-text">Next</span>
-        <i class="iconfont icon-right"></i>
-      </a>
-  </nav>
-        </div>
+        var resizeTimeout;
+        function resizeThrottler() {
         
+        if ( !resizeTimeout ) {
+            resizeTimeout = setTimeout(function() {
+            resizeTimeout = null;
+            actualResizeHandler();
+        
+            
+            }, 66);
+        }
+        }
+        actualResizeHandler()
+        function actualResizeHandler() {
+                if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
+                {
+                    document.body.classList.add('mobile');
+                }else{
+                    document.body.classList.remove('mobile');  
+                }
+    }</script>
 
-      </div>
-    </main>
+    
+    
+    <nav class="navbar navbar-default navbar-static-top" style="opacity: .9" role="navigation">
+        <div class="container-fluid">
+            
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 
-    <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="mailto:forrestchang7@email.com" class="iconfont icon-email" title="email"></a>
-      <a href="https://twitter.com/Tisoga" class="iconfont icon-twitter" title="twitter"></a>
-      <a href="https://github.com/forrestchang" class="iconfont icon-github" title="github"></a>
-      <a href="https://www.instagram.com/jiayuan3055/" class="iconfont icon-instagram" title="instagram"></a>
-  <a href="http://blog.jiayuanzhang.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
-</div>
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="big-icon icon-bar"></span>
+                    <span class="big-icon icon-bar"></span>
+                    <span class="big-icon icon-bar"></span>
 
-<div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
+                </button>
+                <a class="navbar-brand" href="http://blog.jiayuanzhang.com/">Jiayuan&#39;s Blog</a>
+            </div>
 
-  <div class="busuanzi-footer">
-    <span id="busuanzi_container_site_pv"> Site PV: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
-      <span class="division">|</span>
-    <span id="busuanzi_container_site_uv"> Site UV: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
-  </div>
+            <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" style="height: auto;">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                        <li class=""><a class="nav-item nav-link" href="http://blog.jiayuanzhang.com/">Home</a></li>
+                        <li></li>
+                        <li></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
 
-  <span class="copyright-year">
-    &copy; 
-    2014 - 
-    2019
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">Jiayuan</span>
-  </span>
-</div>
-    </footer>
 
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
-    </div>
-  </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
-  <script type="text/javascript">
-    window.MathJax = {
-      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
-      showProcessingMessages: false,
-      messageStyle: 'none'
-    };
-  </script>
+    
+    
+    
+
+
   <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
 
+  <script type="text/javascript">
+   window.MathJax = {
+     
+     
+     showProcessingMessages: false,
+     messageStyle: 'none'
+   };
+  </script>
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-130256365-1', 'auto');
-	ga('set', 'anonymizeIp', true);
-	ga('send', 'pageview');
-}
+
+
+  <div class="outer">
+  <ul class="list-group">
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/how-to-modify-omnifocus-3-theme/"><time style="color:black;">2019-05-23</time>  / 修改 OmniFocus 3 的主题 </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/use-devonthink-to-write-blog/"><time style="color:black;">2019-05-04</time>  / 使用 Devonthink 来写博客 </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/notes-on-code-complete-part-1/"><time style="color:black;">2019-05-02</time>  / 读《代码大全》 </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/linux-command-sftp/"><time style="color:black;">2018-12-06</time>  / SFTP 使用详解 </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/cors-tutorial/"><time style="color:black;">2018-12-02</time>  / 跨域资源共享（CORS）详解 </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/omnifocus-3-workflow/"><time style="color:black;">2018-11-23</time>  / OmniFocus 3 最佳实践 </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/2018-week-35-review/"><time style="color:black;">2018-09-01</time>  / 2018 Weekly 35 Review </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/notes-on-the-pragmatic-programmer-part-2/"><time style="color:black;">2017-08-17</time>  / 《程序员修炼之道》阅读笔记（二） </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/notes-on-the-pragmatic-programmer-part-1/"><time style="color:black;">2017-08-13</time>  / 《程序员修炼之道》阅读笔记（一） </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/2017-week-19-review/"><time style="color:black;">2017-05-07</time>  / 2017 Week 19 Review </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/weekly-reading-report-issue-01/"><time style="color:black;">2017-03-24</time>  / 这周在读什么 Issue#1 </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/go-to-spotify/"><time style="color:black;">2017-03-19</time>  / 叛逃 Spotify </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/digital-life-in-2016-music-part/"><time style="color:black;">2017-02-24</time>  / 2016 音乐总结 </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/new-blog/"><time style="color:black;">2017-02-04</time>  / 换了一个新地方写东西 </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/2017-week-01-review/"><time style="color:black;">2017-01-01</time>  / 2017 Week 01 Review </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/2016-week-52-review/"><time style="color:black;">2016-12-26</time>  / 2016 Week 52 Review </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/notes-on-recommandation-system/"><time style="color:black;">2016-12-22</time>  / 推荐系统笔记 </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/2016-weekly-51-review/"><time style="color:black;">2016-12-20</time>  / 2016 Week 51 Review </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/2016-week-46-review/"><time style="color:black;">2016-11-13</time>  / 2016 Week 46 Review </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/2016-week-45-review/"><time style="color:black;">2016-11-07</time>  / 2016 Week 45 Review </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/build-python-scienfic-computing-environment/"><time style="color:black;">2016-10-28</time>  / 搭建 Python 科学计算环境 </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/2016-week-42-43-review/"><time style="color:black;">2016-10-26</time>  / 2016 Week 42-43 Review </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/2016-week-44-review/"><time style="color:black;">2016-10-03</time>  / 2016 Week 44 Review </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/2016-week-40-review/"><time style="color:black;">2016-10-02</time>  / 2016 Week 40 Review </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/2016-week-39-review/"><time style="color:black;">2016-09-25</time>  / 2016 Week 39 Review </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/notes-on-virtualenv/"><time style="color:black;">2016-07-17</time>  / virtualenv 相关笔记 </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/garbage-collection-in-swift-lang/"><time style="color:black;">2016-04-15</time>  / Swift 中的内存管理 </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/time-recording-tutorial/"><time style="color:black;">2016-04-10</time>  / 时间记录不完全指北 </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/linux-basic-notes/"><time style="color:black;">2016-03-23</time>  / Linux 基础笔记 </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/2016-week-12-review/"><time style="color:black;">2016-03-02</time>  / 2016 Week 12 Review </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/apple-music-and-classical-music-and-reading/"><time style="color:black;">2016-02-24</time>  / Apple Music，古典音乐，阅读 </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/self-learning-programer-manual-college-part/"><time style="color:black;">2016-02-03</time>  / 学院派编程自学指南 </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/squirrel-tutorial/"><time style="color:black;">2015-11-11</time>  / 极客的输入法：Squirrel（鼠须管） </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/how-to-use-emacs-and-org-mode-to-build-a-blog/"><time style="color:black;">2015-10-10</time>  / 使用Emacs Org-mode &#43; GitHub Pages 来写博客 </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/notes-on-time-management/"><time style="color:black;">2014-02-14</time>  / 谈谈时间管理 </a>
+            
+        
+      
+    </li>
+    
+
+    <li class="list-group-item title">
+      
+         
+        
+        
+            
+                <a href="/post/why-i-blog/"><time style="color:black;">2014-01-01</time>  / 为什么我要写博客 </a>
+            
+        
+      
+    </li>
+    
+  </ul>
+
+
+<footer>
+    <p style="float:right;margin:0 1rem;">
+        &copy; 2019 <a href="https://github.com/">Jiayuan Zhang.</a>
+        
+      </p>
+  <hr>
+  <hr>
+
+  
+  <br>
+
+
+</footer>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+
+
+
+
+<script>
+ (function(){
+  var seriesA = document.getElementsByTagName("a");
+  seriesA = Array.from(seriesA).filter(x =>x.getAttribute("data-series"));
+  var nameSeries = {}
+  if(seriesA.length){
+    seriesA.forEach(x =>{
+      var xdata = x.getAttribute("data-series")
+      if(nameSeries[xdata]){
+        nameSeries[xdata].push(x)
+      }else{
+        nameSeries[xdata] = [x]
+      }
+    })
+  }
+
+  function createE(){
+    var detailsArr = [] 
+    var postPosArr = [] 
+    for(let i in nameSeries){
+      var dcreateE = document.createElement("details")
+      var screateE = document.createElement("summary")
+      screateE.innerHTML = `${i} <i style="border-radius: 49%;border: 2px dashed #fe16fe;padding:3px;">${nameSeries[i].length} </i>`;
+      var inner = screateE.outerHTML // details innerHTML
+
+      nameSeries[i].forEach(x =>{
+        inner += x.outerHTML
+        x.parentElement.style.display = "none"
+      })
+      postPosArr.push(nameSeries[i][0])
+      dcreateE.innerHTML = inner
+      detailsArr.push(dcreateE)
+    }
+    console.info(postPosArr)
+    console.log(detailsArr[0])
+    postPosArr.forEach(a =>{
+      a.parentElement.style.display = "block"
+      a.outerHTML = detailsArr.shift().outerHTML
+    })
+  }
+  createE()
+ })()
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-<script id="baidu_analytics">
-  var _hmt = _hmt || [];
-  (function() {
-    if (window.location.hostname === 'localhost') return;
-    var hm = document.createElement("script"); hm.async = true;
-    hm.src = "https://hm.baidu.com/hm.js?001e800887eba2f8f57ec8059aafdad6";
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
-  })();
-</script>
-
-
-
 
 
 
 </body>
+
 </html>
+

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>code-complete on Jiayuan&#39;s Blog</title>
+    <title>Code Complete on Jiayuan&#39;s Blog</title>
     <link>http://blog.jiayuanzhang.com/tags/code-complete/</link>
-    <description>Recent content in code-complete on Jiayuan&#39;s Blog</description>
+    <description>Recent content in Code Complete on Jiayuan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>zh-CN</language>
     <lastBuildDate>Thu, 02 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://blog.jiayuanzhang.com/tags/code-complete/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,16 @@
       <pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/notes-on-code-complete-part-1/</guid>
-      <description>这本书最开始是大一的时候买的，买回来后翻了一些章节就成为了显示器的支架，直到最近工作了一段时间才重新开始读，这一次阅读和几年前初次阅读有很大不同，大一阅读时候的编码经验仅仅是局限于算法方面，对大型项目的构建没有特别多感触；这一次是在写了很多业务代码，积累了一定问题的基础上去阅读的</description>
+      <description>这本书最开始是大一的时候买的，买回来后翻了一些章节就成为了显示器的支架，直到最近工作了一段时间才重新开始读，这一次阅读和几年前初次阅读有很大不同，大一阅读时候的编码经验仅仅是局限于算法方面，对大型项目的构建没有特别多感触；这一次是在写了很多业务代码，积累了一定问题的基础上去阅读的，阅读的深度自然不是第一次阅读可以比较的。
+和这本书类似的还有一本叫做 《程序员修炼之道——从小工到专家》（我也写过 笔记）。这本书讲了很多软件工程领域的行话和规则，比如熟悉的 DRY 原则，如果觉得《代码大全》比较厚（大概九百多页），也可以先读一下这本书。
+《代码大全》并不是一本需要从头到尾依次阅读的书，章节和章节之间的联系也不是很大，完全可以随便挑选感兴趣的章节来阅读。这次阅读我主要遵从书上的建议，按照以下顺序来阅读：
+ 第 11 章：变量名的力量 第 8 章：防御式编程 第 7 章：高质量的子程序 第 18 章：表驱动法 第 4 章：关键的「构建」决策 第 33 章：个人性格 第 32 章：自说明代码 其他章节按照顺序或者兴趣度依次阅读  这个「读《代码大全》」系列的文章主要是记录一些阅读笔记。之前的阅读笔记比较喜欢把书上的内容抄下来，但是实际上发现，「抄书」可能抄完就忘了，因为「抄」其实很简单，不需要动脑，打字快的话也不会觉得很累。这次阅读笔记主要是「问题 - 回答」的模式来写，在阅读每章之前，先提出几个问题，然后在阅读的过程中解决问题。
+第 11 章：变量名的力量 问题：
+ 怎样给一个变量命名？ 长名字还是短名字？ 命名的最佳实践有哪些？ 有哪些常见的命名方法？ 在命名中应该要避免的东西有哪些？  怎样给一个变量命名？  通常，对变量的描述就是最佳的变量名。
+ 书中举了几个简单的例子，例如表示美国奥林匹克代表团成员数量的变量 numberOfPeopleOnTheUsOlympicTeam，表示某国代表团在现代奥运会上获得的最高分数的变量 maximumNumberOfPointsInModernOlympics。这种变量命名的好处是一眼就能看出这个变量表示的是什么，它们都是非常明确的。而像 nums 和 maxPoints 就相对来说没有那么明确，至于 n 和 m 这样的命名就是非常差的描述，移除了上下文根本无法理解。
+这种对变量描述的命名方法也有一个缺点：变量名太长了，这一点会之后讨论。
+另外一个命名的方法是「以问题为导向（Problem Orientation）」。
+ 一个好名字通常表达的是「什么（what）」，而不是「如何（how）」。如果一个名字反映了计算的某些方面而不是问题本省，那么它反应的就是「how」，而不是「what」了，应该避免取这样的名字。 书中也举了几个例子，例如一条员工数据记录可以称作 inputRec 或者 employeeData，inputRec 是一个反映输入、记录这些计算概念的计算机术语，二 employeeData 则直指问题领域。</description>
     </item>
     
   </channel>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>todoist on Jiayuan&#39;s Blog</title>
+    <title>Todoist on Jiayuan&#39;s Blog</title>
     <link>http://blog.jiayuanzhang.com/tags/todoist/</link>
-    <description>Recent content in todoist on Jiayuan&#39;s Blog</description>
+    <description>Recent content in Todoist on Jiayuan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>zh-CN</language>
     <lastBuildDate>Sun, 07 May 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://blog.jiayuanzhang.com/tags/todoist/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,13 @@
       <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/2017-week-19-review/</guid>
-      <description>之前有在博客上写 Weekly Review 的习惯，后来因为被朋友说博客真水然后都撤下来了，有些文章确实是类似于「流水账」的记事，但也有一些是围绕这周做的东西来讨论的。总的来说，写 Weekly Review 对自己帮助还是很大的，可以在一周中 Focus 一个特定的主题，而不是想到什么做什么，所以这个系列以后还会继续写下去，只是写的内容更</description>
+      <description>之前有在博客上写 Weekly Review 的习惯，后来因为被朋友说博客真水然后都撤下来了，有些文章确实是类似于「流水账」的记事，但也有一些是围绕这周做的东西来讨论的。总的来说，写 Weekly Review 对自己帮助还是很大的，可以在一周中 Focus 一个特定的主题，而不是想到什么做什么，所以这个系列以后还会继续写下去，只是写的内容更加具体一天，可以围绕着这周的 Project，或者这周听的音乐，或者读的书之类的。以前的文章看情况要不要放上来。
+这周算是正式把我的任务管理系统从 org-mode 转移到 Todoist 上来了。在不考虑时间成本和易用性上来说，org-mode 依然是目前我认为最完备的任务和时间管理系统，我用它来：
+ 任务管理：类似于 OmniFocus 的多层级任务管理，支持标签和优先级，可以自定义过滤视图 时间记录：按照项目的方式来记录时间，基本是在做哪件事之前把计时器打开，一个番茄时间后自动关闭，可以自定义生成各种时间报表 番茄工作法  自定义生成的时间记录表：
+虽然 org-mode 的优点众多，但是始终是一个基于 Emacs 的 major mode，所以诸多限制在所难免：
+ 没有一个简单易用的移动端 没办法做到全局 capture，虽然借助 Alfred 的 Workflow 和 Elisp 脚本能够实现这一功能，但是使用起来体验并不是很好 编辑功能过重，很显然，做任务管理不需要多么高效的编辑操作，类似于 OmniFocus 使用鼠标 + 快捷键才是更高效的方法，在 Emacs 里经常编辑速度过快把整个文件搞乱了  不用 OmniFocus 的原因是本来就是从 OmniFocus 转到 org-mode 上来的，OmniFocus 有一个很致命的缺点就是不支持多标签，并且 Perspective 提供的设置选项也很有限，根不能不能满足一些复杂的过滤要求。除此之外，OmniFocus 应该是最优秀的任务管理软件了。
+Todoist 初次使用的时候感觉很难用，尤其是鼠标点击就进入编辑模式，这个设计真的不知道怎么想的，并且各平台的客户端一点也不 Native，基本就是 Web 版套了一个壳。macOS 客户端经常有一些莫名的 bug，反正软件的使用体验上来说和 OmniFocus 简直不能比。
+经过一段时间的调教，现在基本还能满足日常使用了。我认为一个可靠的任务管理系统需要满足两点：</description>
     </item>
     
   </channel>
