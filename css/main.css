@@ -71,7 +71,6 @@ h2 {
     SimSun, serif;
   margin-bottom: 60px;
   margin-bottom: 40px;
-  padding: 5px;
   border-bottom: 2px LightGrey solid;
   width: 98%;
   line-height: 150%;
@@ -131,7 +130,7 @@ pre {
   font-size: 90%;
   line-height: 1.45;
   font-weight: 500;
-  background-color: #fafafa;
+  background-color: #f4f4f4;
   border: 1px solid #e0e0e0;
   border-radius: 4px;
   padding: 4px;
