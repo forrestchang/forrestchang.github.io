@@ -6,10 +6,19 @@
     <description>Recent content in Tags on Jiayuan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 19 Mar 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jul 2019 20:16:00 +0800</lastBuildDate>
     
 	<atom:link href="http://blog.jiayuanzhang.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Alfred</title>
+      <link>http://blog.jiayuanzhang.com/tags/alfred/</link>
+      <pubDate>Mon, 01 Jul 2019 20:16:00 +0800</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/tags/alfred/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Apple Music</title>
@@ -111,6 +120,15 @@
     </item>
     
     <item>
+      <title>Google</title>
+      <link>http://blog.jiayuanzhang.com/tags/google/</link>
+      <pubDate>Mon, 01 Jul 2019 20:16:00 +0800</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/tags/google/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Gtd</title>
       <link>http://blog.jiayuanzhang.com/tags/gtd/</link>
       <pubDate>Fri, 14 Feb 2014 00:00:00 +0000</pubDate>
@@ -183,6 +201,15 @@
     </item>
     
     <item>
+      <title>Meta Knowledge</title>
+      <link>http://blog.jiayuanzhang.com/tags/meta-knowledge/</link>
+      <pubDate>Mon, 01 Jul 2019 20:16:00 +0800</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/tags/meta-knowledge/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Music</title>
       <link>http://blog.jiayuanzhang.com/tags/music/</link>
       <pubDate>Sun, 19 Mar 2017 00:00:00 +0000</pubDate>
@@ -233,6 +260,15 @@
       <pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/tags/reading-notes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search</title>
+      <link>http://blog.jiayuanzhang.com/tags/search/</link>
+      <pubDate>Mon, 01 Jul 2019 20:16:00 +0800</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/tags/search/</guid>
       <description></description>
     </item>
     
