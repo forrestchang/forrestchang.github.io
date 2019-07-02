@@ -83,8 +83,9 @@ body.mobile .navbar-nav {
 }
 
 div.outer {
-  margin: 0 10% 2% 10%;
+  margin: 0.5em auto;
   padding: 1.5em 0;
+  max-width: 1000px;
 }
 
 body.mobile div.outer {
