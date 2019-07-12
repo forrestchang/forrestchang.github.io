@@ -62,6 +62,10 @@ pre {
   font-size: 16px;
 }
 
+code {
+  font-size: 16px;
+}
+
 li {
   margin-bottom: 4px;
 }
