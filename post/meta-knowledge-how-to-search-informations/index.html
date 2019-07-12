@@ -1,121 +1,20 @@
-<!DOCTYPE html>
-<html>
-
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta http-equiv="content-language" content="zh-CN" />
-    
-    <meta name="viewport" content="width=device-width, initial-scale=0.5">
-    
-    
-    <title>元知识：信息检索指南</title>
+  <title>元知识：信息检索指南</title>
 
-    
-
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
-        <script>
-            document.addEventListener("DOMContentLoaded", function(event) {
-                anchors.options = {
-                visible: 'hover',
-                placement: 'left',
-                icon: "¶"
-                };
-            anchors.add();
-            })
-        </script>
-        
-        
-
-        
-
-        
-        
-
-        
-        
-            <link rel="stylesheet" href="http://blog.jiayuanzhang.com/css/main.css">
-        
-
-        
-    
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
-    
-
-    
-    
-    <script>hljs.initHighlightingOnLoad();</script>
-
-    
-
+  <link rel="stylesheet" href="http://blog.jiayuanzhang.com/css/main.css">
 </head>
 
 
-<body>
-    <script>
-        window.addEventListener("resize", resizeThrottler, false);
+<div class="container">
+  <header>
+    <div class="post-title">
+      <h1>元知识：信息检索指南</h1>
+    </div>
+  </header>
 
-        var resizeTimeout;
-        function resizeThrottler() {
-        
-        if ( !resizeTimeout ) {
-            resizeTimeout = setTimeout(function() {
-            resizeTimeout = null;
-            actualResizeHandler();
-        
-            
-            }, 66);
-        }
-        }
-        actualResizeHandler()
-        function actualResizeHandler() {
-                if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-                {
-                    document.body.classList.add('mobile');
-                }else{
-                    document.body.classList.remove('mobile');  
-                }
-    }</script>
-
-    
-    
-
-
-    
-
-
-  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
-
-  <script type="text/javascript">
-   window.MathJax = {
-     
-     
-     showProcessingMessages: false,
-     messageStyle: 'none'
-   };
-  </script>
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-130256365-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-<div class="inner" style="position:relative;">
-  
-  <div class="side-btn"><a href="http://blog.jiayuanzhang.com/" class="back">Home</a></div>
-  
-<div class="blog-post">
-  <h2>元知识：信息检索指南</h2>
-        
+  <content>
+    <div class="post-content">
+      
 
 <p>什么是元知识，我的理解是各个领域都通用的知识，例如交流的能力，搜索信息的能力，语言的能力等，不管你是从事什么行业的工作，这些都是必备的技能（或可以增益的技能）。什么是领域知识，例如编程能力、运营能力，这些是在特定领域发挥作用的知识，虽然编程和运营都可以运用在别的领域中，但是都是比较简单的情况（产品经理如果想学习简单的数据分析知识，不需要去学习如何编写操作系统）。</p>
 
@@ -198,59 +97,49 @@ if (!doNotTrack) {
 <p>这只是 Alfred 基础功能的最简单使用，在之前的文章中我介绍过使用 Alfred 的
 Workflow 来自动生成博客：<a href="http://blog.jiayuanzhang.com/post/use-devonthink-to-write-blog/">使用 Devonthink 来写博客</a>，在后续的文章中，我将会介绍更多的 Alfred 高级使用技巧。</p>
 
-  </div>
-
-<br>
-  
-
-
-<br><div class="post bg-white">
-        <script src="https://utteranc.es/client.js"
-            repo= "forrestchang/forrestchang.github.io"
-            issue-term="pathname"
-            theme="github-light"
-            label="utterances"
-            crossorigin="anonymous"
-            async>
-        </script>
     </div>
+  </content>
 
-<footer>
-    <p style="float:right;margin:0 1rem;">
-        &copy; 2019 <a href="http://jiayuanzhang.com">Jiayuan Zhang.</a>
-        
-      </p>
-  <hr>
-  <hr>
-
-  
-  <br>
-
-
-</footer>
+  <footer>
+    <div class="post-comment">
+      
+        <script async src="https://utteranc.es/client.js"
+                repo="forrestchang/forrestchang.github.io"
+                issue-term="pathname"
+                theme="github-light"
+                label="utterances"
+                crossorigin="anonymous">
+        </script>
+      
+      </div>
+  </footer>
 </div>
 
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-  crossorigin="anonymous"></script>
-<script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-130256365-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
+<script
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"
+  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k="
+  crossorigin="anonymous"
+></script>
 
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-</body>
-
-</html>
+<script type="text/javascript">
+ window.MathJax = {
+   
+   
+   showProcessingMessages: false,
+   messageStyle: 'none'
+ };
+</script>
 

@@ -1,121 +1,20 @@
-<!DOCTYPE html>
-<html>
-
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta http-equiv="content-language" content="zh-CN" />
-    
-    <meta name="viewport" content="width=device-width, initial-scale=0.5">
-    
-    
-    <title>OmniFocus 3 最佳实践</title>
+  <title>OmniFocus 3 最佳实践</title>
 
-    
-
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
-        <script>
-            document.addEventListener("DOMContentLoaded", function(event) {
-                anchors.options = {
-                visible: 'hover',
-                placement: 'left',
-                icon: "¶"
-                };
-            anchors.add();
-            })
-        </script>
-        
-        
-
-        
-
-        
-        
-
-        
-        
-            <link rel="stylesheet" href="http://blog.jiayuanzhang.com/css/main.css">
-        
-
-        
-    
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
-    
-
-    
-    
-    <script>hljs.initHighlightingOnLoad();</script>
-
-    
-
+  <link rel="stylesheet" href="http://blog.jiayuanzhang.com/css/main.css">
 </head>
 
 
-<body>
-    <script>
-        window.addEventListener("resize", resizeThrottler, false);
+<div class="container">
+  <header>
+    <div class="post-title">
+      <h1>OmniFocus 3 最佳实践</h1>
+    </div>
+  </header>
 
-        var resizeTimeout;
-        function resizeThrottler() {
-        
-        if ( !resizeTimeout ) {
-            resizeTimeout = setTimeout(function() {
-            resizeTimeout = null;
-            actualResizeHandler();
-        
-            
-            }, 66);
-        }
-        }
-        actualResizeHandler()
-        function actualResizeHandler() {
-                if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-                {
-                    document.body.classList.add('mobile');
-                }else{
-                    document.body.classList.remove('mobile');  
-                }
-    }</script>
-
-    
-    
-
-
-    
-
-
-  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
-
-  <script type="text/javascript">
-   window.MathJax = {
-     
-     
-     showProcessingMessages: false,
-     messageStyle: 'none'
-   };
-  </script>
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-130256365-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-<div class="inner" style="position:relative;">
-  
-  <div class="side-btn"><a href="http://blog.jiayuanzhang.com/" class="back">Home</a></div>
-  
-<div class="blog-post">
-  <h2>OmniFocus 3 最佳实践</h2>
-        
+  <content>
+    <div class="post-content">
+      
 
 <p>这篇文章主要分享一下我多年使用的一套任务管理系统的经验，工具是次要的，主要是一些想法的实践。有了基本的思路，无论是 OmniFocus、Todoist 还是 org-mode（Emacs 中的一个时间管理模式），都可以有自己的一套方式来实践。本篇文章主要以 OmniFocus 3 为载体来介绍这些内容。</p>
 
@@ -365,59 +264,49 @@ if (!doNotTrack) {
 
 <p>这篇文章中所写的内容都是经过了很长时间实践之后得出的经验，一个好的任务系统是需要不断优化迭代的，如果你觉得自己的系统不怎么好用，不妨想一下哪些地方需要优化，然后慢慢改进它。掌握了任务管理的本质之后，不管是切换到什么工具都能够游刃有余。</p>
 
-  </div>
-
-<br>
-  
-
-
-<br><div class="post bg-white">
-        <script src="https://utteranc.es/client.js"
-            repo= "forrestchang/forrestchang.github.io"
-            issue-term="pathname"
-            theme="github-light"
-            label="utterances"
-            crossorigin="anonymous"
-            async>
-        </script>
     </div>
+  </content>
 
-<footer>
-    <p style="float:right;margin:0 1rem;">
-        &copy; 2019 <a href="http://jiayuanzhang.com">Jiayuan Zhang.</a>
-        
-      </p>
-  <hr>
-  <hr>
-
-  
-  <br>
-
-
-</footer>
+  <footer>
+    <div class="post-comment">
+      
+        <script async src="https://utteranc.es/client.js"
+                repo="forrestchang/forrestchang.github.io"
+                issue-term="pathname"
+                theme="github-light"
+                label="utterances"
+                crossorigin="anonymous">
+        </script>
+      
+      </div>
+  </footer>
 </div>
 
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-  crossorigin="anonymous"></script>
-<script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-130256365-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
+<script
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"
+  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k="
+  crossorigin="anonymous"
+></script>
 
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-</body>
-
-</html>
+<script type="text/javascript">
+ window.MathJax = {
+   
+   
+   showProcessingMessages: false,
+   messageStyle: 'none'
+ };
+</script>
 

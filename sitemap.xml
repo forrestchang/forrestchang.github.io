@@ -301,12 +301,6 @@
   </url>
   
   <url>
-    <loc>http://blog.jiayuanzhang.com/</loc>
-    <lastmod>2019-07-01T20:24:57+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.jiayuanzhang.com/categories/journal/</loc>
     <lastmod>2019-05-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -321,6 +315,12 @@
   <url>
     <loc>http://blog.jiayuanzhang.com/tags/jxa/</loc>
     <lastmod>2019-05-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/</loc>
+    <lastmod>2019-07-01T20:24:57+08:00</lastmod>
     <priority>0</priority>
   </url>
   

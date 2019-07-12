@@ -1,121 +1,20 @@
-<!DOCTYPE html>
-<html>
-
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta http-equiv="content-language" content="zh-CN" />
-    
-    <meta name="viewport" content="width=device-width, initial-scale=0.5">
-    
-    
-    <title>搭建 Python 科学计算环境</title>
+  <title>搭建 Python 科学计算环境</title>
 
-    
-
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
-        <script>
-            document.addEventListener("DOMContentLoaded", function(event) {
-                anchors.options = {
-                visible: 'hover',
-                placement: 'left',
-                icon: "¶"
-                };
-            anchors.add();
-            })
-        </script>
-        
-        
-
-        
-
-        
-        
-
-        
-        
-            <link rel="stylesheet" href="http://blog.jiayuanzhang.com/css/main.css">
-        
-
-        
-    
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
-    
-
-    
-    
-    <script>hljs.initHighlightingOnLoad();</script>
-
-    
-
+  <link rel="stylesheet" href="http://blog.jiayuanzhang.com/css/main.css">
 </head>
 
 
-<body>
-    <script>
-        window.addEventListener("resize", resizeThrottler, false);
+<div class="container">
+  <header>
+    <div class="post-title">
+      <h1>搭建 Python 科学计算环境</h1>
+    </div>
+  </header>
 
-        var resizeTimeout;
-        function resizeThrottler() {
-        
-        if ( !resizeTimeout ) {
-            resizeTimeout = setTimeout(function() {
-            resizeTimeout = null;
-            actualResizeHandler();
-        
-            
-            }, 66);
-        }
-        }
-        actualResizeHandler()
-        function actualResizeHandler() {
-                if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-                {
-                    document.body.classList.add('mobile');
-                }else{
-                    document.body.classList.remove('mobile');  
-                }
-    }</script>
-
-    
-    
-
-
-    
-
-
-  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
-
-  <script type="text/javascript">
-   window.MathJax = {
-     
-     
-     showProcessingMessages: false,
-     messageStyle: 'none'
-   };
-  </script>
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-130256365-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-<div class="inner" style="position:relative;">
-  
-  <div class="side-btn"><a href="http://blog.jiayuanzhang.com/" class="back">Home</a></div>
-  
-<div class="blog-post">
-  <h2>搭建 Python 科学计算环境</h2>
-        
+  <content>
+    <div class="post-content">
+      
 
 <p>最近在看《Python for Data Analysis》（利用 Python 进行数据分析）这本书，贴一点笔记，这一篇是关于环境搭建的。另外吐槽一下，书中还是有不少错误的，语法错误就发现了好多处，大概读完了之后会整理出一份勘误表出来，可能是因为写书的时候是 14 年，两年过去了，pandas 库也有了一些变化。</p>
 
@@ -193,59 +92,49 @@ if (!doNotTrack) {
 
 <p><img src="https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326150149.png" alt="14776661445090" /></p>
 
-  </div>
-
-<br>
-  
-
-
-<br><div class="post bg-white">
-        <script src="https://utteranc.es/client.js"
-            repo= "forrestchang/forrestchang.github.io"
-            issue-term="pathname"
-            theme="github-light"
-            label="utterances"
-            crossorigin="anonymous"
-            async>
-        </script>
     </div>
+  </content>
 
-<footer>
-    <p style="float:right;margin:0 1rem;">
-        &copy; 2019 <a href="http://jiayuanzhang.com">Jiayuan Zhang.</a>
-        
-      </p>
-  <hr>
-  <hr>
-
-  
-  <br>
-
-
-</footer>
+  <footer>
+    <div class="post-comment">
+      
+        <script async src="https://utteranc.es/client.js"
+                repo="forrestchang/forrestchang.github.io"
+                issue-term="pathname"
+                theme="github-light"
+                label="utterances"
+                crossorigin="anonymous">
+        </script>
+      
+      </div>
+  </footer>
 </div>
 
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-  crossorigin="anonymous"></script>
-<script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-130256365-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
+<script
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"
+  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k="
+  crossorigin="anonymous"
+></script>
 
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-</body>
-
-</html>
+<script type="text/javascript">
+ window.MathJax = {
+   
+   
+   showProcessingMessages: false,
+   messageStyle: 'none'
+ };
+</script>
 
