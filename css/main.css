@@ -70,6 +70,21 @@ li {
   margin-bottom: 4px;
 }
 
+table {
+  border: 1px dashed;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+thread {
+  background-color: gainsboro;
+}
+
+tr {
+  border-bottom: 1px solid;
+}
+
 .container {
   padding: 30px;
 }
