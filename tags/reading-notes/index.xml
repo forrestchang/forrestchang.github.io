@@ -30,7 +30,7 @@
     </item>
     
     <item>
-      <title>《程序员修炼之道》阅读笔记（二）</title>
+      <title>读《程序员修炼之道》（二）</title>
       <link>http://blog.jiayuanzhang.com/post/notes-on-the-pragmatic-programmer-part-2/</link>
       <pubDate>Thu, 17 Aug 2017 00:00:00 +0000</pubDate>
       
@@ -56,7 +56,7 @@ class Line { public: Point start; Point end; double lenght() { return start.</de
     </item>
     
     <item>
-      <title>《程序员修炼之道》阅读笔记（一）</title>
+      <title>读《程序员修炼之道》（一）</title>
       <link>http://blog.jiayuanzhang.com/post/notes-on-the-pragmatic-programmer-part-1/</link>
       <pubDate>Sun, 13 Aug 2017 00:00:00 +0000</pubDate>
       
