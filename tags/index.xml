@@ -95,7 +95,7 @@
     <item>
       <title>Emacs</title>
       <link>http://blog.jiayuanzhang.com/tags/emacs/</link>
-      <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 14 Jul 2019 00:31:00 +0800</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/tags/emacs/</guid>
       <description></description>
@@ -149,7 +149,7 @@
     <item>
       <title>Hugo</title>
       <link>http://blog.jiayuanzhang.com/tags/hugo/</link>
-      <pubDate>Sat, 04 May 2019 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 14 Jul 2019 00:31:00 +0800</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/tags/hugo/</guid>
       <description></description>
@@ -230,9 +230,18 @@
     <item>
       <title>Org Mode</title>
       <link>http://blog.jiayuanzhang.com/tags/org-mode/</link>
-      <pubDate>Sat, 04 May 2019 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 14 Jul 2019 00:31:00 +0800</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/tags/org-mode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ox Hugo</title>
+      <link>http://blog.jiayuanzhang.com/tags/ox-hugo/</link>
+      <pubDate>Sun, 14 Jul 2019 00:31:00 +0800</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/tags/ox-hugo/</guid>
       <description></description>
     </item>
     

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://blog.jiayuanzhang.com/post/blog-with-ox-hugo/</loc>
+    <lastmod>2019-07-14T00:31:54+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://blog.jiayuanzhang.com/post/meta-knowledge-how-to-search-informations/</loc>
     <lastmod>2019-07-01T20:24:57+08:00</lastmod>
   </url>
@@ -248,7 +253,7 @@
   
   <url>
     <loc>http://blog.jiayuanzhang.com/tags/emacs/</loc>
-    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
+    <lastmod>2019-07-14T00:31:54+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -290,7 +295,7 @@
   
   <url>
     <loc>http://blog.jiayuanzhang.com/tags/hugo/</loc>
-    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
+    <lastmod>2019-07-14T00:31:54+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -320,7 +325,7 @@
   
   <url>
     <loc>http://blog.jiayuanzhang.com/</loc>
-    <lastmod>2019-07-01T20:24:57+08:00</lastmod>
+    <lastmod>2019-07-14T00:31:54+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -356,19 +361,25 @@
   
   <url>
     <loc>http://blog.jiayuanzhang.com/tags/org-mode/</loc>
-    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
+    <lastmod>2019-07-14T00:31:54+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/tags/ox-hugo/</loc>
+    <lastmod>2019-07-14T00:31:54+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://blog.jiayuanzhang.com/post/</loc>
-    <lastmod>2019-07-01T20:24:57+08:00</lastmod>
+    <lastmod>2019-07-14T00:31:54+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://blog.jiayuanzhang.com/categories/productivity/</loc>
-    <lastmod>2019-05-23T00:00:00+00:00</lastmod>
+    <lastmod>2019-07-14T00:31:54+08:00</lastmod>
     <priority>0</priority>
   </url>
   

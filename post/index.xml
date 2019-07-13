@@ -6,10 +6,23 @@
     <description>Recent content in Posts on Lifelong Hacker</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 01 Jul 2019 20:16:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jul 2019 00:31:00 +0800</lastBuildDate>
     
 	<atom:link href="http://blog.jiayuanzhang.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>使用 ox-hugo 来写博客</title>
+      <link>http://blog.jiayuanzhang.com/post/blog-with-ox-hugo/</link>
+      <pubDate>Sun, 14 Jul 2019 00:31:00 +0800</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/blog-with-ox-hugo/</guid>
+      <description>最近开始重新使用 org-mode，在这之前大概有一年左右的时间，慢慢把一些东西从 org-mode 转移到别的工具上了，比如利用 OmniFocus 来管理任务，用 Devonthink 来管理笔记，用 Ulysses 来写作。虽然这些工具非常好用，但是总能找到一两个不满意的点，为此还写了不少脚本进行优化（这些 App 均支持 AppleScript），既然都是要写代码才能完全满足使用需求，不如直接使用 Emacs 来做这些事好了（目前已经将任务管理系统又迁移到 org-mode 上来了）。
+从 上篇文章 可以知道，我开始使用 Devonthink 来写博客，配合 Alfred 的 Workflow 可以方便地生成 Hugo 的博客文章，其实就是简单地将 Devonthink 中的 Metadata 生成 YAML 格式的内容插入到 Markdown 文件中。
+如果你只使用 Markdown 来写作的话，这种写博客的流程是非常好的，配合一个 Markdown 编辑器（推荐 iA Writer），Devonthink 可以方便的作为管理博客文章的前端，另外再配合我写的 Alfred 全局搜索（支持拼音） Workflow，可以快速地找到所写的内容。
+但是，比起 Markdown，我更喜欢用 org-mode 来写东西。所以，我需要对上面这些流程做一些 Hack，其实也非常简单：
+ 在 Devonthink 中建立 org 格式的文件（在 Devonthink 显示为 plain-text）； 调用 Emacs 来打开这个文件（Open with Emacs，或者可以写一个脚本用 Alfred 来调用打开）； 在 Emacs 中使用 org-mode 来完成写作； 修改之前的 Alfred Workflow，检测到是 .</description>
+    </item>
     
     <item>
       <title>元知识：信息检索指南</title>
