@@ -10,6 +10,7 @@ body {
   font-size: 18px;
   font-family: sans-serif;
   max-width: 800px;
+  margin: 0 auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -89,7 +90,7 @@ tr {
 }
 
 .site-title {
-  margin-left: 20px;
+  margin-left: 25px;
 }
 
 .post-item {
