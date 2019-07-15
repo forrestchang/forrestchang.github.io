@@ -7,10 +7,11 @@
 }
 
 body {
-  font-size: 18px;
+  font-size: 20px;
   font-family: sans-serif;
   max-width: 800px;
   margin: 0 auto;
+  background-color: #fcfcf5;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -64,6 +65,7 @@ pre {
 
 code {
   font-size: 16px;
+  font-family: Sarasa Mono SC;
 }
 
 li {
