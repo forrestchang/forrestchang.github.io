@@ -2,13 +2,6 @@
 最近开始重新使用 org-mode，在这之前大概有一年左右的时间，慢慢把一些东西从
 org-mode 转移到别的工具上了，比如利用 OmniFocus 来管理任务，用 Devonthink 来管理笔记，用 Ulysses 来写作。虽然这些工具非常好用，但是总能找到一两个不满意的点，为此还写了不少脚本进行优化（这些 App 均支持 AppleScript），既然都是要写代码才能完全满足使用需求，不如直接使用 Emacs 来做这些事好了（目前已经将任务管理系统又迁移到 org-mode 上来了）。
 
-<div class="sidenote">
-  <div></div>
-
-This is a test side note
-
-</div>
-
 从 [上篇文章](http://blog.jiayuanzhang.com/post/use-devonthink-to-write-blog/) 可以知道，我开始使用 Devonthink 来写博客，配合 Alfred 的 Workflow 可以方便地生成 Hugo 的博客文章，其实就是简单地将 Devonthink 中的 Metadata 生成
 YAML 格式的内容插入到 Markdown 文件中。
 
