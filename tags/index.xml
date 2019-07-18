@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Lifelong Hacker</title>
+    <title>Tags on Life Hacker</title>
     <link>http://blog.jiayuanzhang.com/tags/</link>
-    <description>Recent content in Tags on Lifelong Hacker</description>
+    <description>Recent content in Tags on Life Hacker</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Mon, 01 Jul 2019 20:16:00 +0800</lastBuildDate>
+    <language>en</language>
     
 	<atom:link href="http://blog.jiayuanzhang.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Alfred</title>
+      <title>alfred</title>
       <link>http://blog.jiayuanzhang.com/tags/alfred/</link>
       <pubDate>Mon, 01 Jul 2019 20:16:00 +0800</pubDate>
       
@@ -21,7 +20,7 @@
     </item>
     
     <item>
-      <title>Apple Music</title>
+      <title>apple-music</title>
       <link>http://blog.jiayuanzhang.com/tags/apple-music/</link>
       <pubDate>Sun, 19 Mar 2017 00:00:00 +0000</pubDate>
       
@@ -30,7 +29,7 @@
     </item>
     
     <item>
-      <title>Applescript</title>
+      <title>applescript</title>
       <link>http://blog.jiayuanzhang.com/tags/applescript/</link>
       <pubDate>Sat, 04 May 2019 00:00:00 +0000</pubDate>
       
@@ -39,7 +38,7 @@
     </item>
     
     <item>
-      <title>Automation</title>
+      <title>automation</title>
       <link>http://blog.jiayuanzhang.com/tags/automation/</link>
       <pubDate>Sat, 04 May 2019 00:00:00 +0000</pubDate>
       
@@ -48,7 +47,7 @@
     </item>
     
     <item>
-      <title>Blog</title>
+      <title>blog</title>
       <link>http://blog.jiayuanzhang.com/tags/blog/</link>
       <pubDate>Sat, 04 May 2019 00:00:00 +0000</pubDate>
       
@@ -57,7 +56,7 @@
     </item>
     
     <item>
-      <title>Code Complete</title>
+      <title>code-complete</title>
       <link>http://blog.jiayuanzhang.com/tags/code-complete/</link>
       <pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate>
       
@@ -66,7 +65,7 @@
     </item>
     
     <item>
-      <title>Computer Science</title>
+      <title>computer-science</title>
       <link>http://blog.jiayuanzhang.com/tags/computer-science/</link>
       <pubDate>Wed, 03 Feb 2016 00:00:00 +0000</pubDate>
       
@@ -75,7 +74,7 @@
     </item>
     
     <item>
-      <title>Cors</title>
+      <title>cors</title>
       <link>http://blog.jiayuanzhang.com/tags/cors/</link>
       <pubDate>Sun, 02 Dec 2018 00:00:00 +0000</pubDate>
       
@@ -84,7 +83,7 @@
     </item>
     
     <item>
-      <title>Devonthink</title>
+      <title>devonthink</title>
       <link>http://blog.jiayuanzhang.com/tags/devonthink/</link>
       <pubDate>Sat, 04 May 2019 00:00:00 +0000</pubDate>
       
@@ -93,7 +92,7 @@
     </item>
     
     <item>
-      <title>Emacs</title>
+      <title>emacs</title>
       <link>http://blog.jiayuanzhang.com/tags/emacs/</link>
       <pubDate>Sun, 14 Jul 2019 00:31:00 +0800</pubDate>
       
@@ -102,7 +101,7 @@
     </item>
     
     <item>
-      <title>Garbage Collection</title>
+      <title>garbage-collection</title>
       <link>http://blog.jiayuanzhang.com/tags/garbage-collection/</link>
       <pubDate>Fri, 15 Apr 2016 00:00:00 +0000</pubDate>
       
@@ -111,7 +110,7 @@
     </item>
     
     <item>
-      <title>Github Pages</title>
+      <title>github-pages</title>
       <link>http://blog.jiayuanzhang.com/tags/github-pages/</link>
       <pubDate>Sat, 10 Oct 2015 00:00:00 +0000</pubDate>
       
@@ -120,7 +119,7 @@
     </item>
     
     <item>
-      <title>Google</title>
+      <title>google</title>
       <link>http://blog.jiayuanzhang.com/tags/google/</link>
       <pubDate>Mon, 01 Jul 2019 20:16:00 +0800</pubDate>
       
@@ -129,7 +128,7 @@
     </item>
     
     <item>
-      <title>Gtd</title>
+      <title>gtd</title>
       <link>http://blog.jiayuanzhang.com/tags/gtd/</link>
       <pubDate>Fri, 14 Feb 2014 00:00:00 +0000</pubDate>
       
@@ -138,7 +137,7 @@
     </item>
     
     <item>
-      <title>Http</title>
+      <title>http</title>
       <link>http://blog.jiayuanzhang.com/tags/http/</link>
       <pubDate>Sun, 02 Dec 2018 00:00:00 +0000</pubDate>
       
@@ -147,7 +146,7 @@
     </item>
     
     <item>
-      <title>Hugo</title>
+      <title>hugo</title>
       <link>http://blog.jiayuanzhang.com/tags/hugo/</link>
       <pubDate>Sun, 14 Jul 2019 00:31:00 +0800</pubDate>
       
@@ -156,7 +155,7 @@
     </item>
     
     <item>
-      <title>Ipython</title>
+      <title>ipython</title>
       <link>http://blog.jiayuanzhang.com/tags/ipython/</link>
       <pubDate>Fri, 28 Oct 2016 00:00:00 +0000</pubDate>
       
@@ -165,7 +164,7 @@
     </item>
     
     <item>
-      <title>Jupyter</title>
+      <title>jupyter</title>
       <link>http://blog.jiayuanzhang.com/tags/jupyter/</link>
       <pubDate>Fri, 28 Oct 2016 00:00:00 +0000</pubDate>
       
@@ -174,7 +173,7 @@
     </item>
     
     <item>
-      <title>Jxa</title>
+      <title>jxa</title>
       <link>http://blog.jiayuanzhang.com/tags/jxa/</link>
       <pubDate>Sat, 04 May 2019 00:00:00 +0000</pubDate>
       
@@ -183,7 +182,7 @@
     </item>
     
     <item>
-      <title>Linux</title>
+      <title>linux</title>
       <link>http://blog.jiayuanzhang.com/tags/linux/</link>
       <pubDate>Thu, 06 Dec 2018 00:00:00 +0000</pubDate>
       
@@ -192,7 +191,7 @@
     </item>
     
     <item>
-      <title>Machine Learning</title>
+      <title>machine-learning</title>
       <link>http://blog.jiayuanzhang.com/tags/machine-learning/</link>
       <pubDate>Thu, 22 Dec 2016 00:00:00 +0000</pubDate>
       
@@ -201,7 +200,7 @@
     </item>
     
     <item>
-      <title>Meta Knowledge</title>
+      <title>meta-knowledge</title>
       <link>http://blog.jiayuanzhang.com/tags/meta-knowledge/</link>
       <pubDate>Mon, 01 Jul 2019 20:16:00 +0800</pubDate>
       
@@ -210,7 +209,7 @@
     </item>
     
     <item>
-      <title>Music</title>
+      <title>music</title>
       <link>http://blog.jiayuanzhang.com/tags/music/</link>
       <pubDate>Sun, 19 Mar 2017 00:00:00 +0000</pubDate>
       
@@ -219,7 +218,7 @@
     </item>
     
     <item>
-      <title>Omnifocus</title>
+      <title>omnifocus</title>
       <link>http://blog.jiayuanzhang.com/tags/omnifocus/</link>
       <pubDate>Thu, 23 May 2019 00:00:00 +0000</pubDate>
       
@@ -228,7 +227,7 @@
     </item>
     
     <item>
-      <title>Org Mode</title>
+      <title>org-mode</title>
       <link>http://blog.jiayuanzhang.com/tags/org-mode/</link>
       <pubDate>Sun, 14 Jul 2019 00:31:00 +0800</pubDate>
       
@@ -237,7 +236,7 @@
     </item>
     
     <item>
-      <title>Ox Hugo</title>
+      <title>ox-hugo</title>
       <link>http://blog.jiayuanzhang.com/tags/ox-hugo/</link>
       <pubDate>Sun, 14 Jul 2019 00:31:00 +0800</pubDate>
       
@@ -246,7 +245,7 @@
     </item>
     
     <item>
-      <title>Python</title>
+      <title>python</title>
       <link>http://blog.jiayuanzhang.com/tags/python/</link>
       <pubDate>Thu, 22 Dec 2016 00:00:00 +0000</pubDate>
       
@@ -255,7 +254,7 @@
     </item>
     
     <item>
-      <title>Reading</title>
+      <title>reading</title>
       <link>http://blog.jiayuanzhang.com/tags/reading/</link>
       <pubDate>Wed, 24 Feb 2016 00:00:00 +0000</pubDate>
       
@@ -264,7 +263,7 @@
     </item>
     
     <item>
-      <title>Reading Notes</title>
+      <title>reading-notes</title>
       <link>http://blog.jiayuanzhang.com/tags/reading-notes/</link>
       <pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate>
       
@@ -273,7 +272,7 @@
     </item>
     
     <item>
-      <title>Search</title>
+      <title>search</title>
       <link>http://blog.jiayuanzhang.com/tags/search/</link>
       <pubDate>Mon, 01 Jul 2019 20:16:00 +0800</pubDate>
       
@@ -282,7 +281,7 @@
     </item>
     
     <item>
-      <title>Sftp</title>
+      <title>sftp</title>
       <link>http://blog.jiayuanzhang.com/tags/sftp/</link>
       <pubDate>Thu, 06 Dec 2018 00:00:00 +0000</pubDate>
       
@@ -291,7 +290,7 @@
     </item>
     
     <item>
-      <title>Spotify</title>
+      <title>spotify</title>
       <link>http://blog.jiayuanzhang.com/tags/spotify/</link>
       <pubDate>Sun, 19 Mar 2017 00:00:00 +0000</pubDate>
       
@@ -300,7 +299,7 @@
     </item>
     
     <item>
-      <title>Squirrel</title>
+      <title>squirrel</title>
       <link>http://blog.jiayuanzhang.com/tags/squirrel/</link>
       <pubDate>Wed, 11 Nov 2015 00:00:00 +0000</pubDate>
       
@@ -309,7 +308,7 @@
     </item>
     
     <item>
-      <title>Swift</title>
+      <title>swift</title>
       <link>http://blog.jiayuanzhang.com/tags/swift/</link>
       <pubDate>Fri, 15 Apr 2016 00:00:00 +0000</pubDate>
       
@@ -318,7 +317,7 @@
     </item>
     
     <item>
-      <title>Time Management</title>
+      <title>time-management</title>
       <link>http://blog.jiayuanzhang.com/tags/time-management/</link>
       <pubDate>Fri, 23 Nov 2018 00:00:00 +0000</pubDate>
       
@@ -327,7 +326,7 @@
     </item>
     
     <item>
-      <title>Todoist</title>
+      <title>todoist</title>
       <link>http://blog.jiayuanzhang.com/tags/todoist/</link>
       <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
       
@@ -336,7 +335,7 @@
     </item>
     
     <item>
-      <title>Toggl</title>
+      <title>toggl</title>
       <link>http://blog.jiayuanzhang.com/tags/toggl/</link>
       <pubDate>Sun, 10 Apr 2016 00:00:00 +0000</pubDate>
       
@@ -345,7 +344,7 @@
     </item>
     
     <item>
-      <title>Virtualenv</title>
+      <title>virtualenv</title>
       <link>http://blog.jiayuanzhang.com/tags/virtualenv/</link>
       <pubDate>Sun, 17 Jul 2016 00:00:00 +0000</pubDate>
       
@@ -354,7 +353,7 @@
     </item>
     
     <item>
-      <title>Vscode</title>
+      <title>vscode</title>
       <link>http://blog.jiayuanzhang.com/tags/vscode/</link>
       <pubDate>Sun, 25 Sep 2016 00:00:00 +0000</pubDate>
       

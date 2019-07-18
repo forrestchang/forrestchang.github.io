@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Vscode on Lifelong Hacker</title>
+    <title>vscode on Life Hacker</title>
     <link>http://blog.jiayuanzhang.com/tags/vscode/</link>
-    <description>Recent content in Vscode on Lifelong Hacker</description>
+    <description>Recent content in vscode on Life Hacker</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
+    <language>en</language>
     <lastBuildDate>Sun, 25 Sep 2016 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://blog.jiayuanzhang.com/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
@@ -17,22 +17,7 @@
       <pubDate>Sun, 25 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/2016-week-39-review/</guid>
-      <description>编程 总的来说，好像这一周并没有做出什么东西来。本来是在看《Web Scraping with Python》这本书的，可以看到后面发现错误挺多的，都有一些最基本的语法错误，所以索性就直接不看了。然后知乎专栏的爬虫也一直没有开始写。
-从前几周就开始使用 VS Code 了，比想象中的好用很多，上一次使用还是刚出的时候，很多东西都不完善，现在 1.0 版本有了很大的改进，作为主力编辑器应该是没有什么问题了。Atom 的启动速度还是那么慢，什么时候改进一些什么时候再说吧。Emacs 已经好久没有用了，应该没有什么特殊情况不会去用了吧，写 Lisp 和 Haskell VS Code 或许也能够胜任。
-最近最烦心的一件事情就是不知道以后要从事什么方向的程序员了。目前自己的技术栈并不是很丰富，杂七杂八的东西研究了很多，赚钱的技能没学多少……所以还是有必要挑一个搬砖的技能好好磨练一下了。目前初步的计划是 Python Web 开发，然后顺带把 C 语言再看看然后去读 Python 的源码，再看一些经典的书（UNIX 系列）。
-下周的计划 把《Flask Web Development: Developing Web Applications with Python》这本书看完，然后把书中的博客例子做出来。
-顺便写代码累了的时候可以刷刷《程序员修炼之道》这本书，以前看过其中的一部分，还是比较有意思的。
-日语 12月份就要考试了，然而我还没怎么开始学习。大概在 YouTube 上看了几节五十音的视频，其实五十音之前也都学过，平假名基本上还是熟悉的，就是片假名记不住-_-|||
-下周的计划 熟练掌握五十音，包括平假名和片假名的书写、发音。先把 YouTube 上那一个系列的视频看完吧，然后直接拿单词卡片来背，Anki 中也有单词本可以用来复习。
-游戏 这周没怎么玩游戏，守望先锋已经一周多没有玩了。
-平时的时候玩 「Pokemon Omega Ruby」比较多，也就是孵孵蛋，打打对战塔，刚入对战坑，好多东西还不懂，还需要学习一个。
-开始入门狼人杀，这周的几次聚会玩狼人杀很嗨，在某宝上买了一套卡牌，准备研究研究。
-阅读 看了一点《胡适留学日记》，拖到现在还没有看完，Kindle 好像来学校之后就有点吃灰了。
-下周的计划 看完《胡适留学日记》。
-电影 这周看了三部韩国的电影，分别是《隧道》、《釜山行》、《恐怖直播》，发现韩国的电影好好看！韩国的电影感觉黑色幽默和讽刺多一些，日本的电影中二气息比较多一些，国产的电影嘛……
-相比较最近比较火的《釜山行》，个人还是感觉《隧道》比较好看一些。亚洲地区的丧尸片估计《釜山行》应该是最佳了，但是和欧美的一些丧尸片比起来，还是有差距的，其中的一些套路也都是别人玩过了的。《隧道》这部电影让我感觉和《活埋》很像，但是一个生还了，一个 gg 了……
-杂项 这周好像聚会比较多(≧▽≦)，已经吃了好几顿饭+去了一次 KTV，生活过得比较颓废。
-是时候应该沉迷学习了(╯﹏╰）</description>
+      <description>编程 总的来说，好像这一周并没有做出什么东西来。本来是在看《Web Scraping with Python》这本书的，可以看到后面发现错误挺多的，都有一些最基本的语法错误，所以索性就直接不看了。然后知乎专栏的爬虫也一直没有开始写。 从前几周就开始使用 VS Code 了，比想象中的好用很多，上一次使用还是刚出的时候，很多</description>
     </item>
     
   </channel>

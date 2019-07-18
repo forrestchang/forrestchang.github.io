@@ -1,19 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Swift 中的内存管理</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Swift 中的内存管理 - Life Hacker</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
-  <link rel="stylesheet" href="http://blog.jiayuanzhang.com/css/main.css">
- 
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Jiayuan" /><meta name="description" content="这篇文章是在阅读《The Swift Programming Language》Automatic Reference Counting（ARC，自动引用计数）一章时做的一些笔记，同时参考了其他的一些资料。 在早期的 iOS 开发中，内存管理是由开发者手动来完成的。因为传统的垃圾回收机制对于移动平台来说十分低效，苹果采用的是引用计数（RC，R" /><meta name="keywords" content="blog, time-management, knowledge-management, python, programming, linux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.0-DEV with even 4.0.0" />
+
+
+<link rel="canonical" href="http://blog.jiayuanzhang.com/post/garbage-collection-in-swift-lang/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.60503a49.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Swift 中的内存管理" />
+<meta property="og:description" content="这篇文章是在阅读《The Swift Programming Language》Automatic Reference Counting（ARC，自动引用计数）一章时做的一些笔记，同时参考了其他的一些资料。 在早期的 iOS 开发中，内存管理是由开发者手动来完成的。因为传统的垃圾回收机制对于移动平台来说十分低效，苹果采用的是引用计数（RC，R" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.jiayuanzhang.com/post/garbage-collection-in-swift-lang/" />
+<meta property="article:published_time" content="2016-04-15T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-05-13T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="Swift 中的内存管理">
+<meta itemprop="description" content="这篇文章是在阅读《The Swift Programming Language》Automatic Reference Counting（ARC，自动引用计数）一章时做的一些笔记，同时参考了其他的一些资料。 在早期的 iOS 开发中，内存管理是由开发者手动来完成的。因为传统的垃圾回收机制对于移动平台来说十分低效，苹果采用的是引用计数（RC，R">
+
+
+<meta itemprop="datePublished" content="2016-04-15T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-05-13T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2598">
+
+
+
+<meta itemprop="keywords" content="swift,garbage-collection," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Swift 中的内存管理"/>
+<meta name="twitter:description" content="这篇文章是在阅读《The Swift Programming Language》Automatic Reference Counting（ARC，自动引用计数）一章时做的一些笔记，同时参考了其他的一些资料。 在早期的 iOS 开发中，内存管理是由开发者手动来完成的。因为传统的垃圾回收机制对于移动平台来说十分低效，苹果采用的是引用计数（RC，R"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
 </head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Jiayuan&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="http://jiayuanzhang.com">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Jiayuan&#39;s Blog</a>
+</div>
 
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="http://jiayuanzhang.com">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
 
-<div class="container">
-  <header>
-    <div class="post-title">
-      <h1>Swift 中的内存管理</h1>
-    </div>
-  </header>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Swift 中的内存管理</h1>
 
-  <content>
+      <div class="post-meta">
+        <span class="post-time">Posted on <a href="">2016-04-15</a></a> </span>
+        <div class="post-category">
+            <a href="/categories/programming/"> Programming </a>
+            </div>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+        <span class="more-meta">
+          Written by
+          <a href="">
+          
+            Jiayuan
+          
+          </a>
+        </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    
+  </div>
+</div>
     <div class="post-content">
       <p>这篇文章是在阅读《The Swift Programming Language》Automatic Reference Counting（ARC，自动引用计数）一章时做的一些笔记，同时参考了其他的一些资料。</p>
 
@@ -26,26 +158,46 @@
 <p>在 Swift 中，对引用描述的关键字有三个：<code>strong</code>，<code>weak</code> 和 <code>unowned</code>，所有的引用没有特殊说明都是 <code>strong</code> 强引用类型。在 ARC 中，只有指向一个实例的所有 <code>strong</code> 强引用都断开了，这个实例才会被销毁。</p>
 
 <p>举一个简单的例子：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="nc">A</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nv">name</span><span class="p">:</span> <span class="nb">String</span>
+    <span class="kd">init</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="n">name</span>
+    <span class="p">}</span>
+    <span class="kd">deinit</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&#34;A deinit&#34;</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-<pre><code class="language-swift">class A {
-    let name: String
-    init(name: String) {
-        self.name = name
-    }
-    deinit {
-        print(&quot;A deinit&quot;)
-    }
-}
+<span class="kd">var</span> <span class="nv">a1</span><span class="p">:</span> <span class="n">A</span><span class="p">?</span>
+<span class="kd">var</span> <span class="nv">a2</span><span class="p">:</span> <span class="n">A</span><span class="p">?</span>
 
-var a1: A?
-var a2: A?
+<span class="n">a1</span> <span class="p">=</span> <span class="n">A</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&#34;A&#34;</span><span class="p">)</span>
+<span class="n">a2</span> <span class="p">=</span> <span class="n">a1</span>
 
-a1 = A(name: &quot;A&quot;)
-a2 = a1
-
-a1 = nil
-</code></pre>
-
+<span class="n">a1</span> <span class="p">=</span> <span class="kc">nil</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>上面这个例子中，虽然 <code>a1</code> 这个 <code>strong</code> 强引用断开了，但是还有 <code>a2</code> 这个强引用指向这个实例，所以不会在命令行中输出 <code>A deinit</code>，当我们把 <code>a2</code> 也设置为 <code>nil</code> 时，与这个实例关联的所有强引用均断开了，这个实例便会被销毁，在命令行中打印 <code>A deinit</code>。</p>
 
 <p><strong>循环强引用（Strong Reference Cycles）</strong></p>
@@ -53,42 +205,73 @@ a1 = nil
 <p>但是，在某些情况下，一个类实例的强引用数永远不能变为 0，例如两个类实例互相持有对方的强引用，因而每个类实例都让对方一直存在，这就是所谓的强引用循环（Strong Reference Cycles）。</p>
 
 <p>这里引用 TSPL 中的例子：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="nc">Person</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nv">name</span><span class="p">:</span> <span class="nb">String</span>
+    <span class="kd">init</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span> <span class="kc">self</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="n">name</span> <span class="p">}</span>
+    <span class="kd">var</span> <span class="nv">apartment</span><span class="p">:</span> <span class="n">Apartment</span><span class="p">?</span>
+    <span class="kd">deinit</span> <span class="p">{</span> <span class="bp">print</span><span class="p">(</span><span class="s">&#34;</span><span class="si">\(</span><span class="n">name</span><span class="si">)</span><span class="s"> is being deinitialized&#34;</span><span class="p">)</span> <span class="p">}</span>
+<span class="p">}</span>
 
-<pre><code class="language-swift">class Person {
-    let name: String
-    init(name: String) { self.name = name }
-    var apartment: Apartment?
-    deinit { print(&quot;\(name) is being deinitialized&quot;) }
-}
-
-class Apartment {
-    let unit: String
-    init(unit: String) { self.unit = unit }
-    var tenant: Person?
-    deinit { print(&quot;Apartment \(unit) is being deinitialized&quot;) }
-}
-</code></pre>
-
+<span class="kd">class</span> <span class="nc">Apartment</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nv">unit</span><span class="p">:</span> <span class="nb">String</span>
+    <span class="kd">init</span><span class="p">(</span><span class="n">unit</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span> <span class="kc">self</span><span class="p">.</span><span class="n">unit</span> <span class="p">=</span> <span class="n">unit</span> <span class="p">}</span>
+    <span class="kd">var</span> <span class="nv">tenant</span><span class="p">:</span> <span class="n">Person</span><span class="p">?</span>
+    <span class="kd">deinit</span> <span class="p">{</span> <span class="bp">print</span><span class="p">(</span><span class="s">&#34;Apartment </span><span class="si">\(</span><span class="n">unit</span><span class="si">)</span><span class="s"> is being deinitialized&#34;</span><span class="p">)</span> <span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>每一个 <code>Person</code> 实例有一个可选的初始化为 <code>nil</code> 的 <code>Apartment</code> 类型，因为一个人并不总是拥有公寓。同样，每一个 <code>Apartment</code> 实例都有一个可选的初始化为 <code>nil</code> 的 <code>Person</code> 类型，因为一个公寓并不总是属于一个人。</p>
 
 <p>接下来的代码片段定义了两个可选类型的变量 <code>john</code> 和 <code>unit4A</code>，并分别设定为下面的 <code>Person</code> 和 <code>Apartment</code> 的实例，这两个变量都备受设定为 <code>nil</code>：</p>
-
-<pre><code class="language-swift">var john: Person?
-var unit4A: Apartment?
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">var</span> <span class="nv">john</span><span class="p">:</span> <span class="n">Person</span><span class="p">?</span>
+<span class="kd">var</span> <span class="nv">unit4A</span><span class="p">:</span> <span class="n">Apartment</span><span class="p">?</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>现在可以创建特定的 <code>Person</code> 和 <code>Apartment</code> 实例，并将它们赋值给 <code>john</code> 和 <code>unit4A</code> 变量：</p>
-
-<pre><code class="language-swift">john = Person(name: &quot;John Appleseed&quot;)
-unit4A = Apartment(unit: &quot;4A&quot;)
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="n">john</span> <span class="p">=</span> <span class="n">Person</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&#34;John Appleseed&#34;</span><span class="p">)</span>
+<span class="n">unit4A</span> <span class="p">=</span> <span class="n">Apartment</span><span class="p">(</span><span class="n">unit</span><span class="p">:</span> <span class="s">&#34;4A&#34;</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>下面一段代码将这两个实例关联起来：</p>
-
-<pre><code class="language-swift">john!.apartment = unit4A
-unit4A!.tenant = john
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="n">john</span><span class="o">!</span><span class="p">.</span><span class="n">apartment</span> <span class="p">=</span> <span class="n">unit4A</span>
+<span class="n">unit4A</span><span class="o">!</span><span class="p">.</span><span class="n">tenant</span> <span class="p">=</span> <span class="n">john</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>将两个实例关联在一起后，强引用的关系如图所示：</p>
 
 <p><img src="https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326144231.png" alt="14607053938205" /></p>
@@ -96,15 +279,24 @@ unit4A!.tenant = john
 <p>这两个实例关联之后，会产生一个循环强引用，当断开 <code>john</code> 和 <code>unit4A</code> 所持有的强引用时，引用计数器并不会归零，所以这两块空间也得不到释放，这就导致了内存泄漏。</p>
 
 <p>可以将其中一个类中的变量设定为 <code>weak</code> 弱引用来打破这种强引用循环：</p>
-
-<pre><code class="language-swift">class Apartment {
-    let unit: String
-    init(unit: String) { self.unit = unit }
-    weak var tenant: Person?
-    deinit { print(&quot;Apartment \(unit) is being deinitialized&quot;) }
-}
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="nc">Apartment</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nv">unit</span><span class="p">:</span> <span class="nb">String</span>
+    <span class="kd">init</span><span class="p">(</span><span class="n">unit</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span> <span class="kc">self</span><span class="p">.</span><span class="n">unit</span> <span class="p">=</span> <span class="n">unit</span> <span class="p">}</span>
+    <span class="kr">weak</span> <span class="kd">var</span> <span class="nv">tenant</span><span class="p">:</span> <span class="n">Person</span><span class="p">?</span>
+    <span class="kd">deinit</span> <span class="p">{</span> <span class="bp">print</span><span class="p">(</span><span class="s">&#34;Apartment </span><span class="si">\(</span><span class="n">unit</span><span class="si">)</span><span class="s"> is being deinitialized&#34;</span><span class="p">)</span> <span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p><img src="https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326144320.png" alt="14607057294969" /></p>
 
 <p>当断开 <code>john</code> 和 <code>unit4A</code> 所持有的强引用时，<code>Person instance</code> 的引用计数器变成 0，实例被销毁，从而 <code>Apartment instance</code> 的引用计数器也变为 0，实例被销毁。</p>
@@ -118,36 +310,63 @@ unit4A!.tenant = john
 <p>在某些情况下，声明的变量总是有值得时候，我们需要使用 <code>unowned</code> 无主引用。</p>
 
 <p>同样借用一下 TSPL 中的例子：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="nc">Customer</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nv">name</span><span class="p">:</span> <span class="nb">String</span>
+    <span class="kd">var</span> <span class="nv">card</span><span class="p">:</span> <span class="n">CreditCard</span><span class="p">?</span>
+    <span class="kd">init</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="n">name</span>
+    <span class="p">}</span>
+    <span class="kd">deinit</span> <span class="p">{</span> <span class="bp">print</span><span class="p">(</span><span class="s">&#34;</span><span class="si">\(</span><span class="n">name</span><span class="si">)</span><span class="s"> is being deinitialized&#34;</span><span class="p">)</span> <span class="p">}</span>
+<span class="p">}</span>
 
-<pre><code class="language-swift">class Customer {
-    let name: String
-    var card: CreditCard?
-    init(name: String) {
-        self.name = name
-    }
-    deinit { print(&quot;\(name) is being deinitialized&quot;) }
-}
-
-class CreditCard {
-    let number: UInt64
-    unowned let customer: Customer
-    init(number: UInt64, customer: Customer) {
-        self.number = number
-        self.customer = customer
-    }
-    deinit { print(&quot;Card #\(number) is being deinitialized&quot;) }
-}
-</code></pre>
-
+<span class="kd">class</span> <span class="nc">CreditCard</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nv">number</span><span class="p">:</span> <span class="nb">UInt64</span>
+    <span class="kr">unowned</span> <span class="kd">let</span> <span class="nv">customer</span><span class="p">:</span> <span class="n">Customer</span>
+    <span class="kd">init</span><span class="p">(</span><span class="n">number</span><span class="p">:</span> <span class="nb">UInt64</span><span class="p">,</span> <span class="n">customer</span><span class="p">:</span> <span class="n">Customer</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">number</span> <span class="p">=</span> <span class="n">number</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">customer</span> <span class="p">=</span> <span class="n">customer</span>
+    <span class="p">}</span>
+    <span class="kd">deinit</span> <span class="p">{</span> <span class="bp">print</span><span class="p">(</span><span class="s">&#34;Card #</span><span class="si">\(</span><span class="n">number</span><span class="si">)</span><span class="s"> is being deinitialized&#34;</span><span class="p">)</span> <span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>这里定义了两个类，<code>Customer</code> 和 <code>CreditCard</code>，模拟了银行客户和客户的信用卡，在这个例子中，每一个类都是将另一个类的实例作为自身的属性，所以会产生循环强引用。</p>
 
 <p>和之前那个例子不同的是，<code>CreditCard</code> 类中有一个非可选类型的 <code>customer</code> 属性，因为，一个客户可能有或者没有一张信用卡，但是一张信用卡总是关联着一个用户。</p>
-
-<pre><code class="language-swift">var john: Customer?
-john = Customer(name: &quot;John Appleseed&quot;)
-john!.card = CreditCard(number: 1234_5678_9012_3456, customer: john!)
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">var</span> <span class="nv">john</span><span class="p">:</span> <span class="n">Customer</span><span class="p">?</span>
+<span class="n">john</span> <span class="p">=</span> <span class="n">Customer</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&#34;John Appleseed&#34;</span><span class="p">)</span>
+<span class="n">john</span><span class="o">!</span><span class="p">.</span><span class="n">card</span> <span class="p">=</span> <span class="n">CreditCard</span><span class="p">(</span><span class="n">number</span><span class="p">:</span> <span class="mi">1234_5678_9012_3456</span><span class="p">,</span> <span class="n">customer</span><span class="p">:</span> <span class="n">john</span><span class="o">!</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>关联两个实例后，它们的引用关系如图所示：</p>
 
 <p><img src="https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326144333.png" alt="14607068387297" /></p>
@@ -187,22 +406,103 @@ john!.card = CreditCard(number: 1234_5678_9012_3456, customer: john!)
 <p>另外，需要注意的一点是，这里所讲的都是针对于<code>引用类型</code>，<code>结构体</code>和<code>枚举</code>在 Swift 中属于值类型，不在 ARC 的考虑范围之内。</p>
 
     </div>
-  </content>
 
-  <footer>
-    <div class="post-comment">
-      
-        <script async src="https://utteranc.es/client.js"
-                repo="forrestchang/forrestchang.github.io"
-                issue-term="pathname"
-                theme="github-light"
-                label="utterances"
-                crossorigin="anonymous">
-        </script>
-      
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/swift/">swift</a>
+          <a href="/tags/garbage-collection/">garbage-collection</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/notes-on-virtualenv/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">virtualenv 相关笔记</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/time-recording-tutorial/">
+            <span class="next-text nav-default">时间记录不完全指北</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+   
+   <div class="post bg-white">
+     <script src="https://utteranc.es/client.js"
+           repo= "forrestchang/forrestchang.github.io"
+           issue-term="pathname"
+           theme="github-light"
+           label="utterances"
+           crossorigin="anonymous"
+           async>
+     </script>
+   </div>
+ 
+
+  
+
       </div>
-  </footer>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:forrestchang7@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/Tisoga" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/forrestchang" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/jiayuan3055/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="http://blog.jiayuanzhang.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
 </div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> Site PV: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> Site UV: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2014 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Jiayuan</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
 
 
 <script type="application/javascript">
@@ -210,25 +510,26 @@ var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 	ga('create', 'UA-130256365-1', 'auto');
-	
+	ga('set', 'anonymizeIp', true);
 	ga('send', 'pageview');
 }
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
-
-<script
-  async
-  src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"
-  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k="
-  crossorigin="anonymous"
-></script>
-
-<script type="text/javascript">
-  window.MathJax = {
-    
-    
-    showProcessingMessages: false,
-    messageStyle: 'none'
-  };
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function() {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script"); hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?001e800887eba2f8f57ec8059aafdad6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
 </script>
 
+
+
+
+
+
+</body>
+</html>
