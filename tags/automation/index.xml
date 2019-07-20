@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>automation on Lifelong Hacker</title>
+    <title>Automation on Lifelong Hacker</title>
     <link>http://blog.jiayuanzhang.com/tags/automation/</link>
-    <description>Recent content in automation on Lifelong Hacker</description>
+    <description>Recent content in Automation on Lifelong Hacker</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>zh-CN</language>
     <lastBuildDate>Sat, 04 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://blog.jiayuanzhang.com/tags/automation/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,14 @@
       <pubDate>Sat, 04 May 2019 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/use-devonthink-to-write-blog/</guid>
-      <description>虽然博客没有写太多篇，但是写博客的工具却折腾过不少。从最开始的 org-mode，到 Jekyll、Hexo，再到现在的 Hugo，一直没有找到一个满意的工作流。 我的需求： 使用统一的工具来管理笔记和写作的文章； 能够多端同步； 自动化。 之前使用 Hugo 写作的流程是： 在命令行新建一篇文章； 打开 Typora 进</description>
+      <description>虽然博客没有写太多篇，但是写博客的工具却折腾过不少。从最开始的 org-mode，到 Jekyll、Hexo，再到现在的 Hugo，一直没有找到一个满意的工作流。
+我的需求：
+ 使用统一的工具来管理笔记和写作的文章； 能够多端同步； 自动化。  之前使用 Hugo 写作的流程是：
+ 在命令行新建一篇文章； 打开 Typora 进行写作； 写完了再去命令行 generate 并 push 到 GitHub 上。  后来使用 Ulysses 作为写作的工具，把 Hugo 的 post 文件夹作为 Ulysses 的外部文件夹来进行写作。Ulysses 是一个很强大的写作工具，但是唯一的缺点是它自带的 Markdown 语法与通用的 Markdown 语法不兼容，这导致了之前写的很多文章都需要转码一遍才能够正确在 Ulysses 中显示。
+Devonthink 是我用来做知识管理的工具，你可以把它看做是一个增强版的 Finder + Evernote，我主要用它来写笔记和剪裁网页，配合 Alfred 的搜索可以快速找到想要的内容，关于 Devonthink 的具体使用我之后会写一篇文章来介绍，如果你有疑问，可以先看一下这篇文章：DEVONthink 和 Evernote，谁是更好的知识管理工具？ - 少数派。
+既然我把我写的和剪裁的东西都统一管理在 Devonthink 中，那么能不能把博客的写作流程也整合进去呢？
+搜索了一下，发现 Devonthink 能够支持 AppleScript 和 JavaScript for Automation（JXA），实现的思路如下：
+ 用一个 Folder 统一管理写作的文章； 读取这个 Folder 中的所有文章和元数据； 把元数据生成 YAML 格式的内容插入到文章的开头； 把新生成的文章写入到 Hugo 对应的文件夹下。  实现的逻辑很简单，困难点主要在于 JXA 的文档缺乏，有一些操作需要调用系统的 Objective-C Bridge 来进行（相当于在 JavaScript 中写 Objective-C 的代码）。</description>
     </item>
     
   </channel>

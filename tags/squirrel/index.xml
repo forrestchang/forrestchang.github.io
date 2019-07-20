@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>squirrel on Lifelong Hacker</title>
+    <title>Squirrel on Lifelong Hacker</title>
     <link>http://blog.jiayuanzhang.com/tags/squirrel/</link>
-    <description>Recent content in squirrel on Lifelong Hacker</description>
+    <description>Recent content in Squirrel on Lifelong Hacker</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>zh-CN</language>
     <lastBuildDate>Wed, 11 Nov 2015 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://blog.jiayuanzhang.com/tags/squirrel/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,25 @@
       <pubDate>Wed, 11 Nov 2015 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/squirrel-tutorial/</guid>
-      <description>在OS X平台下，一直没有用到一个很顺手的输入法。系统自带的输入法虽然经过几次的版本更新已经有了很大的改进，但是离能用还有很大的距离。所以之前一直凑合着使用百度输入法，不过最近一直遇到一些奇怪的问题，官方又长时间没有进行更新，恰逢之前听说过Squirrel这个输入法，于是就本着试用</description>
+      <description>在OS X平台下，一直没有用到一个很顺手的输入法。系统自带的输入法虽然经过几次的版本更新已经有了很大的改进，但是离能用还有很大的距离。所以之前一直凑合着使用百度输入法，不过最近一直遇到一些奇怪的问题，官方又长时间没有进行更新，恰逢之前听说过Squirrel这个输入法，于是就本着试用的心态用了一下，发现异常顺手，并且还有丰富的定制性，于是写一篇文章来介绍一下，也作为自己配置过程中的笔记。
+附上一段Gif效果展示：
+介绍 输入法的官方名称是Rime，中文名是中州韵输入法，但是在各自的平台下面又有不一样的别名。
+ Linux 中州韵 ｜ ibus-rime
+ Windows 小狼毫 ｜ Weasel
+ OS X 鼠须管 ｜ Squirrel
+  使用了一段时间发现它有以下几个优点其他输入法是比不上的：
+ 速度很快，几乎没有延迟的时间 极强的定制性，如果没有想要的功能还可以直接修改源码 跨平台 对于繁体中文支持非常好  安装 直接从官网下载安装包安装即可。
+Rime官网：[](http://rime.im/)
+使用Ctrl-~进行输入法的选择，这里选择朙月拼音・簡化字即可：
+配置 默认的的配置其实已经可以使用了，但是为了更加符合自己的使用习惯，我们需要做一些自定义的配置。
+所有的配置文件都保存在~/Library/Rime/这个目录下面。
+不建议直接修改原先的配置文件，因为这样更新之后会导致修改的内容丢失，正确的做法是建立custom副本，这样自定义的配置内容会覆盖掉原来的。
+＊注：所有的修改完成了之后都需要重启输入法，快捷键Option+Ctrl+~。
+配置外观 初始的外观不是很符合自己的审美，可以进行更换主题、更改字体和字号大小等操作来配置成自己喜欢的样子。
+新建配置文件
+touch squirrel.custom.yaml  然后将以下代码写入配置文件
+patch: style/color_scheme: dark_temple #主题 style/font_point: 18 #字号大小 style/horizontal: true #水平显示待选字  主题列表 自带的主题代码:
+# 注：预设的配色方案及代码（指定为 style/color_scheme ） # 碧水 - aqua # 青天 - azure # 明月 - luna # 墨池 - ink # 孤寺 - lost_temple # 暗堂 - dark_temple # 星际我争霸 - starcraft # 谷歌 - google # 晒经石 - solarized_rock # 简约白 - clean_white  想要更换什么主题只要把代码替换掉就可以了。</description>
     </item>
     
   </channel>
