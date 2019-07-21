@@ -11,10 +11,12 @@ body {
   font-family: sans-serif;
   max-width: 800px;
   margin: 0 auto;
+  background-color: #f8f1e3;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: serif;
+  color: #760411;
   margin: 0;
   padding: 0;
 }
@@ -43,16 +45,10 @@ p {
   line-height: 1.6;
 }
 
-::-moz-selection {
-  background-color: #fbdf5e;
-}
-
-::selection {
-  background-color: #fbdf5e;
-}
-
 img {
+  display: block;
   max-width: 600px;
+  margin: 0 auto;
 }
 
 pre {
