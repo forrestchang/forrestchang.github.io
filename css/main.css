@@ -21,6 +21,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h2 {
   margin-top: 30px;
+  padding-bottom: 10px;
 }
 
 h3 {
@@ -101,6 +102,6 @@ tr {
 }
 
 blockquote {
-  border-left: 6px solid #ebebe9;
+  border-left: 6px solid #d3d3d3;
   padding-left: 6px;
 }
