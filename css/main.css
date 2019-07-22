@@ -11,12 +11,10 @@ body {
   font-family: sans-serif;
   max-width: 800px;
   margin: 0 auto;
-  background-color: #f8f1e3;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: serif;
-  color: #760411;
   margin: 0;
   padding: 0;
 }
