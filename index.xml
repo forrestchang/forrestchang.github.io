@@ -5,7 +5,7 @@
     <link>http://blog.jiayuanzhang.com/</link>
     <description>Recent content on Lifelong Hacker</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
+    <language>en</language>
     <lastBuildDate>Sun, 14 Jul 2019 00:31:00 +0800</lastBuildDate>
     
 	<atom:link href="http://blog.jiayuanzhang.com/index.xml" rel="self" type="application/rss+xml" />
@@ -17,11 +17,7 @@
       <pubDate>Sun, 14 Jul 2019 00:31:00 +0800</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/blog-with-ox-hugo/</guid>
-      <description>最近开始重新使用 org-mode，在这之前大概有一年左右的时间，慢慢把一些东西从 org-mode 转移到别的工具上了，比如利用 OmniFocus 来管理任务，用 Devonthink 来管理笔记，用 Ulysses 来写作。虽然这些工具非常好用，但是总能找到一两个不满意的点，为此还写了不少脚本进行优化（这些 App 均支持 AppleScript），既然都是要写代码才能完全满足使用需求，不如直接使用 Emacs 来做这些事好了（目前已经将任务管理系统又迁移到 org-mode 上来了）。
-从 上篇文章 可以知道，我开始使用 Devonthink 来写博客，配合 Alfred 的 Workflow 可以方便地生成 Hugo 的博客文章，其实就是简单地将 Devonthink 中的 Metadata 生成 YAML 格式的内容插入到 Markdown 文件中。
-如果你只使用 Markdown 来写作的话，这种写博客的流程是非常好的，配合一个 Markdown 编辑器（推荐 iA Writer），Devonthink 可以方便的作为管理博客文章的前端，另外再配合我写的 Alfred 全局搜索（支持拼音） Workflow，可以快速地找到所写的内容。
-但是，比起 Markdown，我更喜欢用 org-mode 来写东西。所以，我需要对上面这些流程做一些 Hack，其实也非常简单：
- 在 Devonthink 中建立 org 格式的文件（在 Devonthink 显示为 plain-text）； 调用 Emacs 来打开这个文件（Open with Emacs，或者可以写一个脚本用 Alfred 来调用打开）； 在 Emacs 中使用 org-mode 来完成写作； 修改之前的 Alfred Workflow，检测到是 .</description>
+      <description>最近开始重新使用 org-mode，在这之前大概有一年左右的时间，慢慢把一些东西从 org-mode 转移到别的工具上了，比如利用 OmniFocus 来管理任务，用 Devonthink 来管理笔记，用 Ulysses 来写作。虽然这些工具非常好用，但是总能找到一两个不满意的点，为此还写了不少脚本进行优化（这些 App 均支持 AppleScript），既然都是要</description>
     </item>
     
     <item>
@@ -30,23 +26,7 @@
       <pubDate>Mon, 01 Jul 2019 20:16:00 +0800</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/meta-knowledge-how-to-search-informations/</guid>
-      <description>什么是元知识，我的理解是各个领域都通用的知识，例如交流的能力，搜索信息的能力，语言的能力等，不管你是从事什么行业的工作，这些都是必备的技能（或可以增益的技能）。什么是领域知识，例如编程能力、运营能力，这些是在特定领域发挥作用的知识，虽然编程和运营都可以运用在别的领域中，但是都是比较简单的情况（产品经理如果想学习简单的数据分析知识，不需要去学习如何编写操作系统）。
-信息检索是所有元知识中最重要的一个，因为如果学会了这个，完全可以通过自学习的方式去学习其他元知识，所以可以被成为「元知识」的「元知识」。
-定义问题 在搜索信息之前我们首先要定义问题，你到底要搜索什么样的信息？
-很多人其实不会问问题，经常有网友给我发邮件或私信询问编程相关的问题，很多都是直接甩过来一张错误的截图，然后留一句怎么解决（有的甚至连这句话都没有）。最开始我还会仔细看一下问题中的具体报错是什么，久而久之，这种问题多了，我也就懒得回答了。有的人我告诉他把问题描述清楚，ta 还会说你摆架子。后来，对于这种问题，我直接删除扔进垃圾箱不再去管。
-相反的，另外一部分人很善于问问题，问题描述地非常清楚，包括产生错误的上下文，遇见错误后自己的解决办法，对于这种问题，经常是看了上下文就能找到问题出现在哪里，或者根据它的运行环境在本地测试一下就能 debug 出问题所在，对于这样的提问者，我通常非常乐于解答。
-好的提问和坏的提问，可以带来不一样的反馈。所以，下次在问问题之前可以先问问自己：
- 遇到的问题到底是什么？能否用简单的话描述？ 出现问题的上下文是什么？是否是某些失误导致的？ 我采取了哪些办法来解决问题？是否可行？  说不定在你想清楚这些事后，就能自己找到问题的解决方案了。
-关于定义问题的方法，推荐阅读一下波利亚的《如何解题——数学思维的新方法》，这本简短的小册子介绍了如何定义问题、描述问题、抽象模型、解决问题，是一本对思维训练非常有帮助的书。
-Raymond Hettinger 在今年的 PyCon 上有一场演讲就是关于如何定义问题的，有兴趣的读者可以看一下：Modern solvers: Problems well-defined are problems solved
-学会提问 学会定义问题之后就要开始提问了，从上一节也可以看出来，不同的提问方式得到的解答也不一样。好的提问会得到积极的解答，不好的提问会得不到有效的反馈，被当成伸手党。
-提问的智慧 这本小册子详细介绍了在互联网上应该如何提问，虽然很大程度上是编程领域的提问指南，但是对于其他领域也同样适用。
-使用搜索引擎 如果遇到一个自己无法解决的问题，第一件事应该是求助于搜索引擎。所有你能想到的问题，大体上别人也都问过了，搜索引擎是你最好的老师。
-如何用好搜索引擎？
- 选择合适的搜索引擎 定义问题，分解关键词 使用高级搜索  你可以根据问题的不同来选择不同的搜索引擎，一般来说，中文的娱乐内容可以使用百度来搜索，其他严肃类的内容搜索，统一使用 Google。关于为什么严肃类内容不能使用百度来搜索，可以参考这篇文章：搜索引擎百度已死-虎嗅网。
-定义问题在第一节中已经讲到，将定义好的问题分解成关键词可以更好地搜索到想要的内容。例如「Python 如何使用标准库进行格式化时间字符串」可以分解为下面几个关键词：「Python」、「格式化」、「时间字符串」，还可以翻译成英文关键词：「Python」、「format」、「date string」，第一条就是 Stack Overflow 的解答：python - How to convert a date string to different format - Stack Overflow。
-很多人使用搜索引擎都是简单的用关键词进行搜索，其实 Google 等搜索引擎都支持自定义的高级搜索，知乎的这篇回答详细介绍了如何使用 Google 的高级搜索语法：如何用好谷歌等搜索引擎？ - 知乎。
-自动化你的搜索流程 Alfred 是 macOS 上的一个快速启动器，利用 Alfred Workflow，可以自定义你的搜索引擎工具箱。</description>
+      <description>什么是元知识，我的理解是各个领域都通用的知识，例如交流的能力，搜索信息的能力，语言的能力等，不管你是从事什么行业的工作，这些都是必备的技能（或可以增益的技能）。什么是领域知识，例如编程能力、运营能力，这些是在特定领域发挥作用的知识，虽然编程和运营都可以运用在别的领域中，但是都是比</description>
     </item>
     
     <item>
@@ -55,14 +35,7 @@ Raymond Hettinger 在今年的 PyCon 上有一场演讲就是关于如何定义�
       <pubDate>Thu, 23 May 2019 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/how-to-modify-omnifocus-3-theme/</guid>
-      <description>OmniFocus 3 提供了 Dark Mode，但是却没有提供自定义主题的功能，Dark Mode 看久了也会腻，所以最近又切换到 Light Mode 下来了。搜索了一下，看到这篇讨论：Is it possible to reduce fontsize or fontstyle of the headline of a perspective?，可以通过修改配置的方式来修改 OmniFocus 的主题。
-具体的修改方法为：
-在 /Applications/OmniFocus.app/Contents/Resources/ThemeResources/SystemFont 下面修改字体的大小和页边距，首先我们先修改边距大小，我默认选择的是 Extra Large 的字体，所以需要修改 OFIExtraLargeLayoutConstraintConstants.plit。
-找到以下代码：
-&amp;lt;key&amp;gt;extraPaddingBelowNoteForActionCells&amp;lt;/key&amp;gt; &amp;lt;real&amp;gt;20&amp;lt;/real&amp;gt; &amp;lt;key&amp;gt;extraPaddingBelowNoteForColumnarActionCells&amp;lt;/key&amp;gt; &amp;lt;real&amp;gt;20&amp;lt;/real&amp;gt; &amp;lt;key&amp;gt;extraPaddingBelowNoteForProjectCells&amp;lt;/key&amp;gt; &amp;lt;real&amp;gt;20&amp;lt;/real&amp;gt;  然后把 real 的值设定成自己想要的就好了，我这边设定为 20，最后看起来的效果还可以。
-然后修改 Note 的字体，打开 OFIFontRegistry.plit，找到以下代码：
-&amp;lt;key&amp;gt;OFITextStyleNoteBody&amp;lt;/key&amp;gt; &amp;lt;dict&amp;gt; &amp;lt;key&amp;gt;content-sizes&amp;lt;/key&amp;gt; &amp;lt;array&amp;gt; &amp;lt;real&amp;gt;13&amp;lt;/real&amp;gt; &amp;lt;real&amp;gt;13&amp;lt;/real&amp;gt; &amp;lt;real&amp;gt;14&amp;lt;/real&amp;gt; &amp;lt;real&amp;gt;15&amp;lt;/real&amp;gt; &amp;lt;real&amp;gt;16&amp;lt;/real&amp;gt; &amp;lt;/array&amp;gt; &amp;lt;key&amp;gt;font-name&amp;lt;/key&amp;gt; &amp;lt;string&amp;gt;regular&amp;lt;/string&amp;gt; &amp;lt;/dict&amp;gt;  依次修改 real 的值，对应 OmniFocus 的以下配置：
-Next Action, Due 和 Overdue 的颜色可以在 /Applications/OmniFocus.</description>
+      <description>OmniFocus 3 提供了 Dark Mode，但是却没有提供自定义主题的功能，Dark Mode 看久了也会腻，所以最近又切换到 Light Mode 下来了。搜索了一下，看到这篇讨论：Is it possible to reduce fontsize or fontstyle of the headline of a perspective?，可以通过修改配置的方式来修改 OmniFocus 的主题。 具体的修改方法为： 在 /Applications/OmniFocus.app/Contents/Resources/ThemeResources/SystemFont 下面修改字体的大小和页边距，首先我</description>
     </item>
     
     <item>
@@ -71,14 +44,7 @@ Next Action, Due 和 Overdue 的颜色可以在 /Applications/OmniFocus.</descri
       <pubDate>Sat, 04 May 2019 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/use-devonthink-to-write-blog/</guid>
-      <description>虽然博客没有写太多篇，但是写博客的工具却折腾过不少。从最开始的 org-mode，到 Jekyll、Hexo，再到现在的 Hugo，一直没有找到一个满意的工作流。
-我的需求：
- 使用统一的工具来管理笔记和写作的文章； 能够多端同步； 自动化。  之前使用 Hugo 写作的流程是：
- 在命令行新建一篇文章； 打开 Typora 进行写作； 写完了再去命令行 generate 并 push 到 GitHub 上。  后来使用 Ulysses 作为写作的工具，把 Hugo 的 post 文件夹作为 Ulysses 的外部文件夹来进行写作。Ulysses 是一个很强大的写作工具，但是唯一的缺点是它自带的 Markdown 语法与通用的 Markdown 语法不兼容，这导致了之前写的很多文章都需要转码一遍才能够正确在 Ulysses 中显示。
-Devonthink 是我用来做知识管理的工具，你可以把它看做是一个增强版的 Finder + Evernote，我主要用它来写笔记和剪裁网页，配合 Alfred 的搜索可以快速找到想要的内容，关于 Devonthink 的具体使用我之后会写一篇文章来介绍，如果你有疑问，可以先看一下这篇文章：DEVONthink 和 Evernote，谁是更好的知识管理工具？ - 少数派。
-既然我把我写的和剪裁的东西都统一管理在 Devonthink 中，那么能不能把博客的写作流程也整合进去呢？
-搜索了一下，发现 Devonthink 能够支持 AppleScript 和 JavaScript for Automation（JXA），实现的思路如下：
- 用一个 Folder 统一管理写作的文章； 读取这个 Folder 中的所有文章和元数据； 把元数据生成 YAML 格式的内容插入到文章的开头； 把新生成的文章写入到 Hugo 对应的文件夹下。  实现的逻辑很简单，困难点主要在于 JXA 的文档缺乏，有一些操作需要调用系统的 Objective-C Bridge 来进行（相当于在 JavaScript 中写 Objective-C 的代码）。</description>
+      <description>虽然博客没有写太多篇，但是写博客的工具却折腾过不少。从最开始的 org-mode，到 Jekyll、Hexo，再到现在的 Hugo，一直没有找到一个满意的工作流。 我的需求： 使用统一的工具来管理笔记和写作的文章； 能够多端同步； 自动化。 之前使用 Hugo 写作的流程是： 在命令行新建一篇文章； 打开 Typora 进</description>
     </item>
     
     <item>
@@ -87,16 +53,7 @@ Devonthink 是我用来做知识管理的工具，你可以把它看做是一个
       <pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/notes-on-code-complete-part-1/</guid>
-      <description>这本书最开始是大一的时候买的，买回来后翻了一些章节就成为了显示器的支架，直到最近工作了一段时间才重新开始读，这一次阅读和几年前初次阅读有很大不同，大一阅读时候的编码经验仅仅是局限于算法方面，对大型项目的构建没有特别多感触；这一次是在写了很多业务代码，积累了一定问题的基础上去阅读的，阅读的深度自然不是第一次阅读可以比较的。
-和这本书类似的还有一本叫做 《程序员修炼之道——从小工到专家》（我也写过 笔记）。这本书讲了很多软件工程领域的行话和规则，比如熟悉的 DRY 原则，如果觉得《代码大全》比较厚（大概九百多页），也可以先读一下这本书。
-《代码大全》并不是一本需要从头到尾依次阅读的书，章节和章节之间的联系也不是很大，完全可以随便挑选感兴趣的章节来阅读。这次阅读我主要遵从书上的建议，按照以下顺序来阅读：
- 第 11 章：变量名的力量 第 8 章：防御式编程 第 7 章：高质量的子程序 第 18 章：表驱动法 第 4 章：关键的「构建」决策 第 33 章：个人性格 第 32 章：自说明代码 其他章节按照顺序或者兴趣度依次阅读  这个「读《代码大全》」系列的文章主要是记录一些阅读笔记。之前的阅读笔记比较喜欢把书上的内容抄下来，但是实际上发现，「抄书」可能抄完就忘了，因为「抄」其实很简单，不需要动脑，打字快的话也不会觉得很累。这次阅读笔记主要是「问题 - 回答」的模式来写，在阅读每章之前，先提出几个问题，然后在阅读的过程中解决问题。
-第 11 章：变量名的力量 问题：
- 怎样给一个变量命名？ 长名字还是短名字？ 命名的最佳实践有哪些？ 有哪些常见的命名方法？ 在命名中应该要避免的东西有哪些？  怎样给一个变量命名？  通常，对变量的描述就是最佳的变量名。
- 书中举了几个简单的例子，例如表示美国奥林匹克代表团成员数量的变量 numberOfPeopleOnTheUsOlympicTeam，表示某国代表团在现代奥运会上获得的最高分数的变量 maximumNumberOfPointsInModernOlympics。这种变量命名的好处是一眼就能看出这个变量表示的是什么，它们都是非常明确的。而像 nums 和 maxPoints 就相对来说没有那么明确，至于 n 和 m 这样的命名就是非常差的描述，移除了上下文根本无法理解。
-这种对变量描述的命名方法也有一个缺点：变量名太长了，这一点会之后讨论。
-另外一个命名的方法是「以问题为导向（Problem Orientation）」。
- 一个好名字通常表达的是「什么（what）」，而不是「如何（how）」。如果一个名字反映了计算的某些方面而不是问题本省，那么它反应的就是「how」，而不是「what」了，应该避免取这样的名字。 书中也举了几个例子，例如一条员工数据记录可以称作 inputRec 或者 employeeData，inputRec 是一个反映输入、记录这些计算概念的计算机术语，二 employeeData 则直指问题领域。</description>
+      <description>这本书最开始是大一的时候买的，买回来后翻了一些章节就成为了显示器的支架，直到最近工作了一段时间才重新开始读，这一次阅读和几年前初次阅读有很大不同，大一阅读时候的编码经验仅仅是局限于算法方面，对大型项目的构建没有特别多感触；这一次是在写了很多业务代码，积累了一定问题的基础上去阅读的</description>
     </item>
     
     <item>
@@ -105,15 +62,7 @@ Devonthink 是我用来做知识管理的工具，你可以把它看做是一个
       <pubDate>Thu, 06 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/linux-command-sftp/</guid>
-      <description>「Linux 命令详解」这个系列的文章将会介绍 Linux/Unix/macOS 系统中使用到的常用命令，包括该命令的简单介绍、常用参数解释以及最佳实践，如果需要快速使用这个命令，直接跳到最佳实践部分即可。
-「Linux 命令详解」系列文章：
- Linux命令详解：SFTP  一、介绍 SFTP（Secure File Transfer Protocol，安全文件传输协议）是一种基于可靠数据流（data stream），提供文件存取和管理的网络传输协议，它在网络协议层的结构如下图所示：
-与 FTP 协议相比，SFTP 在客户端与服务器间提供了一种更为安全的文件传输方式，如果你还在使用 FTP 来进行文件传输，强烈建议切换到更为安全的 SFTP 上来。
-本篇文章将会介绍 SFTP 的链接，以及在交互式命令行中的一些常用命令，并对一些参数进行解释，最后给出实际使用中的最佳实践。目前已经有很多 GUI 客户端支持 SFTP 协议，但是不在本篇文章的讨论范围之内。
-二、使用 SFTP 进行连接 因为 SFTP 是基于 SSH 协议的，所以默认的身份认证方法与 SSH 协议保持一致。通常我们使用 SSH Key 来进行连接，如果你已经可以使用 SSH 连接到远程服务器上，那么可以使用以下命令来连接 SFTP：
-sftp user_name@remote_server_address[:path]  如果远程服务器自定义了连接的端口，可以使用 -P 参数：
-sftp -P remote_port user_name@remote_server_address[:path]  连接成功后将进入一个 SFTP 的解释器，可以发现命令行提示符变成了 sftp&amp;gt;，使用 exit 命令可以退出连接。
-如果连接地址存在 path 并且 path 不是一个目录，那么 SFTP 会直接从服务器端取回这个文件。</description>
+      <description>「Linux 命令详解」这个系列的文章将会介绍 Linux/Unix/macOS 系统中使用到的常用命令，包括该命令的简单介绍、常用参数解释以及最佳实践，如果需要快速使用这个命令，直接跳到最佳实践部分即可。 「Linux 命令详解」系列文章： Linux命令详解：SFTP 一、介绍 SFTP（Secure File Transfer Protocol</description>
     </item>
     
     <item>
@@ -122,18 +71,7 @@ sftp -P remote_port user_name@remote_server_address[:path]  连接成功后将�
       <pubDate>Sun, 02 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/cors-tutorial/</guid>
-      <description>Web 后端开发者很少会去充分了解跨域问题，原因是他们很少和 JavaScript 打交道。但是作为一个 Web 开发者，知道跨域请求和如何解决跨域问题可以和前端开发者在沟通上变得更为顺畅。
-这篇文章会介绍和跨域请求相关的一些概念，以及如何在后端（Python）解决浏览器的跨域请求问题。
-一、什么是跨域请求 首先，我们要了解什么是跨域请求。简单来说，当一台服务器资源从另一台服务器（不同的域名或者端口）请求一个资源时，就会发起一个跨域 HTTP 请求。
-举个简单的例子，http://example-a.com/index.html 这个 HTML 页面请求了 http://example-b.com/resource/image.jpg 这个图片资源时（发起 Ajax 请求，非 &amp;lt;img&amp;gt; 标签），就是发起了一个跨域请求。
-在不做任何处理的情况下，这个跨域请求是无法被成功请求的，因为浏览器基于同源策略会对跨域请求做一定的限制。
-二、浏览器同源策略 这就引出了浏览器的同源策略（Same-origin policy），同源策略限制了从同一个源加载的文档或者脚本如何与来自另一个源的资源进行交互。这是一个用于隔离潜在恶意文件的重要安全机制。
-什么是同源？同源需要同时满足三个条件：
- 请求的协议相同（例如同为 http 协议） 请求的域名相同（例如同为 www.example.com） 请求的端口相同（例如同为 80 端口）  第 2 点需要注意的是，必须是域名完全相同，比如说 blog.example.com 和 mail.example.com 这两个域名，虽然它们的顶级域名和二级域名（均为 example.com）都相同，但是三级域名（blog 和 mail）不相同，所以也不能算作域名相同。
-如果不同时满足这上面三个条件，那就不符合浏览器的同源策略。
-修改 document.domain 参数可以更改当前的源，例如 blog.example.com 想要访问父域 example.com 的资源时，可以执行以下 JavaScript 脚本来进行修改：
-document.domain = &#39;example.com&#39;;  但是 document.domain 不能被设置为 foo.com 或者是 bar.com，因为它们不是 blog.example.com 的超级域。
-当然，也不是所有的交互都会被同源策略拦截下来，下面两种交互就不会触发同源策略：</description>
+      <description>Web 后端开发者很少会去充分了解跨域问题，原因是他们很少和 JavaScript 打交道。但是作为一个 Web 开发者，知道跨域请求和如何解决跨域问题可以和前端开发者在沟通上变得更为顺畅。 这篇文章会介绍和跨域请求相关的一些概念，以及如何在后端（Python）解决浏览器的跨域请求问题。 一、什么是跨域请求 首先，我们要</description>
     </item>
     
     <item>
@@ -142,21 +80,7 @@ document.domain = &#39;example.com&#39;;  但是 document.domain 不能被设置
       <pubDate>Fri, 23 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/omnifocus-3-workflow/</guid>
-      <description>这篇文章主要分享一下我多年使用的一套任务管理系统的经验，工具是次要的，主要是一些想法的实践。有了基本的思路，无论是 OmniFocus、Todoist 还是 org-mode（Emacs 中的一个时间管理模式），都可以有自己的一套方式来实践。本篇文章主要以 OmniFocus 3 为载体来介绍这些内容。
-每个人都有一套适合自己的工作流，所以读者不必要完全按照我所写的来操作，正确的方式是从中获取一些灵感，实践并融合到自己的工作流当中。
-什么是一个好的任务管理系统 首先，任务管理系统的目的是为了更好得完成任务，一切脱离这个基本条件的系统都是不可用的。如果你觉得一个最简单的 Todo List 就能很好地完成任务，那么这就是最适合你的任务管理系统。
-在我看来，一个优秀的任务管理系统至少需要满足以下条件：
- 收集能力 在特定的情况下要知道可以做哪些事情  「收集能力」指的是这个任务系统要能够容纳（几乎）所有的内容，一个任务、一条想法、一封未读的邮件、一个笔记、一个链接、没有报销的发票等等。
-具体实践起来并不是真的需要把所有的东西都塞进任务系统里面，例如我使用 Evernote 作为剪裁和笔记的工具，很显然把每条笔记都复制一份到 OmniFocus 中很不现实，但是我会在 OmniFocus 中添加一个「定期清理 Evernote Inbox」的任务，这样就相当于把 Evernote 作为 OmniFocus 的子 Inbox，来统一进行管理。对于一些支持 URL Schema 的应用，完全可以在 OmniFocus 中建立一个链接直接指定，这样在 OmniFocus 中也可以直接打开其他应用中的内容了。
-收集能力决定了要处理的内容，第二个条件则决定了一个任务系统是否高可用。具体的情境来说，你要知道早上的时候该干哪些事，工作的时候该干哪些事，无聊的时候该干哪些事等等，而不是依靠大脑来记录什么时间要做什么事情，这样很容易进入游离的状态。
-一个任务系统做好了这两件事情，至少不会让你感到「有事可做，但无从下手」的状况，真正的执行还是需要靠自己的意志力了，从另一种情况下来说，即使意志力不强，完全可以找一些「不太重要、很轻松」的事，这在一定程度上利用了「结构性拖延」的办法来完成一些任务。
-任务管理系统的三要素 到现在为止，我还没有讲到一种具体工具的使用。因为工具是次要的，了解了本质的思想，使用什么工具都没有问题。纵观各种任务管理的工具：OmniFocus、Todoist、Things、org-mode，它们支持的功能也各不相同，Project、无限层级、Defer、Due、Repeat、Context、Label、Tag、Filter、Perspective 等等，有没有被这些名词给吓到？难道我们每切换一种系统都需要再重新学习一遍？
-抛开这些名词，我们来分析一下一个任务系统到底是由什么组成的。在我看来，一个任务系统最本质的东西只有三个：任务、附加元素和过滤器。
-任务：一个最小可执行的单元即为一个任务。这个是最好理解的，所以不做过多解释。
-附加元素：作用在任务上的不同维度的限制。这句话读起来有点拗口，举个简单例子，「去 XXX 取快递（截止今天 10:00）」，其中，「截止今天 10:00」就是在时间维度上对这个任务的一个限制。同样的，「项目」、「标签」等等这些都是作用在某个任务上的附加元素。
-过滤器：组合不同附加元素的过滤规则。只有附加元素并没有什么实际的作用，但是有了过滤器之后，就可以编写不同的过滤规则来过滤指定规则的任务。例如，我想知道「最近 10 天内重要的事情」，那么过滤规则可能就是「Due date &amp;lt; 10 and flagged」。
-了解了上面三个基本的概念，那么再重新审视各种任务管理工具，就可以从一个比较宏观的角度来看待了，这也可以避免切换工具造成的重新学习成本。
-OmniFocus 3 实践 把上面任务系统的基本三要素运用到 OmniFocus 上，任务就是一个个的单独 Todo item，附加元素就是 Todo item 所属的项目、Due Date、Defer Date、Tags、Flag、Repeat rule 等，过滤器就是透视（Perspective）。</description>
+      <description>这篇文章主要分享一下我多年使用的一套任务管理系统的经验，工具是次要的，主要是一些想法的实践。有了基本的思路，无论是 OmniFocus、Todoist 还是 org-mode（Emacs 中的一个时间管理模式），都可以有自己的一套方式来实践。本篇文章主要以 OmniFocus 3 为载体来介绍这些内容。 每个人</description>
     </item>
     
     <item>
@@ -165,13 +89,7 @@ OmniFocus 3 实践 把上面任务系统的基本三要素运用到 OmniFocus �
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/2018-week-35-review/</guid>
-      <description>重启之前写 Weekly Review 的习惯，一方面为了总结上一周都做了什么，另一方面也为了督促自己多多做事，不要碌碌无为。
-2018 这半年多的时间里面博客一直没有再继续写下去，工作占去了大部分的时间，剩下的时间又都分配给爱好，所以写博客这件事就暂时搁置了下来。过去一年的时间里面主要发展了两个爱好，摄影和滑板，即使是爱好，也会想把它做好，所以空闲下来的时间大部分精力都花在了上面。经过这半年多的时间来看，一个人不太可能同时把好几件事做得不错，所以在未来的一段时间内，需要考虑一下舍弃掉一项爱好了，或者只是仅仅当做爱好，不用去过于较真。
-自从工作了，发现刻意学习专业知识的时间越来越少，大部分情况都是工作中遇到什么东西不太了解然后找相关资料学习一下，Vue.js、PHP 就是在工作中学会的，虽然不能说熟练，但是应对基本开发内容还是没什么问题。Vue.js 看了一下官方文档就开始写了，PHP 甚至都没有看什么东西，就只是看了一下公司之前的源码，毕竟语言的内容大部分都是相通的，PHP 又和 Python 同为动态语言，基本上东西都差不多，熟悉了一天就开始上手开发业务了，增删改查的内容也不太需要太多技术含量。
-这种学习方式可以被称之为「自顶向下」的学习方法，和学校的「自底向上」的学习方法孰优孰劣，还得视情况而来。前者可以快速用起来，不用了解底层的内容，上手快，耗费时间短，但很容易停留在「顶」，没有继续深入下去，最后浮于表面；后者更加系统，学完会有一个整体的脉络，但是耗费时间长，底层的知识没办法实践，最后流于理论。所以正确的方式应该是把这两者结合起来，例如我主要是一个「后端开发工程师」，那对于 Vue.js 的一些底层实现理论，现在确实没有必要太了解，之后有需要的时候再看也不迟；而 CPython 底层的实现却是需要了解的内容，了解底层实现的缺陷在哪里，才能更好地进行优化。所以学习也要分好优先级，毕竟精力有限，不太重要的学习内容可以先靠后。
-说道学习，再谈一下「刻意学习」的问题，学习不是堆时间、拼谁比谁学的更久，更重要的是用对方法，这一点在学滑板的过程中领会很深。之前很长一段时间练习滑板都是在堆砌时间，虽说也有进步，但是太缓慢了，大部分的时候都是呆在「舒适区」内做一些自己已经熟练的动作，后来看到了 Rodney Mullen 1 的学习方法：
- In short, Mullen is a very driven, smart individual. While many skaters spend a similar amount of hours skating every day as Mullen has, very few use those hours as efficiently as he did.
-The minimum amount of time to spend on the board to impove is two hours a day, every day, without fail.</description>
+      <description>重启之前写 Weekly Review 的习惯，一方面为了总结上一周都做了什么，另一方面也为了督促自己多多做事，不要碌碌无为。 2018 这半年多的时间里面博客一直没有再继续写下去，工作占去了大部分的时间，剩下的时间又都分配给爱好，所以写博客这件事就暂时搁置了下来。过去一年的时间里面主要发展了两个爱好，摄影和滑板，</description>
     </item>
     
     <item>
@@ -180,24 +98,7 @@ The minimum amount of time to spend on the board to impove is two hours a day, e
       <pubDate>Thu, 17 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/notes-on-the-pragmatic-programmer-part-2/</guid>
-      <description>重复的危害 系统中的每一项知识都必须具有单一、无歧义、权威的表示。（感觉翻译得怪怪的）
- Tip 11 DRY - Don&amp;rsquo;t Repeat Yourself 不要重复你自己
- 重复是怎样发生的  强加的重复（imposed duplication）：开发者觉得他们无可选择 —— 环境似乎要求重复。 无意的重复（inadvertent duplication）：开发者没有意识到他们在重复信息。 无耐性的重复（impatient duplication）：开发者偷懒，他们重复，因为那样似乎更容易。 开发者之间的重复（interdeveloper duplication）：同一团队（或不同团队）的几个人重复了同样的信息。  强加的重复  信息的多种表示
-我们也许在编写客户-服务器应用，在客户和服务器端使用了不同的语言，并且需要在两端都表示某种共有的结构。我们或许需要一个类，其属性是某个数据库表的 schema。
-解决办法是编写简单的过滤器或代码生成器。可以在每次构建（build）软件时，使用简单的代码生成器，根据公共的元数据表示构建多种语言下的结构。可以用最初用于构建 schema 的元数据，自动生成类定义。
- 代码中的文档
-代码为什么需要注释：糟糕的代码才需要许多注释。
-DRY 法则告诉我们，要把低级的知识放在代码中，它属于那里；把注释保留给其他高级说明。否则，我们就是在重复知识，而每一次改变都意味着既要改变代码，也要改变注释。注释将不可避免地变得过时，而不可信任的注释比完全没有注释更糟。
- 文档与代码
-你撰写文档，然后编写代码。有些东西变了，你修订文档、更新代码。文档和代码都含有同一知识表示。
-可以根据文档来生成测试。
- 语言问题
-许多语言会在源码中强加可观的重复。如果语言使模块的接口与其实现分离，就常常会出现这样的情况。C/C++ 有头文件，在其中重复了被导出变量、函数和（C++）类的名称和类型信息。
-再思考一下头文件和实现文件中的注释。绝对没有理由在这两种文件之间重复函数或类头注释（head comment）。应该用头文件记载接口问题，用实现文件记载代码的使用者无需了解的实际细节。
-  无意的重复 有时，重复来自设计中的错误。
-举个例子：
-class Line { public: Point start; Point end; double lenght; };  第一眼看上去这个类似乎是合理的。线段显然有起点和终点，并总是有长度的。但这里有重复，长度是由起点和终点决定的：改变其中一个，长度就会变化。最好是让长度编程计算字段：
-class Line { public: Point start; Point end; double lenght() { return start.</description>
+      <description>重复的危害 系统中的每一项知识都必须具有单一、无歧义、权威的表示。（感觉翻译得怪怪的） Tip 11 DRY - Don&amp;rsquo;t Repeat Yourself 不要重复你自己 重复是怎样发生的 强加的重复（imposed duplication）：开发者觉得他们无可选择 —— 环境似乎要求重复。 无意的重复（inadvertent duplication</description>
     </item>
     
     <item>
@@ -206,21 +107,7 @@ class Line { public: Point start; Point end; double lenght() { return start.</de
       <pubDate>Sun, 13 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/notes-on-the-pragmatic-programmer-part-1/</guid>
-      <description>实习到现在差不多两个月了，博客也一直荒废了没写。这次更新就先来写写读书笔记好了。
-这本书从书名来看其实很像那种鸡汤类的书，英文名「The Pragmatic Programmer」（注重实效的程序员）看上去就好了许多。豆瓣评分 8.6 分。大一的时候买的书，之前随意地写过几年的玩具代码，所以初读这本书的时候觉得很有道理，但是读完了之后发现什么也没有记住。用徐宥的话来说就是「读者如果没有类似的经历，看到这些珠玑，也只是觉得把玩颇为有趣而已，极少能有同感。」大一的时候读这是这种感觉。
-出来实习之后，接触到实际生产中的代码，在代码量比较大的情况下（几十万行），之前书中所讲的一些问题都一一浮现了。为了写出优雅的代码，有必要把这本书再读一遍，可能以后还要反复读很多遍（不是所有的内容看一遍就能内化在心里的），所以每读一部分就记一点笔记，留作日后复习用。
-给自己制定以下阅读的计划，因为这本书每一张的内容读起来都比较轻松，所以预计用两周的时间读完：
- 每 1-2 天阅读一章（共 8 章） 每一章都写一篇笔记，读的时候可以做一些摘录，读完一章之后写一篇总结性的笔记；  下面是「序言」和「第一章」的笔记。
-序 注重实效的程序员都有哪些特征  早期的采纳者/快速的改编者：给你一样新东西，你很快能把握它，并把它与你的知识的其余部分结合在一起（尝试新技术）； 好奇：你喜欢提问，你是收集小知识的林鼠（建立自己的知识 wiki）； 批判的思考者：你会首先抓住事实，而不是照搬别人所说的； 有现实感：你会设法理解你面临的每个问题的内在本质（事情有多困难，需要花多长时间完成？） 多才多艺：你尽力熟悉广泛的技术和环境；  （审视一下自己，上面几点好像都没有做到，或者说有的做到了但是并不到位。）
- Tip 1 Care About Your Craft 关心你的技艺
- 如何做到上面所说的？在你做某件事情的时候思考你在做什么。
- Tip 2 Think! About Your Work 思考！你的工作
- 它是一个持续的过程 每天为提炼你所拥有的技能而工作，为把新的工具增加到你的技能列表中二工作。草坪不是一天修成的。
-第一章：注重实效的哲学 我的源码让猫给吃了  在所有的弱点中，最大的弱点就是害怕暴露弱点。—— J.B.Bossuet
- 如果你确实同意要为某个结果负责，你就应该切实负起责任。当你犯错误的时候，不要责备别人或别的东西，或是拼凑借口。你可以选择提供解决方案，而不是寻找借口。
- Tip 3 Provide Options, Don&amp;rsquo;t Make Lame Excuses 提供各种选择，不要找蹩脚的借口
- 在你走向任何人，告诉他们为何某件事做不到、为何耽搁、为何出现问题之前，先停下来，听一听你心里的声音。在你去告诉他们坏消息之前，是否还有其他你可以再试一试的办法？有时，你其实知道他们会说什么，所以还是不要给他们添麻烦。
-（这一点深有感触，在实习的这一段时间里面，经常因为一些小事去麻烦 leader，比如说环境跑步起来，某个莫名其妙的报错等，这虽然有文档不全的原因在，不过自己也没想着去补全文档这种解决办法。）</description>
+      <description>实习到现在差不多两个月了，博客也一直荒废了没写。这次更新就先来写写读书笔记好了。 这本书从书名来看其实很像那种鸡汤类的书，英文名「The Pragmatic Programmer」（注重实效的程序员）看上去就好了许多。豆瓣评分 8.6 分。大一的时候买的书，之前随意地写过几年的玩具代码，所以初读这本书的时候觉</description>
     </item>
     
     <item>
@@ -229,13 +116,7 @@ class Line { public: Point start; Point end; double lenght() { return start.</de
       <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/2017-week-19-review/</guid>
-      <description>之前有在博客上写 Weekly Review 的习惯，后来因为被朋友说博客真水然后都撤下来了，有些文章确实是类似于「流水账」的记事，但也有一些是围绕这周做的东西来讨论的。总的来说，写 Weekly Review 对自己帮助还是很大的，可以在一周中 Focus 一个特定的主题，而不是想到什么做什么，所以这个系列以后还会继续写下去，只是写的内容更加具体一天，可以围绕着这周的 Project，或者这周听的音乐，或者读的书之类的。以前的文章看情况要不要放上来。
-这周算是正式把我的任务管理系统从 org-mode 转移到 Todoist 上来了。在不考虑时间成本和易用性上来说，org-mode 依然是目前我认为最完备的任务和时间管理系统，我用它来：
- 任务管理：类似于 OmniFocus 的多层级任务管理，支持标签和优先级，可以自定义过滤视图 时间记录：按照项目的方式来记录时间，基本是在做哪件事之前把计时器打开，一个番茄时间后自动关闭，可以自定义生成各种时间报表 番茄工作法  自定义生成的时间记录表：
-虽然 org-mode 的优点众多，但是始终是一个基于 Emacs 的 major mode，所以诸多限制在所难免：
- 没有一个简单易用的移动端 没办法做到全局 capture，虽然借助 Alfred 的 Workflow 和 Elisp 脚本能够实现这一功能，但是使用起来体验并不是很好 编辑功能过重，很显然，做任务管理不需要多么高效的编辑操作，类似于 OmniFocus 使用鼠标 + 快捷键才是更高效的方法，在 Emacs 里经常编辑速度过快把整个文件搞乱了  不用 OmniFocus 的原因是本来就是从 OmniFocus 转到 org-mode 上来的，OmniFocus 有一个很致命的缺点就是不支持多标签，并且 Perspective 提供的设置选项也很有限，根不能不能满足一些复杂的过滤要求。除此之外，OmniFocus 应该是最优秀的任务管理软件了。
-Todoist 初次使用的时候感觉很难用，尤其是鼠标点击就进入编辑模式，这个设计真的不知道怎么想的，并且各平台的客户端一点也不 Native，基本就是 Web 版套了一个壳。macOS 客户端经常有一些莫名的 bug，反正软件的使用体验上来说和 OmniFocus 简直不能比。
-经过一段时间的调教，现在基本还能满足日常使用了。我认为一个可靠的任务管理系统需要满足两点：</description>
+      <description>之前有在博客上写 Weekly Review 的习惯，后来因为被朋友说博客真水然后都撤下来了，有些文章确实是类似于「流水账」的记事，但也有一些是围绕这周做的东西来讨论的。总的来说，写 Weekly Review 对自己帮助还是很大的，可以在一周中 Focus 一个特定的主题，而不是想到什么做什么，所以这个系列以后还会继续写下去，只是写的内容更</description>
     </item>
     
     <item>
@@ -244,18 +125,7 @@ Todoist 初次使用的时候感觉很难用，尤其是鼠标点击就进入编
       <pubDate>Fri, 24 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/weekly-reading-report-issue-01/</guid>
-      <description>为什么要写这个？最主要的原因还是激励自己多多阅读，读好书和好文章，然后写 review。
-读些什么？平常的阅读比较杂，除了书籍之外，还会读很多的博客文章，所以会写这周的 book review，主要是针对这周读完的书，读了一半放弃不打算再读的书也会写，没有读完的书不写；文章就简单写一些笔记性的 review。
-*注：标注了 [TECH] 是和我专业相关的内容，可以跳过。
-Books 《清华园日记》，季羡林，外语教学与研究出版社，二零零九。 这本书断断续续得读了有一个月的时间，因为是日记体的形式，所以什么时候都可以拿出来读一下。
- 日记是写给自己看的，什么样的思想，什么样在人前难以说出口的话，都写了进去。万没想到今天会把日记公开。这些话是不是要删掉呢？我考虑了一下，决定不删。一仍其旧，一句话也没有删。==我七十年前不是圣人，将来也不会成为圣人。我不想到孔庙里去陪着吃冷猪肉。我把自己活脱脱地暴露于光天化日之下。==
- 这本日记是季羡林在清华园求学时所记，从大三一直写到大四。百年之前的大学生活和现在相比，并无什么太大的不同。季老也有过迷茫，对前途的忧虑，但是更多的是在勤勉地读书、写文章。
- 苏东坡词「谁到人生无再少，门前流水尚能西」。难道这就是「再少」吗？
- 阅读用时：7 小时 26 分，摘录。
-Articles 1. How I got a second degree and earned 5 developer certifications in just one year, while working and raising two kids 全职教师、两个孩子、五张开发者证书、一个第二学位。如何在一年内实现这么多事？
- Ambitious goals are important.
- 另外，你还不得不放弃一些东西。比如，剧是不能追了。
- It was important for me to give things up in order to accomplish my goals.</description>
+      <description>为什么要写这个？最主要的原因还是激励自己多多阅读，读好书和好文章，然后写 review。 读些什么？平常的阅读比较杂，除了书籍之外，还会读很多的博客文章，所以会写这周的 book review，主要是针对这周读完的书，读了一半放弃不打算再读的书也会写，没有读完的书不写；文章就简单写一些笔记性的</description>
     </item>
     
     <item>
@@ -264,11 +134,7 @@ Articles 1. How I got a second degree and earned 5 developer certifications in j
       <pubDate>Sun, 19 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/go-to-spotify/</guid>
-      <description>不久前我还写文称赞过 Apple Music，现在光速打脸，叛逃 Spotify。
-主要原因有几点：
- Apple Music 的「My Favorites Mix」一周才更新一次，不够听。 推荐的歌单都是听过的，专辑也是，重复推荐，并且由于是人工编辑的歌单，难免有不合自己口味的。 个性化推荐的内容太单一，经常出现歌慌，需要自己去找歌。 同步问题。  Spotify 的 Premium 之前就买了，但是一直没有用。这几天用了一下，说一下使用体验：
- 推荐算法很厉害，机器推荐的歌更个人一些，不会有人工歌单的主观因素在里面。 「Based on the songs in this playlist」这个功能很有用，可以用来扩充歌单。 Radio 功能比 Apple Music 强大。 多设备同步，这个功能太方便了，我只需要在电脑上断开蓝牙连接，然后就可以直接在手机上听了（配合蓝牙耳机）。  一些不满意的地方：
- 不能收藏专辑，有的专辑里面并不是每首歌都喜欢听，save 专辑会把整张专辑里面的歌添加到资料库里，这不得不让我又新建一个 Loved 的歌单，专门用来放喜欢的歌，这样和 Apple Music 就是差不多的操作逻辑。 没有提供加心功能，「+」仅仅是把歌曲添加到资料库，所以还得手动建一个歌单然后再添加，比较麻烦（可能我使用的方法不正确？）  不过毕竟才用了几天，还没有深度体验过。Mac 上推荐配合 Alfred 的 Workflow 来使用，可以避免到 Spotify 应用里面进行操作。</description>
+      <description>不久前我还写文称赞过 Apple Music，现在光速打脸，叛逃 Spotify。 主要原因有几点： Apple Music 的「My Favorites Mix」一周才更新一次，不够听。 推荐的歌单都是听过的，专辑也是，重复推荐，并且由于是人工编辑的歌单，难免有不合自己口味的。 个性化推荐的内容太单一，经常出现歌慌，需要自己去找歌。 同步问</description>
     </item>
     
     <item>
@@ -277,16 +143,7 @@ Articles 1. How I got a second degree and earned 5 developer certifications in j
       <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/digital-life-in-2016-music-part/</guid>
-      <description>最近知乎上的一个朋友和我私信聊了一些关于效率工具以及 Workflow（此处指的是「工作流」）方面的一些问题。聊的内容比较碎片，所以还是打算写一篇文章来具体讨论一下。考虑到会涉及很多不同的主题，所以还是一个主题写一篇，这样也可以控制文章的长度。暂定按照以下主题来写：音乐篇、阅读篇、写作篇和时间管理篇。
-音乐对我来说，应该算是日常生活中比较重要的一项内容了，除了一些需要特别 Focus 的工作（例如看数学）不会听音乐外，其他时间都会戴着耳机。2016 年彻底地转入到 Apple Music 中来，期间试用过一段时间的 Spotify，网易云音乐几乎没怎么打开过。这篇打算讨论一下所有（尽量）听音乐方面相关的问题。
-用什么设备听 我的大多数电子设备都是 Apple 系的，包括 rMBP、iPhone、iPad，所以听音乐也都是围绕着这些设备来。严格的来说，并不能算一个「音乐发烧友」，我对设备的要求并不是太高，甚至对音源也没有太高的要求，Apple Music 的音质已经完全能够满足了，无损音源内容几乎不听，其一是没有购买 CD 的习惯，所以没有合法的途径获取无损资源；其二是一直都是拿 iTunes 听音乐，无损还需要转格式编辑信息，过于麻烦。
-主力播放器是 Macbook，几乎 80% 的时间都是在 Macbook 上听（写代码、阅读、写作等）。另外便是新购入的 iPhone 7，主要是外出坐车、跑步或是睡前听一下（之前是用 5s）。iPad 很少用来听音乐。
-使用的耳机是 Westone UM Pro 30，使用体验很好，对比 Apple 自带的耳机有惊艳的提升，而且长时间佩戴也没有不适感（几乎没有戴着耳机的感觉）。想要具体了解得可以去搜相关的评测来看。
-耳机是在 7 发售之前买的，传闻 7 要去掉耳机接口的时候其实我是不信的，结果还真去掉了。这导致了插 7 上需要多接一根转接线，略显累赘，所以现在在 iPhone 上听歌就直接拿自带的耳机了。
-为什么不用网易云音乐 我知道，我也很讨厌类似「我为什么不 xxx」的说法，「不用就不用，还要批判一番」，但是还是要写一写。
-其实我很早就开始使用网易云音乐了，那个时候一些热门的歌曲下评论还只有几百条，不像现在，动辄上千上万条评论。也安利过身边好多人用，曾经是长期的会员用户，所以还是有一些资格来谈论一下这个音乐服务的。
-很明显，网易云音乐最初就是模仿 Spotify 的，包括界面设计，几乎一模一样。除了借鉴 Spotify 之外，网易云音乐还加入了很多自己的「创新」，而正是这些所谓的创新，让我开始慢慢得不想用它。
- 评论：其实我是赞成加入评论功能的，但是网易云的评论已经偏离了音乐评论的范围，变成了编故事、讲段子、骗赞评论的聚集地。认真评论音乐的几乎没有，我不知道如果想看段子为什么不上微博？这一点实际上让一个音乐软件变成了社交软件，不好意思，我只想好好听音乐。 歌曲：网易云上很多歌曲的信息混乱不堪，包括专辑信息、专辑封面、年份等，很多单曲甚至没有专辑信息，直接被编排到「热门歌曲串烧」这样的专辑里，我有强迫症，看着挺 low 的。并且很多的歌来源都不明确，大多数都是网友上传，甚至很多 Bilibili 鬼畜区的音乐也被上传上来，哪天听推荐就冷不丁得听到。 专辑封面不完整：网易云的一大特色就是模仿唱片机旋转，想看一下专辑封面是什么样还要点到专辑列表里面去看。在我看来，在电子设备上「拟物」是一种很没有效率的事，就像之前电子书的模拟翻页一样，「翻页」这个动作本来就是一个三维的过程，在手机上再怎么模拟也达不到现实中的效果，「瀑布式」的阅读方式才是正确的选择。所以我推崇「反拟物化」、「扁平化」和「极简化」的设计风格。 歌单：几乎所有的歌单都是由用户创建，和 Apple Music 与 Spotify 专门的音乐编辑创建的歌单相比，高下立判。  在我看来，听音乐是一件很纯粹的事，而网易云给这件纯粹的事加了太多的东西。</description>
+      <description>最近知乎上的一个朋友和我私信聊了一些关于效率工具以及 Workflow（此处指的是「工作流」）方面的一些问题。聊的内容比较碎片，所以还是打算写一篇文章来具体讨论一下。考虑到会涉及很多不同的主题，所以还是一个主题写一篇，这样也可以控制文章的长度。暂定按照以下主题来写：音乐篇、阅读篇、</description>
     </item>
     
     <item>
@@ -295,10 +152,7 @@ Articles 1. How I got a second degree and earned 5 developer certifications in j
       <pubDate>Sat, 04 Feb 2017 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/new-blog/</guid>
-      <description>现在这个博客只写技术相关的内容，其他的随笔都写在新博客里，Medium 是被大陆屏蔽的，所以请自备梯子。另外一些比较私人的笔记——例如「Week Review」系列就不发表在互联网上了。
-至于原因，单纯得觉得 Medium 上的衬线字体很好看。如果需要魔改这个博客的话，还是挺麻烦的，自己目前的前端知识还处于未入门的水平，所以就不折腾了。结果我还是魔改了，现在风格比较简洁了，照着 yue.css 改的。
-既然重新换了一个主题，就不换地方写了……
-主题的代码放在 GitHub 上，完全是新手的作品，所以还是不要 star 了。</description>
+      <description>现在这个博客只写技术相关的内容，其他的随笔都写在新博客里，Medium 是被大陆屏蔽的，所以请自备梯子。另外一些比较私人的笔记——例如「Week Review」系列就不发表在互联网上了。 至于原因，单纯得觉得 Medium 上的衬线字体很好看。如果需要魔改这个博客的话，还是挺麻烦的，自己目前的前端知</description>
     </item>
     
     <item>
@@ -307,9 +161,7 @@ Articles 1. How I got a second degree and earned 5 developer certifications in j
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/2017-week-01-review/</guid>
-      <description>今天是元旦，因为在 Calendar 中把今天归到 2017 年的第一周里了，所以就按照上面所写的把这周当做第一周吧。
-这周结束了在中软的课程设计实训，以前总嫌弃小渔村破，现在回来才知道还是小渔村好啊。课程设计实训的内容是用 Java 写一个点餐系统，一个小组只需要做一份就可以了，不过几乎所有人都不知道 Git 是个什么东西，小组合作还是用的 U 盘拷贝代码，所以代码质量可想而知了，本组的其他人都比较厉害，索性我就抱大腿划水了，什么也没有参与，代码也没有写一行。
-不过虽说没有写课程设计的项目，但还是有写代码的。这周把两个月前参加 HACKxFDU 的项目拿出来用 Python 3 重写了一遍。项目的地址：Neutron，当初我们考虑做 Neutron 的时候是想把它做成一个通用的智能家居语音终端的，类似于 Amazon 的 Echo，只要提供第三方的 API，就能轻松集成到 Neutron 来，但是实际上碍于 Hackathon 的时间限制，只是完成了一个简单的 Demo，完全没有拓展性。本来这个项目参加完 Hackathon 之后就没有管了，不过最近看到 Facebook CEO 扎克伯格写了一个 Jarvis，觉得和之前做的东西很像（当然还是差远了，基本我们做的东西就是用别人的 API），所以又掏出来拿 Python 3.5 重写了一遍。现在在 develop 分支基本上把框架搭建好了，最底层是和 API 交互的 layer 层，这一层需要为每个 API 写特定的代码，其上是抽象的 handler 层，提供通用的接口，抽象 layer 层的操作：例如语音控制模块、AI 模块等，这一层上还可能包裹一层特定的 wrapper，例如对特定的 message 做语义分析。通过配置文件来选择使用哪个 layer 以及配置 layer 的内容（key 等内容），开始的时候打算用 json 来做配置文件的，后来看了一下还有 yaml 这种更加简洁的配置文件，所以打算换成 yaml 的。目前这个项目还有很多内容要写的，比如特定的 layer，都需要更具不同的 API 写特定的代码，这一点上我参考的 Spacemacs 的方法。</description>
+      <description>今天是元旦，因为在 Calendar 中把今天归到 2017 年的第一周里了，所以就按照上面所写的把这周当做第一周吧。 这周结束了在中软的课程设计实训，以前总嫌弃小渔村破，现在回来才知道还是小渔村好啊。课程设计实训的内容是用 Java 写一个点餐系统，一个小组只需要做一份就可以了，不过几乎所有人都不知道 Git 是个什么东西，</description>
     </item>
     
     <item>
@@ -318,8 +170,7 @@ Articles 1. How I got a second degree and earned 5 developer certifications in j
       <pubDate>Mon, 26 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/2016-week-52-review/</guid>
-      <description>2016 年最后一周（实际上还有6天，不过那一周就算到 2017 年第一周吧）。
- 编程：这周在看《Python 网络数据采集》，以前虽然也用过爬虫，但是毕竟没有系统地学过，所以还是找了一本书来看。但是说实话，这本书写得并不是很好，不知道是写书时间的原因还是什么，挺多语法错误的，而且代码的风格很差（完全不符合 PEP8 标准）。内容也比较浅，基本上都是之前已经知道了的东西，所以收获也不是很多，（下一篇的博客可以来写一写怎么写一个高效的爬虫）。面试的事情作废了，1）看了一下他们做的产品，感觉不是自己想要做的东西；2）开出的薪资太低，up to 2k（其实主要是薪资太低了，每天要往返金石滩和大连市，太累了）。所以还是好好学习准备明年的暑期实习吧。另外 GSoC 也应该放上日程了，即使有申请不上的可能，还是要试一试的。 阅读：开始读金庸的《射雕英雄传》，以前上学的时候一直被家里教导不要沉迷武侠小说，所以一直没有读过金庸和古龙（然而那些时间都用来看网文玄幻了……）。最近读来还是觉得很有意思，作为实训的时候消遣很不错（主要没有网）。 生活：这周五就可以离开这鬼地方了，见识过外包公司的情况后决定以后肯定是不会进这种公司的。在公司里实训也一直没有写代码，本来打算用 Python 实现一下实训的题目的，但是老师说不允许，这也没什么办法，索性就划水吧。 博客：可以看到，我博客又换样子了。用 Emacs 来写博客还是太麻烦了一些，而且 render 的速度实在是太感人，本地的 org 文件多了之后好几次 render 的时候卡住。现在这个博客是 Mweb 自带的 generator 生成的，就是主题不怎么好看，其他的都很方便。奈何自己的前端知识太渣，改了半天也没有改成自己想要的样子，所以还是凑合着先用吧。  </description>
+      <description>2016 年最后一周（实际上还有6天，不过那一周就算到 2017 年第一周吧）。 编程：这周在看《Python 网络数据采集》，以前虽然也用过爬虫，但是毕竟没有系统地学过，所以还是找了一本书来看。但是说实话，这本书写得并不是很好，不知道是写书时间的原因还是什么，挺多语法错误的，而且代码的风格很差（完全</description>
     </item>
     
     <item>
@@ -328,16 +179,7 @@ Articles 1. How I got a second degree and earned 5 developer certifications in j
       <pubDate>Thu, 22 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/notes-on-recommandation-system/</guid>
-      <description>开始学习机器学习/数据挖掘相关的内容，打算每学习一部分知识就写一篇博客总结一下，当做学习过程中的笔记，也为以后看的时候提供存档。
-这一篇笔记是关于推荐系统的，主要讲了两种推荐算法（基于用户和基于物品的协同过滤）。
-基于用户的协同过滤 协同过滤（Collaborative filtering） 一个协作型过滤算法通常的做法是对一大群人进行搜索，并从中找出与我们品味相近的一小群人。算法会对这些人所偏爱的其他内容进行考察，并将它们组合起来构造出一个经过排名的推荐列表。
-测试数据集 为了演示一些算法，我们需要从这个网站上下载一份数据集。这里因为是作为演示使用，所以只需要下载ml-latest-small.zip这一份简单的数据集就可以了。
-相似度计算 在有了数据之后，我们需要有一种方法来确定人们在品味方面的相似程度。为此，我们可以将每个人与所有其他人进行对比，并计算他们的相似度评价值。
-欧几里德距离评价（Euclidean Distance Score） 欧几里德距离是指多维空间中两点间的距离，这是一种用直尺测量出来的距离。如果我们将两个点分别记作$(p_1, p_2, p_3, p_4, &amp;hellip;)$和$(q_1, q_2, q_3, q_4, &amp;hellip;)$，则欧几里德距离的计算公式为：
-$$ \sqrt{((p_1-q_1)^2+(p_2-q_2)^2+&amp;hellip;+(p_n-qn)^2)} = \sqrt{(\sum{i=1}^n(p_i-q_i)^2)} $$
-创建 recommendations.py。
-用代码表示：
-from math import sqrt # 返回一个有关 person1 与 person2 的基于距离的相似度评价 def sim_distance(prefs, person1, person2): # 得到 shared_items 的列表 shared_items = {} for item in prefs[person1]: if item in prefs[person2]: shared_items[item] = 1 # 如果两者没有共同之处，则返回 0 if len(shared_items) == 0: return 0 # 计算所有差值的平方和 sum_of_squares = sum([pow(prefs[person1][item]-prefs[person2][item], 2)for item in prefs[person1] if item in prefs[person2]]) return 1 / (1 + sqrt(sum_of_squares))  欧几里德距离计算公式可以计算出距离值，偏好越相似的人，其距离就越短。不过，我们还需要一个函数，来对偏好越相近的情况给出越大的值，为此，我们可以将函数的值加 1（这样就可以避免遇到被 0 整除的错误了），并取其倒数，入上面代码最后一行所示。</description>
+      <description>开始学习机器学习/数据挖掘相关的内容，打算每学习一部分知识就写一篇博客总结一下，当做学习过程中的笔记，也为以后看的时候提供存档。 这一篇笔记是关于推荐系统的，主要讲了两种推荐算法（基于用户和基于物品的协同过滤）。 基于用户的协同过滤 协同过滤（Collaborative filterin</description>
     </item>
     
     <item>
@@ -346,9 +188,7 @@ from math import sqrt # 返回一个有关 person1 与 person2 的基于距离�
       <pubDate>Tue, 20 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/2016-weekly-51-review/</guid>
-      <description>看了一下日历，上一周是 2016 年的倒数第二周了（写这篇文章的时候已经是 52 周了），换了新博客之后就一直没有再写过 Week Review，这其中虽然有一些外部的因素，但大抵上还是不想写。
-上周学校组织来中软做课程设计，所以这些天一直待在中软的培训中心里，课程设计的题目是一个点餐的 Web 应用，用 Java 开发，因为并不打算从事 Java，所以也并没有怎么听，大部分时间都是在自己看书和写自己的 Project。不过要吐槽一下这边的环境，宿舍除了床什么也没有，所以晚上回去什么都干不了，只能坐在床上看看电影，最不能忍的是网都没有……学校送来培训中心的这种做法我是很不认同的，好好的大学为什么要搞成职业教育呢？
-最近找到了大连的一家做 Python Web 的 start up，联系了一下准备过去面试，不过软件园离学校太远了，估计面过了也不会去吧。</description>
+      <description>看了一下日历，上一周是 2016 年的倒数第二周了（写这篇文章的时候已经是 52 周了），换了新博客之后就一直没有再写过 Week Review，这其中虽然有一些外部的因素，但大抵上还是不想写。 上周学校组织来中软做课程设计，所以这些天一直待在中软的培训中心里，课程设计的题目是一个点餐的 Web 应用，用 Java 开发，因</description>
     </item>
     
     <item>
@@ -357,11 +197,7 @@ from math import sqrt # 返回一个有关 person1 与 person2 的基于距离�
       <pubDate>Sun, 13 Nov 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/2016-week-46-review/</guid>
-      <description>编程学习方面，不完全看完了《利用 Python 进行数据分析》，感觉光看没有进行练习的话很难一次记住那么多用法，所以这本书最好还是最 NumPy、Pandas 这几个库用过一段时间之后再看。之后开始看《集体智慧编程》，目前才看了两章，内容写得还是挺好的，不过很多代码不是很规范（比如命名、缩进什么的），还有就是可能书已经比较老了，很多例子中使用的 API 已经挂掉了，所以不得不自己找数据集下来测试。不知道别人看书是怎样的，反正我看书不把书中每个例子测试一下就感觉书好像没看过，所以看书的速度还是挺慢的，昨天和今天花了两天的时间把第2章的东西总结了一下，写了篇博客。
-朋友说我现在才开始学习机器学习并且想要以此为以后的职业简直在玩火（并且还不打算读研究生的情况下），说得也是，毕竟现在已经大三了，按照道理，应该刷刷题准备下学期的实习面试的。不过既然跳进这个火坑里了，就不能半途而废，至少先学习几个月看看情况再变更计划。如果实在不行，到时候再去做 Web 开发还是可以的。
-前几天在登录 iPad 上的 Evernote 的时候，突然提示我登录的设备超过了两台，需要开通会员（之前开通过一年的会员，后来没有续费），总觉得为了这个再开通会员有点不值得，并且之前 Evernote 在 Mac 上使用就有很多诟病，所以打算换 OneNote 了。更新了一下 Mac 上 OneNote，发现竟然支持手写了，果断用用用。不过 OneNote 最开始的字体问题到现在还没有解决……
-下周五就可以玩上 Pokemon Moon 了，激动不已，虽然破解党们早已二周目通关……
-另外，发现番茄工作法挺好用的，现在也没有什么课了，每天就直接到图书馆里来，打开番茄钟，然后无脑干活就好了。</description>
+      <description>编程学习方面，不完全看完了《利用 Python 进行数据分析》，感觉光看没有进行练习的话很难一次记住那么多用法，所以这本书最好还是最 NumPy、Pandas 这几个库用过一段时间之后再看。之后开始看《集体智慧编程》，目前才看了两章，内容写得还是挺好的，不过很多代码不是很规范（比如命名、缩进什么的</description>
     </item>
     
     <item>
@@ -370,11 +206,7 @@ from math import sqrt # 返回一个有关 person1 与 person2 的基于距离�
       <pubDate>Mon, 07 Nov 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/2016-week-45-review/</guid>
-      <description>已经第 45 周了啊，再过 10 周 2016 年就要过去了。今天大连下起了雪，似乎冬天就这么不知不觉得来了，记得上一次下大雪的时候去了一次海边，可惜 Photos 在一次事故中数据全部丢失了。作为一个南方人当初决定来北方的时候其实是对雪有一种很强烈的期待的，不过来了大连之后发现其实这里也不怎么下雪，偶尔下一次的雪也不是很大，这在一定程度上有点令人失望。
-上周在读《挪威的森林》这本书，第一次读的时候大概是在初中的时候，当时没看懂里面写的是什么，纯属当做一本小黄书来读的。这次读的时候依旧有好多东西没明白。有一天听着 Thirteen Senses 的专辑猛地读到了 50%，感觉特别压抑，说不出来的压抑，所以就暂时放下了，顺便把翻拍的电影看了一遍，说实话，电影拍得不是很好，剧情的跳跃度有些大了，让没读过小说的人看得莫名其妙。
-学习方面感觉上周特别颓废，什么事情都不相干，每天就窝在宿舍里，果然宿舍是一个让人堕落的地方，甚至连门都不想出去了，吃饭全部叫外卖。还好今天周一强迫自己来了图书馆，希望能做些东西吧。
-这学期的课程基本结束了，免修了两门课，除了上机可能会去一下，其他时间都是空余的了，有大块的时间可以用来做自己想要做额事情了。
-看了一眼窗外，雪似乎已经停了，耳机里放着坂本龙一的「A Flower Is Not A Flower」。</description>
+      <description>已经第 45 周了啊，再过 10 周 2016 年就要过去了。今天大连下起了雪，似乎冬天就这么不知不觉得来了，记得上一次下大雪的时候去了一次海边，可惜 Photos 在一次事故中数据全部丢失了。作为一个南方人当初决定来北方的时候其实是对雪有一种很强烈的期待的，不过来了大连之后发现其实这里也不怎么下雪，偶尔下一次的雪</description>
     </item>
     
     <item>
@@ -383,18 +215,7 @@ from math import sqrt # 返回一个有关 person1 与 person2 的基于距离�
       <pubDate>Fri, 28 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/build-python-scienfic-computing-environment/</guid>
-      <description>最近在看《Python for Data Analysis》（利用 Python 进行数据分析）这本书，贴一点笔记，这一篇是关于环境搭建的。另外吐槽一下，书中还是有不少错误的，语法错误就发现了好多处，大概读完了之后会整理出一份勘误表出来，可能是因为写书的时候是 14 年，两年过去了，pandas 库也有了一些变化。
-安装虚拟环境 不想把系统的 python 库搞得乱乱的（其实已经很乱了），所以还是建一个独立虚拟环境专门来做科学计算吧。具体的方法我在virtualenv 相关笔记这篇博客中已经详细写了，建议将启动虚拟环境的命令添加到终端的配置文件中去（使用alias），这样就避免每次一打开就输入一长串命令了。
-因为科学计算社区的一些库还是基于 Python 2.x 版本的，所以这里我们使用的 Python 版本为 2.7。
-然后使用以下命令一键安装所需要的库：
-sudo pip install numpy pandas matplotlib jupyter scikit-learn  安装不上的请检查是不是需要翻墙。
-IPython 熟悉 Python 的同学应该对这个解释器不陌生，自带的 Python 解释器实在是太弱了。它与传统的“edit-compile-run”（编辑-编译-运行）方式的区别在于，它鼓励使用“execute-explore”（执行-探索），所以特别适合用在计算和数据分析领域，可以方便得使用「试错法」和「迭代法」进行开发。这里主要介绍它基于 Web 的交互式笔记本功能（命令行中大同小异）。
-开启 IPython Notebook 使用以下命令来打开 IPython Notebook：
-(ENV2.7)$ jupyter notebook  这样 server 就启动了，浏览器会自动打开一个目录树。
-Note：记住在启动了虚拟环境的状态下使用这条命令，要不然就会使用系统的 IPython 版本来运行。
-然后我们新建一个 IPython Notebook 用作演示：
-In [1] 中的命令是为了能让我们直接在 IPython Notebook 中集成显示 matplotlib 画的图片，所以如果是用作科学计算的话，首先先执行以下这条命令再说。
-内省 在变量的前面或后面加上一个 ?</description>
+      <description>最近在看《Python for Data Analysis》（利用 Python 进行数据分析）这本书，贴一点笔记，这一篇是关于环境搭建的。另外吐槽一下，书中还是有不少错误的，语法错误就发现了好多处，大概读完了之后会整理出一份勘误表出来，可能是因为写书的时候是 14 年，两年过去了，pandas 库也有了一些变化。 安</description>
     </item>
     
     <item>
@@ -403,17 +224,7 @@ In [1] 中的命令是为了能让我们直接在 IPython Notebook 中集成显�
       <pubDate>Wed, 26 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/2016-week-42-43-review/</guid>
-      <description>连续两周没写周总结了，41周的周总结因为涉及到一些私事所以还是删掉了（当然感兴趣的还是可以在我的 repo 里面找到之前的 commit）。
-过去两周还是发生了很多事情的，一件一件来说吧。
-10.15-10.17 去上海参加了 HACKxFDU，这也是第一次参加 Hackathon，最后抱了大腿队友水到了一个微软的万物互联奖，不过奖品就两套物联网套件，根本不够四个人分(╯°□°）╯。在上海大概玩了一个礼拜，去了趟迪士尼（人多，体验差，项目无聊）就回学校了。然后上一周基本上没做什么事情，一是要准备大创项目的中期检查答辩，二是要复习软件工程的考试。
-最近做出比较重要的一个决定就是确定了以后将要从业的方向，以前基本上都是按照兴趣来学，什么都做过一些，但都不是很深入，也没有想好以后工作想要干嘛。最近不知道怎么突然对数据挖掘和机器学习产生兴趣了，正好之前做的一个大创项目也是和这个有关的（虽然项目内容都是在划水），所以还算对这方面有点经验。
-但是要解决的问题还是有很多的，比如说如何找到工作的问题，搜索了一下，机器学习/数据挖掘的岗位都需要有研究生学历，作为一个辣鸡学校的本科生，能不能找到工作就是一个问题。跟一个朋友说了一下想法，他说我在玩火……当然，实际上这方面倒不是太担心，如果有普通研究生能力的话找到一个工作还是不难的。
-另外一个就是需要系统得学习这一套东西了，包括微积分、线性代数、概率论、统计学、机器学习，大部分内容是数学，现在有点后悔大一大二的时候没有好好学数学了，高数那些课基本就是划水过去的，欠下来的债还要还的。
-现在基本的计划就是：
- 看《利用 Python 进行数据分析》，把 Python 的几个科学计算库用熟练； 复习一下数学的知识，看《程序员的数学》系列的三本书，有基础的话应该挺快就能看完； 看李航的《统计学习方法》； 看《集体智慧编程》； 看周志华的《机器学习》；  上面就是初步的入门计划，应该看完了对数据挖掘/机器学习有一个基本的了解了，可以顺便去 Kaggle 上打打比赛，虽然不一定能够能拿到好名次，积累一些经验总是好的。另外 Ng 的课和台大的《机器学习基石》也可以看一下。
-其他一些资源：
- Top-down learning path: Machine Learning for Software Engineers 机器学习工程师（中/英） 数据分析师（中/英）  这周和下周的计划就是把《利用 Python 进行数据分析》这本书看完。
-ps：买了《文明6》，感觉时间还是挺紧的(╯▽╰)</description>
+      <description>连续两周没写周总结了，41周的周总结因为涉及到一些私事所以还是删掉了（当然感兴趣的还是可以在我的 repo 里面找到之前的 commit）。 过去两周还是发生了很多事情的，一件一件来说吧。 10.15-10.17 去上海参加了 HACKxFDU，这也是第一次参加 Hackathon，最后抱了大腿队友水到了一个微软的万物互</description>
     </item>
     
     <item>
@@ -422,7 +233,7 @@ ps：买了《文明6》，感觉时间还是挺紧的(╯▽╰)</description>
       <pubDate>Mon, 03 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/2016-week-44-review/</guid>
-      <description> Coding - 本周主要在看《利用 Python 进行数据分析》，大概看了有一半的样子，下周应该能够结束掉。接下来的打算可能是先不看书，而是把What should I learn in data science in 100 hours?这个问题下面的回答内容实践一遍。 Japanese - 日语已经落下好久了，大概还有1个月的时间考试，虽然只是报了一个三级试试水，但是不去考试总感觉白费报名费了，当初以为交了钱就会好好学，然而想多了。另外，日语现在并不是刚需的语言，之前决定学习是为了玩游戏，现在基本想玩的游戏都出了中文，《怪物猎人》玩了几个小时，发现不适合我这种手残。所以到底要不要继续学习日语还有待商榷…… English - 英语自从到了大学以来就没有刻意地学过，除了准备托福的那段时间背了一些单词，然后其他都是直接用，导致了现在听说读写水平参差不齐，听力和阅读还算可以（至少能听懂和读懂技术相关的内容），口语基本就是没有说过，写作也没怎么练过，写一些基本的句子也要查语法（靠语感来写作结果就是一堆语法错……）。相比较日语来说，英语还算一个刚需的技能，尤其是写作和口语部分，还需要加强训练。接下来的一段时间内也会把英语学习提到日程上来，暂时的计划还没有想好，先加到 TODO 中。 Reading - 发现这学期都没有读过几本书，上学期还能保持基本每周都读一本书，现在 Kindle 都吃灰了。下周先把《挪威的森林》这本书看完吧…… Game - 等《精灵宝可梦 日月》发售，还有20天的样子，没有预定，直接买现货或者买下载版吧。  </description>
+      <description>Coding - 本周主要在看《利用 Python 进行数据分析》，大概看了有一半的样子，下周应该能够结束掉。接下来的打算可能是先不看书，而是把What should I learn in data science in 100 hours?这个问题下面的回答内容实践一遍。 Japanese - 日语已经落下好久了，大概还有1个月的时间考试，虽然只是报了一个三级试试水，但是不去考试总感觉</description>
     </item>
     
     <item>
@@ -431,15 +242,7 @@ ps：买了《文明6》，感觉时间还是挺紧的(╯▽╰)</description>
       <pubDate>Sun, 02 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/2016-week-40-review/</guid>
-      <description>这周恰逢国庆假期，休息了两天（感觉今天貌似也在休息），明天学校断电断网（大农村条件艰苦），所以应该要出去一天，暂时的行程还没有安排。
-编程 总结 首先收到了 HACKxFDU 的通过邮件，所以 14 号会去上海打一波酱油，以目前的水平如果不抱大腿感觉完全没有拿奖的可能性。主要的目的应该不是去参赛，可能会去找找下学期实习的目标，顺便认识一些大牛(≧▽≦)/
-上周说要看完《Flask Web Development》，但是实际上并没有看完，大概看了一半的样子，期间还看了一些 Flask 的源码，打算边看书边看源码，然后之后再重新造一遍轮子。
-计划 之前就一直觉得自己的 Python 水平好像一直止步不前（传说中的半吊子水平），要做什么东西都是先 Google 一下用什么库，有些标准库中的内容也很不熟悉。昨天被学长问道最近在学什么，我说在看 Flask，然后就被鄙视了，然后通过对话才意识到 Library Reference 还没有完整的刷过，Python 的基础还是比较薄弱的。现在是个人就会 Python，不过刷过 Library Reference 的人应该还是不多的。
-所以接下去的计划应该是：
- 继续看 Flask（被鄙视也要看啊，开了头不能半途而废……），把源码看懂然后自己山寨一个，尝试着写一些基于 Flask 的 Project； 刷 Python Library Reference，用 ipython notebook 来做笔记，先刷一遍，不会的东西先跳过； 刷一下算法，这个是为了下学期的面试准备的，CLRS 没有看完，但是感觉想要看完会花掉不少的时间，看不看到时候再说，先把 LeetCode 刷一遍，然后《编程之美》、《编程珠玑》、《剑指 offer》这几本书刷一遍。  这学期估计做完上面的事情时间就用得差不多了，下学期开始的时候就要为参加 GSoC 做一些准备了。
-下周要做的事情：
- 继续刷《Flask Web Development》，争取看完 看完 Python Library Reference 2、3、4节  日语 总结 这周貌似完全没有学习日语！所以上周列的计划也没有完成，尴尬！时间分配上面还是有一点问题了，每天有计划今天计算机的东西要看哪些，但是日语的东西貌似一点也没有计划，想到了就看一点，所以没有想到的时候就完全不看了-_-|||
-计划 现在有点后悔抱名 N3 的考试了，以来 N3 没什么卵用，而来貌似自己好像并没有太多时间学习日语，还不如好好学习一下然后直接考 N2 或者 N1，但是如果不去考试的话就浪费了 350 大洋！</description>
+      <description>这周恰逢国庆假期，休息了两天（感觉今天貌似也在休息），明天学校断电断网（大农村条件艰苦），所以应该要出去一天，暂时的行程还没有安排。 编程 总结 首先收到了 HACKxFDU 的通过邮件，所以 14 号会去上海打一波酱油，以目前的水平如果不抱大腿感觉完全没有拿奖的可能性。主要的目的应该不是去参赛，可能会去找找</description>
     </item>
     
     <item>
@@ -448,22 +251,7 @@ ps：买了《文明6》，感觉时间还是挺紧的(╯▽╰)</description>
       <pubDate>Sun, 25 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/2016-week-39-review/</guid>
-      <description>编程 总的来说，好像这一周并没有做出什么东西来。本来是在看《Web Scraping with Python》这本书的，可以看到后面发现错误挺多的，都有一些最基本的语法错误，所以索性就直接不看了。然后知乎专栏的爬虫也一直没有开始写。
-从前几周就开始使用 VS Code 了，比想象中的好用很多，上一次使用还是刚出的时候，很多东西都不完善，现在 1.0 版本有了很大的改进，作为主力编辑器应该是没有什么问题了。Atom 的启动速度还是那么慢，什么时候改进一些什么时候再说吧。Emacs 已经好久没有用了，应该没有什么特殊情况不会去用了吧，写 Lisp 和 Haskell VS Code 或许也能够胜任。
-最近最烦心的一件事情就是不知道以后要从事什么方向的程序员了。目前自己的技术栈并不是很丰富，杂七杂八的东西研究了很多，赚钱的技能没学多少……所以还是有必要挑一个搬砖的技能好好磨练一下了。目前初步的计划是 Python Web 开发，然后顺带把 C 语言再看看然后去读 Python 的源码，再看一些经典的书（UNIX 系列）。
-下周的计划 把《Flask Web Development: Developing Web Applications with Python》这本书看完，然后把书中的博客例子做出来。
-顺便写代码累了的时候可以刷刷《程序员修炼之道》这本书，以前看过其中的一部分，还是比较有意思的。
-日语 12月份就要考试了，然而我还没怎么开始学习。大概在 YouTube 上看了几节五十音的视频，其实五十音之前也都学过，平假名基本上还是熟悉的，就是片假名记不住-_-|||
-下周的计划 熟练掌握五十音，包括平假名和片假名的书写、发音。先把 YouTube 上那一个系列的视频看完吧，然后直接拿单词卡片来背，Anki 中也有单词本可以用来复习。
-游戏 这周没怎么玩游戏，守望先锋已经一周多没有玩了。
-平时的时候玩 「Pokemon Omega Ruby」比较多，也就是孵孵蛋，打打对战塔，刚入对战坑，好多东西还不懂，还需要学习一个。
-开始入门狼人杀，这周的几次聚会玩狼人杀很嗨，在某宝上买了一套卡牌，准备研究研究。
-阅读 看了一点《胡适留学日记》，拖到现在还没有看完，Kindle 好像来学校之后就有点吃灰了。
-下周的计划 看完《胡适留学日记》。
-电影 这周看了三部韩国的电影，分别是《隧道》、《釜山行》、《恐怖直播》，发现韩国的电影好好看！韩国的电影感觉黑色幽默和讽刺多一些，日本的电影中二气息比较多一些，国产的电影嘛……
-相比较最近比较火的《釜山行》，个人还是感觉《隧道》比较好看一些。亚洲地区的丧尸片估计《釜山行》应该是最佳了，但是和欧美的一些丧尸片比起来，还是有差距的，其中的一些套路也都是别人玩过了的。《隧道》这部电影让我感觉和《活埋》很像，但是一个生还了，一个 gg 了……
-杂项 这周好像聚会比较多(≧▽≦)，已经吃了好几顿饭+去了一次 KTV，生活过得比较颓废。
-是时候应该沉迷学习了(╯﹏╰）</description>
+      <description>编程 总的来说，好像这一周并没有做出什么东西来。本来是在看《Web Scraping with Python》这本书的，可以看到后面发现错误挺多的，都有一些最基本的语法错误，所以索性就直接不看了。然后知乎专栏的爬虫也一直没有开始写。 从前几周就开始使用 VS Code 了，比想象中的好用很多，上一次使用还是刚出的时候，很多</description>
     </item>
     
     <item>
@@ -472,13 +260,7 @@ ps：买了《文明6》，感觉时间还是挺紧的(╯▽╰)</description>
       <pubDate>Sun, 17 Jul 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/notes-on-virtualenv/</guid>
-      <description>安装 直接使用 pip 来进行安装：
-$ sudo pip install virtualenv  用途 主要用来创建隔离的 Python 开发环境，比如说一个项目需要用到 2.7 的库，另一个项目需要用到 3.0 的库，我们就可以使用 virtualenv 来分别给这两个项目创建虚拟的 Python 环境，这样可以有效的避免冲突。
-virtualenv 会创建一个拥有独立安装目录的 Python 环境，该隔离环境不会与其他 virtualenv 环境共享模块（可以选择是否访问全局安装目录）。
-使用 创建虚拟环境 最基本的使用：
-$ virtualenv ENV  其中 ENV 是用来存放虚拟环境的目录。
-$tree -L 1 ENV ENV ├── bin ├── include ├── lib └── pip-selfcheck.json  其中 lib 和 include 目录是用来存放新的虚拟 Python 环境的依赖库，Package 被安装到 lib/pythonX.X/site-packages/ 中，bin 目录中是新的 Python 解释器。pip 和 setuptools 默认被安装的。
-active script 进入虚拟环境：</description>
+      <description>安装 直接使用 pip 来进行安装： 1 $ sudo pip install virtualenv 用途 主要用来创建隔离的 Python 开发环境，比如说一个项目需要用到 2.7 的库，另一个项目需要用到 3.0 的库，我们就可以使用 virtualenv 来分别给这两个项目创建虚拟的 Python 环境，这样可以有效的避免冲突。 virtualenv 会创建一个拥有独立安装目录的 Python 环境，该隔离环境不会与其他 virtualenv 环境共享模块（可</description>
     </item>
     
     <item>
@@ -487,13 +269,7 @@ active script 进入虚拟环境：</description>
       <pubDate>Fri, 15 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/garbage-collection-in-swift-lang/</guid>
-      <description>这篇文章是在阅读《The Swift Programming Language》Automatic Reference Counting（ARC，自动引用计数）一章时做的一些笔记，同时参考了其他的一些资料。
-在早期的 iOS 开发中，内存管理是由开发者手动来完成的。因为传统的垃圾回收机制对于移动平台来说十分低效，苹果采用的是引用计数（RC，Reference Counting）的方式来管理内存，开发者需要通过手工的方式增加或减少一个实例的引用计数。在 iOS 5 之后，引入了 ARC 自动引用计数，使得开发者不需要手动地调用 retain 和 release 来管理引用计数，但是实际上这些方法还是会被调用，只不过是交给了编译器来完成，编译器会在合适的地方帮我们加入这些方法。
-什么是自动引用计数？
-每当你创建一个类的实例的时候，ARC 便会自动分配一块内存空间来存放这个实例的信息，当这个实例不再被使用的时候，ARC 便释放实例所占用的内存。一般每个被管理的实例都会与一个引用计数器相连，这个计数器保存着当前实例被引用的次数，一旦创建一个新的引用指向这个实例，引用计数器便加 1，每当指向该实例的引用失效，引用计数器便减 1，当某个实例的引用计数器变成 0 的时候，这个实例就会被立即销毁。
-在 Swift 中，对引用描述的关键字有三个：strong，weak 和 unowned，所有的引用没有特殊说明都是 strong 强引用类型。在 ARC 中，只有指向一个实例的所有 strong 强引用都断开了，这个实例才会被销毁。
-举一个简单的例子：
-class A { let name: String init(name: String) { self.name = name } deinit { print(&amp;quot;A deinit&amp;quot;) } } var a1: A? var a2: A? a1 = A(name: &amp;quot;A&amp;quot;) a2 = a1 a1 = nil  上面这个例子中，虽然 a1 这个 strong 强引用断开了，但是还有 a2 这个强引用指向这个实例，所以不会在命令行中输出 A deinit，当我们把 a2 也设置为 nil 时，与这个实例关联的所有强引用均断开了，这个实例便会被销毁，在命令行中打印 A deinit。</description>
+      <description>这篇文章是在阅读《The Swift Programming Language》Automatic Reference Counting（ARC，自动引用计数）一章时做的一些笔记，同时参考了其他的一些资料。 在早期的 iOS 开发中，内存管理是由开发者手动来完成的。因为传统的垃圾回收机制对于移动平台来说十分低效，苹果采用的是引用计数（RC，R</description>
     </item>
     
     <item>
@@ -502,16 +278,7 @@ class A { let name: String init(name: String) { self.name = name } deinit { prin
       <pubDate>Sun, 10 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/time-recording-tutorial/</guid>
-      <description>两年前，曾经写过一篇有关时间管理的文章，那个时候还在上高二，对于时间管理仅仅是有一点肤浅的了解，自然写出来的文字也是比较幼稚的。经过两年的实践，积累了很多时间管理的经验，想要拿出来分享一下。预计会写一个系列，包括使用的工具和日常的 Workflow。
-日常使用的工具有这些：
- 纸质笔记本（Moleskine） OmniFocus Evernote Toggl  这篇文章从题目也可以看出来，主要讲一些关于时间记录的内容，对应的工具是 Toggl。关于 Toggl，我已经在知乎的一个回答里面推荐过了，这里会更加详细地介绍一下使用流程，在谈论术之前，先来说说道的问题，为什么要做时间记录。
-其实我们对时间是很不敏感的，相信你一定有过这样的体验：早晨醒来，干劲满满，准备打开电脑把昨天没有写完的代码解决，这时想到邮件还没看，先查一下邮件吧，反正花不了多少时间，在查看邮件的时候又发现知乎上有人给你发私信了，在到知乎上看一下私信，顺便回复一下，既然上了知乎，那么去首页看看订阅的内容里面有没有什么有意思的东西吧，看到一个有意思的回答，是推荐你买买买的，于是乎又打开淘宝看了看商品的具体情况，顺便加到购物车里，这是候发现已经中午了，算了，先去吃饭吧，代码等等吃完饭再写，吃过午饭后又觉得有一点困意，那就睡一会儿吧，一觉醒来，发现已经四点多了，不行了，赶紧写代码，等等，这个 bug 好像找不到问题所在啊，算了，去 Stack Overflow 上找找吧，在 Stack Overflow 上找到了答案，链接到一篇具体的解释文章，点进去看了看，发现太长了，还是先加到 Pocket 中，以后再看吧，这个人的博客似乎写得不错，浏览一下 Archive 页面看看还有没有其他的好文章，从头到尾浏览了一遍，心中不禁惊叹，写得真好！然后想到今天 Reddit 好像还没看，说不定又有什么好东西，于是又上 /r/programming 刷了一会儿，看到了几篇牛逼的文章，时间也不早了，该吃晚饭了，吃完晚饭自然又不想写代码，休息一会儿，逛一下 Bilibili 吧，看了几个视频之后突然想到今天的代码还没有写，于是又接着关掉网页去写代码，搞到深夜，终于把代码写完了，朋友圈发一条状态「奋战到深夜，终于把代码改完了！」。
-多么充实的一天，你这样想到，今天似乎做了很多事情。但是实际上呢？有效的时间几乎只有两三个小时。所以你需要把做什么事用了多长时间记录下来，然后就会发现这「充实」的一天过得是多么可怕了。
-根据这些时间的时间记录的经验来看，至少有以下三点好处：
- 提高对时间的感知能力，发现和避免时间黑洞。记录下时间的时候，你会刻意地关注目前手上正在做的事，如果是一些浪费时间的事，会使你减少花在上面的时间。 更好地制定计划。有段时间给自己制定的计划老是不能够完成，目标定得太高，再怎么跳也抓不到，通过记录一些事情所花费的时间，就可以更好地做计划，比如说看完一本书需要用多少时间。 激励自己。积累了一段时间的数据之后，就可以看到在某一方面投入了多少时间了，根据 10000 小时定律，可以知道自己与专家级别的能力还相差多少。  当然，凡事有利就必有弊。
- 时间记录本身也会花费时间（可以通过工具来弥补）。 最开始的时候总是会忘记记录。 事无巨细地记录时间，增加压力（这一点会在下面详细说明）。  简单地讲了一下「道」层面的问题，想要继续深入的可以看一下《奇特的一生》这本书。下面说一说「术」的层面。
-简单的系统 其实最开始的时候一支笔、一本本子、一块手表就够了，这一阶段主要是养成时间记录的习惯，当然使用 Evernote 或者 OneNote 之类的软件也是可以的。可以按照以下的模板来记录：
- 2016/04/10 7:00 - 8:30 阅读 xxx xx 页（1h30min） 9:00 - 9:45 完成 xxx 项目 xx 功能的开发（45min） &amp;hellip;</description>
+      <description>两年前，曾经写过一篇有关时间管理的文章，那个时候还在上高二，对于时间管理仅仅是有一点肤浅的了解，自然写出来的文字也是比较幼稚的。经过两年的实践，积累了很多时间管理的经验，想要拿出来分享一下。预计会写一个系列，包括使用的工具和日常的 Workflow。 日常使用的工具有这些： 纸质笔记本</description>
     </item>
     
     <item>
@@ -520,7 +287,7 @@ class A { let name: String init(name: String) { self.name = name } deinit { prin
       <pubDate>Wed, 23 Mar 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/linux-basic-notes/</guid>
-      <description>Shell 的基本操作 常用快捷键    按键 作用     Tab 命令补全   Ctrl+c 强行终止当前程序   Ctrl+d 键盘输入结束或退出终端   Ctrl+s 暂定当前程序，暂停后按下任意键恢复运行   Ctrl+z 将当前程序放到后台运行，恢复到前台命令 fg   Ctrl+a 将光标移动到行首   Ctrl+e 将光标移动到行尾   Ctrl+k 删除从光标所在位置到行末   Alt+Backspace 向前删除一个单词    常用通配符    字符 含义     * 匹配0或多个字符   ? 匹配任意一个字符   [list] 匹配 list 中的任意单一字符   [!</description>
+      <description>Shell 的基本操作 常用快捷键 按键 作用 Tab 命令补全 Ctrl+c 强行终止当前程序 Ctrl+d 键盘输入结束或退出终端 Ctrl+s 暂定当前程序，暂停后按下任意键恢复运行 Ctrl+z 将当前程序放到后台运行，恢复到前台命令 fg Ctrl+a 将光标移动到行首 Ctrl+e 将光标移动到行尾 Ctrl+k 删除从光标所在位置到行末 Alt+Backspace 向前删除一个单词 常用通配符 字符 含义 * 匹配0或多个字符</description>
     </item>
     
     <item>
@@ -529,12 +296,7 @@ class A { let name: String init(name: String) { self.name = name } deinit { prin
       <pubDate>Wed, 02 Mar 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/2016-week-12-review/</guid>
-      <description>这周的主题是跑步，大连的天气开始变暖，终于可以去操场跑步了，不过由于学校在海边，风还是很大的。今天跑完了一个线上马拉松（10km 健康赛），明天大连国际马拉松开始开放报名，打算参加半程马拉松，不知道能不能报上名，毕竟今年有一个目标就是参加一次马拉松（全马或者半马）。比赛日期是5.22，需要利用剩余的两个月的时间积累一下跑量（一周跑5次，每次10km）。
-编程方面，本来打算利用 Flask 写一个网站的，结果拖到今天 Document 也只看了一点点，很显然只能移到下一周来完成了，除了这个就改了改之前写的一些代码。从上周开始看 CSAPP 这本书，看的时候顺带做习题（所有的题目），所以进度很慢，大概每天几页的样子，CMU 的几个 lab 还没有开始做，等看完一部分就去完成这部分的 lab。
-阅读方面，没有读任何书，大部分的时间还是用在了浅阅读上，比如看知乎和 Quora 上的各种问答，阅读别人写的博客之类的。下周的目标是读完《你的灯亮着吗》这本书。
-这周没怎么背单词，现在想是否真的要去考托福了，因为自己的 GPA 有点低，即使有 TOEFL 成绩也申请不上好的学校。不过即使是不考 TOEFL，英语还是要学的。
-再一次地更换了博客的 Generator，这次还换成了 Hexo，用 Atom 来写作，之前还在一篇文章中黑过 Atom，没想到这么快就叛逃了，23333 。不过还是得吐槽一下，我装了不少 Package，打开的时候真的是好卡，还掉帧，优化做得确实太渣了，要不是你 UI 漂亮，插件丰富，肯定不用你！转移的过程中没有转移评论内容，因为看了一下 Disqus 中的评论，太乱了（因为之前切换过好几次），转移起来有点麻烦，索性直接不要了，反正评论也不是很多。另外 RSS 地址可能有点变化，如果使用 RSS 阅读器的同学可能需要更新一下 RSS 地址（搞得好像真的有人看似的）。
-马上23：00了，赶紧去睡觉了。</description>
+      <description>这周的主题是跑步，大连的天气开始变暖，终于可以去操场跑步了，不过由于学校在海边，风还是很大的。今天跑完了一个线上马拉松（10km 健康赛），明天大连国际马拉松开始开放报名，打算参加半程马拉松，不知道能不能报上名，毕竟今年有一个目标就是参加一次马拉松（全马或者半马）。比赛日期是5.2</description>
     </item>
     
     <item>
@@ -543,19 +305,7 @@ class A { let name: String init(name: String) { self.name = name } deinit { prin
       <pubDate>Wed, 24 Feb 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/apple-music-and-classical-music-and-reading/</guid>
-      <description>Apple Music 自从Apple Music（以下简称「AM」）发布以来，就一直在使用，从最开始的免费试用到现在每个月10￥的订阅。自从Windows时代就使用iTunes听音乐了（当时有一部iPod），在没有AM的时候，都是从论坛下好别人买的专辑来听。一方面在国内想要在iTunes Store上购买专辑过于麻烦（两个账号需要来回切换），另一方面作为一个学生党iTunes Store上两首歌就相当于一顿饭的价钱对于我来说也有点小贵了，所以AM刚推出的时候，还是比较开心的，没想到入华后价格竟然只要10￥每月，就只相当于两首歌的钱！
-这几个月使用下来，发现还是存在不少的问题。
- 操作逻辑复杂。例如听到一首好听的歌，标注了心之后，它是不会出现在你的播放列表中的，因为标注心只是为了优化推荐的算法。所以每次听到一首好听的曲子，都要进行两个步骤：先添加到库中，再标注心。这样才会在你的Smart Playlist中显示出来。这个估计是iTunes的遗留问题，因为iTunes是以Library的方式来管理的，所以需要先添加进Library中，才能进行进一步的操作，不过AM作为一个流媒体音乐服务，这样做显然是多此一举了。 每个设备间同步存在问题。我一般都是在Mac上听音乐，不过偶尔也会使用iPhone来听，但是很多加心得歌曲到了iPhone上面就变成没有加心的了。所以现在我也懒得使用iPhone来听歌了，或者就随便打开一个推荐的播放列表来听。 网络问题。这个应该是最要吐槽的一点了，听歌时断时续是最不能忍的事情了。不知道是Apple在国内没有设置服务器还是什么其他原因，有时候即使开着代理缓冲的速度也很慢。有些专辑就只能先下载下来，然后再听。  这是我使用过程中遇到的三个比较影响体验的问题，当然还有其他小的，比如说什么中文歌的名字全是英文（使用英文系统的原因，日文歌的名字全是罗马音等等之类的，只不过这些暂时还能够忍受，不是太影响听音乐的体验（个人很少听中文和日文的歌曲）。
-作为一个数据控，如果听歌的数据不能够记录下来，那么就好像和没听一样（强迫症的症状），虽然iTunes也可以记录歌曲的播放次数，上一次播放时间之类的数据，不过还是过于简单了。之前一直使用的是Last.fm，使用AM了之后发现Last.fm的客户端没办法抓取到数据了，后来找到了「Bowtie」这个小工具，连Radio中播放的内容都能够抓取到，太强大了。分析一首歌听了多少遍的意义并不是很大，但是累计了这么多的数据之后还是可以发现了一些有趣的东西的，比如说我听的最多的歌手是竟然是「ColdPlay」。
-如果作为一个音乐服务来说，AM还存在着很多问题，不过毕竟还是一个新生的流媒体服务，希望下一次大的更新之后能够提高一些用户体验。
-PS. 也使用过一段时间的Xiami和网易云音乐，因为种种原因放弃了。
-古典音乐 关于古典音乐，其实我只有很少的了解，也只听过很少的入门曲目，最开始听古典是因为「The 50 Most Essential Pieces of Classical Music」这张专辑，这张专辑里面基本上都是一些非常经典的曲目，例如当初看《V字仇杀队》中的「1812 Festival Overture」，以及每个人都熟悉的「Canon in D Major」，如果从来没听过古典，推荐去听一下这个专辑，一定会发现很多熟悉的音乐。
-上学期选修了一门《西方古典音乐鉴赏》，然而并没有很认真地听课，不过还是了解了一些知识。然后看了木遥在博客上的一系列介绍古典音乐的文章，算是对古典音乐有了一个初步的认识。
-如果说是欣赏古典音乐，还是达不到那个层次的，因为现在古典音乐的作用就是在阅读或者写代码的时候提供一个相对较安静的环境，说白了，还是出于一种功利的目的在听（为了更好地完成其他工作）。
-今天听AM的Classical Radio听到很很多以前听过，但是忘了名字的曲子（不得不说，古典音乐的曲子名字太难记了），统统加心添加进Library中。现在听音乐的基本流程就是，先范听，听到喜欢的在去把Artist的所有作品依次听下去，这样会找到不少喜欢的内容。
-阅读 前几天Kindle上突然推送了有关Kindle Unlimited的内容，类似于AM，按月订阅，然后可以阅读所有的订阅内容。刚开始还是蛮高兴的，不过看了一下在计划中的书目，基本上没有想看的，果然想看的书还是需要付费啊。不过有7天的试用时间，不用白不用，昨天读了一本漫画书《时间管理：如何充分利用你的24小时》，很有趣的一本小册子。这个漫画好像是一个系列，准备最近把感兴趣的都看一遍。
-最近看书的时间有点少了，而更多的时间都在看RSS订阅的内容，Pocket上存档的文章，以及知乎、Quora、Reddit、Hacker News上的一些文字。毫无疑问，书籍的信噪比肯定是大于后者之流的，如果要搞一个排名的话，信噪比的大小应该是这样的：书籍 &amp;gt; Pocket上存档的文章 &amp;gt; Hacker News = Reddit &amp;gt; RSS订阅内容 &amp;gt; Quora &amp;gt;= 知乎（至少Quora可以练习一下英语，笑）。当然，如果你是整天阅读微信朋友圈以及QQ空间，那么信噪比可能会 &amp;lt; 1。
-以上是深夜的无聊吐槽内容，本来这段时间应该是去写代码或者阅读其他内容的，只不过因为结构化拖延的原因才来写Blog……</description>
+      <description>Apple Music 自从Apple Music（以下简称「AM」）发布以来，就一直在使用，从最开始的免费试用到现在每个月10￥的订阅。自从Windows时代就使用iTunes听音乐了（当时有一部iPod），在没有AM的时候，都是从论坛下好别人买的专辑来听。一方面在国内想要在iTunes Store上</description>
     </item>
     
     <item>
@@ -564,27 +314,7 @@ PS. 也使用过一段时间的Xiami和网易云音乐，因为种种原因放�
       <pubDate>Wed, 03 Feb 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/self-learning-programer-manual-college-part/</guid>
-      <description>由于本人目前也处在学习的阶段，文章中列出来的内容也并未全部学习过，所以文章的客观性可能存在一些问题，还望读者自行判断。
-这份指南会不定期更新，有好的建议也可以留言或者给我发邮件。
-准备 需要的所有工具就是一台可以连接上网络的电脑以及你本人。
-科学上网 很可惜，即使是现在，大部分学习计算机的学生还是不会科学上网。在当前的网络环境下，不会科学上网，意味着你不能用 Google 查资料，不能在 Hacker News 查看最新资讯，需要忍受龟速的 GitHub，云云。然而，科学上网本身却是一件成本非常低的事情，不想折腾的话，一年花个几百块钱买个现成的服务；有折腾精神的人，可以买个服务器自己假设架设上网工具。这一步很重要，不能跳过，否则后面指南中的许多内容都无法进行访问。
-关于科学上网的具体内容，就不再多说了，给你一个关键词：Lantern。
-学会使用 Google 搜索 学会了科学上网，你就能够使用 Google 了，为什么不是 Baidu？相信你用了 Google 之后就自然明白了。
-当了一个学期的助教之后发现，很多的同学其实是没有使用搜索引擎的意识的，遇到问题要么自己死磕，或者就直接求助于他人。这两种都不是很好的办法，正确的做法是在自己思考后没有结果，然后使用搜索引擎查找问题，现阶段，你遇到的所有问题（几乎）都能在 Google 上找到现成的答案，如果没找到，肯定是你搜索的方式不正确。
-使用Google的基本搜索功能就能够解决大部分问题了，当然，如果想要学习更加高级的技巧，这里有一份指南：如何用好Google等搜索引擎？。
-英语 你不得不承认，目前为止，编程世界的主流语言还是英文，所以英语能力的好坏决定了你编程能力的上界。中文资料和英文资料相比，实在是太匮乏了，就质量而言，也相对较低。比如我后面提到的很多的课程，都是英文的内容。
-值得庆幸的是，阅读编程资料所需要的英文水平并不需要很高，就个人经验来说，基本上四级水平就足够了，可能还会存在一些生词，但是基本上并不妨碍理解。
-英文的学习应该一直贯穿于编程的学习之中，作为一门工具语言，只需要花少量时间就可以带来比较大的收益（2/8法则）。
-本人的英文水平也不算好，但是基本上能够阅读技术书籍和文档，能够听懂公开课，所以还是有一些简单的经验可以分享一下。
-把系统换成英文的 有些同学可能看到英文就头疼，这很正常，因为在中文的环境下面生活的太久了。为此，可以试着将平常用的系统换成英文的，虽说不能学到几个单词（Copy/Paste 之类的词），但是可以让你不那么排斥英文。
-安装电子词典 OS X下推荐欧路词典，在APP Store中购买完整版的，因为需要添加外部的词典。
-这里推荐一部比较好的词典：《Collins 英汉双解词典》，它是这个样子的：
-主要看它的英文解释，一个词看得次数多了也就记住了。
-每天阅读英文的资料 一些个人经常阅读的网站：
- Quora：一个类似于知乎的问答类网站，可以挑自己感兴趣的内容来阅读。 Hacker News：互联网资讯，业界发生的最新的事件都会在上面。 PROGRAMMING：Reddit 的 Programming 板块，和 Hacker News 类似，不过更加专注于技术内容方面。  不要花太多时间在上面，每天浏览一下就行。
-英文学习的总结 英语不是能够速成的东西，也不是三言两语能够讲完的东西，这里只是提供一个简单的指导，具体的学习计划还请自行搜索更加专业的学习指南。
-编程基础 完成了这一部分内容的学习后你应该具备：
- 了解什么是 Computer Science 基本的计算机数学能力 基本的程序开发能力 基本的算法与数据结构的知识  计算机科学导论  Introduction to Computer Science and Programming：面向无编程基础或者只有一点基础的人群，使用Python作为教学语言。 Intensive Introduction to Computer Science Open Learning Course：CS50，哈佛很火的一门课，在网易公开课上可以找到翻译的视频内容。涵盖的主题有算法（设计、应用、分析）；软件开发（抽象、封装、数据结构、Debug、测试）；计算机体系结构等等。基本上是一门大杂烩的导论课。使用的语言是C、PHP、JavaScript。 Programming Abstractions：介绍了更加高级的编程主题（递归、算法分析、数据抽象等等），使用C++作为教学语言。  数学  Mathematics for Computer Science：介绍了学习计算机所需要的一些数学知识，内容包括集合、关系、证明方法、数论、图论等等。 Discrete Mathematics：离散数学。  编程语言  Learn to Program: The Fundamentals：面向无编程基础或者只有一点基础的人群，使用Python作为教学语言。 Learn to Program: Crafting Quality Code：如何编写高效与正确的代码。需要有Learn to Program: The Fundamentals的基础。 The Structure and Interpretation of Computer Programs：经典的 SICP 的 Python 版。  计算理论  Introduction to the Theory of Computation Principles of Computing (Part 1)：介绍了 CS 中基本的数学和编程理论，需要有Python基础。  算法与数据结构  Introduction to Algorithms：MIT的算法导论课，用《算法导论》作为教材，网上可以找到视频资源，网易公开课上有老版的翻译。  核心课程 学完了「编程基础」部分的内容后，应该已经可以开发一些复杂的程序了，「核心课程」的内容将深入学习计算机科学理论的几个重要的内容。</description>
+      <description>由于本人目前也处在学习的阶段，文章中列出来的内容也并未全部学习过，所以文章的客观性可能存在一些问题，还望读者自行判断。 这份指南会不定期更新，有好的建议也可以留言或者给我发邮件。 准备 需要的所有工具就是一台可以连接上网络的电脑以及你本人。 科学上网 很可惜，即使是现在，大部分学习计算机的</description>
     </item>
     
     <item>
@@ -593,25 +323,7 @@ PS. 也使用过一段时间的Xiami和网易云音乐，因为种种原因放�
       <pubDate>Wed, 11 Nov 2015 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/squirrel-tutorial/</guid>
-      <description>在OS X平台下，一直没有用到一个很顺手的输入法。系统自带的输入法虽然经过几次的版本更新已经有了很大的改进，但是离能用还有很大的距离。所以之前一直凑合着使用百度输入法，不过最近一直遇到一些奇怪的问题，官方又长时间没有进行更新，恰逢之前听说过Squirrel这个输入法，于是就本着试用的心态用了一下，发现异常顺手，并且还有丰富的定制性，于是写一篇文章来介绍一下，也作为自己配置过程中的笔记。
-附上一段Gif效果展示：
-介绍 输入法的官方名称是Rime，中文名是中州韵输入法，但是在各自的平台下面又有不一样的别名。
- Linux 中州韵 ｜ ibus-rime
- Windows 小狼毫 ｜ Weasel
- OS X 鼠须管 ｜ Squirrel
-  使用了一段时间发现它有以下几个优点其他输入法是比不上的：
- 速度很快，几乎没有延迟的时间 极强的定制性，如果没有想要的功能还可以直接修改源码 跨平台 对于繁体中文支持非常好  安装 直接从官网下载安装包安装即可。
-Rime官网：[](http://rime.im/)
-使用Ctrl-~进行输入法的选择，这里选择朙月拼音・簡化字即可：
-配置 默认的的配置其实已经可以使用了，但是为了更加符合自己的使用习惯，我们需要做一些自定义的配置。
-所有的配置文件都保存在~/Library/Rime/这个目录下面。
-不建议直接修改原先的配置文件，因为这样更新之后会导致修改的内容丢失，正确的做法是建立custom副本，这样自定义的配置内容会覆盖掉原来的。
-＊注：所有的修改完成了之后都需要重启输入法，快捷键Option+Ctrl+~。
-配置外观 初始的外观不是很符合自己的审美，可以进行更换主题、更改字体和字号大小等操作来配置成自己喜欢的样子。
-新建配置文件
-touch squirrel.custom.yaml  然后将以下代码写入配置文件
-patch: style/color_scheme: dark_temple #主题 style/font_point: 18 #字号大小 style/horizontal: true #水平显示待选字  主题列表 自带的主题代码:
-# 注：预设的配色方案及代码（指定为 style/color_scheme ） # 碧水 - aqua # 青天 - azure # 明月 - luna # 墨池 - ink # 孤寺 - lost_temple # 暗堂 - dark_temple # 星际我争霸 - starcraft # 谷歌 - google # 晒经石 - solarized_rock # 简约白 - clean_white  想要更换什么主题只要把代码替换掉就可以了。</description>
+      <description>在OS X平台下，一直没有用到一个很顺手的输入法。系统自带的输入法虽然经过几次的版本更新已经有了很大的改进，但是离能用还有很大的距离。所以之前一直凑合着使用百度输入法，不过最近一直遇到一些奇怪的问题，官方又长时间没有进行更新，恰逢之前听说过Squirrel这个输入法，于是就本着试用</description>
     </item>
     
     <item>
@@ -620,24 +332,7 @@ patch: style/color_scheme: dark_temple #主题 style/font_point: 18 #字号大�
       <pubDate>Sat, 10 Oct 2015 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/how-to-use-emacs-and-org-mode-to-build-a-blog/</guid>
-      <description>这个博客就是使用Emacs org-mode + GitHub Pages搭建的，博客的主题是org-mode官网的主题，非常的简洁；评论采用的disqus，访问统计使用的是Google和Baidu的统计代码。
-另外，本文中进行操作的环境是在OSX下完成的，Windows用户请自行参考脑补:)
-起因 之前也折腾过好多的博客，Jekyll、Hexo、Farbox等，这些静态博客生成器都有一个共同点，都是采用的Markdown语法来进行书写的，而自己平时记笔记都是使用的Emacs org-mode，这样就导致了记笔记和写博客两个过程分裂开来了。
-昨晚偶然看到dirtysalt&amp;rsquo;s homepage，被深深的震撼了，博主写了很多的干货，专注与博客的内容而不是博客的外观。而自己也是一个极简主义者，觉得这样的博客样式还是挺好看的（很有Web1.0时代的复古风啊）。恰巧博主也是使用的Emacs来写博客，于是便花了一个上午的时间搜集相关的资料并把博客搭建起来了。
-准备 GitHub帐号与GitHub Pages 首先你需要一个存放博客的地方，这里采用的是GitHub，当让也可以使用其他的服务，只要支持静态页面展示即可。
-GitHub的注册过程省略。
-注册完GitHub帐号之后建立一个新的仓库，命名为 xxx.github.io ，其中 xxx 为你的用户名。
-Emacs环境 我使用的是最近比较火的spacemacs ，很多功能都配置好了，基本上手即用。
-如果不是用的spacemacs，确保你的Emacs版本为24，org-mode版本为8.0以上，不排除可能因为版本的原因出现各种各样的错误。
-什么，你还不知道Emacs是什么，那先去下载一个Emacs吧，使用org-mode基本不需要什么Emacs的基础，只需要记住几个快捷键就可以了。
-建立目录结构 随便在哪里建一个心得目录，这个目录就是存放你的org文件和html文件的地方。假设我们已经有了这么一个目录 org ：
-$ mkdir notes $ mkdir public_html $ mkdir gtd  当然，那个gtd目录你可以不要，那是用来做时间管理的，如果你不想用Emacs做时间管理的话，可以不用建那个目录。
- notes: 这个目录就是用来存放元数据的地方，你的org文件、图片、CSS文件、PDF等全都是存放在这里的。 public_html: 这个目录是用来存放导出的HTML文件的，那些非org格式的文件还会原封不动地拷贝过来。  配置Emacs 这一步有一些复杂，没有Elisp基础的同学可能看不怎么懂，不过没关系，照着做就是了，现在看不懂可以以后学嘛。
-Emacs org-mode自带了很强大的导出功能，可以导出成HTML、markdown、PDF等格式的文件，我们这里使用自带的导出Project的功能，只不过在导出之前，要做一些配置，告诉Emacs要导出哪些东西，导出到哪里，采用什么规则。
-首先我们在配置文件中添加以下代码（普通的在.emacs中添加，spacemacs用户在.spacemacs中添加）：
-(require &#39;ox-publish) (setq org-publish-project-alist &#39;( ;; 把各部分的配置文件写到这里面来 ))  然后把其他的配置文件依次添加进来就可以了，主要有生成HTML的部分和原样拷贝的部分。
-下面来配置需要转换成HTML的内容：
-(&amp;quot;blog-notes&amp;quot; :base-directory &amp;quot;~/org/notes&amp;quot; :base-extension &amp;quot;org&amp;quot; :publishing-directory &amp;quot;~/org/public_html/&amp;quot; :recursive t :publishing-function org-html-publish-to-html :headline-levels 4 ; Just the default for this project.</description>
+      <description>这个博客就是使用Emacs org-mode + GitHub Pages搭建的，博客的主题是org-mode官网的主题，非常的简洁；评论采用的disqus，访问统计使用的是Google和Baidu的统计代码。 另外，本文中进行操作的环境是在OSX下完成的，Windows用户请自行参考脑补:) 起因 之前也折腾过好多</description>
     </item>
     
     <item>
@@ -646,17 +341,7 @@ Emacs org-mode自带了很强大的导出功能，可以导出成HTML、markdown
       <pubDate>Fri, 14 Feb 2014 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/notes-on-time-management/</guid>
-      <description>初次看到时间管理这个概念大概是高二的时候，在此之前，我一直在使用所谓的To-do List来管理自己每天的学习任务（那个时候还不知道）。知道了时间管理这个概念后，惊讶于原来自己早就在对时间进行管理了，只不过最简单的管理方式（后来实践表明，仅仅一个任务清单就足够了）。
-在知道了时间管理这个概念之后，我开始大量的阅读关于时间管理的文章，期间又接触到了GTD（Getting Things Done）这个个人管理系统，还专门读了一遍David的那本书。然后就是不断地下载软件、使用、删除、下载……从PC端到iOS到纸笔GTD都试过。突然发现，自己陷入到一个怪圈，主要工作不是变成了完成任务，而变成了寻找“更高效”的软件系统。相信人都会陷入到这个怪圈中，然后时间一步一步地被吞噬掉。然后你开始发现，最开始计划好要做的事情依旧没做好，甚至要找的高效软件也没有找到，因为你总是认为还会有更高效更方便的软件。
-时间管理的初衷不是最大化的利用时间吗？而现在却浪费了更多的时间。这又是为什么呢？
-懒惰。是的，时间管理只不过是一个借口，一个用来迷惑自己“我是为了更高效的利用时间”的借口。说白了就是自己的懒惰，你就是不想完成任务，然后把“时间管理”当成幌子，找工具、看文章，试想一下，这些事情与你要完成的任务相比，哪一个更加困难？我想应该是你的任务更加困难吧，毕竟看文章只要看就行了。
-我是在阅读了李笑来《把时间当作朋友》 一书后突然明白了这个道理，哪里需要那么多花招去管理你的时间啊，JUST DO IT！尽管做就可以了，或者说找到一种方法，就一直用下去，不要换来换去，也不要再找别的方法了，甚至不要再看关于时间管理的文章。
-后来，通过李笑来的书，我又知道了《奇特的一生》 这本书（这是一本部头很小的书，几个小时便可以读完，网络上有免费的电子版），用了很快的时间读完了，除了震撼还是震撼。主人公柳比歇夫有一套强大而又完整的时间管理方法，并且坚持了五十几年。这套强大的系统也给他带来了巨大的成就：
- 柳比歇夫生前发表了七十来部学术著作。其中有分散分析、生物分类学、昆虫学方面的经典著作；这些著作在国外广为翻译出版。各种各样的论文和专著，他一共写了五百多印张。五百印张，等于一万二千五百张打字稿。即使以专业作家而论，这也是个庞大的数字。
- 他的成就定然是不凡的，这本书中还提到了门捷列夫等人，他们都有一个共同的特点：拥有一套独特的管理系统（时间&amp;amp;知识），而且都是不断的改进，最后几乎完美的系统。
-原来强大的时间管理系统也能造就如此伟大的成绩啊。这时不禁又要问，到底要不要时间管理呢？经过一段时间的思考，答案是要的。或者说不是管理时间，而是管理你自己，因为时间终究是那么多时间。
-所以现在可能已经有了一个较为清晰的结论：我们需要管理时间，真的管理时间，而不是测试工具。坐在屏幕前阅读的你，如果还在为时间管理而困扰，依旧不知道选择哪款软件，我的建议是把注意力放到需要完成的任务上来。对于没有那么多繁杂事务的人（事实上绝大多数人没有），一个简单的任务清单就够了，做完一项任务划去一项，就是这么简单。
-还不知道时间管理是什么的同学，只需要阅读一两篇文章就够了，或者只要看一本书就够了，至于看什么书，对于不是“日理万机”的人，个人认为上文提到的两本书或许可以是一个选择。接着，就忘记时间管理这个说法吧，专注于要做的事，开始做！</description>
+      <description>初次看到时间管理这个概念大概是高二的时候，在此之前，我一直在使用所谓的To-do List来管理自己每天的学习任务（那个时候还不知道）。知道了时间管理这个概念后，惊讶于原来自己早就在对时间进行管理了，只不过最简单的管理方式（后来实践表明，仅仅一个任务清单就足够了）。 在知道了时间管理</description>
     </item>
     
     <item>
@@ -665,32 +350,7 @@ Emacs org-mode自带了很强大的导出功能，可以导出成HTML、markdown
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/why-i-blog/</guid>
-      <description>很显然，写一个长期的价值博客会带来很多益处，却不会有什么明显的坏处（当然，在某些特定的国家讨论某些特定的话题不在此列）。
-下面是我了解到的写一个长期的价值博客所带来的好处：
- 督促自己进行有价值的思考。写一篇优秀的文章是不容易的，在写之前，势必需要进行大量的思考、沉淀，要不然你就无事可写。（Note：这里的博客指的是干货文章，碎碎念、心情日记、吐槽文章等不算此列。关于这一点将在下文细说。）很显然，在动手写之前，搜索大量的资料、回忆以前思考过的内容、再将它们串联起来等过程就必不可少了，这就强迫了自己去思考、去总结。这样所带来的益处就是显而易见的：1）督促自己在平时生活学习中进行与价值的思考，因为每一个有价值的思考内容都有可能成为你下一篇博客中所要论述的内容，这就不得不迫使自己思考、总结、记录平时的思考内容；2）升华平时的思考内容，平时思考之事大多都是没有联系的，而想要完成一篇文章，必然需要有一定的结构和逻辑，这就要求自己将平时思考的内容串联起来，更加深入理解背后的本质；3）写本身就是最好的思考，写一篇博客，需要将零散的、不具体的的内容用书面语表现出来，这就要求你需要一定的逻辑表达能力和写作功底。 可以结交很多志同道合的朋友。1）毫无疑问，目前大多数人的社交都是在网络上完成的，在没有网络的时代，假设你需要结交一个外国人，那么出国就是你唯一的选择。而到了网路时代，这些所有的动作只需要一个点击就可以全部完成，你可以在家里足不出户就结交到外国的同好；2）传统的认识一个人需要通过交流来完成，这个过程耗时周期长，并且效率很低，因为你每结交一个人，都需要重复的完成这一动作，即使现在有了Twitter等micro blog服务，但这依然是一种低效率的方式：你并不能完全通过他的微博来断定他是一个什么样的人，因为这些社交网站上的内容大多数都是心情日记等杂乱的东西。所以，一个价值博客就显得尤为重要了，这不仅大大简化了结交朋友的途径（一次写作，反复阅读），并且可以客观的反映一个人在各方面的水平。
- 自己会不一定是真的会，只有当自己能够清晰地、准确地教会其他人时，才算真的会了。大家肯定经常会有这样地经历：我自己是明白的，但是就是不知道怎么说，更通俗地讲就是“只可意会，不可言传”。这其实不能算真的会，或者说是会的不彻底。如果想要通过博客来教会别人，势必自己会先将这些不会的部分搞懂，这在一定程度上也强迫了自己去更深入的学习。
- 虚心的接受批评。自己在思考的过程中难免会有一些错误，可能自己不会发现，但是当它呈现在博客上与他人分享的时候，别人就有可能发现自己的错误。并且，在与他人讨论的过程中，也可以更加深入的思考问题，或者会跳出自己当初的思考境地，以另外一个角度审视问题，这样所带来的帮助也是显而易见的。
- 一个优秀的博客就是一分优秀的简历。刘未鹏在怎样花两年时间去面试一个人中论述过这个问题。一个优秀的价值博客可能会给你带来职业上的帮助。
- 锻炼自己持之以恒的能力。写一个优秀的博客是不容易的，如果长期更新博客的同学可能就会有体会，写一篇高质量的博客往往需要话费数小时的时间，这还不包括前期思考、搜集信息的时间。既然写一个博客这么费力，并且还没什么报酬（大多数博客都是无偿的），我为什么要写？其实，写一个长期的价值博客所带来的效益是很大的，但是它不是以可以用可见的物品来衡量的。简单的说，以上的几点都是写一个博客所带来的价值，这些价值都是不能用金钱来衡量的（如果你需要，一个优秀的博客也可以给你带来金钱效益）。但是坚持写一个博客并不那么简单，这需要你不断思考以获得可写之物，定期的更新博客会提升你自己坚持的能力。
-  为什么要写价值博客 什么是价值博客，简单的说就是可以给他人帮助的博客。显然，碎碎念、心情琐记等文章对他人并没有什么帮助，或者说帮助很小。或许你的朋友对这些文章感兴趣，这是因为他们认识你，想要了解你的生活。但是你要意识到，你的博客是面向所有人的（如果是的话），如果其他人并不认识你的话，他可能对你的生活并不怎么感兴趣，他阅读你的博客是为了获取有价值的内容。
-我也经常阅读一些博客的内容，但据我所见，现在的很多博客写的都是一些碎碎念，心情日记，往往这些博客我都要在几十篇文章中寻找干货来阅读，这无疑增加了读者的工作量。如果非要写这些心情琐记，个人建议是和自己的主博客（干货博客）分离开，并且这些东西只需要自己的朋友能够看到就足够了，大部分人想看的是你的价值内容。
-一个价值博客不是那么简单就可以写成的。现在很多人都是比较浮躁的，这些浮躁的风气在博客界也流行起来。经常在网上看到很多人声称一天一篇干货文章，或是每天一篇千字文。并不觉得这样做有什么意义，好的文章不是那么容易就写成的，一千字的文章想要详细的论说一件事情都很困难（也有可能是我的写作功底比较差），更别提能够有什么深度了。事实也正是如此，看过很多这样的文章，要不是文字十分肤浅，就是无话找话，不知所云。所以这也是一个价值博客所需要避免的（当然，一些资讯类的博客除外，例如月光博客）。
-如何开始 很简单，找一个可以写的地方就开始写。
-如果你是一个爱折腾的人，我推荐Github Pages＋Octopress，十分纯粹，在本地写，写完直接上传即可，没有多余的事情，并且可以支持Markdown语法，大大提高了写作的效率。网络上的教程很多，个人认为官方的文档最适合入门了，可以照着一步一步来完成。如果英文不好的话，可以找一些其他人写的教程（自己估计也会写一篇）。
-如果你不是一个爱折腾的人，可以试试Wordpress，同样的，网络上也有很多教程。
-关见不在于你在哪里写，用什么写，而在于你博客的价值。要知道，很多大牛都是直接用Html写网页上传的。
-几个问题 Q1:写了博客没人来阅读怎么办？ 这应该是大多数人所面临的一个问题，当你洋洋洒洒写了上千字时，收获的却只是几十的阅读量，这肯定会一定程度上打击写作者。如果面临这种问题，就需要自己分析一下原因了，如果你写的不是有价值的内容，那么出现这种情况是必然的。既然你的东西对我没有价值，我为什么要浪费自己的生命去阅读它？如果你写的博客是有价值的，那么你大可不必担心，因为是金子总要发光的，或者你可以将它转载到别的地方（有价值的内容才值得转载） 。如果你的博客是有价值的，那你就坚持写下去，肯定会有人来读。
-Q2:我不知道写些什么，怎么开始？ 你在思考什么，就写什么。只要是经过思考的内容，都是值得写的，如果不知道写些什么，可以先写下几个关键词，然后再由这些关键词引申出去。比如看了一本书、看了一部电影，你想到了什么？深入的思考一下，总能找到可以写的东西。
-再一个就需要你在生活中积累了，例如我会将大脑中不成形的想法简单的记录下来，以供以后使用。这样做的好处是，当你翻开以前记录的东西时，你会发现你简直有写不完的东西！学会思考，你就不缺东西写。
-如果你写的是一个技术类博客的话，那就更简单了。把技术笔记写下来就可以来，这里的笔记不是指你阅读技术书籍时所写的笔记，它必须是加工过的，因为你是写出来给别人看的,你做笔记时可以随意涂画，想怎么写就怎么写，但是要给别人看明白，就需要有条理地叙述。或者你也可以写自己地研究成果，总之有价值就行。关于技术文章的写作，以后会写一篇具体地文章来说明。
-Q3:博客地排版怎么办？ 如果你使用Markdown写作，那么排版就不是什么大问题。如果你用其他地来排版，也应该不是什么问题，个人建议写完一篇文章之后再排版修改，要不然写一点就停下来排版势必会打断思路，也主客颠倒了。
-Q4:如何坚持写？ 这应该是最困难的一个问题，很多的优秀博客已经消失了，都没能坚持下来。要做到坚持更新，我认为可以尝试一下几点：
- 制定写作计划－－没有计划的写作可能会三分钟热度，可以制定一个每周（这是最短的周期了，一周能完成一篇价值博客已经很不错了）或每月的写作计划，翻看自己思考的记录，找一些可以写的东西，然后就开始写，一旦开了头，下面的工作就十分简单了。 设定一个Deadline－－例如每周日之前必须完成这周要写的内容，当然，如果你实在没什么可写的话，就不要写，记住，只写有价值的内容，写作不是为了完成任务。这种情况很少会发生，因为如果你积极思考的话，肯定会找到很多要写的东西。 学会自我管理－－这就涉及到时间管理层面上了，这方面的内容网络上也有很多，例如GTD，读者可以自行去寻找。  Q5:有什么建议吗？  写完一篇博客不要立即就发表，先放下来，过几天再去看它，看有没有价值发表，是不是碎碎念？往往这时候会对所写的内容有更深的看法，这时候就可以进一步加工。很多时候我们翻看以前写的文章，是不是感觉很幼稚？人总是在不断的成长。 多读，多写。广泛地涉猎各个领域地书籍，平时要多阅读，这里地阅读可以是书籍、价值博客等（不是微博、每日资讯）。书籍和博客地半衰期往往很长，有的十几年前地博客文章，现在拿出来还是很好地阅读内容。当然，书籍就更不用说了。微博和新闻类地内容更新周期短，半衰期短，其实读不读都无所谓，那些新闻资讯，除了一些大事，其他的都是没有必要每天花时间阅读的，如果要读，可以每周或每月集中阅读一次，为了使这些信息有价值，别忘了做笔记。 多思考。如果想要获得源源不绝的灵感，就请多思考。关于思考的方法，如果要详细讲的话，可以写很多。这里推荐一个简单的高效思考方法：利用零碎时间来思考。  Q6:有什么推荐的博客吗？ 下面的都是我平常经常阅读的博客，建议订阅RSS：
- 刘未鹏 | MIND HACKS－－思维改变生活，篇篇是干货，值得反复阅读。 阮一峰的网络日志－－作者的博客内容很多很杂，但每一篇都是作者思考后的成果，值得阅读。 杨志平的网志－－篇篇干货，对心理学和Ruby有研究。  怎样才能找到这些优秀的博客呢？一个较好的方法是，从它们博客的友链中寻找，虽然并不一定准确，但也八九不离十。多用RSS聚合软件。我一般在网上遇到了较好的文章都会发送到Pocket中，不仅可以利用空闲时间阅读，也可以作为存档。
-后记 这片文章很早就准备写了，先前在Evernote中写了几点，现在的这篇是从那几点中发散出来的结果。所以不要怕没有写，开了头，后面的路就比较顺了。
-自己文笔有限，难免有些造句措辞使用不当，就当是笑话看看好了。
-以前的博客都在丢失了（空间到期为续费），现在转到这个新的环境重新开始，这样也好，以前的博客里也有很多碎碎念，现在可以推倒重来了。
-如果你也是一个爱思考，并且有分享精神的人，我建议你现在就去写一个博客。</description>
+      <description>很显然，写一个长期的价值博客会带来很多益处，却不会有什么明显的坏处（当然，在某些特定的国家讨论某些特定的话题不在此列）。 下面是我了解到的写一个长期的价值博客所带来的好处： 督促自己进行有价值的思考。写一篇优秀的文章是不容易的，在写之前，势必需要进行大量的思考、沉淀，要不然你就无事可</description>
     </item>
     
   </channel>

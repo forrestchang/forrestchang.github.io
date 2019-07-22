@@ -1,19 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>使用 Emacs &#43; ox-hugo 来写博客</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>使用 Emacs &#43; ox-hugo 来写博客 - Lifelong Hacker</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
-  <link rel="stylesheet" href="http://blog.jiayuanzhang.com/css/main.css">
- 
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Jiayuan" /><meta name="description" content="最近开始重新使用 org-mode，在这之前大概有一年左右的时间，慢慢把一些东西从 org-mode 转移到别的工具上了，比如利用 OmniFocus 来管理任务，用 Devonthink 来管理笔记，用 Ulysses 来写作。虽然这些工具非常好用，但是总能找到一两个不满意的点，为此还写了不少脚本进行优化（这些 App 均支持 AppleScript），既然都是要" /><meta name="keywords" content="blog, time-management, knowledge-management, python, programming, linux" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.0-DEV with even 4.0.0" />
+
+
+<link rel="canonical" href="http://blog.jiayuanzhang.com/post/blog-with-ox-hugo/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.923778be.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="使用 Emacs &#43; ox-hugo 来写博客" />
+<meta property="og:description" content="最近开始重新使用 org-mode，在这之前大概有一年左右的时间，慢慢把一些东西从 org-mode 转移到别的工具上了，比如利用 OmniFocus 来管理任务，用 Devonthink 来管理笔记，用 Ulysses 来写作。虽然这些工具非常好用，但是总能找到一两个不满意的点，为此还写了不少脚本进行优化（这些 App 均支持 AppleScript），既然都是要" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.jiayuanzhang.com/post/blog-with-ox-hugo/" />
+<meta property="article:published_time" content="2019-07-14T00:31:00&#43;08:00"/>
+<meta property="article:modified_time" content="2019-07-15T14:26:00&#43;08:00"/>
+
+<meta itemprop="name" content="使用 Emacs &#43; ox-hugo 来写博客">
+<meta itemprop="description" content="最近开始重新使用 org-mode，在这之前大概有一年左右的时间，慢慢把一些东西从 org-mode 转移到别的工具上了，比如利用 OmniFocus 来管理任务，用 Devonthink 来管理笔记，用 Ulysses 来写作。虽然这些工具非常好用，但是总能找到一两个不满意的点，为此还写了不少脚本进行优化（这些 App 均支持 AppleScript），既然都是要">
+
+
+<meta itemprop="datePublished" content="2019-07-14T00:31:00&#43;08:00" />
+<meta itemprop="dateModified" content="2019-07-15T14:26:00&#43;08:00" />
+<meta itemprop="wordCount" content="2245">
+
+
+
+<meta itemprop="keywords" content="org-mode,hugo,emacs,ox-hugo," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用 Emacs &#43; ox-hugo 来写博客"/>
+<meta name="twitter:description" content="最近开始重新使用 org-mode，在这之前大概有一年左右的时间，慢慢把一些东西从 org-mode 转移到别的工具上了，比如利用 OmniFocus 来管理任务，用 Devonthink 来管理笔记，用 Ulysses 来写作。虽然这些工具非常好用，但是总能找到一两个不满意的点，为此还写了不少脚本进行优化（这些 App 均支持 AppleScript），既然都是要"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
 </head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Lifelong Hacker</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="http://jiayuanzhang.com">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Lifelong Hacker</a>
+</div>
 
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="http://jiayuanzhang.com">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
 
-<div class="container">
-  <header>
-    <div class="post-title">
-      <h1>使用 Emacs &#43; ox-hugo 来写博客</h1>
-    </div>
-  </header>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">使用 Emacs &#43; ox-hugo 来写博客</h1>
 
-  <content>
+      <div class="post-meta">
+        <span class="post-time">Posted on <a href="">2019-07-14</a></a> </span>
+        <div class="post-category">
+            <a href="/categories/productivity/"> Productivity </a>
+            </div>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+        <span class="more-meta">
+          Written by
+          <a href="">
+          
+            Jiayuan
+          
+          </a>
+        </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#安装与配置-ox-hugo">安装与配置 ox-hugo</a></li>
+<li><a href="#开始写作">开始写作</a></li>
+<li><a href="#开启自动-export">开启自动 Export</a></li>
+<li><a href="#使用-picgo-plus-github-来搭建图床">使用 PicGo + GitHub 来搭建图床</a></li>
+<li><a href="#快速获取-chrome-超链接">快速获取 Chrome 超链接</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
     <div class="post-content">
       
 
@@ -61,19 +204,31 @@ private module</a> 这个视频里有详细讲解如何使用 Doom Emacs 来安�
 Doom Emacs 的用户可以参考官方文档来进行配置：<a href="https://ox-hugo.scripter.co/">ox-hugo - Org to Hugo exporter</a>。</p>
 
 <p>首先在 <code>my-org/packages.el</code> 中添加 ox-hugo：</p>
-
-<pre><code class="language-elisp">;; packages.el
-(package! ox-hugo)
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="c1">;; packages.el</span>
+<span class="p">(</span><span class="nv">package!</span> <span class="nv">ox-hugo</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>然后修改 <code>my-org/configle.</code> ，使用 Doom Emacs 自定义的 <code>def-package!</code> macro，其他用户可以使用 <code>use-package</code> 或者直接使用 <code>require</code> 来进行导入。</p>
-
-<pre><code class="language-elisp">;; config.el
-(def-package! ox-hugo
-  :after ox
-  )
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="c1">;; config.el</span>
+<span class="p">(</span><span class="nv">def-package!</span> <span class="nv">ox-hugo</span>
+  <span class="nb">:after</span> <span class="nv">ox</span>
+  <span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
 <h2 id="开始写作">开始写作</h2>
 
 <p>ox-hugo 支持两种方式来管理 org 格式的博客文章，一种是所有的文章都放在同一个 org
@@ -93,15 +248,24 @@ Property： <code>HUGO_SECTION</code> 和 <code>HUGO_BASE_DIR</code> ，</p>
 
 <p>ox-hugo 使用 org-mode 中的 Tag 来标记文章的 Category 和 Tags，使用 <code>@</code> 开头的
 Tag 为 Category，其他的为普通的 Tags，利用 org-mode 的特性，我们可以方便地继承上级的 Tag，例如：</p>
-
-<pre><code class="language-org">* Programming :@Programming:
-** TODO New post
-:PROPERTIES:
-:EXPORT_FILE_NAME: new-post
-:END:
-This is a test post.
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-org" data-lang="org"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-org" data-lang="org"><span class="gh">*</span><span class="gs"> Programming</span><span class="ge"> :@Programming:</span>
+<span class="gu">**</span><span class="err"> TODO</span> New post
+<span class="c">:PROPERTIES:
+</span><span class="c"></span><span class="cs">:EXPORT_FILE_NAME: new-post
+</span><span class="cs"></span><span class="c">:END:</span>
+This is a test post.</code></pre></td></tr></table>
+</div>
+</div>
 <p>其中 <code>Programming</code> 下的文章都会被分类到 <code>Programming</code> Category 中去。</p>
 
 <p>一篇文章有两个状态： <code>TODO</code> 和 <code>DONE</code> ，TODO 代表的是未发布的文章，在生成的
@@ -123,16 +287,25 @@ meta-data to Hugo front-matter — ox-hugo - Org to Hugo exporter</a> 。</p>
 <p>ox-hugo 的官方文档中介绍了一种自动 Export 的方式，只要保存了 org 格式的文章，就可以直接导出 Hugo 中。</p>
 
 <p>首先需要在配置中 load org-hugo-auto-export-mode：</p>
-
-<pre><code class="language-elisp">(def-package! org-hugo-auto-export-mode)
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="p">(</span><span class="nv">def-package!</span> <span class="nv">org-hugo-auto-export-mode</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>然后在 Hugo 的根目录下建立 <code>.dir-locals.el</code> 文件：</p>
-
-<pre><code class="language-elisp">((&quot;content-org/&quot;
-  . ((org-mode . ((eval . (org-hugo-auto-export-mode)))))))
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="p">((</span><span class="s">&#34;content-org/&#34;</span>
+  <span class="o">.</span> <span class="p">((</span><span class="nv">org-mode</span> <span class="o">.</span> <span class="p">((</span><span class="nf">eval</span> <span class="o">.</span> <span class="p">(</span><span class="nv">org-hugo-auto-export-mode</span><span class="p">)))))))</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>Reload 一下 Emacs 的配置就可以自动 Export 了，配合 <code>hugo serve -D</code> 命令，可以做到实时预览。</p>
 
 <figure>
@@ -166,33 +339,122 @@ meta-data to Hugo front-matter — ox-hugo - Org to Hugo exporter</a> 。</p>
 <p>实现方式非常简单，使用 AppleScript 获取当前 Chrome 的链接和 title，并组合成对应格式的链接地址（markdown 或者 org-mode）放到剪贴板中，然后使用 Alfred 来调用。</p>
 
 <p>生成 org-mode link 的代码可以参考我写的这个：</p>
-
-<pre><code class="language-applescript">tell application &quot;Google Chrome&quot;
-  set tab_link to (get URL of active tab of first window)
-  set tab_title to (get title of active tab of first window)
-  set org_link to (&quot;[[&quot; &amp; tab_link &amp; &quot;]&quot; &amp; &quot;[&quot; &amp; tab_title &amp; &quot;]]&quot;)
-  set the clipboard to org_link
-  display notification org_link with title &quot;成功复制当前标签页链接到剪贴板&quot;
-end tell
-</code></pre>
-
-    </div>
-  </content>
-
-  <footer>
-    <div class="post-comment">
-      
-        <script async src="https://utteranc.es/client.js"
-                repo="forrestchang/forrestchang.github.io"
-                issue-term="pathname"
-                theme="github-light"
-                label="utterances"
-                crossorigin="anonymous">
-        </script>
-      
-      </div>
-  </footer>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-applescript" data-lang="applescript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-applescript" data-lang="applescript"><span class="k">tell</span> <span class="nb">application</span> <span class="s2">&#34;Google Chrome&#34;</span>
+  <span class="k">set</span> <span class="nv">tab_link</span> <span class="k">to</span> <span class="p">(</span><span class="k">get</span> <span class="nv">URL</span> <span class="k">of</span> <span class="na">active</span> <span class="no">tab</span> <span class="k">of</span> <span class="nb">first</span> <span class="na">window</span><span class="p">)</span>
+  <span class="k">set</span> <span class="nv">tab_title</span> <span class="k">to</span> <span class="p">(</span><span class="k">get</span> <span class="na">title</span> <span class="k">of</span> <span class="na">active</span> <span class="no">tab</span> <span class="k">of</span> <span class="nb">first</span> <span class="na">window</span><span class="p">)</span>
+  <span class="k">set</span> <span class="nv">org_link</span> <span class="k">to</span> <span class="p">(</span><span class="s2">&#34;[[&#34;</span> <span class="o">&amp;</span> <span class="nv">tab_link</span> <span class="o">&amp;</span> <span class="s2">&#34;]&#34;</span> <span class="o">&amp;</span> <span class="s2">&#34;[&#34;</span> <span class="o">&amp;</span> <span class="nv">tab_title</span> <span class="o">&amp;</span> <span class="s2">&#34;]]&#34;</span><span class="p">)</span>
+  <span class="nb">set the clipboard to</span> <span class="nv">org_link</span>
+  <span class="nb">display</span> <span class="nv">notification</span> <span class="nv">org_link</span> <span class="nv">with</span> <span class="na">title</span> <span class="s2">&#34;成功复制当前标签页链接到剪贴板&#34;</span>
+<span class="k">end</span> <span class="k">tell</span></code></pre></td></tr></table>
 </div>
+</div>
+    </div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/org-mode/">org-mode</a>
+          <a href="/tags/hugo/">hugo</a>
+          <a href="/tags/emacs/">emacs</a>
+          <a href="/tags/ox-hugo/">ox-hugo</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/meta-knowledge-how-to-search-informations/">
+            <span class="next-text nav-default">元知识：信息检索指南</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+   
+   <div class="post bg-white">
+     <script src="https://utteranc.es/client.js"
+           repo= "forrestchang/forrestchang.github.io"
+           issue-term="pathname"
+           theme="github-light"
+           label="utterances"
+           crossorigin="anonymous"
+           async>
+     </script>
+   </div>
+ 
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:forrestchang7@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/Tisoga" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/forrestchang" class="iconfont icon-github" title="github"></a>
+      <a href="https://www.instagram.com/jiayuan3055/" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="http://blog.jiayuanzhang.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> Site PV: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> Site UV: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2014 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Jiayuan</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
 
 
 <script type="application/javascript">
@@ -200,25 +462,26 @@ var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 	ga('create', 'UA-130256365-1', 'auto');
-	
+	ga('set', 'anonymizeIp', true);
 	ga('send', 'pageview');
 }
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
-
-<script
-  async
-  src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"
-  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k="
-  crossorigin="anonymous"
-></script>
-
-<script type="text/javascript">
-  window.MathJax = {
-    
-    
-    showProcessingMessages: false,
-    messageStyle: 'none'
-  };
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function() {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script"); hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?001e800887eba2f8f57ec8059aafdad6";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
 </script>
 
+
+
+
+
+
+</body>
+</html>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Swift on Lifelong Hacker</title>
+    <title>swift on Lifelong Hacker</title>
     <link>http://blog.jiayuanzhang.com/tags/swift/</link>
-    <description>Recent content in Swift on Lifelong Hacker</description>
+    <description>Recent content in swift on Lifelong Hacker</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
+    <language>en</language>
     <lastBuildDate>Fri, 15 Apr 2016 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://blog.jiayuanzhang.com/tags/swift/index.xml" rel="self" type="application/rss+xml" />
@@ -17,13 +17,7 @@
       <pubDate>Fri, 15 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/garbage-collection-in-swift-lang/</guid>
-      <description>这篇文章是在阅读《The Swift Programming Language》Automatic Reference Counting（ARC，自动引用计数）一章时做的一些笔记，同时参考了其他的一些资料。
-在早期的 iOS 开发中，内存管理是由开发者手动来完成的。因为传统的垃圾回收机制对于移动平台来说十分低效，苹果采用的是引用计数（RC，Reference Counting）的方式来管理内存，开发者需要通过手工的方式增加或减少一个实例的引用计数。在 iOS 5 之后，引入了 ARC 自动引用计数，使得开发者不需要手动地调用 retain 和 release 来管理引用计数，但是实际上这些方法还是会被调用，只不过是交给了编译器来完成，编译器会在合适的地方帮我们加入这些方法。
-什么是自动引用计数？
-每当你创建一个类的实例的时候，ARC 便会自动分配一块内存空间来存放这个实例的信息，当这个实例不再被使用的时候，ARC 便释放实例所占用的内存。一般每个被管理的实例都会与一个引用计数器相连，这个计数器保存着当前实例被引用的次数，一旦创建一个新的引用指向这个实例，引用计数器便加 1，每当指向该实例的引用失效，引用计数器便减 1，当某个实例的引用计数器变成 0 的时候，这个实例就会被立即销毁。
-在 Swift 中，对引用描述的关键字有三个：strong，weak 和 unowned，所有的引用没有特殊说明都是 strong 强引用类型。在 ARC 中，只有指向一个实例的所有 strong 强引用都断开了，这个实例才会被销毁。
-举一个简单的例子：
-class A { let name: String init(name: String) { self.name = name } deinit { print(&amp;quot;A deinit&amp;quot;) } } var a1: A? var a2: A? a1 = A(name: &amp;quot;A&amp;quot;) a2 = a1 a1 = nil  上面这个例子中，虽然 a1 这个 strong 强引用断开了，但是还有 a2 这个强引用指向这个实例，所以不会在命令行中输出 A deinit，当我们把 a2 也设置为 nil 时，与这个实例关联的所有强引用均断开了，这个实例便会被销毁，在命令行中打印 A deinit。</description>
+      <description>这篇文章是在阅读《The Swift Programming Language》Automatic Reference Counting（ARC，自动引用计数）一章时做的一些笔记，同时参考了其他的一些资料。 在早期的 iOS 开发中，内存管理是由开发者手动来完成的。因为传统的垃圾回收机制对于移动平台来说十分低效，苹果采用的是引用计数（RC，R</description>
     </item>
     
   </channel>
