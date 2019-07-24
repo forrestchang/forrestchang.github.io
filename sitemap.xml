@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.jiayuanzhang.com/post/add-full-content-rss/</loc>
+    <lastmod>2019-07-24T21:59:49+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.jiayuanzhang.com/post/blog-with-ox-hugo/</loc>
     <lastmod>2019-07-15T14:26:00+08:00</lastmod>
     <changefreq>daily</changefreq>
@@ -276,7 +283,7 @@
   
   <url>
     <loc>http://blog.jiayuanzhang.com/categories/essay/</loc>
-    <lastmod>2019-07-01T20:24:57+08:00</lastmod>
+    <lastmod>2019-07-24T21:59:49+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0</priority>
   </url>
@@ -290,14 +297,14 @@
   
   <url>
     <loc>http://blog.jiayuanzhang.com/</loc>
-    <lastmod>2019-07-15T14:26:00+08:00</lastmod>
+    <lastmod>2019-07-24T21:59:49+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://blog.jiayuanzhang.com/post/</loc>
-    <lastmod>2019-07-15T14:26:00+08:00</lastmod>
+    <lastmod>2019-07-24T21:59:49+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0</priority>
   </url>
