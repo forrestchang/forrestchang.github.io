@@ -8,7 +8,7 @@
     <language>en</language>
     <lastBuildDate>Sun, 14 Jul 2019 00:31:00 +0800</lastBuildDate>
     
-	<atom:link href="http://blog.jiayuanzhang.com/categories/productivity/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://blog.jiayuanzhang.com/categories/productivity/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -17,7 +17,207 @@
       <pubDate>Sun, 14 Jul 2019 00:31:00 +0800</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/blog-with-ox-hugo/</guid>
-      <description>最近开始重新使用 org-mode，在这之前大概有一年左右的时间，慢慢把一些东西从 org-mode 转移到别的工具上了，比如利用 OmniFocus 来管理任务，用 Devonthink 来管理笔记，用 Ulysses 来写作。虽然这些工具非常好用，但是总能找到一两个不满意的点，为此还写了不少脚本进行优化（这些 App 均支持 AppleScript），既然都是要</description>
+      <description>
+
+&lt;p&gt;最近开始重新使用 org-mode，在这之前大概有一年左右的时间，慢慢把一些东西从
+org-mode 转移到别的工具上了，比如利用 OmniFocus 来管理任务，用 Devonthink 来管理笔记，用 Ulysses 来写作。虽然这些工具非常好用，但是总能找到一两个不满意的点，为此还写了不少脚本进行优化（这些 App 均支持 AppleScript），既然都是要写代码才能完全满足使用需求，不如直接使用 Emacs 来做这些事好了（目前已经将任务管理系统又迁移到 org-mode 上来了）。&lt;/p&gt;
+
+&lt;p&gt;从 &lt;a href=&#34;http://blog.jiayuanzhang.com/post/use-devonthink-to-write-blog/&#34;&gt;上篇文章&lt;/a&gt; 可以知道，我开始使用 Devonthink 来写博客，配合 Alfred 的 Workflow 可以方便地生成 Hugo 的博客文章，其实就是简单地将 Devonthink 中的 Metadata 生成
+YAML 格式的内容插入到 Markdown 文件中。&lt;/p&gt;
+
+&lt;p&gt;如果你只使用 Markdown 来写作的话，这种写博客的流程是非常好的，配合一个 Markdown
+编辑器（推荐 iA Writer），Devonthink 可以方便的作为管理博客文章的前端，另外再配合我写的 Alfred 全局搜索（支持拼音） Workflow，可以快速地找到所写的内容。&lt;/p&gt;
+
+&lt;p&gt;但是，比起 Markdown，我更喜欢用 org-mode 来写东西。所以，我需要对上面这些流程做一些 Hack，其实也非常简单：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;在 Devonthink 中建立 org 格式的文件（在 Devonthink 显示为 plain-text）；&lt;/li&gt;
+&lt;li&gt;调用 Emacs 来打开这个文件（Open with Emacs，或者可以写一个脚本用 Alfred 来调用打开）；&lt;/li&gt;
+&lt;li&gt;在 Emacs 中使用 org-mode 来完成写作；&lt;/li&gt;
+&lt;li&gt;修改之前的 Alfred Workflow，检测到是 &lt;code&gt;.org&lt;/code&gt; 格式的文件就用 Pandoc 转换为 Markdown；&lt;/li&gt;
+&lt;li&gt;利用 Hugo 生成博客内容。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;既然都使用 Emacs 来写了，不如直接舍弃 Devonthink 这个前端（Emacs 同样支持拼音搜索等功能），搜索了一下，发现了 ox-hugo 这个 Emacs package，这个 package 的优点在于：不需要舍弃掉之前用 Markdown 写的文章，可以在这个基础上继续用 org-mode 来写，即使之后想放弃 ox-hugo 了，也可以继续修改生成的 Markdown 文件。&lt;/p&gt;
+
+&lt;p&gt;这篇文章我主要介绍一下如何使用 ox-hugo 来写博客，顺便介绍一下我的博客工作流，如果你是使用 Emacs 自带的 org-publish 而不是 Hugo 等外部静态网站生成工具的话，可以参考我几年前写的一篇文章：&lt;a href=&#34;http://blog.jiayuanzhang.com/post/how-to-use-emacs-and-org-mode-to-build-a-blog/&#34;&gt;使用 Emacs Org-mode + GitHub Pages 来写博客 -
+Jiayuan&amp;rsquo;s Blog&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;主要用到的工具：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Emacs + org-mode：写作 &amp;amp; 管理工具&lt;/li&gt;
+&lt;li&gt;Alfred：脚本快速执行工具&lt;/li&gt;
+&lt;li&gt;PicGo：图床工具&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure&gt;
+    &lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190606165847.png&#34;/&gt; 
+&lt;/figure&gt;
+
+
+&lt;h2 id=&#34;安装与配置-ox-hugo&#34;&gt;安装与配置 ox-hugo&lt;/h2&gt;
+
+&lt;p&gt;我使用的 Emacs 配置是 &lt;a href=&#34;https://github.com/hlissner/doom-emacs/tree/develop/&#34;&gt;Doom Emacs&lt;/a&gt;，我在 &lt;a href=&#34;https://www.bilibili.com/video/av54257764&#34;&gt;Hacking log #001 编写 Doom Emacs
+private module&lt;/a&gt; 这个视频里有详细讲解如何使用 Doom Emacs 来安装第三方的 Package 以及如何编写自己的 module。这里我们把 ox-hugo 添加到自己的 &lt;code&gt;my-org&lt;/code&gt; module 中，非
+Doom Emacs 的用户可以参考官方文档来进行配置：&lt;a href=&#34;https://ox-hugo.scripter.co/&#34;&gt;ox-hugo - Org to Hugo exporter&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;首先在 &lt;code&gt;my-org/packages.el&lt;/code&gt; 中添加 ox-hugo：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-elisp&#34; data-lang=&#34;elisp&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-elisp&#34; data-lang=&#34;elisp&#34;&gt;&lt;span class=&#34;c1&#34;&gt;;; packages.el&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;package!&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;ox-hugo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;然后修改 &lt;code&gt;my-org/configle.&lt;/code&gt; ，使用 Doom Emacs 自定义的 &lt;code&gt;def-package!&lt;/code&gt; macro，其他用户可以使用 &lt;code&gt;use-package&lt;/code&gt; 或者直接使用 &lt;code&gt;require&lt;/code&gt; 来进行导入。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-elisp&#34; data-lang=&#34;elisp&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-elisp&#34; data-lang=&#34;elisp&#34;&gt;&lt;span class=&#34;c1&#34;&gt;;; config.el&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;def-package!&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;ox-hugo&lt;/span&gt;
+  &lt;span class=&#34;nb&#34;&gt;:after&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;ox&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;开始写作&#34;&gt;开始写作&lt;/h2&gt;
+
+&lt;p&gt;ox-hugo 支持两种方式来管理 org 格式的博客文章，一种是所有的文章都放在同一个 org
+文件里，另一种是对不同的文章使用独立的 org 文件。因为最终都是导出 Markdown 格式的文件，所以这两种方法本质上并没有什么区别。&lt;/p&gt;
+
+&lt;p&gt;这里推荐对于非长篇类的文章可以使用同一个 org 文件进行管理，这种方法可以方便地使用 org-mode 提供的 Tag 继承功能；针对于长篇的文章，可以直接使用单独的 org 文件。&lt;/p&gt;
+
+&lt;p&gt;这边简单介绍一下如何使用单个的 org 文件来管理博客文章，首先需要两个全局的
+Property： &lt;code&gt;HUGO_SECTION&lt;/code&gt; 和 &lt;code&gt;HUGO_BASE_DIR&lt;/code&gt; ，&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;HUGO_SECTION&lt;/code&gt;: 这个是指定导出的内容在 content 目录所在的路径，例如我的博客文章的 Markdown 文件是放在 &lt;code&gt;/content/post&lt;/code&gt; 下的，那么这边的值就是 &lt;code&gt;post&lt;/code&gt; ；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;HUGO_BASE_DIR&lt;/code&gt;: 博客的根目录，例如我的 Hugo 博客是在 &lt;code&gt;~/Dropbox/blog&lt;/code&gt; 下，那么这边的值就是 &lt;code&gt;~/Dorpbox/blog&lt;/code&gt; 。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;其他一些设定可以参考我的 &lt;a href=&#34;https://raw.githubusercontent.com/forrestchang/blog-raw/master/content-org/post.org?token=AB36HZWPBHGMFX4PTQUDJB247MWO4&#34;&gt;org raw file&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;ox-hugo 使用 org-mode 中的 Tag 来标记文章的 Category 和 Tags，使用 &lt;code&gt;@&lt;/code&gt; 开头的
+Tag 为 Category，其他的为普通的 Tags，利用 org-mode 的特性，我们可以方便地继承上级的 Tag，例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-org&#34; data-lang=&#34;org&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-org&#34; data-lang=&#34;org&#34;&gt;&lt;span class=&#34;gh&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;gs&#34;&gt; Programming&lt;/span&gt;&lt;span class=&#34;ge&#34;&gt; :@Programming:&lt;/span&gt;
+&lt;span class=&#34;gu&#34;&gt;**&lt;/span&gt;&lt;span class=&#34;err&#34;&gt; TODO&lt;/span&gt; New post
+&lt;span class=&#34;c&#34;&gt;:PROPERTIES:
+&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&lt;/span&gt;&lt;span class=&#34;cs&#34;&gt;:EXPORT_FILE_NAME: new-post
+&lt;/span&gt;&lt;span class=&#34;cs&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;:END:&lt;/span&gt;
+This is a test post.&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;其中 &lt;code&gt;Programming&lt;/code&gt; 下的文章都会被分类到 &lt;code&gt;Programming&lt;/code&gt; Category 中去。&lt;/p&gt;
+
+&lt;p&gt;一篇文章有两个状态： &lt;code&gt;TODO&lt;/code&gt; 和 &lt;code&gt;DONE&lt;/code&gt; ，TODO 代表的是未发布的文章，在生成的
+Markdown 元数据中 &lt;code&gt;draft=true&lt;/code&gt; ，DONE 代表已完成的文章，DONE Date 会被作为发表的时间戳。TODO 和 DONE 的关键字是可以自己指定的，具体可以参考官方文档：&lt;a href=&#34;https://ox-hugo.scripter.co/doc/org-meta-data-to-hugo-front-matter/&#34;&gt;Org
+meta-data to Hugo front-matter — ox-hugo - Org to Hugo exporter&lt;/a&gt; 。&lt;/p&gt;
+
+&lt;p&gt;另一个比较重要的参数是 &lt;code&gt;EXPORT_FILE_NAME&lt;/code&gt; ，这个参数控制了导出时的文件名，例如上面这个例子中导出后就为 &lt;code&gt;new-post.md&lt;/code&gt; 。&lt;/p&gt;
+
+&lt;p&gt;ox-hugo 的导出方式也非常简单，使用 &lt;code&gt;C-c C-e&lt;/code&gt; 就可以呼出导出菜单，然后选择 &lt;code&gt;H H&lt;/code&gt;
+就会把当前文章导出到 Hugo 的目录下。&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190608114908.png&#34;/&gt; 
+&lt;/figure&gt;
+
+
+&lt;h2 id=&#34;开启自动-export&#34;&gt;开启自动 Export&lt;/h2&gt;
+
+&lt;p&gt;ox-hugo 的官方文档中介绍了一种自动 Export 的方式，只要保存了 org 格式的文章，就可以直接导出 Hugo 中。&lt;/p&gt;
+
+&lt;p&gt;首先需要在配置中 load org-hugo-auto-export-mode：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-elisp&#34; data-lang=&#34;elisp&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-elisp&#34; data-lang=&#34;elisp&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;def-package!&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;org-hugo-auto-export-mode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;然后在 Hugo 的根目录下建立 &lt;code&gt;.dir-locals.el&lt;/code&gt; 文件：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-elisp&#34; data-lang=&#34;elisp&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-elisp&#34; data-lang=&#34;elisp&#34;&gt;&lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;content-org/&amp;#34;&lt;/span&gt;
+  &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;org-mode&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;eval&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;org-hugo-auto-export-mode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)))))))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Reload 一下 Emacs 的配置就可以自动 Export 了，配合 &lt;code&gt;hugo serve -D&lt;/code&gt; 命令，可以做到实时预览。&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190608115739.png&#34;/&gt; 
+&lt;/figure&gt;
+
+
+&lt;h2 id=&#34;使用-picgo-plus-github-来搭建图床&#34;&gt;使用 PicGo + GitHub 来搭建图床&lt;/h2&gt;
+
+&lt;p&gt;博客的写作中难免会用到一些图片素材，目前我使用 PicGo + GitHub 来作为博客的图床，除了 GitHub 之外，PicGo 还支持很多其他图床。&lt;/p&gt;
+
+&lt;p&gt;使用起来也非常简单：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;调用截图工具截图（图片自动保存到剪贴板中）&lt;/li&gt;
+&lt;li&gt;调用快捷键使用 PicGo 上传图片到 GitHub（可以在 PicGo 中自定义）&lt;/li&gt;
+&lt;li&gt;自动生成 org link 格式的图片链接地址到剪贴板中&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;具体的配置方法可以参照下面两个链接：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;PicGo: &lt;a href=&#34;https://github.com/Molunerfinn/PicGo&#34;&gt;https://github.com/Molunerfinn/PicGo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;GitHub 图床的配置方法：&lt;a href=&#34;https://picgo.github.io/PicGo-Doc/zh/guide/config.html&#34;&gt;https://picgo.github.io/PicGo-Doc/zh/guide/config.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;快速获取-chrome-超链接&#34;&gt;快速获取 Chrome 超链接&lt;/h2&gt;
+
+&lt;p&gt;写文章的时候需要一些参考链接，这个可以借助 AppleScript 和 Alfred 来完成。&lt;/p&gt;
+
+&lt;p&gt;实现方式非常简单，使用 AppleScript 获取当前 Chrome 的链接和 title，并组合成对应格式的链接地址（markdown 或者 org-mode）放到剪贴板中，然后使用 Alfred 来调用。&lt;/p&gt;
+
+&lt;p&gt;生成 org-mode link 的代码可以参考我写的这个：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-applescript&#34; data-lang=&#34;applescript&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-applescript&#34; data-lang=&#34;applescript&#34;&gt;&lt;span class=&#34;k&#34;&gt;tell&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;application&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Google Chrome&amp;#34;&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tab_link&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;to&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;get&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;URL&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;of&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;active&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;tab&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;of&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;first&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;window&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tab_title&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;to&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;get&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;title&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;of&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;active&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;tab&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;of&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;first&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;window&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;org_link&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;to&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;[[&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tab_link&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;]&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;[&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;tab_title&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;]]&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+  &lt;span class=&#34;nb&#34;&gt;set the clipboard to&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;org_link&lt;/span&gt;
+  &lt;span class=&#34;nb&#34;&gt;display&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;notification&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;org_link&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;with&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;title&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;成功复制当前标签页链接到剪贴板&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;tell&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -26,7 +226,89 @@
       <pubDate>Thu, 23 May 2019 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/how-to-modify-omnifocus-3-theme/</guid>
-      <description>OmniFocus 3 提供了 Dark Mode，但是却没有提供自定义主题的功能，Dark Mode 看久了也会腻，所以最近又切换到 Light Mode 下来了。搜索了一下，看到这篇讨论：Is it possible to reduce fontsize or fontstyle of the headline of a perspective?，可以通过修改配置的方式来修改 OmniFocus 的主题。 具体的修改方法为： 在 /Applications/OmniFocus.app/Contents/Resources/ThemeResources/SystemFont 下面修改字体的大小和页边距，首先我</description>
+      <description>&lt;p&gt;OmniFocus 3 提供了 Dark Mode，但是却没有提供自定义主题的功能，Dark Mode 看久了也会腻，所以最近又切换到 Light Mode 下来了。搜索了一下，看到这篇讨论：&lt;a href=&#34;https://discourse.omnigroup.com/t/is-it-possible-to-reduce-fontsize-or-fontstyle-of-the-headline-of-a-perspective/44258/8?u=jannock&#34;&gt;Is it possible to reduce fontsize or fontstyle of the headline of a perspective?&lt;/a&gt;，可以通过修改配置的方式来修改 OmniFocus 的主题。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190523111224.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;具体的修改方法为：&lt;/p&gt;
+
+&lt;p&gt;在 &lt;code&gt;/Applications/OmniFocus.app/Contents/Resources/ThemeResources/SystemFont&lt;/code&gt; 下面修改字体的大小和页边距，首先我们先修改边距大小，我默认选择的是 Extra Large 的字体，所以需要修改 &lt;code&gt;OFIExtraLargeLayoutConstraintConstants.plit&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;找到以下代码：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;key&amp;gt;&lt;/span&gt;extraPaddingBelowNoteForActionCells&lt;span class=&#34;nt&#34;&gt;&amp;lt;/key&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;nt&#34;&gt;&amp;lt;real&amp;gt;&lt;/span&gt;20&lt;span class=&#34;nt&#34;&gt;&amp;lt;/real&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;nt&#34;&gt;&amp;lt;key&amp;gt;&lt;/span&gt;extraPaddingBelowNoteForColumnarActionCells&lt;span class=&#34;nt&#34;&gt;&amp;lt;/key&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;nt&#34;&gt;&amp;lt;real&amp;gt;&lt;/span&gt;20&lt;span class=&#34;nt&#34;&gt;&amp;lt;/real&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;nt&#34;&gt;&amp;lt;key&amp;gt;&lt;/span&gt;extraPaddingBelowNoteForProjectCells&lt;span class=&#34;nt&#34;&gt;&amp;lt;/key&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;nt&#34;&gt;&amp;lt;real&amp;gt;&lt;/span&gt;20&lt;span class=&#34;nt&#34;&gt;&amp;lt;/real&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;然后把 &lt;code&gt;real&lt;/code&gt; 的值设定成自己想要的就好了，我这边设定为 20，最后看起来的效果还可以。&lt;/p&gt;
+
+&lt;p&gt;然后修改 Note 的字体，打开 &lt;code&gt;OFIFontRegistry.plit&lt;/code&gt;，找到以下代码：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;key&amp;gt;&lt;/span&gt;OFITextStyleNoteBody&lt;span class=&#34;nt&#34;&gt;&amp;lt;/key&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;nt&#34;&gt;&amp;lt;dict&amp;gt;&lt;/span&gt;
+	&lt;span class=&#34;nt&#34;&gt;&amp;lt;key&amp;gt;&lt;/span&gt;content-sizes&lt;span class=&#34;nt&#34;&gt;&amp;lt;/key&amp;gt;&lt;/span&gt;
+	&lt;span class=&#34;nt&#34;&gt;&amp;lt;array&amp;gt;&lt;/span&gt;
+		&lt;span class=&#34;nt&#34;&gt;&amp;lt;real&amp;gt;&lt;/span&gt;13&lt;span class=&#34;nt&#34;&gt;&amp;lt;/real&amp;gt;&lt;/span&gt;
+		&lt;span class=&#34;nt&#34;&gt;&amp;lt;real&amp;gt;&lt;/span&gt;13&lt;span class=&#34;nt&#34;&gt;&amp;lt;/real&amp;gt;&lt;/span&gt;
+		&lt;span class=&#34;nt&#34;&gt;&amp;lt;real&amp;gt;&lt;/span&gt;14&lt;span class=&#34;nt&#34;&gt;&amp;lt;/real&amp;gt;&lt;/span&gt;
+		&lt;span class=&#34;nt&#34;&gt;&amp;lt;real&amp;gt;&lt;/span&gt;15&lt;span class=&#34;nt&#34;&gt;&amp;lt;/real&amp;gt;&lt;/span&gt;
+		&lt;span class=&#34;nt&#34;&gt;&amp;lt;real&amp;gt;&lt;/span&gt;16&lt;span class=&#34;nt&#34;&gt;&amp;lt;/real&amp;gt;&lt;/span&gt;
+	&lt;span class=&#34;nt&#34;&gt;&amp;lt;/array&amp;gt;&lt;/span&gt;
+	&lt;span class=&#34;nt&#34;&gt;&amp;lt;key&amp;gt;&lt;/span&gt;font-name&lt;span class=&#34;nt&#34;&gt;&amp;lt;/key&amp;gt;&lt;/span&gt;
+	&lt;span class=&#34;nt&#34;&gt;&amp;lt;string&amp;gt;&lt;/span&gt;regular&lt;span class=&#34;nt&#34;&gt;&amp;lt;/string&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;nt&#34;&gt;&amp;lt;/dict&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;依次修改 &lt;code&gt;real&lt;/code&gt; 的值，对应 OmniFocus 的以下配置：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190523112118.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Next Action, Due 和 Overdue 的颜色可以在 &lt;code&gt;/Applications/OmniFocus.app/Contents/Resources/ThemeResources/&lt;/code&gt; 下面修改，找到对应的主题，例如我现在使用的是 Light Mode，就修改 &lt;code&gt;30-Light-ColoredText/OFIThemeAppearance.plist&lt;/code&gt; 文件。&lt;/p&gt;
+
+&lt;p&gt;其中颜色的值使用的 NSColor HSB&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:nscolor&#34;&gt;&lt;a href=&#34;#fn:nscolor&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 格式的，需要对 RGB 或者 Hex 格式的颜色值做一下转换，可以找到喜欢的颜色值，然后在&lt;a href=&#34;https://rgb.to/&#34;&gt;这个网站&lt;/a&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:convert&#34;&gt;&lt;a href=&#34;#fn:convert&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;转换。&lt;/p&gt;
+
+&lt;p&gt;把 Resource 中的配置文件浏览了一下，发现还是可以定制很多其他东西的，基于这个可以实现一个主题工具，但是不知道 OmniFocus 更新会不会把 Resource 文件覆盖掉，这个之后测试一下。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:nscolor&#34;&gt;&lt;a href=&#34;https://developer.apple.com/documentation/appkit/nscolor&#34;&gt;NSColor - AppKit | Apple Developer Documentation&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:nscolor&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:convert&#34;&gt;&lt;a href=&#34;https://rgb.to/&#34;&gt;Convert Hex color #7ca746 to Rgb, Pantone, RAL, HSL, HSV, HSB, JSON. Get color scheme.&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:convert&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
@@ -35,7 +317,256 @@
       <pubDate>Fri, 23 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/omnifocus-3-workflow/</guid>
-      <description>这篇文章主要分享一下我多年使用的一套任务管理系统的经验，工具是次要的，主要是一些想法的实践。有了基本的思路，无论是 OmniFocus、Todoist 还是 org-mode（Emacs 中的一个时间管理模式），都可以有自己的一套方式来实践。本篇文章主要以 OmniFocus 3 为载体来介绍这些内容。 每个人</description>
+      <description>
+
+&lt;p&gt;这篇文章主要分享一下我多年使用的一套任务管理系统的经验，工具是次要的，主要是一些想法的实践。有了基本的思路，无论是 OmniFocus、Todoist 还是 org-mode（Emacs 中的一个时间管理模式），都可以有自己的一套方式来实践。本篇文章主要以 OmniFocus 3 为载体来介绍这些内容。&lt;/p&gt;
+
+&lt;p&gt;每个人都有一套适合自己的工作流，所以读者不必要完全按照我所写的来操作，正确的方式是从中获取一些灵感，实践并融合到自己的工作流当中。&lt;/p&gt;
+
+&lt;h2 id=&#34;什么是一个好的任务管理系统&#34;&gt;什么是一个好的任务管理系统&lt;/h2&gt;
+
+&lt;p&gt;首先，任务管理系统的目的是为了更好得完成任务，一切脱离这个基本条件的系统都是不可用的。如果你觉得一个最简单的 Todo List 就能很好地完成任务，那么这就是最适合你的任务管理系统。&lt;/p&gt;
+
+&lt;p&gt;在我看来，一个优秀的任务管理系统至少需要满足以下条件：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;收集能力&lt;/li&gt;
+&lt;li&gt;在特定的情况下要知道可以做哪些事情&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;「收集能力」指的是这个任务系统要能够容纳（几乎）所有的内容，一个任务、一条想法、一封未读的邮件、一个笔记、一个链接、没有报销的发票等等。&lt;/p&gt;
+
+&lt;p&gt;具体实践起来并不是真的需要把所有的东西都塞进任务系统里面，例如我使用 Evernote 作为剪裁和笔记的工具，很显然把每条笔记都复制一份到 OmniFocus 中很不现实，但是我会在 OmniFocus 中添加一个「定期清理 Evernote Inbox」的任务，这样就相当于把 Evernote 作为 OmniFocus 的子 Inbox，来统一进行管理。对于一些支持 URL Schema 的应用，完全可以在 OmniFocus 中建立一个链接直接指定，这样在 OmniFocus 中也可以直接打开其他应用中的内容了。&lt;/p&gt;
+
+&lt;p&gt;收集能力决定了要处理的内容，第二个条件则决定了一个任务系统是否高可用。具体的情境来说，你要知道早上的时候该干哪些事，工作的时候该干哪些事，无聊的时候该干哪些事等等，而不是依靠大脑来记录什么时间要做什么事情，这样很容易进入游离的状态。&lt;/p&gt;
+
+&lt;p&gt;一个任务系统做好了这两件事情，至少不会让你感到「有事可做，但无从下手」的状况，真正的执行还是需要靠自己的意志力了，从另一种情况下来说，即使意志力不强，完全可以找一些「不太重要、很轻松」的事，这在一定程度上利用了「结构性拖延」的办法来完成一些任务。&lt;/p&gt;
+
+&lt;h2 id=&#34;任务管理系统的三要素&#34;&gt;任务管理系统的三要素&lt;/h2&gt;
+
+&lt;p&gt;到现在为止，我还没有讲到一种具体工具的使用。因为工具是次要的，了解了本质的思想，使用什么工具都没有问题。纵观各种任务管理的工具：OmniFocus、Todoist、Things、org-mode，它们支持的功能也各不相同，Project、无限层级、Defer、Due、Repeat、Context、Label、Tag、Filter、Perspective 等等，有没有被这些名词给吓到？难道我们每切换一种系统都需要再重新学习一遍？&lt;/p&gt;
+
+&lt;p&gt;抛开这些名词，我们来分析一下一个任务系统到底是由什么组成的。在我看来，一个任务系统最本质的东西只有三个：任务、附加元素和过滤器。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;任务&lt;/strong&gt;：一个最小可执行的单元即为一个任务。这个是最好理解的，所以不做过多解释。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;附加元素&lt;/strong&gt;：作用在任务上的不同维度的限制。这句话读起来有点拗口，举个简单例子，「去 XXX 取快递（截止今天 10:00）」，其中，「截止今天 10:00」就是在时间维度上对这个任务的一个限制。同样的，「项目」、「标签」等等这些都是作用在某个任务上的附加元素。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;过滤器&lt;/strong&gt;：组合不同附加元素的过滤规则。只有附加元素并没有什么实际的作用，但是有了过滤器之后，就可以编写不同的过滤规则来过滤指定规则的任务。例如，我想知道「最近 10 天内重要的事情」，那么过滤规则可能就是「Due date &amp;lt; 10 and flagged」。&lt;/p&gt;
+
+&lt;p&gt;了解了上面三个基本的概念，那么再重新审视各种任务管理工具，就可以从一个比较宏观的角度来看待了，这也可以避免切换工具造成的重新学习成本。&lt;/p&gt;
+
+&lt;h2 id=&#34;omnifocus-3-实践&#34;&gt;OmniFocus 3 实践&lt;/h2&gt;
+
+&lt;p&gt;把上面任务系统的基本三要素运用到 OmniFocus 上，任务就是一个个的单独 Todo item，附加元素就是 Todo item 所属的项目、Due Date、Defer Date、Tags、Flag、Repeat rule 等，过滤器就是透视（Perspective）。&lt;/p&gt;
+
+&lt;p&gt;接下来的内容我会通过 OmniFocus 3 为载体，来具体介绍如何实现一个可靠的任务管理系统，并介绍一些实际实践过的 Workflow 流程。&lt;/p&gt;
+
+&lt;h3 id=&#34;项目的设定&#34;&gt;项目的设定&lt;/h3&gt;
+
+&lt;p&gt;项目的设定建议使用统一的一套项目设定，例如，我的 OmniFocus 的项目和 Evernote 笔记的项目几乎是一一对应的，这样做的好处可以保证你的项目分类始终处于一个有序的状态。&lt;/p&gt;
+
+&lt;p&gt;如果想保证项目比较有序，分成三个层级即可：大的领域（Folder）- 子领域（Folder）- 项目（Project）。&lt;/p&gt;
+
+&lt;p&gt;例如，我的项目分类如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326152724.png&#34; alt=&#34;OmniFocus 项目分类&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我主要分成了 5 个比较大的项目：工作、学习、生活、兴趣、系统，基本上可以涵盖涉及到的所有领域了。在每个大的项目中再细分出小的项目，这个可以根据自己的需要来进行细分。OmniFocus 支持无限层级的项目划分，但是个人只建议分三层，最后一层直接是任务就可以了，这样可以保证项目层级不会过于复杂。&lt;/p&gt;
+
+&lt;p&gt;可以看到很多项目下面都有用&lt;code&gt;[]&lt;/code&gt;括起来的项目，这个是 Single List 项目，这样一些不属于某个项目里面的内容就可以放到这个列表里了。&lt;/p&gt;
+
+&lt;p&gt;项目的分类并不一定要按照我的来，只要保证一定的规整化即可。&lt;/p&gt;
+
+&lt;p&gt;一些项目设定的 Tips：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;如果不是 Single List，项目需要一个既定的完成条件，在某一时刻或某一条件下，这个项目是要能够被标记为 Completed 或者 Dropped，这样可以避免一个项目长时间地呆在任务系统中；&lt;/li&gt;
+&lt;li&gt;项目中的任务最好是最小可执行的，如果是比较大的任务，可以利用 OmniFocus 的无限任务层级继续细分。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;标签的设定&#34;&gt;标签的设定&lt;/h3&gt;
+
+&lt;p&gt;OmniFocus 3 的标签系统可以在自带功能的基础上添加更多的附加元素，从而在设定过滤器的时候更加准确地过滤出符合的任务。基于此目的，可以根据需求设定出适合自己的标签系统。&lt;/p&gt;
+
+&lt;p&gt;OmniFocus 3 缺失的一个很常见的功能就是 Schedule，一个任务在时间维度上应该有有截止日期（Due）和安排日期（Schedule）两个元素，Due 表示在某一天之前必须被完成，Schedule 表示被安排到某一天做，所以可以设定如下标签来完成 Schedule 的功能：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Schedule
+
+&lt;ul&gt;
+&lt;li&gt;ThisMonth：被安排到这个月&lt;/li&gt;
+&lt;li&gt;ThisWeek：被安排到这周&lt;/li&gt;
+&lt;li&gt;Today：被安排到今天&lt;/li&gt;
+&lt;li&gt;Recenly：最近需要做的事&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;这样在做计划的时候，打上对应的标签，就可以使用过滤器过滤出对应的任务了，比如我想看「这个月和工作相关的任务」，那么就可以指定 Project 为「Work」项目，标签为「ThisMonth」，这样对应的任务就可以使用这个过滤器过滤出来，具体的过滤器设定下面会讲到。&lt;/p&gt;
+
+&lt;p&gt;另外一个可以借鉴的设定就是精力值标签：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Energy
+
+&lt;ul&gt;
+&lt;li&gt;LowEnergy&lt;/li&gt;
+&lt;li&gt;MediumEnergy&lt;/li&gt;
+&lt;li&gt;HighFocus&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;例如，我们工作了一整天之后，还剩一段时间才下班，精力已经下降到一个很低的值，这个时候已经不适合完成一些需要非常专注的工作了，但是一些工作上的杂事，例如打印东西，提交报表等简单的工作可以利用这个时间来完成，这个时候我们就可以设定一个过滤器，过滤出 Project 为「Work」，标签为「LowEnergy」的任务。&lt;/p&gt;
+
+&lt;p&gt;我们可以看到，标签系统可以极大地扩展附加元素的内容，给过滤器添加更多的过滤维度。标签系统的设定应该根据自己的需求来，如果设定的标签却没有在过滤器中用到的话，那么也仅仅是个任务添加了一个没有用上的附加元素而已，意义不大。&lt;/p&gt;
+
+&lt;h3 id=&#34;过滤器的设定&#34;&gt;过滤器的设定&lt;/h3&gt;
+
+&lt;p&gt;过滤器的目的就是组合各种条件，过滤出所需要的任务来，之前所有的任务上的附加元素都是为了过滤器而设定的。&lt;/p&gt;
+
+&lt;p&gt;过滤器在 OmniFocus 3 中就是透视（Perspective）。在 OmniFocus 3 中，透视功能被很大的增强了，支持类似于 iTunes 智能播放列表一样的设定。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326152804.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;但是仔细使用下来会发现，OmniFocus 3 的过滤器设定依然是有局限的，并不能想 iTunes 那样自由地对元素进行操作&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326152822.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;尽管如此，相比较 OmniFocus 2 残疾一样的过滤器设定，已经好太多了。用过 Todoist 的同学可能会知道，Todoist 的过滤器设定支持自定义的一套语法，OmniFocus 3 与之相比，还是要差了许多，主要是提供的可过滤元素太少，过滤条件也不够自由，但是结合标签系统也基本上能满足日常的使用。&lt;/p&gt;
+
+&lt;p&gt;同标签系统一样，过滤器的设定依然需要结合自己的情况来。我主要设定了以下几个过滤器，这些过滤器都是在实践中经常使用到的。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326152841.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;routine-过滤器&#34;&gt;Routine 过滤器&lt;/h4&gt;
+
+&lt;p&gt;这个过滤器主要被用于制定计划，例如，我每天早上去公司都会有 Morning Review，来规划今天一天的工作任务。这个时候，我只需要打开这个过滤器，依次把上面的事情做完，今天的计划安排就被制定好了。&lt;/p&gt;
+
+&lt;p&gt;过滤器的详细设定如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326152916.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;其中，「Routine」Folder 中就是设定的具体内容：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326152930.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这一个过滤器的设定是和我的 Workflow 紧密相连的，如果你没有做 Morning Review 之类的习惯，可以不需要设定这个过滤器。&lt;/p&gt;
+
+&lt;h4 id=&#34;today-过滤器&#34;&gt;Today 过滤器&lt;/h4&gt;
+
+&lt;p&gt;这个过滤器被使用的次数最多，类似于 Forecast 的功能，但是相比较 Forecast，自定义的程度更大。&lt;/p&gt;
+
+&lt;p&gt;过滤器的详细设定如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326152950.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这个过滤器将会把符合以下条件的任务过滤出来：
+- 即将截止或者标注为 Today 标签的任务
+- 状态为 Available 的任务
+- 非 Routine Folder 下的任务&lt;/p&gt;
+
+&lt;p&gt;显示方式以 Project 为维度显示：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326153001.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;对比 Forecast Perspective，它只是把对应的任务都展示了出来，在任务的层级上没有自定义的那么清晰。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326153012.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;如果想要 Forecast 显示特定标签的任务，可以参考如下设定：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326153036.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;work-过滤器&#34;&gt;Work 过滤器&lt;/h4&gt;
+
+&lt;p&gt;这个过滤器和 Today 类似，只不过指定了所属项目为「Work」文件夹下面的任务，这个主要是在工作中只想专注于和工作相关的任务。&lt;/p&gt;
+
+&lt;p&gt;过滤器的详细设定如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326153049.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;除了指定了特殊的项目目录，其他的设置和 Today 的设定没有区别。&lt;/p&gt;
+
+&lt;h4 id=&#34;to-sth-过滤器&#34;&gt;To-Sth 过滤器&lt;/h4&gt;
+
+&lt;p&gt;日常的使用中，我会把没有看的文章、需要写的东西、要读的书、要搜索的内容都存在 OmniFocus 中，所以需要一个过滤器能够快速过滤出这些内容。&lt;/p&gt;
+
+&lt;p&gt;首先使用这个过滤器需要先设置一套标签系统：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326153105.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;过滤器的详细设定如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326153127.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;实际的使用场景：比如我想阅读一些和 Python（一门编程语言）相关的内容，那么我只需要打开这个 Perspective，挑选标签为「To-Read」，然后从搜索框中搜索 Python 关键字就可以了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326153145.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;future-过滤器&#34;&gt;Future 过滤器&lt;/h4&gt;
+
+&lt;p&gt;这个过滤器主要被用于制定计划，在 Weekly Review 和 Daily Review 中会被频繁地使用到。需要基于以下的标签设定：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326153301.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;过滤器的详细设定如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326153310.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;easydo-过滤器&#34;&gt;EasyDo 过滤器&lt;/h4&gt;
+
+&lt;p&gt;这个过滤器会把一些简单的或者不需要太多精力的任务过滤出来&lt;/p&gt;
+
+&lt;p&gt;过滤器的详细设定如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326153322.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;完成时间小于 15 分钟或者被标注为「LowEnergy」标签的任务会被过滤出来。&lt;/p&gt;
+
+&lt;h3 id=&#34;workflow&#34;&gt;Workflow&lt;/h3&gt;
+
+&lt;p&gt;今年使用 OmniFocus 已经完成了 1500+ 的任务，经过这么长时间的使用，已经有了自己的一套任务处理流程了，随着 OmniFocus 3 的更新，这套任务处理的流程也经过了一些优化。在这整个 Workflow 中，主要分为三个部分：计划、执行、总结。&lt;/p&gt;
+
+&lt;h4 id=&#34;计划&#34;&gt;计划&lt;/h4&gt;
+
+&lt;p&gt;很多人都不重视计划这个环节，想到什么做什么，这样不仅会做事没有条理，也会分不清任务的优先级。&lt;/p&gt;
+
+&lt;p&gt;一般来说，如果不知道怎么做计划的话，有一个长期计划和一个短期计划就可以了。长期计划主要是一个大体的方向，可以是年度计划或者月度计划；短期计划则需要明确具体要做哪些事情，可以是周计划或者日计划。&lt;/p&gt;
+
+&lt;p&gt;实践过程中使用最多的就是周计划和日计划。在 OmniFocus 中，我设定了两个项目，分别是 Weekly Review 和 Morning Review。&lt;/p&gt;
+
+&lt;p&gt;在做 Weekly Review 的时候，我会先在 Evernote 中大概写一下这周需要做哪些事情，然后在 OmniFocus 中打开 Future 过滤器，选择 ThisMonth 标签，把需要完成的项目和任务打上 ThisWeek 标签。&lt;/p&gt;
+
+&lt;p&gt;在做 Morning Review 的时候，我会打开 Future 过滤器，选择 ThisWeek 和 Recently 标签，然后挑选今天需要完成的事情打上 Today 标签，这样，在 Today 和 Work 过滤器中就可以看到今天要做的事情了。&lt;/p&gt;
+
+&lt;h4 id=&#34;执行&#34;&gt;执行&lt;/h4&gt;
+
+&lt;p&gt;执行应该是整个 Workflow 中最重要的一个环节，如果只是计划了，但是最后任务却没有被完成，那做计划也只是白费力气。&lt;/p&gt;
+
+&lt;p&gt;执行的关键就是要在对的时间内做对的事，这也是为什么要设置那么多过滤器的原因，在工作的时候就只展示工作相关要做的事，在没有精力的时候就只展示简单易做的事情。&lt;/p&gt;
+
+&lt;p&gt;如果你做事情的时候很容易分心，可以参考一下番茄工作法，一般我会设置为专注 50 分钟，然后休息 10 分钟。默认的 25 分钟时间过短，可能刚进入状态就要被打断。&lt;/p&gt;
+
+&lt;p&gt;另外可以尝试使用「结构化拖延法」（Structured Procrastination）。结构化拖延法就是忽略优先级高的事，而是从小的事，优先级比较低的事情开始做，这样慢慢地进入工作的状态，然后再去完成优先级高的事情。&lt;/p&gt;
+
+&lt;h4 id=&#34;总结&#34;&gt;总结&lt;/h4&gt;
+
+&lt;p&gt;总结是为了更好地计划。总结给计划提供了更多的参考条件，可以当做计划的一把标尺。&lt;/p&gt;
+
+&lt;p&gt;很多时候我们做计划都会看高自己完成任务的能力，结果就是一周过去了发现实际上并没有能够完成计划的内容，如果没有总结的话，下次做计划的时候还是按照这种量来计划，必定也是完成不了的，久而久之，就失去了做计划的动力。如果每周都做总结的话就能够知道这周完成了哪些内容，哪些内容没有完成，原因是什么，这样就能在下周的计划里面做改进。这种「反馈-调节」的机制可以促进整个任务处理流程的良性循环。&lt;/p&gt;
+
+&lt;p&gt;一方面，如果你在 Evernote 中有写周计划的话，那么在每周的 Review 时候就可以打开对应的项目，在 Project 视图里面选择 All，这样就可以把所有的任务（包括已完成的）都展示出来，方便对照查看完成了哪些，又有哪些是没有完成的。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326153338.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;另一方面，OmniFocus 3 提供了自带的 Review 透视，建立每个项目的时候可以选择多少天 Review 一次。实践上，一般工作上需要每天跟进的项目，会把 Review 的时间设置为每天一次，一般的项目设置为一周 Review 一次即可。为了防止忘记 Review，可以把这个 Review 的任务添加到 Morning Review 或者 Weekly Review 中。&lt;/p&gt;
+
+&lt;h2 id=&#34;后记&#34;&gt;后记&lt;/h2&gt;
+
+&lt;p&gt;OmniFocus 2 刚发布时就开始使用了，期间还使用过 org-mode 和 Todoist，OmniFocus 3 发布了之后就立马重新迁移过来。虽然 OmniFocus 3 还存在着一些不足，但是已经能够很好地满足目前的工作流了。主要的使用场景大部分是在 macOS 上，iOS 基本上只是用来查看。&lt;/p&gt;
+
+&lt;p&gt;这篇文章中所写的内容都是经过了很长时间实践之后得出的经验，一个好的任务系统是需要不断优化迭代的，如果你觉得自己的系统不怎么好用，不妨想一下哪些地方需要优化，然后慢慢改进它。掌握了任务管理的本质之后，不管是切换到什么工具都能够游刃有余。&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -44,7 +575,186 @@
       <pubDate>Sun, 10 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/time-recording-tutorial/</guid>
-      <description>两年前，曾经写过一篇有关时间管理的文章，那个时候还在上高二，对于时间管理仅仅是有一点肤浅的了解，自然写出来的文字也是比较幼稚的。经过两年的实践，积累了很多时间管理的经验，想要拿出来分享一下。预计会写一个系列，包括使用的工具和日常的 Workflow。 日常使用的工具有这些： 纸质笔记本</description>
+      <description>
+
+&lt;p&gt;两年前，曾经写过一篇有关时间管理的&lt;a href=&#34;http://forrestchang.com/14824097073807.html&#34;&gt;文章&lt;/a&gt;，那个时候还在上高二，对于时间管理仅仅是有一点肤浅的了解，自然写出来的文字也是比较幼稚的。经过两年的实践，积累了很多时间管理的经验，想要拿出来分享一下。预计会写一个系列，包括使用的工具和日常的 Workflow。&lt;/p&gt;
+
+&lt;p&gt;日常使用的工具有这些：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;纸质笔记本（Moleskine）&lt;/li&gt;
+&lt;li&gt;OmniFocus&lt;/li&gt;
+&lt;li&gt;Evernote&lt;/li&gt;
+&lt;li&gt;Toggl&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;这篇文章从题目也可以看出来，主要讲一些关于时间记录的内容，对应的工具是 Toggl。关于 Toggl，我已经在知乎的&lt;a href=&#34;https://www.zhihu.com/question/36546814/answer/69161024&#34;&gt;一个回答&lt;/a&gt;里面推荐过了，这里会更加详细地介绍一下使用流程，在谈论术之前，先来说说道的问题，为什么要做时间记录。&lt;/p&gt;
+
+&lt;p&gt;其实我们对时间是很不敏感的，相信你一定有过这样的体验：早晨醒来，干劲满满，准备打开电脑把昨天没有写完的代码解决，这时想到邮件还没看，先查一下邮件吧，反正花不了多少时间，在查看邮件的时候又发现知乎上有人给你发私信了，在到知乎上看一下私信，顺便回复一下，既然上了知乎，那么去首页看看订阅的内容里面有没有什么有意思的东西吧，看到一个有意思的回答，是推荐你买买买的，于是乎又打开淘宝看了看商品的具体情况，顺便加到购物车里，这是候发现已经中午了，算了，先去吃饭吧，代码等等吃完饭再写，吃过午饭后又觉得有一点困意，那就睡一会儿吧，一觉醒来，发现已经四点多了，不行了，赶紧写代码，等等，这个 bug 好像找不到问题所在啊，算了，去 Stack Overflow 上找找吧，在 Stack Overflow 上找到了答案，链接到一篇具体的解释文章，点进去看了看，发现太长了，还是先加到 Pocket 中，以后再看吧，这个人的博客似乎写得不错，浏览一下 Archive 页面看看还有没有其他的好文章，从头到尾浏览了一遍，心中不禁惊叹，写得真好！然后想到今天 Reddit 好像还没看，说不定又有什么好东西，于是又上 /r/programming 刷了一会儿，看到了几篇牛逼的文章，时间也不早了，该吃晚饭了，吃完晚饭自然又不想写代码，休息一会儿，逛一下 Bilibili 吧，看了几个视频之后突然想到今天的代码还没有写，于是又接着关掉网页去写代码，搞到深夜，终于把代码写完了，朋友圈发一条状态「奋战到深夜，终于把代码改完了！」。&lt;/p&gt;
+
+&lt;p&gt;多么充实的一天，你这样想到，今天似乎做了很多事情。但是实际上呢？有效的时间几乎只有两三个小时。所以你需要把做什么事用了多长时间记录下来，然后就会发现这「充实」的一天过得是多么可怕了。&lt;/p&gt;
+
+&lt;p&gt;根据这些时间的时间记录的经验来看，至少有以下三点好处：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;提高对时间的感知能力，发现和避免时间黑洞。记录下时间的时候，你会刻意地关注目前手上正在做的事，如果是一些浪费时间的事，会使你减少花在上面的时间。&lt;/li&gt;
+&lt;li&gt;更好地制定计划。有段时间给自己制定的计划老是不能够完成，目标定得太高，再怎么跳也抓不到，通过记录一些事情所花费的时间，就可以更好地做计划，比如说看完一本书需要用多少时间。&lt;/li&gt;
+&lt;li&gt;激励自己。积累了一段时间的数据之后，就可以看到在某一方面投入了多少时间了，根据 10000 小时定律，可以知道自己与专家级别的能力还相差多少。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;当然，凡事有利就必有弊。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;时间记录本身也会花费时间（可以通过工具来弥补）。&lt;/li&gt;
+&lt;li&gt;最开始的时候总是会忘记记录。&lt;/li&gt;
+&lt;li&gt;事无巨细地记录时间，增加压力（这一点会在下面详细说明）。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;简单地讲了一下「道」层面的问题，想要继续深入的可以看一下&lt;a href=&#34;https://book.douban.com/subject/1115353/&#34;&gt;《奇特的一生》&lt;/a&gt;这本书。下面说一说「术」的层面。&lt;/p&gt;
+
+&lt;h3 id=&#34;简单的系统&#34;&gt;简单的系统&lt;/h3&gt;
+
+&lt;p&gt;其实最开始的时候一支笔、一本本子、一块手表就够了，这一阶段主要是养成时间记录的习惯，当然使用 Evernote 或者 OneNote 之类的软件也是可以的。可以按照以下的模板来记录：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;2016/04/10
+7:00 - 8:30 阅读 xxx xx 页（1h30min）
+9:00 - 9:45 完成 xxx 项目 xx 功能的开发（45min）
+&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;总结：
+编程时间：xx h xx min
+阅读时间：xx h xx min
+有效时间合计：xx h xx min
+娱乐时间：xx h xx min
+&amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;具体的分类可以根据自己的需求来进行。如果对时间记录没有接触过的同学可以选择这个方法试着用一段时间，看有没有什么改变。&lt;/p&gt;
+
+&lt;h3 id=&#34;toggl&#34;&gt;Toggl&lt;/h3&gt;
+
+&lt;p&gt;前面说了这么多，中与引来了今天的主角：&lt;a href=&#34;https://www.toggl.com/&#34;&gt;Toggl&lt;/a&gt;。什么是 Toggl，简单得来说，是一款时间记录的工具，试用过市面上几乎所有时间记录的工具，发现 Toggl 是最符合《奇特的一生》中的工作流的。&lt;/p&gt;
+
+&lt;h4 id=&#34;安装&#34;&gt;安装&lt;/h4&gt;
+
+&lt;p&gt;Toggl 几乎包含了全部平台，其中最强大的属于 Web 版，各种高级的报表功能需要在 Web 版上面才能试使用。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.toggl.com/best-free-time-tracking-app-for-iphone&#34;&gt;iPhone App&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.toggl.com/best-free-time-tracking-app-for-android&#34;&gt;Android App&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://support.toggl.com/toggl-desktop-for-windows&#34;&gt;Windows Desktop App&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://support.toggl.com/toggl-desktop-for-mac-osx&#34;&gt;Mac Desktop App&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://support.toggl.com/toggl-desktop-for-linux&#34;&gt;Linux Desktop App&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;并且它还提供了 &lt;a href=&#34;https://github.com/toggl/toggl_api_docs/blob/master/toggl_api.md&#34;&gt;API&lt;/a&gt;，可以自由定制。&lt;/p&gt;
+
+&lt;h4 id=&#34;基本使用&#34;&gt;基本使用&lt;/h4&gt;
+
+&lt;p&gt;下面主要介绍 Web 版的内容。注册完登陆进计时页面就是如下图所示：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326143857.png&#34; alt=&#34;14602871668402&#34; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;你当前正在记录的内容（如果不确定，可以先不填，这个是比其他软件优秀的原因之一，有时候只是想先记录下时间，之后再进行区分）；&lt;/li&gt;
+&lt;li&gt;当前记录内容所属分类，可以添加 Tag，后面的美元符号可以添加这个任务的花费，基本没有用到过这个功能；&lt;/li&gt;
+&lt;li&gt;记录的时间，可以手动添加时间；&lt;/li&gt;
+&lt;li&gt;Timeline，每天做了什么事情用了多少时间就记录在这里（周六周日没有怎么使用，所以比较空）；&lt;/li&gt;
+&lt;li&gt;一周记录时间汇总。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;知道了以上的内容之后就可以开始记录了，比如说就把学习 Toggl 的使用当成第一个记录的内容。&lt;/p&gt;
+
+&lt;h4 id=&#34;更好的分类&#34;&gt;更好的分类&lt;/h4&gt;
+
+&lt;p&gt;详细的分类可以更好地输出报表。我使用的是三级的分类：大类-具体领域分类-task。Toggl 默认只可以使用两个层级的分类，Project - Task，但是可以把 Client 这个用作最大的分类，这样就可以进行三个层级的分类，下面是我的分类内容；&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;基本工作（Client）
+
+&lt;ul&gt;
+&lt;li&gt;计算机（Project）&lt;/li&gt;
+&lt;li&gt;英语&lt;/li&gt;
+&lt;li&gt;健身&lt;/li&gt;
+&lt;li&gt;写作&lt;/li&gt;
+&lt;li&gt;阅读&lt;/li&gt;
+&lt;li&gt;工作（几乎用不到，因为还在学校里）&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;固定日程
+
+&lt;ul&gt;
+&lt;li&gt;上课&lt;/li&gt;
+&lt;li&gt;睡觉&lt;/li&gt;
+&lt;li&gt;杂事&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;娱乐
+
+&lt;ul&gt;
+&lt;li&gt;上网&lt;/li&gt;
+&lt;li&gt;游戏&lt;/li&gt;
+&lt;li&gt;视频/电影&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;分级不宜过多，否则会增加选择的压力，可以在使用的过程中不断改进。&lt;/p&gt;
+
+&lt;p&gt;最大的类别（Clients）可以在 Workspace Settings 中添加：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326143912.png&#34; alt=&#34;14602879238718&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Project 的类别在 Projects 选项中添加，可以给每个 Project 不同的颜色以示区分。&lt;/p&gt;
+
+&lt;p&gt;Tag 很少使用，可以为一些相同类型的事情设定相关的 Tag 来作为补充。&lt;/p&gt;
+
+&lt;h4 id=&#34;强大的统计功能&#34;&gt;强大的统计功能&lt;/h4&gt;
+
+&lt;p&gt;使用纸笔做时间记录的麻烦之处就是统计的时候需要花费很多精力去计算，用 APP 就可以免除这些过程，直接根据记录的内容生成非常漂亮的报表，下面的是我这一周的统计内容，从柱状图可以看出这周的效率是逐渐递减的-_-|||&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326143922.png&#34; alt=&#34;14602882623445&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Reports 支持三种模式：Summary, Detailed, Weekly。上面的是 Summary 的 Reports，Detailed 会把你做的所有事情列出来，Weekly 会以周视图的方式来显示：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326143937.png&#34; alt=&#34;14602884725256&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Reports 支持强大的过滤功能，可以根据需要选择 Reports 的时间长度、Project 内容、Tag 内容等等。比如说我想查看这周用在 iOS Dev 上的时间是多少，只需要选择 iOS Dev 这个 Tag 就可以了：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326143958.png&#34; alt=&#34;14602886317764&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;dashboard&#34;&gt;Dashboard&lt;/h4&gt;
+
+&lt;p&gt;Toggl 还提供了仪表盘视图，在这里你可以看到最常 Track 的项目以及一些其他内容。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326144010.png&#34; alt=&#34;14602889789430&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;如果在本地 APP 里面打开了 Timeline Track，还可以在 Timeline For Today 这一栏里面查看使用了什么软件，用了多长时间。&lt;/p&gt;
+
+&lt;h4 id=&#34;workflow&#34;&gt;Workflow&lt;/h4&gt;
+
+&lt;p&gt;每天从 Todo 里面拿出一件事情，打开计时器，开始做，本着「做一件事情就把它做好的原则」去完成。积累了一段时间的数据之后，就可以更好地计划自己了，比如说本周阅读多少专业书籍，写多少代码。具体的 Workflow 需要结合 OmniFocus 和笔记本来完成，所以会在下一篇文章中来说明。&lt;/p&gt;
+
+&lt;h4 id=&#34;faq&#34;&gt;FAQ&lt;/h4&gt;
+
+&lt;h5 id=&#34;什么事情都需要记录吗&#34;&gt;什么事情都需要记录吗？&lt;/h5&gt;
+
+&lt;p&gt;只需要记录重要的事情。日常生活中的吃喝拉撒记录了没有任何用处，有一段时间我一直在记录自己的睡眠时间，不过后来固定了之后就不记录了。&lt;/p&gt;
+
+&lt;h5 id=&#34;忘了记录怎么办&#34;&gt;忘了记录怎么办？&lt;/h5&gt;
+
+&lt;p&gt;这个只能慢慢地养成记录的习惯，如果记得大概的时间的话，可以手动录入时间。&lt;/p&gt;
+
+&lt;h5 id=&#34;手边没有电脑怎么办&#34;&gt;手边没有电脑怎么办？&lt;/h5&gt;
+
+&lt;p&gt;一般我都是用手机进行记录，如果连手机也不在手边的话，可以先拿张纸记着，之后再手动录入上去。&lt;/p&gt;
+
+&lt;h3 id=&#34;后记&#34;&gt;后记&lt;/h3&gt;
+
+&lt;p&gt;其实，等你做了一段时间的时间日志会发现，会发现效率并没有提高多少，有时候不得不承认这个悲伤的事实，根据自己的时间日志，最高效的一天记录了 7 个小时的学习时间，相比较那些动不动就每天学习 8 小时的人来说，还是差太多了，不过好歹也算是做出了一点点努力。&lt;/p&gt;
+
+&lt;p&gt;写这篇文章的契机是看到了 pluskid 写的&lt;a href=&#34;http://freemind.pluskid.org/misc/knowledge-accumulate/&#34;&gt;《关于知识整理、积累与记忆》&lt;/a&gt;，想到自己也有挺多经验可以分享的，于是便以试试的心态动笔开始写。&lt;/p&gt;
+
+&lt;p&gt;仓促成文，错误在所难免，还望指正。&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -53,7 +763,30 @@
       <pubDate>Fri, 14 Feb 2014 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/notes-on-time-management/</guid>
-      <description>初次看到时间管理这个概念大概是高二的时候，在此之前，我一直在使用所谓的To-do List来管理自己每天的学习任务（那个时候还不知道）。知道了时间管理这个概念后，惊讶于原来自己早就在对时间进行管理了，只不过最简单的管理方式（后来实践表明，仅仅一个任务清单就足够了）。 在知道了时间管理</description>
+      <description>&lt;p&gt;初次看到时间管理这个概念大概是高二的时候，在此之前，我一直在使用所谓的To-do List来管理自己每天的学习任务（那个时候还不知道）。知道了时间管理这个概念后，惊讶于原来自己早就在对时间进行管理了，只不过最简单的管理方式（后来实践表明，仅仅一个任务清单就足够了）。&lt;/p&gt;
+
+&lt;p&gt;在知道了时间管理这个概念之后，我开始大量的阅读关于时间管理的文章，期间又接触到了GTD（Getting Things Done）这个个人管理系统，还专门读了一遍David的那本书。然后就是不断地下载软件、使用、删除、下载……从PC端到iOS到纸笔GTD都试过。突然发现，自己陷入到一个怪圈，主要工作不是变成了完成任务，而变成了寻找“更高效”的软件系统。相信人都会陷入到这个怪圈中，然后时间一步一步地被吞噬掉。然后你开始发现，最开始计划好要做的事情依旧没做好，甚至要找的高效软件也没有找到，因为你总是认为还会有更高效更方便的软件。&lt;/p&gt;
+
+&lt;p&gt;时间管理的初衷不是最大化的利用时间吗？而现在却浪费了更多的时间。这又是为什么呢？&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;懒惰&lt;/strong&gt;。是的，时间管理只不过是一个借口，一个用来迷惑自己“我是为了更高效的利用时间”的借口。说白了就是自己的懒惰，你就是不想完成任务，然后把“时间管理”当成幌子，找工具、看文章，试想一下，这些事情与你要完成的任务相比，哪一个更加困难？我想应该是你的任务更加困难吧，毕竟看文章只要看就行了。&lt;/p&gt;
+
+&lt;p&gt;我是在阅读了李笑来&lt;em&gt;《把时间当作朋友》&lt;/em&gt; 一书后突然明白了这个道理，哪里需要那么多花招去管理你的时间啊，JUST DO IT！尽管做就可以了，或者说找到一种方法，就一直用下去，不要换来换去，也不要再找别的方法了，甚至不要再看关于时间管理的文章。&lt;/p&gt;
+
+&lt;p&gt;后来，通过李笑来的书，我又知道了&lt;em&gt;《奇特的一生》&lt;/em&gt; 这本书（这是一本部头很小的书，几个小时便可以读完，网络上有免费的电子版），用了很快的时间读完了，除了震撼还是震撼。主人公柳比歇夫有一套强大而又完整的时间管理方法，并且坚持了五十几年。这套强大的系统也给他带来了巨大的成就：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;柳比歇夫生前发表了七十来部学术著作。其中有分散分析、生物分类学、昆虫学方面的经典著作；这些著作在国外广为翻译出版。各种各样的论文和专著，他一共写了五百多印张。五百印张，等于一万二千五百张打字稿。即使以专业作家而论，这也是个庞大的数字。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;他的成就定然是不凡的，这本书中还提到了门捷列夫等人，他们都有一个共同的特点：拥有一套独特的管理系统（时间&amp;amp;知识），而且都是不断的改进，最后几乎完美的系统。&lt;/p&gt;
+
+&lt;p&gt;原来强大的时间管理系统也能造就如此伟大的成绩啊。这时不禁又要问，到底要不要时间管理呢？经过一段时间的思考，答案是要的。或者说不是管理时间，而是管理你自己，因为时间终究是那么多时间。&lt;/p&gt;
+
+&lt;p&gt;所以现在可能已经有了一个较为清晰的结论：我们需要管理时间，真的管理时间，而不是测试工具。坐在屏幕前阅读的你，如果还在为时间管理而困扰，依旧不知道选择哪款软件，我的建议是把注意力放到需要完成的任务上来。对于没有那么多繁杂事务的人（事实上绝大多数人没有），一个简单的任务清单就够了，做完一项任务划去一项，就是这么简单。&lt;/p&gt;
+
+&lt;p&gt;还不知道时间管理是什么的同学，只需要阅读一两篇文章就够了，或者只要看一本书就够了，至于看什么书，对于不是“日理万机”的人，个人认为上文提到的两本书或许可以是一个选择。接着，就忘记时间管理这个说法吧，专注于要做的事，开始做！&lt;/p&gt;
+</description>
     </item>
     
   </channel>

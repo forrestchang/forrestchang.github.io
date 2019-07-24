@@ -8,7 +8,7 @@
     <language>en</language>
     <lastBuildDate>Mon, 01 Jul 2019 20:16:00 +0800</lastBuildDate>
     
-	<atom:link href="http://blog.jiayuanzhang.com/categories/essay/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://blog.jiayuanzhang.com/categories/essay/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -17,7 +17,89 @@
       <pubDate>Mon, 01 Jul 2019 20:16:00 +0800</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/meta-knowledge-how-to-search-informations/</guid>
-      <description>什么是元知识，我的理解是各个领域都通用的知识，例如交流的能力，搜索信息的能力，语言的能力等，不管你是从事什么行业的工作，这些都是必备的技能（或可以增益的技能）。什么是领域知识，例如编程能力、运营能力，这些是在特定领域发挥作用的知识，虽然编程和运营都可以运用在别的领域中，但是都是比</description>
+      <description>
+
+&lt;p&gt;什么是元知识，我的理解是各个领域都通用的知识，例如交流的能力，搜索信息的能力，语言的能力等，不管你是从事什么行业的工作，这些都是必备的技能（或可以增益的技能）。什么是领域知识，例如编程能力、运营能力，这些是在特定领域发挥作用的知识，虽然编程和运营都可以运用在别的领域中，但是都是比较简单的情况（产品经理如果想学习简单的数据分析知识，不需要去学习如何编写操作系统）。&lt;/p&gt;
+
+&lt;p&gt;信息检索是所有元知识中最重要的一个，因为如果学会了这个，完全可以通过自学习的方式去学习其他元知识，所以可以被成为「元知识」的「元知识」。&lt;/p&gt;
+
+&lt;h2 id=&#34;定义问题&#34;&gt;定义问题&lt;/h2&gt;
+
+&lt;p&gt;在搜索信息之前我们首先要定义问题，你到底要搜索什么样的信息？&lt;/p&gt;
+
+&lt;p&gt;很多人其实不会问问题，经常有网友给我发邮件或私信询问编程相关的问题，很多都是直接甩过来一张错误的截图，然后留一句怎么解决（有的甚至连这句话都没有）。最开始我还会仔细看一下问题中的具体报错是什么，久而久之，这种问题多了，我也就懒得回答了。有的人我告诉他把问题描述清楚，ta 还会说你摆架子。后来，对于这种问题，我直接删除扔进垃圾箱不再去管。&lt;/p&gt;
+
+&lt;p&gt;相反的，另外一部分人很善于问问题，问题描述地非常清楚，包括产生错误的上下文，遇见错误后自己的解决办法，对于这种问题，经常是看了上下文就能找到问题出现在哪里，或者根据它的运行环境在本地测试一下就能 debug 出问题所在，对于这样的提问者，我通常非常乐于解答。&lt;/p&gt;
+
+&lt;p&gt;好的提问和坏的提问，可以带来不一样的反馈。所以，下次在问问题之前可以先问问自己：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;遇到的问题到底是什么？能否用简单的话描述？&lt;/li&gt;
+&lt;li&gt;出现问题的上下文是什么？是否是某些失误导致的？&lt;/li&gt;
+&lt;li&gt;我采取了哪些办法来解决问题？是否可行？&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;说不定在你想清楚这些事后，就能自己找到问题的解决方案了。&lt;/p&gt;
+
+&lt;p&gt;关于定义问题的方法，推荐阅读一下波利亚的&lt;a href=&#34;https://book.douban.com/subject/2124114/&#34;&gt;《如何解题——数学思维的新方法》&lt;/a&gt;，这本简短的小册子介绍了如何定义问题、描述问题、抽象模型、解决问题，是一本对思维训练非常有帮助的书。&lt;/p&gt;
+
+&lt;p&gt;Raymond Hettinger 在今年的 PyCon 上有一场演讲就是关于如何定义问题的，有兴趣的读者可以看一下：&lt;a href=&#34;https://www.youtube.com/watch?v=%5FGP9OpZPUYc&#34;&gt;Modern solvers: Problems well-defined are problems solved&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;学会提问&#34;&gt;学会提问&lt;/h2&gt;
+
+&lt;p&gt;学会定义问题之后就要开始提问了，从上一节也可以看出来，不同的提问方式得到的解答也不一样。好的提问会得到积极的解答，不好的提问会得不到有效的反馈，被当成伸手党。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh%5FCN.md&#34;&gt;提问的智慧&lt;/a&gt; 这本小册子详细介绍了在互联网上应该如何提问，虽然很大程度上是编程领域的提问指南，但是对于其他领域也同样适用。&lt;/p&gt;
+
+&lt;h2 id=&#34;使用搜索引擎&#34;&gt;使用搜索引擎&lt;/h2&gt;
+
+&lt;p&gt;如果遇到一个自己无法解决的问题，第一件事应该是求助于搜索引擎。所有你能想到的问题，大体上别人也都问过了，搜索引擎是你最好的老师。&lt;/p&gt;
+
+&lt;p&gt;如何用好搜索引擎？&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;选择合适的搜索引擎&lt;/li&gt;
+&lt;li&gt;定义问题，分解关键词&lt;/li&gt;
+&lt;li&gt;使用高级搜索&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;你可以根据问题的不同来选择不同的搜索引擎，一般来说，中文的娱乐内容可以使用百度来搜索，其他严肃类的内容搜索，统一使用 Google。关于为什么严肃类内容不能使用百度来搜索，可以参考这篇文章：&lt;a href=&#34;https://www.huxiu.com/article/282406.html&#34;&gt;搜索引擎百度已死-虎嗅网&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;定义问题在第一节中已经讲到，将定义好的问题分解成关键词可以更好地搜索到想要的内容。例如「Python 如何使用标准库进行格式化时间字符串」可以分解为下面几个关键词：「Python」、「格式化」、「时间字符串」，还可以翻译成英文关键词：「Python」、「format」、「date string」，第一条就是 Stack Overflow 的解答：&lt;a href=&#34;https://stackoverflow.com/questions/14524322/how-to-convert-a-date-string-to-different-format&#34;&gt;python - How to convert a date string to different format - Stack Overflow&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;很多人使用搜索引擎都是简单的用关键词进行搜索，其实 Google 等搜索引擎都支持自定义的高级搜索，知乎的这篇回答详细介绍了如何使用 Google 的高级搜索语法：&lt;a href=&#34;https://www.zhihu.com/question/20161362&#34;&gt;如何用好谷歌等搜索引擎？ - 知乎&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h2 id=&#34;自动化你的搜索流程&#34;&gt;自动化你的搜索流程&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.alfredapp.com/&#34;&gt;Alfred&lt;/a&gt; 是 macOS 上的一个快速启动器，利用 Alfred Workflow，可以自定义你的搜索引擎工具箱。&lt;/p&gt;
+
+&lt;p&gt;例如我经常会在 GitHub 上搜索一些代码片段，利用 Alfred 可以把流程简化为：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;快捷键呼出 Alfred 输入窗口；&lt;/li&gt;
+&lt;li&gt;输入想要搜索的代码片段关键词（或从剪贴板粘贴）；&lt;/li&gt;
+&lt;li&gt;回车！&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;结果会自动展示在浏览器的窗口中。&lt;/p&gt;
+
+&lt;p&gt;Alfred 的设置如下（在新标签页中查看大图）：&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190701201021.png&#34;/&gt; 
+&lt;/figure&gt;
+
+
+&lt;p&gt;其中，Search URL 填写的是想要搜索的地址， &lt;code&gt;query&lt;/code&gt; 是替换的搜索内容，打开 Alfred，输入 keyword 中的关键词就可以快速呼出这个搜索框了。&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190701201221.png&#34;/&gt; 
+&lt;/figure&gt;
+
+
+&lt;p&gt;这只是 Alfred 基础功能的最简单使用，在之前的文章中我介绍过使用 Alfred 的
+Workflow 来自动生成博客：&lt;a href=&#34;http://blog.jiayuanzhang.com/post/use-devonthink-to-write-blog/&#34;&gt;使用 Devonthink 来写博客&lt;/a&gt;，在后续的文章中，我将会介绍更多的 Alfred 高级使用技巧。&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -26,7 +108,343 @@
       <pubDate>Sat, 04 May 2019 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/use-devonthink-to-write-blog/</guid>
-      <description>虽然博客没有写太多篇，但是写博客的工具却折腾过不少。从最开始的 org-mode，到 Jekyll、Hexo，再到现在的 Hugo，一直没有找到一个满意的工作流。 我的需求： 使用统一的工具来管理笔记和写作的文章； 能够多端同步； 自动化。 之前使用 Hugo 写作的流程是： 在命令行新建一篇文章； 打开 Typora 进</description>
+      <description>&lt;p&gt;虽然博客没有写太多篇，但是写博客的工具却折腾过不少。从最开始的 org-mode，到 Jekyll、Hexo，再到现在的 Hugo，一直没有找到一个满意的工作流。&lt;/p&gt;
+
+&lt;p&gt;我的需求：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;使用统一的工具来管理笔记和写作的文章；&lt;/li&gt;
+&lt;li&gt;能够多端同步；&lt;/li&gt;
+&lt;li&gt;自动化。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;之前使用 Hugo 写作的流程是：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;在命令行新建一篇文章；&lt;/li&gt;
+&lt;li&gt;打开 Typora 进行写作；&lt;/li&gt;
+&lt;li&gt;写完了再去命令行 generate 并 push 到 GitHub 上。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;后来使用 Ulysses 作为写作的工具，把 Hugo 的 post 文件夹作为 Ulysses 的外部文件夹来进行写作。Ulysses 是一个很强大的写作工具，但是唯一的缺点是它自带的 Markdown 语法与通用的 Markdown 语法不兼容，这导致了之前写的很多文章都需要转码一遍才能够正确在 Ulysses 中显示。&lt;/p&gt;
+
+&lt;p&gt;Devonthink 是我用来做知识管理的工具，你可以把它看做是一个增强版的 Finder + Evernote，我主要用它来写笔记和剪裁网页，配合 Alfred 的搜索可以快速找到想要的内容，关于 Devonthink 的具体使用我之后会写一篇文章来介绍，如果你有疑问，可以先看一下这篇文章：&lt;a href=&#34;https://sspai.com/post/44774&#34;&gt;DEVONthink 和 Evernote，谁是更好的知识管理工具？ - 少数派&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;既然我把我写的和剪裁的东西都统一管理在 Devonthink 中，那么能不能把博客的写作流程也整合进去呢？&lt;/p&gt;
+
+&lt;p&gt;搜索了一下，发现 Devonthink 能够支持 AppleScript 和 JavaScript for Automation（JXA），实现的思路如下：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;用一个 Folder 统一管理写作的文章；&lt;/li&gt;
+&lt;li&gt;读取这个 Folder 中的所有文章和元数据；&lt;/li&gt;
+&lt;li&gt;把元数据生成 YAML 格式的内容插入到文章的开头；&lt;/li&gt;
+&lt;li&gt;把新生成的文章写入到 Hugo 对应的文件夹下。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;实现的逻辑很简单，困难点主要在于 JXA 的文档缺乏，有一些操作需要调用系统的 Objective-C Bridge 来进行（相当于在 JavaScript 中写 Objective-C 的代码）。&lt;/p&gt;
+
+&lt;p&gt;我写了一个 Alfred Workflow 来完成这个功能，核心代码如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;  1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 31
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 32
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 33
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 34
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 35
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 36
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 37
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 38
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 39
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 40
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 41
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 42
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 43
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 44
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 45
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 46
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 47
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 48
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 49
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 50
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 51
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 52
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 53
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 54
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 55
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 56
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 57
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 58
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 59
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 60
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 61
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 62
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 63
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 64
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 65
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 66
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 67
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 68
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 69
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 70
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 71
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 72
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 73
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 74
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 75
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 76
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 77
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 78
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 79
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 80
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 81
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 82
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 83
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 84
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 85
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 86
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 87
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 88
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 89
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 90
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 91
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 92
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 93
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 94
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 95
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 96
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 97
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 98
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 99
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;100
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;101
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;102
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;103
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;104
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;105
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;106
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;107
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;108
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;109
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;110
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;111
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;112
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;113
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;114
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;115
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;116
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;117
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;118
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;119
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;120
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;121
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;122
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;123
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;124
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;125
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;126
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;127
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;128
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;129
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;130
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;131
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;132
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;133
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;134
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;135
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;136
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;137
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;138
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;139
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;cm&#34;&gt;/**
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt; * Constants
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt; */&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;devonthink&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Application&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;DEVONthink 3&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;blogPath&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;/Users/jiayuan/Dropbox/personal-site/blog/content/post/&amp;#39;&lt;/span&gt;
+
+
+&lt;span class=&#34;cm&#34;&gt;/**
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt; * Utils
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt; */&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;formatTime&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;time&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;cFormat&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;arguments&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;length&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;===&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;null&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;format&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;cFormat&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;{y}-{m}-{d} {h}:{i}:{s}&amp;#39;&lt;/span&gt;
+  &lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;typeof&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;time&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;===&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;object&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;time&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;time&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;length&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;===&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;time&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;parseInt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;time&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1000&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;Date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;time&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;formatObj&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getFullYear&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(),&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getMonth&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getDate&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(),&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getHours&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(),&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getMinutes&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(),&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getSeconds&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(),&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getDay&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;time_str&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;format&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;replace&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;sr&#34;&gt;/{([ymdhisa])+}/g&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;result&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;value&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;formatObj&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;key&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;===&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;一&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;二&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;三&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;四&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;五&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;六&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;日&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;value&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;result&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;length&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;value&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+      &lt;span class=&#34;nx&#34;&gt;value&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;value&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;value&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;})&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;time_str&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+
+&lt;span class=&#34;cm&#34;&gt;/**
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt; * Functions
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt; */&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;writeToFile&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;filename&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;content&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;endsWith&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;path&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;path&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+  &lt;span class=&#34;nx&#34;&gt;filePath&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;path&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;filename&lt;/span&gt;
+
+  &lt;span class=&#34;nx&#34;&gt;contentEncoded&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;NSString&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;alloc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;initWithUTF8String&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;content&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+  &lt;span class=&#34;nx&#34;&gt;contentEncoded&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;writeToFileAtomicallyEncodingError&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;filePath&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;NSUTF8StringEncoding&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;getMetaData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;record&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+
+  &lt;span class=&#34;c1&#34;&gt;// Get created time
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;createdTime&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;formatTime&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;record&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;creationDate&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(),&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;{y}-{m}-{d}&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+  &lt;span class=&#34;c1&#34;&gt;// Get updated time
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;updatedTime&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;formatTime&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;record&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;modificationDate&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(),&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;{y}-{m}-{d}&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+  &lt;span class=&#34;c1&#34;&gt;// Get file name
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;customMetaData&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;record&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;customMetaData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+  &lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;fileName&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;customMetaData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;mdblogfilename&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;fileName&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;endsWith&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;.md&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;fileName&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;fileName&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;.md&amp;#39;&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+  &lt;span class=&#34;c1&#34;&gt;// Get tags
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;tags&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;record&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;tags&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+
+  &lt;span class=&#34;c1&#34;&gt;// Get categories
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;category&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;customMetaData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;mdcategory&lt;/span&gt;
+
+  &lt;span class=&#34;c1&#34;&gt;// Get draft info
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;isDraft&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;customMetaData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;mddraft&lt;/span&gt;
+
+  &lt;span class=&#34;c1&#34;&gt;// Get title
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;title&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;record&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;metaData&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;createdTime&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;updatedTime&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;fileName&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;tags&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;category&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;isDraft&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;metaData&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;generateYamlMetaString&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;metaData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;yamlMetaString&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;sb&#34;&gt;`---
+&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;title: &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;metaData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;date: &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;metaData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;createdTime&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;lastmod: &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;metaData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;updatedTime&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;categories: [&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;metaData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;category&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;]
+&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;tags: [&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;metaData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;tags&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;]
+&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;draft: &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;metaData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;isDraft&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;===&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;---
+&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;  `&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;yamlMetaString&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+
+&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;blogPosts&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;devonthink&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;databases&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;byName&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;02.Writing&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;parents&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;byName&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;Blog&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;children&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;blogPosts&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;length&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;selectedRecord&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;blogPosts&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+
+    &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;metaData&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;getMetaData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;selectedRecord&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+    &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;yamlMetaString&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;generateYamlMetaString&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;metaData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;content&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;selectedRecord&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;plainText&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;blogPostContent&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;yamlMetaString&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;content&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;writeToFile&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;metaData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;fileName&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;blogPath&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;blogPostContent&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;app&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Application&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;currentApplication&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+  &lt;span class=&#34;nx&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;includeStandardAdditions&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;
+
+  &lt;span class=&#34;nx&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;displayNotification&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;`You have generated &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;blogPosts&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;length&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt; articles.`&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;withTitle&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;Success&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;})&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;cm&#34;&gt;/**
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt; * Main
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt; */&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;源代码可以在这里看到：&lt;a href=&#34;https://github.com/forrestchang/alfred-workflows/tree/master/src/Devonthink-to-Hugo-Blog&#34;&gt;alfred-workflows/src/Devonthink-to-Hugo-Blog at master · forrestchang/alfred-workflows&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;如果你需要用到你的工作流中，需要配置以下内容：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;hugo 的 &lt;code&gt;post&lt;/code&gt; 路径，在 &lt;code&gt;blogPath&lt;/code&gt; 中定义；&lt;/li&gt;
+&lt;li&gt;Devonthink 中的 Blog 文件夹，在 &lt;code&gt;blogPosts&lt;/code&gt; 中定义；&lt;/li&gt;
+&lt;li&gt;需要使用 Devonthink 3 的 Custom Metadata 功能，添加三个 Metadata：&lt;code&gt;Category&lt;/code&gt; 用来作为此篇博客的分类，&lt;code&gt;Blog File Name&lt;/code&gt; 用来作为生成的路径名，&lt;code&gt;Draft&lt;/code&gt; 用来判断是否是草稿。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;这个脚本支持读取 Devonthink 的文章标题为博客标题，创建时间为博客的创建时间，Tags 为博客的 Tags，其他的 Metadata 也可以在 &lt;code&gt;getMetaData&lt;/code&gt; 这个函数中自行定义。&lt;/p&gt;
+
+&lt;p&gt;现在这个脚本还不是特别完善，之后会添加一些错误处理的功能并支持 org-mode 格式的文件。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190513165627.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -35,7 +453,78 @@
       <pubDate>Fri, 24 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/weekly-reading-report-issue-01/</guid>
-      <description>为什么要写这个？最主要的原因还是激励自己多多阅读，读好书和好文章，然后写 review。 读些什么？平常的阅读比较杂，除了书籍之外，还会读很多的博客文章，所以会写这周的 book review，主要是针对这周读完的书，读了一半放弃不打算再读的书也会写，没有读完的书不写；文章就简单写一些笔记性的</description>
+      <description>
+
+&lt;p&gt;为什么要写这个？最主要的原因还是激励自己多多阅读，读好书和好文章，然后写 review。&lt;/p&gt;
+
+&lt;p&gt;读些什么？平常的阅读比较杂，除了书籍之外，还会读很多的博客文章，所以会写这周的 book review，主要是针对这周读完的书，读了一半放弃不打算再读的书也会写，没有读完的书不写；文章就简单写一些笔记性的 review。&lt;/p&gt;
+
+&lt;p&gt;*注：标注了 &lt;code&gt;[TECH]&lt;/code&gt; 是和我专业相关的内容，可以跳过。&lt;/p&gt;
+
+&lt;h2 id=&#34;books&#34;&gt;Books&lt;/h2&gt;
+
+&lt;h3 id=&#34;清华园日记-https-book-douban-com-subject-4251102-季羡林-外语教学与研究出版社-二零零九&#34;&gt;&lt;a href=&#34;https://book.douban.com/subject/4251102/&#34;&gt;《清华园日记》&lt;/a&gt;，季羡林，外语教学与研究出版社，二零零九。&lt;/h3&gt;
+
+&lt;p&gt;这本书断断续续得读了有一个月的时间，因为是日记体的形式，所以什么时候都可以拿出来读一下。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;日记是写给自己看的，什么样的思想，什么样在人前难以说出口的话，都写了进去。万没想到今天会把日记公开。这些话是不是要删掉呢？我考虑了一下，决定不删。一仍其旧，一句话也没有删。==我七十年前不是圣人，将来也不会成为圣人。我不想到孔庙里去陪着吃冷猪肉。我把自己活脱脱地暴露于光天化日之下。==&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这本日记是季羡林在清华园求学时所记，从大三一直写到大四。百年之前的大学生活和现在相比，并无什么太大的不同。季老也有过迷茫，对前途的忧虑，但是更多的是在勤勉地读书、写文章。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;苏东坡词「谁到人生无再少，门前流水尚能西」。难道这就是「再少」吗？&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;阅读用时：7 小时 26 分，&lt;a href=&#34;https://www.evernote.com/l/AYC42MIUq-5BXIHRNGdRcL1OxXt3DPzLT5k&#34;&gt;摘录&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h2 id=&#34;articles&#34;&gt;Articles&lt;/h2&gt;
+
+&lt;h3 id=&#34;1-how-i-got-a-second-degree-and-earned-5-developer-certifications-in-just-one-year-while-working-and-raising-two-kids-https-medium-freecodecamp-com-how-i-got-a-second-degree-and-earned-5-developer-certifications-in-just-one-year-while-working-and-2b902ee291ab-gblxpzdk0&#34;&gt;1. &lt;a href=&#34;https://medium.freecodecamp.com/how-i-got-a-second-degree-and-earned-5-developer-certifications-in-just-one-year-while-working-and-2b902ee291ab#.gblxpzdk0&#34;&gt;How I got a second degree and earned 5 developer certifications in just one year, while working and raising two kids&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;全职教师、两个孩子、五张开发者证书、一个第二学位。如何在一年内实现这么多事？&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Ambitious goals are important.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;另外，你还不得不放弃一些东西。比如，剧是不能追了。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;It was important for me to give things up in order to accomplish my goals.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;学会使用 &lt;sup&gt;8&lt;/sup&gt;&amp;frasl;&lt;sub&gt;2&lt;/sub&gt; 法则，逃出自己的 comfort zone。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Really, when learning anything, you should ask yourself if it is part of the 20% of learning content that will give you 80% of value.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这和很久前看的&lt;a href=&#34;https://www.douban.com/group/topic/34856495/&#34;&gt;一篇文章&lt;/a&gt;很像。&lt;/p&gt;
+
+&lt;h3 id=&#34;2-unconventional-way-of-learning-a-new-programming-language-https-hackernoon-com-unconventional-way-of-learning-a-new-programming-language-e4d1f600342c-6o98rs4xs&#34;&gt;2. &lt;a href=&#34;https://hackernoon.com/unconventional-way-of-learning-a-new-programming-language-e4d1f600342c#.6o98rs4xs&#34;&gt;Unconventional way of learning a new programming language&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;Open source projects oriented programming.&lt;/p&gt;
+
+&lt;p&gt;如何学习一门新的语言，参加关于那个语言的开源项目。开源项目没有想象的那么难。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;I had a look at the issues and found a lot of “beginner” issues. I immediately started working on them and submitted a couple of pull requests. Fast forward to today, I am one of the main contributors for a couple of their open projects and also one of the 20 Open Source Community Leaders for DuckDuckGo.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;3-a-vision-of-coding-without-opening-your-eyes-https-medium-freecodecamp-com-looking-back-to-what-started-it-all-731ef5424aec-scacfw9pe&#34;&gt;3. &lt;a href=&#34;https://medium.freecodecamp.com/looking-back-to-what-started-it-all-731ef5424aec#.scacfw9pe&#34;&gt;A Vision of Coding, Without Opening your Eyes&lt;/a&gt;&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;I’m a coder. I’m also blind. Blind as a bat, you might say. And I was born this way.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这篇文章写自一个 blind coder，解释了三个（在我看来）有点 offensive 的问题：1）如何阅读；2）如何 coding；3）会做梦吗？&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;I’ll try and sketch out an image for those of you who are curious about accessibility, and how blind people use computers to code, and to do the work of the 21st century.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
     </item>
     
     <item>
@@ -44,7 +533,35 @@
       <pubDate>Sun, 19 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/go-to-spotify/</guid>
-      <description>不久前我还写文称赞过 Apple Music，现在光速打脸，叛逃 Spotify。 主要原因有几点： Apple Music 的「My Favorites Mix」一周才更新一次，不够听。 推荐的歌单都是听过的，专辑也是，重复推荐，并且由于是人工编辑的歌单，难免有不合自己口味的。 个性化推荐的内容太单一，经常出现歌慌，需要自己去找歌。 同步问</description>
+      <description>&lt;p&gt;不久前我还&lt;a href=&#34;mweblib://14879083243319&#34;&gt;写文&lt;/a&gt;称赞过 Apple Music，现在光速打脸，叛逃 Spotify。&lt;/p&gt;
+
+&lt;p&gt;主要原因有几点：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Apple Music 的「My Favorites Mix」一周才更新一次，不够听。&lt;/li&gt;
+&lt;li&gt;推荐的歌单都是听过的，专辑也是，重复推荐，并且由于是人工编辑的歌单，难免有不合自己口味的。&lt;/li&gt;
+&lt;li&gt;个性化推荐的内容太单一，经常出现歌慌，需要自己去找歌。&lt;/li&gt;
+&lt;li&gt;同步问题。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Spotify 的 Premium 之前就买了，但是一直没有用。这几天用了一下，说一下使用体验：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;推荐算法很厉害，机器推荐的歌更个人一些，不会有人工歌单的主观因素在里面。&lt;/li&gt;
+&lt;li&gt;「Based on the songs in this playlist」这个功能很有用，可以用来扩充歌单。&lt;/li&gt;
+&lt;li&gt;Radio 功能比 Apple Music 强大。&lt;/li&gt;
+&lt;li&gt;多设备同步，这个功能太方便了，我只需要在电脑上断开蓝牙连接，然后就可以直接在手机上听了（配合蓝牙耳机）。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;一些不满意的地方：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;不能收藏专辑，有的专辑里面并不是每首歌都喜欢听，save 专辑会把整张专辑里面的歌添加到资料库里，这不得不让我又新建一个 Loved 的歌单，专门用来放喜欢的歌，这样和 Apple Music 就是差不多的操作逻辑。&lt;/li&gt;
+&lt;li&gt;没有提供加心功能，「+」仅仅是把歌曲添加到资料库，所以还得手动建一个歌单然后再添加，比较麻烦（可能我使用的方法不正确？）&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;不过毕竟才用了几天，还没有深度体验过。Mac 上推荐配合 Alfred 的 Workflow 来使用，可以避免到 Spotify 应用里面进行操作。&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -53,7 +570,14 @@
       <pubDate>Sat, 04 Feb 2017 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/new-blog/</guid>
-      <description>现在这个博客只写技术相关的内容，其他的随笔都写在新博客里，Medium 是被大陆屏蔽的，所以请自备梯子。另外一些比较私人的笔记——例如「Week Review」系列就不发表在互联网上了。 至于原因，单纯得觉得 Medium 上的衬线字体很好看。如果需要魔改这个博客的话，还是挺麻烦的，自己目前的前端知</description>
+      <description>&lt;p&gt;现在这个博客只写技术相关的内容，其他的随笔都写在&lt;a href=&#34;https://medium.com/@Tisoga&#34;&gt;新博客&lt;/a&gt;里，Medium 是被大陆屏蔽的，所以请自备梯子。另外一些比较私人的笔记——例如「Week Review」系列就不发表在互联网上了。&lt;/p&gt;
+
+&lt;p&gt;至于原因，单纯得觉得 Medium 上的衬线字体很好看。&lt;del&gt;如果需要魔改这个博客的话，还是挺麻烦的，自己目前的前端知识还处于未入门的水平，所以就不折腾了。&lt;/del&gt;结果我还是魔改了，现在风格比较简洁了，照着 &lt;a href=&#34;https://github.com/lepture/yue.css&#34;&gt;yue.css&lt;/a&gt; 改的。&lt;/p&gt;
+
+&lt;p&gt;既然重新换了一个主题，就不换地方写了……&lt;/p&gt;
+
+&lt;p&gt;主题的代码放在 &lt;a href=&#34;https://github.com/forrestchang/Cuckoo&#34;&gt;GitHub&lt;/a&gt; 上，完全是新手的作品，所以还是不要 star 了。&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -62,7 +586,48 @@
       <pubDate>Wed, 24 Feb 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/apple-music-and-classical-music-and-reading/</guid>
-      <description>Apple Music 自从Apple Music（以下简称「AM」）发布以来，就一直在使用，从最开始的免费试用到现在每个月10￥的订阅。自从Windows时代就使用iTunes听音乐了（当时有一部iPod），在没有AM的时候，都是从论坛下好别人买的专辑来听。一方面在国内想要在iTunes Store上</description>
+      <description>
+
+&lt;h3 id=&#34;apple-music&#34;&gt;Apple Music&lt;/h3&gt;
+
+&lt;p&gt;自从Apple Music（以下简称「AM」）发布以来，就一直在使用，从最开始的免费试用到现在每个月10￥的订阅。自从Windows时代就使用iTunes听音乐了（当时有一部iPod），在没有AM的时候，都是从论坛下好别人买的专辑来听。一方面在国内想要在iTunes Store上购买专辑过于麻烦（两个账号需要来回切换），另一方面作为一个学生党iTunes Store上两首歌就相当于一顿饭的价钱对于我来说也有点小贵了，所以AM刚推出的时候，还是比较开心的，没想到入华后价格竟然只要10￥每月，就只相当于两首歌的钱！&lt;/p&gt;
+
+&lt;p&gt;这几个月使用下来，发现还是存在不少的问题。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;操作逻辑复杂。例如听到一首好听的歌，标注了心之后，它是不会出现在你的播放列表中的，因为标注心只是为了优化推荐的算法。所以每次听到一首好听的曲子，都要进行两个步骤：先添加到库中，再标注心。这样才会在你的Smart Playlist中显示出来。这个估计是iTunes的遗留问题，因为iTunes是以Library的方式来管理的，所以需要先添加进Library中，才能进行进一步的操作，不过AM作为一个流媒体音乐服务，这样做显然是多此一举了。&lt;/li&gt;
+&lt;li&gt;每个设备间同步存在问题。我一般都是在Mac上听音乐，不过偶尔也会使用iPhone来听，但是很多加心得歌曲到了iPhone上面就变成没有加心的了。所以现在我也懒得使用iPhone来听歌了，或者就随便打开一个推荐的播放列表来听。&lt;/li&gt;
+&lt;li&gt;网络问题。这个应该是最要吐槽的一点了，听歌时断时续是最不能忍的事情了。不知道是Apple在国内没有设置服务器还是什么其他原因，有时候即使开着代理缓冲的速度也很慢。有些专辑就只能先下载下来，然后再听。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;这是我使用过程中遇到的三个比较影响体验的问题，当然还有其他小的，比如说什么中文歌的名字全是英文（使用英文系统的原因，日文歌的名字全是罗马音等等之类的，只不过这些暂时还能够忍受，不是太影响听音乐的体验（个人很少听中文和日文的歌曲）。&lt;/p&gt;
+
+&lt;p&gt;作为一个数据控，如果听歌的数据不能够记录下来，那么就好像和没听一样（强迫症的症状），虽然iTunes也可以记录歌曲的播放次数，上一次播放时间之类的数据，不过还是过于简单了。之前一直使用的是Last.fm，使用AM了之后发现Last.fm的客户端没办法抓取到数据了，后来找到了「Bowtie」这个小工具，连Radio中播放的内容都能够抓取到，太强大了。分析一首歌听了多少遍的意义并不是很大，但是累计了这么多的数据之后还是可以发现了一些有趣的东西的，比如说我听的最多的歌手是竟然是「ColdPlay」。&lt;/p&gt;
+
+&lt;p&gt;如果作为一个音乐服务来说，AM还存在着很多问题，不过毕竟还是一个新生的流媒体服务，希望下一次大的更新之后能够提高一些用户体验。&lt;/p&gt;
+
+&lt;p&gt;PS. 也使用过一段时间的Xiami和网易云音乐，因为种种原因放弃了。&lt;/p&gt;
+
+&lt;h3 id=&#34;古典音乐&#34;&gt;古典音乐&lt;/h3&gt;
+
+&lt;p&gt;关于古典音乐，其实我只有很少的了解，也只听过很少的入门曲目，最开始听古典是因为「The 50 Most Essential Pieces of Classical Music」这张专辑，这张专辑里面基本上都是一些非常经典的曲目，例如当初看《V字仇杀队》中的「1812 Festival Overture」，以及每个人都熟悉的「Canon in D Major」，如果从来没听过古典，推荐去听一下这个专辑，一定会发现很多熟悉的音乐。&lt;/p&gt;
+
+&lt;p&gt;上学期选修了一门《西方古典音乐鉴赏》，然而并没有很认真地听课，不过还是了解了一些知识。然后看了木遥在博客上的一系列&lt;a href=&#34;http://blog.farmostwood.net/305.html&#34;&gt;介绍古典音乐的文章&lt;/a&gt;，算是对古典音乐有了一个初步的认识。&lt;/p&gt;
+
+&lt;p&gt;如果说是欣赏古典音乐，还是达不到那个层次的，因为现在古典音乐的作用就是在阅读或者写代码的时候提供一个相对较安静的环境，说白了，还是出于一种功利的目的在听（为了更好地完成其他工作）。&lt;/p&gt;
+
+&lt;p&gt;今天听AM的Classical Radio听到很很多以前听过，但是忘了名字的曲子（不得不说，古典音乐的曲子名字太难记了），统统加心添加进Library中。现在听音乐的基本流程就是，先范听，听到喜欢的在去把Artist的所有作品依次听下去，这样会找到不少喜欢的内容。&lt;/p&gt;
+
+&lt;h3 id=&#34;阅读&#34;&gt;阅读&lt;/h3&gt;
+
+&lt;p&gt;前几天Kindle上突然推送了有关Kindle Unlimited的内容，类似于AM，按月订阅，然后可以阅读所有的订阅内容。刚开始还是蛮高兴的，不过看了一下在计划中的书目，基本上没有想看的，果然想看的书还是需要付费啊。不过有7天的试用时间，不用白不用，昨天读了一本漫画书《时间管理：如何充分利用你的24小时》，很有趣的一本小册子。这个漫画好像是一个系列，准备最近把感兴趣的都看一遍。&lt;/p&gt;
+
+&lt;p&gt;最近看书的时间有点少了，而更多的时间都在看RSS订阅的内容，Pocket上存档的文章，以及知乎、Quora、Reddit、Hacker News上的一些文字。毫无疑问，书籍的信噪比肯定是大于后者之流的，如果要搞一个排名的话，信噪比的大小应该是这样的：书籍 &amp;gt; Pocket上存档的文章 &amp;gt; Hacker News = Reddit &amp;gt; RSS订阅内容 &amp;gt; Quora &amp;gt;= 知乎（至少Quora可以练习一下英语，笑）。当然，如果你是整天阅读微信朋友圈以及QQ空间，那么信噪比可能会 &amp;lt; 1。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;以上是深夜的无聊吐槽内容，本来这段时间应该是去写代码或者阅读其他内容的，只不过因为结构化拖延的原因才来写Blog……&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -71,7 +636,247 @@
       <pubDate>Wed, 11 Nov 2015 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/squirrel-tutorial/</guid>
-      <description>在OS X平台下，一直没有用到一个很顺手的输入法。系统自带的输入法虽然经过几次的版本更新已经有了很大的改进，但是离能用还有很大的距离。所以之前一直凑合着使用百度输入法，不过最近一直遇到一些奇怪的问题，官方又长时间没有进行更新，恰逢之前听说过Squirrel这个输入法，于是就本着试用</description>
+      <description>
+
+&lt;p&gt;在OS X平台下，一直没有用到一个很顺手的输入法。系统自带的输入法虽然经过几次的版本更新已经有了很大的改进，但是离能用还有很大的距离。所以之前一直凑合着使用百度输入法，不过最近一直遇到一些奇怪的问题，官方又长时间没有进行更新，恰逢之前听说过&lt;code&gt;Squirrel&lt;/code&gt;这个输入法，于是就本着试用的心态用了一下，发现异常顺手，并且还有丰富的定制性，于是写一篇文章来介绍一下，也作为自己配置过程中的笔记。&lt;/p&gt;
+
+&lt;p&gt;附上一段Gif效果展示：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326141508.png&#34; alt=&#34;luoshenfu&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+
+&lt;p&gt;输入法的官方名称是&lt;code&gt;Rime&lt;/code&gt;，中文名是&lt;code&gt;中州韵输入法&lt;/code&gt;，但是在各自的平台下面又有不一样的别名。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Linux
+中州韵 ｜ ibus-rime&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Windows
+小狼毫 ｜ Weasel&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;OS X
+鼠须管 ｜ Squirrel&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;使用了一段时间发现它有以下几个优点其他输入法是比不上的：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;速度很快，几乎没有延迟的时间&lt;/li&gt;
+&lt;li&gt;极强的定制性，如果没有想要的功能还可以直接修改源码&lt;/li&gt;
+&lt;li&gt;跨平台&lt;/li&gt;
+&lt;li&gt;对于繁体中文支持非常好&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
+
+&lt;p&gt;直接从官网下载安装包安装即可。&lt;/p&gt;
+
+&lt;p&gt;Rime官网：[](&lt;a href=&#34;http://rime.im/&#34;&gt;http://rime.im/&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;使用&lt;code&gt;Ctrl-~&lt;/code&gt;进行输入法的选择，这里选择&lt;code&gt;朙月拼音・簡化字&lt;/code&gt;即可：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326141701.png&#34; alt=&#34;rime02&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;配置&#34;&gt;配置&lt;/h2&gt;
+
+&lt;p&gt;默认的的配置其实已经可以使用了，但是为了更加符合自己的使用习惯，我们需要做一些自定义的配置。&lt;/p&gt;
+
+&lt;p&gt;所有的配置文件都保存在&lt;code&gt;~/Library/Rime/&lt;/code&gt;这个目录下面。&lt;/p&gt;
+
+&lt;p&gt;不建议直接修改原先的配置文件，因为这样更新之后会导致修改的内容丢失，正确的做法是建立&lt;code&gt;custom&lt;/code&gt;副本，这样自定义的配置内容会覆盖掉原来的。&lt;/p&gt;
+
+&lt;p&gt;＊注：所有的修改完成了之后都需要重启输入法，快捷键&lt;code&gt;Option+Ctrl+~&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h3 id=&#34;配置外观&#34;&gt;配置外观&lt;/h3&gt;
+
+&lt;p&gt;初始的外观不是很符合自己的审美，可以进行更换主题、更改字体和字号大小等操作来配置成自己喜欢的样子。&lt;/p&gt;
+
+&lt;p&gt;新建配置文件&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;touch squirrel.custom.yaml&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;然后将以下代码写入配置文件&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;patch:
+  style/color_scheme: dark_temple #主题
+  style/font_point: 18 #字号大小
+  style/horizontal: true #水平显示待选字&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4 id=&#34;主题列表&#34;&gt;主题列表&lt;/h4&gt;
+
+&lt;p&gt;自带的主题代码:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;#   注：预设的配色方案及代码（指定为 style/color_scheme ）
+#   碧水 - aqua
+#   青天 - azure
+#   明月 - luna
+#   墨池 - ink
+#   孤寺 - lost_temple
+#   暗堂 - dark_temple
+#   星际我争霸 - starcraft
+#   谷歌 - google
+#   晒经石 - solarized_rock
+#   简约白 - clean_white&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;想要更换什么主题只要把代码替换掉就可以了。&lt;/p&gt;
+
+&lt;h4 id=&#34;其他一些配置代码及其说明&#34;&gt;其他一些配置代码及其说明&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;  style/page_size: 8			             # 设定候选词数目
+  style/inline_preedit: false              # 关闭内嵌编码，这样就可以显示首行的拼音
+  style/corner_radius: 10                  # 窗口圆角半径
+  style/border_height: 0                   # 窗口边界高度，大于圆角半径才有效果
+  style/border_width: 0                    # 窗口边界宽度，大于圆角半径才有效果
+  style/line_spacing: 1                    # 候选词的行间距
+  style/spacing: 5                         # 在非内嵌编码模式下，预编辑和候选词之间的距
+  style/font_face: &amp;#34;Hiragino Sans GB W3&amp;#34;   # 字体名称&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;更多的一些配置代码可以在&lt;code&gt;squirrel.yaml&lt;/code&gt;中找到。&lt;/p&gt;
+
+&lt;h3 id=&#34;定制标点符号&#34;&gt;定制标点符号&lt;/h3&gt;
+
+&lt;p&gt;鼠须管有一个特别的功能就是输入一个标点的时候可以有很多的候选标点让你选择，比如说中括号：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326141747.png&#34; alt=&#34;rime03&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;但是有的时候默认就想选择第一个，多出了一个选择的步骤无疑上会增加击键的次数，所以我们可以通过修改配置来解决这个问题，同时也可以自定义想要输入的符号。&lt;/p&gt;
+
+&lt;p&gt;这里我们使用的是&lt;code&gt;朙月拼音・簡化字&lt;/code&gt;，所以需要建立相应的配置文件：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;touch luna_pinyin_simp.custom.yaml&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;然后写入以下配置（可根据自己的需要修改，这里的代码的意思是在全角和半角的状态下输入&lt;code&gt;&amp;lt;&lt;/code&gt;均以&lt;code&gt;《&lt;/code&gt;输出）。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;patch:
+  punctuator/full_shape:
+    &amp;#34;&amp;lt;&amp;#34;: &amp;#34;《&amp;#34;
+  punctuator/half_shape:
+    &amp;#34;&amp;lt;&amp;#34;: &amp;#34;《&amp;#34;
+  punctuator/full_shape:
+    &amp;#34;&amp;gt;&amp;#34;: &amp;#34;》&amp;#34;
+  punctuator/half_shape:
+    &amp;#34;&amp;gt;&amp;#34;: &amp;#34;》&amp;#34;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;安静模式&#34;&gt;安静模式&lt;/h3&gt;
+
+&lt;p&gt;之前一直使用百度输入法的原因就是因为它有一个安静模式，可以在特定的程序内关闭输入法，比如说&lt;code&gt;Emacs&lt;/code&gt;中大部分时间都是不需要输入中文的，所以当切换到这个程序的时候就自动将输入法切换到英文模式。&lt;/p&gt;
+
+&lt;p&gt;需要找到应用软件的&lt;code&gt;Bundle Identifier&lt;/code&gt;，保存在&lt;code&gt;Info.plist&lt;/code&gt;这个文件当中。&lt;/p&gt;
+
+&lt;p&gt;修改&lt;code&gt;squirrel.custom.yaml&lt;/code&gt;（没有自己创建）：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;patch:
+  style/color_scheme: dark_temple
+  style/font_point: 18
+  style/horizontal: true
+
+  app_options/com.apple.Xcode:
+    ascii_mode: true
+  app_options/com.runningwithcrayons.Alfred-2:
+    ascii_mode: true&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;快捷键&#34;&gt;快捷键&lt;/h2&gt;
+
+&lt;p&gt;鼠须管默认支持&lt;code&gt;Emacs&lt;/code&gt;的快捷键，所以基本上在&lt;code&gt;Emacs&lt;/code&gt;中使用到的一些操作方式都可以在这里使用到。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;↑：Control+p&lt;/li&gt;
+&lt;li&gt;↓：Control+n&lt;/li&gt;
+&lt;li&gt;←：Control+b&lt;/li&gt;
+&lt;li&gt;→：Control+f&lt;/li&gt;
+&lt;li&gt;上頁：Alt+v&lt;/li&gt;
+&lt;li&gt;下頁：Control+v&lt;/li&gt;
+&lt;li&gt;句首：Control+a&lt;/li&gt;
+&lt;li&gt;句末：Control+e&lt;/li&gt;
+&lt;li&gt;回退：Control+h&lt;/li&gt;
+&lt;li&gt;刪除：Control+d&lt;/li&gt;
+&lt;li&gt;清空：Control+g&lt;/li&gt;
+&lt;li&gt;刪詞：Control+k&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;其他&#34;&gt;其他&lt;/h2&gt;
+
+&lt;p&gt;完成以上的配置之后基本上就能够用得很顺手了，更多高级的配置方法可以参考官方的文档：&lt;a href=&#34;http://rime.im/docs/&#34;&gt;幫助與反饋&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;参考资料&#34;&gt;参考资料&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://rime.im/docs/&#34;&gt;官方文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.dreamxu.com/install-config-squirrel/&#34;&gt;安装及配置 Mac 上的 Rime 输入法——鼠鬚管 (Squirrel)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
@@ -80,7 +885,103 @@
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/why-i-blog/</guid>
-      <description>很显然，写一个长期的价值博客会带来很多益处，却不会有什么明显的坏处（当然，在某些特定的国家讨论某些特定的话题不在此列）。 下面是我了解到的写一个长期的价值博客所带来的好处： 督促自己进行有价值的思考。写一篇优秀的文章是不容易的，在写之前，势必需要进行大量的思考、沉淀，要不然你就无事可</description>
+      <description>
+
+&lt;p&gt;很显然，写一个长期的&lt;strong&gt;价值博客&lt;/strong&gt;会带来很多益处，却不会有什么明显的坏处（当然，在某些特定的国家讨论某些特定的话题不在此列）。&lt;/p&gt;
+
+&lt;p&gt;下面是我了解到的写一个长期的价值博客所带来的好处：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;督促自己进行有价值的思考&lt;/strong&gt;。写一篇优秀的文章是不容易的，在写之前，势必需要进行大量的思考、沉淀，要不然你就无事可写。（Note：这里的博客指的是干货文章，碎碎念、心情日记、吐槽文章等不算此列。关于这一点将在下文细说。）很显然，在动手写之前，搜索大量的资料、回忆以前思考过的内容、再将它们串联起来等过程就必不可少了，这就强迫了自己去思考、去总结。这样所带来的益处就是显而易见的：1）&lt;strong&gt;督促自己在平时生活学习中进行与价值的思考&lt;/strong&gt;，因为每一个有价值的思考内容都有可能成为你下一篇博客中所要论述的内容，这就不得不迫使自己思考、总结、记录平时的思考内容；2）&lt;strong&gt;升华平时的思考内容&lt;/strong&gt;，平时思考之事大多都是没有联系的，而想要完成一篇文章，必然需要有一定的结构和逻辑，这就要求自己将平时思考的内容串联起来，更加深入理解背后的本质；3）&lt;strong&gt;写本身就是最好的思考&lt;/strong&gt;，写一篇博客，需要将零散的、不具体的的内容用书面语表现出来，这就要求你需要一定的逻辑表达能力和写作功底。&lt;!-- more --&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;可以结交很多志同道合的朋友&lt;/strong&gt;。1）毫无疑问，目前大多数人的社交都是在网络上完成的，在没有网络的时代，假设你需要结交一个外国人，那么出国就是你唯一的选择。而到了网路时代，这些所有的动作&lt;strong&gt;只需要一个点击就可以全部完成&lt;/strong&gt;，你可以在家里足不出户就结交到外国的同好；2）传统的认识一个人需要通过交流来完成，这个过程&lt;strong&gt;耗时周期长&lt;/strong&gt;，并且&lt;strong&gt;效率很低&lt;/strong&gt;，因为你每结交一个人，都需要重复的完成这一动作，即使现在有了Twitter等micro blog服务，但这依然是一种低效率的方式：你并不能完全通过他的微博来断定他是一个什么样的人，因为这些社交网站上的内容大多数都是心情日记等杂乱的东西。所以，一个价值博客就显得尤为重要了，这不仅大大简化了结交朋友的途径（&lt;strong&gt;一次写作，反复阅读&lt;/strong&gt;），并且可以客观的反映一个人在各方面的水平。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;自己会不一定是真的会&lt;/strong&gt;，只有当自己能够清晰地、准确地教会其他人时，才算真的会了。大家肯定经常会有这样地经历：我自己是明白的，但是就是不知道怎么说，更通俗地讲就是“只可意会，不可言传”。这其实不能算真的会，或者说是会的不彻底。如果想要通过博客来教会别人，势必自己会先将这些不会的部分搞懂，这在一定程度上也强迫了自己去更深入的学习。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;虚心的接受批评&lt;/strong&gt;。自己在思考的过程中难免会有一些错误，可能自己不会发现，但是当它呈现在博客上与他人分享的时候，别人就有可能发现自己的错误。并且，在与他人讨论的过程中，也可以更加深入的思考问题，或者会跳出自己当初的思考境地，以另外一个角度审视问题，这样所带来的帮助也是显而易见的。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;一个优秀的博客就是一分优秀的简历&lt;/strong&gt;。刘未鹏在&lt;a href=&#34;http://mindhacks.cn/2011/11/04/how-to-interview-a-person-for-two-years/&#34;&gt;怎样花两年时间去面试一个人&lt;/a&gt;中论述过这个问题。一个优秀的价值博客可能会给你带来职业上的帮助。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;锻炼自己持之以恒的能力&lt;/strong&gt;。写一个优秀的博客是不容易的，如果长期更新博客的同学可能就会有体会，写一篇高质量的博客往往需要话费数小时的时间，这还不包括前期思考、搜集信息的时间。&lt;strong&gt;既然写一个博客这么费力，并且还没什么报酬（大多数博客都是无偿的），我为什么要写？&lt;/strong&gt;其实，写一个长期的价值博客所带来的效益是很大的，但是它不是以可以用可见的物品来衡量的。简单的说，以上的几点都是写一个博客所带来的价值，这些价值都是不能用金钱来衡量的（如果你需要，一个优秀的博客也可以给你带来金钱效益）。但是坚持写一个博客并不那么简单，这需要你不断思考以获得可写之物，定期的更新博客会提升你自己坚持的能力。&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;为什么要写价值博客&#34;&gt;为什么要写价值博客&lt;/h2&gt;
+
+&lt;p&gt;什么是价值博客，简单的说就是可以给他人帮助的博客。显然，碎碎念、心情琐记等文章对他人并没有什么帮助，或者说帮助很小。或许你的朋友对这些文章感兴趣，这是因为他们认识你，想要了解你的生活。但是你要意识到，你的博客是面向所有人的（如果是的话），如果其他人并不认识你的话，他可能对你的生活并不怎么感兴趣，他阅读你的博客是为了获取有价值的内容。&lt;/p&gt;
+
+&lt;p&gt;我也经常阅读一些博客的内容，但据我所见，现在的很多博客写的都是一些碎碎念，心情日记，往往这些博客我都要在几十篇文章中寻找干货来阅读，这无疑增加了读者的工作量。如果非要写这些心情琐记，个人建议是和自己的主博客（干货博客）分离开，并且这些东西只需要自己的朋友能够看到就足够了，大部分人想看的是你的价值内容。&lt;/p&gt;
+
+&lt;p&gt;一个价值博客不是那么简单就可以写成的。现在很多人都是比较浮躁的，这些浮躁的风气在博客界也流行起来。经常在网上看到很多人声称一天一篇干货文章，或是每天一篇千字文。并不觉得这样做有什么意义，好的文章不是那么容易就写成的，一千字的文章想要详细的论说一件事情都很困难（也有可能是我的写作功底比较差），更别提能够有什么深度了。事实也正是如此，看过很多这样的文章，要不是文字十分肤浅，就是无话找话，不知所云。所以这也是一个价值博客所需要避免的（当然，一些资讯类的博客除外，例如&lt;a href=&#34;http://www.williamlong.info/&#34;&gt;月光博客&lt;/a&gt;）。&lt;/p&gt;
+
+&lt;h2 id=&#34;如何开始&#34;&gt;如何开始&lt;/h2&gt;
+
+&lt;p&gt;很简单，找一个可以写的地方就开始写。&lt;/p&gt;
+
+&lt;p&gt;如果你是一个爱折腾的人，我推荐Github Pages＋Octopress，十分纯粹，在本地写，写完直接上传即可，没有多余的事情，并且可以支持Markdown语法，大大提高了写作的效率。网络上的教程很多，个人认为官方的文档最适合入门了，可以照着一步一步来完成。如果英文不好的话，可以找一些其他人写的教程（自己估计也会写一篇）。&lt;/p&gt;
+
+&lt;p&gt;如果你不是一个爱折腾的人，可以试试Wordpress，同样的，网络上也有很多教程。&lt;/p&gt;
+
+&lt;p&gt;关见不在于你在哪里写，用什么写，而在于你博客的价值。要知道，很多大牛都是直接用Html写网页上传的。&lt;/p&gt;
+
+&lt;h2 id=&#34;几个问题&#34;&gt;几个问题&lt;/h2&gt;
+
+&lt;h3 id=&#34;q1-写了博客没人来阅读怎么办&#34;&gt;Q1:写了博客没人来阅读怎么办？&lt;/h3&gt;
+
+&lt;p&gt;这应该是大多数人所面临的一个问题，当你洋洋洒洒写了上千字时，收获的却只是几十的阅读量，这肯定会一定程度上打击写作者。如果面临这种问题，就需要自己分析一下原因了，如果你写的不是有价值的内容，那么出现这种情况是必然的。&lt;strong&gt;既然你的东西对我没有价值，我为什么要浪费自己的生命去阅读它？&lt;/strong&gt;如果你写的博客是有价值的，那么你大可不必担心，因为是金子总要发光的，或者你可以将它转载到别的地方（有价值的内容才值得转载）
+。如果你的博客是有价值的，那你就坚持写下去，肯定会有人来读。&lt;/p&gt;
+
+&lt;h3 id=&#34;q2-我不知道写些什么-怎么开始&#34;&gt;Q2:我不知道写些什么，怎么开始？&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;你在思考什么，就写什么。&lt;/strong&gt;只要是经过思考的内容，都是值得写的，如果不知道写些什么，可以先写下几个关键词，然后再由这些关键词引申出去。比如看了一本书、看了一部电影，你想到了什么？深入的思考一下，总能找到可以写的东西。&lt;/p&gt;
+
+&lt;p&gt;再一个就需要你在生活中积累了，例如我会将大脑中不成形的想法简单的记录下来，以供以后使用。这样做的好处是，当你翻开以前记录的东西时，你会发现你简直有写不完的东西！学会思考，你就不缺东西写。&lt;/p&gt;
+
+&lt;p&gt;如果你写的是一个技术类博客的话，那就更简单了。把技术笔记写下来就可以来，这里的笔记不是指你阅读技术书籍时所写的笔记，它必须是加工过的，因为你是写出来给别人看的,你做笔记时可以随意涂画，想怎么写就怎么写，但是要给别人看明白，就需要有条理地叙述。或者你也可以写自己地研究成果，总之有价值就行。关于技术文章的写作，以后会写一篇具体地文章来说明。&lt;/p&gt;
+
+&lt;h3 id=&#34;q3-博客地排版怎么办&#34;&gt;Q3:博客地排版怎么办？&lt;/h3&gt;
+
+&lt;p&gt;如果你使用Markdown写作，那么排版就不是什么大问题。如果你用其他地来排版，也应该不是什么问题，个人建议写完一篇文章之后再排版修改，要不然写一点就停下来排版势必会打断思路，也主客颠倒了。&lt;/p&gt;
+
+&lt;h3 id=&#34;q4-如何坚持写&#34;&gt;Q4:如何坚持写？&lt;/h3&gt;
+
+&lt;p&gt;这应该是最困难的一个问题，很多的优秀博客已经消失了，都没能坚持下来。要做到坚持更新，我认为可以尝试一下几点：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;制定写作计划&lt;/strong&gt;－－没有计划的写作可能会三分钟热度，可以制定一个每周（这是最短的周期了，一周能完成一篇价值博客已经很不错了）或每月的写作计划，翻看自己思考的记录，找一些可以写的东西，然后就开始写，一旦开了头，下面的工作就十分简单了。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;设定一个Deadline&lt;/strong&gt;－－例如每周日之前必须完成这周要写的内容，当然，如果你实在没什么可写的话，就不要写，记住，只写有价值的内容，写作不是为了完成任务。这种情况很少会发生，因为如果你积极思考的话，肯定会找到很多要写的东西。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;学会自我管理&lt;/strong&gt;－－这就涉及到时间管理层面上了，这方面的内容网络上也有很多，例如GTD，读者可以自行去寻找。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;q5-有什么建议吗&#34;&gt;Q5:有什么建议吗？&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;写完一篇博客不要立即就发表，先放下来，过几天再去看它，看有没有价值发表，是不是碎碎念？往往这时候会对所写的内容有更深的看法，这时候就可以进一步加工。很多时候我们翻看以前写的文章，是不是感觉很幼稚？人总是在不断的成长。&lt;/li&gt;
+&lt;li&gt;多读，多写。广泛地涉猎各个领域地书籍，平时要多阅读，这里地阅读可以是书籍、价值博客等（不是微博、每日资讯）。书籍和博客地半衰期往往很长，有的十几年前地博客文章，现在拿出来还是很好地阅读内容。当然，书籍就更不用说了。微博和新闻类地内容更新周期短，半衰期短，其实读不读都无所谓，那些新闻资讯，除了一些大事，其他的都是没有必要每天花时间阅读的，如果要读，可以每周或每月集中阅读一次，为了使这些信息有价值，别忘了做笔记。&lt;/li&gt;
+&lt;li&gt;多思考。如果想要获得源源不绝的灵感，就请多思考。关于思考的方法，如果要详细讲的话，可以写很多。这里推荐一个简单的高效思考方法：利用零碎时间来思考。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;q6-有什么推荐的博客吗&#34;&gt;Q6:有什么推荐的博客吗？&lt;/h4&gt;
+
+&lt;p&gt;下面的都是我平常经常阅读的博客，建议订阅RSS：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://mindhacks.cn/&#34;&gt;刘未鹏 | MIND HACKS&lt;/a&gt;－－思维改变生活，篇篇是干货，值得反复阅读。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.ruanyifeng.com/blog/&#34;&gt;阮一峰的网络日志&lt;/a&gt;－－作者的博客内容很多很杂，但每一篇都是作者思考后的成果，值得阅读。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.yangzhiping.com/&#34;&gt;杨志平的网志&lt;/a&gt;－－篇篇干货，对心理学和Ruby有研究。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;怎样才能找到这些优秀的博客呢？一个较好的方法是，从它们博客的友链中寻找，虽然并不一定准确，但也八九不离十。多用RSS聚合软件。我一般在网上遇到了较好的文章都会发送到Pocket中，不仅可以利用空闲时间阅读，也可以作为存档。&lt;/p&gt;
+
+&lt;h2 id=&#34;后记&#34;&gt;后记&lt;/h2&gt;
+
+&lt;p&gt;这片文章很早就准备写了，先前在Evernote中写了几点，现在的这篇是从那几点中发散出来的结果。所以不要怕没有写，开了头，后面的路就比较顺了。&lt;/p&gt;
+
+&lt;p&gt;自己文笔有限，难免有些造句措辞使用不当，就当是笑话看看好了。&lt;/p&gt;
+
+&lt;p&gt;以前的博客都在丢失了（空间到期为续费），现在转到这个新的环境重新开始，这样也好，以前的博客里也有很多碎碎念，现在可以推倒重来了。&lt;/p&gt;
+
+&lt;p&gt;如果你也是一个爱思考，并且有分享精神的人，我建议你现在就去写一个博客。&lt;/p&gt;
+</description>
     </item>
     
   </channel>

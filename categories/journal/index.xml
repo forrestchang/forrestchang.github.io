@@ -8,7 +8,7 @@
     <language>en</language>
     <lastBuildDate>Sat, 01 Sep 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://blog.jiayuanzhang.com/categories/journal/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://blog.jiayuanzhang.com/categories/journal/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -17,7 +17,42 @@
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/2018-week-35-review/</guid>
-      <description>重启之前写 Weekly Review 的习惯，一方面为了总结上一周都做了什么，另一方面也为了督促自己多多做事，不要碌碌无为。 2018 这半年多的时间里面博客一直没有再继续写下去，工作占去了大部分的时间，剩下的时间又都分配给爱好，所以写博客这件事就暂时搁置了下来。过去一年的时间里面主要发展了两个爱好，摄影和滑板，</description>
+      <description>&lt;p&gt;重启之前写 Weekly Review 的习惯，一方面为了总结上一周都做了什么，另一方面也为了督促自己多多做事，不要碌碌无为。&lt;/p&gt;
+
+&lt;p&gt;2018 这半年多的时间里面博客一直没有再继续写下去，工作占去了大部分的时间，剩下的时间又都分配给爱好，所以写博客这件事就暂时搁置了下来。过去一年的时间里面主要发展了两个爱好，摄影和滑板，即使是爱好，也会想把它做好，所以空闲下来的时间大部分精力都花在了上面。经过这半年多的时间来看，一个人不太可能同时把好几件事做得不错，所以在未来的一段时间内，需要考虑一下舍弃掉一项爱好了，或者只是仅仅当做爱好，不用去过于较真。&lt;/p&gt;
+
+&lt;p&gt;自从工作了，发现刻意学习专业知识的时间越来越少，大部分情况都是工作中遇到什么东西不太了解然后找相关资料学习一下，Vue.js、PHP 就是在工作中学会的，虽然不能说熟练，但是应对基本开发内容还是没什么问题。Vue.js 看了一下官方文档就开始写了，PHP 甚至都没有看什么东西，就只是看了一下公司之前的源码，毕竟语言的内容大部分都是相通的，PHP 又和 Python 同为动态语言，基本上东西都差不多，熟悉了一天就开始上手开发业务了，增删改查的内容也不太需要太多技术含量。&lt;/p&gt;
+
+&lt;p&gt;这种学习方式可以被称之为「自顶向下」的学习方法，和学校的「自底向上」的学习方法孰优孰劣，还得视情况而来。前者可以快速用起来，不用了解底层的内容，上手快，耗费时间短，但很容易停留在「顶」，没有继续深入下去，最后浮于表面；后者更加系统，学完会有一个整体的脉络，但是耗费时间长，底层的知识没办法实践，最后流于理论。所以正确的方式应该是把这两者结合起来，例如我主要是一个「后端开发工程师」，那对于 Vue.js 的一些底层实现理论，现在确实没有必要太了解，之后有需要的时候再看也不迟；而 CPython 底层的实现却是需要了解的内容，了解底层实现的缺陷在哪里，才能更好地进行优化。所以学习也要分好优先级，毕竟精力有限，不太重要的学习内容可以先靠后。&lt;/p&gt;
+
+&lt;p&gt;说道学习，再谈一下「刻意学习」的问题，学习不是堆时间、拼谁比谁学的更久，更重要的是用对方法，这一点在学滑板的过程中领会很深。之前很长一段时间练习滑板都是在堆砌时间，虽说也有进步，但是太缓慢了，大部分的时候都是呆在「舒适区」内做一些自己已经熟练的动作，后来看到了 Rodney Mullen &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:rodney&#34;&gt;&lt;a href=&#34;#fn:rodney&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 的学习方法：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;In short, Mullen is a very driven, smart individual. While many skaters spend a similar amount of hours skating every day as Mullen has, very few use those hours as efficiently as he did.&lt;/p&gt;
+
+&lt;p&gt;The minimum amount of time to spend on the board to impove is two hours a day, every day, without fail. One hour a day is enough to maintain skills, but you&amp;rsquo;ll never impove. Five hours+ a day is the key to rapid development.&lt;/p&gt;
+
+&lt;p&gt;Mullen prefers to skate alone, and so those two hours are spent skateboarding, and nothing else. In the 80s, he&amp;rsquo;d use a Casio watch with a stopwatch to time his sessions and make sure his sessions were long enough, even pausing the stopwatch when he took a short break.&lt;/p&gt;
+
+&lt;p&gt;He breaks down his five hour weekend sessions thus:
+- 30 minutes: warming up, not worring about consistency.
+- 3 hours: practicing his contest run, breaking it down into three 40 second segments, and doing them over and over again until he could do them without looking at his board.
+- 90 minutes: learning new tricks.&lt;/p&gt;
+
+&lt;p&gt;He also kept a skate notebook, writing down ideas for tricks, noting down observations on how his board flipped, and observing how different foot positions affected tricks.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;简单来说，Mullen 一直在按照计划来练习，而不是漫无目的地「玩」滑板，这也是他能成为大师的原因之一吧。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:rodney&#34;&gt;滑板教父，街式滑板的发源者。
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:rodney&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
@@ -26,7 +61,45 @@
       <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/2017-week-19-review/</guid>
-      <description>之前有在博客上写 Weekly Review 的习惯，后来因为被朋友说博客真水然后都撤下来了，有些文章确实是类似于「流水账」的记事，但也有一些是围绕这周做的东西来讨论的。总的来说，写 Weekly Review 对自己帮助还是很大的，可以在一周中 Focus 一个特定的主题，而不是想到什么做什么，所以这个系列以后还会继续写下去，只是写的内容更</description>
+      <description>&lt;p&gt;之前有在博客上写 Weekly Review 的习惯，后来因为被朋友说博客真水然后都撤下来了，有些文章确实是类似于「流水账」的记事，但也有一些是围绕这周做的东西来讨论的。总的来说，写 Weekly Review 对自己帮助还是很大的，可以在一周中 Focus 一个特定的主题，而不是想到什么做什么，所以这个系列以后还会继续写下去，只是写的内容更加具体一天，可以围绕着这周的 Project，或者这周听的音乐，或者读的书之类的。以前的文章看情况要不要放上来。&lt;/p&gt;
+
+&lt;p&gt;这周算是正式把我的任务管理系统从 org-mode 转移到 Todoist 上来了。在不考虑时间成本和易用性上来说，org-mode 依然是目前我认为最完备的任务和时间管理系统，我用它来：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;任务管理：类似于 OmniFocus 的多层级任务管理，支持标签和优先级，可以自定义过滤视图&lt;/li&gt;
+&lt;li&gt;时间记录：按照项目的方式来记录时间，基本是在做哪件事之前把计时器打开，一个番茄时间后自动关闭，可以自定义生成各种时间报表&lt;/li&gt;
+&lt;li&gt;番茄工作法&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://omaacpco9.bkt.clouddn.com/2017-05-07-092455.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;自定义生成的时间记录表：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://omaacpco9.bkt.clouddn.com/2017-05-07-092544.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;虽然 org-mode 的优点众多，但是始终是一个基于 Emacs 的 major mode，所以诸多限制在所难免：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;没有一个简单易用的移动端&lt;/li&gt;
+&lt;li&gt;没办法做到全局 capture，虽然借助 Alfred 的 Workflow 和 Elisp 脚本能够实现这一功能，但是使用起来体验并不是很好&lt;/li&gt;
+&lt;li&gt;编辑功能过重，很显然，做任务管理不需要多么高效的编辑操作，类似于 OmniFocus 使用鼠标 + 快捷键才是更高效的方法，在 Emacs 里经常编辑速度过快把整个文件搞乱了&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;不用 OmniFocus 的原因是本来就是从 OmniFocus 转到 org-mode 上来的，OmniFocus 有一个很致命的缺点就是不支持多标签，并且 Perspective 提供的设置选项也很有限，根不能不能满足一些复杂的过滤要求。除此之外，OmniFocus 应该是最优秀的任务管理软件了。&lt;/p&gt;
+
+&lt;p&gt;Todoist 初次使用的时候感觉很难用，尤其是鼠标点击就进入编辑模式，这个设计真的不知道怎么想的，并且各平台的客户端一点也不 Native，基本就是 Web 版套了一个壳。macOS 客户端经常有一些莫名的 bug，反正软件的使用体验上来说和 OmniFocus 简直不能比。&lt;/p&gt;
+
+&lt;p&gt;经过一段时间的调教，现在基本还能满足日常使用了。我认为一个可靠的任务管理系统需要满足两点：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;能够随时把想法和任务记录进去&lt;/li&gt;
+&lt;li&gt;能够按照特定的要求过滤出任务&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;其他的一些东西其实都是为了服务这两点的，比如说标签系统，其实就是在过滤任务的时候多加了一个维度。Todoist 的过滤系统比 OmniFocus 好很多，但是和 org-mode 这种可以完全自定义的过滤系统相比还是差点，不过也完全够用。&lt;/p&gt;
+
+&lt;p&gt;具体要写 Todoist 怎么用可能一篇文章也写不完（或许以后会写），另外 Todoist 还刚使用，有些东西还需要熟悉一下，下一篇文章会介绍一下目前我在用的一些过滤器。&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -35,7 +108,33 @@
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/2017-week-01-review/</guid>
-      <description>今天是元旦，因为在 Calendar 中把今天归到 2017 年的第一周里了，所以就按照上面所写的把这周当做第一周吧。 这周结束了在中软的课程设计实训，以前总嫌弃小渔村破，现在回来才知道还是小渔村好啊。课程设计实训的内容是用 Java 写一个点餐系统，一个小组只需要做一份就可以了，不过几乎所有人都不知道 Git 是个什么东西，</description>
+      <description>&lt;p&gt;今天是元旦，因为在 Calendar 中把今天归到 2017 年的第一周里了，所以就按照上面所写的把这周当做第一周吧。&lt;/p&gt;
+
+&lt;p&gt;这周结束了在中软的课程设计实训，以前总嫌弃小渔村破，现在回来才知道还是小渔村好啊。课程设计实训的内容是用 Java 写一个点餐系统，一个小组只需要做一份就可以了，不过几乎所有人都不知道 Git 是个什么东西，小组合作还是用的 U 盘拷贝代码，所以代码质量可想而知了，本组的其他人都比较厉害，索性我就抱大腿划水了，什么也没有参与，代码也没有写一行。&lt;/p&gt;
+
+&lt;p&gt;不过虽说没有写课程设计的项目，但还是有写代码的。这周把两个月前参加 HACKxFDU 的项目拿出来用 Python 3 重写了一遍。项目的地址：&lt;a href=&#34;https://github.com/forrestchang/Neutron&#34;&gt;Neutron&lt;/a&gt;，当初我们考虑做 Neutron 的时候是想把它做成一个通用的智能家居语音终端的，类似于 Amazon 的 Echo，只要提供第三方的 API，就能轻松集成到 Neutron 来，但是实际上碍于 Hackathon 的时间限制，只是完成了一个简单的 Demo，完全没有拓展性。本来这个项目参加完 Hackathon 之后就没有管了，不过最近看到 Facebook CEO 扎克伯格写了一个 Jarvis，觉得和之前做的东西很像（当然还是差远了，基本我们做的东西就是用别人的 API），所以又掏出来拿 Python 3.5 重写了一遍。现在在 &lt;a href=&#34;https://github.com/forrestchang/neutron/tree/develop&#34;&gt;develop&lt;/a&gt; 分支基本上把框架搭建好了，最底层是和 API 交互的 layer 层，这一层需要为每个 API 写特定的代码，其上是抽象的 handler 层，提供通用的接口，抽象 layer 层的操作：例如语音控制模块、AI 模块等，这一层上还可能包裹一层特定的 wrapper，例如对特定的 message 做语义分析。通过配置文件来选择使用哪个 layer 以及配置 layer 的内容（key 等内容），开始的时候打算用 json 来做配置文件的，后来看了一下还有 yaml 这种更加简洁的配置文件，所以打算换成 yaml 的。目前这个项目还有很多内容要写的，比如特定的 layer，都需要更具不同的 API 写特定的代码，这一点上我参考的 &lt;a href=&#34;https://github.com/syl20bnr/spacemacs&#34;&gt;Spacemacs&lt;/a&gt; 的方法。&lt;/p&gt;
+
+&lt;p&gt;这周在中软那边的宿舍里面把08版的《射雕英雄传》看完了，虽然槽点挺多的（特效、台词、演技），但是还是看得很欢乐，林依晨的黄蓉甚是喜欢。记得以前应该是看过朱茵版的黄蓉的，不过时间太久远了，已经记不太清了。小说倒没有读完，还是看剧比较快啊。看完后好长一段时间里面都觉得特别空虚，总感觉少了些什么。这种孤独感几乎在每次看完某部小说和电视剧后都会有（电影倒没有这种感觉，可能时间太短了），总觉得还沉浸在别人的故事里，可惜别人的故事已经结束，不得不回到现实中来。想起席慕蓉的一句话『在别人的故事里，留着自己的泪』 &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;就借着这篇博客顺便说说 17 年的计划吧。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;学习一门新语言：14年学了 C、Scheme，15年学了 Java、Python，16年学了 Swift，再加上各种用过但是不熟的语言，也有好多个了。现在主力开发语言是 Python，17年打算学习 一下 JavaScript，这门 GitHub 上最火的语言，不会都不好意思说自己是程序员。也不用学到多么深，只求达到入门水平。&lt;/li&gt;
+&lt;li&gt;Python 水平达到 professional，用了接近两年的 Python，但是水平也没有长进多少，今年打算深入一下 Python，多写一些项目。&lt;/li&gt;
+&lt;li&gt;去周边国家玩一次，其实挺想去尼泊尔的，不知道今年有没有时间。不过即使不出国，也要多出去走走，一个人的旅行。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;席慕蓉的《戏子》，用在这里并不完全准确。
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
@@ -44,7 +143,15 @@
       <pubDate>Mon, 26 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/2016-week-52-review/</guid>
-      <description>2016 年最后一周（实际上还有6天，不过那一周就算到 2017 年第一周吧）。 编程：这周在看《Python 网络数据采集》，以前虽然也用过爬虫，但是毕竟没有系统地学过，所以还是找了一本书来看。但是说实话，这本书写得并不是很好，不知道是写书时间的原因还是什么，挺多语法错误的，而且代码的风格很差（完全</description>
+      <description>&lt;p&gt;2016 年最后一周（实际上还有6天，不过那一周就算到 2017 年第一周吧）。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;编程&lt;/strong&gt;：这周在看《Python 网络数据采集》，以前虽然也用过爬虫，但是毕竟没有系统地学过，所以还是找了一本书来看。但是说实话，这本书写得并不是很好，不知道是写书时间的原因还是什么，挺多语法错误的，而且代码的风格很差（完全不符合 PEP8 标准）。内容也比较浅，基本上都是之前已经知道了的东西，所以收获也不是很多，（下一篇的博客可以来写一写怎么写一个高效的爬虫）。面试的事情作废了，1）看了一下他们做的产品，感觉不是自己想要做的东西；2）开出的薪资太低，up to 2k（其实主要是薪资太低了，每天要往返金石滩和大连市，太累了）。所以还是好好学习准备明年的暑期实习吧。另外 GSoC 也应该放上日程了，即使有申请不上的可能，还是要试一试的。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;阅读&lt;/strong&gt;：开始读金庸的《射雕英雄传》，以前上学的时候一直被家里教导不要沉迷武侠小说，所以一直没有读过金庸和古龙（然而那些时间都用来看网文玄幻了……）。最近读来还是觉得很有意思，作为实训的时候消遣很不错（主要没有网）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;生活&lt;/strong&gt;：这周五就可以离开这鬼地方了，见识过外包公司的情况后决定以后肯定是不会进这种公司的。在公司里实训也一直没有写代码，本来打算用 Python 实现一下实训的题目的，但是老师说不允许，这也没什么办法，索性就划水吧。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;博客&lt;/strong&gt;：可以看到，我博客又换样子了。用 Emacs 来写博客还是太麻烦了一些，而且 render 的速度实在是太感人，本地的 org 文件多了之后好几次 render 的时候卡住。现在这个博客是 Mweb 自带的 generator 生成的，就是主题不怎么好看，其他的都很方便。奈何自己的前端知识太渣，改了半天也没有改成自己想要的样子，所以还是凑合着先用吧。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
@@ -53,7 +160,12 @@
       <pubDate>Tue, 20 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/2016-weekly-51-review/</guid>
-      <description>看了一下日历，上一周是 2016 年的倒数第二周了（写这篇文章的时候已经是 52 周了），换了新博客之后就一直没有再写过 Week Review，这其中虽然有一些外部的因素，但大抵上还是不想写。 上周学校组织来中软做课程设计，所以这些天一直待在中软的培训中心里，课程设计的题目是一个点餐的 Web 应用，用 Java 开发，因</description>
+      <description>&lt;p&gt;看了一下日历，上一周是 2016 年的倒数第二周了（写这篇文章的时候已经是 52 周了），换了新博客之后就一直没有再写过 Week Review，这其中虽然有一些外部的因素，但大抵上还是不想写。&lt;/p&gt;
+
+&lt;p&gt;上周学校组织来中软做课程设计，所以这些天一直待在中软的培训中心里，课程设计的题目是一个点餐的 Web 应用，用 Java 开发，因为并不打算从事 Java，所以也并没有怎么听，大部分时间都是在自己看书和写自己的 Project。不过要吐槽一下这边的环境，宿舍除了床什么也没有，所以晚上回去什么都干不了，只能坐在床上看看电影，最不能忍的是网都没有……学校送来培训中心的这种做法我是很不认同的，好好的大学为什么要搞成职业教育呢？&lt;/p&gt;
+
+&lt;p&gt;最近找到了大连的一家做 Python Web 的 start up，联系了一下准备过去面试，不过软件园离学校太远了，估计面过了也不会去吧。&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -62,7 +174,16 @@
       <pubDate>Sun, 13 Nov 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/2016-week-46-review/</guid>
-      <description>编程学习方面，不完全看完了《利用 Python 进行数据分析》，感觉光看没有进行练习的话很难一次记住那么多用法，所以这本书最好还是最 NumPy、Pandas 这几个库用过一段时间之后再看。之后开始看《集体智慧编程》，目前才看了两章，内容写得还是挺好的，不过很多代码不是很规范（比如命名、缩进什么的</description>
+      <description>&lt;p&gt;编程学习方面，不完全看完了《利用 Python 进行数据分析》，感觉光看没有进行练习的话很难一次记住那么多用法，所以这本书最好还是最 NumPy、Pandas 这几个库用过一段时间之后再看。之后开始看《集体智慧编程》，目前才看了两章，内容写得还是挺好的，不过很多代码不是很规范（比如命名、缩进什么的），还有就是可能书已经比较老了，很多例子中使用的 API 已经挂掉了，所以不得不自己找数据集下来测试。不知道别人看书是怎样的，反正我看书不把书中每个例子测试一下就感觉书好像没看过，所以看书的速度还是挺慢的，昨天和今天花了两天的时间把第2章的东西总结了一下，写了篇博客。&lt;/p&gt;
+
+&lt;p&gt;朋友说我现在才开始学习机器学习并且想要以此为以后的职业简直在玩火（并且还不打算读研究生的情况下），说得也是，毕竟现在已经大三了，按照道理，应该刷刷题准备下学期的实习面试的。不过既然跳进这个火坑里了，就不能半途而废，至少先学习几个月看看情况再变更计划。如果实在不行，到时候再去做 Web 开发还是可以的。&lt;/p&gt;
+
+&lt;p&gt;前几天在登录 iPad 上的 Evernote 的时候，突然提示我登录的设备超过了两台，需要开通会员（之前开通过一年的会员，后来没有续费），总觉得为了这个再开通会员有点不值得，并且之前 Evernote 在 Mac 上使用就有很多诟病，所以打算换 OneNote 了。更新了一下 Mac 上 OneNote，发现竟然支持手写了，果断用用用。不过 OneNote 最开始的字体问题到现在还没有解决……&lt;/p&gt;
+
+&lt;p&gt;下周五就可以玩上 Pokemon Moon 了，激动不已，虽然破解党们早已二周目通关……&lt;/p&gt;
+
+&lt;p&gt;另外，发现番茄工作法挺好用的，现在也没有什么课了，每天就直接到图书馆里来，打开番茄钟，然后无脑干活就好了。&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -71,7 +192,16 @@
       <pubDate>Mon, 07 Nov 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/2016-week-45-review/</guid>
-      <description>已经第 45 周了啊，再过 10 周 2016 年就要过去了。今天大连下起了雪，似乎冬天就这么不知不觉得来了，记得上一次下大雪的时候去了一次海边，可惜 Photos 在一次事故中数据全部丢失了。作为一个南方人当初决定来北方的时候其实是对雪有一种很强烈的期待的，不过来了大连之后发现其实这里也不怎么下雪，偶尔下一次的雪</description>
+      <description>&lt;p&gt;已经第 45 周了啊，再过 10 周 2016 年就要过去了。今天大连下起了雪，似乎冬天就这么不知不觉得来了，记得上一次下大雪的时候去了一次海边，可惜 Photos 在一次事故中数据全部丢失了。作为一个南方人当初决定来北方的时候其实是对雪有一种很强烈的期待的，不过来了大连之后发现其实这里也不怎么下雪，偶尔下一次的雪也不是很大，这在一定程度上有点令人失望。&lt;/p&gt;
+
+&lt;p&gt;上周在读《挪威的森林》这本书，第一次读的时候大概是在初中的时候，当时没看懂里面写的是什么，纯属当做一本小黄书来读的。这次读的时候依旧有好多东西没明白。有一天听着 Thirteen Senses 的专辑猛地读到了 50%，感觉特别压抑，说不出来的压抑，所以就暂时放下了，顺便把翻拍的电影看了一遍，说实话，电影拍得不是很好，剧情的跳跃度有些大了，让没读过小说的人看得莫名其妙。&lt;/p&gt;
+
+&lt;p&gt;学习方面感觉上周特别颓废，什么事情都不相干，每天就窝在宿舍里，果然宿舍是一个让人堕落的地方，甚至连门都不想出去了，吃饭全部叫外卖。还好今天周一强迫自己来了图书馆，希望能做些东西吧。&lt;/p&gt;
+
+&lt;p&gt;这学期的课程基本结束了，免修了两门课，除了上机可能会去一下，其他时间都是空余的了，有大块的时间可以用来做自己想要做额事情了。&lt;/p&gt;
+
+&lt;p&gt;看了一眼窗外，雪似乎已经停了，耳机里放着坂本龙一的「A Flower Is Not A Flower」。&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -80,7 +210,42 @@
       <pubDate>Wed, 26 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/2016-week-42-43-review/</guid>
-      <description>连续两周没写周总结了，41周的周总结因为涉及到一些私事所以还是删掉了（当然感兴趣的还是可以在我的 repo 里面找到之前的 commit）。 过去两周还是发生了很多事情的，一件一件来说吧。 10.15-10.17 去上海参加了 HACKxFDU，这也是第一次参加 Hackathon，最后抱了大腿队友水到了一个微软的万物互</description>
+      <description>&lt;p&gt;连续两周没写周总结了，41周的周总结因为涉及到一些私事所以还是删掉了（当然感兴趣的还是可以在我的 repo 里面找到之前的 commit）。&lt;/p&gt;
+
+&lt;p&gt;过去两周还是发生了很多事情的，一件一件来说吧。&lt;/p&gt;
+
+&lt;p&gt;10.15-10.17 去上海参加了 HACKxFDU，这也是第一次参加 Hackathon，最后抱了大腿队友水到了一个微软的万物互联奖，不过奖品就两套物联网套件，根本不够四个人分(╯°□°）╯。在上海大概玩了一个礼拜，去了趟迪士尼（人多，体验差，项目无聊）就回学校了。然后上一周基本上没做什么事情，一是要准备大创项目的中期检查答辩，二是要复习软件工程的考试。&lt;/p&gt;
+
+&lt;p&gt;最近做出比较重要的一个决定就是确定了以后将要从业的方向，以前基本上都是按照兴趣来学，什么都做过一些，但都不是很深入，也没有想好以后工作想要干嘛。最近不知道怎么突然对数据挖掘和机器学习产生兴趣了，正好之前做的一个大创项目也是和这个有关的（虽然项目内容都是在划水），所以还算对这方面有点经验。&lt;/p&gt;
+
+&lt;p&gt;但是要解决的问题还是有很多的，比如说如何找到工作的问题，搜索了一下，机器学习/数据挖掘的岗位都需要有研究生学历，作为一个辣鸡学校的本科生，能不能找到工作就是一个问题。跟一个朋友说了一下想法，他说我在玩火……当然，实际上这方面倒不是太担心，如果有普通研究生能力的话找到一个工作还是不难的。&lt;/p&gt;
+
+&lt;p&gt;另外一个就是需要系统得学习这一套东西了，包括微积分、线性代数、概率论、统计学、机器学习，大部分内容是数学，现在有点后悔大一大二的时候没有好好学数学了，高数那些课基本就是划水过去的，欠下来的债还要还的。&lt;/p&gt;
+
+&lt;p&gt;现在基本的计划就是：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;看《利用 Python 进行数据分析》，把 Python 的几个科学计算库用熟练；&lt;/li&gt;
+&lt;li&gt;复习一下数学的知识，看《程序员的数学》系列的三本书，有基础的话应该挺快就能看完；&lt;/li&gt;
+&lt;li&gt;看李航的《统计学习方法》；&lt;/li&gt;
+&lt;li&gt;看《集体智慧编程》；&lt;/li&gt;
+&lt;li&gt;看周志华的《机器学习》；&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;上面就是初步的入门计划，应该看完了对数据挖掘/机器学习有一个基本的了解了，可以顺便去 Kaggle 上打打比赛，虽然不一定能够能拿到好名次，积累一些经验总是好的。另外 Ng 的课和台大的《机器学习基石》也可以看一下。&lt;/p&gt;
+
+&lt;p&gt;其他一些资源：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ZuzooVn/machine-learning-for-software-engineers&#34;&gt;Top-down learning path: Machine Learning for Software Engineers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn.udacity.com/course/machine-learning-engineer-nanodegree--nd009&#34;&gt;机器学习工程师（中/英）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cn.udacity.com/course/data-analyst-nanodegree--nd002&#34;&gt;数据分析师（中/英）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;这周和下周的计划就是把《利用 Python 进行数据分析》这本书看完。&lt;/p&gt;
+
+&lt;p&gt;ps：买了《文明6》，感觉时间还是挺紧的(╯▽╰)&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -89,7 +254,14 @@
       <pubDate>Mon, 03 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/2016-week-44-review/</guid>
-      <description>Coding - 本周主要在看《利用 Python 进行数据分析》，大概看了有一半的样子，下周应该能够结束掉。接下来的打算可能是先不看书，而是把What should I learn in data science in 100 hours?这个问题下面的回答内容实践一遍。 Japanese - 日语已经落下好久了，大概还有1个月的时间考试，虽然只是报了一个三级试试水，但是不去考试总感觉</description>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Coding&lt;/strong&gt; - 本周主要在看《利用 Python 进行数据分析》，大概看了有一半的样子，下周应该能够结束掉。接下来的打算可能是先不看书，而是把&lt;a href=&#34;https://www.quora.com/What-should-I-learn-in-data-science-in-100-hours&#34;&gt;What should I learn in data science in 100 hours?&lt;/a&gt;这个问题下面的回答内容实践一遍。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Japanese&lt;/strong&gt; - 日语已经落下好久了，大概还有1个月的时间考试，虽然只是报了一个三级试试水，但是不去考试总感觉白费报名费了，当初以为交了钱就会好好学，然而想多了。另外，日语现在并不是刚需的语言，之前决定学习是为了玩游戏，现在基本想玩的游戏都出了中文，《怪物猎人》玩了几个小时，发现不适合我这种手残。所以到底要不要继续学习日语还有待商榷……&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;English&lt;/strong&gt; - 英语自从到了大学以来就没有刻意地学过，除了准备托福的那段时间背了一些单词，然后其他都是直接用，导致了现在听说读写水平参差不齐，听力和阅读还算可以（至少能听懂和读懂技术相关的内容），口语基本就是没有说过，写作也没怎么练过，写一些基本的句子也要查语法（靠语感来写作结果就是一堆语法错……）。相比较日语来说，英语还算一个刚需的技能，尤其是写作和口语部分，还需要加强训练。接下来的一段时间内也会把英语学习提到日程上来，暂时的计划还没有想好，先加到 TODO 中。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reading&lt;/strong&gt; - 发现这学期都没有读过几本书，上学期还能保持基本每周都读一本书，现在 Kindle 都吃灰了。下周先把《挪威的森林》这本书看完吧……&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Game&lt;/strong&gt; - 等《精灵宝可梦 日月》发售，还有20天的样子，没有预定，直接买现货或者买下载版吧。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
@@ -98,7 +270,61 @@
       <pubDate>Sun, 02 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/2016-week-40-review/</guid>
-      <description>这周恰逢国庆假期，休息了两天（感觉今天貌似也在休息），明天学校断电断网（大农村条件艰苦），所以应该要出去一天，暂时的行程还没有安排。 编程 总结 首先收到了 HACKxFDU 的通过邮件，所以 14 号会去上海打一波酱油，以目前的水平如果不抱大腿感觉完全没有拿奖的可能性。主要的目的应该不是去参赛，可能会去找找</description>
+      <description>
+
+&lt;p&gt;这周恰逢国庆假期，休息了两天（感觉今天貌似也在休息），明天学校断电断网（大农村条件艰苦），所以应该要出去一天，暂时的行程还没有安排。&lt;/p&gt;
+
+&lt;h2 id=&#34;编程&#34;&gt;编程&lt;/h2&gt;
+
+&lt;h3 id=&#34;总结&#34;&gt;总结&lt;/h3&gt;
+
+&lt;p&gt;首先收到了 &lt;a href=&#34;http://fdu.hackx.org/#/&#34;&gt;HACKxFDU&lt;/a&gt; 的通过邮件，所以 14 号会去上海打一波酱油，以目前的水平如果不抱大腿感觉完全没有拿奖的可能性。主要的目的应该不是去参赛，可能会去找找下学期实习的目标，顺便认识一些大牛(≧▽≦)/&lt;/p&gt;
+
+&lt;p&gt;上周说要看完《Flask Web Development》，但是实际上并没有看完，大概看了一半的样子，期间还看了一些 Flask 的源码，打算边看书边看源码，然后之后再重新造一遍轮子。&lt;/p&gt;
+
+&lt;h3 id=&#34;计划&#34;&gt;计划&lt;/h3&gt;
+
+&lt;p&gt;之前就一直觉得自己的 Python 水平好像一直止步不前（传说中的半吊子水平），要做什么东西都是先 Google 一下用什么库，有些标准库中的内容也很不熟悉。昨天被学长问道最近在学什么，我说在看 Flask，然后就被鄙视了，然后通过对话才意识到 Library Reference 还没有完整的刷过，Python 的基础还是比较薄弱的。现在是个人就会 Python，不过刷过 Library Reference 的人应该还是不多的。&lt;/p&gt;
+
+&lt;p&gt;所以接下去的计划应该是：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;继续看 Flask（被鄙视也要看啊，开了头不能半途而废……），把源码看懂然后自己山寨一个，尝试着写一些基于 Flask 的 Project；&lt;/li&gt;
+&lt;li&gt;刷 Python Library Reference，用 ipython notebook 来做笔记，先刷一遍，不会的东西先跳过；&lt;/li&gt;
+&lt;li&gt;刷一下算法，这个是为了下学期的面试准备的，CLRS 没有看完，但是感觉想要看完会花掉不少的时间，看不看到时候再说，先把 LeetCode 刷一遍，然后《编程之美》、《编程珠玑》、《剑指 offer》这几本书刷一遍。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;这学期估计做完上面的事情时间就用得差不多了，下学期开始的时候就要为参加 GSoC 做一些准备了。&lt;/p&gt;
+
+&lt;p&gt;下周要做的事情：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;继续刷《Flask Web Development》，争取看完&lt;/li&gt;
+&lt;li&gt;看完 Python Library Reference 2、3、4节&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;日语&#34;&gt;日语&lt;/h2&gt;
+
+&lt;h3 id=&#34;总结-1&#34;&gt;总结&lt;/h3&gt;
+
+&lt;p&gt;这周貌似完全没有学习日语！所以上周列的计划也没有完成，尴尬！时间分配上面还是有一点问题了，每天有计划今天计算机的东西要看哪些，但是日语的东西貌似一点也没有计划，想到了就看一点，所以没有想到的时候就完全不看了-_-|||&lt;/p&gt;
+
+&lt;h3 id=&#34;计划-1&#34;&gt;计划&lt;/h3&gt;
+
+&lt;p&gt;现在有点后悔抱名 N3 的考试了，以来 N3 没什么卵用，而来貌似自己好像并没有太多时间学习日语，还不如好好学习一下然后直接考 N2 或者 N1，但是如果不去考试的话就浪费了 350 大洋！&lt;/p&gt;
+
+&lt;p&gt;五十音基本上是会了，所以还是直接看《大家的日语》这本书，一天学习一课的样子，学习到第 5 课。&lt;/p&gt;
+
+&lt;h2 id=&#34;游戏&#34;&gt;游戏&lt;/h2&gt;
+
+&lt;p&gt;最近发售的大作有点多啊，首先是 PC 上的《文明6》，然后 11 月份还有《精灵宝可梦 太阳·月亮》，其实主要是想玩日月……&lt;/p&gt;
+
+&lt;h3 id=&#34;pokemon-oras&#34;&gt;Pokemon ORAS&lt;/h3&gt;
+
+&lt;p&gt;这周好像 OR 也没有玩多久，主要就是战斗宅邸推塔，今天超级单打打到 45 层失误跪了，目前的队伍还不是很稳，还要重新组一个队伍。另一方面打了几把排位，语言的关系对有些技能不是很熟悉，所以吃了好几次亏，而且没玩过 xy 导致 gen6 的精灵基本不认识。&lt;/p&gt;
+
+&lt;p&gt;入了对战坑之后发现这游戏根本不是小孩子玩的，虽说是「子供向」的游戏，但是对战方面实在是太硬核了，要了解的东西太多，玩了 70h+ 几乎才了解一些皮毛。不过日月出来了之后应该会好些，不会总是看到技能就要查图鉴是干嘛的了。&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -107,7 +333,58 @@
       <pubDate>Sun, 25 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/2016-week-39-review/</guid>
-      <description>编程 总的来说，好像这一周并没有做出什么东西来。本来是在看《Web Scraping with Python》这本书的，可以看到后面发现错误挺多的，都有一些最基本的语法错误，所以索性就直接不看了。然后知乎专栏的爬虫也一直没有开始写。 从前几周就开始使用 VS Code 了，比想象中的好用很多，上一次使用还是刚出的时候，很多</description>
+      <description>
+
+&lt;h2 id=&#34;编程&#34;&gt;编程&lt;/h2&gt;
+
+&lt;p&gt;总的来说，好像这一周并没有做出什么东西来。本来是在看《Web Scraping with Python》这本书的，可以看到后面发现错误挺多的，都有一些最基本的语法错误，所以索性就直接不看了。然后知乎专栏的爬虫也一直没有开始写。&lt;/p&gt;
+
+&lt;p&gt;从前几周就开始使用 VS Code 了，比想象中的好用很多，上一次使用还是刚出的时候，很多东西都不完善，现在 1.0 版本有了很大的改进，作为主力编辑器应该是没有什么问题了。Atom 的启动速度还是那么慢，什么时候改进一些什么时候再说吧。Emacs 已经好久没有用了，应该没有什么特殊情况不会去用了吧，写 Lisp 和 Haskell VS Code 或许也能够胜任。&lt;/p&gt;
+
+&lt;p&gt;最近最烦心的一件事情就是不知道以后要从事什么方向的程序员了。目前自己的技术栈并不是很丰富，杂七杂八的东西研究了很多，赚钱的技能没学多少……所以还是有必要挑一个搬砖的技能好好磨练一下了。目前初步的计划是 Python Web 开发，然后顺带把 C 语言再看看然后去读 Python 的源码，再看一些经典的书（UNIX 系列）。&lt;/p&gt;
+
+&lt;h3 id=&#34;下周的计划&#34;&gt;下周的计划&lt;/h3&gt;
+
+&lt;p&gt;把《Flask Web Development: Developing Web Applications with Python》这本书看完，然后把书中的博客例子做出来。&lt;/p&gt;
+
+&lt;p&gt;顺便写代码累了的时候可以刷刷《程序员修炼之道》这本书，以前看过其中的一部分，还是比较有意思的。&lt;/p&gt;
+
+&lt;h2 id=&#34;日语&#34;&gt;日语&lt;/h2&gt;
+
+&lt;p&gt;12月份就要考试了，然而我还没怎么开始学习。大概在 YouTube 上看了几节五十音的视频，其实五十音之前也都学过，平假名基本上还是熟悉的，就是片假名记不住-_-|||&lt;/p&gt;
+
+&lt;h3 id=&#34;下周的计划-1&#34;&gt;下周的计划&lt;/h3&gt;
+
+&lt;p&gt;熟练掌握五十音，包括平假名和片假名的书写、发音。先把 YouTube 上那一个系列的视频看完吧，然后直接拿单词卡片来背，Anki 中也有单词本可以用来复习。&lt;/p&gt;
+
+&lt;h2 id=&#34;游戏&#34;&gt;游戏&lt;/h2&gt;
+
+&lt;p&gt;这周没怎么玩游戏，守望先锋已经一周多没有玩了。&lt;/p&gt;
+
+&lt;p&gt;平时的时候玩 「Pokemon Omega Ruby」比较多，也就是孵孵蛋，打打对战塔，刚入对战坑，好多东西还不懂，还需要学习一个。&lt;/p&gt;
+
+&lt;p&gt;开始入门狼人杀，这周的几次聚会玩狼人杀很嗨，在某宝上买了一套卡牌，准备研究研究。&lt;/p&gt;
+
+&lt;h2 id=&#34;阅读&#34;&gt;阅读&lt;/h2&gt;
+
+&lt;p&gt;看了一点《胡适留学日记》，拖到现在还没有看完，Kindle 好像来学校之后就有点吃灰了。&lt;/p&gt;
+
+&lt;h3 id=&#34;下周的计划-2&#34;&gt;下周的计划&lt;/h3&gt;
+
+&lt;p&gt;看完《胡适留学日记》。&lt;/p&gt;
+
+&lt;h2 id=&#34;电影&#34;&gt;电影&lt;/h2&gt;
+
+&lt;p&gt;这周看了三部韩国的电影，分别是《隧道》、《釜山行》、《恐怖直播》，发现韩国的电影好好看！韩国的电影感觉黑色幽默和讽刺多一些，日本的电影中二气息比较多一些，国产的电影嘛……&lt;/p&gt;
+
+&lt;p&gt;相比较最近比较火的《釜山行》，个人还是感觉《隧道》比较好看一些。亚洲地区的丧尸片估计《釜山行》应该是最佳了，但是和欧美的一些丧尸片比起来，还是有差距的，其中的一些套路也都是别人玩过了的。《隧道》这部电影让我感觉和《活埋》很像，但是一个生还了，一个 gg 了……&lt;/p&gt;
+
+&lt;h2 id=&#34;杂项&#34;&gt;杂项&lt;/h2&gt;
+
+&lt;p&gt;这周好像聚会比较多(≧▽≦)，已经吃了好几顿饭+去了一次 KTV，生活过得比较颓废。&lt;/p&gt;
+
+&lt;p&gt;是时候应该沉迷学习了(╯﹏╰）&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -116,7 +393,18 @@
       <pubDate>Wed, 02 Mar 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/2016-week-12-review/</guid>
-      <description>这周的主题是跑步，大连的天气开始变暖，终于可以去操场跑步了，不过由于学校在海边，风还是很大的。今天跑完了一个线上马拉松（10km 健康赛），明天大连国际马拉松开始开放报名，打算参加半程马拉松，不知道能不能报上名，毕竟今年有一个目标就是参加一次马拉松（全马或者半马）。比赛日期是5.2</description>
+      <description>&lt;p&gt;这周的主题是&lt;code&gt;跑步&lt;/code&gt;，大连的天气开始变暖，终于可以去操场跑步了，不过由于学校在海边，风还是很大的。今天跑完了一个线上马拉松（10km 健康赛），明天大连国际马拉松开始开放报名，打算参加半程马拉松，不知道能不能报上名，毕竟今年有一个目标就是参加一次马拉松（全马或者半马）。比赛日期是5.22，需要利用剩余的两个月的时间积累一下跑量（一周跑5次，每次10km）。&lt;/p&gt;
+
+&lt;p&gt;编程方面，本来打算利用 Flask 写一个网站的，结果拖到今天 Document 也只看了一点点，很显然只能移到下一周来完成了，除了这个就改了改之前写的一些代码。从上周开始看 CSAPP 这本书，看的时候顺带做习题（所有的题目），所以进度很慢，大概每天几页的样子，CMU 的几个 lab 还没有开始做，等看完一部分就去完成这部分的 lab。&lt;/p&gt;
+
+&lt;p&gt;阅读方面，没有读任何书，大部分的时间还是用在了浅阅读上，比如看知乎和 Quora 上的各种问答，阅读别人写的博客之类的。下周的目标是读完《你的灯亮着吗》这本书。&lt;/p&gt;
+
+&lt;p&gt;这周没怎么背单词，现在想是否真的要去考托福了，因为自己的 GPA 有点低，即使有 TOEFL 成绩也申请不上好的学校。不过即使是不考 TOEFL，英语还是要学的。&lt;/p&gt;
+
+&lt;p&gt;再一次地更换了博客的 Generator，这次还换成了 Hexo，用 Atom 来写作，之前还在&lt;a href=&#34;http://forrestchang.github.io/2016/02/13/self-learning-guide/&#34;&gt;一篇文章&lt;/a&gt;中黑过 Atom，没想到这么快就叛逃了，23333 。不过还是得吐槽一下，我装了不少 Package，打开的时候真的是好卡，还掉帧，优化做得确实太渣了，要不是你 UI 漂亮，插件丰富，肯定不用你！转移的过程中没有转移评论内容，因为看了一下 Disqus 中的评论，太乱了（因为之前切换过好几次），转移起来有点麻烦，索性直接不要了，反正评论也不是很多。另外 RSS 地址可能有点变化，如果使用 RSS 阅读器的同学可能需要更新一下 RSS 地址（搞得好像真的有人看似的）。&lt;/p&gt;
+
+&lt;p&gt;马上23：00了，赶紧去睡觉了。&lt;/p&gt;
+</description>
     </item>
     
   </channel>

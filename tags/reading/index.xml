@@ -8,7 +8,7 @@
     <language>en</language>
     <lastBuildDate>Wed, 24 Feb 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://blog.jiayuanzhang.com/tags/reading/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://blog.jiayuanzhang.com/tags/reading/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -17,7 +17,48 @@
       <pubDate>Wed, 24 Feb 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/apple-music-and-classical-music-and-reading/</guid>
-      <description>Apple Music 自从Apple Music（以下简称「AM」）发布以来，就一直在使用，从最开始的免费试用到现在每个月10￥的订阅。自从Windows时代就使用iTunes听音乐了（当时有一部iPod），在没有AM的时候，都是从论坛下好别人买的专辑来听。一方面在国内想要在iTunes Store上</description>
+      <description>
+
+&lt;h3 id=&#34;apple-music&#34;&gt;Apple Music&lt;/h3&gt;
+
+&lt;p&gt;自从Apple Music（以下简称「AM」）发布以来，就一直在使用，从最开始的免费试用到现在每个月10￥的订阅。自从Windows时代就使用iTunes听音乐了（当时有一部iPod），在没有AM的时候，都是从论坛下好别人买的专辑来听。一方面在国内想要在iTunes Store上购买专辑过于麻烦（两个账号需要来回切换），另一方面作为一个学生党iTunes Store上两首歌就相当于一顿饭的价钱对于我来说也有点小贵了，所以AM刚推出的时候，还是比较开心的，没想到入华后价格竟然只要10￥每月，就只相当于两首歌的钱！&lt;/p&gt;
+
+&lt;p&gt;这几个月使用下来，发现还是存在不少的问题。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;操作逻辑复杂。例如听到一首好听的歌，标注了心之后，它是不会出现在你的播放列表中的，因为标注心只是为了优化推荐的算法。所以每次听到一首好听的曲子，都要进行两个步骤：先添加到库中，再标注心。这样才会在你的Smart Playlist中显示出来。这个估计是iTunes的遗留问题，因为iTunes是以Library的方式来管理的，所以需要先添加进Library中，才能进行进一步的操作，不过AM作为一个流媒体音乐服务，这样做显然是多此一举了。&lt;/li&gt;
+&lt;li&gt;每个设备间同步存在问题。我一般都是在Mac上听音乐，不过偶尔也会使用iPhone来听，但是很多加心得歌曲到了iPhone上面就变成没有加心的了。所以现在我也懒得使用iPhone来听歌了，或者就随便打开一个推荐的播放列表来听。&lt;/li&gt;
+&lt;li&gt;网络问题。这个应该是最要吐槽的一点了，听歌时断时续是最不能忍的事情了。不知道是Apple在国内没有设置服务器还是什么其他原因，有时候即使开着代理缓冲的速度也很慢。有些专辑就只能先下载下来，然后再听。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;这是我使用过程中遇到的三个比较影响体验的问题，当然还有其他小的，比如说什么中文歌的名字全是英文（使用英文系统的原因，日文歌的名字全是罗马音等等之类的，只不过这些暂时还能够忍受，不是太影响听音乐的体验（个人很少听中文和日文的歌曲）。&lt;/p&gt;
+
+&lt;p&gt;作为一个数据控，如果听歌的数据不能够记录下来，那么就好像和没听一样（强迫症的症状），虽然iTunes也可以记录歌曲的播放次数，上一次播放时间之类的数据，不过还是过于简单了。之前一直使用的是Last.fm，使用AM了之后发现Last.fm的客户端没办法抓取到数据了，后来找到了「Bowtie」这个小工具，连Radio中播放的内容都能够抓取到，太强大了。分析一首歌听了多少遍的意义并不是很大，但是累计了这么多的数据之后还是可以发现了一些有趣的东西的，比如说我听的最多的歌手是竟然是「ColdPlay」。&lt;/p&gt;
+
+&lt;p&gt;如果作为一个音乐服务来说，AM还存在着很多问题，不过毕竟还是一个新生的流媒体服务，希望下一次大的更新之后能够提高一些用户体验。&lt;/p&gt;
+
+&lt;p&gt;PS. 也使用过一段时间的Xiami和网易云音乐，因为种种原因放弃了。&lt;/p&gt;
+
+&lt;h3 id=&#34;古典音乐&#34;&gt;古典音乐&lt;/h3&gt;
+
+&lt;p&gt;关于古典音乐，其实我只有很少的了解，也只听过很少的入门曲目，最开始听古典是因为「The 50 Most Essential Pieces of Classical Music」这张专辑，这张专辑里面基本上都是一些非常经典的曲目，例如当初看《V字仇杀队》中的「1812 Festival Overture」，以及每个人都熟悉的「Canon in D Major」，如果从来没听过古典，推荐去听一下这个专辑，一定会发现很多熟悉的音乐。&lt;/p&gt;
+
+&lt;p&gt;上学期选修了一门《西方古典音乐鉴赏》，然而并没有很认真地听课，不过还是了解了一些知识。然后看了木遥在博客上的一系列&lt;a href=&#34;http://blog.farmostwood.net/305.html&#34;&gt;介绍古典音乐的文章&lt;/a&gt;，算是对古典音乐有了一个初步的认识。&lt;/p&gt;
+
+&lt;p&gt;如果说是欣赏古典音乐，还是达不到那个层次的，因为现在古典音乐的作用就是在阅读或者写代码的时候提供一个相对较安静的环境，说白了，还是出于一种功利的目的在听（为了更好地完成其他工作）。&lt;/p&gt;
+
+&lt;p&gt;今天听AM的Classical Radio听到很很多以前听过，但是忘了名字的曲子（不得不说，古典音乐的曲子名字太难记了），统统加心添加进Library中。现在听音乐的基本流程就是，先范听，听到喜欢的在去把Artist的所有作品依次听下去，这样会找到不少喜欢的内容。&lt;/p&gt;
+
+&lt;h3 id=&#34;阅读&#34;&gt;阅读&lt;/h3&gt;
+
+&lt;p&gt;前几天Kindle上突然推送了有关Kindle Unlimited的内容，类似于AM，按月订阅，然后可以阅读所有的订阅内容。刚开始还是蛮高兴的，不过看了一下在计划中的书目，基本上没有想看的，果然想看的书还是需要付费啊。不过有7天的试用时间，不用白不用，昨天读了一本漫画书《时间管理：如何充分利用你的24小时》，很有趣的一本小册子。这个漫画好像是一个系列，准备最近把感兴趣的都看一遍。&lt;/p&gt;
+
+&lt;p&gt;最近看书的时间有点少了，而更多的时间都在看RSS订阅的内容，Pocket上存档的文章，以及知乎、Quora、Reddit、Hacker News上的一些文字。毫无疑问，书籍的信噪比肯定是大于后者之流的，如果要搞一个排名的话，信噪比的大小应该是这样的：书籍 &amp;gt; Pocket上存档的文章 &amp;gt; Hacker News = Reddit &amp;gt; RSS订阅内容 &amp;gt; Quora &amp;gt;= 知乎（至少Quora可以练习一下英语，笑）。当然，如果你是整天阅读微信朋友圈以及QQ空间，那么信噪比可能会 &amp;lt; 1。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;以上是深夜的无聊吐槽内容，本来这段时间应该是去写代码或者阅读其他内容的，只不过因为结构化拖延的原因才来写Blog……&lt;/p&gt;
+</description>
     </item>
     
   </channel>
