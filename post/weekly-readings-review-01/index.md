@@ -80,7 +80,7 @@ Motivation 可以让工作变得更加 enjoyable，连续加班也不觉得累�
 
 ### [Augmenting Long-term Memory](http://augmentingcognition.com/ltm.html) {#augmenting-long-term-memory}
 
-Anki 是一个 Flashcard 软件，类似于 Supermemo，一般大家都用来被单词。这篇文章作者（是一个量子物理学家）介绍了他是如何用 Anki 来阅读论文的，包括如何在短时间内阅读并理解 AlphaGo 的论文。
+Anki 是一个 Flashcard 软件，类似于 Supermemo，一般大家都用来背单词。这篇文章作者（是一个量子物理学家）介绍了他是如何用 Anki 来阅读论文的，包括如何在短时间内阅读并理解 AlphaGo 的论文。
 
 Anki 是一个长期记忆的工具，你可以用它来记住任何东西。Anki 的算法完全是开源的，你可以在 GitHub 上看到它的源码：<https://github.com/dae/anki>
 
