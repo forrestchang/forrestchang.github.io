@@ -4,7 +4,7 @@
   
   <url>
     <loc>http://blog.jiayuanzhang.com/post/weekly-readings-review-01/</loc>
-    <lastmod>2019-07-26T12:48:02+08:00</lastmod>
+    <lastmod>2019-07-26T12:49:47+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -297,21 +297,21 @@
   
   <url>
     <loc>http://blog.jiayuanzhang.com/categories/journal/</loc>
-    <lastmod>2019-07-26T12:48:02+08:00</lastmod>
+    <lastmod>2019-07-26T12:49:47+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://blog.jiayuanzhang.com/</loc>
-    <lastmod>2019-07-26T12:48:02+08:00</lastmod>
+    <lastmod>2019-07-26T12:49:47+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://blog.jiayuanzhang.com/post/</loc>
-    <lastmod>2019-07-26T12:48:02+08:00</lastmod>
+    <lastmod>2019-07-26T12:49:47+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0</priority>
   </url>
@@ -339,6 +339,13 @@
   <url>
     <loc>http://blog.jiayuanzhang.com/tags/alfred/</loc>
     <lastmod>2019-07-01T20:24:57+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/tags/anki/</loc>
+    <lastmod>2019-07-26T12:49:47+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0</priority>
   </url>
