@@ -26,7 +26,7 @@ layouts/_internal/_default/rss.xml]
 我们随便按照顺序建立一个 xml 模板文件即可，例如，我们这里建立
 `layouts/index.rss.xml` 文件，使用 Hugo 官方提供的 RSS 模板：
 
-```xml
+```html
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?>" | safeHTML }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
@@ -83,5 +83,5 @@ copyright = "This work is licensed under a Creative Commons Attribution-ShareAli
 
 另外，可以通过这个链接来订阅本博客：<http://blog.jiayuanzhang.com/index.xml>
 
-[^fn:1]: : <https://gohugo.io/templates/rss/>
-[^fn:2]: : <https://gohugo.io/functions/replacere/#readout>
+[^fn:1]: <https://gohugo.io/templates/rss/>
+[^fn:2]: <https://gohugo.io/functions/replacere/#readout>
