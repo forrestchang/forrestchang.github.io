@@ -35,7 +35,7 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.f2d85ead.min.css" rel="stylesheet">
+<link href="/dist/even.ca395a5b.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -52,7 +52,7 @@
 
 <meta itemprop="datePublished" content="2019-07-24T21:59:00&#43;08:00" />
 <meta itemprop="dateModified" content="2019-07-29T18:20:10&#43;08:00" />
-<meta itemprop="wordCount" content="614">
+<meta itemprop="wordCount" content="565">
 
 
 
@@ -151,26 +151,7 @@
       <p>之前博客虽然也有 RSS，但是不是全文索引的，为了方便读者能够直接在 RSS 阅读器中阅读，花了点时间给博客添加了全文 RSS 输出。</p>
 
 <p>查阅文档<sup class="footnote-ref" id="fnref:fn-1"><a href="#fn:fn-1">1</a></sup>可知，Hugo 的 RSS 模板搜索顺序如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-nil" data-lang="nil"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-nil" data-lang="nil">[layouts/index.rss.xml
+<div class="highlight"><pre class="chroma"><code class="language-nil" data-lang="nil">[layouts/index.rss.xml
 layouts/home.rss.xml
 layouts/rss.xml
 layouts/list.rss.xml
@@ -184,43 +165,10 @@ layouts/_default/list.rss.xml
 layouts/_default/index.xml
 layouts/_default/home.xml
 layouts/_default/list.xml
-layouts/_internal/_default/rss.xml]</code></pre></td></tr></table>
-</div>
-</div>
+layouts/_internal/_default/rss.xml]</code></pre></div>
 <p>我们随便按照顺序建立一个 xml 模板文件即可，例如，我们这里建立
 <code>layouts/index.rss.xml</code> 文件，使用 Hugo 官方提供的 RSS 模板：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-html" data-lang="html"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-html" data-lang="html">{{ printf &#34;<span class="cp">&lt;?xml version=\&#34;1.0\&#34; encoding=\&#34;utf-8\&#34; standalone=\&#34;yes\&#34; ?&gt;</span>&#34; | safeHTML }}
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">{{ printf &#34;<span class="cp">&lt;?xml version=\&#34;1.0\&#34; encoding=\&#34;utf-8\&#34; standalone=\&#34;yes\&#34; ?&gt;</span>&#34; | safeHTML }}
 <span class="p">&lt;</span><span class="nt">rss</span> <span class="na">version</span><span class="o">=</span><span class="s">&#34;2.0&#34;</span> <span class="na">xmlns:atom</span><span class="o">=</span><span class="s">&#34;http://www.w3.org/2005/Atom&#34;</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">channel</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} on {{ end }}{{ .Site.Title }}{{ end }}<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
@@ -246,40 +194,19 @@ layouts/_internal/_default/rss.xml]</code></pre></td></tr></table>
     <span class="p">&lt;/</span><span class="nt">item</span><span class="p">&gt;</span>
     {{ end }}
   <span class="p">&lt;/</span><span class="nt">channel</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">rss</span><span class="p">&gt;</span></code></pre></td></tr></table>
-</div>
-</div>
+<span class="p">&lt;/</span><span class="nt">rss</span><span class="p">&gt;</span></code></pre></div>
 <p>其中，我们需要全局输出，只需要修改 <code>&lt;description&gt;{{ .Summary | html
 }}&lt;/description&gt;</code> 为 <code>&lt;description&gt;{{ .Content | html }}&lt;/description&gt;</code> 即可。</p>
 
 <p><code>config.toml</code> 配置中的一些字段可以用来控制 RSS 的输出：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-toml" data-lang="toml"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-toml" data-lang="toml"><span class="nx">rssLimit</span> <span class="p">=</span> <span class="mi">10</span>  <span class="c"># 限制 RSS 文章输出的数量</span>
+<div class="highlight"><pre class="chroma"><code class="language-toml" data-lang="toml"><span class="nx">rssLimit</span> <span class="p">=</span> <span class="mi">10</span>  <span class="c"># 限制 RSS 文章输出的数量</span>
 <span class="nx">languageCode</span> <span class="p">=</span> <span class="s2">&#34;en-us&#34;</span>
 <span class="nx">copyright</span> <span class="p">=</span> <span class="s2">&#34;This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.&#34;</span>
 
 <span class="p">[</span><span class="nx">author</span><span class="p">]</span>
-    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;My Name Here&#34;</span></code></pre></td></tr></table>
-</div>
-</div>
+    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;My Name Here&#34;</span></code></pre></div>
 <p>最开始的时候生成 RSS 会抛出一些异常：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-language" data-lang="language"><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-language" data-lang="language"> error on line 455 at column 40: PCDATA invalid Char value 8</code></pre></td></tr></table>
-</div>
-</div>
+<div class="highlight"><pre class="chroma"><code class="language-language" data-lang="language"> error on line 455 at column 40: PCDATA invalid Char value 8</code></pre></div>
 <p>一般来说，出现这些问题是因为 Markdown 文件中存在一些特殊字符，例如 <code>^H</code>、<code>^E</code> 等字符，解决办法有两个：</p>
 
 <ol>
@@ -325,19 +252,21 @@ layouts/_internal/_default/rss.xml]</code></pre></td></tr></table>
     </footer>
   </article>
         </div>
-        
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'tisogasnotes';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
    
-   <div class="post bg-white">
-     <script src="https://utteranc.es/client.js"
-           repo= "forrestchang/forrestchang.github.io"
-           issue-term="pathname"
-           theme="github-light"
-           label="utterances"
-           crossorigin="anonymous"
-           async>
-     </script>
-   </div>
- 
 
   
 
@@ -345,24 +274,10 @@ layouts/_internal/_default/rss.xml]</code></pre></td></tr></table>
     </main>
 
     <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="mailto:forrestchang7@email.com" class="iconfont icon-email" title="email"></a>
-      <a href="https://twitter.com/Tisoga" class="iconfont icon-twitter" title="twitter"></a>
-      <a href="https://github.com/forrestchang" class="iconfont icon-github" title="github"></a>
-      <a href="https://www.instagram.com/jiayuan3055/" class="iconfont icon-instagram" title="instagram"></a>
-  <a href="http://blog.jiayuanzhang.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
-</div>
-
+      
 <div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
 
+  
   <div class="busuanzi-footer">
     <span id="busuanzi_container_site_pv"> Site PV: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
       <span class="division">|</span>
@@ -379,6 +294,7 @@ layouts/_internal/_default/rss.xml]</code></pre></td></tr></table>
     <span class="author">Jiayuan</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">

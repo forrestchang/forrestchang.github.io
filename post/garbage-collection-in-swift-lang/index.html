@@ -34,7 +34,7 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.f2d85ead.min.css" rel="stylesheet">
+<link href="/dist/even.ca395a5b.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2016-04-15T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-05-13T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="2598">
+<meta itemprop="wordCount" content="2535">
 
 
 
@@ -158,28 +158,7 @@
 <p>在 Swift 中，对引用描述的关键字有三个：<code>strong</code>，<code>weak</code> 和 <code>unowned</code>，所有的引用没有特殊说明都是 <code>strong</code> 强引用类型。在 ARC 中，只有指向一个实例的所有 <code>strong</code> 强引用都断开了，这个实例才会被销毁。</p>
 
 <p>举一个简单的例子：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="nc">A</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="nc">A</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="nv">name</span><span class="p">:</span> <span class="nb">String</span>
     <span class="kd">init</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span>
         <span class="kc">self</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="n">name</span>
@@ -195,9 +174,7 @@
 <span class="n">a1</span> <span class="p">=</span> <span class="n">A</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&#34;A&#34;</span><span class="p">)</span>
 <span class="n">a2</span> <span class="p">=</span> <span class="n">a1</span>
 
-<span class="n">a1</span> <span class="p">=</span> <span class="kc">nil</span></code></pre></td></tr></table>
-</div>
-</div>
+<span class="n">a1</span> <span class="p">=</span> <span class="kc">nil</span></code></pre></div>
 <p>上面这个例子中，虽然 <code>a1</code> 这个 <code>strong</code> 强引用断开了，但是还有 <code>a2</code> 这个强引用指向这个实例，所以不会在命令行中输出 <code>A deinit</code>，当我们把 <code>a2</code> 也设置为 <code>nil</code> 时，与这个实例关联的所有强引用均断开了，这个实例便会被销毁，在命令行中打印 <code>A deinit</code>。</p>
 
 <p><strong>循环强引用（Strong Reference Cycles）</strong></p>
@@ -205,24 +182,7 @@
 <p>但是，在某些情况下，一个类实例的强引用数永远不能变为 0，例如两个类实例互相持有对方的强引用，因而每个类实例都让对方一直存在，这就是所谓的强引用循环（Strong Reference Cycles）。</p>
 
 <p>这里引用 TSPL 中的例子：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="nc">Person</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="nc">Person</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="nv">name</span><span class="p">:</span> <span class="nb">String</span>
     <span class="kd">init</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span> <span class="kc">self</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="n">name</span> <span class="p">}</span>
     <span class="kd">var</span> <span class="nv">apartment</span><span class="p">:</span> <span class="n">Apartment</span><span class="p">?</span>
@@ -234,44 +194,18 @@
     <span class="kd">init</span><span class="p">(</span><span class="n">unit</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span> <span class="kc">self</span><span class="p">.</span><span class="n">unit</span> <span class="p">=</span> <span class="n">unit</span> <span class="p">}</span>
     <span class="kd">var</span> <span class="nv">tenant</span><span class="p">:</span> <span class="n">Person</span><span class="p">?</span>
     <span class="kd">deinit</span> <span class="p">{</span> <span class="bp">print</span><span class="p">(</span><span class="s">&#34;Apartment </span><span class="si">\(</span><span class="n">unit</span><span class="si">)</span><span class="s"> is being deinitialized&#34;</span><span class="p">)</span> <span class="p">}</span>
-<span class="p">}</span></code></pre></td></tr></table>
-</div>
-</div>
+<span class="p">}</span></code></pre></div>
 <p>每一个 <code>Person</code> 实例有一个可选的初始化为 <code>nil</code> 的 <code>Apartment</code> 类型，因为一个人并不总是拥有公寓。同样，每一个 <code>Apartment</code> 实例都有一个可选的初始化为 <code>nil</code> 的 <code>Person</code> 类型，因为一个公寓并不总是属于一个人。</p>
 
 <p>接下来的代码片段定义了两个可选类型的变量 <code>john</code> 和 <code>unit4A</code>，并分别设定为下面的 <code>Person</code> 和 <code>Apartment</code> 的实例，这两个变量都备受设定为 <code>nil</code>：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">var</span> <span class="nv">john</span><span class="p">:</span> <span class="n">Person</span><span class="p">?</span>
-<span class="kd">var</span> <span class="nv">unit4A</span><span class="p">:</span> <span class="n">Apartment</span><span class="p">?</span></code></pre></td></tr></table>
-</div>
-</div>
+<div class="highlight"><pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">var</span> <span class="nv">john</span><span class="p">:</span> <span class="n">Person</span><span class="p">?</span>
+<span class="kd">var</span> <span class="nv">unit4A</span><span class="p">:</span> <span class="n">Apartment</span><span class="p">?</span></code></pre></div>
 <p>现在可以创建特定的 <code>Person</code> 和 <code>Apartment</code> 实例，并将它们赋值给 <code>john</code> 和 <code>unit4A</code> 变量：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="n">john</span> <span class="p">=</span> <span class="n">Person</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&#34;John Appleseed&#34;</span><span class="p">)</span>
-<span class="n">unit4A</span> <span class="p">=</span> <span class="n">Apartment</span><span class="p">(</span><span class="n">unit</span><span class="p">:</span> <span class="s">&#34;4A&#34;</span><span class="p">)</span></code></pre></td></tr></table>
-</div>
-</div>
+<div class="highlight"><pre class="chroma"><code class="language-swift" data-lang="swift"><span class="n">john</span> <span class="p">=</span> <span class="n">Person</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&#34;John Appleseed&#34;</span><span class="p">)</span>
+<span class="n">unit4A</span> <span class="p">=</span> <span class="n">Apartment</span><span class="p">(</span><span class="n">unit</span><span class="p">:</span> <span class="s">&#34;4A&#34;</span><span class="p">)</span></code></pre></div>
 <p>下面一段代码将这两个实例关联起来：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="n">john</span><span class="o">!</span><span class="p">.</span><span class="n">apartment</span> <span class="p">=</span> <span class="n">unit4A</span>
-<span class="n">unit4A</span><span class="o">!</span><span class="p">.</span><span class="n">tenant</span> <span class="p">=</span> <span class="n">john</span></code></pre></td></tr></table>
-</div>
-</div>
+<div class="highlight"><pre class="chroma"><code class="language-swift" data-lang="swift"><span class="n">john</span><span class="o">!</span><span class="p">.</span><span class="n">apartment</span> <span class="p">=</span> <span class="n">unit4A</span>
+<span class="n">unit4A</span><span class="o">!</span><span class="p">.</span><span class="n">tenant</span> <span class="p">=</span> <span class="n">john</span></code></pre></div>
 <p>将两个实例关联在一起后，强引用的关系如图所示：</p>
 
 <p><img src="https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326144231.png" alt="14607053938205" /></p>
@@ -279,24 +213,12 @@
 <p>这两个实例关联之后，会产生一个循环强引用，当断开 <code>john</code> 和 <code>unit4A</code> 所持有的强引用时，引用计数器并不会归零，所以这两块空间也得不到释放，这就导致了内存泄漏。</p>
 
 <p>可以将其中一个类中的变量设定为 <code>weak</code> 弱引用来打破这种强引用循环：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="nc">Apartment</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="nc">Apartment</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="nv">unit</span><span class="p">:</span> <span class="nb">String</span>
     <span class="kd">init</span><span class="p">(</span><span class="n">unit</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span> <span class="kc">self</span><span class="p">.</span><span class="n">unit</span> <span class="p">=</span> <span class="n">unit</span> <span class="p">}</span>
     <span class="kr">weak</span> <span class="kd">var</span> <span class="nv">tenant</span><span class="p">:</span> <span class="n">Person</span><span class="p">?</span>
     <span class="kd">deinit</span> <span class="p">{</span> <span class="bp">print</span><span class="p">(</span><span class="s">&#34;Apartment </span><span class="si">\(</span><span class="n">unit</span><span class="si">)</span><span class="s"> is being deinitialized&#34;</span><span class="p">)</span> <span class="p">}</span>
-<span class="p">}</span></code></pre></td></tr></table>
-</div>
-</div>
+<span class="p">}</span></code></pre></div>
 <p><img src="https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326144320.png" alt="14607057294969" /></p>
 
 <p>当断开 <code>john</code> 和 <code>unit4A</code> 所持有的强引用时，<code>Person instance</code> 的引用计数器变成 0，实例被销毁，从而 <code>Apartment instance</code> 的引用计数器也变为 0，实例被销毁。</p>
@@ -310,29 +232,7 @@
 <p>在某些情况下，声明的变量总是有值得时候，我们需要使用 <code>unowned</code> 无主引用。</p>
 
 <p>同样借用一下 TSPL 中的例子：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="nc">Customer</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="nc">Customer</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="nv">name</span><span class="p">:</span> <span class="nb">String</span>
     <span class="kd">var</span> <span class="nv">card</span><span class="p">:</span> <span class="n">CreditCard</span><span class="p">?</span>
     <span class="kd">init</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span>
@@ -349,24 +249,13 @@
         <span class="kc">self</span><span class="p">.</span><span class="n">customer</span> <span class="p">=</span> <span class="n">customer</span>
     <span class="p">}</span>
     <span class="kd">deinit</span> <span class="p">{</span> <span class="bp">print</span><span class="p">(</span><span class="s">&#34;Card #</span><span class="si">\(</span><span class="n">number</span><span class="si">)</span><span class="s"> is being deinitialized&#34;</span><span class="p">)</span> <span class="p">}</span>
-<span class="p">}</span></code></pre></td></tr></table>
-</div>
-</div>
+<span class="p">}</span></code></pre></div>
 <p>这里定义了两个类，<code>Customer</code> 和 <code>CreditCard</code>，模拟了银行客户和客户的信用卡，在这个例子中，每一个类都是将另一个类的实例作为自身的属性，所以会产生循环强引用。</p>
 
 <p>和之前那个例子不同的是，<code>CreditCard</code> 类中有一个非可选类型的 <code>customer</code> 属性，因为，一个客户可能有或者没有一张信用卡，但是一张信用卡总是关联着一个用户。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">var</span> <span class="nv">john</span><span class="p">:</span> <span class="n">Customer</span><span class="p">?</span>
+<div class="highlight"><pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">var</span> <span class="nv">john</span><span class="p">:</span> <span class="n">Customer</span><span class="p">?</span>
 <span class="n">john</span> <span class="p">=</span> <span class="n">Customer</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&#34;John Appleseed&#34;</span><span class="p">)</span>
-<span class="n">john</span><span class="o">!</span><span class="p">.</span><span class="n">card</span> <span class="p">=</span> <span class="n">CreditCard</span><span class="p">(</span><span class="n">number</span><span class="p">:</span> <span class="mi">1234_5678_9012_3456</span><span class="p">,</span> <span class="n">customer</span><span class="p">:</span> <span class="n">john</span><span class="o">!</span><span class="p">)</span></code></pre></td></tr></table>
-</div>
-</div>
+<span class="n">john</span><span class="o">!</span><span class="p">.</span><span class="n">card</span> <span class="p">=</span> <span class="n">CreditCard</span><span class="p">(</span><span class="n">number</span><span class="p">:</span> <span class="mi">1234_5678_9012_3456</span><span class="p">,</span> <span class="n">customer</span><span class="p">:</span> <span class="n">john</span><span class="o">!</span><span class="p">)</span></code></pre></div>
 <p>关联两个实例后，它们的引用关系如图所示：</p>
 
 <p><img src="https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326144333.png" alt="14607068387297" /></p>
@@ -430,19 +319,21 @@
     </footer>
   </article>
         </div>
-        
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'tisogasnotes';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
    
-   <div class="post bg-white">
-     <script src="https://utteranc.es/client.js"
-           repo= "forrestchang/forrestchang.github.io"
-           issue-term="pathname"
-           theme="github-light"
-           label="utterances"
-           crossorigin="anonymous"
-           async>
-     </script>
-   </div>
- 
 
   
 
@@ -450,24 +341,10 @@
     </main>
 
     <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="mailto:forrestchang7@email.com" class="iconfont icon-email" title="email"></a>
-      <a href="https://twitter.com/Tisoga" class="iconfont icon-twitter" title="twitter"></a>
-      <a href="https://github.com/forrestchang" class="iconfont icon-github" title="github"></a>
-      <a href="https://www.instagram.com/jiayuan3055/" class="iconfont icon-instagram" title="instagram"></a>
-  <a href="http://blog.jiayuanzhang.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
-</div>
-
+      
 <div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
 
+  
   <div class="busuanzi-footer">
     <span id="busuanzi_container_site_pv"> Site PV: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
       <span class="division">|</span>
@@ -484,6 +361,7 @@
     <span class="author">Jiayuan</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">

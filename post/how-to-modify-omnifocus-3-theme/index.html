@@ -34,7 +34,7 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.f2d85ead.min.css" rel="stylesheet">
+<link href="/dist/even.ca395a5b.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-05-23T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-05-23T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="552">
+<meta itemprop="wordCount" content="533">
 
 
 
@@ -156,45 +156,16 @@
 <p>在 <code>/Applications/OmniFocus.app/Contents/Resources/ThemeResources/SystemFont</code> 下面修改字体的大小和页边距，首先我们先修改边距大小，我默认选择的是 Extra Large 的字体，所以需要修改 <code>OFIExtraLargeLayoutConstraintConstants.plit</code>。</p>
 
 <p>找到以下代码：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;key&gt;</span>extraPaddingBelowNoteForActionCells<span class="nt">&lt;/key&gt;</span>
+<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;key&gt;</span>extraPaddingBelowNoteForActionCells<span class="nt">&lt;/key&gt;</span>
 <span class="nt">&lt;real&gt;</span>20<span class="nt">&lt;/real&gt;</span>
 <span class="nt">&lt;key&gt;</span>extraPaddingBelowNoteForColumnarActionCells<span class="nt">&lt;/key&gt;</span>
 <span class="nt">&lt;real&gt;</span>20<span class="nt">&lt;/real&gt;</span>
 <span class="nt">&lt;key&gt;</span>extraPaddingBelowNoteForProjectCells<span class="nt">&lt;/key&gt;</span>
-<span class="nt">&lt;real&gt;</span>20<span class="nt">&lt;/real&gt;</span></code></pre></td></tr></table>
-</div>
-</div>
+<span class="nt">&lt;real&gt;</span>20<span class="nt">&lt;/real&gt;</span></code></pre></div>
 <p>然后把 <code>real</code> 的值设定成自己想要的就好了，我这边设定为 20，最后看起来的效果还可以。</p>
 
 <p>然后修改 Note 的字体，打开 <code>OFIFontRegistry.plit</code>，找到以下代码：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;key&gt;</span>OFITextStyleNoteBody<span class="nt">&lt;/key&gt;</span>
+<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;key&gt;</span>OFITextStyleNoteBody<span class="nt">&lt;/key&gt;</span>
 <span class="nt">&lt;dict&gt;</span>
 	<span class="nt">&lt;key&gt;</span>content-sizes<span class="nt">&lt;/key&gt;</span>
 	<span class="nt">&lt;array&gt;</span>
@@ -206,9 +177,7 @@
 	<span class="nt">&lt;/array&gt;</span>
 	<span class="nt">&lt;key&gt;</span>font-name<span class="nt">&lt;/key&gt;</span>
 	<span class="nt">&lt;string&gt;</span>regular<span class="nt">&lt;/string&gt;</span>
-<span class="nt">&lt;/dict&gt;</span></code></pre></td></tr></table>
-</div>
-</div>
+<span class="nt">&lt;/dict&gt;</span></code></pre></div>
 <p>依次修改 <code>real</code> 的值，对应 OmniFocus 的以下配置：</p>
 
 <p><img src="https://raw.githubusercontent.com/forrestchang/img-repo/master/20190523112118.png" alt="" /></p>
@@ -254,19 +223,21 @@
     </footer>
   </article>
         </div>
-        
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'tisogasnotes';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
    
-   <div class="post bg-white">
-     <script src="https://utteranc.es/client.js"
-           repo= "forrestchang/forrestchang.github.io"
-           issue-term="pathname"
-           theme="github-light"
-           label="utterances"
-           crossorigin="anonymous"
-           async>
-     </script>
-   </div>
- 
 
   
 
@@ -274,24 +245,10 @@
     </main>
 
     <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="mailto:forrestchang7@email.com" class="iconfont icon-email" title="email"></a>
-      <a href="https://twitter.com/Tisoga" class="iconfont icon-twitter" title="twitter"></a>
-      <a href="https://github.com/forrestchang" class="iconfont icon-github" title="github"></a>
-      <a href="https://www.instagram.com/jiayuan3055/" class="iconfont icon-instagram" title="instagram"></a>
-  <a href="http://blog.jiayuanzhang.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
-</div>
-
+      
 <div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
 
+  
   <div class="busuanzi-footer">
     <span id="busuanzi_container_site_pv"> Site PV: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
       <span class="division">|</span>
@@ -308,6 +265,7 @@
     <span class="author">Jiayuan</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">

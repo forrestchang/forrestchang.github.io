@@ -34,7 +34,7 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.f2d85ead.min.css" rel="stylesheet">
+<link href="/dist/even.ca395a5b.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-05-02T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-05-06T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="4172">
+<meta itemprop="wordCount" content="4164">
 
 
 
@@ -266,25 +266,10 @@
 <p>例如上面的这个变量名可以简化为 <code>maxPointsInOlympics</code> ，这样既保留了变量的原本意思（参考上下文的情况下），又缩短的变量名的长度。</p>
 
 <p>在编写变量名的时候还需要考虑作用域的问题，一般来说，小作用域里的变量名可以简短一些，因为只作用于几行代码，例如 Python 中的列表推导式（Python 3，Python 2 中的列表推导式不是块级作用域）：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="n">do_something</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span> <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">some_list</span><span class="p">]</span></code></pre></td></tr></table>
-</div>
-</div>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="n">do_something</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span> <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">some_list</span><span class="p">]</span></code></pre></div>
 <p>甚至在不需要使用这个变量的时候可以把它忽略：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 生成一个随机数列表</span>
-<span class="n">random_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span></code></pre></td></tr></table>
-</div>
-</div>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 生成一个随机数列表</span>
+<span class="n">random_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span></code></pre></div>
 <p>相反的，如果是一个全局作用域，变量名就需要取得独特一些，避免产生命名空间冲突。例如用户接口部分的雇员类可以命名为 <code>uiEmployee</code>，数据库部分的雇员类可以命名为 <code>dbEmployee</code>。</p>
 
 <h3 id="命名的最佳实践有哪些">命名的最佳实践有哪些？</h3>
@@ -299,16 +284,8 @@
 </ol>
 
 <p>例如，我需要便利一个用户列表信息来对每个用户的信息做处理：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">user_info</span> <span class="ow">in</span> <span class="n">user_infos</span><span class="p">:</span>
-    <span class="n">do_something</span><span class="p">(</span><span class="n">user_info</span><span class="p">)</span></code></pre></td></tr></table>
-</div>
-</div>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">user_info</span> <span class="ow">in</span> <span class="n">user_infos</span><span class="p">:</span>
+    <span class="n">do_something</span><span class="p">(</span><span class="n">user_info</span><span class="p">)</span></code></pre></div>
 <p>要注意的事，在 Python 中，<code>for</code> 循环是不存在子作用域的，所以在循环外访问 <code>user_info</code> 会获取 <code>user_infos</code> 中的最后一个值。</p>
 
 <p>个人经验：</p>
@@ -332,18 +309,9 @@
 <p>虽然临时变量是「临时」使用的，但是也不应该随意给它们命名，赋予一个更有意义的名字会让程序更加可读。</p>
 
 <p>例如下面一段计算二元一次方程的代码：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">temp</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">b</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">temp</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">b</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span>
 <span class="n">answer</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="n">temp</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
-<span class="n">answer</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="n">temp</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span></code></pre></td></tr></table>
-</div>
-</div>
+<span class="n">answer</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="n">temp</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span></code></pre></div>
 <p>虽然上面这段代码没有什么逻辑问题，但是 <code>temp</code> 这个变量并不能很好的表述计算的中间结果，如果把 <code>temp</code> 改为 <code>discriminant</code>（判别式） 会更好。</p>
 
 <h4 id="布尔变量">布尔变量</h4>
@@ -471,19 +439,21 @@
     </footer>
   </article>
         </div>
-        
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'tisogasnotes';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
    
-   <div class="post bg-white">
-     <script src="https://utteranc.es/client.js"
-           repo= "forrestchang/forrestchang.github.io"
-           issue-term="pathname"
-           theme="github-light"
-           label="utterances"
-           crossorigin="anonymous"
-           async>
-     </script>
-   </div>
- 
 
   
 
@@ -491,24 +461,10 @@
     </main>
 
     <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="mailto:forrestchang7@email.com" class="iconfont icon-email" title="email"></a>
-      <a href="https://twitter.com/Tisoga" class="iconfont icon-twitter" title="twitter"></a>
-      <a href="https://github.com/forrestchang" class="iconfont icon-github" title="github"></a>
-      <a href="https://www.instagram.com/jiayuan3055/" class="iconfont icon-instagram" title="instagram"></a>
-  <a href="http://blog.jiayuanzhang.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
-</div>
-
+      
 <div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
 
+  
   <div class="busuanzi-footer">
     <span id="busuanzi_container_site_pv"> Site PV: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
       <span class="division">|</span>
@@ -525,6 +481,7 @@
     <span class="author">Jiayuan</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">

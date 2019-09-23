@@ -34,7 +34,7 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.f2d85ead.min.css" rel="stylesheet">
+<link href="/dist/even.ca395a5b.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2017-08-17T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-05-06T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="3969">
+<meta itemprop="wordCount" content="3957">
 
 
 
@@ -244,45 +244,21 @@ DRY - Don&rsquo;t Repeat Yourself
 <p>有时，重复来自设计中的错误。</p>
 
 <p>举个例子：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span><span class="err"> </span><span class="nc">Line</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span><span class="err"> </span><span class="nc">Line</span> <span class="p">{</span>
 	<span class="k">public</span><span class="o">:</span>
 		<span class="n">Point</span> <span class="n">start</span><span class="p">;</span>
 		<span class="n">Point</span> <span class="n">end</span><span class="p">;</span>
 		<span class="kt">double</span> <span class="n">lenght</span><span class="p">;</span>
 <span class="p">};</span>
-</code></pre></td></tr></table>
-</div>
-</div>
+</code></pre></div>
 <p>第一眼看上去这个类似乎是合理的。线段显然有起点和终点，并总是有长度的。但这里有重复，长度是由起点和终点决定的：改变其中一个，长度就会变化。最好是让长度编程计算字段：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span><span class="err"> </span><span class="nc">Line</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span><span class="err"> </span><span class="nc">Line</span> <span class="p">{</span>
 	<span class="k">public</span><span class="o">:</span>
 		<span class="n">Point</span> <span class="n">start</span><span class="p">;</span>
 		<span class="n">Point</span> <span class="n">end</span><span class="p">;</span>
 		<span class="kt">double</span> <span class="nf">lenght</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">start</span><span class="p">.</span><span class="n">distanceTo</span><span class="p">(</span><span class="n">end</span><span class="p">);</span> <span class="p">}</span>
 <span class="p">};</span>
-</code></pre></td></tr></table>
-</div>
-</div>
+</code></pre></div>
 <h5 id="无耐性的重复">无耐性的重复</h5>
 
 <p>每个项目都有时间压力。</p>
@@ -521,19 +497,21 @@ Iterate the Schedule with the Code
     </footer>
   </article>
         </div>
-        
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'tisogasnotes';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
    
-   <div class="post bg-white">
-     <script src="https://utteranc.es/client.js"
-           repo= "forrestchang/forrestchang.github.io"
-           issue-term="pathname"
-           theme="github-light"
-           label="utterances"
-           crossorigin="anonymous"
-           async>
-     </script>
-   </div>
- 
 
   
 
@@ -541,24 +519,10 @@ Iterate the Schedule with the Code
     </main>
 
     <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="mailto:forrestchang7@email.com" class="iconfont icon-email" title="email"></a>
-      <a href="https://twitter.com/Tisoga" class="iconfont icon-twitter" title="twitter"></a>
-      <a href="https://github.com/forrestchang" class="iconfont icon-github" title="github"></a>
-      <a href="https://www.instagram.com/jiayuan3055/" class="iconfont icon-instagram" title="instagram"></a>
-  <a href="http://blog.jiayuanzhang.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
-</div>
-
+      
 <div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
 
+  
   <div class="busuanzi-footer">
     <span id="busuanzi_container_site_pv"> Site PV: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
       <span class="division">|</span>
@@ -575,6 +539,7 @@ Iterate the Schedule with the Code
     <span class="author">Jiayuan</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">

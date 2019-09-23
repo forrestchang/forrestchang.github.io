@@ -34,7 +34,7 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.f2d85ead.min.css" rel="stylesheet">
+<link href="/dist/even.ca395a5b.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2015-10-10T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-05-06T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="2513">
+<meta itemprop="wordCount" content="2416">
 
 
 
@@ -201,18 +201,9 @@
 <h2 id="建立目录结构">建立目录结构</h2>
 
 <p>随便在哪里建一个心得目录，这个目录就是存放你的org文件和html文件的地方。假设我们已经有了这么一个目录 <code>org</code> ：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ mkdir notes
+<div class="highlight"><pre class="chroma">$ mkdir notes
 $ mkdir public_html
-$ mkdir gtd</pre></td></tr></table>
-</div>
-</div>
+$ mkdir gtd</pre></div>
 <p>当然，那个gtd目录你可以不要，那是用来做时间管理的，如果你不想用Emacs做时间管理的话，可以不用建那个目录。</p>
 
 <ul>
@@ -227,51 +218,17 @@ $ mkdir gtd</pre></td></tr></table>
 <p>Emacs org-mode自带了很强大的导出功能，可以导出成HTML、markdown、PDF等格式的文件，我们这里使用自带的导出Project的功能，只不过在导出之前，要做一些配置，告诉Emacs要导出哪些东西，导出到哪里，采用什么规则。</p>
 
 <p>首先我们在配置文件中添加以下代码（普通的在.emacs中添加，spacemacs用户在.spacemacs中添加）：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-lisp" data-lang="lisp"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-lisp" data-lang="lisp">  <span class="p">(</span><span class="nv">require</span> <span class="ss">&#39;ox-publish</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-lisp" data-lang="lisp">  <span class="p">(</span><span class="nv">require</span> <span class="ss">&#39;ox-publish</span><span class="p">)</span>
   <span class="p">(</span><span class="nv">setq</span> <span class="nv">org-publish-project-alist</span>
         <span class="o">&#39;</span><span class="p">(</span>
 
           <span class="c1">;; 把各部分的配置文件写到这里面来</span>
 
-          <span class="p">))</span></code></pre></td></tr></table>
-</div>
-</div>
+          <span class="p">))</span></code></pre></div>
 <p>然后把其他的配置文件依次添加进来就可以了，主要有生成HTML的部分和原样拷贝的部分。</p>
 
 <p>下面来配置需要转换成HTML的内容：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-html" data-lang="html"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-html" data-lang="html">  (&#34;blog-notes&#34;
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">  (&#34;blog-notes&#34;
    :base-directory &#34;~/org/notes&#34;
    :base-extension &#34;org&#34;
    :publishing-directory &#34;~/org/public_html/&#34;
@@ -287,9 +244,7 @@ $ mkdir gtd</pre></td></tr></table>
    :sitemap-title &#34;Sitemap&#34;         ; ... with title &#39;Sitemap&#39;.
    :sitemap-sort-files anti-chronologically
    :sitemap-file-entry-format &#34;%d %t&#34;
-   )</code></pre></td></tr></table>
-</div>
-</div>
+   )</code></pre></div>
 <ul>
 <li>:base-directory - 你存放笔记的目录（想将哪里的org文件导出成HTML）</li>
 <li>:base-extension - 导出的文件格式</li>
@@ -302,59 +257,21 @@ $ mkdir gtd</pre></td></tr></table>
 </ul>
 
 <p>并不是所有的文件都需要转化为HTML的，比如说一些图片、PDF、CSS样式等，只需要原样拷贝到目标文件就行，配置代码如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-lisp" data-lang="lisp"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-lisp" data-lang="lisp">  <span class="p">(</span><span class="s">&#34;blog-static&#34;</span>
+<div class="highlight"><pre class="chroma"><code class="language-lisp" data-lang="lisp">  <span class="p">(</span><span class="s">&#34;blog-static&#34;</span>
    <span class="ss">:base-directory</span> <span class="s">&#34;~/org/notes&#34;</span>
    <span class="ss">:base-extension</span> <span class="s">&#34;css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf&#34;</span>
    <span class="ss">:publishing-directory</span> <span class="s">&#34;~/org/public_html/&#34;</span>
    <span class="ss">:recursive</span> <span class="no">t</span>
    <span class="ss">:publishing-function</span> <span class="nv">org-publish-attachment</span>
-   <span class="p">)</span></code></pre></td></tr></table>
-</div>
-</div>
+   <span class="p">)</span></code></pre></div>
 <p>把这两段代码查到刚刚给的框架里面去即可。</p>
 
 <p>最后，我们再加一段代码：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-lisp" data-lang="lisp"><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-lisp" data-lang="lisp">  <span class="p">(</span><span class="s">&#34;blog&#34;</span> <span class="ss">:components</span> <span class="p">(</span><span class="s">&#34;blog-notes&#34;</span> <span class="s">&#34;blog-static&#34;</span><span class="p">))</span></code></pre></td></tr></table>
-</div>
-</div>
+<div class="highlight"><pre class="chroma"><code class="language-lisp" data-lang="lisp">  <span class="p">(</span><span class="s">&#34;blog&#34;</span> <span class="ss">:components</span> <span class="p">(</span><span class="s">&#34;blog-notes&#34;</span> <span class="s">&#34;blog-static&#34;</span><span class="p">))</span></code></pre></div>
 <p>至此，基本的配置已经完成了，现在可以写一些org文件来生成HTML了。</p>
 
 <p>比如说我已经写完了一些org文件：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">.
+<div class="highlight"><pre class="chroma">.
 ├── blog-history.org
 ├── css
 │   └── worg.css
@@ -367,9 +284,7 @@ $ mkdir gtd</pre></td></tr></table>
 ├── personal
 │   ├── how-to-study-efficiently.org
 │   └── index.org
-└── sitemap.org</pre></td></tr></table>
-</div>
-</div>
+└── sitemap.org</pre></div>
 <p>然后使用<code>M-x org-publish-project</code>，输入<code>blog</code>，就会自动开始生成HTML文件了，现在已经可以在public_html文件夹中访问了。</p>
 
 <p>当然，index页面是需要自己来写的，可以参照我的主页来写，或者自由发挥。</p>
@@ -381,14 +296,7 @@ $ mkdir gtd</pre></td></tr></table>
 <p>首先需要在notes文件夹内新建一个css文件夹，里面保存需要用到的CSS文件，这里我使用的是org-mode官网上用的CSS文件，非常的简洁。</p>
 
 <p>然后我们需要在 <code>blog-notes</code> 这个配置中新增一条属性：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-lisp" data-lang="lisp"><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-lisp" data-lang="lisp"> <span class="ss">:html-head</span> <span class="s">&#34;&lt;link rel=\&#34;stylesheet\&#34; type=\&#34;text/css\&#34; href=\&#34;/css/worg.css\&#34;/&gt;&#34;</span></code></pre></td></tr></table>
-</div>
-</div>
+<div class="highlight"><pre class="chroma"><code class="language-lisp" data-lang="lisp"> <span class="ss">:html-head</span> <span class="s">&#34;&lt;link rel=\&#34;stylesheet\&#34; type=\&#34;text/css\&#34; href=\&#34;/css/worg.css\&#34;/&gt;&#34;</span></code></pre></div>
 <p>这样子的话再每次生成HTML的时候都会自动加上CSS，这里建议使用绝对路径来访问css文件，要不然在notes文件夹中新建文件夹的时候就无效了。</p>
 
 <h3 id="添加评论功能">添加评论功能</h3>
@@ -396,22 +304,7 @@ $ mkdir gtd</pre></td></tr></table>
 <p>这里使用的Disqus的评论系统，使用Duoshuo的话配置过程应该也一样。</p>
 
 <p>首先在Disqus中注册一个服务，获得一段代码，在 <code>blog-notes</code> 中新增加一条属性：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-lisp" data-lang="lisp"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-lisp" data-lang="lisp">  <span class="ss">:html-postamble</span> <span class="s">&#34;&lt;p class=\&#34;postamble\&#34;&gt;Last Updated %C. Created by %a&lt;/p&gt;
+<div class="highlight"><pre class="chroma"><code class="language-lisp" data-lang="lisp">  <span class="ss">:html-postamble</span> <span class="s">&#34;&lt;p class=\&#34;postamble\&#34;&gt;Last Updated %C. Created by %a&lt;/p&gt;
 </span><span class="s">  &lt;div id=\&#34;disqus_thread\&#34;&gt;&lt;/div&gt;
 </span><span class="s">  &lt;script type=\&#34;text/javascript\&#34;&gt;
 </span><span class="s">  var disqus_shortname = &#39;yourshortname&#39;;
@@ -421,51 +314,13 @@ $ mkdir gtd</pre></td></tr></table>
 </span><span class="s">           (document.getElementsByTagName(&#39;head&#39;)[0] || document.getElementsByTagName(&#39;body&#39;)[0]).appendChild(dsq);
 </span><span class="s">           })();
 </span><span class="s">  &lt;/script&gt;
-</span><span class="s">  &#34;</span></code></pre></td></tr></table>
-</div>
-</div>
+</span><span class="s">  &#34;</span></code></pre></div>
 <p>需要注意的是代码中的双引号前面需要加上反斜杠来转义。</p>
 
 <h3 id="添加统计功能">添加统计功能</h3>
 
 <p>使用百度和Google的统计服务，和添加评论功能类似，还是添加在这条属性里面：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-lisp" data-lang="lisp"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-lisp" data-lang="lisp">    <span class="ss">:html-postamble</span> <span class="s">&#34;&lt;p class=\&#34;postamble\&#34;&gt;Last Updated %C. Created by %a&lt;/p&gt;
+<div class="highlight"><pre class="chroma"><code class="language-lisp" data-lang="lisp">    <span class="ss">:html-postamble</span> <span class="s">&#34;&lt;p class=\&#34;postamble\&#34;&gt;Last Updated %C. Created by %a&lt;/p&gt;
 </span><span class="s">  &lt;script&gt;
 </span><span class="s">  var _hmt = _hmt || [];
 </span><span class="s">  (function() {
@@ -496,28 +351,16 @@ $ mkdir gtd</pre></td></tr></table>
 </span><span class="s">  ga(&#39;send&#39;, &#39;pageview&#39;);
 </span><span class="s">
 </span><span class="s">  &lt;/script&gt;
-</span><span class="s">  &#34;</span></code></pre></td></tr></table>
-</div>
-</div>
+</span><span class="s">  &#34;</span></code></pre></div>
 <p>同样注意双引号的转义问题即可。</p>
 
 <h2 id="托管到github上">托管到GitHub上</h2>
 
 <p>生成了HTML文件之后需要把public_html目录托管到GitHub上：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">$ git add .
+<div class="highlight"><pre class="chroma">$ git add .
 $ git commit -m &#34;first commit&#34;
 $ git remote add origin xxx
-$ git push -u origin master</pre></td></tr></table>
-</div>
-</div>
+$ git push -u origin master</pre></div>
 <p>其中<code>xxx</code>为你之前创建仓库的SSH路径。以后每次generate之后add、commit、push就可以了。</p>
 
 <p>现在访问 <code>xxx.github.io</code> 已经可以看到你的博客啦：）</p>
@@ -549,19 +392,21 @@ $ git push -u origin master</pre></td></tr></table>
     </footer>
   </article>
         </div>
-        
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'tisogasnotes';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
    
-   <div class="post bg-white">
-     <script src="https://utteranc.es/client.js"
-           repo= "forrestchang/forrestchang.github.io"
-           issue-term="pathname"
-           theme="github-light"
-           label="utterances"
-           crossorigin="anonymous"
-           async>
-     </script>
-   </div>
- 
 
   
 
@@ -569,24 +414,10 @@ $ git push -u origin master</pre></td></tr></table>
     </main>
 
     <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="mailto:forrestchang7@email.com" class="iconfont icon-email" title="email"></a>
-      <a href="https://twitter.com/Tisoga" class="iconfont icon-twitter" title="twitter"></a>
-      <a href="https://github.com/forrestchang" class="iconfont icon-github" title="github"></a>
-      <a href="https://www.instagram.com/jiayuan3055/" class="iconfont icon-instagram" title="instagram"></a>
-  <a href="http://blog.jiayuanzhang.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
-</div>
-
+      
 <div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
 
+  
   <div class="busuanzi-footer">
     <span id="busuanzi_container_site_pv"> Site PV: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
       <span class="division">|</span>
@@ -603,6 +434,7 @@ $ git push -u origin master</pre></td></tr></table>
     <span class="author">Jiayuan</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">

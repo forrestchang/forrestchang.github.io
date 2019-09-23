@@ -34,7 +34,7 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.f2d85ead.min.css" rel="stylesheet">
+<link href="/dist/even.ca395a5b.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-07-14T00:31:00&#43;08:00" />
 <meta itemprop="dateModified" content="2019-07-15T14:26:00&#43;08:00" />
-<meta itemprop="wordCount" content="2245">
+<meta itemprop="wordCount" content="2223">
 
 
 
@@ -204,31 +204,13 @@ private module</a> 这个视频里有详细讲解如何使用 Doom Emacs 来安�
 Doom Emacs 的用户可以参考官方文档来进行配置：<a href="https://ox-hugo.scripter.co/">ox-hugo - Org to Hugo exporter</a>。</p>
 
 <p>首先在 <code>my-org/packages.el</code> 中添加 ox-hugo：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="c1">;; packages.el</span>
-<span class="p">(</span><span class="nv">package!</span> <span class="nv">ox-hugo</span><span class="p">)</span></code></pre></td></tr></table>
-</div>
-</div>
+<div class="highlight"><pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="c1">;; packages.el</span>
+<span class="p">(</span><span class="nv">package!</span> <span class="nv">ox-hugo</span><span class="p">)</span></code></pre></div>
 <p>然后修改 <code>my-org/configle.</code> ，使用 Doom Emacs 自定义的 <code>def-package!</code> macro，其他用户可以使用 <code>use-package</code> 或者直接使用 <code>require</code> 来进行导入。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="c1">;; config.el</span>
+<div class="highlight"><pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="c1">;; config.el</span>
 <span class="p">(</span><span class="nv">def-package!</span> <span class="nv">ox-hugo</span>
   <span class="nb">:after</span> <span class="nv">ox</span>
-  <span class="p">)</span></code></pre></td></tr></table>
-</div>
-</div>
+  <span class="p">)</span></code></pre></div>
 <h2 id="开始写作">开始写作</h2>
 
 <p>ox-hugo 支持两种方式来管理 org 格式的博客文章，一种是所有的文章都放在同一个 org
@@ -248,24 +230,12 @@ Property： <code>HUGO_SECTION</code> 和 <code>HUGO_BASE_DIR</code> ，</p>
 
 <p>ox-hugo 使用 org-mode 中的 Tag 来标记文章的 Category 和 Tags，使用 <code>@</code> 开头的
 Tag 为 Category，其他的为普通的 Tags，利用 org-mode 的特性，我们可以方便地继承上级的 Tag，例如：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-org" data-lang="org"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-org" data-lang="org"><span class="gh">*</span><span class="gs"> Programming</span><span class="ge"> :@Programming:</span>
+<div class="highlight"><pre class="chroma"><code class="language-org" data-lang="org"><span class="gh">*</span><span class="gs"> Programming</span><span class="ge"> :@Programming:</span>
 <span class="gu">**</span><span class="err"> TODO</span> New post
 <span class="c">:PROPERTIES:
 </span><span class="c"></span><span class="cs">:EXPORT_FILE_NAME: new-post
 </span><span class="cs"></span><span class="c">:END:</span>
-This is a test post.</code></pre></td></tr></table>
-</div>
-</div>
+This is a test post.</code></pre></div>
 <p>其中 <code>Programming</code> 下的文章都会被分类到 <code>Programming</code> Category 中去。</p>
 
 <p>一篇文章有两个状态： <code>TODO</code> 和 <code>DONE</code> ，TODO 代表的是未发布的文章，在生成的
@@ -287,25 +257,10 @@ meta-data to Hugo front-matter — ox-hugo - Org to Hugo exporter</a> 。</p>
 <p>ox-hugo 的官方文档中介绍了一种自动 Export 的方式，只要保存了 org 格式的文章，就可以直接导出 Hugo 中。</p>
 
 <p>首先需要在配置中 load org-hugo-auto-export-mode：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="p">(</span><span class="nv">def-package!</span> <span class="nv">org-hugo-auto-export-mode</span><span class="p">)</span></code></pre></td></tr></table>
-</div>
-</div>
+<div class="highlight"><pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="p">(</span><span class="nv">def-package!</span> <span class="nv">org-hugo-auto-export-mode</span><span class="p">)</span></code></pre></div>
 <p>然后在 Hugo 的根目录下建立 <code>.dir-locals.el</code> 文件：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="p">((</span><span class="s">&#34;content-org/&#34;</span>
-  <span class="o">.</span> <span class="p">((</span><span class="nv">org-mode</span> <span class="o">.</span> <span class="p">((</span><span class="nf">eval</span> <span class="o">.</span> <span class="p">(</span><span class="nv">org-hugo-auto-export-mode</span><span class="p">)))))))</span></code></pre></td></tr></table>
-</div>
-</div>
+<div class="highlight"><pre class="chroma"><code class="language-elisp" data-lang="elisp"><span class="p">((</span><span class="s">&#34;content-org/&#34;</span>
+  <span class="o">.</span> <span class="p">((</span><span class="nv">org-mode</span> <span class="o">.</span> <span class="p">((</span><span class="nf">eval</span> <span class="o">.</span> <span class="p">(</span><span class="nv">org-hugo-auto-export-mode</span><span class="p">)))))))</span></code></pre></div>
 <p>Reload 一下 Emacs 的配置就可以自动 Export 了，配合 <code>hugo serve -D</code> 命令，可以做到实时预览。</p>
 
 <figure>
@@ -339,26 +294,13 @@ meta-data to Hugo front-matter — ox-hugo - Org to Hugo exporter</a> 。</p>
 <p>实现方式非常简单，使用 AppleScript 获取当前 Chrome 的链接和 title，并组合成对应格式的链接地址（markdown 或者 org-mode）放到剪贴板中，然后使用 Alfred 来调用。</p>
 
 <p>生成 org-mode link 的代码可以参考我写的这个：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-applescript" data-lang="applescript"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-applescript" data-lang="applescript"><span class="k">tell</span> <span class="nb">application</span> <span class="s2">&#34;Google Chrome&#34;</span>
+<div class="highlight"><pre class="chroma"><code class="language-applescript" data-lang="applescript"><span class="k">tell</span> <span class="nb">application</span> <span class="s2">&#34;Google Chrome&#34;</span>
   <span class="k">set</span> <span class="nv">tab_link</span> <span class="k">to</span> <span class="p">(</span><span class="k">get</span> <span class="nv">URL</span> <span class="k">of</span> <span class="na">active</span> <span class="no">tab</span> <span class="k">of</span> <span class="nb">first</span> <span class="na">window</span><span class="p">)</span>
   <span class="k">set</span> <span class="nv">tab_title</span> <span class="k">to</span> <span class="p">(</span><span class="k">get</span> <span class="na">title</span> <span class="k">of</span> <span class="na">active</span> <span class="no">tab</span> <span class="k">of</span> <span class="nb">first</span> <span class="na">window</span><span class="p">)</span>
   <span class="k">set</span> <span class="nv">org_link</span> <span class="k">to</span> <span class="p">(</span><span class="s2">&#34;[[&#34;</span> <span class="o">&amp;</span> <span class="nv">tab_link</span> <span class="o">&amp;</span> <span class="s2">&#34;]&#34;</span> <span class="o">&amp;</span> <span class="s2">&#34;[&#34;</span> <span class="o">&amp;</span> <span class="nv">tab_title</span> <span class="o">&amp;</span> <span class="s2">&#34;]]&#34;</span><span class="p">)</span>
   <span class="nb">set the clipboard to</span> <span class="nv">org_link</span>
   <span class="nb">display</span> <span class="nv">notification</span> <span class="nv">org_link</span> <span class="nv">with</span> <span class="na">title</span> <span class="s2">&#34;成功复制当前标签页链接到剪贴板&#34;</span>
-<span class="k">end</span> <span class="k">tell</span></code></pre></td></tr></table>
-</div>
-</div>
+<span class="k">end</span> <span class="k">tell</span></code></pre></div>
     </div>
 
     
@@ -386,19 +328,21 @@ meta-data to Hugo front-matter — ox-hugo - Org to Hugo exporter</a> 。</p>
     </footer>
   </article>
         </div>
-        
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'tisogasnotes';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
    
-   <div class="post bg-white">
-     <script src="https://utteranc.es/client.js"
-           repo= "forrestchang/forrestchang.github.io"
-           issue-term="pathname"
-           theme="github-light"
-           label="utterances"
-           crossorigin="anonymous"
-           async>
-     </script>
-   </div>
- 
 
   
 
@@ -406,24 +350,10 @@ meta-data to Hugo front-matter — ox-hugo - Org to Hugo exporter</a> 。</p>
     </main>
 
     <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="mailto:forrestchang7@email.com" class="iconfont icon-email" title="email"></a>
-      <a href="https://twitter.com/Tisoga" class="iconfont icon-twitter" title="twitter"></a>
-      <a href="https://github.com/forrestchang" class="iconfont icon-github" title="github"></a>
-      <a href="https://www.instagram.com/jiayuan3055/" class="iconfont icon-instagram" title="instagram"></a>
-  <a href="http://blog.jiayuanzhang.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
-</div>
-
+      
 <div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
 
+  
   <div class="busuanzi-footer">
     <span id="busuanzi_container_site_pv"> Site PV: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
       <span class="division">|</span>
@@ -440,6 +370,7 @@ meta-data to Hugo front-matter — ox-hugo - Org to Hugo exporter</a> 。</p>
     <span class="author">Jiayuan</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">

@@ -22,14 +22,7 @@
 &lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
 
 &lt;p&gt;直接使用 pip 来进行安装：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;$ sudo pip install virtualenv&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;$ sudo pip install virtualenv&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;用途&#34;&gt;用途&lt;/h2&gt;
 
 &lt;p&gt;主要用来创建隔离的 Python 开发环境，比如说一个项目需要用到 2.7 的库，另一个项目需要用到 3.0 的库，我们就可以使用  virtualenv 来分别给这两个项目创建虚拟的 Python 环境，这样可以有效的避免冲突。&lt;/p&gt;
@@ -41,68 +34,27 @@
 &lt;h3 id=&#34;创建虚拟环境&#34;&gt;创建虚拟环境&lt;/h3&gt;
 
 &lt;p&gt;最基本的使用：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;$ virtualenv ENV&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;$ virtualenv ENV&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;其中 &lt;code&gt;ENV&lt;/code&gt; 是用来存放虚拟环境的目录。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;$tree -L 1 ENV
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;$tree -L 1 ENV
 ENV
 ├── bin
 ├── include
 ├── lib
-└── pip-selfcheck.json&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+└── pip-selfcheck.json&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;其中 &lt;code&gt;lib&lt;/code&gt; 和 &lt;code&gt;include&lt;/code&gt; 目录是用来存放新的虚拟 Python 环境的依赖库，Package 被安装到 &lt;code&gt;lib/pythonX.X/site-packages/&lt;/code&gt; 中，&lt;code&gt;bin&lt;/code&gt; 目录中是新的 Python 解释器。&lt;code&gt;pip&lt;/code&gt; 和 &lt;code&gt;setuptools&lt;/code&gt; 默认被安装的。&lt;/p&gt;
 
 &lt;h3 id=&#34;active-script&#34;&gt;active script&lt;/h3&gt;
 
 &lt;p&gt;进入虚拟环境：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;$ source ENV/bin/active&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;$ source ENV/bin/active&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;（如果 &lt;code&gt;source&lt;/code&gt; 命令不存在可以使用 &lt;code&gt;.&lt;/code&gt; 命令。）&lt;/p&gt;
 
 &lt;p&gt;退出虚拟环境：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;$ deactivate&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;$ deactivate&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id=&#34;removing-an-environment&#34;&gt;Removing an Environment&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;(ENV)$ deactivate
-$ rm -r /path/to/ENV&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;(ENV)$ deactivate
+$ rm -r /path/to/ENV&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id=&#34;system-site-packages-选项&#34;&gt;&lt;code&gt;--system-site-packages&lt;/code&gt; 选项&lt;/h3&gt;
 
 &lt;p&gt;使用 &lt;code&gt;virtualenv --system-site-packages ENV&lt;/code&gt; 将会继承全局 packages。并不是很常用的功能。&lt;/p&gt;
@@ -112,34 +64,13 @@ $ rm -r /path/to/ENV&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;p&gt;使用 &lt;code&gt;-p PYTHON_EXE&lt;/code&gt; 选项在创建虚拟环境的时候制定 Python 版本。&lt;/p&gt;
 
 &lt;p&gt;Python 2.7:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;$ virtualenv -p /usr/bin/python2.7 ENV2.7&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;$ virtualenv -p /usr/bin/python2.7 ENV2.7&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Python 3.5:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;$ virtualenv -p /usr/local/bin/python3.5 ENV3.5&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;$ virtualenv -p /usr/local/bin/python3.5 ENV3.5&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id=&#34;生成可打包环境&#34;&gt;生成可打包环境&lt;/h3&gt;
 
 &lt;p&gt;某些情况下，我们可能需要在别的地方使用这个已经配置好的虚拟环境，可以使用 &lt;code&gt;virtualenv --relocatable&lt;/code&gt; 将 ENV 修改为可迁移的。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;(ENV)$ virutalenv --relocatable ./&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description>
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;(ENV)$ virutalenv --relocatable ./&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
   </channel>

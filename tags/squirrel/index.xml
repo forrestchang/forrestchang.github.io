@@ -74,48 +74,16 @@
 &lt;p&gt;初始的外观不是很符合自己的审美，可以进行更换主题、更改字体和字号大小等操作来配置成自己喜欢的样子。&lt;/p&gt;
 
 &lt;p&gt;新建配置文件&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;touch squirrel.custom.yaml&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;touch squirrel.custom.yaml&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;然后将以下代码写入配置文件&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;patch:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;patch:
   style/color_scheme: dark_temple #主题
   style/font_point: 18 #字号大小
-  style/horizontal: true #水平显示待选字&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+  style/horizontal: true #水平显示待选字&lt;/pre&gt;&lt;/div&gt;
 &lt;h4 id=&#34;主题列表&#34;&gt;主题列表&lt;/h4&gt;
 
 &lt;p&gt;自带的主题代码:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;#   注：预设的配色方案及代码（指定为 style/color_scheme ）
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;#   注：预设的配色方案及代码（指定为 style/color_scheme ）
 #   碧水 - aqua
 #   青天 - azure
 #   明月 - luna
@@ -125,34 +93,18 @@
 #   星际我争霸 - starcraft
 #   谷歌 - google
 #   晒经石 - solarized_rock
-#   简约白 - clean_white&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+#   简约白 - clean_white&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;想要更换什么主题只要把代码替换掉就可以了。&lt;/p&gt;
 
 &lt;h4 id=&#34;其他一些配置代码及其说明&#34;&gt;其他一些配置代码及其说明&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;  style/page_size: 8			             # 设定候选词数目
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;  style/page_size: 8			             # 设定候选词数目
   style/inline_preedit: false              # 关闭内嵌编码，这样就可以显示首行的拼音
   style/corner_radius: 10                  # 窗口圆角半径
   style/border_height: 0                   # 窗口边界高度，大于圆角半径才有效果
   style/border_width: 0                    # 窗口边界宽度，大于圆角半径才有效果
   style/line_spacing: 1                    # 候选词的行间距
   style/spacing: 5                         # 在非内嵌编码模式下，预编辑和候选词之间的距
-  style/font_face: &amp;#34;Hiragino Sans GB W3&amp;#34;   # 字体名称&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+  style/font_face: &amp;#34;Hiragino Sans GB W3&amp;#34;   # 字体名称&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;更多的一些配置代码可以在&lt;code&gt;squirrel.yaml&lt;/code&gt;中找到。&lt;/p&gt;
 
 &lt;h3 id=&#34;定制标点符号&#34;&gt;定制标点符号&lt;/h3&gt;
@@ -164,29 +116,9 @@
 &lt;p&gt;但是有的时候默认就想选择第一个，多出了一个选择的步骤无疑上会增加击键的次数，所以我们可以通过修改配置来解决这个问题，同时也可以自定义想要输入的符号。&lt;/p&gt;
 
 &lt;p&gt;这里我们使用的是&lt;code&gt;朙月拼音・簡化字&lt;/code&gt;，所以需要建立相应的配置文件：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;touch luna_pinyin_simp.custom.yaml&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;touch luna_pinyin_simp.custom.yaml&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;然后写入以下配置（可根据自己的需要修改，这里的代码的意思是在全角和半角的状态下输入&lt;code&gt;&amp;lt;&lt;/code&gt;均以&lt;code&gt;《&lt;/code&gt;输出）。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;patch:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;patch:
   punctuator/full_shape:
     &amp;#34;&amp;lt;&amp;#34;: &amp;#34;《&amp;#34;
   punctuator/half_shape:
@@ -194,9 +126,7 @@
   punctuator/full_shape:
     &amp;#34;&amp;gt;&amp;#34;: &amp;#34;》&amp;#34;
   punctuator/half_shape:
-    &amp;#34;&amp;gt;&amp;#34;: &amp;#34;》&amp;#34;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+    &amp;#34;&amp;gt;&amp;#34;: &amp;#34;》&amp;#34;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id=&#34;安静模式&#34;&gt;安静模式&lt;/h3&gt;
 
 &lt;p&gt;之前一直使用百度输入法的原因就是因为它有一个安静模式，可以在特定的程序内关闭输入法，比如说&lt;code&gt;Emacs&lt;/code&gt;中大部分时间都是不需要输入中文的，所以当切换到这个程序的时候就自动将输入法切换到英文模式。&lt;/p&gt;
@@ -204,20 +134,7 @@
 &lt;p&gt;需要找到应用软件的&lt;code&gt;Bundle Identifier&lt;/code&gt;，保存在&lt;code&gt;Info.plist&lt;/code&gt;这个文件当中。&lt;/p&gt;
 
 &lt;p&gt;修改&lt;code&gt;squirrel.custom.yaml&lt;/code&gt;（没有自己创建）：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;patch:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;patch:
   style/color_scheme: dark_temple
   style/font_point: 18
   style/horizontal: true
@@ -225,9 +142,7 @@
   app_options/com.apple.Xcode:
     ascii_mode: true
   app_options/com.runningwithcrayons.Alfred-2:
-    ascii_mode: true&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+    ascii_mode: true&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;快捷键&#34;&gt;快捷键&lt;/h2&gt;
 
 &lt;p&gt;鼠须管默认支持&lt;code&gt;Emacs&lt;/code&gt;的快捷键，所以基本上在&lt;code&gt;Emacs&lt;/code&gt;中使用到的一些操作方式都可以在这里使用到。&lt;/p&gt;

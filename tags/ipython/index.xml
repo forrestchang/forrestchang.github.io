@@ -28,14 +28,7 @@
 &lt;p&gt;因为科学计算社区的一些库还是基于 Python 2.x 版本的，所以这里我们使用的 Python 版本为 2.7。&lt;/p&gt;
 
 &lt;p&gt;然后使用以下命令一键安装所需要的库：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo pip install numpy pandas matplotlib jupyter scikit-learn&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo pip install numpy pandas matplotlib jupyter scikit-learn&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;安装不上的请检查是不是需要翻墙。&lt;/p&gt;
 
 &lt;h2 id=&#34;ipython&#34;&gt;IPython&lt;/h2&gt;
@@ -45,14 +38,7 @@
 &lt;h3 id=&#34;开启-ipython-notebook&#34;&gt;开启 IPython Notebook&lt;/h3&gt;
 
 &lt;p&gt;使用以下命令来打开 IPython Notebook：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;ENV2.7&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;$ jupyter notebook&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;ENV2.7&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;$ jupyter notebook&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;这样 server 就启动了，浏览器会自动打开一个目录树。&lt;/p&gt;
 
 &lt;p&gt;Note：记住在启动了虚拟环境的状态下使用这条命令，要不然就会使用系统的 IPython 版本来运行。&lt;/p&gt;
