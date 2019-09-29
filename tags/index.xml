@@ -6,9 +6,19 @@
     <description>Recent content in Tags on Lifelong Hacker</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Thu, 23 May 2019 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="http://blog.jiayuanzhang.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>/omnifocus</title>
+      <link>http://blog.jiayuanzhang.com/tags/omnifocus/</link>
+      <pubDate>Thu, 23 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/tags/omnifocus/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>alfred</title>
@@ -29,74 +39,11 @@
     </item>
     
     <item>
-      <title>apple-music</title>
-      <link>http://blog.jiayuanzhang.com/tags/apple-music/</link>
-      <pubDate>Sun, 19 Mar 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.jiayuanzhang.com/tags/apple-music/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>applescript</title>
-      <link>http://blog.jiayuanzhang.com/tags/applescript/</link>
-      <pubDate>Sat, 04 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.jiayuanzhang.com/tags/applescript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>automation</title>
-      <link>http://blog.jiayuanzhang.com/tags/automation/</link>
-      <pubDate>Sat, 04 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.jiayuanzhang.com/tags/automation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>blog</title>
       <link>http://blog.jiayuanzhang.com/tags/blog/</link>
       <pubDate>Wed, 24 Jul 2019 21:59:00 +0800</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/tags/blog/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>code-complete</title>
-      <link>http://blog.jiayuanzhang.com/tags/code-complete/</link>
-      <pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.jiayuanzhang.com/tags/code-complete/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>computer-science</title>
-      <link>http://blog.jiayuanzhang.com/tags/computer-science/</link>
-      <pubDate>Wed, 03 Feb 2016 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.jiayuanzhang.com/tags/computer-science/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>cors</title>
-      <link>http://blog.jiayuanzhang.com/tags/cors/</link>
-      <pubDate>Sun, 02 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.jiayuanzhang.com/tags/cors/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>devonthink</title>
-      <link>http://blog.jiayuanzhang.com/tags/devonthink/</link>
-      <pubDate>Sat, 04 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.jiayuanzhang.com/tags/devonthink/</guid>
       <description></description>
     </item>
     
@@ -119,38 +66,11 @@
     </item>
     
     <item>
-      <title>github-pages</title>
-      <link>http://blog.jiayuanzhang.com/tags/github-pages/</link>
-      <pubDate>Sat, 10 Oct 2015 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.jiayuanzhang.com/tags/github-pages/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>google</title>
       <link>http://blog.jiayuanzhang.com/tags/google/</link>
       <pubDate>Mon, 01 Jul 2019 20:16:00 +0800</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/tags/google/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>gtd</title>
-      <link>http://blog.jiayuanzhang.com/tags/gtd/</link>
-      <pubDate>Fri, 14 Feb 2014 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.jiayuanzhang.com/tags/gtd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>http</title>
-      <link>http://blog.jiayuanzhang.com/tags/http/</link>
-      <pubDate>Sun, 02 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.jiayuanzhang.com/tags/http/</guid>
       <description></description>
     </item>
     
@@ -164,29 +84,56 @@
     </item>
     
     <item>
-      <title>ipython</title>
-      <link>http://blog.jiayuanzhang.com/tags/ipython/</link>
-      <pubDate>Fri, 28 Oct 2016 00:00:00 +0000</pubDate>
+      <title>meta-knowledge</title>
+      <link>http://blog.jiayuanzhang.com/tags/meta-knowledge/</link>
+      <pubDate>Mon, 01 Jul 2019 20:16:00 +0800</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/tags/ipython/</guid>
+      <guid>http://blog.jiayuanzhang.com/tags/meta-knowledge/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>jupyter</title>
-      <link>http://blog.jiayuanzhang.com/tags/jupyter/</link>
-      <pubDate>Fri, 28 Oct 2016 00:00:00 +0000</pubDate>
+      <title>org-mode</title>
+      <link>http://blog.jiayuanzhang.com/tags/org-mode/</link>
+      <pubDate>Sun, 14 Jul 2019 00:31:00 +0800</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/tags/jupyter/</guid>
+      <guid>http://blog.jiayuanzhang.com/tags/org-mode/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>jxa</title>
-      <link>http://blog.jiayuanzhang.com/tags/jxa/</link>
-      <pubDate>Sat, 04 May 2019 00:00:00 +0000</pubDate>
+      <title>ox-hugo</title>
+      <link>http://blog.jiayuanzhang.com/tags/ox-hugo/</link>
+      <pubDate>Sun, 14 Jul 2019 00:31:00 +0800</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/tags/jxa/</guid>
+      <guid>http://blog.jiayuanzhang.com/tags/ox-hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rss</title>
+      <link>http://blog.jiayuanzhang.com/tags/rss/</link>
+      <pubDate>Wed, 24 Jul 2019 21:59:00 +0800</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/tags/rss/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>search</title>
+      <link>http://blog.jiayuanzhang.com/tags/search/</link>
+      <pubDate>Mon, 01 Jul 2019 20:16:00 +0800</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/tags/search/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>swift</title>
+      <link>http://blog.jiayuanzhang.com/tags/swift/</link>
+      <pubDate>Fri, 15 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/tags/swift/</guid>
       <description></description>
     </item>
     

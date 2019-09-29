@@ -1758,7 +1758,7 @@ sftp&amp;gt; put -r folderName&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
     </item>
     
     <item>
-      <title>读《程序员修炼之道》（二）</title>
+      <title>《程序员修炼之道》阅读笔记（二）</title>
       <link>http://blog.jiayuanzhang.com/post/notes-on-the-pragmatic-programmer-part-2/</link>
       <pubDate>Thu, 17 Aug 2017 00:00:00 +0000</pubDate>
       
@@ -1977,7 +1977,7 @@ Prototype to Learn
 &lt;ul&gt;
 &lt;li&gt;正确性：你也许可以在适当的地方使用虚假的数据；&lt;/li&gt;
 &lt;li&gt;完整性：原型也许只能在非常有限的意义上工作；&lt;/li&gt;
-&lt;li&gt;健壮性：错误检查很有可能不完整。如果你偏离预定路径，原型就可能崩溃，这没有关系；&lt;/li&gt;
+&lt;li&gt;健壮性：错误检查很有可能不完整。如果你偏离预定路径，原型就可能崩溃，这没有关系；&lt;/li&gt;
 &lt;li&gt;风格：原型代码可能没有多少注释或文档。&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -2049,7 +2049,7 @@ Iterate the Schedule with the Code
     </item>
     
     <item>
-      <title>读《程序员修炼之道》（一）</title>
+      <title>《程序员修炼之道》阅读笔记（一）</title>
       <link>http://blog.jiayuanzhang.com/post/notes-on-the-pragmatic-programmer-part-1/</link>
       <pubDate>Sun, 13 Aug 2017 00:00:00 +0000</pubDate>
       
@@ -2195,7 +2195,7 @@ Invest Regularly in YOur Knowledge Portfolio
 
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;每年至少学习一种新语言&lt;/strong&gt;。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;每季度阅读一本技术书籍&lt;/strong&gt;。一旦你养成习惯，就一个月读一本书。在你掌握了你正在使用的技术之后，扩宽范围，阅读一些与你的项目无关的书籍。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;每季度阅读一本技术书籍&lt;/strong&gt;。一旦你养成习惯，就一个月读一本书。在你掌握了你正在使用的技术之后，扩宽范围，阅读一些与你的项目无关的书籍。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;也要阅读非技术书籍&lt;/strong&gt;。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;上课&lt;/strong&gt;。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;参加本地用户组织&lt;/strong&gt;。不要只是去听讲，而要主动参与。&lt;/li&gt;
@@ -2238,7 +2238,12 @@ It&amp;rsquo;s Both What You Say and the Way You Say It
       <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/2017-week-19-review/</guid>
-      <description>&lt;p&gt;之前有在博客上写 Weekly Review 的习惯，后来因为被朋友说博客真水然后都撤下来了，有些文章确实是类似于「流水账」的记事，但也有一些是围绕这周做的东西来讨论的。总的来说，写 Weekly Review 对自己帮助还是很大的，可以在一周中 Focus 一个特定的主题，而不是想到什么做什么，所以这个系列以后还会继续写下去，只是写的内容更加具体一天，可以围绕着这周的 Project，或者这周听的音乐，或者读的书之类的。以前的文章看情况要不要放上来。&lt;/p&gt;
+      <description>&lt;div class=&#34;admonition warning&#34;&gt;&lt;p class=&#34;admonition-title&#34;&gt;警告&lt;/p&gt;
+  &lt;p&gt;因为七牛云已取消测试域名，文章中的图片已丢失。&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;之前有在博客上写 Weekly Review 的习惯，后来因为被朋友说博客真水然后都撤下来了，有些文章确实是类似于「流水账」的记事，但也有一些是围绕这周做的东西来讨论的。总的来说，写 Weekly Review 对自己帮助还是很大的，可以在一周中 Focus 一个特定的主题，而不是想到什么做什么，所以这个系列以后还会继续写下去，只是写的内容更加具体一天，可以围绕着这周的 Project，或者这周听的音乐，或者读的书之类的。以前的文章看情况要不要放上来。&lt;/p&gt;
 
 &lt;p&gt;这周算是正式把我的任务管理系统从 org-mode 转移到 Todoist 上来了。在不考虑时间成本和易用性上来说，org-mode 依然是目前我认为最完备的任务和时间管理系统，我用它来：&lt;/p&gt;
 
