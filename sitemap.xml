@@ -317,13 +317,6 @@
   </url>
   
   <url>
-    <loc>http://blog.jiayuanzhang.com/categories/productivity/</loc>
-    <lastmod>2019-07-15T14:26:00+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.jiayuanzhang.com/categories/programming/</loc>
     <lastmod>2019-05-06T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -338,7 +331,7 @@
   
   <url>
     <loc>http://blog.jiayuanzhang.com/categories/workflow/</loc>
-    <lastmod>2019-05-23T00:00:00+00:00</lastmod>
+    <lastmod>2019-07-15T14:26:00+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0</priority>
   </url>
