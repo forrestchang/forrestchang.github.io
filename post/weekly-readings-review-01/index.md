@@ -1,4 +1,4 @@
-
+  
 两年前曾经写过类似的文章：[这周在读什么 Issue#1](http://blog.jiayuanzhang.com/post/weekly-reading-report-issue-01/)，主要是为了分享一下最近在读、或者是看到的比较好的内容，但是没能坚持写下去，草稿箱里还躺着几篇未发布的阅读分享。这一次打算重写开始写，阮一峰老师已经写了[60 期](http://www.ruanyifeng.com/blog/2019/06/weekly-issue-60.html)了。
 
 分享些什么内容？我的主要阅读来源是 Hacker News 和一些订阅的网站（我使用
@@ -99,3 +99,4 @@ Anki 是一个长期记忆的工具，你可以用它来记住任何东西。Ank
 [^fn:1]: : [每周评论 - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/每周评论)
 [^fn:2]: : [KISS principle - Wikipedia](https://en.wikipedia.org/wiki/KISS%5Fprinciple)
 [^fn:3]: : [弗拉基米爾·弗拉基米羅維奇·納博科夫](https://zh.wikipedia.org/wiki/%E5%BC%97%E6%8B%89%E5%9F%BA%E7%B1%B3%E7%88%BE%C2%B7%E5%BC%97%E6%8B%89%E5%9F%BA%E7%B1%B3%E7%BE%85%E7%B6%AD%E5%A5%87%C2%B7%E7%B4%8D%E5%8D%9A%E7%A7%91%E5%A4%AB)
+

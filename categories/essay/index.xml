@@ -6,10 +6,146 @@
     <description>Recent content in Essay on Lifelong Hacker</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 24 Jul 2019 21:59:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 26 Jul 2019 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="http://blog.jiayuanzhang.com/categories/essay/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>每周评论 第一期</title>
+      <link>http://blog.jiayuanzhang.com/post/weekly-readings-review-01/</link>
+      <pubDate>Fri, 26 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/weekly-readings-review-01/</guid>
+      <description>
+
+&lt;p&gt;两年前曾经写过类似的文章：&lt;a href=&#34;http://blog.jiayuanzhang.com/post/weekly-reading-report-issue-01/&#34;&gt;这周在读什么 Issue#1&lt;/a&gt;，主要是为了分享一下最近在读、或者是看到的比较好的内容，但是没能坚持写下去，草稿箱里还躺着几篇未发布的阅读分享。这一次打算重写开始写，阮一峰老师已经写了&lt;a href=&#34;http://www.ruanyifeng.com/blog/2019/06/weekly-issue-60.html&#34;&gt;60 期&lt;/a&gt;了。&lt;/p&gt;
+
+&lt;p&gt;分享些什么内容？我的主要阅读来源是 Hacker News 和一些订阅的网站（我使用
+inoreader RSS 服务），所以可能分享的大部分内容都是英文的，主题主要涵盖 &lt;strong&gt;编程&lt;/strong&gt; 、 &lt;strong&gt;创业&lt;/strong&gt; 、 &lt;strong&gt;效率&lt;/strong&gt; 这三个方面，每一次分享我会分别推荐几篇文章并写一些简单的评论，这些文章并不一定是最近发布的，主要看我阅读的时间。&lt;/p&gt;
+
+&lt;p&gt;发布时间不定，但是保证一周至少发布一篇文章。&lt;/p&gt;
+
+&lt;p&gt;我的稍后读流程（之后会写一篇文章来详细说明）：&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/%e9%98%85%e8%af%bb%e6%b5%81%e7%a8%8b.jpg&#34;/&gt; 
+&lt;/figure&gt;
+
+
+&lt;p&gt;「每周评论」的标题借用陈独秀和李大钊在 1918 年创办的期刊&amp;nbsp;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-1&#34;&gt;&lt;a href=&#34;#fn:fn-1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
+
+&lt;h2 id=&#34;编程&#34;&gt;编程&lt;/h2&gt;
+
+&lt;h3 id=&#34;hacker-tools-hacker-tools&#34;&gt;&lt;a href=&#34;https://hacker-tools.github.io/&#34;&gt;Hacker Tools · hacker tools&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;这是 MIT 开设的一门课程，主要介绍了一些程序员使用的工具。计算机作为我们使用的工具，肯定是越高效越好，如何才能变得高效？在我看来，主要有这几点：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;把重复性工作自动化，如果需要每天都重复做的事情，不如写几行脚本自动化；&lt;/li&gt;
+&lt;li&gt;使用开源的工具，如果工具不适应你的工作流，完全可以自己动手改造它；&lt;/li&gt;
+&lt;li&gt;KISS（Keep It Simple, Stupid）&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-2&#34;&gt;&lt;a href=&#34;#fn:fn-2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;，例如命令行工具是符合 KISS 的，但是可以通过组合不同的 KISS 工具实现复杂的功能（例如管道）。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Emacs 是一个 Hacker&amp;rsquo;s Tool，这门课程中推荐使用 Vim（我推荐 Emacs 和 Vim 双修，使用 Emacs 的 Evil 模式）。&lt;/p&gt;
+
+&lt;p&gt;除了编辑器，这门课还讲了数据挖掘、版本控制系统、容器等内容，并且这门课在 Youtube
+上有视频：&lt;a href=&#34;https://www.youtube.com/playlist?list=PLyzOVJj3bHQuiujH1lpn8cA9dsyulbYRv&#34;&gt;6.HT 2019 - YouTube&lt;/a&gt; 。&lt;/p&gt;
+
+&lt;h2 id=&#34;创业&#34;&gt;创业&lt;/h2&gt;
+
+&lt;h3 id=&#34;there-were-17-000-youtubes-before-youtube&#34;&gt;&lt;a href=&#34;https://thenextweb.com/boris/2013/10/28/17000-youtubes-youtube/&#34;&gt;There were 17,000 YouTubes Before YouTube&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;在 Google launch 之前有 18 家做搜索引擎的，至少有两家和 Google 是做完全一样的业务；在 YouTube 之前有 17000 家（夸张？）做在线视频分享的服务；在 Facebook 前有
+myspace、ICQ、MSN。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;In other words; nothing is new, everything is a copy of something, or at least
+an iteration on a previous idea.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Idea 被做过又怎么样，关键看你能不能有所创新或抓住时机。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Their value is not in the idea itself, but the perfect timing and excution.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;吸取别人失败的经验，站在巨人的肩膀上。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The goal isn’t to reinvent the wheel or come up with an idea that no one else
+has ever come up with. You can be very successful just taking something that
+someone else failed at and do a better version, at a better time.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;as-a-startup-founder-what-are-the-pros-and-cons-of-building-something-you-would-want-to-use-yourself&#34;&gt;&lt;a href=&#34;https://www.quora.com/As-a-startup-founder-what-are-the-pros-and-cons-of-building-something-you-would-want-to-use-yourself&#34;&gt;As a startup founder, what are the pros and cons of building something you would want to use yourself?&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;创业做自己想用的东西有什么优缺点？Quora 的 Founder 给出了回答。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Building a product you would want to use yourself is motivating.&lt;/p&gt;
+
+&lt;p&gt;It’s rare to hear about people who create software for fun that they themselves won’t use.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Motivation 可以让工作变得更加 enjoyable，连续加班也不觉得累，这是成功和个人发展的决定性因素。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Second, if you use a product yourself, your intuition will point more closely
+toward the right strategy for the business.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;总的来说，没有什么坏处，都是显而易见的好处。&lt;/p&gt;
+
+&lt;p&gt;为了创业而创业就会陷入下面的境地：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;If you are not a typical customer of your product, you can build up this
+intuition over time as you run a company, but you won’t start out with it,
+because you haven’t been exposed to customers’ preferences in a deep way. This
+can make it a lot harder to get initial traction or funding.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;效率&#34;&gt;效率&lt;/h2&gt;
+
+&lt;h3 id=&#34;augmenting-long-term-memory&#34;&gt;&lt;a href=&#34;http://augmentingcognition.com/ltm.html&#34;&gt;Augmenting Long-term Memory&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;Anki 是一个 Flashcard 软件，类似于 Supermemo，一般大家都用来背单词。这篇文章作者（是一个量子物理学家）介绍了他是如何用 Anki 来阅读论文的，包括如何在短时间内阅读并理解 AlphaGo 的论文。&lt;/p&gt;
+
+&lt;p&gt;Anki 是一个长期记忆的工具，你可以用它来记住任何东西。Anki 的算法完全是开源的，你可以在 GitHub 上看到它的源码：&lt;a href=&#34;https://github.com/dae/anki&#34;&gt;https://github.com/dae/anki&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;个人使用 Anki 的经验：&lt;/p&gt;
+
+&lt;p&gt;作为背单词的工具，可以配置 Chrome 或 Firefox 的插件「Anki 划词制卡助手」，可以在阅读网页的过程中自动查词并保存到 Anki 对应的 Deck 中，还包含了阅读时的上下文。&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190726124109.png&#34;/&gt; 
+&lt;/figure&gt;
+
+
+&lt;p&gt;图中绿框内即为当时阅读时的上下文，这种情境式背单词的方法比直接拿一本单词书来背效果好太多。&lt;/p&gt;
+
+&lt;p&gt;除了用 Anki 来背单词，还可以用它来做卡片笔记，纳博科夫&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn-3&#34;&gt;&lt;a href=&#34;#fn:fn-3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;就是使用卡片笔记来写作的。这种单个的卡片笔记方便记忆（一张卡片就一个知识点），例如下面是我记的一个卡片笔记：&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190726124607.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:fn-1&#34;&gt;: &lt;a href=&#34;https://zh.wikipedia.org/wiki/每周评论&#34;&gt;每周评论 - 维基百科，自由的百科全书&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn-1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:fn-2&#34;&gt;: &lt;a href=&#34;https://en.wikipedia.org/wiki/KISS%5Fprinciple&#34;&gt;KISS principle - Wikipedia&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn-2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:fn-3&#34;&gt;: &lt;a href=&#34;https://zh.wikipedia.org/wiki/%E5%BC%97%E6%8B%89%E5%9F%BA%E7%B1%B3%E7%88%BE%C2%B7%E5%BC%97%E6%8B%89%E5%9F%BA%E7%B1%B3%E7%BE%85%E7%B6%AD%E5%A5%87%C2%B7%E7%B4%8D%E5%8D%9A%E7%A7%91%E5%A4%AB&#34;&gt;弗拉基米爾·弗拉基米羅維奇·納博科夫&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn-3&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>给博客添加了全文 RSS</title>
@@ -189,206 +325,6 @@ Workflow 来自动生成博客：&lt;a href=&#34;http://blog.jiayuanzhang.com/po
     </item>
     
     <item>
-      <title>使用 Devonthink 来写博客</title>
-      <link>http://blog.jiayuanzhang.com/post/use-devonthink-to-write-blog/</link>
-      <pubDate>Sat, 04 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.jiayuanzhang.com/post/use-devonthink-to-write-blog/</guid>
-      <description>&lt;p&gt;虽然博客没有写太多篇，但是写博客的工具却折腾过不少。从最开始的 org-mode，到 Jekyll、Hexo，再到现在的 Hugo，一直没有找到一个满意的工作流。&lt;/p&gt;
-
-&lt;p&gt;我的需求：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;使用统一的工具来管理笔记和写作的文章；&lt;/li&gt;
-&lt;li&gt;能够多端同步；&lt;/li&gt;
-&lt;li&gt;自动化。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;之前使用 Hugo 写作的流程是：&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;在命令行新建一篇文章；&lt;/li&gt;
-&lt;li&gt;打开 Typora 进行写作；&lt;/li&gt;
-&lt;li&gt;写完了再去命令行 generate 并 push 到 GitHub 上。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;后来使用 Ulysses 作为写作的工具，把 Hugo 的 post 文件夹作为 Ulysses 的外部文件夹来进行写作。Ulysses 是一个很强大的写作工具，但是唯一的缺点是它自带的 Markdown 语法与通用的 Markdown 语法不兼容，这导致了之前写的很多文章都需要转码一遍才能够正确在 Ulysses 中显示。&lt;/p&gt;
-
-&lt;p&gt;Devonthink 是我用来做知识管理的工具，你可以把它看做是一个增强版的 Finder + Evernote，我主要用它来写笔记和剪裁网页，配合 Alfred 的搜索可以快速找到想要的内容，关于 Devonthink 的具体使用我之后会写一篇文章来介绍，如果你有疑问，可以先看一下这篇文章：&lt;a href=&#34;https://sspai.com/post/44774&#34;&gt;DEVONthink 和 Evernote，谁是更好的知识管理工具？ - 少数派&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;既然我把我写的和剪裁的东西都统一管理在 Devonthink 中，那么能不能把博客的写作流程也整合进去呢？&lt;/p&gt;
-
-&lt;p&gt;搜索了一下，发现 Devonthink 能够支持 AppleScript 和 JavaScript for Automation（JXA），实现的思路如下：&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;用一个 Folder 统一管理写作的文章；&lt;/li&gt;
-&lt;li&gt;读取这个 Folder 中的所有文章和元数据；&lt;/li&gt;
-&lt;li&gt;把元数据生成 YAML 格式的内容插入到文章的开头；&lt;/li&gt;
-&lt;li&gt;把新生成的文章写入到 Hugo 对应的文件夹下。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;实现的逻辑很简单，困难点主要在于 JXA 的文档缺乏，有一些操作需要调用系统的 Objective-C Bridge 来进行（相当于在 JavaScript 中写 Objective-C 的代码）。&lt;/p&gt;
-
-&lt;p&gt;我写了一个 Alfred Workflow 来完成这个功能，核心代码如下：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;cm&#34;&gt;/**
-&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt; * Constants
-&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt; */&lt;/span&gt;
-&lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;devonthink&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Application&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;DEVONthink 3&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-&lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;blogPath&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;/Users/jiayuan/Dropbox/personal-site/blog/content/post/&amp;#39;&lt;/span&gt;
-
-
-&lt;span class=&#34;cm&#34;&gt;/**
-&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt; * Utils
-&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt; */&lt;/span&gt;
-
-&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;formatTime&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;time&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;cFormat&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-  &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;arguments&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;length&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;===&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;null&lt;/span&gt;
-  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-  &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;format&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;cFormat&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;{y}-{m}-{d} {h}:{i}:{s}&amp;#39;&lt;/span&gt;
-  &lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt;
-  &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;typeof&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;time&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;===&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;object&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;time&lt;/span&gt;
-  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;time&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;length&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;===&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;time&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;parseInt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;time&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1000&lt;/span&gt;
-    &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;Date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;time&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-  &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;formatObj&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;nx&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getFullYear&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(),&lt;/span&gt;
-    &lt;span class=&#34;nx&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getMonth&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;nx&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getDate&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(),&lt;/span&gt;
-    &lt;span class=&#34;nx&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getHours&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(),&lt;/span&gt;
-    &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getMinutes&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(),&lt;/span&gt;
-    &lt;span class=&#34;nx&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getSeconds&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(),&lt;/span&gt;
-    &lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getDay&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
-  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-  &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;time_str&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;format&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;replace&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;sr&#34;&gt;/{([ymdhisa])+}/g&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;result&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;value&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;formatObj&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;key&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;===&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;一&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;二&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;三&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;四&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;五&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;六&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;日&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;value&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;result&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;length&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;value&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-      &lt;span class=&#34;nx&#34;&gt;value&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;value&lt;/span&gt;
-    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;value&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;
-  &lt;span class=&#34;p&#34;&gt;})&lt;/span&gt;
-  &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;time_str&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-
-
-&lt;span class=&#34;cm&#34;&gt;/**
-&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt; * Functions
-&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt; */&lt;/span&gt;
-
-&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;writeToFile&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;filename&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;content&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-  &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;endsWith&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;nx&#34;&gt;path&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;path&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;
-  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-  &lt;span class=&#34;nx&#34;&gt;filePath&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;path&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;filename&lt;/span&gt;
-
-  &lt;span class=&#34;nx&#34;&gt;contentEncoded&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;NSString&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;alloc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;initWithUTF8String&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;content&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-  &lt;span class=&#34;nx&#34;&gt;contentEncoded&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;writeToFileAtomicallyEncodingError&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;filePath&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;NSUTF8StringEncoding&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-
-&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;getMetaData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;record&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-
-  &lt;span class=&#34;c1&#34;&gt;// Get created time
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;createdTime&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;formatTime&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;record&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;creationDate&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(),&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;{y}-{m}-{d}&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-
-  &lt;span class=&#34;c1&#34;&gt;// Get updated time
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;updatedTime&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;formatTime&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;record&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;modificationDate&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(),&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;{y}-{m}-{d}&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-
-  &lt;span class=&#34;c1&#34;&gt;// Get file name
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;customMetaData&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;record&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;customMetaData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
-  &lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;fileName&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;customMetaData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;mdblogfilename&lt;/span&gt;
-  &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;fileName&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;endsWith&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;.md&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;nx&#34;&gt;fileName&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;fileName&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;.md&amp;#39;&lt;/span&gt;
-  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-
-  &lt;span class=&#34;c1&#34;&gt;// Get tags
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;tags&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;record&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;tags&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
-
-  &lt;span class=&#34;c1&#34;&gt;// Get categories
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;category&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;customMetaData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;mdcategory&lt;/span&gt;
-
-  &lt;span class=&#34;c1&#34;&gt;// Get draft info
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;isDraft&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;customMetaData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;mddraft&lt;/span&gt;
-
-  &lt;span class=&#34;c1&#34;&gt;// Get title
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;title&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;record&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
-
-  &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;metaData&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;nx&#34;&gt;createdTime&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;nx&#34;&gt;updatedTime&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;nx&#34;&gt;fileName&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;nx&#34;&gt;tags&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;nx&#34;&gt;category&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;nx&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-    &lt;span class=&#34;nx&#34;&gt;isDraft&lt;/span&gt;
-  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-
-  &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;metaData&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-
-&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;generateYamlMetaString&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;metaData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-  &lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;yamlMetaString&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;sb&#34;&gt;`---
-&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;title: &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;metaData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;date: &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;metaData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;createdTime&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;lastmod: &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;metaData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;updatedTime&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;categories: [&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;metaData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;category&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;]
-&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;tags: [&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;metaData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;tags&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;]
-&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;draft: &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;metaData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;isDraft&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;===&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;---
-&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;  `&lt;/span&gt;
-
-  &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;yamlMetaString&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-
-
-&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-  &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;blogPosts&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;devonthink&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;databases&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;byName&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;02.Writing&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;parents&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;byName&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;Blog&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;children&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
-
-  &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;blogPosts&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;length&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;selectedRecord&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;blogPosts&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
-
-    &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;metaData&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;getMetaData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;selectedRecord&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-
-    &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;yamlMetaString&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;generateYamlMetaString&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;metaData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;content&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;selectedRecord&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;plainText&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;blogPostContent&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;yamlMetaString&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;content&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt;
-    &lt;span class=&#34;nx&#34;&gt;writeToFile&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;metaData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;fileName&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;blogPath&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;blogPostContent&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-
-  &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;app&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Application&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;currentApplication&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
-  &lt;span class=&#34;nx&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;includeStandardAdditions&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;
-
-  &lt;span class=&#34;nx&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;displayNotification&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;`You have generated &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;blogPosts&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;length&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt; articles.`&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;withTitle&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;Success&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;})&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-
-&lt;span class=&#34;cm&#34;&gt;/**
-&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt; * Main
-&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt; */&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;源代码可以在这里看到：&lt;a href=&#34;https://github.com/forrestchang/alfred-workflows/tree/master/src/Devonthink-to-Hugo-Blog&#34;&gt;alfred-workflows/src/Devonthink-to-Hugo-Blog at master · forrestchang/alfred-workflows&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;如果你需要用到你的工作流中，需要配置以下内容：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;hugo 的 &lt;code&gt;post&lt;/code&gt; 路径，在 &lt;code&gt;blogPath&lt;/code&gt; 中定义；&lt;/li&gt;
-&lt;li&gt;Devonthink 中的 Blog 文件夹，在 &lt;code&gt;blogPosts&lt;/code&gt; 中定义；&lt;/li&gt;
-&lt;li&gt;需要使用 Devonthink 3 的 Custom Metadata 功能，添加三个 Metadata：&lt;code&gt;Category&lt;/code&gt; 用来作为此篇博客的分类，&lt;code&gt;Blog File Name&lt;/code&gt; 用来作为生成的路径名，&lt;code&gt;Draft&lt;/code&gt; 用来判断是否是草稿。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;这个脚本支持读取 Devonthink 的文章标题为博客标题，创建时间为博客的创建时间，Tags 为博客的 Tags，其他的 Metadata 也可以在 &lt;code&gt;getMetaData&lt;/code&gt; 这个函数中自行定义。&lt;/p&gt;
-
-&lt;p&gt;现在这个脚本还不是特别完善，之后会添加一些错误处理的功能并支持 org-mode 格式的文件。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190513165627.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>这周在读什么 Issue#1</title>
       <link>http://blog.jiayuanzhang.com/post/weekly-reading-report-issue-01/</link>
       <pubDate>Fri, 24 Mar 2017 00:00:00 +0000</pubDate>
@@ -506,22 +442,6 @@ Workflow 来自动生成博客：&lt;a href=&#34;http://blog.jiayuanzhang.com/po
     </item>
     
     <item>
-      <title>换了一个新地方写东西</title>
-      <link>http://blog.jiayuanzhang.com/post/new-blog/</link>
-      <pubDate>Sat, 04 Feb 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.jiayuanzhang.com/post/new-blog/</guid>
-      <description>&lt;p&gt;现在这个博客只写技术相关的内容，其他的随笔都写在&lt;a href=&#34;https://medium.com/@Tisoga&#34;&gt;新博客&lt;/a&gt;里，Medium 是被大陆屏蔽的，所以请自备梯子。另外一些比较私人的笔记——例如「Week Review」系列就不发表在互联网上了。&lt;/p&gt;
-
-&lt;p&gt;至于原因，单纯得觉得 Medium 上的衬线字体很好看。&lt;del&gt;如果需要魔改这个博客的话，还是挺麻烦的，自己目前的前端知识还处于未入门的水平，所以就不折腾了。&lt;/del&gt;结果我还是魔改了，现在风格比较简洁了，照着 &lt;a href=&#34;https://github.com/lepture/yue.css&#34;&gt;yue.css&lt;/a&gt; 改的。&lt;/p&gt;
-
-&lt;p&gt;既然重新换了一个主题，就不换地方写了……&lt;/p&gt;
-
-&lt;p&gt;主题的代码放在 &lt;a href=&#34;https://github.com/forrestchang/Cuckoo&#34;&gt;GitHub&lt;/a&gt; 上，完全是新手的作品，所以还是不要 star 了。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Apple Music，古典音乐，阅读</title>
       <link>http://blog.jiayuanzhang.com/post/apple-music-and-classical-music-and-reading/</link>
       <pubDate>Wed, 24 Feb 2016 00:00:00 +0000</pubDate>
@@ -568,170 +488,6 @@ Workflow 来自动生成博客：&lt;a href=&#34;http://blog.jiayuanzhang.com/po
 &lt;hr /&gt;
 
 &lt;p&gt;以上是深夜的无聊吐槽内容，本来这段时间应该是去写代码或者阅读其他内容的，只不过因为结构化拖延的原因才来写Blog……&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>极客的输入法：Squirrel（鼠须管）</title>
-      <link>http://blog.jiayuanzhang.com/post/squirrel-tutorial/</link>
-      <pubDate>Wed, 11 Nov 2015 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.jiayuanzhang.com/post/squirrel-tutorial/</guid>
-      <description>
-
-&lt;p&gt;在OS X平台下，一直没有用到一个很顺手的输入法。系统自带的输入法虽然经过几次的版本更新已经有了很大的改进，但是离能用还有很大的距离。所以之前一直凑合着使用百度输入法，不过最近一直遇到一些奇怪的问题，官方又长时间没有进行更新，恰逢之前听说过&lt;code&gt;Squirrel&lt;/code&gt;这个输入法，于是就本着试用的心态用了一下，发现异常顺手，并且还有丰富的定制性，于是写一篇文章来介绍一下，也作为自己配置过程中的笔记。&lt;/p&gt;
-
-&lt;p&gt;附上一段Gif效果展示：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326141508.png&#34; alt=&#34;luoshenfu&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
-
-&lt;p&gt;输入法的官方名称是&lt;code&gt;Rime&lt;/code&gt;，中文名是&lt;code&gt;中州韵输入法&lt;/code&gt;，但是在各自的平台下面又有不一样的别名。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Linux
-中州韵 ｜ ibus-rime&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Windows
-小狼毫 ｜ Weasel&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;OS X
-鼠须管 ｜ Squirrel&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;使用了一段时间发现它有以下几个优点其他输入法是比不上的：&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;速度很快，几乎没有延迟的时间&lt;/li&gt;
-&lt;li&gt;极强的定制性，如果没有想要的功能还可以直接修改源码&lt;/li&gt;
-&lt;li&gt;跨平台&lt;/li&gt;
-&lt;li&gt;对于繁体中文支持非常好&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
-
-&lt;p&gt;直接从官网下载安装包安装即可。&lt;/p&gt;
-
-&lt;p&gt;Rime官网：[](&lt;a href=&#34;http://rime.im/&#34;&gt;http://rime.im/&lt;/a&gt;)&lt;/p&gt;
-
-&lt;p&gt;使用&lt;code&gt;Ctrl-~&lt;/code&gt;进行输入法的选择，这里选择&lt;code&gt;朙月拼音・簡化字&lt;/code&gt;即可：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326141701.png&#34; alt=&#34;rime02&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;配置&#34;&gt;配置&lt;/h2&gt;
-
-&lt;p&gt;默认的的配置其实已经可以使用了，但是为了更加符合自己的使用习惯，我们需要做一些自定义的配置。&lt;/p&gt;
-
-&lt;p&gt;所有的配置文件都保存在&lt;code&gt;~/Library/Rime/&lt;/code&gt;这个目录下面。&lt;/p&gt;
-
-&lt;p&gt;不建议直接修改原先的配置文件，因为这样更新之后会导致修改的内容丢失，正确的做法是建立&lt;code&gt;custom&lt;/code&gt;副本，这样自定义的配置内容会覆盖掉原来的。&lt;/p&gt;
-
-&lt;p&gt;＊注：所有的修改完成了之后都需要重启输入法，快捷键&lt;code&gt;Option+Ctrl+~&lt;/code&gt;。&lt;/p&gt;
-
-&lt;h3 id=&#34;配置外观&#34;&gt;配置外观&lt;/h3&gt;
-
-&lt;p&gt;初始的外观不是很符合自己的审美，可以进行更换主题、更改字体和字号大小等操作来配置成自己喜欢的样子。&lt;/p&gt;
-
-&lt;p&gt;新建配置文件&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;touch squirrel.custom.yaml&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;然后将以下代码写入配置文件&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;patch:
-  style/color_scheme: dark_temple #主题
-  style/font_point: 18 #字号大小
-  style/horizontal: true #水平显示待选字&lt;/pre&gt;&lt;/div&gt;
-&lt;h4 id=&#34;主题列表&#34;&gt;主题列表&lt;/h4&gt;
-
-&lt;p&gt;自带的主题代码:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;#   注：预设的配色方案及代码（指定为 style/color_scheme ）
-#   碧水 - aqua
-#   青天 - azure
-#   明月 - luna
-#   墨池 - ink
-#   孤寺 - lost_temple
-#   暗堂 - dark_temple
-#   星际我争霸 - starcraft
-#   谷歌 - google
-#   晒经石 - solarized_rock
-#   简约白 - clean_white&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;想要更换什么主题只要把代码替换掉就可以了。&lt;/p&gt;
-
-&lt;h4 id=&#34;其他一些配置代码及其说明&#34;&gt;其他一些配置代码及其说明&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;  style/page_size: 8			             # 设定候选词数目
-  style/inline_preedit: false              # 关闭内嵌编码，这样就可以显示首行的拼音
-  style/corner_radius: 10                  # 窗口圆角半径
-  style/border_height: 0                   # 窗口边界高度，大于圆角半径才有效果
-  style/border_width: 0                    # 窗口边界宽度，大于圆角半径才有效果
-  style/line_spacing: 1                    # 候选词的行间距
-  style/spacing: 5                         # 在非内嵌编码模式下，预编辑和候选词之间的距
-  style/font_face: &amp;#34;Hiragino Sans GB W3&amp;#34;   # 字体名称&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;更多的一些配置代码可以在&lt;code&gt;squirrel.yaml&lt;/code&gt;中找到。&lt;/p&gt;
-
-&lt;h3 id=&#34;定制标点符号&#34;&gt;定制标点符号&lt;/h3&gt;
-
-&lt;p&gt;鼠须管有一个特别的功能就是输入一个标点的时候可以有很多的候选标点让你选择，比如说中括号：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326141747.png&#34; alt=&#34;rime03&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;但是有的时候默认就想选择第一个，多出了一个选择的步骤无疑上会增加击键的次数，所以我们可以通过修改配置来解决这个问题，同时也可以自定义想要输入的符号。&lt;/p&gt;
-
-&lt;p&gt;这里我们使用的是&lt;code&gt;朙月拼音・簡化字&lt;/code&gt;，所以需要建立相应的配置文件：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;touch luna_pinyin_simp.custom.yaml&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;然后写入以下配置（可根据自己的需要修改，这里的代码的意思是在全角和半角的状态下输入&lt;code&gt;&amp;lt;&lt;/code&gt;均以&lt;code&gt;《&lt;/code&gt;输出）。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;patch:
-  punctuator/full_shape:
-    &amp;#34;&amp;lt;&amp;#34;: &amp;#34;《&amp;#34;
-  punctuator/half_shape:
-    &amp;#34;&amp;lt;&amp;#34;: &amp;#34;《&amp;#34;
-  punctuator/full_shape:
-    &amp;#34;&amp;gt;&amp;#34;: &amp;#34;》&amp;#34;
-  punctuator/half_shape:
-    &amp;#34;&amp;gt;&amp;#34;: &amp;#34;》&amp;#34;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&#34;安静模式&#34;&gt;安静模式&lt;/h3&gt;
-
-&lt;p&gt;之前一直使用百度输入法的原因就是因为它有一个安静模式，可以在特定的程序内关闭输入法，比如说&lt;code&gt;Emacs&lt;/code&gt;中大部分时间都是不需要输入中文的，所以当切换到这个程序的时候就自动将输入法切换到英文模式。&lt;/p&gt;
-
-&lt;p&gt;需要找到应用软件的&lt;code&gt;Bundle Identifier&lt;/code&gt;，保存在&lt;code&gt;Info.plist&lt;/code&gt;这个文件当中。&lt;/p&gt;
-
-&lt;p&gt;修改&lt;code&gt;squirrel.custom.yaml&lt;/code&gt;（没有自己创建）：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;patch:
-  style/color_scheme: dark_temple
-  style/font_point: 18
-  style/horizontal: true
-
-  app_options/com.apple.Xcode:
-    ascii_mode: true
-  app_options/com.runningwithcrayons.Alfred-2:
-    ascii_mode: true&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&#34;快捷键&#34;&gt;快捷键&lt;/h2&gt;
-
-&lt;p&gt;鼠须管默认支持&lt;code&gt;Emacs&lt;/code&gt;的快捷键，所以基本上在&lt;code&gt;Emacs&lt;/code&gt;中使用到的一些操作方式都可以在这里使用到。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;↑：Control+p&lt;/li&gt;
-&lt;li&gt;↓：Control+n&lt;/li&gt;
-&lt;li&gt;←：Control+b&lt;/li&gt;
-&lt;li&gt;→：Control+f&lt;/li&gt;
-&lt;li&gt;上頁：Alt+v&lt;/li&gt;
-&lt;li&gt;下頁：Control+v&lt;/li&gt;
-&lt;li&gt;句首：Control+a&lt;/li&gt;
-&lt;li&gt;句末：Control+e&lt;/li&gt;
-&lt;li&gt;回退：Control+h&lt;/li&gt;
-&lt;li&gt;刪除：Control+d&lt;/li&gt;
-&lt;li&gt;清空：Control+g&lt;/li&gt;
-&lt;li&gt;刪詞：Control+k&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;其他&#34;&gt;其他&lt;/h2&gt;
-
-&lt;p&gt;完成以上的配置之后基本上就能够用得很顺手了，更多高级的配置方法可以参考官方的文档：&lt;a href=&#34;http://rime.im/docs/&#34;&gt;幫助與反饋&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;参考资料&#34;&gt;参考资料&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://rime.im/docs/&#34;&gt;官方文档&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.dreamxu.com/install-config-squirrel/&#34;&gt;安装及配置 Mac 上的 Rime 输入法——鼠鬚管 (Squirrel)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     

@@ -13,7 +13,7 @@
     <item>
       <title>Essay</title>
       <link>http://blog.jiayuanzhang.com/categories/essay/</link>
-      <pubDate>Wed, 24 Jul 2019 21:59:00 +0800</pubDate>
+      <pubDate>Fri, 26 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/categories/essay/</guid>
       <description></description>
@@ -22,7 +22,7 @@
     <item>
       <title>Journal</title>
       <link>http://blog.jiayuanzhang.com/categories/journal/</link>
-      <pubDate>Fri, 26 Jul 2019 12:48:00 +0800</pubDate>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/categories/journal/</guid>
       <description></description>
@@ -43,6 +43,15 @@
       <pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/categories/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Workflow</title>
+      <link>http://blog.jiayuanzhang.com/categories/workflow/</link>
+      <pubDate>Thu, 23 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/categories/workflow/</guid>
       <description></description>
     </item>
     
