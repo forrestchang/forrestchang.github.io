@@ -1,178 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>OmniFocus 3 最佳实践 - Lifelong Hacker</title>
-  <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.53" />
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+  <title>OmniFocus 3 最佳实践 &middot; Lifelong Hacker</title>
+  <meta name="description" content="" />
 
-
-<meta name="author" content="Jiayuan" /><meta name="description" content="这篇文章主要分享一下我多年使用的一套任务管理系统的经验，工具是次要的，主要是一些想法的实践。有了基本的思路，无论是 OmniFocus、Todoist 还是 org-mode（Emacs 中的一个时间管理模式），都可以有自己的一套方式来实践。本篇文章主要以 OmniFocus 3 为载体来介绍这些内容。 每个人" /><meta name="keywords" content="blog, time-management, knowledge-management, python, programming, linux" />
-
-
+  
+  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.comcss/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.comcss/poole.css">
+  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.comcss/syntax.css">
+  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.comcss/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
 
 
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
 
-
-<meta name="generator" content="Hugo 0.55.0-DEV with even 4.0.0" />
-
-
-<link rel="canonical" href="http://blog.jiayuanzhang.com/post/omnifocus-3-workflow/" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.ace0d02f.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
-
-
-<meta property="og:title" content="OmniFocus 3 最佳实践" />
-<meta property="og:description" content="这篇文章主要分享一下我多年使用的一套任务管理系统的经验，工具是次要的，主要是一些想法的实践。有了基本的思路，无论是 OmniFocus、Todoist 还是 org-mode（Emacs 中的一个时间管理模式），都可以有自己的一套方式来实践。本篇文章主要以 OmniFocus 3 为载体来介绍这些内容。 每个人" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.jiayuanzhang.com/post/omnifocus-3-workflow/" />
-<meta property="article:published_time" content="2018-11-23T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-05-06T00:00:00&#43;00:00"/>
-
-<meta itemprop="name" content="OmniFocus 3 最佳实践">
-<meta itemprop="description" content="这篇文章主要分享一下我多年使用的一套任务管理系统的经验，工具是次要的，主要是一些想法的实践。有了基本的思路，无论是 OmniFocus、Todoist 还是 org-mode（Emacs 中的一个时间管理模式），都可以有自己的一套方式来实践。本篇文章主要以 OmniFocus 3 为载体来介绍这些内容。 每个人">
-
-
-<meta itemprop="datePublished" content="2018-11-23T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-05-06T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="5395">
-
-
-
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="OmniFocus 3 最佳实践"/>
-<meta name="twitter:description" content="这篇文章主要分享一下我多年使用的一套任务管理系统的经验，工具是次要的，主要是一些想法的实践。有了基本的思路，无论是 OmniFocus、Todoist 还是 org-mode（Emacs 中的一个时间管理模式），都可以有自己的一套方式来实践。本篇文章主要以 OmniFocus 3 为载体来介绍这些内容。 每个人"/>
-
-<!--[if lte IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
-<![endif]-->
-
-<!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
-
+  
+  <link href="http://blog.jiayuanzhang.com/post/omnifocus-3-workflow/index.md" rel="alternate" type="text/plain" title="Lifelong Hacker" />
+  
 </head>
-<body>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="/" class="logo">Lifelong Hacker</a>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://blog.jiayuanzhang.com"><h1>Lifelong Hacker</h1></a>
+      <p class="lead">
+       Working at iqiyi.com, full-stack developer and lifelong hacker. I have a cat named lambda. 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="http://blog.jiayuanzhang.com">Home</a> </li>
+        <li><a href="/categories/"> Categories </a></li><li><a href="/post/"> Archives </a></li><li><a href="http://jiayuanzhang.com"> About </a></li>
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
   </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    <a href="/categories/">
-        <li class="mobile-menu-item">Categories</li>
-      </a><a href="/post/">
-        <li class="mobile-menu-item">Archives</li>
-      </a><a href="http://jiayuanzhang.com">
-        <li class="mobile-menu-item">About</li>
-      </a>
-  </ul>
-</nav>
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="/" class="logo">Lifelong Hacker</a>
-</div>
+</aside>
 
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item">
-        <a class="menu-item-link" href="/categories/">Categories</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/post/">Archives</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="http://jiayuanzhang.com">About</a>
-      </li>
-  </ul>
-</nav>
-    </header>
-
-    <main id="main" class="main">
-      <div class="content-wrapper">
-        <div id="content" class="content">
-          <article class="post">
-    
-    <header class="post-header">
-      <h1 class="post-title">OmniFocus 3 最佳实践</h1>
-
-      <div class="post-meta">
-        <span class="post-time">Posted on <a href="">2018-11-23</a></a> </span>
-        <div class="post-category">
-            <a href="/categories/workflow/"> Workflow </a>
-            </div>
-        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
-        <span class="more-meta">
-          Written by
-          <a href="">
-          
-            Jiayuan
-          
-          </a>
-        </span>
-      </div>
-    </header>
-
-    <div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">Contents</h2>
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#什么是一个好的任务管理系统">什么是一个好的任务管理系统</a></li>
-<li><a href="#任务管理系统的三要素">任务管理系统的三要素</a></li>
-<li><a href="#omnifocus-3-实践">OmniFocus 3 实践</a>
-<ul>
-<li><a href="#项目的设定">项目的设定</a></li>
-<li><a href="#标签的设定">标签的设定</a></li>
-<li><a href="#过滤器的设定">过滤器的设定</a>
-<ul>
-<li><a href="#routine-过滤器">Routine 过滤器</a></li>
-<li><a href="#today-过滤器">Today 过滤器</a></li>
-<li><a href="#work-过滤器">Work 过滤器</a></li>
-<li><a href="#to-sth-过滤器">To-Sth 过滤器</a></li>
-<li><a href="#future-过滤器">Future 过滤器</a></li>
-<li><a href="#easydo-过滤器">EasyDo 过滤器</a></li>
-</ul></li>
-<li><a href="#workflow">Workflow</a>
-<ul>
-<li><a href="#计划">计划</a></li>
-<li><a href="#执行">执行</a></li>
-<li><a href="#总结">总结</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#后记">后记</a></li>
-</ul></li>
-</ul>
-</nav>
-  </div>
-</div>
-    <div class="post-content">
-      
+    <main class="content container">
+    <div class="post">
+  <h1>OmniFocus 3 最佳实践</h1>
+  <time datetime=2018-11-23T00:00:00Z class="post-date">Fri, Nov 23, 2018</time>
+  
 
 <p>这篇文章主要分享一下我多年使用的一套任务管理系统的经验，工具是次要的，主要是一些想法的实践。有了基本的思路，无论是 OmniFocus、Todoist 还是 org-mode（Emacs 中的一个时间管理模式），都可以有自己的一套方式来实践。本篇文章主要以 OmniFocus 3 为载体来介绍这些内容。</p>
 
@@ -422,104 +303,42 @@
 
 <p>这篇文章中所写的内容都是经过了很长时间实践之后得出的经验，一个好的任务系统是需要不断优化迭代的，如果你觉得自己的系统不怎么好用，不妨想一下哪些地方需要优化，然后慢慢改进它。掌握了任务管理的本质之后，不管是切换到什么工具都能够游刃有余。</p>
 
-    </div>
-
-    
-    
-
-    <footer class="post-footer">
-      
-      <nav class="post-nav">
-        <a class="prev" href="/post/cors-tutorial/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">跨域资源共享（CORS）详解</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/2018-week-35-review/">
-            <span class="next-text nav-default">2018 Weekly 35 Review</span>
-            <span class="next-text nav-mobile">Next</span>
-            <i class="iconfont icon-right"></i>
-          </a>
-      </nav>
-    </footer>
-  </article>
-        </div>
-        
-   
-   <div class="post bg-white">
-     <script src="https://utteranc.es/client.js"
-           repo= "forrestchang/forrestchang.github.io"
-           issue-term="pathname"
-           theme="github-light"
-           label="utterances"
-           crossorigin="anonymous"
-           async>
-     </script>
-   </div>
- 
-
-  
-
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      
-<div class="copyright">
-
-  
-  <div class="busuanzi-footer">
-    <span id="busuanzi_container_site_pv"> Site PV: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
-      <span class="division">|</span>
-    <span id="busuanzi_container_site_uv"> Site UV: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
-  </div>
-
-  <span class="copyright-year">
-    &copy; 
-    2014 - 
-    2019
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">Jiayuan</span>
-  </span>
 </div>
 
-    </footer>
-
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
-    </div>
-  </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
-  <script type="text/javascript">
-    window.MathJax = {
-      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
-      showProcessingMessages: false,
-      messageStyle: 'none'
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
     };
-  </script>
-  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
-
-<script id="baidu_analytics">
-  var _hmt = _hmt || [];
-  (function() {
-    if (window.location.hostname === 'localhost') return;
-    var hm = document.createElement("script"); hm.async = true;
-    hm.src = "https://hm.baidu.com/hm.js?001e800887eba2f8f57ec8059aafdad6";
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
-  })();
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tisogasnotes" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
 </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </main>
 
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-130256365-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
-
-
-
-</body>
+  </body>
 </html>
