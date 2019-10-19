@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <link href="https://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -33,7 +33,7 @@
     <div class="sidebar-about">
       <a href="http://blog.jiayuanzhang.com"><h1>Lifelong Hacker</h1></a>
       <p class="lead">
-       Working at iqiyi.com, full-stack developer and lifelong hacker. I have a cat named lambda. 
+       I&#39;m Jiayuan, full-stack developer at iqiyi.com. I have a cat named lambda. 
       </p>
     </div>
 
@@ -88,146 +88,148 @@
 <p>实现的逻辑很简单，困难点主要在于 JXA 的文档缺乏，有一些操作需要调用系统的 Objective-C Bridge 来进行（相当于在 JavaScript 中写 Objective-C 的代码）。</p>
 
 <p>我写了一个 Alfred Workflow 来完成这个功能，核心代码如下：</p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="cm">/**
-</span><span class="cm"> * Constants
-</span><span class="cm"> */</span>
-<span class="k">const</span> <span class="nx">devonthink</span> <span class="o">=</span> <span class="nx">Application</span><span class="p">(</span><span class="s1">&#39;DEVONthink 3&#39;</span><span class="p">)</span>
-<span class="k">const</span> <span class="nx">blogPath</span> <span class="o">=</span> <span class="s1">&#39;/Users/jiayuan/Dropbox/personal-site/blog/content/post/&#39;</span>
+
+<pre><code class="language-javascript">/**
+ * Constants
+ */
+const devonthink = Application('DEVONthink 3')
+const blogPath = '/Users/jiayuan/Dropbox/personal-site/blog/content/post/'
 
 
-<span class="cm">/**
-</span><span class="cm"> * Utils
-</span><span class="cm"> */</span>
+/**
+ * Utils
+ */
 
-<span class="kd">function</span> <span class="nx">formatTime</span><span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="nx">cFormat</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="kc">null</span>
-  <span class="p">}</span>
-  <span class="k">const</span> <span class="nx">format</span> <span class="o">=</span> <span class="nx">cFormat</span> <span class="o">||</span> <span class="s1">&#39;{y}-{m}-{d} {h}:{i}:{s}&#39;</span>
-  <span class="kd">let</span> <span class="nx">date</span>
-  <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">time</span> <span class="o">===</span> <span class="s1">&#39;object&#39;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">date</span> <span class="o">=</span> <span class="nx">time</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">((</span><span class="s1">&#39;&#39;</span> <span class="o">+</span> <span class="nx">time</span><span class="p">).</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">10</span><span class="p">)</span> <span class="nx">time</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">time</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span>
-    <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">time</span><span class="p">)</span>
-  <span class="p">}</span>
-  <span class="k">const</span> <span class="nx">formatObj</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">y</span><span class="o">:</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">(),</span>
-    <span class="nx">m</span><span class="o">:</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nx">d</span><span class="o">:</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getDate</span><span class="p">(),</span>
-    <span class="nx">h</span><span class="o">:</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getHours</span><span class="p">(),</span>
-    <span class="nx">i</span><span class="o">:</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">(),</span>
-    <span class="nx">s</span><span class="o">:</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">(),</span>
-    <span class="nx">a</span><span class="o">:</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getDay</span><span class="p">()</span>
-  <span class="p">}</span>
-  <span class="k">const</span> <span class="nx">time_str</span> <span class="o">=</span> <span class="nx">format</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/{([ymdhisa])+}/g</span><span class="p">,</span> <span class="p">(</span><span class="nx">result</span><span class="p">,</span> <span class="nx">key</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">formatObj</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">key</span> <span class="o">===</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;一&#39;</span><span class="p">,</span> <span class="s1">&#39;二&#39;</span><span class="p">,</span> <span class="s1">&#39;三&#39;</span><span class="p">,</span> <span class="s1">&#39;四&#39;</span><span class="p">,</span> <span class="s1">&#39;五&#39;</span><span class="p">,</span> <span class="s1">&#39;六&#39;</span><span class="p">,</span> <span class="s1">&#39;日&#39;</span><span class="p">][</span><span class="nx">value</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">value</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">value</span> <span class="o">=</span> <span class="s1">&#39;0&#39;</span> <span class="o">+</span> <span class="nx">value</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="nx">value</span> <span class="o">||</span> <span class="mi">0</span>
-  <span class="p">})</span>
-  <span class="k">return</span> <span class="nx">time_str</span>
-<span class="p">}</span>
-
-
-<span class="cm">/**
-</span><span class="cm"> * Functions
-</span><span class="cm"> */</span>
-
-<span class="kd">function</span> <span class="nx">writeToFile</span><span class="p">(</span><span class="nx">filename</span><span class="p">,</span> <span class="nx">path</span><span class="p">,</span> <span class="nx">content</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">path</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">))</span> <span class="p">{</span>
-    <span class="nx">path</span> <span class="o">=</span> <span class="nx">path</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span>
-  <span class="p">}</span>
-  <span class="nx">filePath</span> <span class="o">=</span> <span class="nx">path</span> <span class="o">+</span> <span class="nx">filename</span>
-
-  <span class="nx">contentEncoded</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">NSString</span><span class="p">.</span><span class="nx">alloc</span><span class="p">.</span><span class="nx">initWithUTF8String</span><span class="p">(</span><span class="nx">content</span><span class="p">);</span>
-  <span class="nx">contentEncoded</span><span class="p">.</span><span class="nx">writeToFileAtomicallyEncodingError</span><span class="p">(</span><span class="nx">filePath</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">$</span><span class="p">.</span><span class="nx">NSUTF8StringEncoding</span><span class="p">,</span> <span class="kc">null</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kd">function</span> <span class="nx">getMetaData</span><span class="p">(</span><span class="nx">record</span><span class="p">)</span> <span class="p">{</span>
-
-  <span class="c1">// Get created time
-</span><span class="c1"></span>  <span class="k">const</span> <span class="nx">createdTime</span> <span class="o">=</span> <span class="nx">formatTime</span><span class="p">(</span><span class="nx">record</span><span class="p">.</span><span class="nx">creationDate</span><span class="p">(),</span> <span class="s1">&#39;{y}-{m}-{d}&#39;</span><span class="p">)</span>
-
-  <span class="c1">// Get updated time
-</span><span class="c1"></span>  <span class="k">const</span> <span class="nx">updatedTime</span> <span class="o">=</span> <span class="nx">formatTime</span><span class="p">(</span><span class="nx">record</span><span class="p">.</span><span class="nx">modificationDate</span><span class="p">(),</span> <span class="s1">&#39;{y}-{m}-{d}&#39;</span><span class="p">)</span>
-
-  <span class="c1">// Get file name
-</span><span class="c1"></span>  <span class="k">const</span> <span class="nx">customMetaData</span> <span class="o">=</span> <span class="nx">record</span><span class="p">.</span><span class="nx">customMetaData</span><span class="p">()</span>
-  <span class="kd">let</span> <span class="nx">fileName</span> <span class="o">=</span> <span class="nx">customMetaData</span><span class="p">.</span><span class="nx">mdblogfilename</span>
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">fileName</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="s1">&#39;.md&#39;</span><span class="p">))</span> <span class="p">{</span>
-    <span class="nx">fileName</span> <span class="o">=</span> <span class="nx">fileName</span> <span class="o">+</span> <span class="s1">&#39;.md&#39;</span>
-  <span class="p">}</span>
-
-  <span class="c1">// Get tags
-</span><span class="c1"></span>  <span class="k">const</span> <span class="nx">tags</span> <span class="o">=</span> <span class="nx">record</span><span class="p">.</span><span class="nx">tags</span><span class="p">()</span>
-
-  <span class="c1">// Get categories
-</span><span class="c1"></span>  <span class="k">const</span> <span class="nx">category</span> <span class="o">=</span> <span class="nx">customMetaData</span><span class="p">.</span><span class="nx">mdcategory</span>
-
-  <span class="c1">// Get draft info
-</span><span class="c1"></span>  <span class="k">const</span> <span class="nx">isDraft</span> <span class="o">=</span> <span class="nx">customMetaData</span><span class="p">.</span><span class="nx">mddraft</span>
-
-  <span class="c1">// Get title
-</span><span class="c1"></span>  <span class="k">const</span> <span class="nx">title</span> <span class="o">=</span> <span class="nx">record</span><span class="p">.</span><span class="nx">name</span><span class="p">()</span>
-
-  <span class="k">const</span> <span class="nx">metaData</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">createdTime</span><span class="p">,</span>
-    <span class="nx">updatedTime</span><span class="p">,</span>
-    <span class="nx">fileName</span><span class="p">,</span>
-    <span class="nx">tags</span><span class="p">,</span>
-    <span class="nx">category</span><span class="p">,</span>
-    <span class="nx">title</span><span class="p">,</span>
-    <span class="nx">isDraft</span>
-  <span class="p">}</span>
-
-  <span class="k">return</span> <span class="nx">metaData</span>
-<span class="p">}</span>
-
-<span class="kd">function</span> <span class="nx">generateYamlMetaString</span><span class="p">(</span><span class="nx">metaData</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">yamlMetaString</span> <span class="o">=</span> <span class="sb">`---
-</span><span class="sb">title: </span><span class="si">${</span><span class="nx">metaData</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="sb">
-</span><span class="sb">date: </span><span class="si">${</span><span class="nx">metaData</span><span class="p">.</span><span class="nx">createdTime</span><span class="si">}</span><span class="sb">
-</span><span class="sb">lastmod: </span><span class="si">${</span><span class="nx">metaData</span><span class="p">.</span><span class="nx">updatedTime</span><span class="si">}</span><span class="sb">
-</span><span class="sb">categories: [</span><span class="si">${</span><span class="nx">metaData</span><span class="p">.</span><span class="nx">category</span><span class="si">}</span><span class="sb">]
-</span><span class="sb">tags: [</span><span class="si">${</span><span class="nx">metaData</span><span class="p">.</span><span class="nx">tags</span><span class="si">}</span><span class="sb">]
-</span><span class="sb">draft: </span><span class="si">${</span><span class="nx">metaData</span><span class="p">.</span><span class="nx">isDraft</span> <span class="o">===</span> <span class="kc">true</span><span class="si">}</span><span class="sb">
-</span><span class="sb">---
-</span><span class="sb">  `</span>
-
-  <span class="k">return</span> <span class="nx">yamlMetaString</span>
-<span class="p">}</span>
+function formatTime(time, cFormat) {
+  if (arguments.length === 0) {
+    return null
+  }
+  const format = cFormat || '{y}-{m}-{d} {h}:{i}:{s}'
+  let date
+  if (typeof time === 'object') {
+    date = time
+  } else {
+    if (('' + time).length === 10) time = parseInt(time) * 1000
+    date = new Date(time)
+  }
+  const formatObj = {
+    y: date.getFullYear(),
+    m: date.getMonth() + 1,
+    d: date.getDate(),
+    h: date.getHours(),
+    i: date.getMinutes(),
+    s: date.getSeconds(),
+    a: date.getDay()
+  }
+  const time_str = format.replace(/{([ymdhisa])+}/g, (result, key) =&gt; {
+    let value = formatObj[key]
+    if (key === 'a') return ['一', '二', '三', '四', '五', '六', '日'][value - 1]
+    if (result.length &gt; 0 &amp;&amp; value &lt; 10) {
+      value = '0' + value
+    }
+    return value || 0
+  })
+  return time_str
+}
 
 
-<span class="kd">function</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">const</span> <span class="nx">blogPosts</span> <span class="o">=</span> <span class="nx">devonthink</span><span class="p">.</span><span class="nx">databases</span><span class="p">.</span><span class="nx">byName</span><span class="p">(</span><span class="s1">&#39;02.Writing&#39;</span><span class="p">).</span><span class="nx">parents</span><span class="p">.</span><span class="nx">byName</span><span class="p">(</span><span class="s1">&#39;Blog&#39;</span><span class="p">).</span><span class="nx">children</span><span class="p">()</span>
+/**
+ * Functions
+ */
 
-  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">blogPosts</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">const</span> <span class="nx">selectedRecord</span> <span class="o">=</span> <span class="nx">blogPosts</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+function writeToFile(filename, path, content) {
+  if (!path.endsWith('/')) {
+    path = path + '/'
+  }
+  filePath = path + filename
 
-    <span class="k">const</span> <span class="nx">metaData</span> <span class="o">=</span> <span class="nx">getMetaData</span><span class="p">(</span><span class="nx">selectedRecord</span><span class="p">)</span>
+  contentEncoded = $.NSString.alloc.initWithUTF8String(content);
+  contentEncoded.writeToFileAtomicallyEncodingError(filePath, true, $.NSUTF8StringEncoding, null);
+}
 
-    <span class="k">const</span> <span class="nx">yamlMetaString</span> <span class="o">=</span> <span class="nx">generateYamlMetaString</span><span class="p">(</span><span class="nx">metaData</span><span class="p">)</span>
-    <span class="k">const</span> <span class="nx">content</span> <span class="o">=</span> <span class="nx">selectedRecord</span><span class="p">.</span><span class="nx">plainText</span><span class="p">()</span>
-    <span class="k">const</span> <span class="nx">blogPostContent</span> <span class="o">=</span> <span class="sb">`</span><span class="si">${</span><span class="nx">yamlMetaString</span><span class="si">}</span><span class="sb">
-</span><span class="sb"></span><span class="si">${</span><span class="nx">content</span><span class="si">}</span><span class="sb">
-</span><span class="sb">`</span>
-    <span class="nx">writeToFile</span><span class="p">(</span><span class="nx">metaData</span><span class="p">.</span><span class="nx">fileName</span><span class="p">,</span> <span class="nx">blogPath</span><span class="p">,</span> <span class="nx">blogPostContent</span><span class="p">)</span>
-  <span class="p">}</span>
+function getMetaData(record) {
 
-  <span class="k">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">Application</span><span class="p">.</span><span class="nx">currentApplication</span><span class="p">()</span>
-  <span class="nx">app</span><span class="p">.</span><span class="nx">includeStandardAdditions</span> <span class="o">=</span> <span class="kc">true</span>
+  // Get created time
+  const createdTime = formatTime(record.creationDate(), '{y}-{m}-{d}')
 
-  <span class="nx">app</span><span class="p">.</span><span class="nx">displayNotification</span><span class="p">(</span><span class="sb">`You have generated </span><span class="si">${</span><span class="nx">blogPosts</span><span class="p">.</span><span class="nx">length</span><span class="si">}</span><span class="sb"> articles.`</span><span class="p">,</span> <span class="p">{</span> <span class="nx">withTitle</span><span class="o">:</span> <span class="s1">&#39;Success&#39;</span> <span class="p">})</span>
-<span class="p">}</span>
+  // Get updated time
+  const updatedTime = formatTime(record.modificationDate(), '{y}-{m}-{d}')
 
-<span class="cm">/**
-</span><span class="cm"> * Main
-</span><span class="cm"> */</span>
-<span class="nx">main</span><span class="p">()</span>
-</code></pre></div>
+  // Get file name
+  const customMetaData = record.customMetaData()
+  let fileName = customMetaData.mdblogfilename
+  if (!fileName.endsWith('.md')) {
+    fileName = fileName + '.md'
+  }
+
+  // Get tags
+  const tags = record.tags()
+
+  // Get categories
+  const category = customMetaData.mdcategory
+
+  // Get draft info
+  const isDraft = customMetaData.mddraft
+
+  // Get title
+  const title = record.name()
+
+  const metaData = {
+    createdTime,
+    updatedTime,
+    fileName,
+    tags,
+    category,
+    title,
+    isDraft
+  }
+
+  return metaData
+}
+
+function generateYamlMetaString(metaData) {
+  let yamlMetaString = `---
+title: ${metaData.title}
+date: ${metaData.createdTime}
+lastmod: ${metaData.updatedTime}
+categories: [${metaData.category}]
+tags: [${metaData.tags}]
+draft: ${metaData.isDraft === true}
+---
+  `
+
+  return yamlMetaString
+}
+
+
+function main() {
+  const blogPosts = devonthink.databases.byName('02.Writing').parents.byName('Blog').children()
+
+  for (let i = 0; i &lt; blogPosts.length; i++) {
+    const selectedRecord = blogPosts[i]
+
+    const metaData = getMetaData(selectedRecord)
+
+    const yamlMetaString = generateYamlMetaString(metaData)
+    const content = selectedRecord.plainText()
+    const blogPostContent = `${yamlMetaString}
+${content}
+`
+    writeToFile(metaData.fileName, blogPath, blogPostContent)
+  }
+
+  const app = Application.currentApplication()
+  app.includeStandardAdditions = true
+
+  app.displayNotification(`You have generated ${blogPosts.length} articles.`, { withTitle: 'Success' })
+}
+
+/**
+ * Main
+ */
+main()
+</code></pre>
+
 <p>源代码可以在这里看到：<a href="https://github.com/forrestchang/alfred-workflows/tree/master/src/Devonthink-to-Hugo-Blog">alfred-workflows/src/Devonthink-to-Hugo-Blog at master · forrestchang/alfred-workflows</a>。</p>
 
 <p>如果你需要用到你的工作流中，需要配置以下内容：</p>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <link href="https://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -33,7 +33,7 @@
     <div class="sidebar-about">
       <a href="http://blog.jiayuanzhang.com"><h1>Lifelong Hacker</h1></a>
       <p class="lead">
-       Working at iqiyi.com, full-stack developer and lifelong hacker. I have a cat named lambda. 
+       I&#39;m Jiayuan, full-stack developer at iqiyi.com. I have a cat named lambda. 
       </p>
     </div>
 
@@ -142,10 +142,16 @@
 <p>例如上面的这个变量名可以简化为 <code>maxPointsInOlympics</code> ，这样既保留了变量的原本意思（参考上下文的情况下），又缩短的变量名的长度。</p>
 
 <p>在编写变量名的时候还需要考虑作用域的问题，一般来说，小作用域里的变量名可以简短一些，因为只作用于几行代码，例如 Python 中的列表推导式（Python 3，Python 2 中的列表推导式不是块级作用域）：</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="n">do_something</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span> <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">some_list</span><span class="p">]</span></code></pre></div>
+
+<pre><code class="language-python">alist = [do_something(elem) for elem in some_list]
+</code></pre>
+
 <p>甚至在不需要使用这个变量的时候可以把它忽略：</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 生成一个随机数列表</span>
-<span class="n">random_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span></code></pre></div>
+
+<pre><code class="language-python"># 生成一个随机数列表
+random_numbers = [random.randint(1, 100) for _ in range(100)]
+</code></pre>
+
 <p>相反的，如果是一个全局作用域，变量名就需要取得独特一些，避免产生命名空间冲突。例如用户接口部分的雇员类可以命名为 <code>uiEmployee</code>，数据库部分的雇员类可以命名为 <code>dbEmployee</code>。</p>
 
 <h3 id="命名的最佳实践有哪些">命名的最佳实践有哪些？</h3>
@@ -160,8 +166,11 @@
 </ol>
 
 <p>例如，我需要便利一个用户列表信息来对每个用户的信息做处理：</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">user_info</span> <span class="ow">in</span> <span class="n">user_infos</span><span class="p">:</span>
-    <span class="n">do_something</span><span class="p">(</span><span class="n">user_info</span><span class="p">)</span></code></pre></div>
+
+<pre><code class="language-python">for user_info in user_infos:
+    do_something(user_info)
+</code></pre>
+
 <p>要注意的事，在 Python 中，<code>for</code> 循环是不存在子作用域的，所以在循环外访问 <code>user_info</code> 会获取 <code>user_infos</code> 中的最后一个值。</p>
 
 <p>个人经验：</p>
@@ -185,9 +194,12 @@
 <p>虽然临时变量是「临时」使用的，但是也不应该随意给它们命名，赋予一个更有意义的名字会让程序更加可读。</p>
 
 <p>例如下面一段计算二元一次方程的代码：</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">temp</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">b</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span>
-<span class="n">answer</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="n">temp</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
-<span class="n">answer</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="n">temp</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span></code></pre></div>
+
+<pre><code class="language-python">temp = math.sqrt(b ** 2 - 4 * a * c)
+answer[0] = (-b + temp) / (2 * a)
+answer[1] = (-b - temp) / (2 * a)
+</code></pre>
+
 <p>虽然上面这段代码没有什么逻辑问题，但是 <code>temp</code> 这个变量并不能很好的表述计算的中间结果，如果把 <code>temp</code> 改为 <code>discriminant</code>（判别式） 会更好。</p>
 
 <h4 id="布尔变量">布尔变量</h4>

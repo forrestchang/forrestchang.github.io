@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <link href="https://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -33,7 +33,7 @@
     <div class="sidebar-about">
       <a href="http://blog.jiayuanzhang.com"><h1>Lifelong Hacker</h1></a>
       <p class="lead">
-       Working at iqiyi.com, full-stack developer and lifelong hacker. I have a cat named lambda. 
+       I&#39;m Jiayuan, full-stack developer at iqiyi.com. I have a cat named lambda. 
       </p>
     </div>
 
@@ -61,28 +61,34 @@
 <p>在 <code>/Applications/OmniFocus.app/Contents/Resources/ThemeResources/SystemFont</code> 下面修改字体的大小和页边距，首先我们先修改边距大小，我默认选择的是 Extra Large 的字体，所以需要修改 <code>OFIExtraLargeLayoutConstraintConstants.plit</code>。</p>
 
 <p>找到以下代码：</p>
-<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;key&gt;</span>extraPaddingBelowNoteForActionCells<span class="nt">&lt;/key&gt;</span>
-<span class="nt">&lt;real&gt;</span>20<span class="nt">&lt;/real&gt;</span>
-<span class="nt">&lt;key&gt;</span>extraPaddingBelowNoteForColumnarActionCells<span class="nt">&lt;/key&gt;</span>
-<span class="nt">&lt;real&gt;</span>20<span class="nt">&lt;/real&gt;</span>
-<span class="nt">&lt;key&gt;</span>extraPaddingBelowNoteForProjectCells<span class="nt">&lt;/key&gt;</span>
-<span class="nt">&lt;real&gt;</span>20<span class="nt">&lt;/real&gt;</span></code></pre></div>
+
+<pre><code class="language-xml">&lt;key&gt;extraPaddingBelowNoteForActionCells&lt;/key&gt;
+&lt;real&gt;20&lt;/real&gt;
+&lt;key&gt;extraPaddingBelowNoteForColumnarActionCells&lt;/key&gt;
+&lt;real&gt;20&lt;/real&gt;
+&lt;key&gt;extraPaddingBelowNoteForProjectCells&lt;/key&gt;
+&lt;real&gt;20&lt;/real&gt;
+</code></pre>
+
 <p>然后把 <code>real</code> 的值设定成自己想要的就好了，我这边设定为 20，最后看起来的效果还可以。</p>
 
 <p>然后修改 Note 的字体，打开 <code>OFIFontRegistry.plit</code>，找到以下代码：</p>
-<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;key&gt;</span>OFITextStyleNoteBody<span class="nt">&lt;/key&gt;</span>
-<span class="nt">&lt;dict&gt;</span>
-	<span class="nt">&lt;key&gt;</span>content-sizes<span class="nt">&lt;/key&gt;</span>
-	<span class="nt">&lt;array&gt;</span>
-		<span class="nt">&lt;real&gt;</span>13<span class="nt">&lt;/real&gt;</span>
-		<span class="nt">&lt;real&gt;</span>13<span class="nt">&lt;/real&gt;</span>
-		<span class="nt">&lt;real&gt;</span>14<span class="nt">&lt;/real&gt;</span>
-		<span class="nt">&lt;real&gt;</span>15<span class="nt">&lt;/real&gt;</span>
-		<span class="nt">&lt;real&gt;</span>16<span class="nt">&lt;/real&gt;</span>
-	<span class="nt">&lt;/array&gt;</span>
-	<span class="nt">&lt;key&gt;</span>font-name<span class="nt">&lt;/key&gt;</span>
-	<span class="nt">&lt;string&gt;</span>regular<span class="nt">&lt;/string&gt;</span>
-<span class="nt">&lt;/dict&gt;</span></code></pre></div>
+
+<pre><code class="language-xml">&lt;key&gt;OFITextStyleNoteBody&lt;/key&gt;
+&lt;dict&gt;
+	&lt;key&gt;content-sizes&lt;/key&gt;
+	&lt;array&gt;
+		&lt;real&gt;13&lt;/real&gt;
+		&lt;real&gt;13&lt;/real&gt;
+		&lt;real&gt;14&lt;/real&gt;
+		&lt;real&gt;15&lt;/real&gt;
+		&lt;real&gt;16&lt;/real&gt;
+	&lt;/array&gt;
+	&lt;key&gt;font-name&lt;/key&gt;
+	&lt;string&gt;regular&lt;/string&gt;
+&lt;/dict&gt;
+</code></pre>
+
 <p>依次修改 <code>real</code> 的值，对应 OmniFocus 的以下配置：</p>
 
 <p><img src="https://raw.githubusercontent.com/forrestchang/img-repo/master/20190523112118.png" alt="" /></p>

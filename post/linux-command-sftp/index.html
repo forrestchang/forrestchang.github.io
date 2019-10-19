@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <link href="https://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -33,7 +33,7 @@
     <div class="sidebar-about">
       <a href="http://blog.jiayuanzhang.com"><h1>Lifelong Hacker</h1></a>
       <p class="lead">
-       Working at iqiyi.com, full-stack developer and lifelong hacker. I have a cat named lambda. 
+       I&#39;m Jiayuan, full-stack developer at iqiyi.com. I have a cat named lambda. 
       </p>
     </div>
 
@@ -75,9 +75,15 @@
 <h2 id="二-使用-sftp-进行连接">二、使用 SFTP 进行连接</h2>
 
 <p>因为 SFTP 是基于 SSH 协议的，所以默认的身份认证方法与 SSH 协议保持一致。通常我们使用 SSH Key 来进行连接，如果你已经可以使用 SSH 连接到远程服务器上，那么可以使用以下命令来连接 SFTP：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sftp user_name@remote_server_address<span class="o">[</span>:path<span class="o">]</span></code></pre></div>
+
+<pre><code class="language-bash">sftp user_name@remote_server_address[:path]
+</code></pre>
+
 <p>如果远程服务器自定义了连接的端口，可以使用 <code>-P</code> 参数：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sftp -P remote_port user_name@remote_server_address<span class="o">[</span>:path<span class="o">]</span></code></pre></div>
+
+<pre><code class="language-bash">sftp -P remote_port user_name@remote_server_address[:path]
+</code></pre>
+
 <p>连接成功后将进入一个 SFTP 的解释器，可以发现命令行提示符变成了 <code>sftp&gt;</code>，使用 <code>exit</code> 命令可以退出连接。</p>
 
 <p>如果连接地址存在 <code>path</code> 并且 <code>path</code> 不是一个目录，那么 SFTP 会直接从服务器端取回这个文件。</p>
@@ -93,106 +99,163 @@
 <h2 id="四-目录管理">四、目录管理</h2>
 
 <p>在 SFTP 解释器中可以使用 <code>help</code> 命令来查看帮助文档。</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sftp&gt; <span class="nb">help</span>
+
+<pre><code class="language-bash">sftp&gt; help
 Available commands:
 bye                                Quit sftp
-<span class="nb">cd</span> path                            Change remote directory to <span class="s1">&#39;path&#39;</span>
-chgrp grp path                     Change group of file <span class="s1">&#39;path&#39;</span> to <span class="s1">&#39;grp&#39;</span>
-chmod mode path                    Change permissions of file <span class="s1">&#39;path&#39;</span> to <span class="s1">&#39;mode&#39;</span>
-chown own path                     Change owner of file <span class="s1">&#39;path&#39;</span> to <span class="s1">&#39;own&#39;</span>
-df <span class="o">[</span>-hi<span class="o">]</span> <span class="o">[</span>path<span class="o">]</span>                    Display statistics <span class="k">for</span> current directory or
-                                   filesystem containing <span class="s1">&#39;path&#39;</span>
-<span class="nb">exit</span>                               Quit sftp
-get <span class="o">[</span>-afPpRr<span class="o">]</span> remote <span class="o">[</span>local<span class="o">]</span>       Download file
-reget <span class="o">[</span>-fPpRr<span class="o">]</span> remote <span class="o">[</span>local<span class="o">]</span>      Resume download file
-reput <span class="o">[</span>-fPpRr<span class="o">]</span> <span class="o">[</span>local<span class="o">]</span> remote      Resume upload file
-<span class="nb">help</span>                               Display this <span class="nb">help</span> text
-lcd path                           Change <span class="nb">local</span> directory to <span class="s1">&#39;path&#39;</span>
-lls <span class="o">[</span>ls-options <span class="o">[</span>path<span class="o">]]</span>            Display <span class="nb">local</span> directory listing
-lmkdir path                        Create <span class="nb">local</span> directory
-ln <span class="o">[</span>-s<span class="o">]</span> oldpath newpath            Link remote file <span class="o">(</span>-s <span class="k">for</span> symlink<span class="o">)</span>
-lpwd                               Print <span class="nb">local</span> working directory
-ls <span class="o">[</span>-1afhlnrSt<span class="o">]</span> <span class="o">[</span>path<span class="o">]</span>             Display remote directory listing
-lumask <span class="nb">umask</span>                       Set <span class="nb">local</span> <span class="nb">umask</span> to <span class="s1">&#39;umask&#39;</span>
+cd path                            Change remote directory to 'path'
+chgrp grp path                     Change group of file 'path' to 'grp'
+chmod mode path                    Change permissions of file 'path' to 'mode'
+chown own path                     Change owner of file 'path' to 'own'
+df [-hi] [path]                    Display statistics for current directory or
+                                   filesystem containing 'path'
+exit                               Quit sftp
+get [-afPpRr] remote [local]       Download file
+reget [-fPpRr] remote [local]      Resume download file
+reput [-fPpRr] [local] remote      Resume upload file
+help                               Display this help text
+lcd path                           Change local directory to 'path'
+lls [ls-options [path]]            Display local directory listing
+lmkdir path                        Create local directory
+ln [-s] oldpath newpath            Link remote file (-s for symlink)
+lpwd                               Print local working directory
+ls [-1afhlnrSt] [path]             Display remote directory listing
+lumask umask                       Set local umask to 'umask'
 mkdir path                         Create remote directory
 progress                           Toggle display of progress meter
-put <span class="o">[</span>-afPpRr<span class="o">]</span> <span class="nb">local</span> <span class="o">[</span>remote<span class="o">]</span>       Upload file
-<span class="nb">pwd</span>                                Display remote working directory
+put [-afPpRr] local [remote]       Upload file
+pwd                                Display remote working directory
 quit                               Quit sftp
 rename oldpath newpath             Rename remote file
 rm path                            Delete remote file
 rmdir path                         Remove remote directory
 symlink oldpath newpath            Symlink remote file
 version                            Show SFTP version
-!command                           Execute <span class="s1">&#39;command&#39;</span> in <span class="nb">local</span> shell
-!                                  Escape to <span class="nb">local</span> shell
-?                                  Synonym <span class="k">for</span> help</code></pre></div>
+!command                           Execute 'command' in local shell
+!                                  Escape to local shell
+?                                  Synonym for help
+</code></pre>
+
 <p>SFTP 解释器中预置了常用的命令，但是没有自带的 Bash 来得丰富。</p>
 
 <p>1）显示当前的工作目录：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sftp&gt; <span class="nb">pwd</span>
-Remote working directory: /</code></pre></div>
+
+<pre><code class="language-bash">sftp&gt; pwd
+Remote working directory: /
+</code></pre>
+
 <p>2）查看当前目录的内容：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sftp&gt; ls
-Summary.txt     info.html       temp.txt        testDirectory</code></pre></div>
+
+<pre><code class="language-bash">sftp&gt; ls
+Summary.txt     info.html       temp.txt        testDirectory
+</code></pre>
+
 <p>3）使用 <code>-la</code> 参数可以以列表形式查看，并显示隐藏文件：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sftp&gt; ls -la
-drwxr-xr-x    <span class="m">5</span> demouser   demouser       <span class="m">4096</span> Aug <span class="m">13</span> <span class="m">15</span>:11 .
-drwxr-xr-x    <span class="m">3</span> root       root           <span class="m">4096</span> Aug <span class="m">13</span> <span class="m">15</span>:02 ..
--rw-------    <span class="m">1</span> demouser   demouser          <span class="m">5</span> Aug <span class="m">13</span> <span class="m">15</span>:04 .bash_history
--rw-r--r--    <span class="m">1</span> demouser   demouser        <span class="m">220</span> Aug <span class="m">13</span> <span class="m">15</span>:02 .bash_logout
--rw-r--r--    <span class="m">1</span> demouser   demouser       <span class="m">3486</span> Aug <span class="m">13</span> <span class="m">15</span>:02 .bashrc
-drwx------    <span class="m">2</span> demouser   demouser       <span class="m">4096</span> Aug <span class="m">13</span> <span class="m">15</span>:04 .cache
--rw-r--r--    <span class="m">1</span> demouser   demouser        <span class="m">675</span> Aug <span class="m">13</span> <span class="m">15</span>:02 .profile
-. . .</code></pre></div>
+
+<pre><code class="language-bash">sftp&gt; ls -la
+drwxr-xr-x    5 demouser   demouser       4096 Aug 13 15:11 .
+drwxr-xr-x    3 root       root           4096 Aug 13 15:02 ..
+-rw-------    1 demouser   demouser          5 Aug 13 15:04 .bash_history
+-rw-r--r--    1 demouser   demouser        220 Aug 13 15:02 .bash_logout
+-rw-r--r--    1 demouser   demouser       3486 Aug 13 15:02 .bashrc
+drwx------    2 demouser   demouser       4096 Aug 13 15:04 .cache
+-rw-r--r--    1 demouser   demouser        675 Aug 13 15:02 .profile
+. . .
+</code></pre>
+
 <p>4）切换目录：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sftp&gt; <span class="nb">cd</span> testDirectory</code></pre></div>
+
+<pre><code class="language-bash">sftp&gt; cd testDirectory
+</code></pre>
+
 <p>5）建立文件夹：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sftp&gt; mkdir anotherDirectory</code></pre></div>
+
+<pre><code class="language-bash">sftp&gt; mkdir anotherDirectory
+</code></pre>
+
 <p>以上的命令都是用来操作远程服务器的，如果想要操作本地目录呢？只需要在每个命令前添加 <code>l</code> 即可，例如显示本地操作目录下的文件：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sftp&gt; lls
-localFiles</code></pre></div>
+
+<pre><code class="language-bash">sftp&gt; lls
+localFiles
+</code></pre>
+
 <p>使用 <code>!</code> 可以直接运行 Shell 中的指令：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sftp&gt; !df -h
+
+<pre><code class="language-bash">sftp&gt; !df -h
 Filesystem      Size   Used  Avail Capacity iused               ifree %iused  Mounted on
-/dev/disk1s1   466Gi  360Gi  101Gi    <span class="m">79</span>% <span class="m">3642919</span> <span class="m">9223372036851132888</span>    <span class="m">0</span>%   /
-devfs          336Ki  336Ki    0Bi   <span class="m">100</span>%    <span class="m">1162</span>                   <span class="m">0</span>  <span class="m">100</span>%   /dev
-/dev/disk1s4   466Gi  <span class="m">4</span>.0Gi  101Gi     <span class="m">4</span>%       <span class="m">5</span> <span class="m">9223372036854775802</span>    <span class="m">0</span>%   /private/var/vm
-map -hosts       0Bi    0Bi    0Bi   <span class="m">100</span>%       <span class="m">0</span>                   <span class="m">0</span>  <span class="m">100</span>%   /net
-map auto_home    0Bi    0Bi    0Bi   <span class="m">100</span>%       <span class="m">0</span>                   <span class="m">0</span>  <span class="m">100</span>%   /home</code></pre></div>
+/dev/disk1s1   466Gi  360Gi  101Gi    79% 3642919 9223372036851132888    0%   /
+devfs          336Ki  336Ki    0Bi   100%    1162                   0  100%   /dev
+/dev/disk1s4   466Gi  4.0Gi  101Gi     4%       5 9223372036854775802    0%   /private/var/vm
+map -hosts       0Bi    0Bi    0Bi   100%       0                   0  100%   /net
+map auto_home    0Bi    0Bi    0Bi   100%       0                   0  100%   /home
+</code></pre>
+
 <h2 id="五-传输文件">五、传输文件</h2>
 
 <h3 id="5-1-从远程服务器拉取文件">5.1 从远程服务器拉取文件</h3>
 
 <p>使用 <code>get</code> 命令可以从远程服务器拉取文件到本地：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sftp&gt; get remoteFile <span class="o">[</span>newName<span class="o">]</span></code></pre></div>
+
+<pre><code class="language-bash">sftp&gt; get remoteFile [newName]
+</code></pre>
+
 <p>如果不指定 <code>newName</code>，将使用和远程服务器相同的文件名。</p>
 
 <p>使用 <code>-r</code> 参数可以拉取整个目录：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sftp&gt; get -r remoteDirectory</code></pre></div>
+
+<pre><code class="language-bash">sftp&gt; get -r remoteDirectory
+</code></pre>
+
 <h3 id="5-2-从本地上传文件到服务器">5.2 从本地上传文件到服务器</h3>
 
 <p>使用 <code>put</code> 命令可以从本地上传文件到服务器：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sftp&gt; put localFile</code></pre></div>
+
+<pre><code class="language-bash">sftp&gt; put localFile
+</code></pre>
+
 <p>同样的，可以使用 <code>-r</code> 参数来上传整个目录，但是有一点要注意，<strong>如果服务器上不存在这个目录需要首先新建</strong>：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sftp&gt; mkdir folderName
-sftp&gt; put -r folderName</code></pre></div>
+
+<pre><code class="language-bash">sftp&gt; mkdir folderName
+sftp&gt; put -r folderName
+</code></pre>
+
 <h2 id="六-最佳实践">六、最佳实践</h2>
 
 <p>1）连接远程服务器</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sftp remote_user@remote_host</code></pre></div>
+
+<pre><code class="language-bash">sftp remote_user@remote_host
+</code></pre>
+
 <p>2）使用端口进行连接</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sftp -P remote_port remote_user@remote_host</code></pre></div>
+
+<pre><code class="language-bash">sftp -P remote_port remote_user@remote_host
+</code></pre>
+
 <p>3）从远程服务器拉取文件</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">get /path/remote_file</code></pre></div>
+
+<pre><code class="language-bash">get /path/remote_file
+</code></pre>
+
 <p>4）上传本地文件到服务器</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">put local_file</code></pre></div>
+
+<pre><code class="language-bash">put local_file
+</code></pre>
+
 <p>5）查看远程服务器目录内容</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ls</code></pre></div>
+
+<pre><code class="language-bash">ls
+</code></pre>
+
 <p>6）查看本地目录内容</p>
-<div class="highlight"><pre class="chroma"><code class="language-bassh" data-lang="bassh">lls</code></pre></div>
+
+<pre><code class="language-bassh">lls
+</code></pre>
+
 <p>7）执行本地 Shell 命令</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">!<span class="o">[</span>command<span class="o">]</span></code></pre></div>
+
+<pre><code class="language-bash">![command]
+</code></pre>
+
 <h2 id="参考资料">参考资料</h2>
 
 <ul>

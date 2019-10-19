@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <link href="https://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -33,7 +33,7 @@
     <div class="sidebar-about">
       <a href="http://blog.jiayuanzhang.com"><h1>Lifelong Hacker</h1></a>
       <p class="lead">
-       Working at iqiyi.com, full-stack developer and lifelong hacker. I have a cat named lambda. 
+       I&#39;m Jiayuan, full-stack developer at iqiyi.com. I have a cat named lambda. 
       </p>
     </div>
 
@@ -106,21 +106,25 @@ DRY - Don&rsquo;t Repeat Yourself
 <p>有时，重复来自设计中的错误。</p>
 
 <p>举个例子：</p>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span><span class="err"> </span><span class="nc">Line</span> <span class="p">{</span>
-	<span class="k">public</span><span class="o">:</span>
-		<span class="n">Point</span> <span class="n">start</span><span class="p">;</span>
-		<span class="n">Point</span> <span class="n">end</span><span class="p">;</span>
-		<span class="kt">double</span> <span class="n">lenght</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div>
+
+<pre><code class="language-c++">class Line {
+	public:
+		Point start;
+		Point end;
+		double lenght;
+};
+</code></pre>
+
 <p>第一眼看上去这个类似乎是合理的。线段显然有起点和终点，并总是有长度的。但这里有重复，长度是由起点和终点决定的：改变其中一个，长度就会变化。最好是让长度编程计算字段：</p>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span><span class="err"> </span><span class="nc">Line</span> <span class="p">{</span>
-	<span class="k">public</span><span class="o">:</span>
-		<span class="n">Point</span> <span class="n">start</span><span class="p">;</span>
-		<span class="n">Point</span> <span class="n">end</span><span class="p">;</span>
-		<span class="kt">double</span> <span class="nf">lenght</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">start</span><span class="p">.</span><span class="n">distanceTo</span><span class="p">(</span><span class="n">end</span><span class="p">);</span> <span class="p">}</span>
-<span class="p">};</span>
-</code></pre></div>
+
+<pre><code class="language-c++">class Line {
+	public:
+		Point start;
+		Point end;
+		double lenght() { return start.distanceTo(end); }
+};
+</code></pre>
+
 <h5 id="无耐性的重复">无耐性的重复</h5>
 
 <p>每个项目都有时间压力。</p>
