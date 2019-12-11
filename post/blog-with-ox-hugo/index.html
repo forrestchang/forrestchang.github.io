@@ -40,7 +40,7 @@
     <nav>
       <ul class="sidebar-nav">
         <li><a href="http://blog.jiayuanzhang.com">Home</a> </li>
-        <li><a href="/categories/"> Categories </a></li><li><a href="/post/"> Archives </a></li><li><a href="http://jiayuanzhang.com"> About </a></li>
+        <li><a href="/tags/"> Tags </a></li><li><a href="/post/"> Archives </a></li><li><a href="http://jiayuanzhang.com"> About </a></li>
       </ul>
     </nav>
 
@@ -51,8 +51,24 @@
     <main class="content container">
     <div class="post">
   <h1>使用 Emacs &#43; ox-hugo 来写博客</h1>
-  <time datetime=2019-07-14T00:31:00&#43;0800 class="post-date">Sun, Jul 14, 2019</time>
-  
+  <div class="post-meta post-date">
+    <time style="display: inline-block" datetime=2019-07-14T00:31:00&#43;0800> 2019-07-14 </time>
+    
+    <div class="tags" style="display: inline-block; margin-left: 10px">
+      
+      <a style="margin-left: 5px" href="http://blog.jiayuanzhang.com/tags/workflow">#workflow</a>
+      
+      <a style="margin-left: 5px" href="http://blog.jiayuanzhang.com/tags/emacs">#emacs</a>
+      
+      <a style="margin-left: 5px" href="http://blog.jiayuanzhang.com/tags/hugo">#hugo</a>
+      
+      <a style="margin-left: 5px" href="http://blog.jiayuanzhang.com/tags/org-mode">#org-mode</a>
+      
+    </div>
+    
+  </div>
+  <div class="post-content" style="margin-top: 20px">
+    
 
 <p>最近开始重新使用 org-mode，在这之前大概有一年左右的时间，慢慢把一些东西从
 org-mode 转移到别的工具上了，比如利用 OmniFocus 来管理任务，用 Devonthink 来管理笔记，用 Ulysses 来写作。虽然这些工具非常好用，但是总能找到一两个不满意的点，为此还写了不少脚本进行优化（这些 App 均支持 AppleScript），既然都是要写代码才能完全满足使用需求，不如直接使用 Emacs 来做这些事好了（目前已经将任务管理系统又迁移到 org-mode 上来了）。</p>
@@ -213,6 +229,7 @@ meta-data to Hugo front-matter — ox-hugo - Org to Hugo exporter</a> 。</p>
 end tell
 </code></pre>
 
+  </div>
 </div>
 
 <h2>Comments</h2>

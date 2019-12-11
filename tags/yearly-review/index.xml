@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>yearly-review on Lifelong Hacker</title>
+    <link>http://blog.jiayuanzhang.com/tags/yearly-review/</link>
+    <description>Recent content in yearly-review on Lifelong Hacker</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 24 Feb 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.jiayuanzhang.com/tags/yearly-review/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2016 音乐总结</title>
+      <link>http://blog.jiayuanzhang.com/post/digital-life-in-2016-music-part/</link>
+      <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/digital-life-in-2016-music-part/</guid>
+      <description>最近知乎上的一个朋友和我私信聊了一些关于效率工具以及 Workflow（此处指的是「工作流」）方面的一些问题。聊的内容比较碎片，所以还是打算写一篇文章来具体讨论一下。考虑到会涉及很多不同的主题，所以还是一个主题写一篇，这样也可以控制文章的长度。暂定按照以下主题来写：音乐篇、阅读篇、</description>
+    </item>
+    
+  </channel>
+</rss>

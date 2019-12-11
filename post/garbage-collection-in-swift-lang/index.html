@@ -40,7 +40,7 @@
     <nav>
       <ul class="sidebar-nav">
         <li><a href="http://blog.jiayuanzhang.com">Home</a> </li>
-        <li><a href="/categories/"> Categories </a></li><li><a href="/post/"> Archives </a></li><li><a href="http://jiayuanzhang.com"> About </a></li>
+        <li><a href="/tags/"> Tags </a></li><li><a href="/post/"> Archives </a></li><li><a href="http://jiayuanzhang.com"> About </a></li>
       </ul>
     </nav>
 
@@ -51,8 +51,20 @@
     <main class="content container">
     <div class="post">
   <h1>Swift 中的内存管理</h1>
-  <time datetime=2016-04-15T00:00:00Z class="post-date">Fri, Apr 15, 2016</time>
-  <p>这篇文章是在阅读《The Swift Programming Language》Automatic Reference Counting（ARC，自动引用计数）一章时做的一些笔记，同时参考了其他的一些资料。</p>
+  <div class="post-meta post-date">
+    <time style="display: inline-block" datetime=2016-04-15T00:00:00Z> 2016-04-15 </time>
+    
+    <div class="tags" style="display: inline-block; margin-left: 10px">
+      
+      <a style="margin-left: 5px" href="http://blog.jiayuanzhang.com/tags/swift">#swift</a>
+      
+      <a style="margin-left: 5px" href="http://blog.jiayuanzhang.com/tags/garbage-collection">#garbage-collection</a>
+      
+    </div>
+    
+  </div>
+  <div class="post-content" style="margin-top: 20px">
+    <p>这篇文章是在阅读《The Swift Programming Language》Automatic Reference Counting（ARC，自动引用计数）一章时做的一些笔记，同时参考了其他的一些资料。</p>
 
 <p>在早期的 iOS 开发中，内存管理是由开发者手动来完成的。因为传统的垃圾回收机制对于移动平台来说十分低效，苹果采用的是引用计数（RC，Reference Counting）的方式来管理内存，开发者需要通过手工的方式增加或减少一个实例的引用计数。在 iOS 5 之后，引入了 ARC 自动引用计数，使得开发者不需要手动地调用 <code>retain</code> 和 <code>release</code> 来管理引用计数，但是实际上这些方法还是会被调用，只不过是交给了编译器来完成，编译器会在合适的地方帮我们加入这些方法。</p>
 
@@ -223,6 +235,7 @@ john!.card = CreditCard(number: 1234_5678_9012_3456, customer: john!)
 
 <p>另外，需要注意的一点是，这里所讲的都是针对于<code>引用类型</code>，<code>结构体</code>和<code>枚举</code>在 Swift 中属于值类型，不在 ARC 的考虑范围之内。</p>
 
+  </div>
 </div>
 
 <h2>Comments</h2>

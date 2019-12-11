@@ -40,7 +40,7 @@
     <nav>
       <ul class="sidebar-nav">
         <li><a href="http://blog.jiayuanzhang.com">Home</a> </li>
-        <li><a href="/categories/"> Categories </a></li><li><a href="/post/"> Archives </a></li><li><a href="http://jiayuanzhang.com"> About </a></li>
+        <li><a href="/tags/"> Tags </a></li><li><a href="/post/"> Archives </a></li><li><a href="http://jiayuanzhang.com"> About </a></li>
       </ul>
     </nav>
 
@@ -51,8 +51,18 @@
     <main class="content container">
     <div class="post">
   <h1>推荐系统笔记</h1>
-  <time datetime=2016-12-22T00:00:00Z class="post-date">Thu, Dec 22, 2016</time>
-  
+  <div class="post-meta post-date">
+    <time style="display: inline-block" datetime=2016-12-22T00:00:00Z> 2016-12-22 </time>
+    
+    <div class="tags" style="display: inline-block; margin-left: 10px">
+      
+      <a style="margin-left: 5px" href="http://blog.jiayuanzhang.com/tags/reading-note">#reading-note</a>
+      
+    </div>
+    
+  </div>
+  <div class="post-content" style="margin-top: 20px">
+    
 
 <p>开始学习机器学习/数据挖掘相关的内容，打算每学习一部分知识就写一篇博客总结一下，当做学习过程中的笔记，也为以后看的时候提供存档。</p>
 
@@ -698,6 +708,7 @@ def getRecommendations(prefs, person, similarity=sim_pearson):
 
 <p>基于用户的过滤方法更加易于实现，而且无需额外步骤，因此它通常更适用于规模较小的变化非常频繁的数据集。在一些应用中，告诉用户还有哪些人与自己有着相近偏好是有一定价值的——也许对于一个购物网站而言，我们并不想这么做，但是对于一个音乐分享类或者电影评分类网站而言，这种潜在的需求却是存在的。</p>
 
+  </div>
 </div>
 
 <h2>Comments</h2>

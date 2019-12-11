@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>software-engineering on Lifelong Hacker</title>
+    <link>http://blog.jiayuanzhang.com/tags/software-engineering/</link>
+    <description>Recent content in software-engineering on Lifelong Hacker</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 02 May 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.jiayuanzhang.com/tags/software-engineering/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>读《代码大全》</title>
+      <link>http://blog.jiayuanzhang.com/post/notes-on-code-complete-part-1/</link>
+      <pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/notes-on-code-complete-part-1/</guid>
+      <description>这本书最开始是大一的时候买的，买回来后翻了一些章节就成为了显示器的支架，直到最近工作了一段时间才重新开始读，这一次阅读和几年前初次阅读有很大不同，大一阅读时候的编码经验仅仅是局限于算法方面，对大型项目的构建没有特别多感触；这一次是在写了很多业务代码，积累了一定问题的基础上去阅读的</description>
+    </item>
+    
+    <item>
+      <title>《程序员修炼之道》阅读笔记（二）</title>
+      <link>http://blog.jiayuanzhang.com/post/notes-on-the-pragmatic-programmer-part-2/</link>
+      <pubDate>Thu, 17 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/notes-on-the-pragmatic-programmer-part-2/</guid>
+      <description>重复的危害 系统中的每一项知识都必须具有单一、无歧义、权威的表示。（感觉翻译得怪怪的） Tip 11 DRY - Don&amp;rsquo;t Repeat Yourself 不要重复你自己 重复是怎样发生的 强加的重复（imposed duplication）：开发者觉得他们无可选择 —— 环境似乎要求重复。 无意的重复（inadvertent duplication</description>
+    </item>
+    
+    <item>
+      <title>《程序员修炼之道》阅读笔记（一）</title>
+      <link>http://blog.jiayuanzhang.com/post/notes-on-the-pragmatic-programmer-part-1/</link>
+      <pubDate>Sun, 13 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/notes-on-the-pragmatic-programmer-part-1/</guid>
+      <description>实习到现在差不多两个月了，博客也一直荒废了没写。这次更新就先来写写读书笔记好了。 这本书从书名来看其实很像那种鸡汤类的书，英文名「The Pragmatic Programmer」（注重实效的程序员）看上去就好了许多。豆瓣评分 8.6 分。大一的时候买的书，之前随意地写过几年的玩具代码，所以初读这本书的时候觉</description>
+    </item>
+    
+  </channel>
+</rss>

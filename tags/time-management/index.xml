@@ -1,74 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>/time-management on Lifelong Hacker</title>
+    <title>time-management on Lifelong Hacker</title>
     <link>http://blog.jiayuanzhang.com/tags/time-management/</link>
-    <description>Recent content in /time-management on Lifelong Hacker</description>
+    <description>Recent content in time-management on Lifelong Hacker</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Thu, 23 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 23 Nov 2018 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="http://blog.jiayuanzhang.com/tags/time-management/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.jiayuanzhang.com/tags/time-management/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>修改 OmniFocus 3 的主题</title>
-      <link>http://blog.jiayuanzhang.com/post/how-to-modify-omnifocus-3-theme/</link>
-      <pubDate>Thu, 23 May 2019 00:00:00 +0000</pubDate>
+      <title>OmniFocus 3 最佳实践</title>
+      <link>http://blog.jiayuanzhang.com/post/omnifocus-3-workflow/</link>
+      <pubDate>Fri, 23 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/how-to-modify-omnifocus-3-theme/</guid>
-      <description>&lt;p&gt;OmniFocus 3 提供了 Dark Mode，但是却没有提供自定义主题的功能，Dark Mode 看久了也会腻，所以最近又切换到 Light Mode 下来了。搜索了一下，看到这篇讨论：&lt;a href=&#34;https://discourse.omnigroup.com/t/is-it-possible-to-reduce-fontsize-or-fontstyle-of-the-headline-of-a-perspective/44258/8?u=jannock&#34;&gt;Is it possible to reduce fontsize or fontstyle of the headline of a perspective?&lt;/a&gt;，可以通过修改配置的方式来修改 OmniFocus 的主题。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190523111224.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;具体的修改方法为：&lt;/p&gt;
-
-&lt;p&gt;在 &lt;code&gt;/Applications/OmniFocus.app/Contents/Resources/ThemeResources/SystemFont&lt;/code&gt; 下面修改字体的大小和页边距，首先我们先修改边距大小，我默认选择的是 Extra Large 的字体，所以需要修改 &lt;code&gt;OFIExtraLargeLayoutConstraintConstants.plit&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;找到以下代码：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;key&amp;gt;&lt;/span&gt;extraPaddingBelowNoteForActionCells&lt;span class=&#34;nt&#34;&gt;&amp;lt;/key&amp;gt;&lt;/span&gt;
-&lt;span class=&#34;nt&#34;&gt;&amp;lt;real&amp;gt;&lt;/span&gt;20&lt;span class=&#34;nt&#34;&gt;&amp;lt;/real&amp;gt;&lt;/span&gt;
-&lt;span class=&#34;nt&#34;&gt;&amp;lt;key&amp;gt;&lt;/span&gt;extraPaddingBelowNoteForColumnarActionCells&lt;span class=&#34;nt&#34;&gt;&amp;lt;/key&amp;gt;&lt;/span&gt;
-&lt;span class=&#34;nt&#34;&gt;&amp;lt;real&amp;gt;&lt;/span&gt;20&lt;span class=&#34;nt&#34;&gt;&amp;lt;/real&amp;gt;&lt;/span&gt;
-&lt;span class=&#34;nt&#34;&gt;&amp;lt;key&amp;gt;&lt;/span&gt;extraPaddingBelowNoteForProjectCells&lt;span class=&#34;nt&#34;&gt;&amp;lt;/key&amp;gt;&lt;/span&gt;
-&lt;span class=&#34;nt&#34;&gt;&amp;lt;real&amp;gt;&lt;/span&gt;20&lt;span class=&#34;nt&#34;&gt;&amp;lt;/real&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;然后把 &lt;code&gt;real&lt;/code&gt; 的值设定成自己想要的就好了，我这边设定为 20，最后看起来的效果还可以。&lt;/p&gt;
-
-&lt;p&gt;然后修改 Note 的字体，打开 &lt;code&gt;OFIFontRegistry.plit&lt;/code&gt;，找到以下代码：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;key&amp;gt;&lt;/span&gt;OFITextStyleNoteBody&lt;span class=&#34;nt&#34;&gt;&amp;lt;/key&amp;gt;&lt;/span&gt;
-&lt;span class=&#34;nt&#34;&gt;&amp;lt;dict&amp;gt;&lt;/span&gt;
-	&lt;span class=&#34;nt&#34;&gt;&amp;lt;key&amp;gt;&lt;/span&gt;content-sizes&lt;span class=&#34;nt&#34;&gt;&amp;lt;/key&amp;gt;&lt;/span&gt;
-	&lt;span class=&#34;nt&#34;&gt;&amp;lt;array&amp;gt;&lt;/span&gt;
-		&lt;span class=&#34;nt&#34;&gt;&amp;lt;real&amp;gt;&lt;/span&gt;13&lt;span class=&#34;nt&#34;&gt;&amp;lt;/real&amp;gt;&lt;/span&gt;
-		&lt;span class=&#34;nt&#34;&gt;&amp;lt;real&amp;gt;&lt;/span&gt;13&lt;span class=&#34;nt&#34;&gt;&amp;lt;/real&amp;gt;&lt;/span&gt;
-		&lt;span class=&#34;nt&#34;&gt;&amp;lt;real&amp;gt;&lt;/span&gt;14&lt;span class=&#34;nt&#34;&gt;&amp;lt;/real&amp;gt;&lt;/span&gt;
-		&lt;span class=&#34;nt&#34;&gt;&amp;lt;real&amp;gt;&lt;/span&gt;15&lt;span class=&#34;nt&#34;&gt;&amp;lt;/real&amp;gt;&lt;/span&gt;
-		&lt;span class=&#34;nt&#34;&gt;&amp;lt;real&amp;gt;&lt;/span&gt;16&lt;span class=&#34;nt&#34;&gt;&amp;lt;/real&amp;gt;&lt;/span&gt;
-	&lt;span class=&#34;nt&#34;&gt;&amp;lt;/array&amp;gt;&lt;/span&gt;
-	&lt;span class=&#34;nt&#34;&gt;&amp;lt;key&amp;gt;&lt;/span&gt;font-name&lt;span class=&#34;nt&#34;&gt;&amp;lt;/key&amp;gt;&lt;/span&gt;
-	&lt;span class=&#34;nt&#34;&gt;&amp;lt;string&amp;gt;&lt;/span&gt;regular&lt;span class=&#34;nt&#34;&gt;&amp;lt;/string&amp;gt;&lt;/span&gt;
-&lt;span class=&#34;nt&#34;&gt;&amp;lt;/dict&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;依次修改 &lt;code&gt;real&lt;/code&gt; 的值，对应 OmniFocus 的以下配置：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/forrestchang/img-repo/master/20190523112118.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Next Action, Due 和 Overdue 的颜色可以在 &lt;code&gt;/Applications/OmniFocus.app/Contents/Resources/ThemeResources/&lt;/code&gt; 下面修改，找到对应的主题，例如我现在使用的是 Light Mode，就修改 &lt;code&gt;30-Light-ColoredText/OFIThemeAppearance.plist&lt;/code&gt; 文件。&lt;/p&gt;
-
-&lt;p&gt;其中颜色的值使用的 NSColor HSB&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:nscolor&#34;&gt;&lt;a href=&#34;#fn:nscolor&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 格式的，需要对 RGB 或者 Hex 格式的颜色值做一下转换，可以找到喜欢的颜色值，然后在&lt;a href=&#34;https://rgb.to/&#34;&gt;这个网站&lt;/a&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:convert&#34;&gt;&lt;a href=&#34;#fn:convert&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;转换。&lt;/p&gt;
-
-&lt;p&gt;把 Resource 中的配置文件浏览了一下，发现还是可以定制很多其他东西的，基于这个可以实现一个主题工具，但是不知道 OmniFocus 更新会不会把 Resource 文件覆盖掉，这个之后测试一下。&lt;/p&gt;
-&lt;div class=&#34;footnotes&#34;&gt;
-
-&lt;hr /&gt;
-
-&lt;ol&gt;
-&lt;li id=&#34;fn:nscolor&#34;&gt;&lt;a href=&#34;https://developer.apple.com/documentation/appkit/nscolor&#34;&gt;NSColor - AppKit | Apple Developer Documentation&lt;/a&gt;
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:nscolor&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:convert&#34;&gt;&lt;a href=&#34;https://rgb.to/&#34;&gt;Convert Hex color #7ca746 to Rgb, Pantone, RAL, HSL, HSV, HSB, JSON. Get color scheme.&lt;/a&gt;
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:convert&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-</description>
+      <guid>http://blog.jiayuanzhang.com/post/omnifocus-3-workflow/</guid>
+      <description>这篇文章主要分享一下我多年使用的一套任务管理系统的经验，工具是次要的，主要是一些想法的实践。有了基本的思路，无论是 OmniFocus、Todoist 还是 org-mode（Emacs 中的一个时间管理模式），都可以有自己的一套方式来实践。本篇文章主要以 OmniFocus 3 为载体来介绍这些内容。 每个人</description>
+    </item>
+    
+    <item>
+      <title>时间记录不完全指北</title>
+      <link>http://blog.jiayuanzhang.com/post/time-recording-tutorial/</link>
+      <pubDate>Sun, 10 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/time-recording-tutorial/</guid>
+      <description>两年前，曾经写过一篇有关时间管理的文章，那个时候还在上高二，对于时间管理仅仅是有一点肤浅的了解，自然写出来的文字也是比较幼稚的。经过两年的实践，积累了很多时间管理的经验，想要拿出来分享一下。预计会写一个系列，包括使用的工具和日常的 Workflow。 日常使用的工具有这些： 纸质笔记本</description>
+    </item>
+    
+    <item>
+      <title>谈谈时间管理</title>
+      <link>http://blog.jiayuanzhang.com/post/notes-on-time-management/</link>
+      <pubDate>Fri, 14 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/notes-on-time-management/</guid>
+      <description>初次看到时间管理这个概念大概是高二的时候，在此之前，我一直在使用所谓的To-do List来管理自己每天的学习任务（那个时候还不知道）。知道了时间管理这个概念后，惊讶于原来自己早就在对时间进行管理了，只不过最简单的管理方式（后来实践表明，仅仅一个任务清单就足够了）。 在知道了时间管理</description>
     </item>
     
   </channel>

@@ -40,7 +40,7 @@
     <nav>
       <ul class="sidebar-nav">
         <li><a href="http://blog.jiayuanzhang.com">Home</a> </li>
-        <li><a href="/categories/"> Categories </a></li><li><a href="/post/"> Archives </a></li><li><a href="http://jiayuanzhang.com"> About </a></li>
+        <li><a href="/tags/"> Tags </a></li><li><a href="/post/"> Archives </a></li><li><a href="http://jiayuanzhang.com"> About </a></li>
       </ul>
     </nav>
 
@@ -51,8 +51,20 @@
     <main class="content container">
     <div class="post">
   <h1>给博客添加了全文 RSS</h1>
-  <time datetime=2019-07-24T21:59:00&#43;0800 class="post-date">Wed, Jul 24, 2019</time>
-  <p>之前博客虽然也有 RSS，但是不是全文索引的，为了方便读者能够直接在 RSS 阅读器中阅读，花了点时间给博客添加了全文 RSS 输出。</p>
+  <div class="post-meta post-date">
+    <time style="display: inline-block" datetime=2019-07-24T21:59:00&#43;0800> 2019-07-24 </time>
+    
+    <div class="tags" style="display: inline-block; margin-left: 10px">
+      
+      <a style="margin-left: 5px" href="http://blog.jiayuanzhang.com/tags/blog">#blog</a>
+      
+      <a style="margin-left: 5px" href="http://blog.jiayuanzhang.com/tags/hugo">#hugo</a>
+      
+    </div>
+    
+  </div>
+  <div class="post-content" style="margin-top: 20px">
+    <p>之前博客虽然也有 RSS，但是不是全文索引的，为了方便读者能够直接在 RSS 阅读器中阅读，花了点时间给博客添加了全文 RSS 输出。</p>
 
 <p>查阅文档<sup class="footnote-ref" id="fnref:fn-1"><a href="#fn:fn-1">1</a></sup>可知，Hugo 的 RSS 模板搜索顺序如下：</p>
 
@@ -142,6 +154,7 @@ copyright = &quot;This work is licensed under a Creative Commons Attribution-Sha
  <a class="footnote-return" href="#fnref:fn-2"><sup>[return]</sup></a></li>
 </ol>
 </div>
+  </div>
 </div>
 
 <h2>Comments</h2>

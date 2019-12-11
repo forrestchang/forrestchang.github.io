@@ -1,15 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>weekly-review on Jiayuan&#39;s Blog</title>
+    <title>weekly-review on Lifelong Hacker</title>
     <link>http://blog.jiayuanzhang.com/tags/weekly-review/</link>
-    <description>Recent content in weekly-review on Jiayuan&#39;s Blog</description>
+    <description>Recent content in weekly-review on Lifelong Hacker</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Sat, 01 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://blog.jiayuanzhang.com/tags/weekly-review/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>每周总结 2019 Week 49</title>
+      <link>http://blog.jiayuanzhang.com/post/2019-week-49-review/</link>
+      <pubDate>Sun, 08 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/2019-week-49-review/</guid>
+      <description>最近一年，长文写得少了，大部分时间都是在 Twitter 上输出观点，这存在两个缺点：1）思考过于碎片化；2）思考的内容过于浅显，没有深入。但是如果每个观点都需要输出一篇长文的话，我实在也做不到（博客的 Draft 里面躺了几十篇草稿，还有几十个 Idea 等着去写）。所以可以取一个中间值，在博客上记录下每周的思考、</description>
+    </item>
+    
+    <item>
+      <title>每周评论 第一期</title>
+      <link>http://blog.jiayuanzhang.com/post/weekly-readings-review-01/</link>
+      <pubDate>Fri, 26 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/weekly-readings-review-01/</guid>
+      <description>两年前曾经写过类似的文章：这周在读什么 Issue#1，主要是为了分享一下最近在读、或者是看到的比较好的内容，但是没能坚持写下去，草稿箱里还躺着几篇未发布的阅读分享。这一次打算重写开始写，阮一峰老师已经写了60 期了。 分享些什么内容？我的主要阅读来源是 Hacker News 和一些订阅的网站（我使用 inoreader RSS</description>
+    </item>
     
     <item>
       <title>2018 Weekly 35 Review</title>
@@ -26,7 +43,16 @@
       <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/2017-week-19-review/</guid>
-      <description>警告 因为七牛云已取消测试域名，文章中的图片已丢失。 之前有在博客上写 Weekly Review 的习惯，后来因为被朋友说博客真水然后都撤下来了，有些文章确实是类似于「流水账」的记事，但也有一些是围绕这周做的东西来讨论的。总的来说，写 Weekly Review 对自己帮助还是很大的，可以在一周中 Focus 一个特定的主题，而不是想到什么做什</description>
+      <description>之前有在博客上写 Weekly Review 的习惯，后来因为被朋友说博客真水然后都撤下来了，有些文章确实是类似于「流水账」的记事，但也有一些是围绕这周做的东西来讨论的。总的来说，写 Weekly Review 对自己帮助还是很大的，可以在一周中 Focus 一个特定的主题，而不是想到什么做什么，所以这个系列以后还会继续写下去，只是写的内容更</description>
+    </item>
+    
+    <item>
+      <title>这周在读什么 Issue#1</title>
+      <link>http://blog.jiayuanzhang.com/post/weekly-reading-report-issue-01/</link>
+      <pubDate>Fri, 24 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/weekly-reading-report-issue-01/</guid>
+      <description>为什么要写这个？最主要的原因还是激励自己多多阅读，读好书和好文章，然后写 review。 读些什么？平常的阅读比较杂，除了书籍之外，还会读很多的博客文章，所以会写这周的 book review，主要是针对这周读完的书，读了一半放弃不打算再读的书也会写，没有读完的书不写；文章就简单写一些笔记性的</description>
     </item>
     
     <item>
@@ -63,6 +89,15 @@
       
       <guid>http://blog.jiayuanzhang.com/post/2016-week-46-review/</guid>
       <description>编程学习方面，不完全看完了《利用 Python 进行数据分析》，感觉光看没有进行练习的话很难一次记住那么多用法，所以这本书最好还是最 NumPy、Pandas 这几个库用过一段时间之后再看。之后开始看《集体智慧编程》，目前才看了两章，内容写得还是挺好的，不过很多代码不是很规范（比如命名、缩进什么的</description>
+    </item>
+    
+    <item>
+      <title>2016 Week 45 Review</title>
+      <link>http://blog.jiayuanzhang.com/post/2016-week-45-review/</link>
+      <pubDate>Mon, 07 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/2016-week-45-review/</guid>
+      <description>已经第 45 周了啊，再过 10 周 2016 年就要过去了。今天大连下起了雪，似乎冬天就这么不知不觉得来了，记得上一次下大雪的时候去了一次海边，可惜 Photos 在一次事故中数据全部丢失了。作为一个南方人当初决定来北方的时候其实是对雪有一种很强烈的期待的，不过来了大连之后发现其实这里也不怎么下雪，偶尔下一次的雪</description>
     </item>
     
     <item>
@@ -104,7 +139,7 @@
     <item>
       <title>2016 Week 12 Review</title>
       <link>http://blog.jiayuanzhang.com/post/2016-week-12-review/</link>
-      <pubDate>Sun, 20 Mar 2016 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 02 Mar 2016 00:00:00 +0000</pubDate>
       
       <guid>http://blog.jiayuanzhang.com/post/2016-week-12-review/</guid>
       <description>这周的主题是跑步，大连的天气开始变暖，终于可以去操场跑步了，不过由于学校在海边，风还是很大的。今天跑完了一个线上马拉松（10km 健康赛），明天大连国际马拉松开始开放报名，打算参加半程马拉松，不知道能不能报上名，毕竟今年有一个目标就是参加一次马拉松（全马或者半马）。比赛日期是5.2</description>
