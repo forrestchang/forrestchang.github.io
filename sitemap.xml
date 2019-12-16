@@ -3,6 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://blog.jiayuanzhang.com/post/2019-week-50-review/</loc>
+    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.jiayuanzhang.com/post/2019-week-49-review/</loc>
     <lastmod>2019-12-09T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -311,14 +318,14 @@
   
   <url>
     <loc>http://blog.jiayuanzhang.com/</loc>
-    <lastmod>2019-12-09T00:00:00+00:00</lastmod>
+    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://blog.jiayuanzhang.com/post/</loc>
-    <lastmod>2019-12-09T00:00:00+00:00</lastmod>
+    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0</priority>
   </url>
@@ -422,7 +429,7 @@
   
   <url>
     <loc>http://blog.jiayuanzhang.com/tags/journal/</loc>
-    <lastmod>2019-12-09T00:00:00+00:00</lastmod>
+    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0</priority>
   </url>
@@ -569,7 +576,7 @@
   
   <url>
     <loc>http://blog.jiayuanzhang.com/tags/weekly-review/</loc>
-    <lastmod>2019-12-09T00:00:00+00:00</lastmod>
+    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0</priority>
   </url>

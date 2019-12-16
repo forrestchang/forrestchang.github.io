@@ -5,10 +5,19 @@
     <link>http://blog.jiayuanzhang.com/</link>
     <description>Recent content on Lifelong Hacker</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 08 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 16 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://blog.jiayuanzhang.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>每周总结 2019 Week 50</title>
+      <link>http://blog.jiayuanzhang.com/post/2019-week-50-review/</link>
+      <pubDate>Mon, 16 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/2019-week-50-review/</guid>
+      <description>大概在上周末的时候，和朋友们制定了一个每月挑战的计划（输的人请其他参与人吃饭），我的挑战是一个月内读完 5 本书，写 2 篇书评。截止到目前为止，已经完成了 3/5，进度还是挺快的。 另外这篇文章大部分是在碎片时间内写的，比如中午吃饭的时候、等咖啡的时候，这些时间里写完了大部分的内容。 做计划</description>
+    </item>
     
     <item>
       <title>每周总结 2019 Week 49</title>
