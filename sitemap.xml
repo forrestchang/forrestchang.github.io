@@ -346,6 +346,12 @@
   </url>
   
   <url>
+    <loc>http://blog.jiayuanzhang.com/series/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.jiayuanzhang.com/tags/</loc>
     <changefreq>daily</changefreq>
     <priority>0</priority>
