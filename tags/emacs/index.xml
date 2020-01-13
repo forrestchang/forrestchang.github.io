@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>emacs on Lifelong Hacker</title>
+    <title>emacs on Jiayuan Thoughts</title>
     <link>http://blog.jiayuanzhang.com/tags/emacs/</link>
-    <description>Recent content in emacs on Lifelong Hacker</description>
+    <description>Recent content in emacs on Jiayuan Thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 14 Jul 2019 00:31:00 +0800</lastBuildDate>
     
