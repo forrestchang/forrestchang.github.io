@@ -25,23 +25,20 @@
  */
 
  .post-content a {
-   color: #191919;
-   background-color: #ffdb00;
+   color: #F7B32A;
    padding-left: 3px;
    padding-right: 3px;
    padding-top: 2px;
-   padding-bottom: 2px;
  }
 
  .post-content a:hover {
   text-decoration: none;
-  background-color: #191919;
-  color: #fff;
+  background-color: #ffdb00;
+  color: #191919;
  }
 
  .post-tags a {
-   color: #fff;
-   background-color: #FF775A;
+   color: #FF775A;
    padding: 3px;
  }
 
