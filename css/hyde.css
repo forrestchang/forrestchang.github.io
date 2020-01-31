@@ -25,53 +25,52 @@
  */
 
  .post-content a {
-   color: #F7B32A;
-   padding-left: 3px;
-   padding-right: 3px;
-   padding-top: 2px;
+   color: #191919;
+   text-decoration: underline;
  }
 
  .post-content a:hover {
-  text-decoration: none;
-  background-color: #ffdb00;
-  color: #191919;
+  text-decoration: underline;
+  color: #ffdb00;
+  transition: color 0.15s;
  }
 
  .post-tags a {
-   color: #FF775A;
+   color: #ffdb00;
    padding: 3px;
  }
 
  .post-tags a:hover {
-  text-decoration: none;
-  background-color: #191919;
-  color: #fff;
+  text-decoration: underline;
+  color: #ffdb00;
+  transition: color 0.15s;
  }
 
  .read-more-link a {
    color: #ffdb00;
+   text-decoration: none;
  }
 
  .item-list a {
-   color: #FF775A;
+   color: #191919;
  }
 
  .posts a:hover {
    text-decoration: none;
-   background-color: #191919;
-   color: #fff;
+   color: #ffdb00;
+   transition: color 0.15s;
  }
 
  .tags-list a {
-   color: #FF775A;
+   color: #191919;
    padding: 3px;
  }
 
  .tags-list a:hover {
    text-decoration: none;
-   color: #fff;
-   background-color: #191919;
+   color: #ffdb00;
    padding: 3px;
+   transition: color 0.15s;
  }
 
 /*
@@ -81,7 +80,7 @@
  */
 
 html {
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  font-family: "TIBch", "Classic Grotesque W01", "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, "Hiragino Sans GB", "PingFang SC", "Heiti SC", "Microsoft YaHei UI", "Microsoft YaHei", "Source Han Sans", sans-serif;
 }
 @media (min-width: 48em) {
   html {
