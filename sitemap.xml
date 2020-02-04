@@ -3,6 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://blog.jiayuanzhang.com/post/wechat-intuition-pumps/</loc>
+    <lastmod>2020-02-04T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.jiayuanzhang.com/post/2020-02-reading-plan/</loc>
     <lastmod>2020-01-19T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -326,7 +333,7 @@
   
   <url>
     <loc>http://blog.jiayuanzhang.com/</loc>
-    <lastmod>2020-01-19T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-04T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0</priority>
   </url>
@@ -340,7 +347,7 @@
   
   <url>
     <loc>http://blog.jiayuanzhang.com/post/</loc>
-    <lastmod>2020-01-19T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-04T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0</priority>
   </url>
@@ -444,6 +451,13 @@
   <url>
     <loc>http://blog.jiayuanzhang.com/tags/hugo/</loc>
     <lastmod>2019-07-29T18:20:10+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/tags/intuition-pumps/</loc>
+    <lastmod>2020-02-04T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0</priority>
   </url>
