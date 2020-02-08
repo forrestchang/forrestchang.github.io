@@ -152,11 +152,15 @@ html {
 
 .site-title {
   display: block;
-  /* box-shadow: -15px 0px 0px #ffdb00, 19px 0px 0px #ffdb00; */
-  /* background-color: #ffdb00; */
-  border-bottom: 15px solid #ffdb00;
-  padding-bottom: 20px;
-  margin-bottom: 10px;
+  background-image: linear-gradient(
+    transparent 0%,
+    transparent calc(50% - 35px),
+    #ffdb00 calc(50% - 35px),
+    #ffdb00 100%
+  );
+  transition: background-position 120ms ease-in-out, padding 120ms ease-in-out;
+  background-size: 100% 200%;
+  background-position: 0 0;
 }
 
 /* Sidebar nav */
