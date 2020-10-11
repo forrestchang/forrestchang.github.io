@@ -3,7 +3,7 @@
 <head>
   <link href="https://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.53" />
+  <meta name="generator" content="Hugo 0.76.3" />
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,7 +44,7 @@
     <nav>
       <ul class="sidebar-nav">
         <li><a href="http://blog.jiayuanzhang.com">Home</a> </li>
-        <li><a href="/tags/"> Tags </a></li><li><a href="/post/"> Archives </a></li><li><a href="http://jiayuanzhang.com"> About </a></li>
+        <li><a href="/tags/"> Tags </a></li><li><a href="/post/"> Archives </a></li><li><a href="https://twitter.com/Tisoga"> Twitter </a></li>
       </ul>
     </nav>
 
@@ -69,31 +69,24 @@
   </div>
   <div class="post-content" style="margin-top: 20px">
     <p>今天是元旦，因为在 Calendar 中把今天归到 2017 年的第一周里了，所以就按照上面所写的把这周当做第一周吧。</p>
-
 <p>这周结束了在中软的课程设计实训，以前总嫌弃小渔村破，现在回来才知道还是小渔村好啊。课程设计实训的内容是用 Java 写一个点餐系统，一个小组只需要做一份就可以了，不过几乎所有人都不知道 Git 是个什么东西，小组合作还是用的 U 盘拷贝代码，所以代码质量可想而知了，本组的其他人都比较厉害，索性我就抱大腿划水了，什么也没有参与，代码也没有写一行。</p>
-
 <p>不过虽说没有写课程设计的项目，但还是有写代码的。这周把两个月前参加 HACKxFDU 的项目拿出来用 Python 3 重写了一遍。项目的地址：<a href="https://github.com/forrestchang/Neutron">Neutron</a>，当初我们考虑做 Neutron 的时候是想把它做成一个通用的智能家居语音终端的，类似于 Amazon 的 Echo，只要提供第三方的 API，就能轻松集成到 Neutron 来，但是实际上碍于 Hackathon 的时间限制，只是完成了一个简单的 Demo，完全没有拓展性。本来这个项目参加完 Hackathon 之后就没有管了，不过最近看到 Facebook CEO 扎克伯格写了一个 Jarvis，觉得和之前做的东西很像（当然还是差远了，基本我们做的东西就是用别人的 API），所以又掏出来拿 Python 3.5 重写了一遍。现在在 <a href="https://github.com/forrestchang/neutron/tree/develop">develop</a> 分支基本上把框架搭建好了，最底层是和 API 交互的 layer 层，这一层需要为每个 API 写特定的代码，其上是抽象的 handler 层，提供通用的接口，抽象 layer 层的操作：例如语音控制模块、AI 模块等，这一层上还可能包裹一层特定的 wrapper，例如对特定的 message 做语义分析。通过配置文件来选择使用哪个 layer 以及配置 layer 的内容（key 等内容），开始的时候打算用 json 来做配置文件的，后来看了一下还有 yaml 这种更加简洁的配置文件，所以打算换成 yaml 的。目前这个项目还有很多内容要写的，比如特定的 layer，都需要更具不同的 API 写特定的代码，这一点上我参考的 <a href="https://github.com/syl20bnr/spacemacs">Spacemacs</a> 的方法。</p>
-
-<p>这周在中软那边的宿舍里面把08版的《射雕英雄传》看完了，虽然槽点挺多的（特效、台词、演技），但是还是看得很欢乐，林依晨的黄蓉甚是喜欢。记得以前应该是看过朱茵版的黄蓉的，不过时间太久远了，已经记不太清了。小说倒没有读完，还是看剧比较快啊。看完后好长一段时间里面都觉得特别空虚，总感觉少了些什么。这种孤独感几乎在每次看完某部小说和电视剧后都会有（电影倒没有这种感觉，可能时间太短了），总觉得还沉浸在别人的故事里，可惜别人的故事已经结束，不得不回到现实中来。想起席慕蓉的一句话『在别人的故事里，留着自己的泪』 <sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup> 。</p>
-
-<hr />
-
+<p>这周在中软那边的宿舍里面把08版的《射雕英雄传》看完了，虽然槽点挺多的（特效、台词、演技），但是还是看得很欢乐，林依晨的黄蓉甚是喜欢。记得以前应该是看过朱茵版的黄蓉的，不过时间太久远了，已经记不太清了。小说倒没有读完，还是看剧比较快啊。看完后好长一段时间里面都觉得特别空虚，总感觉少了些什么。这种孤独感几乎在每次看完某部小说和电视剧后都会有（电影倒没有这种感觉，可能时间太短了），总觉得还沉浸在别人的故事里，可惜别人的故事已经结束，不得不回到现实中来。想起席慕蓉的一句话『在别人的故事里，留着自己的泪』 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> 。</p>
+<hr>
 <p>就借着这篇博客顺便说说 17 年的计划吧。</p>
-
 <ol>
 <li>学习一门新语言：14年学了 C、Scheme，15年学了 Java、Python，16年学了 Swift，再加上各种用过但是不熟的语言，也有好多个了。现在主力开发语言是 Python，17年打算学习 一下 JavaScript，这门 GitHub 上最火的语言，不会都不好意思说自己是程序员。也不用学到多么深，只求达到入门水平。</li>
 <li>Python 水平达到 professional，用了接近两年的 Python，但是水平也没有长进多少，今年打算深入一下 Python，多写一些项目。</li>
 <li>去周边国家玩一次，其实挺想去尼泊尔的，不知道今年有没有时间。不过即使不出国，也要多出去走走，一个人的旅行。</li>
 </ol>
-<div class="footnotes">
-
-<hr />
-
+<section class="footnotes" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn:1">席慕蓉的《戏子》，用在这里并不完全准确。
- <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:1" role="doc-endnote">
+<p>席慕蓉的《戏子》，用在这里并不完全准确。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
 </ol>
-</div>
+</section>
 
   </div>
 </div>
@@ -122,6 +115,7 @@
     </main>
 
     
+      
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -133,5 +127,6 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    
   </body>
 </html>

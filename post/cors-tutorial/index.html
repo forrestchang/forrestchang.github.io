@@ -3,7 +3,7 @@
 <head>
   <link href="https://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.53" />
+  <meta name="generator" content="Hugo 0.76.3" />
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,7 +44,7 @@
     <nav>
       <ul class="sidebar-nav">
         <li><a href="http://blog.jiayuanzhang.com">Home</a> </li>
-        <li><a href="/tags/"> Tags </a></li><li><a href="/post/"> Archives </a></li><li><a href="http://jiayuanzhang.com"> About </a></li>
+        <li><a href="/tags/"> Tags </a></li><li><a href="/post/"> Archives </a></li><li><a href="https://twitter.com/Tisoga"> Twitter </a></li>
       </ul>
     </nav>
 
@@ -66,49 +66,29 @@
     
   </div>
   <div class="post-content" style="margin-top: 20px">
-    
-
-<p>Web 后端开发者很少会去充分了解跨域问题，原因是他们很少和 JavaScript 打交道。但是作为一个 Web 开发者，知道跨域请求和如何解决跨域问题可以和前端开发者在沟通上变得更为顺畅。</p>
-
+    <p>Web 后端开发者很少会去充分了解跨域问题，原因是他们很少和 JavaScript 打交道。但是作为一个 Web 开发者，知道跨域请求和如何解决跨域问题可以和前端开发者在沟通上变得更为顺畅。</p>
 <p>这篇文章会介绍和跨域请求相关的一些概念，以及如何在后端（Python）解决浏览器的跨域请求问题。</p>
-
-<h2 id="一-什么是跨域请求">一、什么是跨域请求</h2>
-
+<h2 id="一什么是跨域请求">一、什么是跨域请求</h2>
 <p>首先，我们要了解什么是跨域请求。简单来说，当一台服务器资源从另一台服务器（不同的域名或者端口）请求一个资源时，就会发起一个跨域 HTTP 请求。</p>
-
 <p>举个简单的例子，<code>http://example-a.com/index.html</code> 这个 HTML 页面请求了 <code>http://example-b.com/resource/image.jpg</code> 这个图片资源时（发起 Ajax 请求，非 <code>&lt;img&gt;</code> 标签），就是发起了一个跨域请求。</p>
-
 <p>在不做任何处理的情况下，这个跨域请求是无法被成功请求的，因为浏览器基于<strong>同源策略</strong>会对跨域请求做一定的限制。</p>
-
-<h2 id="二-浏览器同源策略">二、浏览器同源策略</h2>
-
+<h2 id="二浏览器同源策略">二、浏览器同源策略</h2>
 <p>这就引出了<strong>浏览器的同源策略（Same-origin policy）</strong>，同源策略限制了从同一个源加载的文档或者脚本如何与来自另一个源的资源进行交互。这是一个用于隔离潜在恶意文件的重要安全机制。</p>
-
 <p>什么是同源？同源需要同时满足三个条件：</p>
-
 <ol>
 <li>请求的协议相同（例如同为 http 协议）</li>
 <li>请求的域名相同（例如同为 <code>www.example.com</code>）</li>
 <li>请求的端口相同（例如同为 80 端口）</li>
 </ol>
-
 <p>第 2 点需要注意的是，必须是域名完全相同，比如说 <code>blog.example.com</code> 和 <code>mail.example.com</code> 这两个域名，虽然它们的顶级域名和二级域名（均为 <code>example.com</code>）都相同，但是三级域名（<code>blog</code> 和 <code>mail</code>）不相同，所以也不能算作域名相同。</p>
-
 <p>如果不同时满足这上面三个条件，那就不符合浏览器的同源策略。</p>
-
 <p>修改 <code>document.domain</code> 参数可以更改当前的源，例如 <code>blog.example.com</code> 想要访问父域 <code>example.com</code> 的资源时，可以执行以下 JavaScript 脚本来进行修改：</p>
-
-<pre><code class="language-js">document.domain = 'example.com';
-</code></pre>
-
-<p>但是 <code>document.domain</code> 不能被设置为 <code>foo.com</code> 或者是 <code>bar.com</code>，因为它们不是 <code>blog.example.com</code> 的超级域。</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">document.<span style="color:#a6e22e">domain</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;example.com&#39;</span>;
+</code></pre></div><p>但是 <code>document.domain</code> 不能被设置为 <code>foo.com</code> 或者是 <code>bar.com</code>，因为它们不是 <code>blog.example.com</code> 的超级域。</p>
 <p>当然，也不是所有的交互都会被同源策略拦截下来，下面两种交互就不会触发同源策略：</p>
-
 <ul>
 <li>跨域写操作（Cross-origin writes），例如超链接、重定向以及表单的提交操作，特定少数的 HTTP 请求需要添加预检请求（preflight）；</li>
 <li>跨域资源嵌入（Cross-origin embedding）：
-
 <ul>
 <li><code>&lt;script&gt;</code> 标签嵌入的跨域脚本；</li>
 <li><code>&lt;link&gt;</code> 标签嵌入的 CSS 文件；</li>
@@ -117,242 +97,179 @@
 <li><code>&lt;object&gt;</code>, <code>&lt;embed&gt;</code>, <code>&lt;applet&gt;</code> 的插件；</li>
 <li><code>@font-face</code> 引入的字体，一些浏览器允许跨域字体（cross-origin fonts），一些需要同源字体（same-origin fonts）；</li>
 <li><code>&lt;frame&gt;</code> 和 <code>&lt;iframe&gt;</code> 载入的任何资源，站点可以使用 <code>X-Frame-Options</code> 消息头来组织这种形式的跨域交互。</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <p>如果浏览器缺失同源策略这种安全机制会怎么样呢？设想一下，当你登陆了 <code>www.bank.com</code> 银行网站进行操作时，浏览器保存了你登录时的 Cookie 信息，如果没有同源策略，在访问其他网站时，其他网站就可以读取还未过期的 Cookie 信息，从而伪造登陆进行操作，造成财产损失。</p>
-
-<h2 id="三-cors-cross-origin-resource-sharing-跨域资源共享">三、CORS（Cross-origin resource sharing，跨域资源共享）</h2>
-
+<h2 id="三corscross-origin-resource-sharing跨域资源共享">三、CORS（Cross-origin resource sharing，跨域资源共享）</h2>
 <p>虽然同源策略一定程度上保证了安全性，但是如果是一个正常的请求需要跨域该怎么做呢？</p>
-
 <p>常见的方法有四种：</p>
-
 <ol>
 <li>JSONP</li>
 <li><code>&lt;iframe&gt;</code> 标签</li>
 <li>CORS（Cross-origin resource sharing，跨域资源共享）</li>
 <li>代理服务器</li>
 </ol>
-
 <p>前两种方式本质上是利用浏览器同源策略的漏洞来进行跨域请求，不是推荐的做法，只能作为低版本浏览器的缓兵之计。</p>
-
 <p>代理服务器的做法是让浏览器访问同源服务器，再由同源服务器去访问目标服务器，这样虽然可以避免跨域请求的问题，但是原本只需要一次的请求被请求了两次，无疑增加了时间的开销。</p>
-
 <p>目前主流的方法是使用 CORS 的方式，这也是下面主要讲的内容。</p>
-
-<h3 id="3-1-什么是-cors">3.1 什么是 CORS</h3>
-
+<h3 id="31-什么是-cors">3.1 什么是 CORS</h3>
 <p>CORS 其实是浏览器制定的一个规范，它的实现则主要在服务端，它通过一些 HTTP Header 来限制可以访问的域，例如页面 A 需要访问 B 服务器上的数据，如果 B 服务器上声明了允许 A 的域名访问，那么从 A 到 B 的跨域请求就可以完成。</p>
-
 <p>对于那些会对服务器数据产生副作用的 HTTP 请求，浏览器会使用 <code>OPTIONS</code> 方法发起一个预检请求（preflight request），从而可以获知服务器端是否允许该跨域请求，服务器端确认允许后，才会发起实际的请求。在预检请求的返回中，服务器端也可以告知客户端是否需要身份认证信息。</p>
-
-<h3 id="3-2-简单请求-simple-requests">3.2 简单请求（Simple requests）</h3>
-
+<h3 id="32-简单请求simple-requests">3.2 简单请求（Simple requests）</h3>
 <p>某些请求不会触发 CORS 预检请求，我们称这样的请求为简单请求。</p>
-
 <p>若请求满足下面所有条件，则该请求可视为简单请求：</p>
-
 <ul>
 <li><code>GET</code>, <code>HEAD</code>, <code>POST</code> 方法之一；</li>
 <li>Header 仅有以下字段：
-
 <ul>
 <li><code>Accept</code></li>
 <li><code>Accept-Language</code></li>
 <li><code>Content-Language</code></li>
-<li><code>Content-Type</code> 为下面三者之一：</li>
+<li><code>Content-Type</code> 为下面三者之一：
+<ul>
 <li><code>text / plain</code></li>
 <li><code>multipart / form-data</code></li>
 <li><code>application / x-www.form-urlencoded</code></li>
+</ul>
+</li>
 <li><code>DPR</code></li>
 <li><code>Downloadlink</code></li>
 <li><code>Save-Data</code></li>
 <li><code>Viewport-Width</code></li>
 <li><code>Width</code></li>
-</ul></li>
+</ul>
+</li>
 <li>请求中的任意 <code>XMLHttpRequestUpload</code> 对象均没有注册任何事件监听器，<code>XMLHttpRequestUpload</code> 对象可以使用 <code>XMLHttpRequest.upload</code> 属性访问；</li>
 <li>请求中没有使用 <code>ReadableStream</code> 对象。</li>
 </ul>
-
-<p>举一个例子<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>，例如站点 <code>http://foo.example</code> 的网页应用想要访问 <code>http://bar.other</code> 的资源，<code>http://foo.example</code> 的网页中可能包含类似于下面的 JavaScript 代码：</p>
-
-<pre><code class="language-javascript">var invocation = new XMLHttpRequest();
-var url = 'http://bar.other/resources/public-data/';
+<p>举一个例子<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>，例如站点 <code>http://foo.example</code> 的网页应用想要访问 <code>http://bar.other</code> 的资源，<code>http://foo.example</code> 的网页中可能包含类似于下面的 JavaScript 代码：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">invocation</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://bar.other/resources/public-data/&#39;</span>;
    
-function callOtherDomain() {
-  if(invocation) {    
-    invocation.open('GET', url, true);
-    invocation.onreadystatechange = handler;
-    invocation.send(); 
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">callOtherDomain</span>() {
+  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">invocation</span>) {    
+    <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;GET&#39;</span>, <span style="color:#a6e22e">url</span>, <span style="color:#66d9ef">true</span>);
+    <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">handler</span>;
+    <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">send</span>(); 
   }
 }
-</code></pre>
-
-<p>熟悉 JavaScript 的同学可能发现这段代码向 <code>http://bar.other/resources/public-data/</code> 发起了一个 <code>GET</code> 请求，请求和响应的报文如下。</p>
-
+</code></pre></div><p>熟悉 JavaScript 的同学可能发现这段代码向 <code>http://bar.other/resources/public-data/</code> 发起了一个 <code>GET</code> 请求，请求和响应的报文如下。</p>
 <p>请求报文：</p>
-
-<p><img src="https://raw.githubusercontent.com/forrestchang/img-repo/master/20190505164610.png" alt="2018-12-02-request-msg" /></p>
-
+<p><img src="https://raw.githubusercontent.com/forrestchang/img-repo/master/20190505164610.png" alt="2018-12-02-request-msg"></p>
 <p>响应报文：</p>
-
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxsiwz302wj31uo0rsn0i.jpg" alt="2018-12-02-response-msg" /></p>
-
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxsiwz302wj31uo0rsn0i.jpg" alt="2018-12-02-response-msg"></p>
 <p>在请求报文中，<code>Origin</code> 字段表明该请求来源于 <code>http://foo.example</code>。</p>
-
 <p>在响应报文中，<code>Access-Control-Allow-Origin</code> 字段被设置为 <code>*</code>，表明该资源可以被任意的域访问。</p>
-
 <p>使用 <code>Origin</code> 和 <code>Access-Control-Allow-Origin</code> 就能完成最简单访问控制。如果服务端仅允许来自 <code>http://foo.example</code> 域的访问，应该把 进行如下设置：</p>
-
-<pre><code class="language-http">Access-Control-Allow-Origin: http://foo.example
-</code></pre>
-
-<h3 id="3-3-预检请求-preflight-request">3.3 预检请求（Preflight Request）</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#960050;background-color:#1e0010">Access-Control-Allow-Origin: http://foo.example
+</span></code></pre></div><h3 id="33-预检请求preflight-request">3.3 预检请求（Preflight Request）</h3>
 <p>和简单请求不同，「需预检的请求」要求必须先使用 <code>OPTIONS</code> 方法发送一个预检请求到服务器，以获知服务器是否允许该请求，或者是否需要携带身份认证信息。「预检请求」的使用，可以避免跨域请求对服务器的用户数据产生未预期的影响。</p>
-
 <p>当一个请求满足以下任一条件时，该请求需要首先发送预检请求。</p>
-
 <ul>
 <li>使用了下面任一 HTTP 方法：<code>PUT</code>、<code>DELETE</code>、<code>CONNECT</code>、<code>OPTIONS</code>、<code>TRACE</code>、<code>PATCH</code>；</li>
 <li>Header 中设置了除简单请求 Header 字段外的其他字段（见简单请求中的 Header 字段说明）；</li>
 <li><code>Content-Type</code> 的值不属于下列之一：
-
 <ul>
 <li><code>application/x-www-form-urlencoded</code></li>
 <li><code>multipart/form-data</code></li>
 <li><code>text/plain</code></li>
-</ul></li>
+</ul>
+</li>
 <li>请求中的 <code>XMLHttpRequestUpload</code> 对象注册了任意多个事件监听器；</li>
 <li>请求中使用了 <code>ReadableStream</code> 对象。</li>
 </ul>
-
-<p>例如下面这个例子<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>：</p>
-
-<pre><code class="language-js">var invocation = new XMLHttpRequest();
-var url = 'http://bar.other/resources/post-here/';
-var body = '&lt;?xml version=&quot;1.0&quot;?&gt;&lt;person&gt;&lt;name&gt;Arun&lt;/name&gt;&lt;/person&gt;';
+<p>例如下面这个例子<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">invocation</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://bar.other/resources/post-here/&#39;</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">body</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;?xml version=&#34;1.0&#34;?&gt;&lt;person&gt;&lt;name&gt;Arun&lt;/name&gt;&lt;/person&gt;&#39;</span>;
     
-function callOtherDomain(){
-  if(invocation)
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">callOtherDomain</span>(){
+  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">invocation</span>)
     {
-      invocation.open('POST', url, true);
-      invocation.setRequestHeader('X-PINGOTHER', 'pingpong');
-      invocation.setRequestHeader('Content-Type', 'application/xml');
-      invocation.onreadystatechange = handler;
-      invocation.send(body); 
+      <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;POST&#39;</span>, <span style="color:#a6e22e">url</span>, <span style="color:#66d9ef">true</span>);
+      <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">setRequestHeader</span>(<span style="color:#e6db74">&#39;X-PINGOTHER&#39;</span>, <span style="color:#e6db74">&#39;pingpong&#39;</span>);
+      <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">setRequestHeader</span>(<span style="color:#e6db74">&#39;Content-Type&#39;</span>, <span style="color:#e6db74">&#39;application/xml&#39;</span>);
+      <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">handler</span>;
+      <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">send</span>(<span style="color:#a6e22e">body</span>); 
     }
 }
-</code></pre>
-
-<p>上面的代码使用 POST 请求发送一个 XML 文档，该请求中包含了一个自定义的 Header 字段 <code>X-PINGOTHER: pingpong</code>。另外，该请求的 <code>Content-Type</code> 为 <code>application/xml</code>，因此，该请求需要首先发起「预检请求」。</p>
-
+</code></pre></div><p>上面的代码使用 POST 请求发送一个 XML 文档，该请求中包含了一个自定义的 Header 字段 <code>X-PINGOTHER: pingpong</code>。另外，该请求的 <code>Content-Type</code> 为 <code>application/xml</code>，因此，该请求需要首先发起「预检请求」。</p>
 <p>OPTIONS 请求报文：</p>
-
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtit1a99sj31uo0rs0yi.jpg" alt="2018-12-03-option-request-msg" /></p>
-
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtit1a99sj31uo0rs0yi.jpg" alt="2018-12-03-option-request-msg"></p>
 <p>OPTIONS 响应报文：</p>
-
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtiwydue5j31uo0rsjwi.jpg" alt="2018-12-03-option-response-msg" /></p>
-
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtiwydue5j31uo0rsjwi.jpg" alt="2018-12-03-option-response-msg"></p>
 <p>OPTIONS 方法是 HTTP/1.1 中定义的方法，用以从服务器获取更多的信息，该方法不会对服务器资源产生影响。预检请求的 Headers 中携带了两个字段：</p>
-
-<pre><code class="language-http">Access-Control-Request-Method: POST
-Access-Control-Request-Headers: X-PINGOTHER, Content-Type
-</code></pre>
-
-<p><code>Access-Control-Request-Method: POST</code> 字段告诉服务器，实际请求将使用 <code>POST</code> 方法；<code>Access-Control-Request-Headers</code> 字段告诉服务器，实际请求将携带两个自定义请求的 Header 字段：<code>X-PINGOTHER</code> 和 <code>Content-Type</code>，服务器根据此决定，该实际请求是否被允许。</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#960050;background-color:#1e0010">Access-Control-Request-Method: POST
+</span><span style="color:#960050;background-color:#1e0010">Access-Control-Request-Headers: X-PINGOTHER, Content-Type
+</span></code></pre></div><p><code>Access-Control-Request-Method: POST</code> 字段告诉服务器，实际请求将使用 <code>POST</code> 方法；<code>Access-Control-Request-Headers</code> 字段告诉服务器，实际请求将携带两个自定义请求的 Header 字段：<code>X-PINGOTHER</code> 和 <code>Content-Type</code>，服务器根据此决定，该实际请求是否被允许。</p>
 <p>OPTIONS 响应报文表明服务器将接受后续的实际请求，其中：</p>
-
-<pre><code class="language-http">Access-Control-Allow-Origin: http://foo.example
-Access-Control-Allow-Methods: POST, GET, OPTIONS
-Access-Control-Allow-Headers: X-PINGOTHER, Content-Type
-Access-Control-Max-Age: 86400
-</code></pre>
-
-<ul>
-<li><code>Access-Control-Allow-Origin</code>表示允许 <code>http://foo.example</code> 的域进行访问；</li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#960050;background-color:#1e0010">Access-Control-Allow-Origin: http://foo.example
+</span><span style="color:#960050;background-color:#1e0010">Access-Control-Allow-Methods: POST, GET, OPTIONS
+</span><span style="color:#960050;background-color:#1e0010">Access-Control-Allow-Headers: X-PINGOTHER, Content-Type
+</span><span style="color:#960050;background-color:#1e0010">Access-Control-Max-Age: 86400
+</span></code></pre></div><ul>
+<li><code>Access-Control-Allow-Origin </code>表示允许 <code>http://foo.example</code> 的域进行访问；</li>
 <li><code>Access-Control-Allow-Methods</code> 表明允许客户端发送 <code>POST</code>，<code>GET</code>，<code>OPTIONS</code> 请求；</li>
 <li><code>Access-Control-Allow-Headers</code> 表明语序客户端携带 <code>X-PINGOTHER</code> 和 <code>Content-Type</code> Header 字段；</li>
 <li><code>Access-Control-Max-Age</code> 表明该响应的有效时间为 86400 秒（24 小时），在有效时间内，浏览器无需为同一请求再次发起预检请求。（注，浏览器自身维护了一个最大有效时间，如果该 Header 字段超过了最大有效时间，将不会生效）。</li>
 </ul>
-
 <p>预检请求完成之后，发送实际的请求，请求报文如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#a6e22e">POST</span> /resources/post-here/ <span style="color:#66d9ef">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+Host<span style="color:#f92672">:</span> <span style="color:#ae81ff">bar.other</span>
+User-Agent<span style="color:#f92672">:</span> <span style="color:#ae81ff">Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1b3pre) Gecko/20081130 Minefield/3.1b3pre</span>
+Accept<span style="color:#f92672">:</span> <span style="color:#ae81ff">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</span>
+Accept-Language<span style="color:#f92672">:</span> <span style="color:#ae81ff">en-us,en;q=0.5</span>
+Accept-Encoding<span style="color:#f92672">:</span> <span style="color:#ae81ff">gzip,deflate</span>
+Accept-Charset<span style="color:#f92672">:</span> <span style="color:#ae81ff">ISO-8859-1,utf-8;q=0.7,*;q=0.7</span>
+Connection<span style="color:#f92672">:</span> <span style="color:#ae81ff">keep-alive</span>
+X-PINGOTHER<span style="color:#f92672">:</span> <span style="color:#ae81ff">pingpong</span>
+Content-Type<span style="color:#f92672">:</span> <span style="color:#ae81ff">text/xml; charset=UTF-8</span>
+Referer<span style="color:#f92672">:</span> <span style="color:#ae81ff">http://foo.example/examples/preflightInvocation.html</span>
+Content-Length<span style="color:#f92672">:</span> <span style="color:#ae81ff">55</span>
+Origin<span style="color:#f92672">:</span> <span style="color:#ae81ff">http://foo.example</span>
+Pragma<span style="color:#f92672">:</span> <span style="color:#ae81ff">no-cache</span>
+Cache-Control<span style="color:#f92672">:</span> <span style="color:#ae81ff">no-cache</span>
 
-<pre><code class="language-http">POST /resources/post-here/ HTTP/1.1
-Host: bar.other
-User-Agent: Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1b3pre) Gecko/20081130 Minefield/3.1b3pre
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-Accept-Language: en-us,en;q=0.5
-Accept-Encoding: gzip,deflate
-Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
-Connection: keep-alive
-X-PINGOTHER: pingpong
-Content-Type: text/xml; charset=UTF-8
-Referer: http://foo.example/examples/preflightInvocation.html
-Content-Length: 55
-Origin: http://foo.example
-Pragma: no-cache
-Cache-Control: no-cache
+<span style="color:#75715e">&lt;?xml version=&#34;1.0&#34;?&gt;</span><span style="color:#f92672">&lt;person&gt;&lt;name&gt;</span>Arun<span style="color:#f92672">&lt;/name&gt;&lt;/person&gt;</span>
+</code></pre></div><p>响应报文：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#66d9ef">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span> <span style="color:#ae81ff">200</span> <span style="color:#a6e22e">OK</span>
+Date<span style="color:#f92672">:</span> <span style="color:#ae81ff">Mon, 01 Dec 2008 01:15:40 GMT</span>
+Server<span style="color:#f92672">:</span> <span style="color:#ae81ff">Apache/2.0.61 (Unix)</span>
+Access-Control-Allow-Origin<span style="color:#f92672">:</span> <span style="color:#ae81ff">http://foo.example</span>
+Vary<span style="color:#f92672">:</span> <span style="color:#ae81ff">Accept-Encoding, Origin</span>
+Content-Encoding<span style="color:#f92672">:</span> <span style="color:#ae81ff">gzip</span>
+Content-Length<span style="color:#f92672">:</span> <span style="color:#ae81ff">235</span>
+Keep-Alive<span style="color:#f92672">:</span> <span style="color:#ae81ff">timeout=2, max=99</span>
+Connection<span style="color:#f92672">:</span> <span style="color:#ae81ff">Keep-Alive</span>
+Content-Type<span style="color:#f92672">:</span> <span style="color:#ae81ff">text/plain</span>
 
-&lt;?xml version=&quot;1.0&quot;?&gt;&lt;person&gt;&lt;name&gt;Arun&lt;/name&gt;&lt;/person&gt;
-</code></pre>
-
-<p>响应报文：</p>
-
-<pre><code class="language-http">HTTP/1.1 200 OK
-Date: Mon, 01 Dec 2008 01:15:40 GMT
-Server: Apache/2.0.61 (Unix)
-Access-Control-Allow-Origin: http://foo.example
-Vary: Accept-Encoding, Origin
-Content-Encoding: gzip
-Content-Length: 235
-Keep-Alive: timeout=2, max=99
-Connection: Keep-Alive
-Content-Type: text/plain
-
-[Some GZIP'd payload]
-</code></pre>
-
-<h3 id="3-4-附带身份认证的请求">3.4 附带身份认证的请求</h3>
-
+<span style="color:#66d9ef">[Some GZIP&#39;d payload]</span>
+</code></pre></div><h3 id="34-附带身份认证的请求">3.4 附带身份认证的请求</h3>
 <p>一般而言，对于跨域 <code>XMLHTTPRequest</code> 或者 <code>Fetch</code> 请求，浏览器不会发送身份凭证信息，如果需要发送身份凭证信息，需要把 <code>XMLHTTPRequest</code> 的 <code>withCredentials</code> 属性设置为 <code>true</code>。</p>
-
 <p>举个例子，下面这段代码表示 <code>http://foo.example</code> 向 <code>http://bar.other</code> 发送一个 <code>GET</code> 请求，并且设置 <code>Cookies</code>。</p>
-
-<pre><code class="language-js">var invocation = new XMLHttpRequest();
-var url = 'http://bar.other/resources/credentialed-content/';
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">invocation</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://bar.other/resources/credentialed-content/&#39;</span>;
     
-function callOtherDomain(){
-  if(invocation) {
-    invocation.open('GET', url, true);
-    invocation.withCredentials = true;
-    invocation.onreadystatechange = handler;
-    invocation.send(); 
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">callOtherDomain</span>(){
+  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">invocation</span>) {
+    <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;GET&#39;</span>, <span style="color:#a6e22e">url</span>, <span style="color:#66d9ef">true</span>);
+    <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">withCredentials</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+    <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">handler</span>;
+    <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">send</span>(); 
   }
 }
-</code></pre>
-
-<p>通过把 <code>withCredentials</code> 设置为 <code>true</code>，从而向服务器发送一个携带 <code>Cookies</code> 的请求。因为这是一个简单的 <code>GET</code> 请求，所以浏览器不会发起预检请求，但是，服务端的响应中如果未携带 <code>Access-Control-Allow-Credentials: true</code> ，浏览器不会把响应内容返回给请求的发送者。</p>
-
+</code></pre></div><p>通过把 <code>withCredentials</code> 设置为 <code>true</code>，从而向服务器发送一个携带 <code>Cookies</code> 的请求。因为这是一个简单的 <code>GET</code> 请求，所以浏览器不会发起预检请求，但是，服务端的响应中如果未携带 <code>Access-Control-Allow-Credentials: true</code> ，浏览器不会把响应内容返回给请求的发送者。</p>
 <p>对于携带身份认证的请求，服务器不得设置 <code>Access-Control-Allow-Origin</code> 的值为 <code>*</code>。</p>
-
-<h3 id="3-5-用于-cors-的-headers">3.5 用于 CORS 的 Headers</h3>
-
+<h3 id="35-用于-cors-的-headers">3.5 用于 CORS 的 Headers</h3>
 <p>下面列出所有用于 HTTP 请求和响应中的 Header 字段，具体的使用请查阅<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#The_HTTP_response_headers">相关文档</a>。</p>
-
 <p>HTTP 请求 Headers：</p>
-
 <ul>
 <li><code>Origin</code>：表明预检请求或实际请求的源站，它不包含任何路径信息，只是服务器名称（URI）；</li>
 <li><code>Access-Control-Request-Method</code>：用于预检请求，作用是将实际请求所使用 HTTP 方法告诉服务器；</li>
 <li><code>Access-Control-Request-Headers</code>：用于预检请求，作用是将实际请求所使用的 Header 字段告诉服务器；</li>
 </ul>
-
 <p>HTTP 响应 Headers：</p>
-
 <ul>
 <li><code>Access-Control-Allow-Origin</code>：指定了允许访问该资源的外域 URI；</li>
 <li><code>Access-Control-Expose-Headers</code>：让服务器把允许浏览器访问的头放入白名单，这样浏览器就能使用 <code>getResponseHeader</code> 方法来访问了；</li>
@@ -360,47 +277,38 @@ function callOtherDomain(){
 <li><code>Access-Control-Allow-Credentials</code>：指定了当浏览器的<code>credentials</code>设置为 true 时是否允许浏览器读取 response 的内容；</li>
 <li><code>Access-Control-Allow-Headers</code>：用于预检请求的响应。其指明了实际请求中允许携带的首部字段。</li>
 </ul>
-
-<h2 id="四-服务器端实现">四、服务器端实现</h2>
-
+<h2 id="四服务器端实现">四、服务器端实现</h2>
 <p>为了实现 CORS，在服务器端需要做一些工作，最主要的就是在响应 Header 中添加指定的字段。</p>
-
 <p>如果是使用 Python + Flask 的开发的话，可以在 <code>after_app_request</code> 钩子函数中添加指定的响应头：</p>
-
-<pre><code class="language-python">@app.after_app_request
-def after_request(response):
-    &quot;&quot;&quot;正常请求结束后的处理&quot;&quot;&quot;
-    # ... some code here
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.after_app_request</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">after_request</span>(response):
+    <span style="color:#e6db74">&#34;&#34;&#34;正常请求结束后的处理&#34;&#34;&#34;</span>
+    <span style="color:#75715e"># ... some code here</span>
     
-    response.headers['Access-Control-Allow-Origin'] = 'http://example.com'
-    response.headers['Access-Control-Allow-Methods'] = 'GET, PUT, POST, DELETE, HEAD, OPTIONS'
-    response.headers['Access-Control-Allow-Headers'] = (
-        'Content-Type, Authorization, X-Requested-With'
+    response<span style="color:#f92672">.</span>headers[<span style="color:#e6db74">&#39;Access-Control-Allow-Origin&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://example.com&#39;</span>
+    response<span style="color:#f92672">.</span>headers[<span style="color:#e6db74">&#39;Access-Control-Allow-Methods&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;GET, PUT, POST, DELETE, HEAD, OPTIONS&#39;</span>
+    response<span style="color:#f92672">.</span>headers[<span style="color:#e6db74">&#39;Access-Control-Allow-Headers&#39;</span>] <span style="color:#f92672">=</span> (
+        <span style="color:#e6db74">&#39;Content-Type, Authorization, X-Requested-With&#39;</span>
     )
     
-    # ... some code here
+    <span style="color:#75715e"># ... some code here</span>
     
-    return response
-</code></pre>
-
-<p>其他语言在对应的钩子函数中处理即可。</p>
-
+    <span style="color:#66d9ef">return</span> response
+</code></pre></div><p>其他语言在对应的钩子函数中处理即可。</p>
 <h2 id="参考资料">参考资料</h2>
-
 <ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">Cross-Origin Resource Sharing (CORS)</a></li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy">Same-origin policy</a></li>
 <li><a href="http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html">浏览器同源政策及其规避方法</a></li>
 </ul>
-<div class="footnotes">
-
-<hr />
-
+<section class="footnotes" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn:1">这个例子的来源：<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">Cross-Origin Resource Sharing (CORS)</a>
- <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:1" role="doc-endnote">
+<p>这个例子的来源：<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">Cross-Origin Resource Sharing (CORS)</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
 </ol>
-</div>
+</section>
 
   </div>
 </div>
@@ -429,6 +337,7 @@ def after_request(response):
     </main>
 
     
+      
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -440,5 +349,6 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    
   </body>
 </html>

@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>pragmatic-programmer on Jiayuan Thoughts</title>
     <link>http://blog.jiayuanzhang.com/tags/pragmatic-programmer/</link>
     <description>Recent content in pragmatic-programmer on Jiayuan Thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 17 Aug 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.jiayuanzhang.com/tags/pragmatic-programmer/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 17 Aug 2017 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.jiayuanzhang.com/tags/pragmatic-programmer/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>《程序员修炼之道》阅读笔记（二）</title>
       <link>http://blog.jiayuanzhang.com/post/notes-on-the-pragmatic-programmer-part-2/</link>

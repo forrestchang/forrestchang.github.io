@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Essay on Jiayuan Thoughts</title>
     <link>http://blog.jiayuanzhang.com/categories/essay/</link>
     <description>Recent content in Essay on Jiayuan Thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 26 Jul 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.jiayuanzhang.com/categories/essay/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 26 Jul 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.jiayuanzhang.com/categories/essay/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>每周评论 第一期</title>
       <link>http://blog.jiayuanzhang.com/post/weekly-readings-review-01/</link>

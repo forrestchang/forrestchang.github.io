@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>running on Jiayuan Thoughts</title>
     <link>http://blog.jiayuanzhang.com/tags/running/</link>
     <description>Recent content in running on Jiayuan Thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 02 Mar 2016 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.jiayuanzhang.com/tags/running/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 02 Mar 2016 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.jiayuanzhang.com/tags/running/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2016 Week 12 Review</title>
       <link>http://blog.jiayuanzhang.com/post/2016-week-12-review/</link>

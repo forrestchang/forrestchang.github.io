@@ -1,4 +1,4 @@
-cd /Users/jiayuan/Dropbox/personal-site/blog/public
+cd ~/Dropbox/Blog/public
 echo '------------------------'
 echo '------ git status ------'
 echo '------------------------'

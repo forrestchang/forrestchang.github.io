@@ -1,6 +1,34 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/tags/intuition-pumps/</loc>
+    <lastmod>2020-06-13T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/</loc>
+    <lastmod>2020-06-13T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/post/</loc>
+    <lastmod>2020-06-13T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/tags/</loc>
+    <lastmod>2020-06-13T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
   
   <url>
     <loc>http://blog.jiayuanzhang.com/post/my-reading-list-005/</loc>
@@ -52,6 +80,48 @@
   </url>
   
   <url>
+    <loc>http://blog.jiayuanzhang.com/tags/reading/</loc>
+    <lastmod>2020-01-19T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/tags/reading-plan/</loc>
+    <lastmod>2020-01-19T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/categories/</loc>
+    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/categories/journal/</loc>
+    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/tags/journal/</loc>
+    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/tags/weekly-review/</loc>
+    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.jiayuanzhang.com/post/2019-week-50-review/</loc>
     <lastmod>2019-12-16T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -66,8 +136,36 @@
   </url>
   
   <url>
+    <loc>http://blog.jiayuanzhang.com/categories/essay/</loc>
+    <lastmod>2019-09-29T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.jiayuanzhang.com/post/weekly-readings-review-01/</loc>
     <lastmod>2019-09-29T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/categories/blog/</loc>
+    <lastmod>2019-07-29T18:20:10+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/tags/blog/</loc>
+    <lastmod>2019-07-29T18:20:10+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/tags/hugo/</loc>
+    <lastmod>2019-07-29T18:20:10+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -80,8 +178,36 @@
   </url>
   
   <url>
+    <loc>http://blog.jiayuanzhang.com/tags/emacs/</loc>
+    <lastmod>2019-07-15T14:26:00+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/tags/org-mode/</loc>
+    <lastmod>2019-07-15T14:26:00+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/tags/workflow/</loc>
+    <lastmod>2019-07-15T14:26:00+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.jiayuanzhang.com/post/blog-with-ox-hugo/</loc>
     <lastmod>2019-07-15T14:26:00+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/tags/meta-knowledge/</loc>
+    <lastmod>2019-07-01T20:24:57+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -94,8 +220,29 @@
   </url>
   
   <url>
+    <loc>http://blog.jiayuanzhang.com/tags/omnifocus/</loc>
+    <lastmod>2019-05-23T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/categories/workflow/</loc>
+    <lastmod>2019-05-23T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.jiayuanzhang.com/post/how-to-modify-omnifocus-3-theme/</loc>
     <lastmod>2019-05-23T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/tags/devonthink/</loc>
+    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -108,6 +255,34 @@
   </url>
   
   <url>
+    <loc>http://blog.jiayuanzhang.com/tags/code-complete/</loc>
+    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/categories/programming/</loc>
+    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/tags/reading-note/</loc>
+    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/tags/software-engineering/</loc>
+    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.jiayuanzhang.com/post/notes-on-code-complete-part-1/</loc>
     <lastmod>2019-05-06T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -115,7 +290,28 @@
   </url>
   
   <url>
+    <loc>http://blog.jiayuanzhang.com/tags/linux/</loc>
+    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/tags/sftp/</loc>
+    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.jiayuanzhang.com/post/linux-command-sftp/</loc>
+    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/tags/cors/</loc>
     <lastmod>2019-05-06T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -136,8 +332,29 @@
   </url>
   
   <url>
+    <loc>http://blog.jiayuanzhang.com/tags/productivity/</loc>
+    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/tags/time-management/</loc>
+    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.jiayuanzhang.com/post/2018-week-35-review/</loc>
     <lastmod>2019-05-13T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/tags/pragmatic-programmer/</loc>
+    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -171,6 +388,27 @@
   </url>
   
   <url>
+    <loc>http://blog.jiayuanzhang.com/tags/apple-music/</loc>
+    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/tags/music/</loc>
+    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/tags/spotify/</loc>
+    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.jiayuanzhang.com/post/go-to-spotify/</loc>
     <lastmod>2019-05-13T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -179,6 +417,13 @@
   
   <url>
     <loc>http://blog.jiayuanzhang.com/post/digital-life-in-2016-music-part/</loc>
+    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/tags/yearly-review/</loc>
     <lastmod>2019-05-13T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -234,6 +479,13 @@
   </url>
   
   <url>
+    <loc>http://blog.jiayuanzhang.com/tags/python/</loc>
+    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.jiayuanzhang.com/post/build-python-scienfic-computing-environment/</loc>
     <lastmod>2019-05-13T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -269,6 +521,13 @@
   </url>
   
   <url>
+    <loc>http://blog.jiayuanzhang.com/tags/virtualenv/</loc>
+    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.jiayuanzhang.com/post/notes-on-virtualenv/</loc>
     <lastmod>2019-05-06T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -276,8 +535,29 @@
   </url>
   
   <url>
+    <loc>http://blog.jiayuanzhang.com/tags/garbage-collection/</loc>
+    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/tags/swift/</loc>
+    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.jiayuanzhang.com/post/garbage-collection-in-swift-lang/</loc>
     <lastmod>2019-05-13T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/tags/toggl/</loc>
+    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -304,6 +584,13 @@
   </url>
   
   <url>
+    <loc>http://blog.jiayuanzhang.com/tags/running/</loc>
+    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.jiayuanzhang.com/post/apple-music-and-classical-music-and-reading/</loc>
     <lastmod>2019-05-13T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -311,7 +598,42 @@
   </url>
   
   <url>
+    <loc>http://blog.jiayuanzhang.com/tags/classical-music/</loc>
+    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/tags/course-recommendation/</loc>
+    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/tags/guide/</loc>
+    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.jiayuanzhang.com/post/self-learning-programer-manual-college-part/</loc>
+    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/tags/keyboard/</loc>
+    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.jiayuanzhang.com/tags/squirrel/</loc>
     <lastmod>2019-05-06T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -346,330 +668,9 @@
   </url>
   
   <url>
-    <loc>http://blog.jiayuanzhang.com/categories/blog/</loc>
-    <lastmod>2019-07-29T18:20:10+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/categories/</loc>
-    <lastmod>2019-07-29T18:20:10+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/categories/essay/</loc>
-    <lastmod>2019-09-29T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/</loc>
-    <lastmod>2020-06-13T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/categories/journal/</loc>
-    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/post/</loc>
-    <lastmod>2020-06-13T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/categories/programming/</loc>
-    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.jiayuanzhang.com/series/</loc>
     <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/categories/workflow/</loc>
-    <lastmod>2019-05-23T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/apple-music/</loc>
-    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/blog/</loc>
-    <lastmod>2019-07-29T18:20:10+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/classical-music/</loc>
-    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/code-complete/</loc>
-    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/cors/</loc>
-    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/course-recommendation/</loc>
-    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/devonthink/</loc>
-    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/emacs/</loc>
-    <lastmod>2019-07-15T14:26:00+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/garbage-collection/</loc>
-    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/guide/</loc>
-    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/hugo/</loc>
-    <lastmod>2019-07-29T18:20:10+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/intuition-pumps/</loc>
-    <lastmod>2020-06-13T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/journal/</loc>
-    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/keyboard/</loc>
-    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/linux/</loc>
-    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/meta-knowledge/</loc>
-    <lastmod>2019-07-01T20:24:57+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/music/</loc>
-    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/omnifocus/</loc>
-    <lastmod>2019-05-23T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/org-mode/</loc>
-    <lastmod>2019-07-15T14:26:00+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/pragmatic-programmer/</loc>
-    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/productivity/</loc>
-    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/python/</loc>
-    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/reading/</loc>
-    <lastmod>2020-01-19T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/reading-note/</loc>
-    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/reading-plan/</loc>
-    <lastmod>2020-01-19T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/running/</loc>
-    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/sftp/</loc>
-    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/software-engineering/</loc>
-    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/spotify/</loc>
-    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/squirrel/</loc>
-    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/swift/</loc>
-    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/time-management/</loc>
-    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/toggl/</loc>
-    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/virtualenv/</loc>
-    <lastmod>2019-05-06T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/weekly-review/</loc>
-    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/workflow/</loc>
-    <lastmod>2019-07-15T14:26:00+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.jiayuanzhang.com/tags/yearly-review/</loc>
-    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0</priority>
+    <priority>0.5</priority>
   </url>
   
 </urlset>
