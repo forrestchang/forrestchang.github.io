@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>twitter on Jiayuan Thoughts</title>
+    <link>http://blog.jiayuanzhang.com/tags/twitter/</link>
+    <description>Recent content in twitter on Jiayuan Thoughts</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 12 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://blog.jiayuanzhang.com/tags/twitter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>利用 Twitter 来进行低成本写作</title>
+      <link>http://blog.jiayuanzhang.com/post/low-cost-writing-with-twitter/</link>
+      <pubDate>Tue, 12 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.jiayuanzhang.com/post/low-cost-writing-with-twitter/</guid>
+      <description>碎片化时代，阅读长篇的文章已经成了一件困难的事，更不用提写长篇的博客文章了。在过去的 2020 年里，总共也只发表了 7 篇文章，其中上大部分都是阅读分享。但是在 Twitter 上，却分享了非常多的内容，在 Thread Reader 上总共 unroll 了 9 篇长 thread，总的阅读量加起来差不多有 100 万。 在我看来，在 Twitter 上写作属于一种「低成本写</description>
+    </item>
+    
+  </channel>
+</rss>
