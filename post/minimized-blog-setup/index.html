@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.82.1" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>最小化写作环境搭建 &middot; Jiayuan Thoughts</title>
+  <meta name="description" content="" />
+
+  
+  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class="theme-custom-01 ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://blog.jiayuanzhang.com"></a>
+      <a class="site-title" href="http://blog.jiayuanzhang.com">
+        <div class="main-title"><h1>Jiayuan</h1></div>
+        <div class="second-title"><h1>Thoughts</h1></div>
+      </a>
+      <p class="lead">
+       A programmer, a designer, a reader and a writer. 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="http://blog.jiayuanzhang.com">Home</a> </li>
+        <li><a href="/tags/"> Tags </a></li><li><a href="/post/"> Archives </a></li><li><a href="https://twitter.com/Tisoga"> Twitter </a></li>
+      </ul>
+    </nav>
+
+    <p>&copy; 2021. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1 class="content-title">最小化写作环境搭建</h1>
+  <div class="post-meta post-date">
+    <time style="display: inline-block" datetime=2021-05-07T22:46:09&#43;0800> 2021-05-07 </time>
+    
+  </div>
+  <div class="post-content" style="margin-top: 20px">
+    <p>最近开始重新写微信公众号，不可避免地又需要重新折腾一下写作环境的配置。微信公众号虽然提供了网页端的编辑器，但是只支持富文本编辑，而我日常都是使用 Markdown 格式，所以需要基于 Markdown 配置一套适合微信公众号写作的环境。</p>
+<p>我的需求：</p>
+<ul>
+<li>同时支持<a href="http://blog.jiayuanzhang.com">博客</a> 和微信公众号的发布</li>
+<li>足够简单，不需要折腾额外的配置</li>
+</ul>
+<p>写作软件选择的是 <a href="https://ulysses.app/">Ulysses</a>，好几年前就开始使用的写作工具，除了订阅费有点贵之外没有什么其他的缺点，文章支持导出成各种格式。</p>
+<p>Roam Research 作为素材库，Ulysses 作为主要的写作工具。</p>
+<p>在 Ulysses 中，我设定了一个 <code>Blog</code> 的文件夹，下面有 3 个子文件夹：</p>
+<ul>
+<li>Draft：所有的草稿</li>
+<li>Published：所有已发布的文章</li>
+<li>Dropped：所有废弃的文章</li>
+</ul>
+<p>因为微信公众号禁止外链，所以需要额外解决两个问题：</p>
+<ul>
+<li>文章中的超链接</li>
+<li>图片</li>
+</ul>
+<p><strong>超链接</strong></p>
+<p>一种方法是使用手动脚注的功能，即在需要进一步说明的内容后面使用 <code>[1]</code> 来进行手动注释。</p>
+<p><img src="https://z3.ax1x.com/2021/05/08/gJVuvj.png" alt="">
+（图为 Paul Graham 的 <a href="http://www.paulgraham.com/newideas.html#f3n">Crazy New Ideas</a> 这篇文章中的 footnotes）</p>
+<p>另一种方法是使用 GitHub 上的这个<a href="https://github.com/doocs/md">微信编辑器</a> 来对 Markdown 格式的文字进行自动转换，这样就会把超链接直接转换成脚注，非常方便。</p>
+<p><img src="https://z3.ax1x.com/2021/05/08/gJVMKs.png" alt=""></p>
+<p><strong>图片</strong></p>
+<p>微信公众号有自己的 CDN，会把外链的图片重新上传一遍，但是这些图片的源地址必须是在国内，比如说我之前是使用的 GitHub 作为图床，在微信公众号中就无法成功上传。</p>
+<p>国内的一些云服务是支持图床功能的，但是需要提供备案的域名，本着能不折腾就不折腾的精神，就直接掠过这套方案了。</p>
+<p>考虑到本身一篇文章中可能也没有几张图，所以最终还是采用的手动上传图片的方式，对于博客中的文章，会统一把图片上传到 GitHub 的图床，然后替换到 Markdown 中的链接。</p>
+<p><strong>总结</strong></p>
+<p>Ok，总结一下我的写作工作流：</p>
+<ol>
+<li>Roam Research 作为素材库，所有的笔记、quotes 都在这里面；</li>
+<li>有了新的写作想法就在 Ulysses 的 Draft 文件夹中建立一篇文章；</li>
+<li>在 Draft 中写完的文章就导出 TextBundle 格式（包含 md 文件和图片）；</li>
+<li>对于微信公众号的文章，使用文中提到的微信公众号 Markdown 工具进行格式的转换，并手动在微信公众号后台上传图片；</li>
+<li>对于博客的文章，把图片上传到 GitHub 的图床，然后替换掉 md 文件中的图片链接。</li>
+</ol>
+
+  </div>
+</div>
+
+<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tisogasnotes" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </main>
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-130256365-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+  </body>
+</html>
