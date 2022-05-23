@@ -2,484 +2,484 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Jiayuan Thoughts</title>
-    <link>http://blog.jiayuanzhang.com/post/</link>
+    <link>https://blog.jiayuanzhang.com/post/</link>
     <description>Recent content in Posts on Jiayuan Thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 23 May 2022 03:26:55 +0800</lastBuildDate><atom:link href="http://blog.jiayuanzhang.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 May 2022 03:26:55 +0800</lastBuildDate><atom:link href="https://blog.jiayuanzhang.com/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Naval Ravikant 的 9 个阅读原则</title>
-      <link>http://blog.jiayuanzhang.com/post/naval-reading/</link>
+      <link>https://blog.jiayuanzhang.com/post/naval-reading/</link>
       <pubDate>Mon, 23 May 2022 03:26:55 +0800</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/naval-reading/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/naval-reading/</guid>
       <description>Hello，大家周日好，这是 Jiayuan Thoughts 的第 3 期，感谢 134 位新读者订阅支持。 今天发现 The Almanack of Naval Ravikant 的中文版《纳瓦尔宝典》已经在 Kindle 上架了。去年年初时在 Amazon 的每日推荐中看到这本书，毫不犹豫地买下，几乎是一口气读完，并摘录了大量的笔记到 Roam 中，今年年初的时候又重读了一遍，依然收获很多。等到微信读书上架中</description>
     </item>
     
     <item>
       <title>最小化写作环境搭建</title>
-      <link>http://blog.jiayuanzhang.com/post/minimized-blog-setup/</link>
+      <link>https://blog.jiayuanzhang.com/post/minimized-blog-setup/</link>
       <pubDate>Fri, 07 May 2021 22:46:09 +0800</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/minimized-blog-setup/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/minimized-blog-setup/</guid>
       <description>最近开始重新写微信公众号，不可避免地又需要重新折腾一下写作环境的配置。微信公众号虽然提供了网页端的编辑器，但是只支持富文本编辑，而我日常都是使用 Markdown 格式，所以需要基于 Markdown 配置一套适合微信公众号写作的环境。 我的需求： 同时支持博客 和微信公众号的发布 足够简单，不需要折腾额外的配置 写作软件选</description>
     </item>
     
     <item>
       <title>如何成为一个学习机器</title>
-      <link>http://blog.jiayuanzhang.com/post/how-to-be-a-learning-machine/</link>
+      <link>https://blog.jiayuanzhang.com/post/how-to-be-a-learning-machine/</link>
       <pubDate>Thu, 06 May 2021 21:16:51 +0800</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/how-to-be-a-learning-machine/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/how-to-be-a-learning-machine/</guid>
       <description>《巨人的工具》(Tools of Titans) 是 Tim Ferris 根据 The Tim Ferriss Show 播客整理而成的一本书[1]，Tim 在这档播客中采访了各行各业的知名人物，并把采访中的一些精华内容集结成了这本书。我在一次旅行的途中读完了这本厚达 700 页的书，并写了上万字的笔记。[2] Tim 在这本书的前言中写道： 我有幸在自己生活的每一个阶段</description>
     </item>
     
     <item>
       <title>利用 Twitter 来进行低成本写作</title>
-      <link>http://blog.jiayuanzhang.com/post/low-cost-writing-with-twitter/</link>
+      <link>https://blog.jiayuanzhang.com/post/low-cost-writing-with-twitter/</link>
       <pubDate>Tue, 12 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/low-cost-writing-with-twitter/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/low-cost-writing-with-twitter/</guid>
       <description>碎片化时代，阅读长篇的文章已经成了一件困难的事，更不用提写长篇的博客文章了。在过去的 2020 年里，总共也只发表了 7 篇文章，其中上大部分都是阅读分享。但是在 Twitter 上，却分享了非常多的内容，在 Thread Reader 上总共 unroll 了 9 篇长 thread，总的阅读量加起来差不多有 100 万。 在我看来，在 Twitter 上写作属于一种「低成本写</description>
     </item>
     
     <item>
       <title>这周我在读什么 2020/06/13</title>
-      <link>http://blog.jiayuanzhang.com/post/my-reading-list-005/</link>
+      <link>https://blog.jiayuanzhang.com/post/my-reading-list-005/</link>
       <pubDate>Sat, 13 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/my-reading-list-005/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/my-reading-list-005/</guid>
       <description>关于此系列：我会每周分享我这周正在读的书、文章和其他一些有意思的东西，主题不限，每周不定期更新。 这是第 5 期的阅读报告，拖更了 n 周。从这期开始，每周阅读推荐将被分成几个小栏目： Jiayuan Thoughts：这周我写了什么文章，包括发表在自己的博客、这个公众号和其他网站上的一些内容，如果这周没</description>
     </item>
     
     <item>
       <title>这周我在读什么 2020/03/16</title>
-      <link>http://blog.jiayuanzhang.com/post/my-reading-list-004/</link>
+      <link>https://blog.jiayuanzhang.com/post/my-reading-list-004/</link>
       <pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/my-reading-list-004/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/my-reading-list-004/</guid>
       <description>（本文首发于微信公众号，搜索「Jiayuan Thoughts」或「jiayuanblog」关注） 关于此系列：我会每周分享我这周正在读的书、文章和其他一些有意思的东西，主题不限，每周不定期更新。 这是第 4 期的阅读报告，不知不觉已经写了一个月了。写阅读报告的一个显而易见的好处就是可以 push</description>
     </item>
     
     <item>
       <title>这周我在读什么 2020/03/08</title>
-      <link>http://blog.jiayuanzhang.com/post/my-reading-list-003/</link>
+      <link>https://blog.jiayuanzhang.com/post/my-reading-list-003/</link>
       <pubDate>Sun, 08 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/my-reading-list-003/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/my-reading-list-003/</guid>
       <description>（本文首发于微信公众号，搜索「Jiayuan Thoughts」或「jiayuanblog」关注） 关于此系列：我会每周分享我这周正在读的书、文章和其他一些有意思的东西，主题不限，每周不定期更新。 这是第 3 期的阅读报告，在开始之前，我先来回答之前读者问的几个问题。 你是如何有时间读这么多</description>
     </item>
     
     <item>
       <title>这周我在读什么 2020/03/02</title>
-      <link>http://blog.jiayuanzhang.com/post/my-reading-list-002/</link>
+      <link>https://blog.jiayuanzhang.com/post/my-reading-list-002/</link>
       <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/my-reading-list-002/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/my-reading-list-002/</guid>
       <description>（本文首发于微信公众号，搜索「直觉泵 Intuition Pumps」关注） 关于此系列：我会每周分享我这周正在读的书、文章和其他一些有意思的东西，主题不限，每周日更新。 这是第 2 期的「每周我在读什么」，因为上周日带猫猫去做绝育手术，所以没有来得急更新，今天补上。 最近一段时间，我每天几乎不读新闻了，甚至</description>
     </item>
     
     <item>
       <title>这周我在读什么 2020/02/23</title>
-      <link>http://blog.jiayuanzhang.com/post/my-reading-list-001/</link>
+      <link>https://blog.jiayuanzhang.com/post/my-reading-list-001/</link>
       <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/my-reading-list-001/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/my-reading-list-001/</guid>
       <description>（本文首发于微信公众号，搜索「直觉泵 Intuition Pumps」关注） 这是第一期的「这周我在读什么」，每期文章我将分享一些我最近读（看）的觉得还不错的书籍或文章（视频）。因为每周我会阅读大量不同类型的内容，所以这个系列没有一个特定的主题，仅仅是分享我觉得比较有意思的东西。 书籍阅读上，我每周会读</description>
     </item>
     
     <item>
       <title>直觉泵 Intuition Pumps | 快时代深度思考笔记</title>
-      <link>http://blog.jiayuanzhang.com/post/wechat-intuition-pumps/</link>
+      <link>https://blog.jiayuanzhang.com/post/wechat-intuition-pumps/</link>
       <pubDate>Tue, 04 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/wechat-intuition-pumps/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/wechat-intuition-pumps/</guid>
       <description>（本文首发于微信公众号，搜索「直觉泵 Intuition Pumps」关注） 我终于开始写微信公众号了。 过去的几年中，很多人都问我为什么不开一个微信公众号？其实我是一直是排斥微信公众号这种媒介的，原因有三点： 1）微信公众号是一个封闭的信息平台，不利于通用搜索引擎的检索。也就是说你在微信公众号中发布的文</description>
     </item>
     
     <item>
       <title>2020 二月阅读计划</title>
-      <link>http://blog.jiayuanzhang.com/post/2020-02-reading-plan/</link>
+      <link>https://blog.jiayuanzhang.com/post/2020-02-reading-plan/</link>
       <pubDate>Sun, 19 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/2020-02-reading-plan/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/2020-02-reading-plan/</guid>
       <description>Austin Kleon 在 Show Your Work 中说过：“Shall something small everyday.“ 所以之后会每个月分享一下我自己的阅读计划，并简单说一下为什么要读这本书。 因为一月份还只剩下 10 天，所以一并放到二月的读书计划中。今年的一个目标是开启自己的副业，所以大部分数目也是和这个相关的。 另外，我建立了一个 Mail List，每周</description>
     </item>
     
     <item>
       <title>每周总结 2019 Week 50</title>
-      <link>http://blog.jiayuanzhang.com/post/2019-week-50-review/</link>
+      <link>https://blog.jiayuanzhang.com/post/2019-week-50-review/</link>
       <pubDate>Mon, 16 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/2019-week-50-review/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/2019-week-50-review/</guid>
       <description>大概在上周末的时候，和朋友们制定了一个每月挑战的计划（输的人请其他参与人吃饭），我的挑战是一个月内读完 5 本书，写 2 篇书评。截止到目前为止，已经完成了 3/5，进度还是挺快的。 另外这篇文章大部分是在碎片时间内写的，比如中午吃饭的时候、等咖啡的时候，这些时间里写完了大部分的内容。 做计划</description>
     </item>
     
     <item>
       <title>每周总结 2019 Week 49</title>
-      <link>http://blog.jiayuanzhang.com/post/2019-week-49-review/</link>
+      <link>https://blog.jiayuanzhang.com/post/2019-week-49-review/</link>
       <pubDate>Sun, 08 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/2019-week-49-review/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/2019-week-49-review/</guid>
       <description>最近一年，长文写得少了，大部分时间都是在 Twitter 上输出观点，这存在两个缺点：1）思考过于碎片化；2）思考的内容过于浅显，没有深入。但是如果每个观点都需要输出一篇长文的话，我实在也做不到（博客的 Draft 里面躺了几十篇草稿，还有几十个 Idea 等着去写）。所以可以取一个中间值，在博客上记录下每周的思考、</description>
     </item>
     
     <item>
       <title>每周评论 第一期</title>
-      <link>http://blog.jiayuanzhang.com/post/weekly-readings-review-01/</link>
+      <link>https://blog.jiayuanzhang.com/post/weekly-readings-review-01/</link>
       <pubDate>Fri, 26 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/weekly-readings-review-01/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/weekly-readings-review-01/</guid>
       <description>两年前曾经写过类似的文章：这周在读什么 Issue#1，主要是为了分享一下最近在读、或者是看到的比较好的内容，但是没能坚持写下去，草稿箱里还躺着几篇未发布的阅读分享。这一次打算重写开始写，阮一峰老师已经写了60 期了。 分享些什么内容？我的主要阅读来源是 Hacker News 和一些订阅的网站（我使用 inoreader RSS</description>
     </item>
     
     <item>
       <title>给博客添加了全文 RSS</title>
-      <link>http://blog.jiayuanzhang.com/post/add-full-content-rss/</link>
+      <link>https://blog.jiayuanzhang.com/post/add-full-content-rss/</link>
       <pubDate>Wed, 24 Jul 2019 21:59:00 +0800</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/add-full-content-rss/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/add-full-content-rss/</guid>
       <description>&lt;p&gt;之前博客虽然也有 RSS，但是不是全文索引的，为了方便读者能够直接在 RSS 阅读器中阅读，花了点时间给博客添加了全文 RSS 输出。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>使用 Emacs &#43; ox-hugo 来写博客</title>
-      <link>http://blog.jiayuanzhang.com/post/blog-with-ox-hugo/</link>
+      <link>https://blog.jiayuanzhang.com/post/blog-with-ox-hugo/</link>
       <pubDate>Sun, 14 Jul 2019 00:31:00 +0800</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/blog-with-ox-hugo/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/blog-with-ox-hugo/</guid>
       <description>最近开始重新使用 org-mode，在这之前大概有一年左右的时间，慢慢把一些东西从 org-mode 转移到别的工具上了，比如利用 OmniFocus 来管理任务，用 Devonthink 来管理笔记，用 Ulysses 来写作。虽然这些工具非常好用，但是总能找到一两个不满意的点，为此还写了不少脚本进行优化（这些 App 均支持 AppleScript），既然都是要</description>
     </item>
     
     <item>
       <title>元知识：信息检索指南</title>
-      <link>http://blog.jiayuanzhang.com/post/meta-knowledge-how-to-search-informations/</link>
+      <link>https://blog.jiayuanzhang.com/post/meta-knowledge-how-to-search-informations/</link>
       <pubDate>Mon, 01 Jul 2019 20:16:00 +0800</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/meta-knowledge-how-to-search-informations/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/meta-knowledge-how-to-search-informations/</guid>
       <description>什么是元知识，我的理解是各个领域都通用的知识，例如交流的能力，搜索信息的能力，语言的能力等，不管你是从事什么行业的工作，这些都是必备的技能（或可以增益的技能）。什么是领域知识，例如编程能力、运营能力，这些是在特定领域发挥作用的知识，虽然编程和运营都可以运用在别的领域中，但是都是比</description>
     </item>
     
     <item>
       <title>修改 OmniFocus 3 的主题</title>
-      <link>http://blog.jiayuanzhang.com/post/how-to-modify-omnifocus-3-theme/</link>
+      <link>https://blog.jiayuanzhang.com/post/how-to-modify-omnifocus-3-theme/</link>
       <pubDate>Thu, 23 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/how-to-modify-omnifocus-3-theme/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/how-to-modify-omnifocus-3-theme/</guid>
       <description>OmniFocus 3 提供了 Dark Mode，但是却没有提供自定义主题的功能，Dark Mode 看久了也会腻，所以最近又切换到 Light Mode 下来了。搜索了一下，看到这篇讨论：Is it possible to reduce fontsize or fontstyle of the headline of a perspective?，可以通过修改配置的方式来修改 OmniFocus 的主题。 具体的修改方法为： 在 /Applications/OmniFocus.app/Contents/Resources/ThemeResources/SystemFont 下面修改字体的大小和页边距，首先我</description>
     </item>
     
     <item>
       <title>使用 Devonthink 来写博客</title>
-      <link>http://blog.jiayuanzhang.com/post/use-devonthink-to-write-blog/</link>
+      <link>https://blog.jiayuanzhang.com/post/use-devonthink-to-write-blog/</link>
       <pubDate>Sat, 04 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/use-devonthink-to-write-blog/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/use-devonthink-to-write-blog/</guid>
       <description>虽然博客没有写太多篇，但是写博客的工具却折腾过不少。从最开始的 org-mode，到 Jekyll、Hexo，再到现在的 Hugo，一直没有找到一个满意的工作流。 我的需求： 使用统一的工具来管理笔记和写作的文章； 能够多端同步； 自动化。 之前使用 Hugo 写作的流程是： 在命令行新建一篇文章； 打开 Typora 进</description>
     </item>
     
     <item>
       <title>读《代码大全》</title>
-      <link>http://blog.jiayuanzhang.com/post/notes-on-code-complete-part-1/</link>
+      <link>https://blog.jiayuanzhang.com/post/notes-on-code-complete-part-1/</link>
       <pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/notes-on-code-complete-part-1/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/notes-on-code-complete-part-1/</guid>
       <description>这本书最开始是大一的时候买的，买回来后翻了一些章节就成为了显示器的支架，直到最近工作了一段时间才重新开始读，这一次阅读和几年前初次阅读有很大不同，大一阅读时候的编码经验仅仅是局限于算法方面，对大型项目的构建没有特别多感触；这一次是在写了很多业务代码，积累了一定问题的基础上去阅读的</description>
     </item>
     
     <item>
       <title>SFTP 使用详解</title>
-      <link>http://blog.jiayuanzhang.com/post/linux-command-sftp/</link>
+      <link>https://blog.jiayuanzhang.com/post/linux-command-sftp/</link>
       <pubDate>Thu, 06 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/linux-command-sftp/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/linux-command-sftp/</guid>
       <description>「Linux 命令详解」这个系列的文章将会介绍 Linux/Unix/macOS 系统中使用到的常用命令，包括该命令的简单介绍、常用参数解释以及最佳实践，如果需要快速使用这个命令，直接跳到最佳实践部分即可。 「Linux 命令详解」系列文章： Linux命令详解：SFTP 一、介绍 SFTP（Secure File Transfer Protocol</description>
     </item>
     
     <item>
       <title>跨域资源共享（CORS）详解</title>
-      <link>http://blog.jiayuanzhang.com/post/cors-tutorial/</link>
+      <link>https://blog.jiayuanzhang.com/post/cors-tutorial/</link>
       <pubDate>Sun, 02 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/cors-tutorial/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/cors-tutorial/</guid>
       <description>Web 后端开发者很少会去充分了解跨域问题，原因是他们很少和 JavaScript 打交道。但是作为一个 Web 开发者，知道跨域请求和如何解决跨域问题可以和前端开发者在沟通上变得更为顺畅。 这篇文章会介绍和跨域请求相关的一些概念，以及如何在后端（Python）解决浏览器的跨域请求问题。 一、什么是跨域请求 首先，我们要</description>
     </item>
     
     <item>
       <title>OmniFocus 3 使用指南</title>
-      <link>http://blog.jiayuanzhang.com/post/omnifocus-3-workflow/</link>
+      <link>https://blog.jiayuanzhang.com/post/omnifocus-3-workflow/</link>
       <pubDate>Fri, 23 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/omnifocus-3-workflow/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/omnifocus-3-workflow/</guid>
       <description>这篇文章主要分享一下我多年使用的一套任务管理系统的经验，工具是次要的，主要是一些想法的实践。有了基本的思路，无论是 OmniFocus、Todoist 还是 org-mode（Emacs 中的一个时间管理模式），都可以有自己的一套方式来实践。本篇文章主要以 OmniFocus 3 为载体来介绍这些内容。 每个人</description>
     </item>
     
     <item>
       <title>2018 Weekly 35 Review</title>
-      <link>http://blog.jiayuanzhang.com/post/2018-week-35-review/</link>
+      <link>https://blog.jiayuanzhang.com/post/2018-week-35-review/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/2018-week-35-review/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/2018-week-35-review/</guid>
       <description>重启之前写 Weekly Review 的习惯，一方面为了总结上一周都做了什么，另一方面也为了督促自己多多做事，不要碌碌无为。 2018 这半年多的时间里面博客一直没有再继续写下去，工作占去了大部分的时间，剩下的时间又都分配给爱好，所以写博客这件事就暂时搁置了下来。过去一年的时间里面主要发展了两个爱好，摄影和滑板，</description>
     </item>
     
     <item>
       <title>《程序员修炼之道》阅读笔记（二）</title>
-      <link>http://blog.jiayuanzhang.com/post/notes-on-the-pragmatic-programmer-part-2/</link>
+      <link>https://blog.jiayuanzhang.com/post/notes-on-the-pragmatic-programmer-part-2/</link>
       <pubDate>Thu, 17 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/notes-on-the-pragmatic-programmer-part-2/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/notes-on-the-pragmatic-programmer-part-2/</guid>
       <description>重复的危害 系统中的每一项知识都必须具有单一、无歧义、权威的表示。（感觉翻译得怪怪的） Tip 11 DRY - Don&amp;rsquo;t Repeat Yourself 不要重复你自己 重复是怎样发生的 强加的重复（imposed duplication）：开发者觉得他们无可选择 —— 环境似乎要求重复。 无意的重复（inadvertent duplication</description>
     </item>
     
     <item>
       <title>《程序员修炼之道》阅读笔记（一）</title>
-      <link>http://blog.jiayuanzhang.com/post/notes-on-the-pragmatic-programmer-part-1/</link>
+      <link>https://blog.jiayuanzhang.com/post/notes-on-the-pragmatic-programmer-part-1/</link>
       <pubDate>Sun, 13 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/notes-on-the-pragmatic-programmer-part-1/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/notes-on-the-pragmatic-programmer-part-1/</guid>
       <description>实习到现在差不多两个月了，博客也一直荒废了没写。这次更新就先来写写读书笔记好了。 这本书从书名来看其实很像那种鸡汤类的书，英文名「The Pragmatic Programmer」（注重实效的程序员）看上去就好了许多。豆瓣评分 8.6 分。大一的时候买的书，之前随意地写过几年的玩具代码，所以初读这本书的时候觉</description>
     </item>
     
     <item>
       <title>2017 Week 19 Review</title>
-      <link>http://blog.jiayuanzhang.com/post/2017-week-19-review/</link>
+      <link>https://blog.jiayuanzhang.com/post/2017-week-19-review/</link>
       <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/2017-week-19-review/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/2017-week-19-review/</guid>
       <description>之前有在博客上写 Weekly Review 的习惯，后来因为被朋友说博客真水然后都撤下来了，有些文章确实是类似于「流水账」的记事，但也有一些是围绕这周做的东西来讨论的。总的来说，写 Weekly Review 对自己帮助还是很大的，可以在一周中 Focus 一个特定的主题，而不是想到什么做什么，所以这个系列以后还会继续写下去，只是写的内容更</description>
     </item>
     
     <item>
       <title>这周在读什么 Issue#1</title>
-      <link>http://blog.jiayuanzhang.com/post/weekly-reading-report-issue-01/</link>
+      <link>https://blog.jiayuanzhang.com/post/weekly-reading-report-issue-01/</link>
       <pubDate>Fri, 24 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/weekly-reading-report-issue-01/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/weekly-reading-report-issue-01/</guid>
       <description>为什么要写这个？最主要的原因还是激励自己多多阅读，读好书和好文章，然后写 review。 读些什么？平常的阅读比较杂，除了书籍之外，还会读很多的博客文章，所以会写这周的 book review，主要是针对这周读完的书，读了一半放弃不打算再读的书也会写，没有读完的书不写；文章就简单写一些笔记性的</description>
     </item>
     
     <item>
       <title>叛逃 Spotify</title>
-      <link>http://blog.jiayuanzhang.com/post/go-to-spotify/</link>
+      <link>https://blog.jiayuanzhang.com/post/go-to-spotify/</link>
       <pubDate>Sun, 19 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/go-to-spotify/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/go-to-spotify/</guid>
       <description>不久前我还写文称赞过 Apple Music，现在光速打脸，叛逃 Spotify。 主要原因有几点： Apple Music 的「My Favorites Mix」一周才更新一次，不够听。 推荐的歌单都是听过的，专辑也是，重复推荐，并且由于是人工编辑的歌单，难免有不合自己口味的。 个性化推荐的内容太单一，经常出现歌慌，需要自己去找歌。 同步问</description>
     </item>
     
     <item>
       <title>2016 音乐总结</title>
-      <link>http://blog.jiayuanzhang.com/post/digital-life-in-2016-music-part/</link>
+      <link>https://blog.jiayuanzhang.com/post/digital-life-in-2016-music-part/</link>
       <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/digital-life-in-2016-music-part/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/digital-life-in-2016-music-part/</guid>
       <description>最近知乎上的一个朋友和我私信聊了一些关于效率工具以及 Workflow（此处指的是「工作流」）方面的一些问题。聊的内容比较碎片，所以还是打算写一篇文章来具体讨论一下。考虑到会涉及很多不同的主题，所以还是一个主题写一篇，这样也可以控制文章的长度。暂定按照以下主题来写：音乐篇、阅读篇、</description>
     </item>
     
     <item>
       <title>换了一个新地方写东西</title>
-      <link>http://blog.jiayuanzhang.com/post/new-blog/</link>
+      <link>https://blog.jiayuanzhang.com/post/new-blog/</link>
       <pubDate>Sat, 04 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/new-blog/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/new-blog/</guid>
       <description>现在这个博客只写技术相关的内容，其他的随笔都写在新博客里，Medium 是被大陆屏蔽的，所以请自备梯子。另外一些比较私人的笔记——例如「Week Review」系列就不发表在互联网上了。 至于原因，单纯得觉得 Medium 上的衬线字体很好看。~~如果需要魔改这个博客的话，还是挺麻烦的，自己目前的前</description>
     </item>
     
     <item>
       <title>2017 Week 01 Review</title>
-      <link>http://blog.jiayuanzhang.com/post/2017-week-01-review/</link>
+      <link>https://blog.jiayuanzhang.com/post/2017-week-01-review/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/2017-week-01-review/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/2017-week-01-review/</guid>
       <description>今天是元旦，因为在 Calendar 中把今天归到 2017 年的第一周里了，所以就按照上面所写的把这周当做第一周吧。 这周结束了在中软的课程设计实训，以前总嫌弃小渔村破，现在回来才知道还是小渔村好啊。课程设计实训的内容是用 Java 写一个点餐系统，一个小组只需要做一份就可以了，不过几乎所有人都不知道 Git 是个什么东西，</description>
     </item>
     
     <item>
       <title>2016 Week 52 Review</title>
-      <link>http://blog.jiayuanzhang.com/post/2016-week-52-review/</link>
+      <link>https://blog.jiayuanzhang.com/post/2016-week-52-review/</link>
       <pubDate>Mon, 26 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/2016-week-52-review/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/2016-week-52-review/</guid>
       <description>2016 年最后一周（实际上还有6天，不过那一周就算到 2017 年第一周吧）。 编程：这周在看《Python 网络数据采集》，以前虽然也用过爬虫，但是毕竟没有系统地学过，所以还是找了一本书来看。但是说实话，这本书写得并不是很好，不知道是写书时间的原因还是什么，挺多语法错误的，而且代码的风格很差（完全</description>
     </item>
     
     <item>
       <title>推荐系统笔记</title>
-      <link>http://blog.jiayuanzhang.com/post/notes-on-recommandation-system/</link>
+      <link>https://blog.jiayuanzhang.com/post/notes-on-recommandation-system/</link>
       <pubDate>Thu, 22 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/notes-on-recommandation-system/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/notes-on-recommandation-system/</guid>
       <description>开始学习机器学习/数据挖掘相关的内容，打算每学习一部分知识就写一篇博客总结一下，当做学习过程中的笔记，也为以后看的时候提供存档。 这一篇笔记是关于推荐系统的，主要讲了两种推荐算法（基于用户和基于物品的协同过滤）。 基于用户的协同过滤 协同过滤（Collaborative filterin</description>
     </item>
     
     <item>
       <title>2016 Week 51 Review</title>
-      <link>http://blog.jiayuanzhang.com/post/2016-week-51-review/</link>
+      <link>https://blog.jiayuanzhang.com/post/2016-week-51-review/</link>
       <pubDate>Tue, 20 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/2016-week-51-review/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/2016-week-51-review/</guid>
       <description>看了一下日历，上一周是 2016 年的倒数第二周了（写这篇文章的时候已经是 52 周了），换了新博客之后就一直没有再写过 Week Review，这其中虽然有一些外部的因素，但大抵上还是不想写。 上周学校组织来中软做课程设计，所以这些天一直待在中软的培训中心里，课程设计的题目是一个点餐的 Web 应用，用 Java 开发，因</description>
     </item>
     
     <item>
       <title>2016 Week 46 Review</title>
-      <link>http://blog.jiayuanzhang.com/post/2016-week-46-review/</link>
+      <link>https://blog.jiayuanzhang.com/post/2016-week-46-review/</link>
       <pubDate>Sun, 13 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/2016-week-46-review/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/2016-week-46-review/</guid>
       <description>编程学习方面，不完全看完了《利用 Python 进行数据分析》，感觉光看没有进行练习的话很难一次记住那么多用法，所以这本书最好还是最 NumPy、Pandas 这几个库用过一段时间之后再看。之后开始看《集体智慧编程》，目前才看了两章，内容写得还是挺好的，不过很多代码不是很规范（比如命名、缩进什么的</description>
     </item>
     
     <item>
       <title>2016 Week 45 Review</title>
-      <link>http://blog.jiayuanzhang.com/post/2016-week-45-review/</link>
+      <link>https://blog.jiayuanzhang.com/post/2016-week-45-review/</link>
       <pubDate>Mon, 07 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/2016-week-45-review/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/2016-week-45-review/</guid>
       <description>已经第 45 周了啊，再过 10 周 2016 年就要过去了。今天大连下起了雪，似乎冬天就这么不知不觉得来了，记得上一次下大雪的时候去了一次海边，可惜 Photos 在一次事故中数据全部丢失了。作为一个南方人当初决定来北方的时候其实是对雪有一种很强烈的期待的，不过来了大连之后发现其实这里也不怎么下雪，偶尔下一次的雪</description>
     </item>
     
     <item>
       <title>搭建 Python 科学计算环境</title>
-      <link>http://blog.jiayuanzhang.com/post/build-python-scienfic-computing-environment/</link>
+      <link>https://blog.jiayuanzhang.com/post/build-python-scienfic-computing-environment/</link>
       <pubDate>Fri, 28 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/build-python-scienfic-computing-environment/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/build-python-scienfic-computing-environment/</guid>
       <description>最近在看《Python for Data Analysis》（利用 Python 进行数据分析）这本书，贴一点笔记，这一篇是关于环境搭建的。另外吐槽一下，书中还是有不少错误的，语法错误就发现了好多处，大概读完了之后会整理出一份勘误表出来，可能是因为写书的时候是 14 年，两年过去了，pandas 库也有了一些变化。 安</description>
     </item>
     
     <item>
       <title>2016 Week 42-43 Review</title>
-      <link>http://blog.jiayuanzhang.com/post/2016-week-42-43-review/</link>
+      <link>https://blog.jiayuanzhang.com/post/2016-week-42-43-review/</link>
       <pubDate>Wed, 26 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/2016-week-42-43-review/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/2016-week-42-43-review/</guid>
       <description>连续两周没写周总结了，41周的周总结因为涉及到一些私事所以还是删掉了（当然感兴趣的还是可以在我的 repo 里面找到之前的 commit）。 过去两周还是发生了很多事情的，一件一件来说吧。 10.15-10.17 去上海参加了 HACKxFDU，这也是第一次参加 Hackathon，最后抱了大腿队友水到了一个微软的万物互</description>
     </item>
     
     <item>
       <title>2016 Week 44 Review</title>
-      <link>http://blog.jiayuanzhang.com/post/2016-week-44-review/</link>
+      <link>https://blog.jiayuanzhang.com/post/2016-week-44-review/</link>
       <pubDate>Mon, 03 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/2016-week-44-review/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/2016-week-44-review/</guid>
       <description>Coding - 本周主要在看《利用 Python 进行数据分析》，大概看了有一半的样子，下周应该能够结束掉。接下来的打算可能是先不看书，而是把What should I learn in data science in 100 hours?这个问题下面的回答内容实践一遍。 Japanese - 日语已经落下好久了，大概还有1个月的时间考试，虽然只是报了一个三级试试水，但是不去考试总感觉</description>
     </item>
     
     <item>
       <title>2016 Week 40 Review</title>
-      <link>http://blog.jiayuanzhang.com/post/2016-week-40-review/</link>
+      <link>https://blog.jiayuanzhang.com/post/2016-week-40-review/</link>
       <pubDate>Sun, 02 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/2016-week-40-review/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/2016-week-40-review/</guid>
       <description>这周恰逢国庆假期，休息了两天（感觉今天貌似也在休息），明天学校断电断网（大农村条件艰苦），所以应该要出去一天，暂时的行程还没有安排。 编程 总结 首先收到了 HACKxFDU 的通过邮件，所以 14 号会去上海打一波酱油，以目前的水平如果不抱大腿感觉完全没有拿奖的可能性。主要的目的应该不是去参赛，可能会去找找</description>
     </item>
     
     <item>
       <title>2016 Week 39 Review</title>
-      <link>http://blog.jiayuanzhang.com/post/2016-week-39-review/</link>
+      <link>https://blog.jiayuanzhang.com/post/2016-week-39-review/</link>
       <pubDate>Sun, 25 Sep 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/2016-week-39-review/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/2016-week-39-review/</guid>
       <description>编程 总的来说，好像这一周并没有做出什么东西来。本来是在看《Web Scraping with Python》这本书的，可以看到后面发现错误挺多的，都有一些最基本的语法错误，所以索性就直接不看了。然后知乎专栏的爬虫也一直没有开始写。 从前几周就开始使用 VS Code 了，比想象中的好用很多，上一次使用还是刚出的时候，很多</description>
     </item>
     
     <item>
       <title>virtualenv 相关笔记</title>
-      <link>http://blog.jiayuanzhang.com/post/notes-on-virtualenv/</link>
+      <link>https://blog.jiayuanzhang.com/post/notes-on-virtualenv/</link>
       <pubDate>Sun, 17 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/notes-on-virtualenv/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/notes-on-virtualenv/</guid>
       <description>安装 直接使用 pip 来进行安装： $ sudo pip install virtualenv 用途 主要用来创建隔离的 Python 开发环境，比如说一个项目需要用到 2.7 的库，另一个项目需要用到 3.0 的库，我们就可以使用 virtualenv 来分别给这两个项目创建虚拟的 Python 环境，这样可以有效的避免冲突。 virtualenv 会创建一个拥有独立安装目录的 Python 环境，该隔离环境不会与其他 virtualenv 环境共享模块（可以</description>
     </item>
     
     <item>
       <title>Swift 中的内存管理</title>
-      <link>http://blog.jiayuanzhang.com/post/garbage-collection-in-swift-lang/</link>
+      <link>https://blog.jiayuanzhang.com/post/garbage-collection-in-swift-lang/</link>
       <pubDate>Fri, 15 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/garbage-collection-in-swift-lang/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/garbage-collection-in-swift-lang/</guid>
       <description>这篇文章是在阅读《The Swift Programming Language》Automatic Reference Counting（ARC，自动引用计数）一章时做的一些笔记，同时参考了其他的一些资料。 在早期的 iOS 开发中，内存管理是由开发者手动来完成的。因为传统的垃圾回收机制对于移动平台来说十分低效，苹果采用的是引用计数（RC，R</description>
     </item>
     
     <item>
       <title>时间记录不完全指北</title>
-      <link>http://blog.jiayuanzhang.com/post/time-recording-tutorial/</link>
+      <link>https://blog.jiayuanzhang.com/post/time-recording-tutorial/</link>
       <pubDate>Sun, 10 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/time-recording-tutorial/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/time-recording-tutorial/</guid>
       <description>两年前，曾经写过一篇有关时间管理的文章，那个时候还在上高二，对于时间管理仅仅是有一点肤浅的了解，自然写出来的文字也是比较幼稚的。经过两年的实践，积累了很多时间管理的经验，想要拿出来分享一下。预计会写一个系列，包括使用的工具和日常的 Workflow。 日常使用的工具有这些： 纸质笔记本</description>
     </item>
     
     <item>
       <title>Linux 基础笔记</title>
-      <link>http://blog.jiayuanzhang.com/post/linux-basic-notes/</link>
+      <link>https://blog.jiayuanzhang.com/post/linux-basic-notes/</link>
       <pubDate>Wed, 23 Mar 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/linux-basic-notes/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/linux-basic-notes/</guid>
       <description>Shell 的基本操作 常用快捷键 按键 作用 Tab 命令补全 Ctrl+c 强行终止当前程序 Ctrl+d 键盘输入结束或退出终端 Ctrl+s 暂定当前程序，暂停后按下任意键恢复运行 Ctrl+z 将当前程序放到后台运行，恢复到前台命令 fg Ctrl+a 将光标移动到行首 Ctrl+e 将光标移动到行尾 Ctrl+k 删除从光标所在位置到行末 Alt+Backspace 向前删除一个单词 常用通配符 字符 含义 * 匹配0或多个字符</description>
     </item>
     
     <item>
       <title>2016 Week 12 Review</title>
-      <link>http://blog.jiayuanzhang.com/post/2016-week-12-review/</link>
+      <link>https://blog.jiayuanzhang.com/post/2016-week-12-review/</link>
       <pubDate>Wed, 02 Mar 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/2016-week-12-review/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/2016-week-12-review/</guid>
       <description>这周的主题是跑步，大连的天气开始变暖，终于可以去操场跑步了，不过由于学校在海边，风还是很大的。今天跑完了一个线上马拉松（10km 健康赛），明天大连国际马拉松开始开放报名，打算参加半程马拉松，不知道能不能报上名，毕竟今年有一个目标就是参加一次马拉松（全马或者半马）。比赛日期是5.2</description>
     </item>
     
     <item>
       <title>Apple Music，古典音乐，阅读</title>
-      <link>http://blog.jiayuanzhang.com/post/apple-music-and-classical-music-and-reading/</link>
+      <link>https://blog.jiayuanzhang.com/post/apple-music-and-classical-music-and-reading/</link>
       <pubDate>Wed, 24 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/apple-music-and-classical-music-and-reading/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/apple-music-and-classical-music-and-reading/</guid>
       <description>Apple Music 自从Apple Music（以下简称「AM」）发布以来，就一直在使用，从最开始的免费试用到现在每个月10￥的订阅。自从Windows时代就使用iTunes听音乐了（当时有一部iPod），在没有AM的时候，都是从论坛下好别人买的专辑来听。一方面在国内想要在iTunes Store上</description>
     </item>
     
     <item>
       <title>学院派编程自学指南</title>
-      <link>http://blog.jiayuanzhang.com/post/self-learning-programer-manual-college-part/</link>
+      <link>https://blog.jiayuanzhang.com/post/self-learning-programer-manual-college-part/</link>
       <pubDate>Wed, 03 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/self-learning-programer-manual-college-part/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/self-learning-programer-manual-college-part/</guid>
       <description>由于本人目前也处在学习的阶段，文章中列出来的内容也并未全部学习过，所以文章的客观性可能存在一些问题，还望读者自行判断。 这份指南会不定期更新，有好的建议也可以留言或者给我发邮件。 准备 需要的所有工具就是一台可以连接上网络的电脑以及你本人。 科学上网 很可惜，即使是现在，大部分学习计算机的</description>
     </item>
     
     <item>
       <title>极客的输入法：Squirrel（鼠须管）</title>
-      <link>http://blog.jiayuanzhang.com/post/squirrel-tutorial/</link>
+      <link>https://blog.jiayuanzhang.com/post/squirrel-tutorial/</link>
       <pubDate>Wed, 11 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/squirrel-tutorial/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/squirrel-tutorial/</guid>
       <description>在OS X平台下，一直没有用到一个很顺手的输入法。系统自带的输入法虽然经过几次的版本更新已经有了很大的改进，但是离能用还有很大的距离。所以之前一直凑合着使用百度输入法，不过最近一直遇到一些奇怪的问题，官方又长时间没有进行更新，恰逢之前听说过Squirrel这个输入法，于是就本着试用</description>
     </item>
     
     <item>
       <title>使用Emacs Org-mode &#43; GitHub Pages 来写博客</title>
-      <link>http://blog.jiayuanzhang.com/post/how-to-use-emacs-and-org-mode-to-build-a-blog/</link>
+      <link>https://blog.jiayuanzhang.com/post/how-to-use-emacs-and-org-mode-to-build-a-blog/</link>
       <pubDate>Sat, 10 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/how-to-use-emacs-and-org-mode-to-build-a-blog/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/how-to-use-emacs-and-org-mode-to-build-a-blog/</guid>
       <description>这个博客就是使用Emacs org-mode + GitHub Pages搭建的，博客的主题是org-mode官网的主题，非常的简洁；评论采用的disqus，访问统计使用的是Google和Baidu的统计代码。 另外，本文中进行操作的环境是在OSX下完成的，Windows用户请自行参考脑补:) 起因 之前也折腾过好多</description>
     </item>
     
     <item>
       <title>谈谈时间管理</title>
-      <link>http://blog.jiayuanzhang.com/post/notes-on-time-management/</link>
+      <link>https://blog.jiayuanzhang.com/post/notes-on-time-management/</link>
       <pubDate>Fri, 14 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/notes-on-time-management/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/notes-on-time-management/</guid>
       <description>初次看到时间管理这个概念大概是高二的时候，在此之前，我一直在使用所谓的To-do List来管理自己每天的学习任务（那个时候还不知道）。知道了时间管理这个概念后，惊讶于原来自己早就在对时间进行管理了，只不过最简单的管理方式（后来实践表明，仅仅一个任务清单就足够了）。 在知道了时间管理</description>
     </item>
     
     <item>
       <title>为什么我要写博客</title>
-      <link>http://blog.jiayuanzhang.com/post/why-i-blog/</link>
+      <link>https://blog.jiayuanzhang.com/post/why-i-blog/</link>
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.jiayuanzhang.com/post/why-i-blog/</guid>
+      <guid>https://blog.jiayuanzhang.com/post/why-i-blog/</guid>
       <description>很显然，写一个长期的价值博客会带来很多益处，却不会有什么明显的坏处（当然，在某些特定的国家讨论某些特定的话题不在此列）。 下面是我了解到的写一个长期的价值博客所带来的好处： 督促自己进行有价值的思考。写一篇优秀的文章是不容易的，在写之前，势必需要进行大量的思考、沉淀，要不然你就无事可</description>
     </item>
     
