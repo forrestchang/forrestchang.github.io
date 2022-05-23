@@ -3,7 +3,7 @@
 <head>
   <link href="https://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.82.1" />
+  <meta name="generator" content="Hugo 0.99.1" />
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +12,10 @@
   <meta name="description" content="" />
 
   
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/print.css" media="print">
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/poole.css">
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/syntax.css">
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/hyde.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/hyde.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
 
 
@@ -31,8 +31,8 @@
   <aside class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
-      <a href="http://blog.jiayuanzhang.com"></a>
-      <a class="site-title" href="http://blog.jiayuanzhang.com">
+      <a href="https://blog.jiayuanzhang.com"></a>
+      <a class="site-title" href="https://blog.jiayuanzhang.com">
         <div class="main-title"><h1>Jiayuan</h1></div>
         <div class="second-title"><h1>Thoughts</h1></div>
       </a>
@@ -43,7 +43,7 @@
 
     <nav>
       <ul class="sidebar-nav">
-        <li><a href="http://blog.jiayuanzhang.com">Home</a> </li>
+        <li><a href="https://blog.jiayuanzhang.com">Home</a> </li>
         <li><a href="/tags/"> Tags </a></li><li><a href="/post/"> Archives </a></li><li><a href="https://twitter.com/Tisoga"> Twitter </a></li>
       </ul>
     </nav>
@@ -77,8 +77,8 @@
 <p>第 2 点需要注意的是，必须是域名完全相同，比如说 <code>blog.example.com</code> 和 <code>mail.example.com</code> 这两个域名，虽然它们的顶级域名和二级域名（均为 <code>example.com</code>）都相同，但是三级域名（<code>blog</code> 和 <code>mail</code>）不相同，所以也不能算作域名相同。</p>
 <p>如果不同时满足这上面三个条件，那就不符合浏览器的同源策略。</p>
 <p>修改 <code>document.domain</code> 参数可以更改当前的源，例如 <code>blog.example.com</code> 想要访问父域 <code>example.com</code> 的资源时，可以执行以下 JavaScript 脚本来进行修改：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">document.<span style="color:#a6e22e">domain</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;example.com&#39;</span>;
-</code></pre></div><p>但是 <code>document.domain</code> 不能被设置为 <code>foo.com</code> 或者是 <code>bar.com</code>，因为它们不是 <code>blog.example.com</code> 的超级域。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>document.<span style="color:#a6e22e">domain</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;example.com&#39;</span>;
+</span></span></code></pre></div><p>但是 <code>document.domain</code> 不能被设置为 <code>foo.com</code> 或者是 <code>bar.com</code>，因为它们不是 <code>blog.example.com</code> 的超级域。</p>
 <p>当然，也不是所有的交互都会被同源策略拦截下来，下面两种交互就不会触发同源策略：</p>
 <ul>
 <li>跨域写操作（Cross-origin writes），例如超链接、重定向以及表单的提交操作，特定少数的 HTTP 请求需要添加预检请求（preflight）；</li>
@@ -138,17 +138,17 @@
 <li>请求中没有使用 <code>ReadableStream</code> 对象。</li>
 </ul>
 <p>举一个例子<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>，例如站点 <code>http://foo.example</code> 的网页应用想要访问 <code>http://bar.other</code> 的资源，<code>http://foo.example</code> 的网页中可能包含类似于下面的 JavaScript 代码：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">invocation</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://bar.other/resources/public-data/&#39;</span>;
-   
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">callOtherDomain</span>() {
-  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">invocation</span>) {    
-    <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;GET&#39;</span>, <span style="color:#a6e22e">url</span>, <span style="color:#66d9ef">true</span>);
-    <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">handler</span>;
-    <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">send</span>(); 
-  }
-}
-</code></pre></div><p>熟悉 JavaScript 的同学可能发现这段代码向 <code>http://bar.other/resources/public-data/</code> 发起了一个 <code>GET</code> 请求，请求和响应的报文如下。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">invocation</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://bar.other/resources/public-data/&#39;</span>;
+</span></span><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">callOtherDomain</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">invocation</span>) {    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;GET&#39;</span>, <span style="color:#a6e22e">url</span>, <span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">handler</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">send</span>(); 
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>熟悉 JavaScript 的同学可能发现这段代码向 <code>http://bar.other/resources/public-data/</code> 发起了一个 <code>GET</code> 请求，请求和响应的报文如下。</p>
 <p>请求报文：</p>
 <p><img src="https://raw.githubusercontent.com/forrestchang/img-repo/master/20190505164610.png" alt="2018-12-02-request-msg"></p>
 <p>响应报文：</p>
@@ -156,8 +156,8 @@
 <p>在请求报文中，<code>Origin</code> 字段表明该请求来源于 <code>http://foo.example</code>。</p>
 <p>在响应报文中，<code>Access-Control-Allow-Origin</code> 字段被设置为 <code>*</code>，表明该资源可以被任意的域访问。</p>
 <p>使用 <code>Origin</code> 和 <code>Access-Control-Allow-Origin</code> 就能完成最简单访问控制。如果服务端仅允许来自 <code>http://foo.example</code> 域的访问，应该把 进行如下设置：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#960050;background-color:#1e0010">Access-Control-Allow-Origin: http://foo.example
-</span></code></pre></div><h3 id="33-预检请求preflight-request">3.3 预检请求（Preflight Request）</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">Access-Control-Allow-Origin: http://foo.example
+</span></span></span></code></pre></div><h3 id="33-预检请求preflight-request">3.3 预检请求（Preflight Request）</h3>
 <p>和简单请求不同，「需预检的请求」要求必须先使用 <code>OPTIONS</code> 方法发送一个预检请求到服务器，以获知服务器是否允许该请求，或者是否需要携带身份认证信息。「预检请求」的使用，可以避免跨域请求对服务器的用户数据产生未预期的影响。</p>
 <p>当一个请求满足以下任一条件时，该请求需要首先发送预检请求。</p>
 <ul>
@@ -173,87 +173,87 @@
 <li>请求中的 <code>XMLHttpRequestUpload</code> 对象注册了任意多个事件监听器；</li>
 <li>请求中使用了 <code>ReadableStream</code> 对象。</li>
 </ul>
-<p>例如下面这个例子<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">invocation</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://bar.other/resources/post-here/&#39;</span>;
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">body</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;?xml version=&#34;1.0&#34;?&gt;&lt;person&gt;&lt;name&gt;Arun&lt;/name&gt;&lt;/person&gt;&#39;</span>;
-    
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">callOtherDomain</span>(){
-  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">invocation</span>)
-    {
-      <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;POST&#39;</span>, <span style="color:#a6e22e">url</span>, <span style="color:#66d9ef">true</span>);
-      <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">setRequestHeader</span>(<span style="color:#e6db74">&#39;X-PINGOTHER&#39;</span>, <span style="color:#e6db74">&#39;pingpong&#39;</span>);
-      <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">setRequestHeader</span>(<span style="color:#e6db74">&#39;Content-Type&#39;</span>, <span style="color:#e6db74">&#39;application/xml&#39;</span>);
-      <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">handler</span>;
-      <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">send</span>(<span style="color:#a6e22e">body</span>); 
-    }
-}
-</code></pre></div><p>上面的代码使用 POST 请求发送一个 XML 文档，该请求中包含了一个自定义的 Header 字段 <code>X-PINGOTHER: pingpong</code>。另外，该请求的 <code>Content-Type</code> 为 <code>application/xml</code>，因此，该请求需要首先发起「预检请求」。</p>
+<p>例如下面这个例子<sup id="fnref1:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">invocation</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://bar.other/resources/post-here/&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">body</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;?xml version=&#34;1.0&#34;?&gt;&lt;person&gt;&lt;name&gt;Arun&lt;/name&gt;&lt;/person&gt;&#39;</span>;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">callOtherDomain</span>(){
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">invocation</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;POST&#39;</span>, <span style="color:#a6e22e">url</span>, <span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">setRequestHeader</span>(<span style="color:#e6db74">&#39;X-PINGOTHER&#39;</span>, <span style="color:#e6db74">&#39;pingpong&#39;</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">setRequestHeader</span>(<span style="color:#e6db74">&#39;Content-Type&#39;</span>, <span style="color:#e6db74">&#39;application/xml&#39;</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">handler</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">send</span>(<span style="color:#a6e22e">body</span>); 
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>上面的代码使用 POST 请求发送一个 XML 文档，该请求中包含了一个自定义的 Header 字段 <code>X-PINGOTHER: pingpong</code>。另外，该请求的 <code>Content-Type</code> 为 <code>application/xml</code>，因此，该请求需要首先发起「预检请求」。</p>
 <p>OPTIONS 请求报文：</p>
 <p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtit1a99sj31uo0rs0yi.jpg" alt="2018-12-03-option-request-msg"></p>
 <p>OPTIONS 响应报文：</p>
 <p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtiwydue5j31uo0rsjwi.jpg" alt="2018-12-03-option-response-msg"></p>
 <p>OPTIONS 方法是 HTTP/1.1 中定义的方法，用以从服务器获取更多的信息，该方法不会对服务器资源产生影响。预检请求的 Headers 中携带了两个字段：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#960050;background-color:#1e0010">Access-Control-Request-Method: POST
-</span><span style="color:#960050;background-color:#1e0010">Access-Control-Request-Headers: X-PINGOTHER, Content-Type
-</span></code></pre></div><p><code>Access-Control-Request-Method: POST</code> 字段告诉服务器，实际请求将使用 <code>POST</code> 方法；<code>Access-Control-Request-Headers</code> 字段告诉服务器，实际请求将携带两个自定义请求的 Header 字段：<code>X-PINGOTHER</code> 和 <code>Content-Type</code>，服务器根据此决定，该实际请求是否被允许。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">Access-Control-Request-Method: POST
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">Access-Control-Request-Headers: X-PINGOTHER, Content-Type
+</span></span></span></code></pre></div><p><code>Access-Control-Request-Method: POST</code> 字段告诉服务器，实际请求将使用 <code>POST</code> 方法；<code>Access-Control-Request-Headers</code> 字段告诉服务器，实际请求将携带两个自定义请求的 Header 字段：<code>X-PINGOTHER</code> 和 <code>Content-Type</code>，服务器根据此决定，该实际请求是否被允许。</p>
 <p>OPTIONS 响应报文表明服务器将接受后续的实际请求，其中：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#960050;background-color:#1e0010">Access-Control-Allow-Origin: http://foo.example
-</span><span style="color:#960050;background-color:#1e0010">Access-Control-Allow-Methods: POST, GET, OPTIONS
-</span><span style="color:#960050;background-color:#1e0010">Access-Control-Allow-Headers: X-PINGOTHER, Content-Type
-</span><span style="color:#960050;background-color:#1e0010">Access-Control-Max-Age: 86400
-</span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">Access-Control-Allow-Origin: http://foo.example
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">Access-Control-Allow-Methods: POST, GET, OPTIONS
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">Access-Control-Allow-Headers: X-PINGOTHER, Content-Type
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">Access-Control-Max-Age: 86400
+</span></span></span></code></pre></div><ul>
 <li><code>Access-Control-Allow-Origin </code>表示允许 <code>http://foo.example</code> 的域进行访问；</li>
 <li><code>Access-Control-Allow-Methods</code> 表明允许客户端发送 <code>POST</code>，<code>GET</code>，<code>OPTIONS</code> 请求；</li>
 <li><code>Access-Control-Allow-Headers</code> 表明语序客户端携带 <code>X-PINGOTHER</code> 和 <code>Content-Type</code> Header 字段；</li>
 <li><code>Access-Control-Max-Age</code> 表明该响应的有效时间为 86400 秒（24 小时），在有效时间内，浏览器无需为同一请求再次发起预检请求。（注，浏览器自身维护了一个最大有效时间，如果该 Header 字段超过了最大有效时间，将不会生效）。</li>
 </ul>
 <p>预检请求完成之后，发送实际的请求，请求报文如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#a6e22e">POST</span> /resources/post-here/ <span style="color:#66d9ef">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
-Host<span style="color:#f92672">:</span> <span style="color:#ae81ff">bar.other</span>
-User-Agent<span style="color:#f92672">:</span> <span style="color:#ae81ff">Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1b3pre) Gecko/20081130 Minefield/3.1b3pre</span>
-Accept<span style="color:#f92672">:</span> <span style="color:#ae81ff">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</span>
-Accept-Language<span style="color:#f92672">:</span> <span style="color:#ae81ff">en-us,en;q=0.5</span>
-Accept-Encoding<span style="color:#f92672">:</span> <span style="color:#ae81ff">gzip,deflate</span>
-Accept-Charset<span style="color:#f92672">:</span> <span style="color:#ae81ff">ISO-8859-1,utf-8;q=0.7,*;q=0.7</span>
-Connection<span style="color:#f92672">:</span> <span style="color:#ae81ff">keep-alive</span>
-X-PINGOTHER<span style="color:#f92672">:</span> <span style="color:#ae81ff">pingpong</span>
-Content-Type<span style="color:#f92672">:</span> <span style="color:#ae81ff">text/xml; charset=UTF-8</span>
-Referer<span style="color:#f92672">:</span> <span style="color:#ae81ff">http://foo.example/examples/preflightInvocation.html</span>
-Content-Length<span style="color:#f92672">:</span> <span style="color:#ae81ff">55</span>
-Origin<span style="color:#f92672">:</span> <span style="color:#ae81ff">http://foo.example</span>
-Pragma<span style="color:#f92672">:</span> <span style="color:#ae81ff">no-cache</span>
-Cache-Control<span style="color:#f92672">:</span> <span style="color:#ae81ff">no-cache</span>
-
-<span style="color:#75715e">&lt;?xml version=&#34;1.0&#34;?&gt;</span><span style="color:#f92672">&lt;person&gt;&lt;name&gt;</span>Arun<span style="color:#f92672">&lt;/name&gt;&lt;/person&gt;</span>
-</code></pre></div><p>响应报文：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#66d9ef">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span> <span style="color:#ae81ff">200</span> <span style="color:#a6e22e">OK</span>
-Date<span style="color:#f92672">:</span> <span style="color:#ae81ff">Mon, 01 Dec 2008 01:15:40 GMT</span>
-Server<span style="color:#f92672">:</span> <span style="color:#ae81ff">Apache/2.0.61 (Unix)</span>
-Access-Control-Allow-Origin<span style="color:#f92672">:</span> <span style="color:#ae81ff">http://foo.example</span>
-Vary<span style="color:#f92672">:</span> <span style="color:#ae81ff">Accept-Encoding, Origin</span>
-Content-Encoding<span style="color:#f92672">:</span> <span style="color:#ae81ff">gzip</span>
-Content-Length<span style="color:#f92672">:</span> <span style="color:#ae81ff">235</span>
-Keep-Alive<span style="color:#f92672">:</span> <span style="color:#ae81ff">timeout=2, max=99</span>
-Connection<span style="color:#f92672">:</span> <span style="color:#ae81ff">Keep-Alive</span>
-Content-Type<span style="color:#f92672">:</span> <span style="color:#ae81ff">text/plain</span>
-
-<span style="color:#66d9ef">[Some GZIP&#39;d payload]</span>
-</code></pre></div><h3 id="34-附带身份认证的请求">3.4 附带身份认证的请求</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#a6e22e">POST</span> /resources/post-here/ <span style="color:#66d9ef">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+</span></span><span style="display:flex;"><span>Host<span style="color:#f92672">:</span> <span style="color:#ae81ff">bar.other</span>
+</span></span><span style="display:flex;"><span>User-Agent<span style="color:#f92672">:</span> <span style="color:#ae81ff">Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1b3pre) Gecko/20081130 Minefield/3.1b3pre</span>
+</span></span><span style="display:flex;"><span>Accept<span style="color:#f92672">:</span> <span style="color:#ae81ff">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</span>
+</span></span><span style="display:flex;"><span>Accept-Language<span style="color:#f92672">:</span> <span style="color:#ae81ff">en-us,en;q=0.5</span>
+</span></span><span style="display:flex;"><span>Accept-Encoding<span style="color:#f92672">:</span> <span style="color:#ae81ff">gzip,deflate</span>
+</span></span><span style="display:flex;"><span>Accept-Charset<span style="color:#f92672">:</span> <span style="color:#ae81ff">ISO-8859-1,utf-8;q=0.7,*;q=0.7</span>
+</span></span><span style="display:flex;"><span>Connection<span style="color:#f92672">:</span> <span style="color:#ae81ff">keep-alive</span>
+</span></span><span style="display:flex;"><span>X-PINGOTHER<span style="color:#f92672">:</span> <span style="color:#ae81ff">pingpong</span>
+</span></span><span style="display:flex;"><span>Content-Type<span style="color:#f92672">:</span> <span style="color:#ae81ff">text/xml; charset=UTF-8</span>
+</span></span><span style="display:flex;"><span>Referer<span style="color:#f92672">:</span> <span style="color:#ae81ff">http://foo.example/examples/preflightInvocation.html</span>
+</span></span><span style="display:flex;"><span>Content-Length<span style="color:#f92672">:</span> <span style="color:#ae81ff">55</span>
+</span></span><span style="display:flex;"><span>Origin<span style="color:#f92672">:</span> <span style="color:#ae81ff">http://foo.example</span>
+</span></span><span style="display:flex;"><span>Pragma<span style="color:#f92672">:</span> <span style="color:#ae81ff">no-cache</span>
+</span></span><span style="display:flex;"><span>Cache-Control<span style="color:#f92672">:</span> <span style="color:#ae81ff">no-cache</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34;?&gt;</span><span style="color:#f92672">&lt;person&gt;&lt;name&gt;</span>Arun<span style="color:#f92672">&lt;/name&gt;&lt;/person&gt;</span>
+</span></span></code></pre></div><p>响应报文：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#66d9ef">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span> <span style="color:#ae81ff">200</span> <span style="color:#a6e22e">OK</span>
+</span></span><span style="display:flex;"><span>Date<span style="color:#f92672">:</span> <span style="color:#ae81ff">Mon, 01 Dec 2008 01:15:40 GMT</span>
+</span></span><span style="display:flex;"><span>Server<span style="color:#f92672">:</span> <span style="color:#ae81ff">Apache/2.0.61 (Unix)</span>
+</span></span><span style="display:flex;"><span>Access-Control-Allow-Origin<span style="color:#f92672">:</span> <span style="color:#ae81ff">http://foo.example</span>
+</span></span><span style="display:flex;"><span>Vary<span style="color:#f92672">:</span> <span style="color:#ae81ff">Accept-Encoding, Origin</span>
+</span></span><span style="display:flex;"><span>Content-Encoding<span style="color:#f92672">:</span> <span style="color:#ae81ff">gzip</span>
+</span></span><span style="display:flex;"><span>Content-Length<span style="color:#f92672">:</span> <span style="color:#ae81ff">235</span>
+</span></span><span style="display:flex;"><span>Keep-Alive<span style="color:#f92672">:</span> <span style="color:#ae81ff">timeout=2, max=99</span>
+</span></span><span style="display:flex;"><span>Connection<span style="color:#f92672">:</span> <span style="color:#ae81ff">Keep-Alive</span>
+</span></span><span style="display:flex;"><span>Content-Type<span style="color:#f92672">:</span> <span style="color:#ae81ff">text/plain</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Some GZIP&#39;d payload]</span>
+</span></span></code></pre></div><h3 id="34-附带身份认证的请求">3.4 附带身份认证的请求</h3>
 <p>一般而言，对于跨域 <code>XMLHTTPRequest</code> 或者 <code>Fetch</code> 请求，浏览器不会发送身份凭证信息，如果需要发送身份凭证信息，需要把 <code>XMLHTTPRequest</code> 的 <code>withCredentials</code> 属性设置为 <code>true</code>。</p>
 <p>举个例子，下面这段代码表示 <code>http://foo.example</code> 向 <code>http://bar.other</code> 发送一个 <code>GET</code> 请求，并且设置 <code>Cookies</code>。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">invocation</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://bar.other/resources/credentialed-content/&#39;</span>;
-    
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">callOtherDomain</span>(){
-  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">invocation</span>) {
-    <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;GET&#39;</span>, <span style="color:#a6e22e">url</span>, <span style="color:#66d9ef">true</span>);
-    <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">withCredentials</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-    <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">handler</span>;
-    <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">send</span>(); 
-  }
-}
-</code></pre></div><p>通过把 <code>withCredentials</code> 设置为 <code>true</code>，从而向服务器发送一个携带 <code>Cookies</code> 的请求。因为这是一个简单的 <code>GET</code> 请求，所以浏览器不会发起预检请求，但是，服务端的响应中如果未携带 <code>Access-Control-Allow-Credentials: true</code> ，浏览器不会把响应内容返回给请求的发送者。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">invocation</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://bar.other/resources/credentialed-content/&#39;</span>;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">callOtherDomain</span>(){
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">invocation</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;GET&#39;</span>, <span style="color:#a6e22e">url</span>, <span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">withCredentials</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">onreadystatechange</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">handler</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">invocation</span>.<span style="color:#a6e22e">send</span>(); 
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>通过把 <code>withCredentials</code> 设置为 <code>true</code>，从而向服务器发送一个携带 <code>Cookies</code> 的请求。因为这是一个简单的 <code>GET</code> 请求，所以浏览器不会发起预检请求，但是，服务端的响应中如果未携带 <code>Access-Control-Allow-Credentials: true</code> ，浏览器不会把响应内容返回给请求的发送者。</p>
 <p>对于携带身份认证的请求，服务器不得设置 <code>Access-Control-Allow-Origin</code> 的值为 <code>*</code>。</p>
 <h3 id="35-用于-cors-的-headers">3.5 用于 CORS 的 Headers</h3>
 <p>下面列出所有用于 HTTP 请求和响应中的 Header 字段，具体的使用请查阅<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#The_HTTP_response_headers">相关文档</a>。</p>
@@ -274,35 +274,35 @@ Content-Type<span style="color:#f92672">:</span> <span style="color:#ae81ff">tex
 <h2 id="四服务器端实现">四、服务器端实现</h2>
 <p>为了实现 CORS，在服务器端需要做一些工作，最主要的就是在响应 Header 中添加指定的字段。</p>
 <p>如果是使用 Python + Flask 的开发的话，可以在 <code>after_app_request</code> 钩子函数中添加指定的响应头：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@app.after_app_request</span>
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">after_request</span>(response):
-    <span style="color:#e6db74">&#34;&#34;&#34;正常请求结束后的处理&#34;&#34;&#34;</span>
-    <span style="color:#75715e"># ... some code here</span>
-    
-    response<span style="color:#f92672">.</span>headers[<span style="color:#e6db74">&#39;Access-Control-Allow-Origin&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://example.com&#39;</span>
-    response<span style="color:#f92672">.</span>headers[<span style="color:#e6db74">&#39;Access-Control-Allow-Methods&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;GET, PUT, POST, DELETE, HEAD, OPTIONS&#39;</span>
-    response<span style="color:#f92672">.</span>headers[<span style="color:#e6db74">&#39;Access-Control-Allow-Headers&#39;</span>] <span style="color:#f92672">=</span> (
-        <span style="color:#e6db74">&#39;Content-Type, Authorization, X-Requested-With&#39;</span>
-    )
-    
-    <span style="color:#75715e"># ... some code here</span>
-    
-    <span style="color:#66d9ef">return</span> response
-</code></pre></div><p>其他语言在对应的钩子函数中处理即可。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a6e22e">@app</span><span style="color:#f92672">.</span>after_app_request
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">after_request</span>(response):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;正常请求结束后的处理&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># ... some code here</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    response<span style="color:#f92672">.</span>headers[<span style="color:#e6db74">&#39;Access-Control-Allow-Origin&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://example.com&#39;</span>
+</span></span><span style="display:flex;"><span>    response<span style="color:#f92672">.</span>headers[<span style="color:#e6db74">&#39;Access-Control-Allow-Methods&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;GET, PUT, POST, DELETE, HEAD, OPTIONS&#39;</span>
+</span></span><span style="display:flex;"><span>    response<span style="color:#f92672">.</span>headers[<span style="color:#e6db74">&#39;Access-Control-Allow-Headers&#39;</span>] <span style="color:#f92672">=</span> (
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;Content-Type, Authorization, X-Requested-With&#39;</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># ... some code here</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> response
+</span></span></code></pre></div><p>其他语言在对应的钩子函数中处理即可。</p>
 <h2 id="参考资料">参考资料</h2>
 <ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">Cross-Origin Resource Sharing (CORS)</a></li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy">Same-origin policy</a></li>
 <li><a href="http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html">浏览器同源政策及其规避方法</a></li>
 </ul>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
-<p>这个例子的来源：<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">Cross-Origin Resource Sharing (CORS)</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:1">
+<p>这个例子的来源：<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">Cross-Origin Resource Sharing (CORS)</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 
   </div>
 </div>
@@ -310,7 +310,7 @@ Content-Type<span style="color:#f92672">:</span> <span style="color:#ae81ff">tex
 <h2>Comments</h2>
 <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

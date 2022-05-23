@@ -3,7 +3,7 @@
 <head>
   <link href="https://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.82.1" />
+  <meta name="generator" content="Hugo 0.99.1" />
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +12,10 @@
   <meta name="description" content="" />
 
   
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/print.css" media="print">
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/poole.css">
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/syntax.css">
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/hyde.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/hyde.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
 
 
@@ -31,8 +31,8 @@
   <aside class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
-      <a href="http://blog.jiayuanzhang.com"></a>
-      <a class="site-title" href="http://blog.jiayuanzhang.com">
+      <a href="https://blog.jiayuanzhang.com"></a>
+      <a class="site-title" href="https://blog.jiayuanzhang.com">
         <div class="main-title"><h1>Jiayuan</h1></div>
         <div class="second-title"><h1>Thoughts</h1></div>
       </a>
@@ -43,7 +43,7 @@
 
     <nav>
       <ul class="sidebar-nav">
-        <li><a href="http://blog.jiayuanzhang.com">Home</a> </li>
+        <li><a href="https://blog.jiayuanzhang.com">Home</a> </li>
         <li><a href="/tags/"> Tags </a></li><li><a href="/post/"> Archives </a></li><li><a href="https://twitter.com/Tisoga"> Twitter </a></li>
       </ul>
     </nav>
@@ -66,91 +66,91 @@
 <p>每当你创建一个类的实例的时候，ARC 便会自动分配一块内存空间来存放这个实例的信息，当这个实例不再被使用的时候，ARC 便释放实例所占用的内存。一般每个被管理的实例都会与一个引用计数器相连，这个计数器保存着当前实例被引用的次数，一旦创建一个新的引用指向这个实例，引用计数器便加 1，每当指向该实例的引用失效，引用计数器便减 1，当某个实例的引用计数器变成 0 的时候，这个实例就会被立即销毁。</p>
 <p>在 Swift 中，对引用描述的关键字有三个：<code>strong</code>，<code>weak</code> 和 <code>unowned</code>，所有的引用没有特殊说明都是 <code>strong</code> 强引用类型。在 ARC 中，只有指向一个实例的所有 <code>strong</code> 强引用都断开了，这个实例才会被销毁。</p>
 <p>举一个简单的例子：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span> {
-    <span style="color:#66d9ef">let</span> name: String
-    <span style="color:#66d9ef">init</span>(name: String) {
-        <span style="color:#66d9ef">self</span>.name = name
-    }
-    <span style="color:#66d9ef">deinit</span> {
-        print(<span style="color:#e6db74">&#34;A deinit&#34;</span>)
-    }
-}
-
-<span style="color:#66d9ef">var</span> a1: A?
-<span style="color:#66d9ef">var</span> a2: A?
-
-a1 = A(name: <span style="color:#e6db74">&#34;A&#34;</span>)
-a2 = a1
-
-a1 = <span style="color:#66d9ef">nil</span>
-</code></pre></div><p>上面这个例子中，虽然 <code>a1</code> 这个 <code>strong</code> 强引用断开了，但是还有 <code>a2</code> 这个强引用指向这个实例，所以不会在命令行中输出 <code>A deinit</code>，当我们把 <code>a2</code> 也设置为 <code>nil</code> 时，与这个实例关联的所有强引用均断开了，这个实例便会被销毁，在命令行中打印 <code>A deinit</code>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> name: String
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">init</span>(name: String) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.name = name
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">deinit</span> {
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;A deinit&#34;</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> a1: A?
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> a2: A?
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>a1 = A(name: <span style="color:#e6db74">&#34;A&#34;</span>)
+</span></span><span style="display:flex;"><span>a2 = a1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>a1 = <span style="color:#66d9ef">nil</span>
+</span></span></code></pre></div><p>上面这个例子中，虽然 <code>a1</code> 这个 <code>strong</code> 强引用断开了，但是还有 <code>a2</code> 这个强引用指向这个实例，所以不会在命令行中输出 <code>A deinit</code>，当我们把 <code>a2</code> 也设置为 <code>nil</code> 时，与这个实例关联的所有强引用均断开了，这个实例便会被销毁，在命令行中打印 <code>A deinit</code>。</p>
 <p><strong>循环强引用（Strong Reference Cycles）</strong></p>
 <p>但是，在某些情况下，一个类实例的强引用数永远不能变为 0，例如两个类实例互相持有对方的强引用，因而每个类实例都让对方一直存在，这就是所谓的强引用循环（Strong Reference Cycles）。</p>
 <p>这里引用 TSPL 中的例子：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span> {
-    <span style="color:#66d9ef">let</span> name: String
-    <span style="color:#66d9ef">init</span>(name: String) { <span style="color:#66d9ef">self</span>.name = name }
-    <span style="color:#66d9ef">var</span> apartment: Apartment?
-    <span style="color:#66d9ef">deinit</span> { print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">\(</span>name<span style="color:#e6db74">)</span><span style="color:#e6db74"> is being deinitialized&#34;</span>) }
-}
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Apartment</span> {
-    <span style="color:#66d9ef">let</span> unit: String
-    <span style="color:#66d9ef">init</span>(unit: String) { <span style="color:#66d9ef">self</span>.unit = unit }
-    <span style="color:#66d9ef">var</span> tenant: Person?
-    <span style="color:#66d9ef">deinit</span> { print(<span style="color:#e6db74">&#34;Apartment </span><span style="color:#e6db74">\(</span>unit<span style="color:#e6db74">)</span><span style="color:#e6db74"> is being deinitialized&#34;</span>) }
-}
-</code></pre></div><p>每一个 <code>Person</code> 实例有一个可选的初始化为 <code>nil</code> 的 <code>Apartment</code> 类型，因为一个人并不总是拥有公寓。同样，每一个 <code>Apartment</code> 实例都有一个可选的初始化为 <code>nil</code> 的 <code>Person</code> 类型，因为一个公寓并不总是属于一个人。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> name: String
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">init</span>(name: String) { <span style="color:#66d9ef">self</span>.name = name }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> apartment: Apartment?
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">deinit</span> { print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">\(</span>name<span style="color:#e6db74">)</span><span style="color:#e6db74"> is being deinitialized&#34;</span>) }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Apartment</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> unit: String
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">init</span>(unit: String) { <span style="color:#66d9ef">self</span>.unit = unit }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> tenant: Person?
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">deinit</span> { print(<span style="color:#e6db74">&#34;Apartment </span><span style="color:#e6db74">\(</span>unit<span style="color:#e6db74">)</span><span style="color:#e6db74"> is being deinitialized&#34;</span>) }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>每一个 <code>Person</code> 实例有一个可选的初始化为 <code>nil</code> 的 <code>Apartment</code> 类型，因为一个人并不总是拥有公寓。同样，每一个 <code>Apartment</code> 实例都有一个可选的初始化为 <code>nil</code> 的 <code>Person</code> 类型，因为一个公寓并不总是属于一个人。</p>
 <p>接下来的代码片段定义了两个可选类型的变量 <code>john</code> 和 <code>unit4A</code>，并分别设定为下面的 <code>Person</code> 和 <code>Apartment</code> 的实例，这两个变量都备受设定为 <code>nil</code>：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">var</span> john: Person?
-<span style="color:#66d9ef">var</span> unit4A: Apartment?
-</code></pre></div><p>现在可以创建特定的 <code>Person</code> 和 <code>Apartment</code> 实例，并将它们赋值给 <code>john</code> 和 <code>unit4A</code> 变量：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">john = Person(name: <span style="color:#e6db74">&#34;John Appleseed&#34;</span>)
-unit4A = Apartment(unit: <span style="color:#e6db74">&#34;4A&#34;</span>)
-</code></pre></div><p>下面一段代码将这两个实例关联起来：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">john!.apartment = unit4A
-unit4A!.tenant = john
-</code></pre></div><p>将两个实例关联在一起后，强引用的关系如图所示：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> john: Person?
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> unit4A: Apartment?
+</span></span></code></pre></div><p>现在可以创建特定的 <code>Person</code> 和 <code>Apartment</code> 实例，并将它们赋值给 <code>john</code> 和 <code>unit4A</code> 变量：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>john = Person(name: <span style="color:#e6db74">&#34;John Appleseed&#34;</span>)
+</span></span><span style="display:flex;"><span>unit4A = Apartment(unit: <span style="color:#e6db74">&#34;4A&#34;</span>)
+</span></span></code></pre></div><p>下面一段代码将这两个实例关联起来：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>john!.apartment = unit4A
+</span></span><span style="display:flex;"><span>unit4A!.tenant = john
+</span></span></code></pre></div><p>将两个实例关联在一起后，强引用的关系如图所示：</p>
 <p><img src="https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326144231.png" alt="14607053938205"></p>
 <p>这两个实例关联之后，会产生一个循环强引用，当断开 <code>john</code> 和 <code>unit4A</code> 所持有的强引用时，引用计数器并不会归零，所以这两块空间也得不到释放，这就导致了内存泄漏。</p>
 <p>可以将其中一个类中的变量设定为 <code>weak</code> 弱引用来打破这种强引用循环：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Apartment</span> {
-    <span style="color:#66d9ef">let</span> unit: String
-    <span style="color:#66d9ef">init</span>(unit: String) { <span style="color:#66d9ef">self</span>.unit = unit }
-    <span style="color:#66d9ef">weak</span> <span style="color:#66d9ef">var</span> tenant: Person?
-    <span style="color:#66d9ef">deinit</span> { print(<span style="color:#e6db74">&#34;Apartment </span><span style="color:#e6db74">\(</span>unit<span style="color:#e6db74">)</span><span style="color:#e6db74"> is being deinitialized&#34;</span>) }
-}
-</code></pre></div><p><img src="https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326144320.png" alt="14607057294969"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Apartment</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> unit: String
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">init</span>(unit: String) { <span style="color:#66d9ef">self</span>.unit = unit }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">weak</span> <span style="color:#66d9ef">var</span> tenant: Person?
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">deinit</span> { print(<span style="color:#e6db74">&#34;Apartment </span><span style="color:#e6db74">\(</span>unit<span style="color:#e6db74">)</span><span style="color:#e6db74"> is being deinitialized&#34;</span>) }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326144320.png" alt="14607057294969"></p>
 <p>当断开 <code>john</code> 和 <code>unit4A</code> 所持有的强引用时，<code>Person instance</code> 的引用计数器变成 0，实例被销毁，从而 <code>Apartment instance</code> 的引用计数器也变为 0，实例被销毁。</p>
 <p><strong>什么时候使用 <code>weak</code>？</strong></p>
 <p>当两个实例是 optional 关联在一起时，确保其中的一个使用 <code>weak</code> 弱引用，就像上面所说的那个例子一样。</p>
 <p><strong><code>unowned</code> 无主引用</strong></p>
 <p>在某些情况下，声明的变量总是有值得时候，我们需要使用 <code>unowned</code> 无主引用。</p>
 <p>同样借用一下 TSPL 中的例子：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Customer</span> {
-    <span style="color:#66d9ef">let</span> name: String
-    <span style="color:#66d9ef">var</span> card: CreditCard?
-    <span style="color:#66d9ef">init</span>(name: String) {
-        <span style="color:#66d9ef">self</span>.name = name
-    }
-    <span style="color:#66d9ef">deinit</span> { print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">\(</span>name<span style="color:#e6db74">)</span><span style="color:#e6db74"> is being deinitialized&#34;</span>) }
-}
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CreditCard</span> {
-    <span style="color:#66d9ef">let</span> number: UInt64
-    <span style="color:#66d9ef">unowned</span> <span style="color:#66d9ef">let</span> customer: Customer
-    <span style="color:#66d9ef">init</span>(number: UInt64, customer: Customer) {
-        <span style="color:#66d9ef">self</span>.number = number
-        <span style="color:#66d9ef">self</span>.customer = customer
-    }
-    <span style="color:#66d9ef">deinit</span> { print(<span style="color:#e6db74">&#34;Card #</span><span style="color:#e6db74">\(</span>number<span style="color:#e6db74">)</span><span style="color:#e6db74"> is being deinitialized&#34;</span>) }
-}
-</code></pre></div><p>这里定义了两个类，<code>Customer</code> 和 <code>CreditCard</code>，模拟了银行客户和客户的信用卡，在这个例子中，每一个类都是将另一个类的实例作为自身的属性，所以会产生循环强引用。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Customer</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> name: String
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> card: CreditCard?
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">init</span>(name: String) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.name = name
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">deinit</span> { print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">\(</span>name<span style="color:#e6db74">)</span><span style="color:#e6db74"> is being deinitialized&#34;</span>) }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CreditCard</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> number: UInt64
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">unowned</span> <span style="color:#66d9ef">let</span> customer: Customer
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">init</span>(number: UInt64, customer: Customer) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.number = number
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.customer = customer
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">deinit</span> { print(<span style="color:#e6db74">&#34;Card #</span><span style="color:#e6db74">\(</span>number<span style="color:#e6db74">)</span><span style="color:#e6db74"> is being deinitialized&#34;</span>) }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>这里定义了两个类，<code>Customer</code> 和 <code>CreditCard</code>，模拟了银行客户和客户的信用卡，在这个例子中，每一个类都是将另一个类的实例作为自身的属性，所以会产生循环强引用。</p>
 <p>和之前那个例子不同的是，<code>CreditCard</code> 类中有一个非可选类型的 <code>customer</code> 属性，因为，一个客户可能有或者没有一张信用卡，但是一张信用卡总是关联着一个用户。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">var</span> john: Customer?
-john = Customer(name: <span style="color:#e6db74">&#34;John Appleseed&#34;</span>)
-john!.card = CreditCard(number: <span style="color:#ae81ff">1234_5678_9012_3456</span>, customer: john!)
-</code></pre></div><p>关联两个实例后，它们的引用关系如图所示：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> john: Customer?
+</span></span><span style="display:flex;"><span>john = Customer(name: <span style="color:#e6db74">&#34;John Appleseed&#34;</span>)
+</span></span><span style="display:flex;"><span>john!.card = CreditCard(number: <span style="color:#ae81ff">1234_5678_9012_3456</span>, customer: john!)
+</span></span></code></pre></div><p>关联两个实例后，它们的引用关系如图所示：</p>
 <p><img src="https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326144333.png" alt="14607068387297"></p>
 <p>当断开 <code>john</code> 变量持有的强引用时，再也没有指向 <code>Customer</code> 的强引用了，所以该实例被销毁了，其后，再也没有指向 <code>CreditCard</code> 的强引用了，该实例也被销毁了。</p>
 <p><strong>什么时候使用 <code>unowned</code> 无主引用？</strong></p>
@@ -176,7 +176,7 @@ john!.card = CreditCard(number: <span style="color:#ae81ff">1234_5678_9012_3456<
 <h2>Comments</h2>
 <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

@@ -3,7 +3,7 @@
 <head>
   <link href="https://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.82.1" />
+  <meta name="generator" content="Hugo 0.99.1" />
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +12,10 @@
   <meta name="description" content="" />
 
   
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/print.css" media="print">
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/poole.css">
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/syntax.css">
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/hyde.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/hyde.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
 
 
@@ -31,8 +31,8 @@
   <aside class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
-      <a href="http://blog.jiayuanzhang.com"></a>
-      <a class="site-title" href="http://blog.jiayuanzhang.com">
+      <a href="https://blog.jiayuanzhang.com"></a>
+      <a class="site-title" href="https://blog.jiayuanzhang.com">
         <div class="main-title"><h1>Jiayuan</h1></div>
         <div class="second-title"><h1>Thoughts</h1></div>
       </a>
@@ -43,7 +43,7 @@
 
     <nav>
       <ul class="sidebar-nav">
-        <li><a href="http://blog.jiayuanzhang.com">Home</a> </li>
+        <li><a href="https://blog.jiayuanzhang.com">Home</a> </li>
         <li><a href="/tags/"> Tags </a></li><li><a href="/post/"> Archives </a></li><li><a href="https://twitter.com/Tisoga"> Twitter </a></li>
       </ul>
     </nav>
@@ -83,8 +83,7 @@ Jiayuan&rsquo;s Blog</a>。</p>
 <li>Alfred：脚本快速执行工具</li>
 <li>PicGo：图床工具</li>
 </ul>
-<figure>
-    <img src="https://raw.githubusercontent.com/forrestchang/img-repo/master/20190606165847.png"/> 
+<figure><img src="https://raw.githubusercontent.com/forrestchang/img-repo/master/20190606165847.png"/>
 </figure>
 
 <h2 id="安装与配置-ox-hugo">安装与配置 ox-hugo</h2>
@@ -92,14 +91,14 @@ Jiayuan&rsquo;s Blog</a>。</p>
 private module</a> 这个视频里有详细讲解如何使用 Doom Emacs 来安装第三方的 Package 以及如何编写自己的 module。这里我们把 ox-hugo 添加到自己的 <code>my-org</code> module 中，非
 Doom Emacs 的用户可以参考官方文档来进行配置：<a href="https://ox-hugo.scripter.co/">ox-hugo - Org to Hugo exporter</a>。</p>
 <p>首先在 <code>my-org/packages.el</code> 中添加 ox-hugo：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;; packages.el</span>
-(package! ox-hugo)
-</code></pre></div><p>然后修改 <code>my-org/configle.</code> ，使用 Doom Emacs 自定义的 <code>def-package!</code> macro，其他用户可以使用 <code>use-package</code> 或者直接使用 <code>require</code> 来进行导入。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;; config.el</span>
-(def-package! ox-hugo
-  :after ox
-  )
-</code></pre></div><h2 id="开始写作">开始写作</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#75715e">;; packages.el</span>
+</span></span><span style="display:flex;"><span>(package! ox-hugo)
+</span></span></code></pre></div><p>然后修改 <code>my-org/configle.</code> ，使用 Doom Emacs 自定义的 <code>def-package!</code> macro，其他用户可以使用 <code>use-package</code> 或者直接使用 <code>require</code> 来进行导入。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#75715e">;; config.el</span>
+</span></span><span style="display:flex;"><span>(def-package! ox-hugo
+</span></span><span style="display:flex;"><span>  :after ox
+</span></span><span style="display:flex;"><span>  )
+</span></span></code></pre></div><h2 id="开始写作">开始写作</h2>
 <p>ox-hugo 支持两种方式来管理 org 格式的博客文章，一种是所有的文章都放在同一个 org
 文件里，另一种是对不同的文章使用独立的 org 文件。因为最终都是导出 Markdown 格式的文件，所以这两种方法本质上并没有什么区别。</p>
 <p>这里推荐对于非长篇类的文章可以使用同一个 org 文件进行管理，这种方法可以方便地使用 org-mode 提供的 Tag 继承功能；针对于长篇的文章，可以直接使用单独的 org 文件。</p>
@@ -112,33 +111,31 @@ Property： <code>HUGO_SECTION</code> 和 <code>HUGO_BASE_DIR</code> ，</p>
 <p>其他一些设定可以参考我的 <a href="https://raw.githubusercontent.com/forrestchang/blog-raw/master/content-org/post.org?token=AB36HZWPBHGMFX4PTQUDJB247MWO4">org raw file</a>。</p>
 <p>ox-hugo 使用 org-mode 中的 Tag 来标记文章的 Category 和 Tags，使用 <code>@</code> 开头的
 Tag 为 Category，其他的为普通的 Tags，利用 org-mode 的特性，我们可以方便地继承上级的 Tag，例如：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-org" data-lang="org">*<span style="font-weight:bold"> Programming</span><span style="font-style:italic"> :@Programming:</span>
-<span style="color:#75715e">**</span><span style="color:#960050;background-color:#1e0010"> TODO</span> New post
-<span style="color:#75715e">:PROPERTIES:
-</span><span style="color:#75715e"></span><span style="color:#75715e">:EXPORT_FILE_NAME: new-post
-</span><span style="color:#75715e"></span><span style="color:#75715e">:END:</span>
-This is a test post.
-</code></pre></div><p>其中 <code>Programming</code> 下的文章都会被分类到 <code>Programming</code> Category 中去。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-org" data-lang="org"><span style="display:flex;"><span>*<span style="font-weight:bold"> Programming</span><span style="font-style:italic"> :@Programming:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">**</span><span style="color:#960050;background-color:#1e0010"> TODO</span> New post
+</span></span><span style="display:flex;"><span><span style="color:#75715e">:PROPERTIES:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">:EXPORT_FILE_NAME: new-post
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">:END:</span>
+</span></span><span style="display:flex;"><span>This is a test post.
+</span></span></code></pre></div><p>其中 <code>Programming</code> 下的文章都会被分类到 <code>Programming</code> Category 中去。</p>
 <p>一篇文章有两个状态： <code>TODO</code> 和 <code>DONE</code> ，TODO 代表的是未发布的文章，在生成的
 Markdown 元数据中 <code>draft=true</code> ，DONE 代表已完成的文章，DONE Date 会被作为发表的时间戳。TODO 和 DONE 的关键字是可以自己指定的，具体可以参考官方文档：<a href="https://ox-hugo.scripter.co/doc/org-meta-data-to-hugo-front-matter/">Org
 meta-data to Hugo front-matter — ox-hugo - Org to Hugo exporter</a> 。</p>
 <p>另一个比较重要的参数是 <code>EXPORT_FILE_NAME</code> ，这个参数控制了导出时的文件名，例如上面这个例子中导出后就为 <code>new-post.md</code> 。</p>
 <p>ox-hugo 的导出方式也非常简单，使用 <code>C-c C-e</code> 就可以呼出导出菜单，然后选择 <code>H H</code>
 就会把当前文章导出到 Hugo 的目录下。</p>
-<figure>
-    <img src="https://raw.githubusercontent.com/forrestchang/img-repo/master/20190608114908.png"/> 
+<figure><img src="https://raw.githubusercontent.com/forrestchang/img-repo/master/20190608114908.png"/>
 </figure>
 
 <h2 id="开启自动-export">开启自动 Export</h2>
 <p>ox-hugo 的官方文档中介绍了一种自动 Export 的方式，只要保存了 org 格式的文章，就可以直接导出 Hugo 中。</p>
 <p>首先需要在配置中 load org-hugo-auto-export-mode：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(def-package! org-hugo-auto-export-mode)
-</code></pre></div><p>然后在 Hugo 的根目录下建立 <code>.dir-locals.el</code> 文件：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">((<span style="color:#e6db74">&#34;content-org/&#34;</span>
-  <span style="color:#f92672">.</span> ((org-mode <span style="color:#f92672">.</span> ((<span style="color:#a6e22e">eval</span> <span style="color:#f92672">.</span> (org-hugo-auto-export-mode)))))))
-</code></pre></div><p>Reload 一下 Emacs 的配置就可以自动 Export 了，配合 <code>hugo serve -D</code> 命令，可以做到实时预览。</p>
-<figure>
-    <img src="https://raw.githubusercontent.com/forrestchang/img-repo/master/20190608115739.png"/> 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(def-package! org-hugo-auto-export-mode)
+</span></span></code></pre></div><p>然后在 Hugo 的根目录下建立 <code>.dir-locals.el</code> 文件：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>((<span style="color:#e6db74">&#34;content-org/&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">.</span> ((org-mode <span style="color:#f92672">.</span> ((<span style="color:#a6e22e">eval</span> <span style="color:#f92672">.</span> (org-hugo-auto-export-mode)))))))
+</span></span></code></pre></div><p>Reload 一下 Emacs 的配置就可以自动 Export 了，配合 <code>hugo serve -D</code> 命令，可以做到实时预览。</p>
+<figure><img src="https://raw.githubusercontent.com/forrestchang/img-repo/master/20190608115739.png"/>
 </figure>
 
 <h2 id="使用-picgo-plus-github-来搭建图床">使用 PicGo + GitHub 来搭建图床</h2>
@@ -158,21 +155,21 @@ meta-data to Hugo front-matter — ox-hugo - Org to Hugo exporter</a> 。</p>
 <p>写文章的时候需要一些参考链接，这个可以借助 AppleScript 和 Alfred 来完成。</p>
 <p>实现方式非常简单，使用 AppleScript 获取当前 Chrome 的链接和 title，并组合成对应格式的链接地址（markdown 或者 org-mode）放到剪贴板中，然后使用 Alfred 来调用。</p>
 <p>生成 org-mode link 的代码可以参考我写的这个：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-applescript" data-lang="applescript"><span style="color:#66d9ef">tell</span> application <span style="color:#e6db74">&#34;Google Chrome&#34;</span>
-  <span style="color:#66d9ef">set</span> tab_link <span style="color:#66d9ef">to</span> (<span style="color:#66d9ef">get</span> URL <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">active</span> <span style="color:#66d9ef">tab</span> <span style="color:#66d9ef">of</span> first <span style="color:#a6e22e">window</span>)
-  <span style="color:#66d9ef">set</span> tab_title <span style="color:#66d9ef">to</span> (<span style="color:#66d9ef">get</span> <span style="color:#a6e22e">title</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">active</span> <span style="color:#66d9ef">tab</span> <span style="color:#66d9ef">of</span> first <span style="color:#a6e22e">window</span>)
-  <span style="color:#66d9ef">set</span> org_link <span style="color:#66d9ef">to</span> (<span style="color:#e6db74">&#34;[[&#34;</span> <span style="color:#f92672">&amp;</span> tab_link <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;]&#34;</span> <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;[&#34;</span> <span style="color:#f92672">&amp;</span> tab_title <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;]]&#34;</span>)
-  set the clipboard to org_link
-  display notification org_link <span style="color:#66d9ef">with</span> <span style="color:#a6e22e">title</span> <span style="color:#e6db74">&#34;成功复制当前标签页链接到剪贴板&#34;</span>
-<span style="color:#66d9ef">end</span> <span style="color:#66d9ef">tell</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-applescript" data-lang="applescript"><span style="display:flex;"><span><span style="color:#66d9ef">tell</span> application <span style="color:#e6db74">&#34;Google Chrome&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">set</span> tab_link <span style="color:#66d9ef">to</span> (<span style="color:#66d9ef">get</span> URL <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">active</span> <span style="color:#66d9ef">tab</span> <span style="color:#66d9ef">of</span> first <span style="color:#a6e22e">window</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">set</span> tab_title <span style="color:#66d9ef">to</span> (<span style="color:#66d9ef">get</span> <span style="color:#a6e22e">title</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">active</span> <span style="color:#66d9ef">tab</span> <span style="color:#66d9ef">of</span> first <span style="color:#a6e22e">window</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">set</span> org_link <span style="color:#66d9ef">to</span> (<span style="color:#e6db74">&#34;[[&#34;</span> <span style="color:#f92672">&amp;</span> tab_link <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;]&#34;</span> <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;[&#34;</span> <span style="color:#f92672">&amp;</span> tab_title <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34;]]&#34;</span>)
+</span></span><span style="display:flex;"><span>  set the clipboard to org_link
+</span></span><span style="display:flex;"><span>  display notification org_link <span style="color:#66d9ef">with</span> <span style="color:#a6e22e">title</span> <span style="color:#e6db74">&#34;成功复制当前标签页链接到剪贴板&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span> <span style="color:#66d9ef">tell</span>
+</span></span></code></pre></div>
   </div>
 </div>
 
 <h2>Comments</h2>
 <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

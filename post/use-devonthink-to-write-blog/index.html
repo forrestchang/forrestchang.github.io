@@ -3,7 +3,7 @@
 <head>
   <link href="https://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.82.1" />
+  <meta name="generator" content="Hugo 0.99.1" />
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +12,10 @@
   <meta name="description" content="" />
 
   
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/print.css" media="print">
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/poole.css">
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/syntax.css">
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/hyde.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/hyde.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
 
 
@@ -31,8 +31,8 @@
   <aside class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
-      <a href="http://blog.jiayuanzhang.com"></a>
-      <a class="site-title" href="http://blog.jiayuanzhang.com">
+      <a href="https://blog.jiayuanzhang.com"></a>
+      <a class="site-title" href="https://blog.jiayuanzhang.com">
         <div class="main-title"><h1>Jiayuan</h1></div>
         <div class="second-title"><h1>Thoughts</h1></div>
       </a>
@@ -43,7 +43,7 @@
 
     <nav>
       <ul class="sidebar-nav">
-        <li><a href="http://blog.jiayuanzhang.com">Home</a> </li>
+        <li><a href="https://blog.jiayuanzhang.com">Home</a> </li>
         <li><a href="/tags/"> Tags </a></li><li><a href="/post/"> Archives </a></li><li><a href="https://twitter.com/Tisoga"> Twitter </a></li>
       </ul>
     </nav>
@@ -85,146 +85,146 @@
 </ol>
 <p>实现的逻辑很简单，困难点主要在于 JXA 的文档缺乏，有一些操作需要调用系统的 Objective-C Bridge 来进行（相当于在 JavaScript 中写 Objective-C 的代码）。</p>
 <p>我写了一个 Alfred Workflow 来完成这个功能，核心代码如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">/**
-</span><span style="color:#75715e"> * Constants
-</span><span style="color:#75715e"> */</span>
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">devonthink</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Application</span>(<span style="color:#e6db74">&#39;DEVONthink 3&#39;</span>)
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">blogPath</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/Users/jiayuan/Dropbox/personal-site/blog/content/post/&#39;</span>
-
-
-<span style="color:#75715e">/**
-</span><span style="color:#75715e"> * Utils
-</span><span style="color:#75715e"> */</span>
-
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">formatTime</span>(<span style="color:#a6e22e">time</span>, <span style="color:#a6e22e">cFormat</span>) {
-  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">arguments</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
-    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>
-  }
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">format</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">cFormat</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;{y}-{m}-{d} {h}:{i}:{s}&#39;</span>
-  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">date</span>
-  <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">time</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;object&#39;</span>) {
-    <span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">time</span>
-  } <span style="color:#66d9ef">else</span> {
-    <span style="color:#66d9ef">if</span> ((<span style="color:#e6db74">&#39;&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">time</span>).<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">10</span>) <span style="color:#a6e22e">time</span> <span style="color:#f92672">=</span> parseInt(<span style="color:#a6e22e">time</span>) <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>
-    <span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#a6e22e">time</span>)
-  }
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">formatObj</span> <span style="color:#f92672">=</span> {
-    <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getFullYear</span>(),
-    <span style="color:#a6e22e">m</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getMonth</span>() <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>,
-    <span style="color:#a6e22e">d</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getDate</span>(),
-    <span style="color:#a6e22e">h</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getHours</span>(),
-    <span style="color:#a6e22e">i</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getMinutes</span>(),
-    <span style="color:#a6e22e">s</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getSeconds</span>(),
-    <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getDay</span>()
-  }
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">time_str</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">format</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/{([ymdhisa])+}/g</span>, (<span style="color:#a6e22e">result</span>, <span style="color:#a6e22e">key</span>) =&gt; {
-    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">formatObj</span>[<span style="color:#a6e22e">key</span>]
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">key</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;a&#39;</span>) <span style="color:#66d9ef">return</span> [<span style="color:#e6db74">&#39;一&#39;</span>, <span style="color:#e6db74">&#39;二&#39;</span>, <span style="color:#e6db74">&#39;三&#39;</span>, <span style="color:#e6db74">&#39;四&#39;</span>, <span style="color:#e6db74">&#39;五&#39;</span>, <span style="color:#e6db74">&#39;六&#39;</span>, <span style="color:#e6db74">&#39;日&#39;</span>][<span style="color:#a6e22e">value</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>) {
-      <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;0&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">value</span>
-    }
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">0</span>
-  })
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">time_str</span>
-}
-
-
-<span style="color:#75715e">/**
-</span><span style="color:#75715e"> * Functions
-</span><span style="color:#75715e"> */</span>
-
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">writeToFile</span>(<span style="color:#a6e22e">filename</span>, <span style="color:#a6e22e">path</span>, <span style="color:#a6e22e">content</span>) {
-  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">endsWith</span>(<span style="color:#e6db74">&#39;/&#39;</span>)) {
-    <span style="color:#a6e22e">path</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">path</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/&#39;</span>
-  }
-  <span style="color:#a6e22e">filePath</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">path</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">filename</span>
-
-  <span style="color:#a6e22e">contentEncoded</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">NSString</span>.<span style="color:#a6e22e">alloc</span>.<span style="color:#a6e22e">initWithUTF8String</span>(<span style="color:#a6e22e">content</span>);
-  <span style="color:#a6e22e">contentEncoded</span>.<span style="color:#a6e22e">writeToFileAtomicallyEncodingError</span>(<span style="color:#a6e22e">filePath</span>, <span style="color:#66d9ef">true</span>, <span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">NSUTF8StringEncoding</span>, <span style="color:#66d9ef">null</span>);
-}
-
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getMetaData</span>(<span style="color:#a6e22e">record</span>) {
-
-  <span style="color:#75715e">// Get created time
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">createdTime</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">formatTime</span>(<span style="color:#a6e22e">record</span>.<span style="color:#a6e22e">creationDate</span>(), <span style="color:#e6db74">&#39;{y}-{m}-{d}&#39;</span>)
-
-  <span style="color:#75715e">// Get updated time
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">updatedTime</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">formatTime</span>(<span style="color:#a6e22e">record</span>.<span style="color:#a6e22e">modificationDate</span>(), <span style="color:#e6db74">&#39;{y}-{m}-{d}&#39;</span>)
-
-  <span style="color:#75715e">// Get file name
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">customMetaData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">record</span>.<span style="color:#a6e22e">customMetaData</span>()
-  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">fileName</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">customMetaData</span>.<span style="color:#a6e22e">mdblogfilename</span>
-  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">fileName</span>.<span style="color:#a6e22e">endsWith</span>(<span style="color:#e6db74">&#39;.md&#39;</span>)) {
-    <span style="color:#a6e22e">fileName</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fileName</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;.md&#39;</span>
-  }
-
-  <span style="color:#75715e">// Get tags
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">tags</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">record</span>.<span style="color:#a6e22e">tags</span>()
-
-  <span style="color:#75715e">// Get categories
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">category</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">customMetaData</span>.<span style="color:#a6e22e">mdcategory</span>
-
-  <span style="color:#75715e">// Get draft info
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">isDraft</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">customMetaData</span>.<span style="color:#a6e22e">mddraft</span>
-
-  <span style="color:#75715e">// Get title
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">title</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">record</span>.<span style="color:#a6e22e">name</span>()
-
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">metaData</span> <span style="color:#f92672">=</span> {
-    <span style="color:#a6e22e">createdTime</span>,
-    <span style="color:#a6e22e">updatedTime</span>,
-    <span style="color:#a6e22e">fileName</span>,
-    <span style="color:#a6e22e">tags</span>,
-    <span style="color:#a6e22e">category</span>,
-    <span style="color:#a6e22e">title</span>,
-    <span style="color:#a6e22e">isDraft</span>
-  }
-
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">metaData</span>
-}
-
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">generateYamlMetaString</span>(<span style="color:#a6e22e">metaData</span>) {
-  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">yamlMetaString</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`---
-</span><span style="color:#e6db74">title: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">metaData</span>.<span style="color:#a6e22e">title</span><span style="color:#e6db74">}</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">date: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">metaData</span>.<span style="color:#a6e22e">createdTime</span><span style="color:#e6db74">}</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">lastmod: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">metaData</span>.<span style="color:#a6e22e">updatedTime</span><span style="color:#e6db74">}</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">categories: [</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">metaData</span>.<span style="color:#a6e22e">category</span><span style="color:#e6db74">}</span><span style="color:#e6db74">]
-</span><span style="color:#e6db74">tags: [</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">metaData</span>.<span style="color:#a6e22e">tags</span><span style="color:#e6db74">}</span><span style="color:#e6db74">]
-</span><span style="color:#e6db74">draft: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">metaData</span>.<span style="color:#a6e22e">isDraft</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">true</span><span style="color:#e6db74">}</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">---
-</span><span style="color:#e6db74">  `</span>
-
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">yamlMetaString</span>
-}
-
-
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">main</span>() {
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">blogPosts</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">devonthink</span>.<span style="color:#a6e22e">databases</span>.<span style="color:#a6e22e">byName</span>(<span style="color:#e6db74">&#39;02.Writing&#39;</span>).<span style="color:#a6e22e">parents</span>.<span style="color:#a6e22e">byName</span>(<span style="color:#e6db74">&#39;Blog&#39;</span>).<span style="color:#a6e22e">children</span>()
-
-  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">blogPosts</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">selectedRecord</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">blogPosts</span>[<span style="color:#a6e22e">i</span>]
-
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">metaData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">getMetaData</span>(<span style="color:#a6e22e">selectedRecord</span>)
-
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">yamlMetaString</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">generateYamlMetaString</span>(<span style="color:#a6e22e">metaData</span>)
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">content</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">selectedRecord</span>.<span style="color:#a6e22e">plainText</span>()
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">blogPostContent</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">yamlMetaString</span><span style="color:#e6db74">}</span><span style="color:#e6db74">
-</span><span style="color:#e6db74"></span><span style="color:#e6db74">${</span><span style="color:#a6e22e">content</span><span style="color:#e6db74">}</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">`</span>
-    <span style="color:#a6e22e">writeToFile</span>(<span style="color:#a6e22e">metaData</span>.<span style="color:#a6e22e">fileName</span>, <span style="color:#a6e22e">blogPath</span>, <span style="color:#a6e22e">blogPostContent</span>)
-  }
-
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Application</span>.<span style="color:#a6e22e">currentApplication</span>()
-  <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">includeStandardAdditions</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
-
-  <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">displayNotification</span>(<span style="color:#e6db74">`You have generated </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">blogPosts</span>.<span style="color:#a6e22e">length</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> articles.`</span>, { <span style="color:#a6e22e">withTitle</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Success&#39;</span> })
-}
-
-<span style="color:#75715e">/**
-</span><span style="color:#75715e"> * Main
-</span><span style="color:#75715e"> */</span>
-<span style="color:#a6e22e">main</span>()
-</code></pre></div><p>源代码可以在这里看到：<a href="https://github.com/forrestchang/alfred-workflows/tree/master/src/Devonthink-to-Hugo-Blog">alfred-workflows/src/Devonthink-to-Hugo-Blog at master · forrestchang/alfred-workflows</a>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Constants
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">devonthink</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Application</span>(<span style="color:#e6db74">&#39;DEVONthink 3&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">blogPath</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/Users/jiayuan/Dropbox/personal-site/blog/content/post/&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Utils
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">formatTime</span>(<span style="color:#a6e22e">time</span>, <span style="color:#a6e22e">cFormat</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">arguments</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">format</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">cFormat</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;{y}-{m}-{d} {h}:{i}:{s}&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">date</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">time</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;object&#39;</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">time</span>
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> ((<span style="color:#e6db74">&#39;&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">time</span>).<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">10</span>) <span style="color:#a6e22e">time</span> <span style="color:#f92672">=</span> parseInt(<span style="color:#a6e22e">time</span>) <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#a6e22e">time</span>)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">formatObj</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getFullYear</span>(),
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">m</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getMonth</span>() <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">d</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getDate</span>(),
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">h</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getHours</span>(),
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">i</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getMinutes</span>(),
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">s</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getSeconds</span>(),
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">getDay</span>()
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">time_str</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">format</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/{([ymdhisa])+}/g</span>, (<span style="color:#a6e22e">result</span>, <span style="color:#a6e22e">key</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">formatObj</span>[<span style="color:#a6e22e">key</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">key</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;a&#39;</span>) <span style="color:#66d9ef">return</span> [<span style="color:#e6db74">&#39;一&#39;</span>, <span style="color:#e6db74">&#39;二&#39;</span>, <span style="color:#e6db74">&#39;三&#39;</span>, <span style="color:#e6db74">&#39;四&#39;</span>, <span style="color:#e6db74">&#39;五&#39;</span>, <span style="color:#e6db74">&#39;六&#39;</span>, <span style="color:#e6db74">&#39;日&#39;</span>][<span style="color:#a6e22e">value</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;0&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">value</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>  })
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">time_str</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Functions
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">writeToFile</span>(<span style="color:#a6e22e">filename</span>, <span style="color:#a6e22e">path</span>, <span style="color:#a6e22e">content</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">endsWith</span>(<span style="color:#e6db74">&#39;/&#39;</span>)) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">path</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">path</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/&#39;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">filePath</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">path</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">filename</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">contentEncoded</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">NSString</span>.<span style="color:#a6e22e">alloc</span>.<span style="color:#a6e22e">initWithUTF8String</span>(<span style="color:#a6e22e">content</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">contentEncoded</span>.<span style="color:#a6e22e">writeToFileAtomicallyEncodingError</span>(<span style="color:#a6e22e">filePath</span>, <span style="color:#66d9ef">true</span>, <span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">NSUTF8StringEncoding</span>, <span style="color:#66d9ef">null</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getMetaData</span>(<span style="color:#a6e22e">record</span>) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Get created time
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">createdTime</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">formatTime</span>(<span style="color:#a6e22e">record</span>.<span style="color:#a6e22e">creationDate</span>(), <span style="color:#e6db74">&#39;{y}-{m}-{d}&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Get updated time
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">updatedTime</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">formatTime</span>(<span style="color:#a6e22e">record</span>.<span style="color:#a6e22e">modificationDate</span>(), <span style="color:#e6db74">&#39;{y}-{m}-{d}&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Get file name
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">customMetaData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">record</span>.<span style="color:#a6e22e">customMetaData</span>()
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">fileName</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">customMetaData</span>.<span style="color:#a6e22e">mdblogfilename</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">fileName</span>.<span style="color:#a6e22e">endsWith</span>(<span style="color:#e6db74">&#39;.md&#39;</span>)) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fileName</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fileName</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;.md&#39;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Get tags
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">tags</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">record</span>.<span style="color:#a6e22e">tags</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Get categories
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">category</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">customMetaData</span>.<span style="color:#a6e22e">mdcategory</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Get draft info
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">isDraft</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">customMetaData</span>.<span style="color:#a6e22e">mddraft</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Get title
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">title</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">record</span>.<span style="color:#a6e22e">name</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">metaData</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">createdTime</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">updatedTime</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fileName</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">tags</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">category</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">title</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">isDraft</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">metaData</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">generateYamlMetaString</span>(<span style="color:#a6e22e">metaData</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">yamlMetaString</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`---
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">title: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">metaData</span>.<span style="color:#a6e22e">title</span><span style="color:#e6db74">}</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">date: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">metaData</span>.<span style="color:#a6e22e">createdTime</span><span style="color:#e6db74">}</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">lastmod: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">metaData</span>.<span style="color:#a6e22e">updatedTime</span><span style="color:#e6db74">}</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">categories: [</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">metaData</span>.<span style="color:#a6e22e">category</span><span style="color:#e6db74">}</span><span style="color:#e6db74">]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">tags: [</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">metaData</span>.<span style="color:#a6e22e">tags</span><span style="color:#e6db74">}</span><span style="color:#e6db74">]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">draft: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">metaData</span>.<span style="color:#a6e22e">isDraft</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">true</span><span style="color:#e6db74">}</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">---
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  `</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">yamlMetaString</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">blogPosts</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">devonthink</span>.<span style="color:#a6e22e">databases</span>.<span style="color:#a6e22e">byName</span>(<span style="color:#e6db74">&#39;02.Writing&#39;</span>).<span style="color:#a6e22e">parents</span>.<span style="color:#a6e22e">byName</span>(<span style="color:#e6db74">&#39;Blog&#39;</span>).<span style="color:#a6e22e">children</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">blogPosts</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">selectedRecord</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">blogPosts</span>[<span style="color:#a6e22e">i</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">metaData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">getMetaData</span>(<span style="color:#a6e22e">selectedRecord</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">yamlMetaString</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">generateYamlMetaString</span>(<span style="color:#a6e22e">metaData</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">content</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">selectedRecord</span>.<span style="color:#a6e22e">plainText</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">blogPostContent</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">yamlMetaString</span><span style="color:#e6db74">}</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"></span><span style="color:#e6db74">${</span><span style="color:#a6e22e">content</span><span style="color:#e6db74">}</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">writeToFile</span>(<span style="color:#a6e22e">metaData</span>.<span style="color:#a6e22e">fileName</span>, <span style="color:#a6e22e">blogPath</span>, <span style="color:#a6e22e">blogPostContent</span>)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Application</span>.<span style="color:#a6e22e">currentApplication</span>()
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">includeStandardAdditions</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">displayNotification</span>(<span style="color:#e6db74">`You have generated </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">blogPosts</span>.<span style="color:#a6e22e">length</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> articles.`</span>, { <span style="color:#a6e22e">withTitle</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Success&#39;</span> })
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Main
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">main</span>()
+</span></span></code></pre></div><p>源代码可以在这里看到：<a href="https://github.com/forrestchang/alfred-workflows/tree/master/src/Devonthink-to-Hugo-Blog">alfred-workflows/src/Devonthink-to-Hugo-Blog at master · forrestchang/alfred-workflows</a>。</p>
 <p>如果你需要用到你的工作流中，需要配置以下内容：</p>
 <ul>
 <li>hugo 的 <code>post</code> 路径，在 <code>blogPath</code> 中定义；</li>
@@ -241,7 +241,7 @@
 <h2>Comments</h2>
 <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

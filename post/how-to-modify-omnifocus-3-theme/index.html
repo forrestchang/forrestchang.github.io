@@ -3,7 +3,7 @@
 <head>
   <link href="https://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.82.1" />
+  <meta name="generator" content="Hugo 0.99.1" />
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +12,10 @@
   <meta name="description" content="" />
 
   
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/print.css" media="print">
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/poole.css">
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/syntax.css">
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/hyde.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/hyde.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
 
 
@@ -31,8 +31,8 @@
   <aside class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
-      <a href="http://blog.jiayuanzhang.com"></a>
-      <a class="site-title" href="http://blog.jiayuanzhang.com">
+      <a href="https://blog.jiayuanzhang.com"></a>
+      <a class="site-title" href="https://blog.jiayuanzhang.com">
         <div class="main-title"><h1>Jiayuan</h1></div>
         <div class="second-title"><h1>Thoughts</h1></div>
       </a>
@@ -43,7 +43,7 @@
 
     <nav>
       <ul class="sidebar-nav">
-        <li><a href="http://blog.jiayuanzhang.com">Home</a> </li>
+        <li><a href="https://blog.jiayuanzhang.com">Home</a> </li>
         <li><a href="/tags/"> Tags </a></li><li><a href="/post/"> Archives </a></li><li><a href="https://twitter.com/Tisoga"> Twitter </a></li>
       </ul>
     </nav>
@@ -65,43 +65,43 @@
 <p>具体的修改方法为：</p>
 <p>在 <code>/Applications/OmniFocus.app/Contents/Resources/ThemeResources/SystemFont</code> 下面修改字体的大小和页边距，首先我们先修改边距大小，我默认选择的是 Extra Large 的字体，所以需要修改 <code>OFIExtraLargeLayoutConstraintConstants.plit</code>。</p>
 <p>找到以下代码：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;key&gt;</span>extraPaddingBelowNoteForActionCells<span style="color:#f92672">&lt;/key&gt;</span>
-<span style="color:#f92672">&lt;real&gt;</span>20<span style="color:#f92672">&lt;/real&gt;</span>
-<span style="color:#f92672">&lt;key&gt;</span>extraPaddingBelowNoteForColumnarActionCells<span style="color:#f92672">&lt;/key&gt;</span>
-<span style="color:#f92672">&lt;real&gt;</span>20<span style="color:#f92672">&lt;/real&gt;</span>
-<span style="color:#f92672">&lt;key&gt;</span>extraPaddingBelowNoteForProjectCells<span style="color:#f92672">&lt;/key&gt;</span>
-<span style="color:#f92672">&lt;real&gt;</span>20<span style="color:#f92672">&lt;/real&gt;</span>
-</code></pre></div><p>然后把 <code>real</code> 的值设定成自己想要的就好了，我这边设定为 20，最后看起来的效果还可以。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;key&gt;</span>extraPaddingBelowNoteForActionCells<span style="color:#f92672">&lt;/key&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;real&gt;</span>20<span style="color:#f92672">&lt;/real&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;key&gt;</span>extraPaddingBelowNoteForColumnarActionCells<span style="color:#f92672">&lt;/key&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;real&gt;</span>20<span style="color:#f92672">&lt;/real&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;key&gt;</span>extraPaddingBelowNoteForProjectCells<span style="color:#f92672">&lt;/key&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;real&gt;</span>20<span style="color:#f92672">&lt;/real&gt;</span>
+</span></span></code></pre></div><p>然后把 <code>real</code> 的值设定成自己想要的就好了，我这边设定为 20，最后看起来的效果还可以。</p>
 <p>然后修改 Note 的字体，打开 <code>OFIFontRegistry.plit</code>，找到以下代码：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;key&gt;</span>OFITextStyleNoteBody<span style="color:#f92672">&lt;/key&gt;</span>
-<span style="color:#f92672">&lt;dict&gt;</span>
-	<span style="color:#f92672">&lt;key&gt;</span>content-sizes<span style="color:#f92672">&lt;/key&gt;</span>
-	<span style="color:#f92672">&lt;array&gt;</span>
-		<span style="color:#f92672">&lt;real&gt;</span>13<span style="color:#f92672">&lt;/real&gt;</span>
-		<span style="color:#f92672">&lt;real&gt;</span>13<span style="color:#f92672">&lt;/real&gt;</span>
-		<span style="color:#f92672">&lt;real&gt;</span>14<span style="color:#f92672">&lt;/real&gt;</span>
-		<span style="color:#f92672">&lt;real&gt;</span>15<span style="color:#f92672">&lt;/real&gt;</span>
-		<span style="color:#f92672">&lt;real&gt;</span>16<span style="color:#f92672">&lt;/real&gt;</span>
-	<span style="color:#f92672">&lt;/array&gt;</span>
-	<span style="color:#f92672">&lt;key&gt;</span>font-name<span style="color:#f92672">&lt;/key&gt;</span>
-	<span style="color:#f92672">&lt;string&gt;</span>regular<span style="color:#f92672">&lt;/string&gt;</span>
-<span style="color:#f92672">&lt;/dict&gt;</span>
-</code></pre></div><p>依次修改 <code>real</code> 的值，对应 OmniFocus 的以下配置：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;key&gt;</span>OFITextStyleNoteBody<span style="color:#f92672">&lt;/key&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;dict&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;key&gt;</span>content-sizes<span style="color:#f92672">&lt;/key&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;array&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;real&gt;</span>13<span style="color:#f92672">&lt;/real&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;real&gt;</span>13<span style="color:#f92672">&lt;/real&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;real&gt;</span>14<span style="color:#f92672">&lt;/real&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;real&gt;</span>15<span style="color:#f92672">&lt;/real&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">&lt;real&gt;</span>16<span style="color:#f92672">&lt;/real&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;/array&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;key&gt;</span>font-name<span style="color:#f92672">&lt;/key&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&lt;string&gt;</span>regular<span style="color:#f92672">&lt;/string&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/dict&gt;</span>
+</span></span></code></pre></div><p>依次修改 <code>real</code> 的值，对应 OmniFocus 的以下配置：</p>
 <p><img src="https://raw.githubusercontent.com/forrestchang/img-repo/master/20190523112118.png" alt=""></p>
 <p>Next Action, Due 和 Overdue 的颜色可以在 <code>/Applications/OmniFocus.app/Contents/Resources/ThemeResources/</code> 下面修改，找到对应的主题，例如我现在使用的是 Light Mode，就修改 <code>30-Light-ColoredText/OFIThemeAppearance.plist</code> 文件。</p>
 <p>其中颜色的值使用的 NSColor HSB<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> 格式的，需要对 RGB 或者 Hex 格式的颜色值做一下转换，可以找到喜欢的颜色值，然后在<a href="https://rgb.to/">这个网站</a><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>转换。</p>
 <p>把 Resource 中的配置文件浏览了一下，发现还是可以定制很多其他东西的，基于这个可以实现一个主题工具，但是不知道 OmniFocus 更新会不会把 Resource 文件覆盖掉，这个之后测试一下。</p>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
-<p><a href="https://developer.apple.com/documentation/appkit/nscolor">NSColor - AppKit | Apple Developer Documentation</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:1">
+<p><a href="https://developer.apple.com/documentation/appkit/nscolor">NSColor - AppKit | Apple Developer Documentation</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
-<p><a href="https://rgb.to/">Convert Hex color #7ca746 to Rgb, Pantone, RAL, HSL, HSV, HSB, JSON. Get color scheme.</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:2">
+<p><a href="https://rgb.to/">Convert Hex color #7ca746 to Rgb, Pantone, RAL, HSL, HSV, HSB, JSON. Get color scheme.</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 
   </div>
 </div>
@@ -109,7 +109,7 @@
 <h2>Comments</h2>
 <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

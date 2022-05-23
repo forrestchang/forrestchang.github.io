@@ -3,7 +3,7 @@
 <head>
   <link href="https://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.82.1" />
+  <meta name="generator" content="Hugo 0.99.1" />
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +12,10 @@
   <meta name="description" content="" />
 
   
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/print.css" media="print">
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/poole.css">
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/syntax.css">
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/hyde.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/hyde.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
 
 
@@ -31,8 +31,8 @@
   <aside class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
-      <a href="http://blog.jiayuanzhang.com"></a>
-      <a class="site-title" href="http://blog.jiayuanzhang.com">
+      <a href="https://blog.jiayuanzhang.com"></a>
+      <a class="site-title" href="https://blog.jiayuanzhang.com">
         <div class="main-title"><h1>Jiayuan</h1></div>
         <div class="second-title"><h1>Thoughts</h1></div>
       </a>
@@ -43,7 +43,7 @@
 
     <nav>
       <ul class="sidebar-nav">
-        <li><a href="http://blog.jiayuanzhang.com">Home</a> </li>
+        <li><a href="https://blog.jiayuanzhang.com">Home</a> </li>
         <li><a href="/tags/"> Tags </a></li><li><a href="/post/"> Archives </a></li><li><a href="https://twitter.com/Tisoga"> Twitter </a></li>
       </ul>
     </nav>
@@ -124,11 +124,11 @@
 </blockquote>
 <p>例如上面的这个变量名可以简化为 <code>maxPointsInOlympics</code> ，这样既保留了变量的原本意思（参考上下文的情况下），又缩短的变量名的长度。</p>
 <p>在编写变量名的时候还需要考虑作用域的问题，一般来说，小作用域里的变量名可以简短一些，因为只作用于几行代码，例如 Python 中的列表推导式（Python 3，Python 2 中的列表推导式不是块级作用域）：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">alist <span style="color:#f92672">=</span> [do_something(elem) <span style="color:#66d9ef">for</span> elem <span style="color:#f92672">in</span> some_list]
-</code></pre></div><p>甚至在不需要使用这个变量的时候可以把它忽略：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 生成一个随机数列表</span>
-random_numbers <span style="color:#f92672">=</span> [random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">100</span>) <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">100</span>)]
-</code></pre></div><p>相反的，如果是一个全局作用域，变量名就需要取得独特一些，避免产生命名空间冲突。例如用户接口部分的雇员类可以命名为 <code>uiEmployee</code>，数据库部分的雇员类可以命名为 <code>dbEmployee</code>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>alist <span style="color:#f92672">=</span> [do_something(elem) <span style="color:#66d9ef">for</span> elem <span style="color:#f92672">in</span> some_list]
+</span></span></code></pre></div><p>甚至在不需要使用这个变量的时候可以把它忽略：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 生成一个随机数列表</span>
+</span></span><span style="display:flex;"><span>random_numbers <span style="color:#f92672">=</span> [random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">100</span>) <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">100</span>)]
+</span></span></code></pre></div><p>相反的，如果是一个全局作用域，变量名就需要取得独特一些，避免产生命名空间冲突。例如用户接口部分的雇员类可以命名为 <code>uiEmployee</code>，数据库部分的雇员类可以命名为 <code>dbEmployee</code>。</p>
 <h3 id="命名的最佳实践有哪些">命名的最佳实践有哪些？</h3>
 <p>程序中常见的变量类型有「循环变量」、「状态变量」、「临时变量」、「布尔变量」、「枚举变量」和「具名常量」，这一部分会针对这些不同的变量（常量）类型讨论最佳实践。</p>
 <h4 id="循环变量">循环变量</h4>
@@ -137,9 +137,9 @@ random_numbers <span style="color:#f92672">=</span> [random<span style="color:#f
 <li>复杂的循环或者循环变量需要在循环外使用的应该使用富有含义的命名。</li>
 </ol>
 <p>例如，我需要便利一个用户列表信息来对每个用户的信息做处理：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> user_info <span style="color:#f92672">in</span> user_infos:
-    do_something(user_info)
-</code></pre></div><p>要注意的事，在 Python 中，<code>for</code> 循环是不存在子作用域的，所以在循环外访问 <code>user_info</code> 会获取 <code>user_infos</code> 中的最后一个值。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> user_info <span style="color:#f92672">in</span> user_infos:
+</span></span><span style="display:flex;"><span>    do_something(user_info)
+</span></span></code></pre></div><p>要注意的事，在 Python 中，<code>for</code> 循环是不存在子作用域的，所以在循环外访问 <code>user_info</code> 会获取 <code>user_infos</code> 中的最后一个值。</p>
 <p>个人经验：</p>
 <ul>
 <li>便利下标可以使用 <code>idx</code> 或者 <code>index</code> 作为结尾，例如 <code>user_info_idx</code></li>
@@ -152,10 +152,10 @@ random_numbers <span style="color:#f92672">=</span> [random<span style="color:#f
 <p>临时变量用于存储计算的中间结果，它常被命名为 <code>temp</code>, <code>x</code> 等模糊且缺乏描述性的名字。</p>
 <p>虽然临时变量是「临时」使用的，但是也不应该随意给它们命名，赋予一个更有意义的名字会让程序更加可读。</p>
 <p>例如下面一段计算二元一次方程的代码：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">temp <span style="color:#f92672">=</span> math<span style="color:#f92672">.</span>sqrt(b <span style="color:#f92672">**</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">*</span> a <span style="color:#f92672">*</span> c)
-answer[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> (<span style="color:#f92672">-</span>b <span style="color:#f92672">+</span> temp) <span style="color:#f92672">/</span> (<span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> a)
-answer[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> (<span style="color:#f92672">-</span>b <span style="color:#f92672">-</span> temp) <span style="color:#f92672">/</span> (<span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> a)
-</code></pre></div><p>虽然上面这段代码没有什么逻辑问题，但是 <code>temp</code> 这个变量并不能很好的表述计算的中间结果，如果把 <code>temp</code> 改为 <code>discriminant</code>（判别式） 会更好。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>temp <span style="color:#f92672">=</span> math<span style="color:#f92672">.</span>sqrt(b <span style="color:#f92672">**</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">*</span> a <span style="color:#f92672">*</span> c)
+</span></span><span style="display:flex;"><span>answer[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> (<span style="color:#f92672">-</span>b <span style="color:#f92672">+</span> temp) <span style="color:#f92672">/</span> (<span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> a)
+</span></span><span style="display:flex;"><span>answer[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> (<span style="color:#f92672">-</span>b <span style="color:#f92672">-</span> temp) <span style="color:#f92672">/</span> (<span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> a)
+</span></span></code></pre></div><p>虽然上面这段代码没有什么逻辑问题，但是 <code>temp</code> 这个变量并不能很好的表述计算的中间结果，如果把 <code>temp</code> 改为 <code>discriminant</code>（判别式） 会更好。</p>
 <h4 id="布尔变量">布尔变量</h4>
 <p>一些常用的布尔变量：</p>
 <ul>
@@ -230,7 +230,7 @@ answer[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span
 <h2>Comments</h2>
 <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

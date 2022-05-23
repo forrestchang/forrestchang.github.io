@@ -3,7 +3,7 @@
 <head>
   <link href="https://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.82.1" />
+  <meta name="generator" content="Hugo 0.99.1" />
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +12,10 @@
   <meta name="description" content="" />
 
   
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/print.css" media="print">
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/poole.css">
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/syntax.css">
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/hyde.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/hyde.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
 
 
@@ -31,8 +31,8 @@
   <aside class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
-      <a href="http://blog.jiayuanzhang.com"></a>
-      <a class="site-title" href="http://blog.jiayuanzhang.com">
+      <a href="https://blog.jiayuanzhang.com"></a>
+      <a class="site-title" href="https://blog.jiayuanzhang.com">
         <div class="main-title"><h1>Jiayuan</h1></div>
         <div class="second-title"><h1>Thoughts</h1></div>
       </a>
@@ -43,7 +43,7 @@
 
     <nav>
       <ul class="sidebar-nav">
-        <li><a href="http://blog.jiayuanzhang.com">Home</a> </li>
+        <li><a href="https://blog.jiayuanzhang.com">Home</a> </li>
         <li><a href="/tags/"> Tags </a></li><li><a href="/post/"> Archives </a></li><li><a href="https://twitter.com/Tisoga"> Twitter </a></li>
       </ul>
     </nav>
@@ -62,7 +62,7 @@
   <div class="post-content" style="margin-top: 20px">
     <p>之前博客虽然也有 RSS，但是不是全文索引的，为了方便读者能够直接在 RSS 阅读器中阅读，花了点时间给博客添加了全文 RSS 输出。</p>
 <p>查阅文档<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>可知，Hugo 的 RSS 模板搜索顺序如下：</p>
-<pre><code class="language-nil" data-lang="nil">[layouts/index.rss.xml
+<pre tabindex="0"><code class="language-nil" data-lang="nil">[layouts/index.rss.xml
 layouts/home.rss.xml
 layouts/rss.xml
 layouts/list.rss.xml
@@ -79,67 +79,67 @@ layouts/_default/list.xml
 layouts/_internal/_default/rss.xml]
 </code></pre><p>我们随便按照顺序建立一个 xml 模板文件即可，例如，我们这里建立
 <code>layouts/index.rss.xml</code> 文件，使用 Hugo 官方提供的 RSS 模板：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{{ printf &#34;<span style="color:#75715e">&lt;?xml version=\&#34;1.0\&#34; encoding=\&#34;utf-8\&#34; standalone=\&#34;yes\&#34; ?&gt;</span>&#34; | safeHTML }}
-&lt;<span style="color:#f92672">rss</span> <span style="color:#a6e22e">version</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2.0&#34;</span> <span style="color:#a6e22e">xmlns:atom</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.w3.org/2005/Atom&#34;</span>&gt;
-  &lt;<span style="color:#f92672">channel</span>&gt;
-    &lt;<span style="color:#f92672">title</span>&gt;{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} on {{ end }}{{ .Site.Title }}{{ end }}&lt;/<span style="color:#f92672">title</span>&gt;
-    &lt;<span style="color:#f92672">link</span>&gt;{{ .Permalink }}&lt;/<span style="color:#f92672">link</span>&gt;
-    &lt;<span style="color:#f92672">description</span>&gt;Recent content {{ if ne  .Title  .Site.Title }}{{ with .Title }}in {{.}} {{ end }}{{ end }}on {{ .Site.Title }}&lt;/<span style="color:#f92672">description</span>&gt;
-    &lt;<span style="color:#f92672">generator</span>&gt;Hugo -- gohugo.io&lt;/<span style="color:#f92672">generator</span>&gt;{{ with .Site.LanguageCode }}
-    &lt;<span style="color:#f92672">language</span>&gt;{{.}}&lt;/<span style="color:#f92672">language</span>&gt;{{end}}{{ with .Site.Author.email }}
-    &lt;<span style="color:#f92672">managingEditor</span>&gt;{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}&lt;/<span style="color:#f92672">managingEditor</span>&gt;{{end}}{{ with .Site.Author.email }}
-    &lt;<span style="color:#f92672">webMaster</span>&gt;{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}&lt;/<span style="color:#f92672">webMaster</span>&gt;{{end}}{{ with .Site.Copyright }}
-    &lt;<span style="color:#f92672">copyright</span>&gt;{{.}}&lt;/<span style="color:#f92672">copyright</span>&gt;{{end}}{{ if not .Date.IsZero }}
-    &lt;<span style="color:#f92672">lastBuildDate</span>&gt;{{ .Date.Format &#34;Mon, 02 Jan 2006 15:04:05 -0700&#34; | safeHTML }}&lt;/<span style="color:#f92672">lastBuildDate</span>&gt;{{ end }}
-    {{ with .OutputFormats.Get &#34;RSS&#34; }}
-        {{ printf &#34;&lt;<span style="color:#f92672">atom:link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">%q</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;self\&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">%q</span> /&gt;&#34; .Permalink .MediaType | safeHTML }}
-    {{ end }}
-    {{ range .Pages }}
-    &lt;<span style="color:#f92672">item</span>&gt;
-      &lt;<span style="color:#f92672">title</span>&gt;{{ .Title }}&lt;/<span style="color:#f92672">title</span>&gt;
-      &lt;<span style="color:#f92672">link</span>&gt;{{ .Permalink }}&lt;/<span style="color:#f92672">link</span>&gt;
-      &lt;<span style="color:#f92672">pubDate</span>&gt;{{ .Date.Format &#34;Mon, 02 Jan 2006 15:04:05 -0700&#34; | safeHTML }}&lt;/<span style="color:#f92672">pubDate</span>&gt;
-      {{ with .Site.Author.email }}&lt;<span style="color:#f92672">author</span>&gt;{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}&lt;/<span style="color:#f92672">author</span>&gt;{{end}}
-      &lt;<span style="color:#f92672">guid</span>&gt;{{ .Permalink }}&lt;/<span style="color:#f92672">guid</span>&gt;
-      &lt;<span style="color:#f92672">description</span>&gt;{{ .Summary | html }}&lt;/<span style="color:#f92672">description</span>&gt;
-    &lt;/<span style="color:#f92672">item</span>&gt;
-    {{ end }}
-  &lt;/<span style="color:#f92672">channel</span>&gt;
-&lt;/<span style="color:#f92672">rss</span>&gt;
-</code></pre></div><p>其中，我们需要全局输出，只需要修改 <code>&lt;description&gt;{{ .Summary | html }}&lt;/description&gt;</code> 为 <code>&lt;description&gt;{{ .Content | html }}&lt;/description&gt;</code> 即可。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{ printf &#34;<span style="color:#75715e">&lt;?xml version=\&#34;1.0\&#34; encoding=\&#34;utf-8\&#34; standalone=\&#34;yes\&#34; ?&gt;</span>&#34; | safeHTML }}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">rss</span> <span style="color:#a6e22e">version</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2.0&#34;</span> <span style="color:#a6e22e">xmlns:atom</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.w3.org/2005/Atom&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">channel</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">title</span>&gt;{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} on {{ end }}{{ .Site.Title }}{{ end }}&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">link</span>&gt;{{ .Permalink }}&lt;/<span style="color:#f92672">link</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">description</span>&gt;Recent content {{ if ne  .Title  .Site.Title }}{{ with .Title }}in {{.}} {{ end }}{{ end }}on {{ .Site.Title }}&lt;/<span style="color:#f92672">description</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">generator</span>&gt;Hugo -- gohugo.io&lt;/<span style="color:#f92672">generator</span>&gt;{{ with .Site.LanguageCode }}
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">language</span>&gt;{{.}}&lt;/<span style="color:#f92672">language</span>&gt;{{end}}{{ with .Site.Author.email }}
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">managingEditor</span>&gt;{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}&lt;/<span style="color:#f92672">managingEditor</span>&gt;{{end}}{{ with .Site.Author.email }}
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">webMaster</span>&gt;{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}&lt;/<span style="color:#f92672">webMaster</span>&gt;{{end}}{{ with .Site.Copyright }}
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">copyright</span>&gt;{{.}}&lt;/<span style="color:#f92672">copyright</span>&gt;{{end}}{{ if not .Date.IsZero }}
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">lastBuildDate</span>&gt;{{ .Date.Format &#34;Mon, 02 Jan 2006 15:04:05 -0700&#34; | safeHTML }}&lt;/<span style="color:#f92672">lastBuildDate</span>&gt;{{ end }}
+</span></span><span style="display:flex;"><span>    {{ with .OutputFormats.Get &#34;RSS&#34; }}
+</span></span><span style="display:flex;"><span>        {{ printf &#34;&lt;<span style="color:#f92672">atom:link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">%q</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">\&#34;self\&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">%q</span> /&gt;&#34; .Permalink .MediaType | safeHTML }}
+</span></span><span style="display:flex;"><span>    {{ end }}
+</span></span><span style="display:flex;"><span>    {{ range .Pages }}
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">item</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">title</span>&gt;{{ .Title }}&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">link</span>&gt;{{ .Permalink }}&lt;/<span style="color:#f92672">link</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">pubDate</span>&gt;{{ .Date.Format &#34;Mon, 02 Jan 2006 15:04:05 -0700&#34; | safeHTML }}&lt;/<span style="color:#f92672">pubDate</span>&gt;
+</span></span><span style="display:flex;"><span>      {{ with .Site.Author.email }}&lt;<span style="color:#f92672">author</span>&gt;{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}&lt;/<span style="color:#f92672">author</span>&gt;{{end}}
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">guid</span>&gt;{{ .Permalink }}&lt;/<span style="color:#f92672">guid</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">description</span>&gt;{{ .Summary | html }}&lt;/<span style="color:#f92672">description</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">item</span>&gt;
+</span></span><span style="display:flex;"><span>    {{ end }}
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">channel</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">rss</span>&gt;
+</span></span></code></pre></div><p>其中，我们需要全局输出，只需要修改 <code>&lt;description&gt;{{ .Summary | html }}&lt;/description&gt;</code> 为 <code>&lt;description&gt;{{ .Content | html }}&lt;/description&gt;</code> 即可。</p>
 <p><code>config.toml</code> 配置中的一些字段可以用来控制 RSS 的输出：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">rssLimit</span> = <span style="color:#ae81ff">10</span>  <span style="color:#75715e"># 限制 RSS 文章输出的数量</span>
-<span style="color:#a6e22e">languageCode</span> = <span style="color:#e6db74">&#34;en-us&#34;</span>
-<span style="color:#a6e22e">copyright</span> = <span style="color:#e6db74">&#34;This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.&#34;</span>
-
-[<span style="color:#a6e22e">author</span>]
-    <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;My Name Here&#34;</span>
-</code></pre></div><p>最开始的时候生成 RSS 会抛出一些异常：</p>
-<pre><code class="language-language" data-lang="language"> error on line 455 at column 40: PCDATA invalid Char value 8
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">rssLimit</span> = <span style="color:#ae81ff">10</span>  <span style="color:#75715e"># 限制 RSS 文章输出的数量</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">languageCode</span> = <span style="color:#e6db74">&#34;en-us&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">copyright</span> = <span style="color:#e6db74">&#34;This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">author</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;My Name Here&#34;</span>
+</span></span></code></pre></div><p>最开始的时候生成 RSS 会抛出一些异常：</p>
+<pre tabindex="0"><code class="language-language" data-lang="language"> error on line 455 at column 40: PCDATA invalid Char value 8
 </code></pre><p>一般来说，出现这些问题是因为 Markdown 文件中存在一些特殊字符，例如 <code>^H</code>、<code>^E</code> 等字符，解决办法有两个：</p>
 <ol>
 <li>通过 Hugo 的正则表达式替换掉特殊字符，参考文档<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></li>
 <li>在 markdown 源文件中把特殊字符删除</li>
 </ol>
 <p>另外，可以通过这个链接来订阅本博客：<a href="http://blog.jiayuanzhang.com/post/index.xml">http://blog.jiayuanzhang.com/post/index.xml</a></p>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
-<p><a href="https://gohugo.io/templates/rss/">https://gohugo.io/templates/rss/</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:1">
+<p><a href="https://gohugo.io/templates/rss/">https://gohugo.io/templates/rss/</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
-<p><a href="https://gohugo.io/functions/replacere/#readout">https://gohugo.io/functions/replacere/#readout</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:2">
+<p><a href="https://gohugo.io/functions/replacere/#readout">https://gohugo.io/functions/replacere/#readout</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
   </div>
 </div>
 
 <h2>Comments</h2>
 <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

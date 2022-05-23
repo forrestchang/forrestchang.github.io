@@ -3,7 +3,7 @@
 <head>
   <link href="https://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.82.1" />
+  <meta name="generator" content="Hugo 0.99.1" />
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +12,10 @@
   <meta name="description" content="" />
 
   
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/print.css" media="print">
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/poole.css">
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/syntax.css">
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/hyde.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/hyde.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
 
 
@@ -31,8 +31,8 @@
   <aside class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
-      <a href="http://blog.jiayuanzhang.com"></a>
-      <a class="site-title" href="http://blog.jiayuanzhang.com">
+      <a href="https://blog.jiayuanzhang.com"></a>
+      <a class="site-title" href="https://blog.jiayuanzhang.com">
         <div class="main-title"><h1>Jiayuan</h1></div>
         <div class="second-title"><h1>Thoughts</h1></div>
       </a>
@@ -43,7 +43,7 @@
 
     <nav>
       <ul class="sidebar-nav">
-        <li><a href="http://blog.jiayuanzhang.com">Home</a> </li>
+        <li><a href="https://blog.jiayuanzhang.com">Home</a> </li>
         <li><a href="/tags/"> Tags </a></li><li><a href="/post/"> Archives </a></li><li><a href="https://twitter.com/Tisoga"> Twitter </a></li>
       </ul>
     </nav>
@@ -99,15 +99,15 @@
 <h3 id="配置外观">配置外观</h3>
 <p>初始的外观不是很符合自己的审美，可以进行更换主题、更改字体和字号大小等操作来配置成自己喜欢的样子。</p>
 <p>新建配置文件</p>
-<pre><code>touch squirrel.custom.yaml
+<pre tabindex="0"><code>touch squirrel.custom.yaml
 </code></pre><p>然后将以下代码写入配置文件</p>
-<pre><code>patch:
+<pre tabindex="0"><code>patch:
   style/color_scheme: dark_temple #主题
   style/font_point: 18 #字号大小
   style/horizontal: true #水平显示待选字
 </code></pre><h4 id="主题列表">主题列表</h4>
 <p>自带的主题代码:</p>
-<pre><code>#   注：预设的配色方案及代码（指定为 style/color_scheme ）
+<pre tabindex="0"><code>#   注：预设的配色方案及代码（指定为 style/color_scheme ）
 #   碧水 - aqua
 #   青天 - azure
 #   明月 - luna
@@ -120,36 +120,36 @@
 #   简约白 - clean_white
 </code></pre><p>想要更换什么主题只要把代码替换掉就可以了。</p>
 <h4 id="其他一些配置代码及其说明">其他一些配置代码及其说明</h4>
-<pre><code>  style/page_size: 8			             # 设定候选词数目
+<pre tabindex="0"><code>  style/page_size: 8			             # 设定候选词数目
   style/inline_preedit: false              # 关闭内嵌编码，这样就可以显示首行的拼音
   style/corner_radius: 10                  # 窗口圆角半径
   style/border_height: 0                   # 窗口边界高度，大于圆角半径才有效果
   style/border_width: 0                    # 窗口边界宽度，大于圆角半径才有效果
   style/line_spacing: 1                    # 候选词的行间距
   style/spacing: 5                         # 在非内嵌编码模式下，预编辑和候选词之间的距
-  style/font_face: &quot;Hiragino Sans GB W3&quot;   # 字体名称
+  style/font_face: &#34;Hiragino Sans GB W3&#34;   # 字体名称
 </code></pre><p>更多的一些配置代码可以在<code>squirrel.yaml</code>中找到。</p>
 <h3 id="定制标点符号">定制标点符号</h3>
 <p>鼠须管有一个特别的功能就是输入一个标点的时候可以有很多的候选标点让你选择，比如说中括号：</p>
 <p><img src="https://raw.githubusercontent.com/forrestchang/img-repo/master/20190326141747.png" alt="rime03"></p>
 <p>但是有的时候默认就想选择第一个，多出了一个选择的步骤无疑上会增加击键的次数，所以我们可以通过修改配置来解决这个问题，同时也可以自定义想要输入的符号。</p>
 <p>这里我们使用的是<code>朙月拼音・簡化字</code>，所以需要建立相应的配置文件：</p>
-<pre><code>touch luna_pinyin_simp.custom.yaml
+<pre tabindex="0"><code>touch luna_pinyin_simp.custom.yaml
 </code></pre><p>然后写入以下配置（可根据自己的需要修改，这里的代码的意思是在全角和半角的状态下输入<code>&lt;</code>均以<code>《</code>输出）。</p>
-<pre><code>patch:
+<pre tabindex="0"><code>patch:
   punctuator/full_shape:
-    &quot;&lt;&quot;: &quot;《&quot;
+    &#34;&lt;&#34;: &#34;《&#34;
   punctuator/half_shape:
-    &quot;&lt;&quot;: &quot;《&quot;
+    &#34;&lt;&#34;: &#34;《&#34;
   punctuator/full_shape:
-    &quot;&gt;&quot;: &quot;》&quot;
+    &#34;&gt;&#34;: &#34;》&#34;
   punctuator/half_shape:
-    &quot;&gt;&quot;: &quot;》&quot;
+    &#34;&gt;&#34;: &#34;》&#34;
 </code></pre><h3 id="安静模式">安静模式</h3>
 <p>之前一直使用百度输入法的原因就是因为它有一个安静模式，可以在特定的程序内关闭输入法，比如说<code>Emacs</code>中大部分时间都是不需要输入中文的，所以当切换到这个程序的时候就自动将输入法切换到英文模式。</p>
 <p>需要找到应用软件的<code>Bundle Identifier</code>，保存在<code>Info.plist</code>这个文件当中。</p>
 <p>修改<code>squirrel.custom.yaml</code>（没有自己创建）：</p>
-<pre><code>patch:
+<pre tabindex="0"><code>patch:
   style/color_scheme: dark_temple
   style/font_point: 18
   style/horizontal: true
@@ -188,7 +188,7 @@
 <h2>Comments</h2>
 <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

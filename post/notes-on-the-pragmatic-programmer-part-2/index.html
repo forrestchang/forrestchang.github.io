@@ -3,7 +3,7 @@
 <head>
   <link href="https://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.82.1" />
+  <meta name="generator" content="Hugo 0.99.1" />
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +12,10 @@
   <meta name="description" content="" />
 
   
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/print.css" media="print">
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/poole.css">
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/syntax.css">
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/hyde.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/hyde.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
 
 
@@ -31,8 +31,8 @@
   <aside class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
-      <a href="http://blog.jiayuanzhang.com"></a>
-      <a class="site-title" href="http://blog.jiayuanzhang.com">
+      <a href="https://blog.jiayuanzhang.com"></a>
+      <a class="site-title" href="https://blog.jiayuanzhang.com">
         <div class="main-title"><h1>Jiayuan</h1></div>
         <div class="second-title"><h1>Thoughts</h1></div>
       </a>
@@ -43,7 +43,7 @@
 
     <nav>
       <ul class="sidebar-nav">
-        <li><a href="http://blog.jiayuanzhang.com">Home</a> </li>
+        <li><a href="https://blog.jiayuanzhang.com">Home</a> </li>
         <li><a href="/tags/"> Tags </a></li><li><a href="/post/"> Archives </a></li><li><a href="https://twitter.com/Tisoga"> Twitter </a></li>
       </ul>
     </nav>
@@ -100,20 +100,20 @@ DRY - Don&rsquo;t Repeat Yourself
 <h5 id="无意的重复">无意的重复</h5>
 <p>有时，重复来自设计中的错误。</p>
 <p>举个例子：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Line</span> {
-	<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
-		Point start;
-		Point end;
-		<span style="color:#66d9ef">double</span> lenght;
-};
-</code></pre></div><p>第一眼看上去这个类似乎是合理的。线段显然有起点和终点，并总是有长度的。但这里有重复，长度是由起点和终点决定的：改变其中一个，长度就会变化。最好是让长度编程计算字段：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Line</span> {
-	<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
-		Point start;
-		Point end;
-		<span style="color:#66d9ef">double</span> <span style="color:#a6e22e">lenght</span>() { <span style="color:#66d9ef">return</span> start.distanceTo(end); }
-};
-</code></pre></div><h5 id="无耐性的重复">无耐性的重复</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Line</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>		Point start;
+</span></span><span style="display:flex;"><span>		Point end;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">double</span> lenght;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>第一眼看上去这个类似乎是合理的。线段显然有起点和终点，并总是有长度的。但这里有重复，长度是由起点和终点决定的：改变其中一个，长度就会变化。最好是让长度编程计算字段：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Line</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>		Point start;
+</span></span><span style="display:flex;"><span>		Point end;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">double</span> <span style="color:#a6e22e">lenght</span>() { <span style="color:#66d9ef">return</span> start.distanceTo(end); }
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h5 id="无耐性的重复">无耐性的重复</h5>
 <p>每个项目都有时间压力。</p>
 <p>如果你觉得受到了诱惑，想一想古老的格言「欲速则不达」。你现在也许可以节省几秒钟（感觉不止），但以后可能损失几小时。（如果一个人不打算在公司长久待下去的话是会写出重复的代码的，所以 code review 要做好）</p>
 <p>无耐性的重复是一种容易检测和处理的重复形式，但那需要你接受训练，并愿意为避免以后的痛苦而预先话一些时间。</p>
@@ -270,7 +270,7 @@ Iterate the Schedule with the Code
 <h2>Comments</h2>
 <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     

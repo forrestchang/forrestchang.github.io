@@ -3,7 +3,7 @@
 <head>
   <link href="https://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.82.1" />
+  <meta name="generator" content="Hugo 0.99.1" />
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +12,10 @@
   <meta name="description" content="" />
 
   
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/print.css" media="print">
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/poole.css">
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/syntax.css">
-  <link type="text/css" rel="stylesheet" href="http://blog.jiayuanzhang.com/css/hyde.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://blog.jiayuanzhang.com/css/hyde.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
 
 
@@ -31,8 +31,8 @@
   <aside class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
-      <a href="http://blog.jiayuanzhang.com"></a>
-      <a class="site-title" href="http://blog.jiayuanzhang.com">
+      <a href="https://blog.jiayuanzhang.com"></a>
+      <a class="site-title" href="https://blog.jiayuanzhang.com">
         <div class="main-title"><h1>Jiayuan</h1></div>
         <div class="second-title"><h1>Thoughts</h1></div>
       </a>
@@ -43,7 +43,7 @@
 
     <nav>
       <ul class="sidebar-nav">
-        <li><a href="http://blog.jiayuanzhang.com">Home</a> </li>
+        <li><a href="https://blog.jiayuanzhang.com">Home</a> </li>
         <li><a href="/tags/"> Tags </a></li><li><a href="/post/"> Archives </a></li><li><a href="https://twitter.com/Tisoga"> Twitter </a></li>
       </ul>
     </nav>
@@ -62,16 +62,16 @@
   <div class="post-content" style="margin-top: 20px">
     <h2 id="安装">安装</h2>
 <p>直接使用 pip 来进行安装：</p>
-<pre><code>$ sudo pip install virtualenv
+<pre tabindex="0"><code>$ sudo pip install virtualenv
 </code></pre><h2 id="用途">用途</h2>
 <p>主要用来创建隔离的 Python 开发环境，比如说一个项目需要用到 2.7 的库，另一个项目需要用到 3.0 的库，我们就可以使用  virtualenv 来分别给这两个项目创建虚拟的 Python 环境，这样可以有效的避免冲突。</p>
 <p>virtualenv 会创建一个拥有独立安装目录的 Python 环境，该隔离环境不会与其他 virtualenv 环境共享模块（可以选择是否访问全局安装目录）。</p>
 <h2 id="使用">使用</h2>
 <h3 id="创建虚拟环境">创建虚拟环境</h3>
 <p>最基本的使用：</p>
-<pre><code>$ virtualenv ENV
+<pre tabindex="0"><code>$ virtualenv ENV
 </code></pre><p>其中 <code>ENV</code> 是用来存放虚拟环境的目录。</p>
-<pre><code>$tree -L 1 ENV
+<pre tabindex="0"><code>$tree -L 1 ENV
 ENV
 ├── bin
 ├── include
@@ -80,24 +80,24 @@ ENV
 </code></pre><p>其中 <code>lib</code> 和 <code>include</code> 目录是用来存放新的虚拟 Python 环境的依赖库，Package 被安装到 <code>lib/pythonX.X/site-packages/</code> 中，<code>bin</code> 目录中是新的 Python 解释器。<code>pip</code> 和 <code>setuptools</code> 默认被安装的。</p>
 <h3 id="active-script">active script</h3>
 <p>进入虚拟环境：</p>
-<pre><code>$ source ENV/bin/active
+<pre tabindex="0"><code>$ source ENV/bin/active
 </code></pre><p>（如果 <code>source</code> 命令不存在可以使用 <code>.</code> 命令。）</p>
 <p>退出虚拟环境：</p>
-<pre><code>$ deactivate
+<pre tabindex="0"><code>$ deactivate
 </code></pre><h3 id="removing-an-environment">Removing an Environment</h3>
-<pre><code>(ENV)$ deactivate
+<pre tabindex="0"><code>(ENV)$ deactivate
 $ rm -r /path/to/ENV
 </code></pre><h3 id="--system-site-packages-选项"><code>--system-site-packages</code> 选项</h3>
 <p>使用 <code>virtualenv --system-site-packages ENV</code> 将会继承全局 packages。并不是很常用的功能。</p>
 <h3 id="指定-python-版本">指定 Python 版本</h3>
 <p>使用 <code>-p PYTHON_EXE</code> 选项在创建虚拟环境的时候制定 Python 版本。</p>
 <p>Python 2.7:</p>
-<pre><code>$ virtualenv -p /usr/bin/python2.7 ENV2.7
+<pre tabindex="0"><code>$ virtualenv -p /usr/bin/python2.7 ENV2.7
 </code></pre><p>Python 3.5:</p>
-<pre><code>$ virtualenv -p /usr/local/bin/python3.5 ENV3.5
+<pre tabindex="0"><code>$ virtualenv -p /usr/local/bin/python3.5 ENV3.5
 </code></pre><h3 id="生成可打包环境">生成可打包环境</h3>
 <p>某些情况下，我们可能需要在别的地方使用这个已经配置好的虚拟环境，可以使用 <code>virtualenv --relocatable</code> 将 ENV 修改为可迁移的。</p>
-<pre><code>(ENV)$ virutalenv --relocatable ./
+<pre tabindex="0"><code>(ENV)$ virutalenv --relocatable ./
 </code></pre>
   </div>
 </div>
@@ -105,7 +105,7 @@ $ rm -r /path/to/ENV
 <h2>Comments</h2>
 <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
